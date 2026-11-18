@@ -2,6 +2,7 @@
 <html lang="vi">
 <head>
 <meta charset="utf-8">
+<meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Claude Cert Practice</title>
 <style>
@@ -207,6 +208,24 @@ svg.i{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke
   .opt{gap:8px;padding:12px 10px}.opt .mark{width:26px;height:26px}.opt .t{min-width:0;padding:0}.qfoot{gap:6px;margin-top:18px;padding-top:13px}.qfoot .btn{flex:1;padding:9px 6px;white-space:normal}
   .hero,.result{padding:18px}.result>div{min-width:0;max-width:100%}.hero .rules{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.rule{padding:8px 3px}.rule span{font-size:12px}.result .actions{justify-content:center}
 }
+@media (min-width:761px) and (max-width:1199px),
+       (min-width:761px) and (max-width:1440px) and (any-pointer:coarse){
+  .topbar-in{position:relative;flex-wrap:nowrap;gap:8px;padding:3px 14px}
+  .topbar-in>.seg{margin:0;padding:0 2px}
+  .topbar-in>.seg button,.topbar-in>.back,.topbar-in>.mobile-toggle{min-height:44px}
+  .topbar-in>.back{width:44px}.topbar-in>.brand small{display:none}
+  .topbar-in>.mobile-toggle{display:inline-flex}
+  .mobile-toggle[aria-expanded=false]+.actions{display:none}
+  .mobile-toggle[aria-expanded=true]+.actions{
+    position:absolute;top:calc(100% + 4px);right:14px;width:min(440px,calc(100% - 28px));
+    max-height:65vh;overflow:auto;overscroll-behavior:contain;padding:14px;gap:8px;
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)
+  }
+  #settings-toggle+.actions .topic-label{width:100%}
+  #settings-toggle+.actions select{min-width:0;max-width:100%;font:inherit}
+  #settings-toggle+.actions .seg{margin:0}
+  .side{top:60px}
+}
 </style>
 </head>
 <body>
@@ -394,6 +413,20 @@ function topbar(c, actionsHtml){
     <div id="header-actions" class="actions">${actionsHtml||''}</div></div></header>`;
 }
 let settingsOpen = false;
+function closeSettings(){
+  const toggle = $('#settings-toggle');
+  settingsOpen = false;
+  toggle?.setAttribute('aria-expanded','false');
+}
+document.addEventListener('pointerdown', e => {
+  if (settingsOpen && !e.target.closest('#settings-toggle,#header-actions')) closeSettings();
+});
+document.addEventListener('keydown', e => {
+  if (settingsOpen && e.key === 'Escape'){
+    closeSettings();
+    $('#settings-toggle')?.focus();
+  }
+});
 function bindTop(){
   const toggle = $('#settings-toggle');
   if (toggle){
