@@ -50,7 +50,7 @@ for (const [cert, expected] of Object.entries(banks)) {
       for (const translation of vietnamese) {
         assert.ok(typeof translation === 'string' && translation.trim().length > 0,
           `${cert}:${q.id} missing Vietnamese text`);
-        assert.ok(!/(?:^|\\s)(?:s\\?|b\\?|d\\?|m\\?|r\\?|v\\?)(?=\\s|$)/u.test(translation),
+        assert.ok(!/(?:^|\s)(?:s\?|b\?|d\?|m\?|r\?|v\?)(?=\s|$)/u.test(translation),
           `${cert}:${q.id} contains corrupted Vietnamese characters`);
         for (const tag of ['p', 'ul', 'ol', 'li']) {
           const openings = (translation.match(new RegExp(`<${tag}(?:\\s[^>]*)?>`, 'g')) || []).length;
