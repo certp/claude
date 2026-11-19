@@ -20,3 +20,5 @@ jobs:
         run: node scripts/verify-data.mjs
       - name: Verify official weighted exam sampling
         run: node scripts/verify-weighted-exam.mjs
+      - name: Verify cache-busting and release update detection
+        run: node scripts/verify-cache.mjs
