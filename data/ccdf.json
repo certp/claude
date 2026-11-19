@@ -2207,15 +2207,15 @@
       "a": [
         "D"
       ],
-      "e": "Code review đầy đủ: tách prompt và model ra config, thêm xử lý lỗi khi gửi API, thêm test cho phần tích hợp. Xử lý lỗi không phải \"độ sau\".",
+      "e": "Một tích hợp production cần cấu hình prompt/mô hình riêng, xử lý lỗi có kiểm soát và test. Không nên chỉ dựa vào trường hợp chạy thành công.",
       "m": 1,
       "v": {
-        "q": "<p>Một đồng nghiệp đã gửi một pull request thêm tính năng sử dụng Claude vào service của bạn. </p><p>Mã hoạt động, nhưng prompt và lựa chọn model được hard-code trực tiếp, thiếu xử lý lỗi và không có test nào cho phần tích hợp. </p><p>Bạn sẽ yêu cầu gì trong quá trình code review?</p>",
+        "q": "<p>Một đồng nghiệp gửi PR bổ sung tính năng dùng Claude vào dịch vụ. Mã chạy được nhưng prompt và mô hình được hard-code, thiếu xử lý lỗi và không có test tích hợp. Khi review, bạn nên yêu cầu gì?</p>",
         "o": [
-          "<p>Yêu cầu thay đổi để chuyển cấu hình prompt và model sang một vị trí có thể cấu hình được và thêm test, coi việc thiếu xử lý lỗi là hạng mục cho bản phát hành tiếp theo.</p>",
-          "<p>Approve pull request và tỷ thêm các phần còn thiếu trong một commit tiếp theo độ đồng nghiệp có thể chuyển ngay sang công việc khác.</p>",
-          "<p>Yêu cầu thay đổi để chuyển cấu hình prompt và model sang một vị trí có thể cấu hình được, thêm xử lý lỗi cho các lỗi của Claude API và thêm test cho phần tích hợp.</p>",
-          "<p>Approve pull request nguyên trạng, với lý do tính năng hoạt động ở happy path và các phần còn thiếu có thể được bổ sung trong các commit sau.</p>"
+          "<p>Đưa prompt và lựa chọn mô hình vào cấu hình, thêm test, nhưng coi xử lý lỗi là việc để sau.</p>",
+          "<p>Duyệt PR rồi tự bổ sung phần còn thiếu trong commit tiếp theo để đồng nghiệp có thể merge nhanh.</p>",
+          "<p>Đưa prompt và lựa chọn mô hình vào cấu hình, bổ sung xử lý lỗi API và test cho phần tích hợp.</p>",
+          "<p>Duyệt PR vì luồng thông thường đã chạy, xử lý phần còn thiếu trong các ticket sau.</p>"
         ]
       },
       "topic": "prompt"
@@ -2244,15 +2244,15 @@
       "a": [
         "C"
       ],
-      "e": "Coding standard và context của dự án cho Claude Code thì viết vào `CLAUDE.md` ở thư mục gốc repo, tự động nộp mỗi phiên.",
+      "e": "`CLAUDE.md` trong repository giúp Claude Code tự nạp hướng dẫn dự án khi làm việc, đồng thời mọi thay đổi có thể review và quản lý bằng Git.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang thiết lập Claude Code cho một repository dự án mới. </p><p>Nhóm của bạn có các tiêu chuẩn viết mã dùng chung, các thư viện ưu tiên và context riêng của dự án mà mỗi lập trình viên làm việc trên repository đều cần có sẵn khi sử dụng Claude Code. </p><p>Bạn sự thiết lập điều này như thế nào?</p>",
+        "q": "<p>Nhóm bắt đầu dùng Claude Code trong repository mới. Mọi lập trình viên cần dùng chung quy chuẩn mã nguồn, thư viện ưu tiên và ngữ cảnh dự án. Bạn nên thiết lập thế nào?</p>",
         "o": [
-          "<p>Khởi tạo Claude Code trong repository và ghi lại các tiêu chuẩn cùng context riêng của dự án trong một tập CLAUDE.md ở thư mục gốc của repository.</p>",
-          "<p>Cấu hình Claude Code thông qua các biến môi trường mà mỗi lập trình viên từ thiết lập trên máy của mình khi bắt đều làm việc trong repository.</p>",
-          "<p>Thêm các tiêu chuẩn viết mã và context dự án vào tập README hiện có của repository và hướng dẫn lập trình viên tham khảo nó khi bắt đầu các phiên Claude Code.</p>",
-          "<p>Ghi lại các tiêu chuẩn trong một trang wiki riêng được duy trì bên ngoài repository đủ tài liệu tách rời khỏi mã nguồn.</p>"
+          "<p>Khởi tạo Claude Code và ghi quy chuẩn cùng ngữ cảnh dự án trong tệp `CLAUDE.md` ở repository.</p>",
+          "<p>Yêu cầu từng lập trình viên tự thiết lập biến môi trường trên máy.</p>",
+          "<p>Ghi hướng dẫn vào README và nhắc thành viên tự đọc mỗi lần sử dụng.</p>",
+          "<p>Đưa quy chuẩn lên wiki riêng ngoài repository.</p>"
         ]
       },
       "topic": "code"
@@ -2281,15 +2281,15 @@
       "a": [
         "A"
       ],
-      "e": "Coordinator điều phối các subagent chuyên biệt, mỗi subagent có tool riêng và lịch sử riêng không chia sẻ: đây là pattern manager/supervisor với context tách biệt.",
+      "e": "Tác nhân cấp cao đóng vai trò điều phối; các tác nhân phụ có chuyên môn, công cụ và lịch sử riêng. Đây là mẫu manager/supervisor với ngữ cảnh được cô lập.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang xem xét một số để kiến trúc cho hệ thống đặt vé du lịch sử dụng Claude. </p><p>S? để cho thấy một thành phần cấp cao nhất diễn giải các yêu cầu của người dùng và ba thành phần cấp dưới xử lý chuyển bay, khách sản và văn chuyển một đặt. </p><p>Thành phần cấp cao nhất chịu trách nhiệm định tuyến tầng yêu cầu, sắp xếp thứ từ các thành phần cấp dưới và đối chiếu output của chúng thành một lịch trình cuối cùng. </p><p>Số độ cứng cho thấy mỗi thành phần cấp dưới có danh sách tool riêng và lịch sử hội thoại ngăn riêng không được chia sẻ với các thành phần khác. </p><p>Số độ này mô tả gần nhất với mẫu kiến trúc (architectural pattern) nào?</p>",
+        "q": "<p>Bạn xem sơ đồ kiến trúc hệ thống đặt dịch vụ du lịch dùng Claude. Một thành phần cấp cao hiểu yêu cầu người dùng, phân phối và sắp xếp công việc cho ba thành phần phụ trách vé máy bay, khách sạn và di chuyển mặt đất, rồi tổng hợp thành hành trình. Các thành phần phụ dùng công cụ và ngữ cảnh riêng. Mẫu kiến trúc này là gì?</p>",
         "o": [
-          "<p>Mẫu pipeline, trong đó mỗi thành phần xử lý yêu cầu của người dùng theo thứ tự và chuyển toàn bộ lịch sử hội thoại cùng yêu cầu cho thành phần tiếp theo trong pipeline.</p>",
-          "<p>Mẫu manager và supervisor với context cô lập cho mỗi subagent, trong đó agent cấp cao nhất điều phối các subagent chuyên biệt, mỗi subagent duy trì lịch sử hội thoại và danh sách tool riêng của mình.</p>",
-          "<p>Mẫu retrieval-augmented, trong đó thành phần cấp cao nhất truy xuất context liên quan từ các kho dữ liệu được lập chỉ mục của các thành phần cấp dưới trước khi tạo mỗi phản hồi.</p>",
-          "<p>Mẫu manager và supervisor với context dùng chung, trong đó agent cấp cao nhất và các subagent cùng chia sẻ một lịch sử hội thoại duy nhất ngày càng dài ra khi yêu cầu đi qua hệ thống.</p>"
+          "<p>Mẫu pipeline, trong đó các thành phần xử lý tuần tự và chuyển toàn bộ lịch sử hội thoại cho nhau.</p>",
+          "<p>Mẫu manager/supervisor với ngữ cảnh biệt lập: tác nhân cấp cao điều phối các tác nhân phụ dùng ngữ cảnh riêng.</p>",
+          "<p>Mẫu retrieval-augmented, trong đó thành phần cấp cao lấy ngữ cảnh từ kho dữ liệu của các thành phần phụ.</p>",
+          "<p>Mẫu manager/supervisor với ngữ cảnh dùng chung giữa tác nhân chính và mọi tác nhân phụ.</p>"
         ]
       },
       "topic": "agent"
@@ -2318,15 +2318,15 @@
       "a": [
         "A"
       ],
-      "e": "Có ví dụ có nhãn tắt thì đưa vào prompt (multi-shot hoặc few-shot) để Claude bắt chước format.",
+      "e": "Với tập ví dụ có nhãn nhỏ, hãy đưa chúng trực tiếp vào prompt bằng few-shot/multi-shot prompting để mô hình bắt chước cấu trúc đầu ra.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang bắt đầu một ứng dụng Claude mới và có một tập như các ví dụ được gán nhãn tốt minh họa định dạng output mong muốn. </p><p>Bạn muốn dùng các ví dụ này để định hướng hành vi của Claude. </p><p>Bạn sẽ định hướng hành vi của ứng dụng như thế nào?</p>",
+        "q": "<p>Bạn có một số ví dụ đã được gán nhãn rõ ràng, minh họa định dạng đầu ra mong muốn cho ứng dụng Claude mới. Nên dùng các ví dụ này để định hướng phản hồi thế nào?</p>",
         "o": [
-          "<p>Dùng zero-shot prompting và dựa vào khả năng tổng quát của model để tạo ra định dạng output mong muốn một cách nhất quán cho mỗi request đến.</p>",
-          "<p>Nhúng các ví dụ vào một cơ sở dữ liệu và truy xuất chúng khi chạy như tài liệu tham khảo cho nhóm.</p>",
-          "<p>Dùng multi-shot prompting bằng cách đưa các ví dụ được gán nhãn vào prompt để Claude có thể khớp với định dạng output mong muốn ở mỗi request.</p>",
-          "<p>Huấn luyện một model tùy chỉnh trên các ví dụ được gán nhãn trước khi triển khai đề ứng dụng không cần đưa các ví dụ vào bất kỳ prompt nào trong quá trình vận hành.</p>"
+          "<p>Chỉ dùng zero-shot prompting và tin vào khả năng chung của mô hình.</p>",
+          "<p>Lưu ví dụ vào cơ sở dữ liệu để nhóm tra cứu khi ứng dụng chạy.</p>",
+          "<p>Đưa những ví dụ có nhãn vào prompt theo kỹ thuật multi-shot để Claude học theo định dạng mong muốn.</p>",
+          "<p>Huấn luyện mô hình riêng từ các ví dụ trước khi triển khai, không cần đưa ví dụ vào prompt.</p>"
         ]
       },
       "topic": "prompt"
@@ -2355,15 +2355,15 @@
       "a": [
         "D"
       ],
-      "e": "`CLAUDE.md` và `settings.json` version-control cùng source code và review qua pull request như code bình thường.",
+      "e": "Cấu hình ảnh hưởng trực tiếp đến hoạt động của Claude Code nên cần được quản lý phiên bản cùng dự án và review như thay đổi mã nguồn.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang thiết lập cách quản lý cấu hình cho một dự án Claude Code mới. </p><p>Nhóm của bạn sẽ dùng các tập CLAUDE.md và settings.json để kiểm soát hành vi, và bạn muốn đảm bảo các thay đổi được theo dõi và có thể review. </p><p>Cách quản lý cấu hình sẽ...</p>",
+        "q": "<p>Nhóm dùng `CLAUDE.md` và `settings.json` để kiểm soát hành vi Claude Code trong dự án. Muốn mọi thay đổi cấu hình đều được theo dõi và review, nên quản lý thế nào?</p>",
         "o": [
-          "<p>Version-control các tập CLAUDE.md và settings.json trong một repository riêng tách khối mã nguồn của dự án, để cấu hình phát triển độc lập với mã ứng dụng theo thời gian.</p>",
-          "<p>Version-control CLAUDE.md cùng với mã nguồn của dự án còn các tập settings.json trong một repository riêng tách khối mã nguồn của dự án.</p>",
-          "<p>Version-control các tập CLAUDE.md và settings.json cùng với mã nguồn của dự án, với các thay đổi được review qua quy trình pull request tiêu chuẩn mà nhóm áp dụng.</p>",
-          "<p>Nhân bạn các tập CLAUDE.md và settings.json vào nhiễu repository để dự phòng, với lý do một nguồn sự thật duy nhất (single source of truth) là rủi ro đối với cấu hình dự án.</p>"
+          "<p>Đưa `CLAUDE.md` và `settings.json` vào một repository riêng khỏi mã nguồn dự án.</p>",
+          "<p>Lưu `CLAUDE.md` cùng mã nguồn nhưng để `settings.json` trong repository khác.</p>",
+          "<p>Quản lý phiên bản cả `CLAUDE.md` và `settings.json` cùng mã nguồn; review thay đổi qua PR.</p>",
+          "<p>Sao chép hai tệp cấu hình sang nhiều repository để dự phòng vì một nguồn cấu hình duy nhất là rủi ro.</p>"
         ]
       },
       "topic": "code"
@@ -2392,15 +2392,15 @@
       "a": [
         "B"
       ],
-      "e": "Task dài có checkpoint thì dùng checkpointing: lưu state trung gian và nộp lỗi khi resume.",
+      "e": "Checkpointing cho phép lưu tiến độ và trạng thái trung gian của tác vụ. Khi khởi động lại, tác nhân đọc checkpoint gần nhất thay vì làm lại toàn bộ.",
       "m": 1,
       "v": {
-        "q": "<p>Agent của bạn xử lý các tác vụ một từ 30 đến 60 phút để hoàn thành. </p><p>Mỗi tác vụ có các checkpoint trung gian được xác định rõ, và nhóm muốn agent có thể tiếp tục từ checkpoint gần nhất nếu một tiến trình bổ gián đoạn. </p><p>Bạn sẽ triển khai khả năng tiếp tục này như thế nào?</p>",
+        "q": "<p>Tác nhân xử lý mỗi tác vụ trong 30–60 phút với các checkpoint trung gian rõ ràng. Nhóm muốn có thể tiếp tục từ checkpoint mới nhất nếu tiến trình bị gián đoạn. Nên triển khai cách nào?</p>",
         "o": [
-          "<p>Tầng timeout của agent lên vài giả để việc gián đoạn trở nên để hiểm để bỏ qua trên thực tế.</p>",
-          "<p>Chạy song song hai bản sao của agent cho mỗi tác vụ và dùng bản nào hoàn thành trước làm nguồn sự thật.</p>",
-          "<p>Khởi động lại tác vụ từ đầu mỗi khi một tiến trình bổ gián đoạn.</p>",
-          "<p>Áp dụng mẫu checkpointing lưu trữ trạng thái trung gian của agent và nộp lại trạng thái đó khi tiếp tục một tác vụ bị gián đoạn.</p>"
+          "<p>Tăng timeout lên vài giờ để giảm tần suất gián đoạn.</p>",
+          "<p>Chạy hai bản sao tác nhân song song rồi lấy bản hoàn tất trước.</p>",
+          "<p>Mỗi lần gián đoạn đều khởi động lại tác vụ từ đầu.</p>",
+          "<p>Áp dụng checkpointing: lưu trạng thái trung gian bền vững và nạp lại khi tiếp tục.</p>"
         ]
       },
       "topic": "context"
@@ -2429,15 +2429,15 @@
       "a": [
         "C"
       ],
-      "e": "Cộng cụ tăng quản lý ở agent chính: giới hạn ngân sách tool cho từng subagent, validate output theo schema trước khi chuyển tiếp, và có handoff contract rõ ràng giữa các bước.",
+      "e": "Tác nhân chính phải kiểm soát ngân sách, định dạng và chất lượng kết quả bàn giao. Chia sẻ dữ liệu tùy tiện hoặc tăng retry không giải quyết được trùng lặp và mâu thuẫn.",
       "m": 1,
       "v": {
-        "q": "<p>Một nhóm đã triển khai hệ thống multi-agent trong đó một agent chính phân rã các yêu cầu của người dùng và giao các tác vụ con cho ba subagent chuyên biệt: một cho truy xuất dữ liệu, một cho phân tích và mặt cho tạo báo cáo. </p><p>Trong production, nhóm quan sát thấy các subagent thực hiện các lệnh gọi tool dư thừa, đôi khi vượt quá ngân sách token, và đôi khi tạo ra các output mâu thuẫn nhau - tất cả đều được agent chính chuyển tiếp mà không phát hiện. </p><p>Cách phù hợp nhất để khắc phục các lỗi này là gì?</p>",
+        "q": "<p>Hệ thống đa tác nhân có một tác nhân chính chia yêu cầu cho ba tác nhân chuyên trách truy xuất dữ liệu, phân tích và tạo báo cáo. Trong production, các tác nhân phụ gọi công cụ trùng lặp, đôi khi vượt ngân sách token và trả kết quả mâu thuẫn, nhưng tác nhân chính vẫn chuyển tiếp chúng. Nên cải thiện gì?</p>",
         "o": [
-          "<p>Tăng cường lập quản lý cửa agent chính để thực thi ngân sách tool cho từng subagent, xác thực output theo một schema đã định nghĩa trước khi chuyển tiếp, và thiết lập các hộp động bàn giao (handoff contract) rõ ràng giữa các giai đoạn.</p>",
-          "<p>Cho mỗi subagent quyền đọc output của các subagent khác để chúng có thể tự xác định và giải quyết mâu thuẫn mà không cần định tuyến lại qua agent chính.</p>",
-          "<p>Gặp ba subagent thành một lệnh gọi model context lần duy nhất xử lý truy xuất, phân tích và tạo báo cáo trong một lượt.</p>",
-          "<p>Thêm logic retry cho mỗi subagent để khi một lệnh gọi tool thất bại, subagent tự động thử lại trước khi escalate - và cấu hình mỗi subagent ghi log các lệnh gọi tool và output của nó vào một trace dùng chung để nhóm có thể kiểm tra số dư thừa và mâu thuẫn sau đó.</p>"
+          "<p>Tăng cường tầng điều phối của tác nhân chính để giới hạn ngân sách công cụ theo tác nhân, xác thực đầu ra và thực thi hợp đồng bàn giao giữa các bước.</p>",
+          "<p>Cho mỗi tác nhân phụ đọc đầu ra của những tác nhân khác để chúng tự giải quyết mâu thuẫn.</p>",
+          "<p>Gộp ba tác nhân phụ thành một lời gọi mô hình có ngữ cảnh lớn.</p>",
+          "<p>Thêm cơ chế thử lại cho từng tác nhân phụ mỗi khi công cụ thất bại.</p>"
         ]
       },
       "topic": "agent"
@@ -2466,15 +2466,15 @@
       "a": [
         "D"
       ],
-      "e": "Thông tin bị \"chôn\" trong context dài thì quản lý context: tóm tắt hoặc cắt bớt tool output cố, giữ nguyên task state đang hoạt động.",
+      "e": "Vấn đề không chỉ là dung lượng ngữ cảnh mà còn là thông tin quan trọng bị lấn át. Cần quản lý ngữ cảnh bằng cách tóm tắt hoặc cắt bớt đầu ra cũ, giữ những dữ kiện đang có tác dụng.",
       "m": 1,
       "v": {
-        "q": "<p>Agent của bạn thực hiện 10 đến 15 lệnh gọi tool cho mỗi tác vụ, và bạn nhận thấy đôi khi nó mất dấu các kết quả trước đó khi đến các bước sau. </p><p>Cửa sổ ngữ cảnh của agent độ lớn để chứa tất cả message, những thông tin liên quan dương nhớ bộ chìm đi khi cuộc hội thoại dài ra. </p><p>Bạn sẽ giải quyết vấn đề này như thế nào?</p>",
+        "q": "<p>Tác nhân gọi công cụ 10–15 lần cho mỗi tác vụ và đôi khi quên kết quả của các bước đầu. Cửa sổ ngữ cảnh đủ lớn nhưng thông tin quan trọng bị chìm trong lịch sử ngày càng dài. Bạn nên xử lý thế nào?</p>",
         "o": [
-          "<p>Chuyển sang một agentic framework khác quảng cáo việc quản lý cửa sổ ngữ cảnh tự động như một tính năng tích hợp sẵn.</p>",
-          "<p>Áp dụng một mẫu quản lý context tóm tắt hoặc loại bỏ (prune) các output tool cũ hơn trong khi vẫn giữ nguyên trạng thái tác vụ đang hoạt động.</p>",
-          "<p>Giảm số lượng lệnh gọi tool cho mỗi tác vụ bằng cách kết hợp nhiều tool hiện có thành các tool đa năng lớn hơn.</p>",
-          "<p>Tầng cửa sổ ngữ cảnh hơn nữa độ tắt cờ output tool từ mỗi bước trước đó được giữ đầy đủ chi tiết trong suốt tác vụ.</p>"
+          "<p>Chuyển sang agent framework khác có quảng bá tính năng quản lý ngữ cảnh tự động.</p>",
+          "<p>Gộp nhiều công cụ nhỏ thành vài công cụ đa năng lớn để giảm số lượt gọi.</p>",
+          "<p>Tăng cửa sổ ngữ cảnh để luôn giữ nguyên toàn bộ kết quả công cụ ở mọi bước.</p>",
+          "<p>Tóm tắt hoặc lược bỏ kết quả công cụ cũ, đồng thời giữ nguyên trạng thái và dữ kiện đang cần cho tác vụ.</p>"
         ]
       },
       "topic": "context"
@@ -2503,15 +2503,15 @@
       "a": [
         "B"
       ],
-      "e": "LLM sinh tầng token theo xác suất, nên việc lặp lại hay diễn đạt lại prompt là đặc tính của quá trình sinh, không phải bug khi build request.",
+      "e": "LLM sinh token theo phân phối xác suất, nên có thể lặp lại hoặc diễn đạt lại prompt khác nhau giữa các lần chạy. Chỉ riêng hiện tượng này chưa chứng minh lỗi xây dựng request.",
       "m": 1,
       "v": {
-        "q": "<p>Một đồng nghiệp hỏi tại sao ứng dụng Claude của bạn đôi khi tạo ra phản hồi lặp lại nguyên văn nội dung prompt, và đôi khi lỗi tạo ra phản hồi diễn đạt lại nội dung prompt. </p><p>Hệ nghi ngờ có lỗi trong việc xây dựng request của ứng dụng. </p><p>Bạn sẽ phản hồi như thế nào?</p>",
+        "q": "<p>Một đồng nghiệp thắc mắc vì sao Claude đôi khi lặp nguyên văn prompt, đôi khi diễn đạt lại nội dung, và nghi ứng dụng xây dựng request sai. Bạn nên giải thích thế nào?</p>",
         "o": [
-          "<p>Xác nhận rằng sự biến thiên là một lỗi trong việc xây dựng request của ứng dụng và bắt đầu điều tra phần nào của ứng dụng đang tạo ra nội dung prompt không nhất quán.</p>",
-          "<p>Nói với đồng nghiệp rằng sự biến thiên là do ứng dụng gợi hai prompt khác nhau ở các lần chạy khác nhau và đề xuất một thay đổi mã độ ghim system prompt vào một phiên bản duy nhất.</p>",
-          "<p>Nói với đồng nghiệp rằng sự biến thiên phụ thuộc vào model Claude nào phục vụ request, và khuyến nghị ghim ứng dụng vào một phiên bản model duy nhất để hành vi output nhất quán.</p>",
-          "<p>Giải thích rỗng LLM tạo output tầng token một, và sự biến thiên trong cách nội dung prompt xuất hiện trong output là đặc tính của quá trình sinh, không phải lại trong việc xây dựng request.</p>"
+          "<p>Xác nhận đó là lỗi xây dựng request và bắt đầu điều tra.</p>",
+          "<p>Cho rằng ứng dụng đã gửi hai prompt khác nhau ở các lần chạy.</p>",
+          "<p>Giải thích rằng sự khác biệt do các mô hình Claude khác nhau và khuyên ghim phiên bản.</p>",
+          "<p>Giải thích rằng LLM sinh đầu ra theo từng token, nên biến thiên trong cách thể hiện prompt có thể là đặc tính của quá trình sinh, không nhất thiết do lỗi request.</p>"
         ]
       },
       "topic": "prompt"
@@ -2540,15 +2540,15 @@
       "a": [
         "C"
       ],
-      "e": "Cô lập context bằng subagent hoặc multi-step quy trình: mỗi bước chỉ thấy đúng phản context mình cần.",
+      "e": "Context isolation giới hạn mỗi bước hoặc tác nhân phụ trong đúng phần ngữ cảnh cần xử lý. Điều này giảm nhiễu và tránh làm lộ thông tin không liên quan.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang thiết kế một quy trình Claude nhiều bước trong đó một số bước phải suy luận mà không nhìn thấy toàn bộ lịch sử hội thoại trước đó. </p><p>Nhóm muốn giữ context cụ thể được cô lập cho các bước cụ thể. </p><p>Kỹ thuật context engineering mà bạn sẽ dùng là...</p>",
+        "q": "<p>Bạn thiết kế quy trình Claude nhiều bước, trong đó một số bước không được xem toàn bộ lịch sử trước đó. Nhóm muốn chỉ đưa ngữ cảnh phù hợp vào từng bước. Nên sử dụng kỹ thuật context engineering nào?</p>",
         "o": [
-          "<p>Dùng một prompt toàn cục duy nhất áp dụng cho mỗi bước trong quy trình bất kỳ mỗi bước đang suy luận về điều gì trong quá trình chạy.</p>",
-          "<p>Cô lập context (context isolation) thông qua subagent hoặc các agentic quy trình nhiều bước, giới hạn context của mỗi bước chỉ ở những gì bước đó cần.</p>",
-          "<p>Bổ sung context bằng tất cả nội dung có sẵn ở mỗi bước để mỗi bước có quyền truy cập toàn bộ lịch sử trước đó của quy trình trong quá trình suy luận.</p>",
-          "<p>Nhúng toàn bộ lịch sử trước đó vào mỗi bước bất kỳ bước đó có cần lịch sử trước đó cho việc suy luận của mình hay không.</p>"
+          "<p>Dùng một prompt toàn cục cho mọi bước, bất kể nội dung cần suy luận.</p>",
+          "<p>Cô lập ngữ cảnh bằng các tác nhân phụ hoặc quy trình nhiều bước, chỉ cấp thông tin cần thiết cho từng bước.</p>",
+          "<p>Đưa mọi dữ liệu có sẵn vào ngữ cảnh ở từng bước.</p>",
+          "<p>Luôn nhúng toàn bộ lịch sử vào từng bước dù không cần.</p>"
         ]
       },
       "topic": "context"
@@ -2577,15 +2577,15 @@
       "a": [
         "C"
       ],
-      "e": "Model đọc mô tả công cụ để quyết định khi nào gọi tool. Description giúp phân biệt các trường hợp mà tên tool không đủ rõ.",
+      "e": "Tên công cụ không thể hiện đầy đủ điều kiện sử dụng, tham số và giới hạn. Mô tả trong định nghĩa công cụ là tín hiệu quan trọng để Claude quyết định gọi đúng công cụ.",
       "m": 1,
       "v": {
-        "q": "<p>Một đồng nghiệp hỏi bạn tại sao các tool của Claude agent của bạn bao gồm mô tả chi tiết trong định nghĩa tool, ngay cả khi tên tool đã mang tính mô tả. </p><p>Đồng nghiệp đề xuất xóa các mô tả để đơn giản hóa định nghĩa tool. </p><p>Bạn sẽ phản hồi như thế nào?</p>",
+        "q": "<p>Một đồng nghiệp muốn bỏ mô tả chi tiết trong định nghĩa công cụ vì tên công cụ đã khá rõ. Bạn sẽ giải thích thế nào về vai trò của phần mô tả?</p>",
         "o": [
-          "<p>Đồng ý với đồng nghiệp vì tên tool là độ để model chọn đúng tool ở mỗi request mà agent xử lý.</p>",
-          "<p>Để xuất thay các mô tả bằng các ví dụ lệnh gọi nhúng trong định nghĩa tool, coi các ví dụ lệnh gọi là sự thay thế hoàn chỉnh cho mô tả bảng vấn xuôi.</p>",
-          "<p>Giải thích rỗng model dùng mô tả tool để quyết định khi nào gọi tool, và các mô tả giúp phân biệt rõ ràng trong những trường hợp tên tool không đủ.</p>",
-          "<p>Để xuất chuyển các mô tả ra khỏi định nghĩa tool và đưa vào một tập tài liệu riêng mà nhóm duy trì để định nghĩa tool ngắn gọn và các mô tả vẫn có sẵn.</p>"
+          "<p>Đồng ý, vì tên công cụ luôn đủ để mô hình chọn đúng.</p>",
+          "<p>Chỉ thay mô tả bằng ví dụ lời gọi, coi ví dụ là đầy đủ.</p>",
+          "<p>Mô hình dựa vào mô tả để biết khi nào nên gọi công cụ và phân biệt các công cụ có tên hoặc chức năng gần giống.</p>",
+          "<p>Chuyển mô tả sang tài liệu riêng, không để trong định nghĩa công cụ.</p>"
         ]
       },
       "topic": "tools"
@@ -2614,15 +2614,15 @@
       "a": [
         "C"
       ],
-      "e": "Phân loại lại theo mức độ (tác động, khả năng tự phục hồi) rồi route đúng kênh: lỗi nghiêm trọng thì page on-call, lỗi nhỏ thì log để xem sau.",
+      "e": "Phân loại lỗi theo mức ảnh hưởng và khả năng tự phục hồi. Chỉ lỗi nghiêm trọng cần kích hoạt cảnh báo trực ca; lỗi còn lại vẫn được ghi log để điều tra.",
       "m": 1,
       "v": {
-        "q": "<p>Cách xử lý lỗi của ứng dụng Claude của bạn hiện ghi log mỗi lỗi API với cùng một mức độ nghiêm trọng. </p><p>Nhóm muốn phân biệt giữa các lỗi cần gọi (page) kỹ sư trục (on-call) và các lỗi chỉ cần ghi log để xem xét sau. </p><p>Bạn sẽ cấu trúc việc xử lý lỗi như thế nào?</p>",
+        "q": "<p>Ứng dụng Claude đang ghi mọi lỗi API với cùng mức nghiêm trọng. Nhóm muốn phân biệt sự cố phải gọi kỹ sư trực ca ngay và lỗi chỉ cần lưu để xem sau. Nên thiết kế xử lý lỗi thế nào?</p>",
         "o": [
-          "<p>Page cho mỗi lại, với lý do paging đảm bảo nhóm không bị sót lỗi nào trong quá trình vận hành bình thường trong suốt vòng đời của ứng dụng.</p>",
-          "<p>Phân loại lại theo mức độ nghiêm trọng dựa trên tác động và khả năng phục hồi, sau đó định tuyến mới danh mục đơn kênh phù hợp để paging hoặc ghi log.</p>",
-          "<p>Tắt ghi log cho mỗi lại không kích hoạt paging, coi các lỗi không paging là không đáng ghi lại để xem xét sau.</p>",
-          "<p>Ghi log mỗi lỗi với cùng một mức độ nghiêm trọng, với lý do việc phân biệt mức độ nghiêm trọng thêm phục tập mà không đem lỗi lợi ích trong hầu hết các thiết lập ứng dụng theo thời gian.</p>"
+          "<p>Gửi cảnh báo trực ca cho mọi lỗi để không bỏ sót.</p>",
+          "<p>Phân loại lỗi theo tác động và khả năng phục hồi, sau đó chuyển từng nhóm đến kênh xử lý hoặc cảnh báo phù hợp.</p>",
+          "<p>Tắt log cho những lỗi không cần gọi trực ca.</p>",
+          "<p>Tiếp tục ghi mọi lỗi cùng mức nghiêm trọng để tránh phức tạp.</p>"
         ]
       },
       "topic": "api"
@@ -2651,15 +2651,15 @@
       "a": [
         "D"
       ],
-      "e": "Nằm rõ rate limit, thiết kế để không vượt giả cao điểm, và dùng exponential backoff khi bị 429.",
+      "e": "Trước hết phải nắm các giới hạn API liên quan và dự trù lưu lượng cao điểm, tránh vượt ngưỡng. Khi gặp lỗi giới hạn tốc độ có thể thử lại với exponential backoff.",
       "m": 1,
       "v": {
-        "q": "<p>Ứng dụng Claude của bạn thực hiện các lệnh gọi API với số lượng lớn trong giờ làm việc và rất ít lệnh gọi vào ban đêm. </p><p>Nhóm lo ngại về việc duy trì trong giới hạn rate limit trong giờ cao điểm và muốn hiệu cách Claude API thực thi các giới hạn đó. </p><p>Bạn số tiền hành như thế nào?</p>",
+        "q": "<p>Ứng dụng Claude gọi API rất nhiều trong giờ làm việc và rất ít vào ban đêm. Nhóm muốn tránh vượt rate limit vào giờ cao điểm và hiểu cách API áp dụng giới hạn. Bạn nên làm gì?</p>",
         "o": [
-          "<p>Xem xét các mẫu request giả cao điểm trong log ứng dụng của bạn và làm mượt lưu lượng bằng cách phân bổ các request đầu hạn trong khung giả làm việc.</p>",
-          "<p>Xác định các rate limit, thiết kế ứng dụng để nằm trong các giới hạn đó vào giữ cao điểm, và dùng exponential backoff khi chấm giới hạn.</p>",
-          "<p>Đánh giá kích thước payload trung bình của các lệnh gọi API hiện tại và hợp nhất các request khi có thể để giảm tổng số lệnh gọi trong giờ cao điểm.</p>",
-          "<p>Xem lại tài liệu API về các endpoint streaming và đánh giá xem việc chuyển các lệnh gọi giả cao điểm sang streaming có giảm mức độ chịu tác động của việc thực thi rate limit hay không.</p>"
+          "<p>Xem log giờ cao điểm và phân bổ lại yêu cầu để lưu lượng đồng đều hơn.</p>",
+          "<p>Xác định các loại rate limit, thiết kế lưu lượng cao điểm nằm trong giới hạn và sử dụng exponential backoff khi gặp lỗi giới hạn.</p>",
+          "<p>Đo kích thước payload trung bình và gộp request khi có thể.</p>",
+          "<p>Nghiên cứu API streaming rồi chuyển tất cả yêu cầu giờ cao điểm sang streaming.</p>"
         ]
       },
       "topic": "api"
@@ -2688,15 +2688,15 @@
       "a": [
         "C"
       ],
-      "e": "Năng lực dùng chung cho nhiều team thì đóng gói thành Skill hoặc MCP server, vì cả hai được thiết kế để tái sử dụng độc lập.",
+      "e": "Skill và MCP server là hai cơ chế thích hợp để đóng gói năng lực dùng lại giữa nhiều nhóm, tránh sao chép riêng từng nơi.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang mở rộng một Claude agent bằng một khả năng cần được tái sử dụng giữa nhiều nhóm trong tổ chức, với mỗi nhóm có thể gửi và sử dụng nó một cách độc lập. </p><p>Bạn sẽ xây dựng khả năng đó như thế nào?</p>",
+        "q": "<p>Bạn muốn bổ sung một năng lực cho tác nhân Claude để nhiều nhóm trong tổ chức có thể tái sử dụng và gọi độc lập. Nên đóng gói năng lực ấy thế nào?</p>",
         "o": [
-          "<p>Như một wrapper bao quanh một built-in tool hiện có độ bổ sung chức năng còn thiếu, với lý do các built-in tool đáp ứng mẫu tái sử dụng khi được mở rộng cẩn thận.</p>",
-          "<p>Như một custom tool được nhúng chỉ trong agent của nhóm này, các nhóm khác có thể sao chép phần triển khai vào agent của hệ khi cần khả năng đó.</p>",
-          "<p>Như một Skill hoặc MCP server vì cả hai đều được thiết kế riêng cho việc tái sử dụng giữa các nhóm, do từng nhóm sử dụng một cách độc lập.</p>",
-          "<p>Như một thư viện dùng chung mà mỗi nhóm import vào mã ứng dụng Claude của mình, với mỗi nhóm tự chịu trách nhiệm cập nhật thư viện trong phần tích hợp của mình.</p>"
+          "<p>Viết wrapper quanh công cụ tích hợp sẵn để bổ sung chức năng.</p>",
+          "<p>Nhúng custom tool chỉ trong tác nhân của nhóm hiện tại, các nhóm khác tự sao chép mã.</p>",
+          "<p>Đóng gói thành Skill hoặc MCP server để các nhóm có thể sử dụng lại độc lập.</p>",
+          "<p>Viết thư viện chung rồi yêu cầu từng nhóm tự tích hợp và bảo trì trong ứng dụng riêng.</p>"
         ]
       },
       "topic": "tools"
@@ -2725,15 +2725,15 @@
       "a": [
         "D"
       ],
-      "e": "Server chạy local cùng phiên Claude Code thì dùng STDIO: đơn giản, không cần cấu hình mạng. (để ghi \"ACP\" những ý là MCP.)",
+      "e": "Với server chạy cục bộ cùng phiên Claude Code, STDIO đơn giản và tránh cấu hình mạng không cần thiết. Lưu ý: câu gốc dùng thuật ngữ “ACP server”, còn một lựa chọn đề cập MCP; bản dịch giữ nguyên sự khác biệt này.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang lựa chọn giữa giao tiếp dựa trên STDIO và giao tiếp dựa trên HTTP cho một ACP server. </p><p>Server sẽ được gửi bởi một phiên Claude Code chạy cục bộ. </p><p>Bạn sẽ dùng mẫu giao tiếp nào?</p>",
+        "q": "<p>Bạn chọn giữa STDIO và HTTP để giao tiếp với một ACP server được gọi từ phiên Claude Code chạy trên máy cục bộ. Phương thức nào phù hợp nhất?</p>",
         "o": [
-          "<p>HTTP polling đối với MCP server, coi HTTP là sự thay thế cho các mẫu giao tiếp MCP tiêu chuẩn.</p>",
-          "<p>Đồng thời cả STDIO và HTTP để dự phòng, với việc nhóm chạy hai mẫu giao tiếp cùng lúc trên các phiên Claude Code.</p>",
-          "<p>STDIO vì STDIO phù hợp với giao tiếp tiến trình cục bộ và tránh việc thiết lập mạng không cần thiết.</p>",
-          "<p>HTTP, với lý do HTTP được ưu tiên hơn STDIO trong mỗi bối cảnh mà ứng dụng có thể gặp phải trong văn hành bình thường.</p>"
+          "<p>Dùng HTTP polling đến MCP server thay cho các mẫu giao tiếp chuẩn.</p>",
+          "<p>Chạy đồng thời STDIO và HTTP để dự phòng.</p>",
+          "<p>Dùng STDIO vì phù hợp giao tiếp giữa các tiến trình cục bộ và không cần cấu hình mạng.</p>",
+          "<p>Luôn dùng HTTP vì HTTP tốt hơn STDIO trong mọi tình huống.</p>"
         ]
       },
       "topic": "tools"
@@ -2762,15 +2762,15 @@
       "a": [
         "A"
       ],
-      "e": "Mỗi môi trường một khóa riêng để nếu một môi trường bị lộ khóa thì các môi trường khác không bị ảnh hưởng (blast radius như).",
+      "e": "Mỗi môi trường cần khóa riêng để giới hạn phạm vi ảnh hưởng nếu một khóa bị lộ hoặc bị thu hồi.",
       "m": 1,
       "v": {
-        "q": "<p>Các API key của ứng dụng Claude của bạn được lưu trong một secrets manager. </p><p>Nhóm đang tranh luận về việc có nên dùng cùng một key cho các môi trường development, staging và production hay không. </p><p>Bạn sẽ xử lý các key giữa các môi trường như thế nào?</p>",
+        "q": "<p>API key của ứng dụng Claude đã nằm trong secret manager. Nhóm đang cân nhắc dùng chung một key cho development, staging và production. Bạn nên quản lý khóa thế nào?</p>",
         "o": [
-          "<p>Xoay vòng (rotate) cùng một key giữa các môi trường theo các khoảng thời gian ngẫu nhiên, với lý do việc xoay vòng ngẫu nhiên tạo ra sự cô lập giữa các môi trường mà không cần các key riêng biệt.</p>",
-          "<p>Dùng một key development duy nhất ở mỗi nối, với lý do các key production quá rủi ro độ triển khai trên ba môi trường của ứng dụng trong văn hành bình thường.</p>",
-          "<p>Dùng các key riêng biệt cho mỗi môi trường để việc bị xâm phạm ở một môi trường không ảnh hưởng đến các môi trường khác trong văn hành bình thường suất vòng đời của ứng dụng.</p>",
-          "<p>Dùng cùng một key cho tất cả môi trường cho đơn giản và coi việc lan truyền của bất kỳ sự xâm phạm nào là một đánh đổi văn hành đã biết trong cách quản lý key của nhóm.</p>"
+          "<p>Xoay vòng cùng một khóa giữa các môi trường theo thời điểm ngẫu nhiên.</p>",
+          "<p>Dùng duy nhất khóa development cho mọi môi trường.</p>",
+          "<p>Dùng khóa riêng cho từng môi trường để khi một nơi bị lộ, những môi trường khác không bị ảnh hưởng.</p>",
+          "<p>Dùng chung một khóa cho đơn giản và chấp nhận rủi ro lan truyền.</p>"
         ]
       },
       "topic": "risk"
@@ -2799,15 +2799,15 @@
       "a": [
         "C"
       ],
-      "e": "LLM mặc định không deterministic do sampling. Giải thích cho bên liên quan rỗng ứng dụng xử lý việc này bằng validation, retry hoặc chỉnh temperature.",
+      "e": "LLM có thể sinh kết quả khác nhau do cơ chế lấy mẫu. Nên giải thích đặc tính này và cách ứng dụng kiểm soát chất lượng bằng đánh giá, xác thực và tham số sinh phù hợp.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang giải thích cho một bên liên quan (bên liên quan) tại sao chạy cùng một prompt Claude hai lần có thể cho kết quả hơi khác nhau. </p><p>Stakeholder lo ngại điều này có nghĩa là ứng dụng bộ hỏng. </p><p>Bạn sẽ giải quyết mới lo ngại của bên liên quan như thế nào?</p>",
+        "q": "<p>Bạn giải thích với một bên liên quan vì sao chạy hai lần cùng prompt Claude có thể cho kết quả hơi khác nhau. Họ lo ứng dụng bị lỗi. Bạn nên trả lời thế nào?</p>",
         "o": [
-          "<p>Nói với bên liên quan rằng sự biến thiên là một lỗi mà nhóm sẽ sửa trong bản phát hành tiếp theo của ứng dụng, sau đó tạo một work ticket để sửa lỗi.</p>",
-          "<p>Giải thích rỗng LLM mặc định là không tất định (non-deterministic) do sampling, và mô tả cách ứng dụng xử lý điều này thông qua validation, retry hoặc điều chỉnh temperature.</p>",
-          "<p>Nói với bên liên quan rằng sự biến thiên là do Claude được Anthropic cập nhật liên tục, và việc chuyển sang một model snapshot cố định sẽ loại bỏ hoàn toàn sự biến thiên.</p>",
-          "<p>Nói với bên liên quan rằng sự biến thiên đến từ để trả mạng và việc chuyển sang kết nối mạng nhanh hơn sẽ cho kết quả nhất quán hơn giữa các lần chạy.</p>"
+          "<p>Khẳng định đó là lỗi và hứa sửa ở bản phát hành tới.</p>",
+          "<p>Giải thích rằng LLM thường có tính không tất định do cách lấy mẫu; trình bày các biện pháp ứng dụng dùng để kiểm soát biến thiên.</p>",
+          "<p>Cho rằng sự khác nhau chỉ vì Anthropic liên tục cập nhật Claude, nên ghim phiên bản là đủ.</p>",
+          "<p>Cho rằng độ trễ mạng gây ra khác biệt và đề xuất đổi mạng nhanh hơn.</p>"
         ]
       },
       "topic": "quality"
@@ -2836,15 +2836,15 @@
       "a": [
         "A"
       ],
-      "e": "\"Tốt nhất\" phụ thuộc mục tiêu. Hỏi lại target về chất lượng, latency và chi phí, rồi chọn model có trade-off phù hợp nhất.",
+      "e": "Không có mô hình “tốt nhất” cho mọi tình huống. Cần xác định mức chất lượng, độ trễ và ngân sách mong đợi để lựa chọn dựa trên sự đánh đổi thực tế.",
       "m": 1,
       "v": {
-        "q": "<p>Nhóm sản phẩm như bạn chọn một model Claude cho một tính năng mới. </p><p>Nhóm đã cung cấp các yêu cầu chức năng nhưng chưa chỉ định mục tiêu về hiệu năng, chi phí hoặc chất lượng. </p><p>Product manager nói: \"Hãy dùng model nào cho chúng tôi kết quả tốt nhất.\" </p><p>Bạn sẽ phản hồi như thế nào?</p>",
+        "q": "<p>Nhóm sản phẩm yêu cầu chọn mô hình Claude cho tính năng mới, nhưng chỉ cung cấp yêu cầu chức năng, chưa có mục tiêu về chất lượng, tốc độ hoặc chi phí. Quản lý sản phẩm nói: “Cứ dùng mô hình nào cho kết quả tốt nhất.” Bạn nên phản hồi thế nào?</p>",
         "o": [
-          "<p>Chạy mỗi model Claude trên một mẫu đại diện và chọn model nào đặt điểm cao nhất trên một benchmark chung.</p>",
-          "<p>Chọn một model tạm trung và phát hành tính năng, vì các model tạm trung phù hợp với hầu hết các trường hợp sử dụng khi không có mục tiêu cụ thể.</p>",
-          "<p>Chọn model Claude lớn nhất, có năng lực cao nhất, với lý do \"kết quả tốt nhất\" nhiều khả năng có nghĩa là chất lượng cao nhất.</p>",
-          "<p>Yêu cầu nhóm sản phẩm chỉ định các mục tiêu về chất lượng, độ trễ (latency) và chi phí, sau đó chọn model có các đánh đổi phù hợp nhất với các mục tiêu đó.</p>"
+          "<p>Chạy tất cả mô hình trên một benchmark chung rồi chọn mô hình đạt điểm cao nhất.</p>",
+          "<p>Chọn mô hình tầm trung và phát hành vì thường phù hợp phần lớn tác vụ.</p>",
+          "<p>Chọn mô hình lớn nhất vì “tốt nhất” đồng nghĩa với năng lực mạnh nhất.</p>",
+          "<p>Yêu cầu nhóm xác định mục tiêu chất lượng, độ trễ và chi phí, rồi chọn mô hình có sự đánh đổi phù hợp.</p>"
         ]
       },
       "topic": "quality"
