@@ -394,15 +394,15 @@
       "a": [
         "B"
       ],
-      "e": "Debug hệ thống lệ, chưa biết lỗi giải thì cần adaptive planning: điều chỉnh kế hoạch theo những gì phát hiện được.",
+      "e": "Khi chưa biết nguyên nhân hoặc cách khắc phục ngay từ đầu, tác nhân cần lập kế hoạch thích ứng: điều chỉnh bước tiếp theo dựa trên bằng chứng vừa thu được.",
       "m": 1,
       "v": {
-        "q": "<p>Một agent debug điều tra các hệ thống xa lệ mà lại giải đúng chưa được biết ngay từ đầu. </p><p>Nó nên dùng chiến lược nào?</p>",
+        "q": "<p>Một tác nhân gỡ lỗi đang khám phá một hệ thống chưa quen thuộc và chưa biết trước giải pháp đúng. Nên áp dụng chiến lược nào?</p>",
         "o": [
-          "<p>Bỏ qua các phát hiện trung gian</p>",
-          "<p>Tuân theo một quy trình hoàn toàn cố định</p>",
-          "<p>Sử dụng lập kế hoạch thích ứng dựa trên các khám phá</p>",
-          "<p>Luôn bắt đầu lại từ đầu</p>"
+          "<p>Bỏ qua các phát hiện trung gian.</p>",
+          "<p>Tuân thủ hoàn toàn một quy trình cố định.</p>",
+          "<p>Lập kế hoạch linh hoạt và điều chỉnh theo những gì phát hiện được.</p>",
+          "<p>Luôn bắt đầu điều tra lại từ đầu.</p>"
         ]
       },
       "topic": "agent"
@@ -431,15 +431,15 @@
       "a": [
         "D"
       ],
-      "e": "Mới customization có lý do riêng, còn SDK thì đã thay đổi. đánh giá từng cái: giữ cái còn cần, bỏ cái SDK đã hỗ trợ sẵn. Không giữ hạt hay bị hết một cách máy móc.",
+      "e": "Không nên giữ hoặc xóa tất cả một cách máy móc. Cần rà soát từng tùy biến: giữ những phần vẫn cần thiết và bỏ những phần SDK hiện đã hỗ trợ tốt.",
       "m": 1,
       "v": {
-        "q": "<p>Agent Claude của nhóm bạn đã tích lũy nhiều tùy biến vượt qua các mặc định của SDK, bao gồm quản lý history tùy chỉnh, logic retry và xử lý lỗi. </p><p>Một thành viên mới đề xuất hoàn nguyên tất cả các tùy biến để dự bảo trì codebase hạn. </p><p>Tech lead không đồng ý và nói rằng mọi tùy biến đều được thêm vào có lý do. </p><p>Bạn sẽ tư vấn cho nhóm như thế nào?</p>",
+        "q": "<p>Tác nhân Claude của nhóm đã được tùy biến nhiều phần khác với hành vi mặc định của SDK, gồm quản lý lịch sử, cơ chế thử lại và xử lý lỗi. Một thành viên mới đề xuất bỏ hết các tùy biến để dễ bảo trì. Trưởng nhóm kỹ thuật phản đối vì mỗi tùy biến đều từng có lý do. Bạn nên tư vấn thế nào?</p>",
         "o": [
-          "<p>Chuyển agent ra khỏi SDK và xây dựng lại bằng một vòng lặp tùy chỉnh.</p>",
-          "<p>Hoàn nguyên tất cả tùy biến về mặc định của SDK để chuẩn hóa codebase.</p>",
-          "<p>Quyết định riêng cho từng tùy biến dựa trên lý do ban đầu của nó và các khả năng hiện tại của SDK.</p>",
-          "<p>Giữ lại tất cả tùy biến, tin rỗng lý lệ ban đầu của tech lead vẫn còn đúng.</p>"
+          "<p>Ngừng dùng SDK và xây dựng lại tác nhân bằng vòng lặp tùy chỉnh.</p>",
+          "<p>Bỏ toàn bộ tùy biến để trở về hành vi mặc định của SDK.</p>",
+          "<p>Đánh giá từng tùy biến dựa trên lý do ban đầu và khả năng hiện tại của SDK.</p>",
+          "<p>Giữ tất cả tùy biến vì tin rằng đánh giá trước đây của trưởng nhóm vẫn còn đúng.</p>"
         ]
       },
       "topic": "agent"
@@ -468,15 +468,15 @@
       "a": [
         "B"
       ],
-      "e": "Module auth đa tenant, có audit log, invalidation không nhất quán là vùng rủi ro cao. Phải hỏi rõ invariant, quy tắc invalidation, yêu cầu audit và failure mode trước khi sửa code.",
+      "e": "Cache trong mô-đun phân quyền đa tenant có thể gây rò rỉ quyền hoặc trả kết quả lỗi thời. Cần làm rõ bất biến, thời điểm vô hiệu hóa, yêu cầu audit và cách xử lý lỗi trước khi sửa mã.",
       "m": 1,
       "v": {
-        "q": "<p>Một kỹ sư yêu cầu Claude thêm một lớp caching quanh một module authorization legacy. </p><p>Hệ thống có nhiều tenant, audit logging và hành vi invalidation không nhất quán. </p><p>Điều gì nên xảy ra trước khi sửa file?</p>",
+        "q": "<p>Một kỹ sư yêu cầu Claude bổ sung lớp cache cho mô-đun phân quyền cũ. Hệ thống phục vụ nhiều tenant, có ghi nhật ký kiểm toán và cơ chế vô hiệu hóa cache thiếu nhất quán. Trước khi sửa tệp, Claude nên làm gì?</p>",
         "o": [
-          "<p>Cung cấp các mục tiêu hiệu năng và để Claude tự suy ra các quy tắc.</p>",
-          "<p>Sao chép các pattern caching từ một module khác.</p>",
-          "<p>Đặt các câu hỏi có trọng tâm về invariant, invalidation, yêu cầu audit và các chỉ để lại.</p>",
-          "<p>Triển khai một cache wrapper đơn giản và lặp lại cải thiện sau.</p>"
+          "<p>Đưa ra mục tiêu hiệu năng rồi để Claude tự suy ra các quy tắc.</p>",
+          "<p>Sao chép cách dùng cache từ một mô-đun khác.</p>",
+          "<p>Hỏi rõ những bất biến cần giữ, quy tắc vô hiệu hóa cache, yêu cầu kiểm toán và các tình huống lỗi.</p>",
+          "<p>Triển khai nhanh một lớp bao cache đơn giản rồi cải tiến sau.</p>"
         ]
       },
       "topic": "prompt"
@@ -505,15 +505,15 @@
       "a": [
         "B"
       ],
-      "e": "Subagent không tự chia sẻ context với nhau. Findings cần thiết phải được coordinator chuyển tiếp trong prompt của agent tiếp theo.",
+      "e": "Các tác nhân phụ không tự động chia sẻ ngữ cảnh. Tác nhân điều phối phải chuyển những kết quả liên quan vào đầu vào của tác nhân tiếp theo.",
       "m": 1,
       "v": {
-        "q": "<p>Một lập trình viên tạo một quy trình multi-agent trong đó một agent nghiên cứu tài liệu và một agent khác viết các kế hoạch triển khai. </p><p>Luồng thông tin giữa các agent nên được xử lý như thế nào?</p>",
+        "q": "<p>Một lập trình viên thiết kế quy trình đa tác nhân: một tác nhân nghiên cứu tài liệu, tác nhân khác viết kế hoạch triển khai. Nên chuyển thông tin giữa các tác nhân như thế nào?</p>",
         "o": [
-          "<p>Giả định tất cả agent dùng chung ngữ cảnh hội thoại</p>",
-          "<p>Chuyển các phát hiện cần thiết thông qua coordinator</p>",
-          "<p>Cho phép mọi agent truy cập mới message trước đó</p>",
-          "<p>Loại bỏ vai trò coordinator</p>"
+          "<p>Giả định mọi tác nhân đều chia sẻ cùng ngữ cảnh hội thoại.</p>",
+          "<p>Để tác nhân điều phối chuyển các phát hiện cần thiết cho tác nhân tiếp theo.</p>",
+          "<p>Cho mỗi tác nhân truy cập toàn bộ tin nhắn trước đó.</p>",
+          "<p>Loại bỏ vai trò tác nhân điều phối.</p>"
         ]
       },
       "topic": "agent"
@@ -542,15 +542,15 @@
       "a": [
         "C"
       ],
-      "e": "Lại không được che (trả kết quả rỗng như thế thành công) cộng không được làm sắp cố pipeline. Subagent báo lỗi có cấu trúc: section nào, loại lại, dữ liệu một phần đã lấy được và gợi ý khôi phục.",
+      "e": "Không được che giấu thất bại bằng kết quả rỗng hay hủy toàn bộ công việc khi chưa cần thiết. Hãy trả thông tin lỗi có cấu trúc, kèm dữ liệu một phần và hướng phục hồi.",
       "m": 1,
       "v": {
-        "q": "<p>Một hệ thống structured extraction chia tài liệu thành các phần và gửi chúng đến các extraction subagent. </p><p>Một subagent tạm thời mất quyền truy cập vào hệ thống nguồn của nó. </p><p>Cách triển khai hiện tại hoặc trả về một kết quả trích xuất rỗng nhưng được coi là thành công, hoặc hủy toàn bộ tài liệu. </p><p>Bạn nên thay đổi điều gì?</p>",
+        "q": "<p>Hệ thống trích xuất dữ liệu có cấu trúc chia tài liệu thành nhiều phần và giao cho các tác nhân phụ xử lý. Một tác nhân tạm thời mất quyền truy cập hệ thống nguồn. Cách triển khai hiện tại hoặc trả về kết quả rỗng nhưng báo thành công, hoặc hủy toàn bộ tài liệu. Nên thay đổi điều gì?</p>",
         "o": [
-          "<p>Retry phần bị lỗi cho đến khi thành công trước khi trả về bất cụ thể gì.</p>",
-          "<p>Kết thúc toàn bộ quy trình tài liệu bắt cả khi nào có subagent nào bị lỗi.</p>",
-          "<p>Yêu cầu các subagent báo cáo các lỗi chưa giải quyết kèm phần đã thử, loại lại, các field một phần và các đề xuất khôi phục.</p>",
-          "<p>Trả về một đối tượng trích xuất rộng cho phần bị lỗi.</p>"
+          "<p>Thử lại phần thất bại cho đến khi thành công mới trả bất kỳ kết quả nào.</p>",
+          "<p>Hủy toàn bộ quy trình ngay khi có một tác nhân phụ thất bại.</p>",
+          "<p>Yêu cầu tác nhân phụ báo cáo lỗi chưa khắc phục, phần đã xử lý, loại lỗi, dữ liệu trích xuất được và gợi ý phục hồi.</p>",
+          "<p>Trả về đối tượng trích xuất rỗng cho phần thất bại.</p>"
         ]
       },
       "topic": "agent"
@@ -579,15 +579,15 @@
       "a": [
         "D"
       ],
-      "e": "Dùng gate có cấu trúc: chỉ chạy bước tạo báo cáo khi synthesis trả status thành công kèm citation manifest. Dò chỉ \"complete\" trong text là không tin cậy được.",
+      "e": "Hãy dùng điều kiện kiểm soát rõ ràng: chỉ tạo báo cáo khi bước tổng hợp hoàn tất thành công và trả về danh mục trích dẫn có cấu trúc. Dò từ “complete” trong văn bản không đủ tin cậy.",
       "m": 1,
       "v": {
-        "q": "<p>Một hệ thống nghiên cứu multi-agent thănh thoảng tạo báo cáo trong khi tác nhân tổng hợp vẫn chưa hoàn tất, dẫn đến các trích dẫn bị thiếu hoặc không thể xác minh. </p><p>Thay đổi nào ngắn các báo cáo không hợp lệ?</p>",
+        "q": "<p>Một hệ thống nghiên cứu đa tác nhân đôi khi tạo báo cáo khi tác nhân tổng hợp chưa hoàn tất, khiến trích dẫn bị thiếu hoặc không thể xác minh. Thay đổi nào ngăn được các báo cáo không hợp lệ?</p>",
         "o": [
-          "<p>Chọn các task tạo báo cáo cho đến khi synthesis trả về một citation manifest có cấu trúc và trạng thái thành công.</p>",
-          "<p>Kiểm tra xem các message của synthesis có chứa các tự như “complete” hay không.</p>",
-          "<p>Yêu cầu report agent từ chối synthesis chưa hoàn tất.</p>",
-          "<p>Tạo báo cáo ngay lập tức và loại bỏ các trích dẫn không hợp lệ sau đó.</p>"
+          "<p>Chặn bước tạo báo cáo cho đến khi tác nhân tổng hợp trả về trạng thái thành công cùng danh mục trích dẫn có cấu trúc.</p>",
+          "<p>Kiểm tra xem tin nhắn của tác nhân tổng hợp có từ “complete” hay không.</p>",
+          "<p>Yêu cầu tác nhân viết báo cáo tự từ chối kết quả tổng hợp chưa hoàn tất.</p>",
+          "<p>Tạo báo cáo ngay rồi loại trích dẫn không hợp lệ sau.</p>"
         ]
       },
       "topic": "quality"
@@ -616,15 +616,15 @@
       "a": [
         "B"
       ],
-      "e": "Muốn bảo đảm bước đầu tiên thì ép bằng `tool_choice` chỉ định đúng tool metadata extraction cho request đầu. Prompt chỉ là gợi ý, còn `any` văn cho phép chọn tool khác.",
+      "e": "Muốn bảo đảm bước đầu tiên, hãy dùng `tool_choice` để chỉ định chính xác công cụ cần gọi. Prompt không bảo đảm được thứ tự, còn `any` vẫn cho phép chọn một công cụ khác.",
       "m": 1,
       "v": {
-        "q": "<p>Một trợ lý migration đôi khi bắt đầu phân tích dependency trước khi thu thập các phiên bản package manager và framework cần thiết. </p><p>Thay đổi nào đảm bảo đáng tin cậy nhất bước đầu tiên đúng?</p>",
+        "q": "<p>Trợ lý di chuyển hệ thống đôi khi phân tích dependency trước khi thu thập phiên bản framework và trình quản lý gói bắt buộc. Cách nào bảo đảm công cụ thu thập thông tin được gọi trước?</p>",
         "o": [
-          "<p>Tăng cường system prompt yêu cầu trích xuất metadata trước.</p>",
-          "<p>Phát hiện xem Claude có đề cập việc hoàn tất metadata bằng ngôn ngữ tự nhiên hay không.</p>",
-          "<p>Ép dùng tool trích xuất metadata bằng tool_choice cho request đầu tiên.</p>",
-          "<p>Đặt tool_choice thành any cho request đầu tiên.</p>"
+          "<p>Tăng cường system prompt để yêu cầu trích xuất metadata trước.</p>",
+          "<p>Kiểm tra xem Claude có nói rằng đã thu thập xong metadata hay không.</p>",
+          "<p>Ở yêu cầu đầu tiên, dùng `tool_choice` để chỉ định bắt buộc công cụ trích xuất metadata.</p>",
+          "<p>Đặt `tool_choice` thành `any` ở yêu cầu đầu tiên.</p>"
         ]
       },
       "topic": "tools"
@@ -653,15 +653,15 @@
       "a": [
         "B"
       ],
-      "e": "Tích hợp với hệ thống khác thì cần JSON có cấu trúc kèm validation.",
+      "e": "Dữ liệu chuyển cho hệ thống khác cần có cấu trúc ổn định và được xác thực theo schema, chẳng hạn JSON, thay vì văn bản tùy ý.",
       "m": 1,
       "v": {
-        "q": "<p>Một nhóm muốn các bản review pull request do Claude tạo ra tích hợp được với các hệ thống phát triển hiện có. </p><p>Nên chọn cách tiếp cận output nào?</p>",
+        "q": "<p>Một nhóm muốn tích hợp kết quả review pull request do Claude tạo ra vào các hệ thống phát triển hiện có. Nên chọn định dạng đầu ra nào?</p>",
         "o": [
-          "<p>Các comment không định dạng</p>",
-          "<p>Chỉ các giải thích markdown dài</p>",
-          "<p>Các phản hồi văn bản tự do</p>",
-          "<p>JSON có cấu trúc kèm các quy tắc xác thực</p>"
+          "<p>Bình luận không theo định dạng xác định.</p>",
+          "<p>Chỉ trả về phần giải thích dài bằng Markdown.</p>",
+          "<p>Trả lời bằng văn bản tự do.</p>",
+          "<p>JSON có cấu trúc kèm quy tắc xác thực.</p>"
         ]
       },
       "topic": "quality"
@@ -690,15 +690,15 @@
       "a": [
         "B"
       ],
-      "e": "Không đánh đổi mù quáng. Chỉnh prompt cho hợp với model mới, chạy eval lại, và chỉ nâng cấp khi hết lại format mà vẫn giữ được phản cải thiện về reasoning.",
+      "e": "Không thể chỉ so sánh 8% và 3% rồi nâng cấp. Trước hết cần điều chỉnh prompt cho mô hình mới và đánh giá lại trên tác vụ thực tế; chỉ nâng cấp khi khắc phục được lỗi định dạng mà vẫn giữ lợi ích suy luận.",
       "m": 1,
       "v": {
-        "q": "<p>Một bản phát hành model Claude mới bao gồm các cải tiến hiệu năng cho nhiều tác vụ suy luận nhưng đã thay đổi định dạng phản hồi đối với các system prompt dùng chỉ dẫn nhiều phần. </p><p>Ứng dụng của bạn sử dụng nhiều các system prompt nhiều phần. </p><p>Đánh giá ban đầu trên workload thực tế của ứng dụng cho thấy model mới hoạt động tốt hơn 8 phần trăm trên các tác vụ suy luận những tạo ra output sai định dạng ở khoảng 3 phần trăm request do thay đổi định dạng. </p><p>Nhóm đang tranh luận có nên nâng cấp hay không. </p><p>Bạn sẽ quyết định như thế nào?</p>",
+        "q": "<p>Một phiên bản Claude mới cải thiện 8% hiệu năng ở các tác vụ suy luận nhưng thay đổi cách định dạng phản hồi khi system prompt có nhiều phần hướng dẫn. Ứng dụng của bạn sử dụng rất nhiều prompt kiểu này. Đánh giá trên tác vụ thực tế cho thấy khoảng 3% yêu cầu trả đầu ra sai định dạng. Nhóm đang cân nhắc nâng cấp. Bạn nên quyết định thế nào?</p>",
         "o": [
-          "<p>Ở lỗi vĩnh viễn với model trước đó để tránh tỷ lệ output sai định dạng và mọi thay đổi định dạng trong tương lai mà các bản phát hành model tiếp theo có thể đưa vào ứng dụng.</p>",
-          "<p>Nâng cấp ngay lập tức, vì mục cải thiện suy luận 8 phần trăm lớn hơn tỷ lệ output sai định dạng 3 phần trăm trên phân bổ request điển hình của ứng dụng.</p>",
-          "<p>Điều chỉnh system prompt của ứng dụng theo kỳ vọng định dạng của model mới và đánh giá lại, sau đó chế nâng cấp nếu prompt đã điều chỉnh loại bỏ được output sai định dạng đồng thời vẫn giữ được các cải thiện về suy luận.</p>",
-          "<p>Nâng cấp và thêm một bước validation phía downstream để bắt 3 phần trăm output sai định dạng trước khi chúng đơn người dùng, coi bước validation là biến pháp giảm thiểu của nhóm đối với thay đổi định dạng.</p>"
+          "<p>Tiếp tục dùng vĩnh viễn phiên bản cũ để tránh lỗi định dạng hiện tại và mọi thay đổi có thể xuất hiện trong các bản phát hành sau.</p>",
+          "<p>Nâng cấp ngay vì mức tăng hiệu năng suy luận 8% lớn hơn tỷ lệ lỗi định dạng 3%.</p>",
+          "<p>Điều chỉnh system prompt theo yêu cầu định dạng của mô hình mới, đánh giá lại và chỉ nâng cấp nếu hết lỗi định dạng mà vẫn giữ được lợi ích suy luận.</p>",
+          "<p>Nâng cấp và bổ sung bước xác thực ở hệ thống phía sau để chặn 3% đầu ra sai định dạng trước khi người dùng nhìn thấy.</p>"
         ]
       },
       "topic": "prompt"
@@ -727,15 +727,15 @@
       "a": [
         "B"
       ],
-      "e": "Prompt phình to, chồng chéo, mâu thuẫn thì refactor như refactor code: audit, loại phần trùng và lỗi thời, gỡ mâu thuẫn độ mới chỉ dẫn rõ ràng và duy nhất.",
+      "e": "Hãy refactor system prompt như refactor mã nguồn: rà soát, loại bỏ trùng lặp và nội dung lỗi thời, xử lý mâu thuẫn, giữ lại một bộ hướng dẫn rõ ràng và nhất quán.",
       "m": 1,
       "v": {
-        "q": "<p>Một đồng nghiệp đang debug một ứng dụng Claude có system prompt đã dài đơn vài trăm dòng và hiển chứa các chỉ dẫn chồng chéo, mâu thuẫn và lỗi thời. </p><p>Bạn sẽ tư vấn cho đồng nghiệp như thế nào?</p>",
+        "q": "<p>Một đồng nghiệp đang gỡ lỗi ứng dụng Claude có system prompt dài hàng trăm dòng, chứa nhiều chỉ dẫn trùng lặp, mâu thuẫn và lỗi thời. Bạn nên tư vấn gì?</p>",
         "o": [
-          "<p>Rà soát prompt để tìm sự chồng chéo, mâu thuẫn và nội dung lỗi thời, sau đó tái cấu trúc độ mới chỉ dẫn rõ ràng, cập nhật và không dư thừa.</p>",
-          "<p>Chỉ siết chất các quy tắc mâu thuẫn trước, coi phản chồng chéo và nội dung lỗi thời là công việc ưu tiên thấp hơn mà nhóm có thể xử lý sau.</p>",
-          "<p>Chia prompt thành nhiều system prompt để model chỉ thấy một phần nhỏ hơn tại mỗi thời điểm.</p>",
-          "<p>Thêm nhiễu chỉ dẫn rõ ràng hạn để các quy tắc mới nhất chi phối cách model diễn giải prompt trong mỗi request.</p>"
+          "<p>Rà soát toàn bộ prompt, loại bỏ chỉ dẫn trùng lặp và lỗi thời, giải quyết mâu thuẫn để mỗi yêu cầu đều rõ ràng, cập nhật và không dư thừa.</p>",
+          "<p>Chỉ sửa các quy tắc mâu thuẫn trước, để phần trùng lặp và lỗi thời xử lý sau.</p>",
+          "<p>Tách prompt thành nhiều system prompt để mô hình chỉ nhìn thấy một phần nhỏ trong từng thời điểm.</p>",
+          "<p>Thêm nhiều chỉ dẫn rõ ràng hơn để các quy tắc mới nhất chi phối việc diễn giải.</p>"
         ]
       },
       "topic": "prompt"
@@ -764,15 +764,15 @@
       "a": [
         "B"
       ],
-      "e": "Output cho ứng dụng khác dùng thì phải là đầu ra có cấu trúc có field định nghĩa sẵn.",
+      "e": "Đầu ra dành cho ứng dụng khác cần các trường dữ liệu và định dạng được xác định trước để có thể phân tích và xử lý ổn định.",
       "m": 1,
       "v": {
-        "q": "<p>Một lập trình viên muốn Claude trả về các phản hồi API có thể được một ứng dụng khác sử dụng trực tiếp. </p><p>Nên dùng kỹ thuật nào?</p>",
+        "q": "<p>Một lập trình viên muốn Claude trả về kết quả API để ứng dụng khác có thể xử lý trực tiếp. Nên sử dụng kỹ thuật nào?</p>",
         "o": [
-          "<p>Yêu cầu các đoạn văn được định dạng</p>",
-          "<p>Yêu cầu Claude giải thích dài hạn</p>",
-          "<p>Cho phép các phản hồi không bị hạn chế</p>",
-          "<p>Sử dụng đầu ra có cấu trúc với các trường được định nghĩa correct</p>"
+          "<p>Yêu cầu các đoạn văn được định dạng.</p>",
+          "<p>Yêu cầu Claude giải thích dài hơn.</p>",
+          "<p>Cho phép trả lời không theo cấu trúc cố định.</p>",
+          "<p>Sử dụng đầu ra có cấu trúc với các trường được định nghĩa rõ ràng.</p>"
         ]
       },
       "topic": "prompt"
@@ -801,15 +801,15 @@
       "a": [
         "D"
       ],
-      "e": "\"Operation failed\" chung chung khiển agent không biết xử lý thế nào. Trả lời MCP có cấu trúc: loại lại, có retry được không, thông điệp an toàn cho user.",
+      "e": "Thông báo chung chung không giúp tác nhân quyết định bước khắc phục. Lỗi có cấu trúc phải nêu loại lỗi, khả năng thử lại và thông điệp phù hợp với người dùng.",
       "m": 1,
       "v": {
-        "q": "<p>Nhiều sự cố backend được trả về cho agent dưới cùng một thông báo: “Operation failed.” </p><p>Các sự cố bao gồm ID đến hàng không hợp lệ, timeout tạm thời của dịch vụ, token hết hạn và các hạn chế chính sách. </p><p>Thay đổi nào cải thiện hành vi khôi phục nhiều nhất?</p>",
+        "q": "<p>Một tác nhân nhận cùng thông báo lỗi “Operation failed” cho nhiều sự cố backend khác nhau: ID đơn hàng không hợp lệ, dịch vụ tạm thời hết thời gian chờ, token hết hạn và bị từ chối theo chính sách. Thay đổi nào giúp tác nhân khôi phục tốt nhất?</p>",
         "o": [
-          "<p>Trả về các lỗi MCP có cấu trúc kèm danh mục, khả năng retry và các chi tiết an toàn cho người dùng.</p>",
-          "<p>Giữ nguyên các lỗi chung chung và để Claude tự suy luận khả năng retry.</p>",
-          "<p>Ánh xạ các lại thành các mức độ cảm xúc của khách hàng.</p>",
-          "<p>Retry mỗi lỗi gửi tool bị lỗi hai lần trước khi escalate.</p>"
+          "<p>Trả lỗi MCP có cấu trúc, gồm loại lỗi, khả năng thử lại và thông tin an toàn để hiển thị cho người dùng.</p>",
+          "<p>Giữ thông báo chung và để Claude tự suy đoán lỗi có thể thử lại hay không.</p>",
+          "<p>Ánh xạ các lỗi sang các mức cảm xúc của khách hàng.</p>",
+          "<p>Thử lại mọi lời gọi công cụ bị lỗi hai lần trước khi chuyển cấp.</p>"
         ]
       },
       "topic": "tools"
@@ -838,15 +838,15 @@
       "a": [
         "D"
       ],
-      "e": "Server bắt buộc cho cả team đặt trong `.mcp.json` của project (share qua git). Server thử nghiệm cá nhân độ ở `~/.claude.json` (user scope) để không ảnh hưởng người khác.",
+      "e": "MCP server bắt buộc cho cả nhóm nên nằm trong `.mcp.json` của dự án để chia sẻ qua Git. MCP server thử nghiệm riêng nên đặt trong `~/.claude.json` của người dùng, tránh ảnh hưởng cấu hình chung.",
       "m": 1,
       "v": {
-        "q": "<p><strong>Kịch bản</strong>: </p><p>Multi-Agent Research System Bạn đang xây dựng một hệ thống nghiên cứu multi-agent bằng Claude Agent SDK. </p><p>Một coordinator agent giao việc cho các subagent chuyên biệt: một subagent tìm kiếm web, một subagent phân tích tài liệu, một subagent tổng hợp các phát hiện và một subagent tạo báo cáo. </p><p>Subagent phân tích tài liệu của coordinator phụ thuộc vào một MCP server library-catalog nội bộ. </p><p>Nó hoạt động trong phiên Claude Code cục bộ của bạn, những hai đồng nghiệp đã clone repository không thể truy cập các tool catalog, nên các lần chạy của hệ quay về dùng web search yếu hạn. </p><p>Ngoài ra, một researcher đang thử nghiệm một notes server thử nghiệm không nên ảnh hưởng đến cả nhóm. </p><p>Bạn nên thay đổi điều gì?</p>",
+        "q": "<p><strong>Kịch bản: Hệ thống nghiên cứu đa tác nhân</strong></p><p>Bạn đang xây dựng hệ thống nghiên cứu bằng Claude Agent SDK. Tác nhân điều phối giao nhiệm vụ cho các tác nhân phụ chuyên trách: tìm kiếm web, phân tích tài liệu, tổng hợp kết quả và tạo báo cáo.</p><p>Tác nhân phân tích tài liệu phụ thuộc vào MCP server cung cấp danh mục tài liệu nội bộ. Server hoạt động trong phiên Claude Code trên máy bạn, nhưng hai đồng nghiệp đã clone repository không truy cập được công cụ này, nên hệ thống của họ phải dùng tìm kiếm web kém hiệu quả hơn.</p><p>Ngoài ra, một thành viên đang thử MCP server ghi chú thử nghiệm, không được làm ảnh hưởng đến nhóm. Bạn nên thay đổi điều gì?</p>",
         "o": [
-          "<p>Đặt cả hai server trong ~/.claude.json của từng người dùng, và dựa vào các onboarding script độ đồng bộ các thay đổi giữa các máy.</p>",
-          "<p>Chuyển catalog server bắt buộc vào .mcp.json ở phạm vi project, và giờ notes server thử nghiệm trong ~/.claude.json ở phạm vi người dùng.</p>",
-          "<p>Gặp các tích hợp catalog và notes thành một MCP server, và chỉ cung cấp các tool theo vai trò cho các subagent.</p>",
-          "<p>Ghi lại các lệnh claude mcp add cho từng người dùng trong README, và yêu cầu mỗi researcher tự tạo lại cả hai server cục bộ.</p>"
+          "<p>Khai báo cả hai server trong `~/.claude.json` của từng người và dùng script onboarding để đồng bộ cấu hình.</p>",
+          "<p>Đưa server danh mục tài liệu bắt buộc vào `.mcp.json` ở phạm vi dự án, đồng thời giữ server ghi chú thử nghiệm trong `~/.claude.json` ở phạm vi người dùng.</p>",
+          "<p>Gộp danh mục tài liệu và ghi chú vào một MCP server, chỉ mở công cụ phù hợp cho từng tác nhân phụ.</p>",
+          "<p>Ghi hướng dẫn chạy `claude mcp add` vào README rồi yêu cầu mỗi người tự tạo cả hai server.</p>"
         ]
       },
       "topic": "agent"
@@ -875,15 +875,15 @@
       "a": [
         "D"
       ],
-      "e": "\"Fix bug đi\" quá mở hệ. đưa cho Claude tên test fail, input, kết quả mong đợi so với thực tế và stack trace, rồi sửa tăng chút. đây chính là TDD loop.",
+      "e": "Prompt “fix the migration bugs” quá mơ hồ. Hãy cung cấp test thất bại, dữ liệu đầu vào, kết quả mong đợi so với thực tế và stack trace để Claude sửa có mục tiêu, từng bước nhỏ, có kiểm chứng.",
       "m": 1,
       "v": {
-        "q": "<p><strong>Kịch bản</strong>: </p><p>Developer Productivity with Claude Một helper chạy bằng Claude cập nhật các file cấu hình legacy sang một định dạng mới. </p><p>Các lần sinh đầu tiên trông hợp lý, nhưng các lần chạy lặp lại liên tục làm hỏng các trường hợp biên khác nhau: l Thiếu các section tùy chọn l Key trùng lặp l File lớn với hàng nghìn entry Các developer đã gửi các prompt như \"fix the migration bugs\" và nhận được các cải thiện không nhất quán. </p><p>Hệ nên dùng cách tinh chỉnh nào tiếp theo?</p>",
+        "q": "<p><strong>Kịch bản: Nâng cao năng suất lập trình với Claude</strong></p><p>Một trợ lý dùng Claude chuyển các tệp cấu hình cũ sang định dạng mới. Kết quả ban đầu trông hợp lý nhưng những lần chạy sau liên tục làm hỏng các trường hợp biên, gồm:</p><ul><li>Thiếu phần tùy chọn</li><li>Khóa trùng lặp</li><li>Tệp lớn với hàng nghìn mục</li></ul><p>Lập trình viên chỉ yêu cầu chung chung “fix the migration bugs” nên chất lượng sửa lỗi không ổn định. Nên tinh chỉnh cách làm thế nào?</p>",
         "o": [
-          "<p>Tạm thời loại bỏ các kiểm tra trường hợp biên khó nhất để Claude có thể ổn định hành vi migration ở đường đi thuận lại (happy path) trước.</p>",
-          "<p>Nói với Claude rằng output vẫn sai, yêu cầu một cách triển khai cẩn thận hơn, và tiếp tục cho đến khi các reviewer phê duyệt.</p>",
-          "<p>Yêu cầu Claude đọc lại toàn bộ codebase legacy và viết lại migration helper từ đầu sau mỗi lần chạy thất bại.</p>",
-          "<p>Chia sẻ tên các test thất bại, các input, output mong đợi so với thực tế, và stack trace, rồi lặp lại với các bản sửa tối thiểu.</p>"
+          "<p>Tạm bỏ kiểm tra những trường hợp biên khó nhất để ổn định luồng xử lý thông thường trước.</p>",
+          "<p>Nói Claude rằng kết quả vẫn sai, yêu cầu triển khai cẩn thận hơn cho đến khi reviewer chấp thuận.</p>",
+          "<p>Sau mỗi lần thất bại, yêu cầu Claude đọc lại toàn bộ codebase và viết lại công cụ chuyển đổi từ đầu.</p>",
+          "<p>Cung cấp tên test thất bại, đầu vào, kết quả mong đợi, kết quả thực tế và stack trace, rồi sửa từng lỗi với thay đổi tối thiểu.</p>"
         ]
       },
       "topic": "prompt"
@@ -912,15 +912,15 @@
       "a": [
         "C"
       ],
-      "e": "Thông tin nắm rải rác ở nhiều chế thì few-shot examples chỉ cách tìm trong cover letter, footnote, caption. Ép non-null chỉ khiển model bủa giá trị.",
+      "e": "Thông tin nằm rải rác trong nhiều phần tài liệu nên cần ví dụ few-shot minh họa từng trường hợp. Ép giá trị khác `null` chỉ khiến mô hình có nguy cơ bịa ra dữ liệu.",
       "m": 1,
       "v": {
-        "q": "<p>Việc trích xuất hợp đồng nhà cung cấp trả về giá trị null cho ngày hiệu lực và điều khoản gia hơn dù thông tin có tồn tại trong thể gửi kèm, chú thích cuối trang và chú thích bằng. </p><p>Thay đổi nào cải thiện độ chính xác nhiều nhất?</p>",
+        "q": "<p>Hệ thống trích xuất hợp đồng nhà cung cấp trả về `null` cho ngày có hiệu lực và điều khoản gia hạn, mặc dù thông tin xuất hiện trong thư đính kèm, chú thích cuối trang hoặc chú thích bảng. Thay đổi nào giúp cải thiện độ chính xác nhất?</p>",
         "o": [
-          "<p>Nói với Claude rằng giá trị null là không chấp nhận được đối với hợp đồng nhà cung cấp.</p>",
-          "<p>Thêm các ví dụ few-shot có mục tiêu cho thấy cách trích xuất từ các phần tài liệu khác nhau.</p>",
-          "<p>Retry cho đến khi tất cả các field metadata đều có giá trị.</p>",
-          "<p>Đặt các field là bắt buộc và không null.</p>"
+          "<p>Yêu cầu Claude tuyệt đối không trả giá trị `null` trong hợp đồng nhà cung cấp.</p>",
+          "<p>Bổ sung các ví dụ few-shot có mục tiêu, minh họa cách trích xuất thông tin từ những vị trí khác nhau trong tài liệu.</p>",
+          "<p>Thử lại cho đến khi mọi trường metadata đều có giá trị.</p>",
+          "<p>Bắt buộc tất cả các trường phải khác `null`.</p>"
         ]
       },
       "topic": "prompt"
