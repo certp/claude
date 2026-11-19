@@ -162,6 +162,23 @@ svg.i{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke
 .result .sub{color:var(--muted);margin:0 0 16px}
 .kpis{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
 .kpi{background:var(--surface-2);border-radius:12px;padding:10px 16px;min-width:96px}.kpi b{display:block;font-size:20px}.kpi span{font-size:12px;color:var(--muted)}
+.score-note{line-height:1.65;color:var(--muted);font-size:13px}
+.domain-scoreboard{padding:clamp(18px,3vw,30px);display:flex;flex-direction:column;gap:18px}
+.domain-scoreboard h3{font-size:19px}
+.domain-scoreboard .sub{color:var(--muted);font-size:13px}
+.domain-scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,285px),1fr));gap:12px}
+.domain-score{border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:9px;min-width:0}
+.domain-score .domain-heading{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.domain-score .domain-heading b{font-size:14px}
+.domain-score .domain-heading .domain-count{white-space:nowrap;font-weight:700;font-size:13px}
+.domain-score small{color:var(--muted);font-size:12px}
+.domain-score .domain-track{height:7px;border-radius:20px;background:var(--gray);overflow:hidden}
+.domain-score .domain-fill{height:100%;background:var(--accent);border-radius:20px}
+.domain-score .domain-empty{color:var(--muted);font-size:13px}
+.domain-priorities{border-top:1px solid var(--line);padding-top:16px}
+.domain-priorities p{margin:8px 0 0;color:var(--muted)}
+.domain-priorities ol{margin:8px 0 0;padding-left:22px}
+.domain-priorities li{margin:6px 0}
 .review{display:flex;flex-direction:column;gap:16px}
 .review h3{font-size:18px}
 .rv .qcard{padding:clamp(16px,2.5vw,26px)}
@@ -414,6 +431,44 @@ function learnOrder(rnd){
   return (rnd ? shuffle(ids) : ids).slice(0, countFor(LRN.size, ids.length));
 }
 const passMark = n => Math.ceil(n * 4 / 5);
+/* BEGIN SCORING */
+// App-specific training metrics. Never map raw accuracy to Anthropic's scaled score.
+function scoreExam(cert, ids, answers){
+  const domains = BLUEPRINTS[cert].domains.map(d => ({...d, total:0, correct:0, unanswered:0}));
+  const byDomain = new Map(domains.map(d => [d.id, d]));
+  let correct = 0, unanswered = 0, unclassified = 0;
+  for(const id of ids){
+    const question = BY_ID[cert][id];
+    if(!question) throw new Error('Question missing from scoring bank: ' + id);
+    const selected = Array.isArray(answers?.[id]) ? answers[id] : [];
+    // Multiple-answer questions require the exact answer set (no partial credit).
+    const right = same(selected, question.a);
+    if(right) correct++;
+    if(selected.length===0) unanswered++;
+    const domain = byDomain.get(question.topic);
+    if(!domain){ unclassified++; continue; }
+    domain.total++;
+    if(right) domain.correct++;
+    if(selected.length===0) domain.unanswered++;
+  }
+  const total = ids.length;
+  return {
+    total, correct, incorrect:total-correct, unanswered, unclassified,
+    accuracy: total ? correct * 100 / total : 0,
+    targetReached: total > 0 && correct >= passMark(total),
+    domains: domains.map(d => ({
+      ...d, incorrect:d.total-d.correct, accuracy:d.total ? d.correct * 100 / d.total : null
+    }))
+  };
+}
+function weakestDomains(report, limit=3){
+  return report.domains
+    .filter(d => d.total > 0 && d.accuracy < 80)
+    .sort((a,b) => a.accuracy-b.accuracy || b.total-a.total || a.id.localeCompare(b.id))
+    .slice(0,limit);
+}
+const displayScorePercent = percentage => Number.isInteger(percentage) ? String(percentage) : percentage.toFixed(1);
+/* END SCORING */
 const certById = id => CERTS.find(c => c.id === id);
 const ALL_IDS = id => DATA[id].qs.map(q => q.id);
 
@@ -881,12 +936,12 @@ function renderExamIntro(c){
           : `Dùng toàn bộ ${total} câu trong phạm vi đề; tỷ lệ thực tế của ngân hàng có thể khác blueprint.`}
         Bạn có thể chuyển đến bất kỳ câu nào và nộp bài khi sẵn sàng.</p>
       ${distribution}
-      <p class="sub">Thang điểm Passed/Failed 80% là quy ước của ứng dụng luyện tập, không phải cách quy đổi điểm 720 của kỳ thi thật.</p>
+      <p class="sub">Mục tiêu 80% chỉ dùng để tự đánh giá khi luyện tập. Anthropic chấm theo scaled score và không công bố công thức quy đổi từ tỷ lệ đúng.</p>
       <p class="sub"><a href="${BLUEPRINTS[c.id].source}" target="_blank" rel="noopener noreferrer">Exam Guide chính thức (November 2026)</a></p>
       <div class="rules">
         <div class="rule" style="--accent:${c.accent}"><b>${n}</b><span>câu hỏi ngẫu nhiên</span></div>
-        <div class="rule" style="--accent:${c.accent}"><b>≥ ${passMark(n)}</b><span>câu đúng để Passed</span></div>
-        <div class="rule" style="--accent:${c.accent}"><b>80%</b><span>Điểm đạt</span></div>
+        <div class="rule" style="--accent:${c.accent}"><b>≥ ${passMark(n)}</b><span>câu đúng theo mục tiêu luyện tập</span></div>
+        <div class="rule" style="--accent:${c.accent}"><b>80%</b><span>Mục tiêu luyện tập (không phải điểm chuẩn Anthropic)</span></div>
       </div>
       <button class="btn primary lg" id="btn-start" style="background:${c.accent};border-color:${c.accent}">${ic('play')}Bắt đầu thi</button>
     </section></main></div>`;
