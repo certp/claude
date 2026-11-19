@@ -64,7 +64,7 @@
       "e": "Muốn tự động hóa thì output phải parse được bằng máy: JSON theo schema định nghĩa trước. Heading markdown hay review thủ công không ổn định.",
       "m": 1,
       "v": {
-        "q": "<p>Một nhóm muốn có kết quả review pull request ấn định, tự động từ Claude Code. </p><p>Phương pháp nào hỗ trợ tự động hóa tốt nhất?</p>",
+        "q": "<p>Một nhóm muốn có kết quả review pull request ổn định, tự động từ Claude Code. </p><p>Phương pháp nào hỗ trợ tự động hóa tốt nhất?</p>",
         "o": [
           "<p>Tách phản hồi bằng các heading</p>",
           "<p>Sử dụng các quy tắc phân tích markdown nghiêm ngặt hơn</p>",
@@ -138,7 +138,7 @@
       "e": "Prompt \"chỉ trả JSON\" chưa để đảm bảo. `--output-format json` cùng `--json-schema` ép output đúng schema ngay ở tầng CLI, sau đó map findings đã validate thành inline comment.",
       "m": 1,
       "v": {
-        "q": "<p><strong>Kịch bản</strong>: </p><p>Developer Productivity with Claude Job CI của bạn gửi Claude Code thành công và động một comment tóm tắt pull request duy nhất. </p><p>Nhóm hiện muốn có các comment inline tự động cho từng phát hiện, nhưng việc tích hợp thường xuyên bị hỏng vì Claude đôi khi thêm văn xuôi, đổi tên field, hoặc định dạng các phát hiện thành markdown. </p><p>Thay đổi nào hỗ trợ tự động hóa đáng tin cậy nhất?</p>",
+        "q": "<p><strong>Kịch bản</strong>: </p><p>Developer Productivity with Claude Job CI của bạn gửi Claude Code thành công và đăng một bình luận tóm tắt pull request duy nhất. </p><p>Nhóm hiện muốn có các comment inline tự động cho từng phát hiện, nhưng việc tích hợp thường xuyên bị hỏng vì Claude đôi khi thêm văn xuôi, đổi tên field, hoặc định dạng các phát hiện thành markdown. </p><p>Thay đổi nào hỗ trợ tự động hóa đáng tin cậy nhất?</p>",
         "o": [
           "<p>Lưu các comment trước đó và yêu cầu Claude viết lại chúng thành các bản ghi.</p>",
           "<p>Tăng cường prompt để yêu cầu chỉ trả về JSON hợp lệ.</p>",
@@ -172,7 +172,7 @@
       "a": [
         "B"
       ],
-      "e": "Hạn chế ngay ở tầng tool, đồng chỉ dẫn bằng prompt: thay fetch_url tổng quát bằng load_document chỉ nhận ID trong catalog hoặc URL được duyệt, có validate. Agent không còn khả năng đi lực.",
+      "e": "Hạn chế ngay ở từng tool, đồng chỉ dẫn bằng prompt: thay fetch_url tổng quát bằng load_document chỉ nhận ID trong catalog hoặc URL được duyệt, có validate. Agent không còn khả năng đi lực.",
       "m": 1,
       "v": {
         "q": "<p><strong>Kịch bản</strong>: </p><p>Multi-Agent Research System Subagent phân tích tài liệu nhận các file PDF và báo cáo do coordinator chọn từ một catalog đã được phê duyệt, nhưng nó có một tool truy xuất URL chung. </p><p>Đôi khi nó theo các liên kết bên trong tài liệu để đến: l blog l trang đăng nhập l các bản tóm tắt HTML trùng lặp rồi trích dẫn các trang đó thay vì các nguồn đã được phê duyệt. </p><p>Thay đổi nào giải quyết vấn đề này tốt nhất?</p>",
@@ -286,7 +286,7 @@
       "e": "MCP server cố team cần dùng thì đặt trong `.mcp.json` ở phạm vi project (commit vào repo). Ai clone về cũng có ngay.",
       "m": 1,
       "v": {
-        "q": "<p>Một hệ thống multi-agent sử dụng một coordinator và các researcher chuyên biệt. </p><p>Cấu hình MCP server bắt buộc nên được chia sẻ như thế nào trong một repository của nhóm?</p>",
+        "q": "<p>Một hệ thống multi-agent sử dụng một coordinator và các researcher chuyên biệt. </p><p>Cấu hình MCP server bắt buộc nên được chia sẻ như thế nào trong một repository của nhómở</p>",
         "o": [
           "<p>Gặp tất cả các tích hợp vào một MCP server</p>",
           "<p>Lưu tất cả các server trong cấu hình người dùng cá nhân</p>",
@@ -325,9 +325,9 @@
       "v": {
         "q": "<p>Một agent hỗ trợ khách hàng luân phiên không dự đoán được giữa `get_customer` và `lookup_order` khi xử lý các yêu cầu hỗn hợp. </p><p>Catalog tool MCP chỉ chứa các mô tả ngắn được tạo tự động. </p><p>Bạn nên thực hiện thay đổi nào trước tiên để cải thiện độ tin cậy khi chọn tool?</p>",
         "o": [
-          "<p>Thêm một keyword router ánh xạ các cầm tự như “order” hoặc “refund” tới một tool.</p>",
-          "<p>Cập nhất system prompt để yêu cầu Claude suy nghị cẩn thận trước khi chọn tool.</p>",
-          "<p>Viết lỗi mô tả của tầng tool MCP để nêu rõ mục đích, các định danh được chấp nhận, các field trả về, các trường hợp biên và ranh giới.</p>",
+          "<p>Thêm một keyword router ánh xạ các cụm từ như “order” hoặc “refund” tới một tool.</p>",
+          "<p>Cập nhật system prompt để yêu cầu Claude suy nghĩ cẩn thận trước khi chọn tool.</p>",
+          "<p>Viết lại mô tả của từng tool MCP để nêu rõ mục đích, các định danh được chấp nhận, các field trả về, các trường hợp biên và ranh giới.</p>",
           "<p>Hợp nhất get_customer và lookup_order thành một tool tra cứu rằng duy nhất.</p>"
         ]
       },
@@ -362,7 +362,7 @@
       "v": {
         "q": "<p>Chính sách nội dung của ứng dụng Claude của bạn quy định các danh mục nội dung không được tạo ra trong bất kỳ trường hợp nào. </p><p>Ứng dụng hiện không có cơ chế nào để thực thi chính sách này, và nội dung thuộc các danh mục đó đang xuất hiện trong output của ứng dụng. </p><p>Bạn số thực thi chính sách nội dung bằng cách nào?</p>",
         "o": [
-          "<p>Chuyển việc thực thi cho người dùng bằng cách yêu cầu họ báo cáo các vi phạm chính sách nội dung sau khi nội dung vi phạm đã đến tay h? trong các phản hồi của ứng dụng.</p>",
+          "<p>Chuyển việc thực thi cho người dùng bằng cách yêu cầu họ báo cáo các vi phạm chính sách nội dung sau khi nội dung vi phạm đã đến tay họ trong các phản hồi của ứng dụng.</p>",
           "<p>Tăng cường system prompt để chứa các chỉ dẫn rõ ràng về các danh mục cần tránh, kèm ví dụ cho từng danh mục. Coi prompt đã được tăng cường là cơ chế thực thi chính cho chính sách nội dung của ứng dụng trên mỗi phản hồi.</p>",
           "<p>Thêm bộ lọc output mang tính xác định (deterministic) kiểm tra các phản hồi theo chính sách nội dung trước khi chúng đơn người dùng.</p>",
           "<p>Loại bỏ hoàn toàn chính sách nội dung và độ mới output đơn người dùng trong quá trình vận hành bình thường, chấp nhận bất kỳ nội dung nào mà ứng dụng tạo ra để đáp lỗi lưu lượng đơn.</p>"
@@ -547,7 +547,7 @@
       "v": {
         "q": "<p>Một hệ thống structured extraction chia tài liệu thành các phần và gửi chúng đến các extraction subagent. </p><p>Một subagent tạm thời mất quyền truy cập vào hệ thống nguồn của nó. </p><p>Cách triển khai hiện tại hoặc trả về một kết quả trích xuất rỗng nhưng được coi là thành công, hoặc hủy toàn bộ tài liệu. </p><p>Bạn nên thay đổi điều gì?</p>",
         "o": [
-          "<p>Retry phận bộ lỗi cho đến khi thành công trước khi trả về bất cụ thể gì.</p>",
+          "<p>Retry phần bị lỗi cho đến khi thành công trước khi trả về bất cụ thể gì.</p>",
           "<p>Kết thúc toàn bộ quy trình tài liệu bắt cả khi nào có subagent nào bị lỗi.</p>",
           "<p>Yêu cầu các subagent báo cáo các lỗi chưa giải quyết kèm phần đã thử, loại lại, các field một phần và các đề xuất khôi phục.</p>",
           "<p>Trả về một đối tượng trích xuất rộng cho phần bị lỗi.</p>"
@@ -880,7 +880,7 @@
       "v": {
         "q": "<p><strong>Kịch bản</strong>: </p><p>Developer Productivity with Claude Một helper chạy bằng Claude cập nhật các file cấu hình legacy sang một định dạng mới. </p><p>Các lần sinh đầu tiên trông hợp lý, nhưng các lần chạy lặp lại liên tục làm hỏng các trường hợp biên khác nhau: l Thiếu các section tùy chọn l Key trùng lặp l File lớn với hàng nghìn entry Các developer đã gửi các prompt như \"fix the migration bugs\" và nhận được các cải thiện không nhất quán. </p><p>Hệ nên dùng cách tinh chỉnh nào tiếp theo?</p>",
         "o": [
-          "<p>Tạm thời loại bỏ các kiểm tra trường hợp biên khó nhất để Claude có thể ấn định hành vi migration ở đường đi thuận lại (happy path) trước.</p>",
+          "<p>Tạm thời loại bỏ các kiểm tra trường hợp biên khó nhất để Claude có thể ổn định hành vi migration ở đường đi thuận lại (happy path) trước.</p>",
           "<p>Nói với Claude rằng output vẫn sai, yêu cầu một cách triển khai cẩn thận hơn, và tiếp tục cho đến khi các reviewer phê duyệt.</p>",
           "<p>Yêu cầu Claude đọc lại toàn bộ codebase legacy và viết lại migration helper từ đầu sau mỗi lần chạy thất bại.</p>",
           "<p>Chia sẻ tên các test thất bại, các input, output mong đợi so với thực tế, và stack trace, rồi lặp lại với các bản sửa tối thiểu.</p>"
@@ -1142,7 +1142,7 @@
           "<p>Sửa đổi bổ phân tích phản hồi cuối cùng cho khách hàng.</p>",
           "<p>Thêm một hook PostToolUse chuyển đổi kết quả của tool thành các ngày, nhãn trạng thái và field tier chuẩn hóa trước khi Claude nhìn thấy.</p>",
           "<p>Escalate tất cả các trường hợp có định dạng timestamp hỗn hợp.</p>",
-          "<p>Thêm các chỉ dẫn system yêu cầu Claude ghi nhớ định dạng của tầng tool</p>"
+          "<p>Thêm các chỉ dẫn system yêu cầu Claude ghi nhớ định dạng của từng tool</p>"
         ]
       },
       "topic": "tools"
@@ -1174,7 +1174,7 @@
       "e": "Confidence cao vẫn có thể sai theo cảm. Lấy mẫu ngẫu nhiên phân tầng theo chỉ để, loại nguồn, section và theo dõi lại theo nhóm để tìm điểm mù trước khi giảm review.",
       "m": 1,
       "v": {
-        "q": "<p>Một hệ thống nghiên cứu multi-agent gán độ tin cậy cao cho hầu hết các nhận định trong báo cáo, nhưng các cuộc kiểm toán của khách hàng phát hiện các sai lịch trích dẫn tập trung ở các chế để quy định pháp lý và các loại nguồn mới được thêm. </p><p>Nên triển khai chiến lược review nào trước khi giảm thêm phạm vi reviewer?</p>",
+        "q": "<p>Một hệ thống nghiên cứu multi-agent gán độ tin cậy cao cho hầu hết các nhận định trong báo cáo, nhưng các cuộc kiểm toán của khách hàng phát hiện các sai lịch trích dẫn tập trung ở các chế để quy định pháp lý và các loại nguồn mới được thêm. </p><p>Nên triển khai chiến lược review nào trước khi giảm thêm phạm vi reviewerẻ</p>",
         "o": [
           "<p>Lấy mẫu ngẫu nhiên các nhận định có độ tin cậy cao theo chỉ để, loại nguồn và phần báo cáo, sau đó theo dõi lại theo danh mục.</p>",
           "<p>Tự động xuất bạn các báo cáo có độ tin cậy cao và chỉ điều tra các lỗi do khách hàng báo.</p>",
@@ -1211,7 +1211,7 @@
       "e": "Độ chính xác tầng 97,2% có thể che giấu nhóm tài liệu hoặc field rất kém. Phân tích theo loại tài liệu và field, chế tự động hóa nhóm đã đặt ngưỡng.",
       "m": 1,
       "v": {
-        "q": "<p><strong>Kịch bản</strong>: </p><p>Structured Data Extraction Một lần chạy validation có nhãn báo cáo: l độ chính xác trích xuất tổng hợp 97.2% l độ bao phủ trên NDA, hóa đơn, biểu mẫu bảo hiểm và đơn đặt hàng Ban lãnh đảo muốn bỏ qua review của con người đối với mỗi bản ghi mà Claude trả về độ tin cậy cao, nhưng các khiểu nội trong giai đoạn thí điểm cho thấy lại tập trung ở các nhóm tài liệu và field cụ thể. </p><p>Bạn nên làm gì trước khi giảm phạm vi reviewer?</p>",
+        "q": "<p><strong>Kịch bản</strong>: </p><p>Structured Data Extraction Một lần chạy validation có nhãn báo cáo: l độ chính xác trích xuất tổng hợp 97.2% l độ bao phủ trên NDA, hóa đơn, biểu mẫu bảo hiểm và đơn đặt hàng Ban lãnh đảo muốn bỏ qua review của con người đối với mỗi bản ghi mà Claude trả về độ tin cậy cao, nhưng các khiểu nội trong giai đoạn thí điểm cho thấy lại tập trung ở các nhóm tài liệu và field cụ thể. </p><p>Bạn nên làm gì trước khi giảm phạm vi reviewerẻ</p>",
         "o": [
           "<p>Phân tích độ chính xác theo loại tài liệu và field được trích xuất, sau đó chế tự động hóa các phân đoạn đặt ngưỡng đã được xác thực trong khi chuyển các phân đoạn còn lại đến review.</p>",
           "<p>Dùng độ chính xác tổng hợp 97.2% để tự động phê duyệt tất cả output có độ tin cậy cao, theo dõi các khiểu nối của người dùng để phát hiện các hải quy mối nối.</p>",
@@ -1282,7 +1282,7 @@
       "a": [
         "D"
       ],
-      "e": "Tính năng Beta có thể thay đổi lớn hoặc bị bỏ, không cam kết ấn định cho production như tính năng GA. đặt lõi hệ thống billing lên đó là rủi ro.",
+      "e": "Tính năng Beta có thể thay đổi lớn hoặc bị bỏ, không cam kết ổn định cho production như tính năng GA. đặt lõi hệ thống billing lên đó là rủi ro.",
       "m": 1,
       "v": {
         "q": "<p>Một nhóm muốn xây dựng logic cốt lõi của một pipeline thanh toán production hoàn toàn dựa trên một khả năng nền tảng hiện được gắn nhãn Beta trong bảng feature-availability của Anthropic. </p><p>Một tech lead nêu lên một mỗi lo ngại trước khi phê duyệt thiết kế. </p><p>Cố sự chính xác nhất cho mỗi lo ngại đó là gì?</p>",
@@ -1356,7 +1356,7 @@
       "a": [
         "C"
       ],
-      "e": "Task ấn định thì dùng prompt chain cố định, task điều tra mở thì dùng adaptive planning. đúng công cụ cho đúng loại việc.",
+      "e": "Task ổn định thì dùng prompt chain cố định, task điều tra mở thì dùng adaptive planning. đúng công cụ cho đúng loại việc.",
       "m": 1,
       "v": {
         "q": "<p>Một nhóm phát triển sử dụng Claude Agent SDK cho các quy trình khác nhau. </p><p>Các review dependency tuân theo các quy tắc cố định, trong khi debug các hệ thống chưa biết đòi hỏi khám phá. </p><p>Chiến lược phân rã nào là tốt nhất?</p>",
@@ -1364,7 +1364,7 @@
           "<p>Dùng lập kế hoạch động cho mỗi quy trình</p>",
           "<p>Dùng một prompt lớn cho mỗi tác vụ</p>",
           "<p>Dùng các bước cố định cho mỗi quy trình</p>",
-          "<p>Dùng prompt chain cho các tác vụ ấn định và lập kế hoạch thích ứng cho các cuộc điều tra</p>"
+          "<p>Dùng prompt chain cho các tác vụ ổn định và lập kế hoạch thích ứng cho các cuộc điều tra</p>"
         ]
       },
       "topic": "prompt"
@@ -1433,12 +1433,12 @@
       "e": "Review license có rubric cố định thì dùng prompt chain cố định để không sót mục. điều tra bug thì đề agent tố điều chỉnh subtask theo phát hiện.",
       "m": 1,
       "v": {
-        "q": "<p><strong>Kịch bản</strong>: </p><p>Developer Productivity with Claude Bạn đang xây dựng các công cụ nâng cao năng suất cho developer bằng Claude Agent SDK. </p><p>Agent giúp các kỹ sư khám phá các codebase xa lệ, hiệu các hệ thống legacy, sinh code boilerplate và tự động hóa các tác vụ lặp đi lặp lại. </p><p>Các review license của dependency tuân theo một rubric ấn định với các kiểm tra đã biết, trong khi các cuộc điều tra bug production trong các service xa lệ thay đổi tùy theo các call path, log và test thất bại được phát hiện. </p><p>Prompt single-pass hiện tại bị sót các mục checklist trong các review và lãng phí công sắc trong các cuộc điều tra. </p><p>Chiến lược phân rã nào là phù hợp nhất?</p>",
+        "q": "<p><strong>Kịch bản</strong>: </p><p>Developer Productivity with Claude Bạn đang xây dựng các công cụ nâng cao năng suất cho developer bằng Claude Agent SDK. </p><p>Agent giúp các kỹ sư khám phá các codebase xa lệ, hiệu các hệ thống legacy, sinh code boilerplate và tự động hóa các tác vụ lặp đi lặp lại. </p><p>Các review license của dependency tuân theo một rubric ổn định với các kiểm tra đã biết, trong khi các cuộc điều tra bug production trong các service xa lệ thay đổi tùy theo các call path, log và test thất bại được phát hiện. </p><p>Prompt single-pass hiện tại bị sót các mục checklist trong các review và lãng phí công sắc trong các cuộc điều tra. </p><p>Chiến lược phân rã nào là phù hợp nhất?</p>",
         "o": [
           "<p>Dùng cùng một checklist tuần tự cố định cho cả hai quy trình, yêu cầu mỗi cuộc điều tra phải hoàn thành mỗi bước được định nghĩa trước.</p>",
           "<p>Dùng một prompt lớn cho cả hai loại request, yêu cầu agent suy luận cẩn thận trước khi dùng bất kỳ tool nào.</p>",
           "<p>Dùng lập kế hoạch task động cho mỗi quy trình, cho phép agent định nghĩa lại các tiêu chí review khi nó khám phá các pattern code.</p>",
-          "<p>Dùng một prompt chain cố định cho các rubric review ấn định, và để agent điều chỉnh các subtask trong các cuộc điều tra mở.</p>"
+          "<p>Dùng một prompt chain cố định cho các rubric review ổn định, và để agent điều chỉnh các subtask trong các cuộc điều tra mở.</p>"
         ]
       },
       "topic": "prompt"
@@ -1655,7 +1655,7 @@
       "e": "Session lifecycle cận độ ba phản: quy tắc hết hạn, trigger reset state và quy tắc bắt đầu phiên mới, độ context cả không rò sang hội thoại mới.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang thiết kế một ứng dụng Claude duy trì các phiên người dùng qua các cuộc hội thoại nhiều lượt. </p><p>Nhóm sản phẩm đã hội ứng dụng sự xử lý vòng đời phiên như thế nào: khi nào phiên nên hết hạn, trạng thái được reset ra sao, và ứng dụng tránh mang ngữ cảnh cả vào các cuộc hội thoại mới như thế nào. </p><p>Bạn s? thiết kế vòng đời phiên như thế nào?</p>",
+        "q": "<p>Bạn đang thiết kế một ứng dụng Claude duy trì các phiên người dùng qua các cuộc hội thoại nhiều lượt. </p><p>Nhóm sản phẩm đã hội ứng dụng sự xử lý vòng đời phiên như thế nào: khi nào phiên nên hết hạn, trạng thái được reset ra sao, và ứng dụng tránh mang ngữ cảnh cả vào các cuộc hội thoại mới như thế nào. </p><p>Bạn sẽ thiết kế vòng đời phiên như thế nào?</p>",
         "o": [
           "<p>Định nghĩa các quy tắc hết hạn phiên rõ ràng nhưng dựa vào người dùng để bắt đầu các cuộc hội thoại mới khi họ muốn ngữ cảnh mới, không có trigger reset tự động nào trong ứng dụng.</p>",
           "<p>Định nghĩa một timeout phiên ngăn duy nhất áp dụng cho mỗi cuộc hội thoại và coi timeout đó là toàn bộ cơ chế vòng đời phiên của ứng dụng.</p>",
@@ -1695,7 +1695,7 @@
         "q": "<p>Bạn đang xây dựng một MCP server cung cấp nhiều nguồn dữ liệu nội bộ dưới dạng các MCP resource. </p><p>Server cần được triển khai độ nhiều ứng dụng Claude có thể tích hợp với nó. </p><p>Bạn sẽ tiếp cận việc xây dựng và triển khai như thế nào?</p>",
         "o": [
           "<p>Xây dựng MCP server với các định nghĩa resource và tool giới hạn trong ứng dụng Claude đầu tiên cần nó, và mở rộng các định nghĩa cho các ứng dụng bổ sung khi tầng tích hợp được yêu cầu.</p>",
-          "<p>Bỏ qua MCP server và nhúng trực tiếp tầng nguồn dữ liệu vào mọi ứng dụng Claude cần dữ liệu đó, với mỗi ứng dụng tỷ duy trì tích hợp của riêng nó.</p>",
+          "<p>Bỏ qua MCP server và nhúng trực tiếp từng nguồn dữ liệu vào mọi ứng dụng Claude cần dữ liệu đó, với mỗi ứng dụng tỷ duy trì tích hợp của riêng nó.</p>",
           "<p>Viết server với các resource, tool và prompt được định nghĩa rõ ràng, chọn một mẫu giao tiếp, và triển khai lên một môi trường hosting có thể truy cập được.</p>",
           "<p>Chỉ triển khai MCP server trên máy của tầng developer, với các ứng dụng Claude không thể truy cập server bên ngoài máy của tầng developer.</p>"
         ]
@@ -1763,7 +1763,7 @@
       "a": [
         "C"
       ],
-      "e": "Defensive parsing: xử lý được field lệ, giá trị thiếu, sai kiểu dữ liệu mà không làm sắp downstream. Không crash, nhưng cũng không âm thẩm bộ dữ liệu.",
+      "e": "Defensive parsing: xử lý được field lệ, giá trị thiếu, sai kiểu dữ liệu mà không làm sắp downstream. Không crash, nhưng cũng không âm thẩm bỏ dữ liệu.",
       "m": 1,
       "v": {
         "q": "<p>Ứng dụng Claude của bạn sử dụng đầu ra có cấu trúc được code downstream tiêu thể. </p><p>Nhóm muốn xử lý output sai định dạng hoặc không mong đợi một cách linh hoạt để nó không làm sắp các hệ thống downstream. </p><p>Lựa chọn tốt nhất để xử lý vấn đề này là...</p>",
@@ -2096,7 +2096,7 @@
       "a": [
         "C"
       ],
-      "e": "Phần lịch sử lặp lại mối lượt là prefix tĩnh, nên prompt caching giúp không phải trỏ giá input đầy đủ cho nó mỗi lần. Cắt bật hay tóm tắt sẽ làm một thông tin.",
+      "e": "Phần lịch sử lặp lại mối lượt là prefix tĩnh, nên prompt caching giúp không phải trỏ giá input đầy đủ cho nó mỗi lần. Cắt bật hay tóm tắt sẽ làm mất thông tin.",
       "m": 1,
       "v": {
         "q": "<p>Ứng dụng của bạn dùng Messages API để xử lý các cuộc hội thoại nhiều lượt (multi-turn). </p><p>Mới lượt mỗi gửi lại toàn bộ lịch sử hội thoại, và chi phí token tăng lên khi cuộc hội thoại dài hạn. </p><p>Bạn nghi ngờ có một cách hiểu quả hơn. </p><p>Bạn sẽ giải quyết vấn đề này như thế nào?</p>",
@@ -2210,7 +2210,7 @@
       "e": "Code review đầy đủ: tách prompt và model ra config, thêm xử lý lỗi khi gửi API, thêm test cho phần tích hợp. Xử lý lỗi không phải \"độ sau\".",
       "m": 1,
       "v": {
-        "q": "<p>Một đồng nghiệp đã gửi một pull request thêm tính năng sử dụng Claude vào service của bạn. </p><p>Mã hoạt động, những prompt và lựa chọn model được hard-code trực tiếp, thiếu xử lý lỗi và không có test nào cho phần tích hợp. </p><p>Bạn s? yêu cầu gì trong quá trình code review?</p>",
+        "q": "<p>Một đồng nghiệp đã gửi một pull request thêm tính năng sử dụng Claude vào service của bạn. </p><p>Mã hoạt động, nhưng prompt và lựa chọn model được hard-code trực tiếp, thiếu xử lý lỗi và không có test nào cho phần tích hợp. </p><p>Bạn sẽ yêu cầu gì trong quá trình code review?</p>",
         "o": [
           "<p>Yêu cầu thay đổi để chuyển cấu hình prompt và model sang một vị trí có thể cấu hình được và thêm test, coi việc thiếu xử lý lỗi là hạng mục cho bản phát hành tiếp theo.</p>",
           "<p>Approve pull request và tỷ thêm các phần còn thiếu trong một commit tiếp theo độ đồng nghiệp có thể chuyển ngay sang công việc khác.</p>",
@@ -2244,7 +2244,7 @@
       "a": [
         "C"
       ],
-      "e": "Coding standard và context của dự án cho Claude Code thì viết vào `CLAUDE.md` ở thư mục gốc repo, tự động nộp mới phiên.",
+      "e": "Coding standard và context của dự án cho Claude Code thì viết vào `CLAUDE.md` ở thư mục gốc repo, tự động nộp mỗi phiên.",
       "m": 1,
       "v": {
         "q": "<p>Bạn đang thiết lập Claude Code cho một repository dự án mới. </p><p>Nhóm của bạn có các tiêu chuẩn viết mã dùng chung, các thư viện ưu tiên và context riêng của dự án mà mỗi lập trình viên làm việc trên repository đều cần có sẵn khi sử dụng Claude Code. </p><p>Bạn sự thiết lập điều này như thế nào?</p>",
@@ -2321,7 +2321,7 @@
       "e": "Có ví dụ có nhãn tắt thì đưa vào prompt (multi-shot hoặc few-shot) để Claude bắt chước format.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang bắt đầu một ứng dụng Claude mới và có một tập như các ví dụ được gán nhãn tốt minh họa định dạng output mong muốn. </p><p>Bạn muốn dùng các ví dụ này để định hướng hành vi của Claude. </p><p>Bạn s? định hướng hành vi của ứng dụng như thế nào?</p>",
+        "q": "<p>Bạn đang bắt đầu một ứng dụng Claude mới và có một tập như các ví dụ được gán nhãn tốt minh họa định dạng output mong muốn. </p><p>Bạn muốn dùng các ví dụ này để định hướng hành vi của Claude. </p><p>Bạn sẽ định hướng hành vi của ứng dụng như thế nào?</p>",
         "o": [
           "<p>Dùng zero-shot prompting và dựa vào khả năng tổng quát của model để tạo ra định dạng output mong muốn một cách nhất quán cho mỗi request đến.</p>",
           "<p>Nhúng các ví dụ vào một cơ sở dữ liệu và truy xuất chúng khi chạy như tài liệu tham khảo cho nhóm.</p>",
@@ -2358,7 +2358,7 @@
       "e": "`CLAUDE.md` và `settings.json` version-control cùng source code và review qua pull request như code bình thường.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang thiết lập cách quản lý cấu hình cho một dự án Claude Code mới. </p><p>Nhóm của bạn sẽ dùng các tập CLAUDE.md và settings.json để kiểm soát hành vi, và bạn muốn đảm bảo các thay đổi được theo dõi và có thể review. </p><p>Cách quản lý cấu hình s?...</p>",
+        "q": "<p>Bạn đang thiết lập cách quản lý cấu hình cho một dự án Claude Code mới. </p><p>Nhóm của bạn sẽ dùng các tập CLAUDE.md và settings.json để kiểm soát hành vi, và bạn muốn đảm bảo các thay đổi được theo dõi và có thể review. </p><p>Cách quản lý cấu hình sẽ...</p>",
         "o": [
           "<p>Version-control các tập CLAUDE.md và settings.json trong một repository riêng tách khối mã nguồn của dự án, để cấu hình phát triển độc lập với mã ứng dụng theo thời gian.</p>",
           "<p>Version-control CLAUDE.md cùng với mã nguồn của dự án còn các tập settings.json trong một repository riêng tách khối mã nguồn của dự án.</p>",
@@ -2880,7 +2880,7 @@
         "o": [
           "<p>Chuẩn hóa tất cả môi trường để dùng cùng các giá trị cấu hình nhằm loại bỏ sự khác biệt giữa development, staging và production.</p>",
           "<p>Hợp nhất cấu hình vào một hệ thống được version-control, ghi tài liệu việc ghim phiên bản model (model version pinning), phiên bản prompt và các plugin dependency cho từng môi trường.</p>",
-          "<p>Dùng phiên bản model mới nhất có sẵn ở mỗi nối và ngừng ghim phiên bản model, với lý do việc ghim làm tăng chi phí bảo trì mà nhóm nên hướng tới giảm bật.</p>",
+          "<p>Dùng phiên bản model mới nhất có sẵn ở mỗi nối và ngừng ghim phiên bản model, với lý do việc ghim làm tăng chi phí bảo trì mà nhóm nên hướng tới giảm bớt.</p>",
           "<p>Chuyển toàn bộ cấu hình vào mã ứng dụng được hard-code để giảm số phụ thuộc vào các nguồn cấu hình bên ngoài vấn khó theo dõi theo thời gian.</p>"
         ]
       },
@@ -3061,7 +3061,7 @@
       "e": "Định nghĩa rõ ranh giới ứng dụng, xác định dữ liệu nào được phép gọi ra cho Claude, và lọc hoặc redact ngay tại ranh giới đó. Prompt hay log không ngăn được dữ liệu đã bị gửi đi.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang thiết kế một ứng dụng Claude xử lý văn bản do người dùng gửi. </p><p>Một số văn bản đó có thể chứa thông tin nhạy cảm nhớ sử tài khoản hoặc mật khẩu mà ứng dụng không nên gửi cho Claude. </p><p>Bạn s? thiết kế ứng dụng như thế nào?</p>",
+        "q": "<p>Bạn đang thiết kế một ứng dụng Claude xử lý văn bản do người dùng gửi. </p><p>Một số văn bản đó có thể chứa thông tin nhạy cảm nhớ sử tài khoản hoặc mật khẩu mà ứng dụng không nên gửi cho Claude. </p><p>Bạn sẽ thiết kế ứng dụng như thế nào?</p>",
         "o": [
           "<p>Áp dụng lực tại ranh giới cho các mẫu dữ liệu nhạy cảm thường gặp nhất và mở rộng phạm vi bao phủ sang các mẫu bổ sung dựa trên các phát hiện từ việc giám sát production.</p>",
           "<p>Xác định rõ ranh giới của ứng dụng, xác định nội dung nào được phép rời khỏi ranh giới để đơn Claude, và thêm bước lọc hoặc che giấu (redaction) tại ranh giới.</p>",
@@ -3098,7 +3098,7 @@
       "e": "Sau nhiều tool call, context bộ loãng. Dùng context engineering (cắt bớt tool output, compaction) để giữ task state và constraint luôn rõ.",
       "m": 1,
       "v": {
-        "q": "<p>Ứng dụng Claude của bạn chạy các agentic quy trình dài trong đó agent thực hiện nhiều lệnh gọi tool, và lịch sử hội thoại tầng nhanh. </p><p>Sau khoảng 20 lệnh gọi tool, bạn nhận thấy phản hồi của agent trở nên kém tập trung hơn và đôi khi bỏ qua các ràng buộc của tác vụ ở trước đó. </p><p>Bạn sẽ giải quyết vấn đề này như thế nào?</p>",
+        "q": "<p>Ứng dụng Claude của bạn chạy các agentic quy trình dài trong đó agent thực hiện nhiều lệnh gọi tool, và lịch sử hội thoại tăng nhanh. </p><p>Sau khoảng 20 lệnh gọi tool, bạn nhận thấy phản hồi của agent trở nên kém tập trung hơn và đôi khi bỏ qua các ràng buộc của tác vụ ở trước đó. </p><p>Bạn sẽ giải quyết vấn đề này như thế nào?</p>",
         "o": [
           "<p>Khởi động lại agent sau mỗi nắm lệnh gọi tool để ngăn mới sự trôi lệch (drift), với việc agent mất toàn bộ trạng thái tác vụ tại mỗi điểm khởi động lại trong workflow.</p>",
           "<p>Loại bỏ hoàn toàn việc gửi tool khởi quy trình độ agent hoạt động như một bước sinh văn bản duy nhất, không có output tool tích lũy trong context window.</p>",
@@ -3209,7 +3209,7 @@
       "e": "Thông tin cỡ bộ đánh trống quá cao thì dùng compaction: tóm tắt phần cũ, giữ ý chính những giảm chi tiết.",
       "m": 1,
       "v": {
-        "q": "<p>Ứng dụng Claude của bạn đã chạy qua nhiều lượt hội thoại, và bạn nhận thấy model đôi khi tham chiếu đến thông tin đã được thảo luận từ nhiều lượt trước nhưng không còn liên quan. </p><p>Bạn nghi ngữ context drift đang khiển model đánh giá quá cao nội dung đã cố. </p><p>Bạn sẽ giải quyết tình trạng trôi lệch ngữ cảnh này như thế nào?</p>",
+        "q": "<p>Ứng dụng Claude của bạn đã chạy qua nhiều lượt hội thoại, và bạn nhận thấy model đôi khi tham chiếu đến thông tin đã được thảo luận từ nhiều lượt trước nhưng không còn liên quan. </p><p>Bạn nghi ngữ context drift đang khiển model đánh giá quá cao nội dung đã cũ. </p><p>Bạn sẽ giải quyết tình trạng trôi lệch ngữ cảnh này như thế nào?</p>",
         "o": [
           "<p>Cắt bớt cuộc hội thoại để model chỉ thấy lượt gần nhất trong mỗi phản hồi tiếp theo.</p>",
           "<p>Tổng kích thước cửa sổ ngữ cảnh độ tắt cả các lượt của cuộc hội thoại văn hiện thể với model ở mức chi tiết đầy đủ.</p>",
@@ -3283,7 +3283,7 @@
       "e": "SDK mặc định đã retry nhiều lỗi tạm thời (lỗi mạng, 429, 5xx), và có thể cấu hình như `max_retries` hoặc mở rộng thêm.",
       "m": 1,
       "v": {
-        "q": "<p>Một đồng nghiệp hỏi Claude SDK xử lý các lỗi API tạm thời (transient), chẳng hạn sự cố mừng tạm thời hoặc phản hồi rate-limit ngăn, như thế nào. </p><p>Hệ muốn biết mã ứng dụng có cần xử lý mỗi lỗi tạm thời hay SDK có cung cấp hành vi mặc định nào không. </p><p>Bạn s? mô tả hành vi mặc định của SDK như thế nào?</p>",
+        "q": "<p>Một đồng nghiệp hỏi Claude SDK xử lý các lỗi API tạm thời (transient), chẳng hạn sự cố mừng tạm thời hoặc phản hồi rate-limit ngăn, như thế nào. </p><p>Hệ muốn biết mã ứng dụng có cần xử lý mỗi lỗi tạm thời hay SDK có cung cấp hành vi mặc định nào không. </p><p>Bạn sẽ mô tả hành vi mặc định của SDK như thế nào?</p>",
         "o": [
           "<p>SDK cung cấp hành vi retry mặc định cho nhiều lỗi tạm thời, và mã ứng dụng có thể cấu hình hoặc mở rộng hành vi đó khi cần.</p>",
           "<p>SDK cung cấp hành vi retry mặc định cho các lỗi tạm thời tối đa một số lần thử cố định, và hành vi này không thể cấu hình.</p>",
@@ -3465,7 +3465,7 @@
       "a": [
         "D"
       ],
-      "e": "Debug có hệ thống: thu đầy đủ trace (input, system prompt, message, output, tham số) rồi so sánh các lần chạy ấn định với lớn không ổn định.",
+      "e": "Debug có hệ thống: thu đầy đủ trace (input, system prompt, message, output, tham số) rồi so sánh các lần chạy ổn định với lớn không ổn định.",
       "m": 1,
       "v": {
         "q": "<p>Ứng dụng Claude của bạn đang tạo ra các output không nhất quán cho các input tương tự, ngay cả khi dùng cùng model và prompt. </p><p>Bạn muốn debug vấn đề một cách có hệ thống. </p><p>Cách debug của bạn sẽ...</p>",
@@ -3618,7 +3618,7 @@
       "v": {
         "q": "<p>Bạn vừa đĩa một ứng dụng sử dụng Claude mới vào production. </p><p>Giai đoạn phát triển đã hoàn tất, và hệ thống hiện đang được các nhóm nội bộ sử dụng tích cực. </p><p>Giai đoạn công việc tiếp theo của hệ thống này là...</p>",
         "o": [
-          "<p>Bàn giao hệ thống cho một nhóm vận hành riêng s? quản lý nó độc lập với nhóm phát triển từ nay về sau.</p>",
+          "<p>Bàn giao hệ thống cho một nhóm vận hành riêng sẽ quản lý nó độc lập với nhóm phát triển từ nay về sau.</p>",
           "<p>Văn hành và bảo trì hệ thống, bao gồm giám sát, phản ứng với các sự cố và lập kế hoạch cho sự phát triển.</p>",
           "<p>Chạy một buổi review chính thức sau triển khai đánh giá giai đoạn phát triển trước khi nhóm thực hiện bất kỳ công việc nào tiếp theo trên hệ thống.</p>",
           "<p>Ngừng sử dụng (retire) hệ thống, vì việc phát hành là giai đoạn cuối cùng của vòng đổi đối với bất kỳ ứng dụng nào đã lên production.</p>"
@@ -4097,7 +4097,7 @@
       "e": "Matcher có ký tự regex như `|` hay `.*` sẽ được đánh giá như regex: `Bash|Edit.*` khớp Bash, Edit và NotebookEdit (vì chưa \"Edit\").",
       "m": 1,
       "v": {
-        "q": "<p>Một kỹ sư cấu hình một hook của Claude Code muốn nó kích hoạt cho mỗi lệnh gọi công cụ Bash, Edit và NotebookEdit mà không cần liệt kê tượng minh từng tên công cụ. </p><p>Theo tài liệu của Anthropic về matcher dựa trên regex, cấu hình nào đạt được điều này?</p>",
+        "q": "<p>Một kỹ sư cấu hình một hook của Claude Code muốn nó kích hoạt cho mỗi lệnh gọi công cụ Bash, Edit và NotebookEdit mà không cần liệt kê tường minh từng tên công cụ. </p><p>Theo tài liệu của Anthropic về matcher dựa trên regex, cấu hình nào đạt được điều này?</p>",
         "o": [
           "<p>Dùng một matcher như `Bash|Edit.*`; hệ thống chuyển sang đánh giá bằng regex và khớp với mỗi tên công cụ chứa các chuỗi đó như chuỗi con.</p>",
           "<p>B? hoàn toàn trường matcher, khiến hook chế kích hoạt cho các công cụ có tên dài hạn bản ký tự, chẳng hạn Bash và NotebookEdit.</p>",
@@ -4254,10 +4254,10 @@
       "a": [
         "D"
       ],
-      "e": "Prompt phải mô tả rõ JSON schema bắt buộc và yêu cầu chỉ xuất output đúng schema. Kết hợp đầu ra có cấu trúc hoặc validation s? an toàn hơn.",
+      "e": "Prompt phải mô tả rõ JSON schema bắt buộc và yêu cầu chỉ xuất output đúng schema. Kết hợp đầu ra có cấu trúc hoặc validation sẽ an toàn hơn.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang viết một system prompt cho một ứng dụng Claude cần tạo đầu ra theo một cấu trúc JSON cụ thể. </p><p>Hệ thống phía sau sẽ từ chối mỗi đầu ra không khớp với schema. </p><p>Prompt của bạn cần phải...</p>",
+        "q": "<p>Bạn đang viết một system prompt cho một ứng dụng Claude cần tạo đầu ra theo một cấu trúc JSON cụ thể. </p><p>Hệ thống phía sau sẽ từ chối mỗi đều ra không khớp với schema. </p><p>Prompt của bạn cần phải...</p>",
         "o": [
           "<p>Hướng dẫn Claude đôi khi trả về JSON và đôi khi trả về văn bản tự do để đầu ra của ứng dụng bao gồm cả hai định dạng.</p>",
           "<p>Bỏ qua mọi đề cập đến định dạng và dựa vào một bước hậu xử lý trong ứng dụng để định hình lại đầu ra của Claude.</p>",
@@ -4408,7 +4408,7 @@
         "q": "<p>Ứng dụng Claude của bạn có các quy trình nhiều bước, trong đó đầu ra của mỗi bước chỉ cần trong thời gian ngắn trước khi agent chuyển sang bước tiếp theo. </p><p>Đầu ra công cụ tích lũy đang lấp đầy cửa sổ ngữ cảnh bằng nội dung không còn liên quan. </p><p>Bạn sẽ xử lý đầu ra công cụ đang tích lũy này như thế nào?</p>",
         "o": [
           "<p>Chuyển sang một mô hình Claude nhỏ hơn xử lý ngữ cảnh hiệu quả hơn và chấp nhận mọi sự suy giảm chất lượng như một số đánh đổi để giảm chi phí.</p>",
-          "<p>Giữ mỗi đầu ra công cụ trong ngữ cảnh vô thời hạn để agent có bản ghi đầy đủ về mỗi bước nó đã thực hiện trong workflow.</p>",
+          "<p>Giữ mỗi đều ra công cụ trong ngữ cảnh vô thời hạn để agent có bản ghi đầy đủ về mỗi bước nó đã thực hiện trong workflow.</p>",
           "<p>Áp dụng việc cắt tỉa (pruning) đầu ra công cụ để loại bỏ các đầu ra công cụ mà các bước sau trong quy trình không còn cần.</p>",
           "<p>Áp dụng prompt caching cho các đầu ra công cụ tích lũy độ ứng dụng không phải trả lời chi phí cho nội dung cũ ở mỗi bước tiếp theo.</p>"
         ]
@@ -4447,7 +4447,7 @@
           "<p>Thêm một chỉ dẫn vào system prompt yêu cầu mô hình không bủa thông tin, với lý do chỉ dẫn ở cấp prompt là cách sửa nhanh nhất cho các lo ngại về hallucination.</p>",
           "<p>Áp dụng mẫu retrieval-augmented generation để neo các phản hồi vào nội dung nguồn trước khi điều tra thêm các trace production.</p>",
           "<p>Thay mô hình hiện tại bằng một mô hình lớn hơn để giảm khả năng hallucination, với lý do các mô hình lớn hơn thường ít hallucinate hạn trong các ứng dụng điển hình.</p>",
-          "<p>Xem xét các trace production để xác định vấn đề là do mô hình hallucinate, một ngữ cảnh, prompt injection hay một chỉ để lại khác trước khi đề xuất cách sửa.</p>"
+          "<p>Xem xét các trace production để xác định vấn đề là do mô hình hallucinate, mất ngữ cảnh, prompt injection hay một chỉ để lại khác trước khi đề xuất cách sửa.</p>"
         ]
       },
       "topic": "quality"
@@ -4516,7 +4516,7 @@
       "e": "Prompt engineering tối ưu tầng prompt độ ra output mong muốn. Context engineering quản lý toàn bộ dòng chảy context qua nhiều lượt và nhiều bước, giữ state liên quan luôn hiện diện.",
       "m": 1,
       "v": {
-        "q": "<p>Một đồng nghiệp yêu cầu bạn giải thích sự khác biệt giữa context engineering và prompt engineering. </p><p>Hệ đã nghe hai thuật ngữ này được dùng thay thế cho nhau và chưa chức mới thuật ngữ áp dụng thế nào cho một ứng dụng Claude xử lý các tác vụ nhiều bước chạy dài. </p><p>Bạn s? mô tả sự khác biệt như thế nào?</p>",
+        "q": "<p>Một đồng nghiệp yêu cầu bạn giải thích sự khác biệt giữa context engineering và prompt engineering. </p><p>Hệ đã nghe hai thuật ngữ này được dùng thay thế cho nhau và chưa chức mới thuật ngữ áp dụng thế nào cho một ứng dụng Claude xử lý các tác vụ nhiều bước chạy dài. </p><p>Bạn sẽ mô tả sự khác biệt như thế nào?</p>",
         "o": [
           "<p>Prompt engineering và context engineering đầu xử lý nội dung mà nhóm cung cấp cho Claude, nhưng nhóm có thể gặp chúng vào một quy trình duy nhất vì các thực hành này có các kỹ thuật chứng lần.</p>",
           "<p>Prompt engineering là thuật ngữ cũ hơn của việc thiết kế prompt, còn context engineering là thuật ngữ mới hơn đã thay thế nó trong các ứng dụng Claude hiện đối trong toàn ngành.</p>",
@@ -4594,8 +4594,8 @@
         "o": [
           "<p>Giảm temperature của mô hình để các phản hồi nghe ít từ tin hơn và các hệ thống phía sau ít có khả năng coi các phản hồi là sự thật hiện nhiên trong văn hành bình thường.</p>",
           "<p>Giữ thái độ hoài nghi đối với đầu ra từ tin bằng cách thêm các bước xác thực, yêu cầu dẫn nguồn hoặc hiệu chỉnh độ tin cậy trước khi coi đầu ra là sự thật hiện nhiên.</p>",
-          "<p>Từ chối mỗi phản hồi mà ứng dụng tạo ra cho đến khi có đánh giá độ chính xác thủ công trên tầng phản hồi bởi một người review trước khi bật kế hệ thống phía sau nào sử dụng.</p>",
-          "<p>Thêm một tuyên bố miễn trỏ vào mỗi đầu ra yêu cầu người dùng tỷ kiểm tra độ chính xác của đầu ra và coi tuyên bố miễn trả đó là cơ chế chính để quản lý khoảng cách giữa đề tư tin và độ chính xác.</p>"
+          "<p>Từ chối mỗi phản hồi mà ứng dụng tạo ra cho đến khi có đánh giá độ chính xác thủ công trên từng phản hồi bởi một người review trước khi bật kế hệ thống phía sau nào sử dụng.</p>",
+          "<p>Thêm một tuyên bố miễn trỏ vào mỗi đều ra yêu cầu người dùng tỷ kiểm tra độ chính xác của đầu ra và coi tuyên bố miễn trả đó là cơ chế chính để quản lý khoảng cách giữa đề tư tin và độ chính xác.</p>"
         ]
       },
       "topic": "quality"
@@ -4706,7 +4706,7 @@
           "<p>Phù hợp với phạm vi, nhu cầu tái sử dụng và bối cảnh tích hợp của trường hợp sử dụng.</p>",
           "<p>Dự xây dựng nhất với các công cụ và quy trình phát triển hiện tại của nhóm.</p>",
           "<p>Quen thuộc nhất với nhóm dựa trên kinh nghiệm trước đây với các khả năng tương tự.</p>",
-          "<p>Mới nhất trong s? các công cụ tích hợp sẵn, custom tool, Skill và MCP server.</p>"
+          "<p>Một trong sẽ các công cụ tích hợp sẵn, custom tool, Skill và MCP server.</p>"
         ]
       },
       "topic": "tools"
@@ -4740,7 +4740,7 @@
       "v": {
         "q": "<p>Một code-review agent cần đọc 40 tập, nhưng nhóm muốn cuộc hội thoại chính ngắn gọn để các lượt sau không phải trả phí cho các token dùng cho mỗi tập đã mở trong quá trình review. </p><p>Kiến trúc nào giữ cho ngữ cảnh của agent chính gần như?</p>",
         "o": [
-          "<p>Bắt include_partial_messages độ nội dung tập được stream về cuộc hội thoại chính từng phần dưới dạng text delta thay vì đơn cùng một lúc.</p>",
+          "<p>Bắt include_partial_messages độ nội dung tệp được stream về cuộc hội thoại chính từng phần dưới dạng text delta thay vì đơn cùng một lúc.</p>",
           "<p>Ủy quyền việc review cho một subagent được định nghĩa bằng AgentDefinition; các lệnh gọi công cụ và nội dung tập của nó nằm trong ngữ cảnh riêng, và chỉ một bản tóm tắt cuối cùng được trả về cho agent cha.</p>",
           "<p>Tầng max_turns trên query chính để Claude có độ ngân sách đọc cả 40 tập trực tiếp trong cuộc hội thoại chính mà vòng lặp không dụng sớm.</p>",
           "<p>Đặt effort là \"low\" trên query chính để mỗi lượt đọc tập tiêu tốn ít reasoning token hạn, dù cố 40 tập vốn được tải đầy đủ vào cuộc hội thoại chính dùng chung.</p>"
@@ -4775,7 +4775,7 @@
       "e": "Hook PreCompact chạy trước khi nén nên archive được transcript đầy đủ. Quy tắc đặt trong CLAUDE.md được nạp lại mối request nên không bị tóm tắt mặt.",
       "m": 1,
       "v": {
-        "q": "<p>Một phiên agent chạy dài đang tiến gần đến giới hạn context window. </p><p>Nhóm muốn hai điều: một bản sao đầy đủ, không rút gần của cuộc hội thoại được lưu lại trước khi SDK tóm tắt lịch sử cũ hơn, và một đảm bảo rằng một quy tắc định dạng cụ thể được giữ nguyên qua mỗi lần compaction mà không bị diễn đạt lại làm một. </p><p>Tự hợp cơ chế nào đáp ứng cả hai nhu cầu?</p>",
+        "q": "<p>Một phiên agent chạy dài đang tiến gần đến giới hạn context window. </p><p>Nhóm muốn hai điều: một bản sao đầy đủ, không rút gần của cuộc hội thoại được lưu lại trước khi SDK tóm tắt lịch sử cũ hơn, và một đảm bảo rằng một quy tắc định dạng cụ thể được giữ nguyên qua mỗi lần compaction mà không bị diễn đạt lại làm mất. </p><p>Tự hợp cơ chế nào đáp ứng cả hai nhu cầu?</p>",
         "o": [
           "<p>Tầng max_turns độ compaction không bao giờ kích hoạt, và lặp lại quy tắc định dạng ở đầu mỗi tin nhắn người dùng được gọi trong suốt phiên.</p>",
           "<p>Đăng ký một hook PreCompact để lưu trữ toàn bộ transcript trước, và đặt quy tắc định dạng trong CLAUDE.md để nó được tải lại ở mỗi request thay vì chỉ nằm trong prompt ban đầu.</p>",
@@ -4986,7 +4986,7 @@
         "o": [
           "<p>Lấy session_id tự SystemMessage loại 'init' trong query đầu tiên, rồi truyền nó làm tùy chọn resume ở lệnh gọi query thứ hai.</p>",
           "<p>Lấy tool_use_id từ lệnh gọi công cụ Read của query đầu tiên và truyền nó làm tham số model ở lệnh gọi query thứ hai.</p>",
-          "<p>Lấy nội dung tập đã đọc trong query đầu tiên và mã hóa cộng vào system prompt dùng cho lệnh gọi query thứ hai.</p>",
+          "<p>Lấy nội dung tệp đã đọc trong query đầu tiên và mã hóa cộng vào system prompt dùng cho lệnh gọi query thứ hai.</p>",
           "<p>Lấy toàn bộ văn bản của mỗi message tự query đầu tiên và gửi lại nó làm tiền tố của chuỗi prompt ở lệnh gọi query thứ hai.</p>"
         ]
       },
@@ -5285,7 +5285,7 @@
       "e": "Traffic tăng đột ngột dù chưa chấm RPM thì có thể đã vương acceleration limit, cơ chế chọn tầng tối đặt biến. Hãy tăng lưu lượng tự từ.",
       "m": 1,
       "v": {
-        "q": "<p>Mức sử dụng của một nhóm nằm thấp hơn nhiều so với giới hạn requests-per-minute đã công bố, những hệ bắt đầu gặp lỗi 429 sau khi một chiến dịch marketing khiển lưu lượng API tăng gấp ba trong vài phút. </p><p>Mức sử dụng trước đó ấn định trước đợt tăng đột biến. </p><p>Giải thích khả dĩ nhất là gì, và nhóm nên thay đổi điều gì để tránh tái diện?</p>",
+        "q": "<p>Mức sử dụng của một nhóm nằm thấp hơn nhiều so với giới hạn requests-per-minute đã công bố, những hệ bắt đầu gặp lỗi 429 sau khi một chiến dịch marketing khiển lưu lượng API tăng gấp ba trong vài phút. </p><p>Mức sử dụng trước đó ổn định trước đợt tăng đột biến. </p><p>Giải thích khả dĩ nhất là gì, và nhóm nên thay đổi điều gì để tránh tái diện?</p>",
         "o": [
           "<p>Giới hạn RPM đã công bố chỉ áp dụng cho Message Batches API, nên mới đợt tăng đột biến lưu lượng Messages API đồng bộ sẽ luôn trả về 429 bất kỳ nhắp để gửi</p>",
           "<p>Các phản hồi 429 cho biết API key của tổ chức đã tự động bị thu hồi vì nghi ngữ lốm dụng và phải được tạo lại trong Console</p>",
@@ -5368,7 +5368,7 @@
       "v": {
         "q": "<p>Một khối lượng công việc nhạy cảm về chi phí cần biết chính xác một prompt lần số tiêu tốn bao nhiêu token trước khi gọi tới Claude, để nhóm có thể giữ trong ngân sách. </p><p>Hệ nên dùng gì?</p>",
         "o": [
-          "<p>Files API, vì các tập được tải lên tự động báo cáo kích thước token trước khi bắt đầu sinh</p>",
+          "<p>Files API, vì các tệp được tải lên tự động báo cáo kích thước token trước khi bắt đầu sinh</p>",
           "<p>Trường budget_tokens của extended thinking, giới hạn và báo cáo tăng mức sử dụng token của request</p>",
           "<p>Tham số effort đặt là low, trả về số token ước tính trong metadata của phản hồi</p>",
           "<p>Một lệnh gọi token counting, để xác định số token trong một message trước khi gửi</p>"
@@ -5406,7 +5406,7 @@
         "q": "<p>Khi streaming một phần hồi có bất extended thinking, một client nhận được một thinking content block kết thúc bằng một sự kiện signature_delta ngay trước content_block_stop. </p><p>Mục đích của sự kiện signature_delta này là gì?</p>",
         "o": [
           "<p>Nó báo hiệu rằng một mô hình dự phòng đã tiếp quản việc sinh cho phần còn lại của phản hồi.</p>",
-          "<p>Nó đánh dấu điểm mà tại đó mức sử dụng token của thinking block nên được cộng vào tầng mức sử dụng tích lũy.</p>",
+          "<p>Nó đánh dấu điểm mà tại đó mức sử dụng token của thinking block nên được cộng vào tăng mức sử dụng tích lũy.</p>",
           "<p>Nó cung cấp một chữ ký dùng để xác minh tính toàn vẹn của nội dung thinking block.</p>",
           "<p>Nó cho biết thinking block đã bị che (redacted) vì tuân thủ chính sách và nội dung của nó nên bị loại bỏ.</p>"
         ]
@@ -5551,7 +5551,7 @@
       "e": "Đưa prompt cho một đồng nghiệp ít context đọc và làm theo. Chỉ nào người đó bởi rồi thì Claude nhiều khả năng cộng bởi rủi.",
       "m": 1,
       "v": {
-        "q": "<p>Một prompt được viết cho một công cụ tóm tắt tài liệu pháp lý tạo ra cấu trúc không nhất quán qua các lần chạy, và các kỹ sư trong nhóm bất đồng về nguyên nhân. </p><p>Trước khi tinh chỉnh prompt thêm, thực hành nào sẽ trực tiếp bắc lệ sự mơ hồ trong cách diễn đạt hiện tại nhất?</p>",
+        "q": "<p>Một prompt được viết cho một công cụ tóm tắt tài liệu pháp lý tạo ra cấu trúc không nhất quán qua các lần chạy, và các kỹ sư trong nhóm bất đồng về nguyên nhân. </p><p>Trước khi tinh chỉnh prompt thêm, thực hành nào sẽ trực tiếp bộc lộ sự mơ hồ trong cách diễn đạt hiện tại nhất?</p>",
         "o": [
           "<p>Yêu cầu Claude giải thích lại các chỉ dẫn của chính nó trong một lệnh gọi riêng, coi bạn diễn giải prompt của mô hình là sự thay thế đáng tin cậy cho việc kiểm tra mức độ hiệu của con người</p>",
           "<p>Chạy lại chính prompt đó, không chỉnh sửa, trên mô hình hai mươi lần và chỉ giữ cấu trúc kết quả phổ biến nhất, coi biểu quyết đa số là sự thay thế cho việc tìm ra chỉ mơ hồ</p>",
@@ -5639,7 +5639,7 @@
         "o": [
           "<p>Trả về một tool_result với is_error: true nêu rõ trường bị thiếu để Claude thử lại với trường đó được cung cấp</p>",
           "<p>Ghi log việc bị sót một cách im lặng và tiếp tục tạo ticket với giá trị priority là null</p>",
-          "<p>Viết lại schema độ priority là tùy chọn nhằm không bao giữ bị báo là thiếu nữa</p>",
+          "<p>Viết lỗi schema độ priority là tùy chọn nhằm không bao giữ bị báo là thiếu nữa</p>",
           "<p>Thêm strict: true vào định nghĩa công cụ để đầu vào được xác thực theo schema trước handler của bạn</p>",
           "<p>Cải thiện phần mô tả của công cụ để yêu cầu về trường priority được nêu rõ ràng hạn</p>",
           "<p>Tự động chấm dứt phiên và yêu cầu người dùng bắt đầu một cuộc hội thoại hoàn toàn mới</p>"
@@ -5807,12 +5807,12 @@
       "e": "Đa tenant an toàn: giới hạn tool của mỗi phiên trong đúng dữ liệu khách hàng đã xác thực; backend tự kiểm tra quyền trước mọi giao dịch; lực instruction bộ chèn trong ghi chú và tin nhắn trước khi trả về cho Claude.",
       "m": 3,
       "v": {
-        "q": "<p>Một công ty fintech đang triển khai một cố vẫn chạy bằng Claude đa tenant, đọc dữ liệu tài khoản của một khách hàng mới phiên và có thể đặt giao dịch thông qua một API nội bộ. </p><p>Tự hợp thực hành nào hỗ trợ tốt nhất cho xác thực, phân quyền và bảo mật thông tin giữa các tenant? (Chọn tất cả đáp án phù hợp.)</p>",
+        "q": "<p>Một công ty fintech đang triển khai một cố vẫn chạy bằng Claude đa tenant, đọc dữ liệu tài khoản của một khách hàng mỗi phiên và có thể đặt giao dịch thông qua một API nội bộ. </p><p>Tự hợp thực hành nào hỗ trợ tốt nhất cho xác thực, phân quyền và bảo mật thông tin giữa các tenant? (Chọn tất cả đáp án phù hợp.)</p>",
         "o": [
           "<p>Yêu cầu một bước kiểm tra phân quyền mới ở backend trước khi thực thi bất kỳ hành động giao dịch nào mà agent yêu cầu, thay vì chỉ tin vào phán đoán của chính agent</p>",
           "<p>Cho phép một phiên tiếp tục đọc dữ liệu của một khách hàng khác giữa cuộc hội thoại nếu agent quyết định điều đó liên quan theo ngữ cảnh đến lời khuyên hiện tại</p>",
           "<p>Giới hạn phạm vi truy cập công cụ của mỗi phiên để nó chỉ có thể đọc và hành động trên dữ liệu thuộc về khách hàng đã xác thực của phiên đó</p>",
-          "<p>Cấp một thông tin xác thực dịch vụ dùng chung cho API giao dịch mà mỗi phiên khách hàng tái sử dụng, độ đơn giản hóa việc xoay vòng thông tin xác thực</p>",
+          "<p>Cấp mất thông tin xác thực dịch vụ dùng chung cho API giao dịch mà mỗi phiên khách hàng tái sử dụng, độ đơn giản hóa việc xoay vòng thông tin xác thực</p>",
           "<p>Sàng lọc các ghi chú tài khoản và tin nhắn hỗ trợ đầu vào để phát hiện các chỉ dẫn bị chèn vào trước khi chúng được trả về cho Claude dưới dạng kết quả công cụ</p>",
           "<p>Ghi log đầy đủ số tài khoản và số dư danh mục đầu từ dưới dạng văn bản thuần trong nhật ký ứng dụng để nhân viên hỗ trợ có thể tìm kiếm lịch sử tự do</p>"
         ]
