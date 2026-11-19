@@ -39,7 +39,7 @@ for (const [cert, expected] of Object.entries(banks)) {
     assert.ok(!ids.has(q.id), `${cert}: duplicated ID ${q.id}`);
     ids.add(q.id);
     assert.ok(
-      new RegExp('^d[1-' + expected.domains + '] || (cert === 'ccao' && q.topic === 'review'),
+      new RegExp('^d[1-' + expected.domains + ']$').test(q.topic) || (cert === 'ccao' && q.topic === 'review'),
       `${cert}:${q.id} invalid official exam domain ${q.topic}`
     );
     assert.equal(typeof q.q, 'string', `${cert}:${q.id} missing English question`);
