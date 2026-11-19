@@ -297,9 +297,9 @@ const ICON = {
 const ic = n => `<svg class="i" viewBox="0 0 24 24">${ICON[n]}</svg>`;
 
 const CERTS = [
-  {id:'ccaf', code:'CCA-F',  name:'Claude Certified Architect',  sub:'Foundations', accent:'#7c3aed', desc:'Kiến trúc, thiết kế hệ thống và các pattern xây dựng giải pháp với Claude.'},
+  {id:'ccaf', code:'CCAR-F',  name:'Claude Certified Architect',  sub:'Foundations', accent:'#7c3aed', desc:'Kiến trúc, thiết kế hệ thống và các pattern xây dựng giải pháp với Claude.'},
   {id:'ccao', code:'CCAO-F', name:'Claude Certified Associate',  sub:'Foundations', accent:'#0d9488', desc:'Kiến thức nền tảng về Claude, cách dùng hiệu quả và các khái niệm cốt lõi.'},
-  {id:'ccdf', code:'CCD-F',  name:'Claude Certified Developer',  sub:'Foundations', accent:'#ea580c', desc:'Phát triển ứng dụng, agent và workflow tích hợp Claude.'}
+  {id:'ccdf', code:'CCDV-F',  name:'Claude Certified Developer',  sub:'Foundations', accent:'#ea580c', desc:'Phát triển ứng dụng, agent và workflow tích hợp Claude.'}
 ];
 const sizes = ['10','20','30','ALL'];
 function countFor(choice, total){
@@ -309,17 +309,106 @@ function selectSize(choice){
   return `<label class="btn">Số câu <select id="question-count">${sizes.map(size =>
     `<option${size===choice?' selected':''}>${size}</option>`).join('')}</select></label>`;
 }
-const topicLabels = {"agent": "Agent và điều phối workflow", "tools": "Công cụ và giao thức MCP", "code": "Claude Code và cấu hình dự án", "context": "Quản lý ngữ cảnh và bộ nhớ", "prompt": "Viết prompt và định dạng đầu ra", "quality": "Đánh giá, kiểm chứng và cải thiện kết quả", "risk": "An toàn, quyền riêng tư và giám sát", "api": "Mô hình Claude, API và chi phí", "workspace": "Projects, Artifacts và tính năng Claude", "workflow": "Phân công và ứng dụng AI vào công việc", "itsm": "Quản lý dịch vụ CNTT"};
+// Exam Guide v1.1 (November 2026); only the blueprint effective BEFORE 2026-12-07.
+const BLUEPRINTS = {
+  ccaf: {
+    items: 60,
+    source: 'https://cc.sj-cdn.net/instructor/6nizmqk8tpzpfjvt6qmmav7rh/public/1794946250/Claude_Certified_Architect_-_Foundations_Exam_Guide.pdf',
+    domains: [
+      {id:'d1', en:'Agentic Architecture & Orchestration', vi:'Kiến trúc agent và điều phối', weight:27},
+      {id:'d2', en:'Tool Design & MCP Integration', vi:'Thiết kế công cụ và tích hợp MCP', weight:18},
+      {id:'d3', en:'Claude Code Configuration & Workflows', vi:'Cấu hình Claude Code và quy trình', weight:20},
+      {id:'d4', en:'Prompt Engineering & Structured Output', vi:'Thiết kế prompt và đầu ra có cấu trúc', weight:20},
+      {id:'d5', en:'Context Management & Reliability', vi:'Quản lý ngữ cảnh và độ tin cậy', weight:15}
+    ]
+  },
+  ccao: {
+    items: 60,
+    source: 'https://cc.sj-cdn.net/instructor/6nizmqk8tpzpfjvt6qmmav7rh/public/1794946524/Claude_Certified_Associate_-_Foundations_Exam_Guide.pdf',
+    domains: [
+      {id:'d1', en:'Prompting and Task Execution', vi:'Viết prompt và thực hiện nhiệm vụ', weight:14},
+      {id:'d2', en:'Output Evaluation and Validation', vi:'Đánh giá và kiểm chứng đầu ra', weight:21},
+      {id:'d3', en:'Product and Model Selection', vi:'Lựa chọn tính năng và mô hình', weight:12},
+      {id:'d4', en:'Workflow Integration and Solution Design', vi:'Tích hợp quy trình và thiết kế giải pháp', weight:16},
+      {id:'d5', en:'Configuration and Knowledge Management', vi:'Cấu hình và quản lý tri thức', weight:12},
+      {id:'d6', en:'Governance, Risk, and Responsible Use', vi:'Quản trị, rủi ro và sử dụng có trách nhiệm', weight:15},
+      {id:'d7', en:'Troubleshooting and Optimization', vi:'Khắc phục sự cố và tối ưu hóa', weight:10}
+    ]
+  },
+  ccdf: {
+    items: 53,
+    source: 'https://cc.sj-cdn.net/instructor/6nizmqk8tpzpfjvt6qmmav7rh/public/1794946716/Claude_Certified_Developer_-_Foundations_Exam_Guide.pdf',
+    domains: [
+      {id:'d1', en:'Agents and Workflows', vi:'Agent và quy trình', weight:14.7},
+      {id:'d2', en:'Applications and Integration', vi:'Phát triển ứng dụng và tích hợp', weight:33.1},
+      {id:'d3', en:'Claude Code', vi:'Vận hành Claude Code', weight:3.1},
+      {id:'d4', en:'Eval, Testing, and Debugging', vi:'Đánh giá, kiểm thử và gỡ lỗi', weight:2.6},
+      {id:'d5', en:'Model Selection and Optimization', vi:'Lựa chọn mô hình và tối ưu hóa', weight:16.8},
+      {id:'d6', en:'Prompt and Context Engineering', vi:'Thiết kế prompt và ngữ cảnh', weight:11},
+      {id:'d7', en:'Security and Safety', vi:'Bảo mật và an toàn', weight:8.1},
+      {id:'d8', en:'Tools and MCPs', vi:'Công cụ và MCP', weight:10.6}
+    ]
+  }
+};
+const domainLabel = (cert, id) => BLUEPRINTS[cert].domains.find(d => d.id===id);
+const validTopic = (cert, topic) => domainLabel(cert,topic) || topic==='review' ? topic : '';
 function topicIds(cert, topic){
   return DATA[cert].qs.filter(q => !topic || q.topic === topic).map(q => q.id);
 }
-function selectTopic(cert, topic){
-  const counts = new Map();
-  for (const q of DATA[cert].qs) counts.set(q.topic,(counts.get(q.topic) || 0)+1);
-  const options = Object.entries(topicLabels).filter(([key]) => counts.has(key)).map(([key,label]) =>
-    `<option value="${key}"${key===topic?' selected':''}>${label} (${counts.get(key)})</option>`);
-  return `<label class="btn topic-label">Chủ đề <select id="topic-filter"><option value="">Tất cả (${DATA[cert].qs.length})</option>${options.join('')}</select></label>`;
+function examTopicIds(cert, topic){
+  return DATA[cert].qs.filter(q => q.topic !== 'review' && (!topic || q.topic===topic)).map(q=>q.id);
 }
+function selectTopic(cert, topic, exam=false){
+  const counts = new Map();
+  for (const q of DATA[cert].qs) counts.set(q.topic,(counts.get(q.topic)||0)+1);
+  const domains = BLUEPRINTS[cert].domains.map(d =>
+    `<option value="${d.id}"${d.id===topic?' selected':''}>D${d.id.slice(1)} · ${d.vi} (${counts.get(d.id)||0})</option>`);
+  if(!exam && counts.has('review')) domains.push(
+    `<option value="review"${topic==='review'?' selected':''}>Cần kiểm tra phạm vi (${counts.get('review')})</option>`);
+  const total = exam ? examTopicIds(cert).length : DATA[cert].qs.length;
+  return `<label class="btn topic-label">Domain <select id="topic-filter"><option value="">Tất cả (${total})</option>${domains.join('')}</select></label>`;
+}
+function selectExamSize(choice, cert){
+  const options = [
+    ['OFFICIAL',`Đề mô phỏng (${BLUEPRINTS[cert].items})`],
+    ['10','10 câu'],['20','20 câu'],['30','30 câu'],['ALL','Toàn bộ ngân hàng']
+  ];
+  return `<label class="btn">Số câu <select id="question-count">${options.map(([value,label]) =>
+    `<option value="${value}"${value===choice?' selected':''}>${label}</option>`).join('')}</select></label>`;
+}
+function examCount(choice, total, cert){
+  return choice==='OFFICIAL' ? Math.min(BLUEPRINTS[cert].items,total) : countFor(choice,total);
+}
+
+/* BEGIN WEIGHTED EXAM */
+// Allocate the official proportions with Hamilton/largest remainder rounding.
+// A domain exhausted by the bank is capped; remaining slots are redistributed.
+function weightedExamQuotas(cert, number, pools){
+  const domains = BLUEPRINTS[cert].domains.filter(d => (pools[d.id]||[]).length);
+  const available = domains.reduce((sum,d)=>sum+pools[d.id].length,0);
+  const n = Math.min(number,available);
+  const weightTotal = domains.reduce((sum,d)=>sum+d.weight,0);
+  const quotas = Object.fromEntries(BLUEPRINTS[cert].domains.map(d=>[d.id,0]));
+  const ideal = Object.fromEntries(domains.map(d=>[d.id,n*d.weight/weightTotal]));
+  for(const d of domains)quotas[d.id]=Math.min(pools[d.id].length,Math.floor(ideal[d.id]));
+  let remain = n-Object.values(quotas).reduce((sum,v)=>sum+v,0);
+  while(remain>0){
+    const candidates=domains.filter(d=>quotas[d.id]<pools[d.id].length)
+      .sort((a,b)=>(ideal[b.id]-quotas[b.id])-(ideal[a.id]-quotas[a.id]) || a.id.localeCompare(b.id));
+    if(!candidates.length)throw Error('Not enough questions to fill the weighted exam');
+    quotas[candidates[0].id]++;
+    remain--;
+  }
+  return quotas;
+}
+function weightedExamIds(cert, number){
+  const pools = Object.fromEntries(BLUEPRINTS[cert].domains.map(d=>[d.id,DATA[cert].qs
+    .filter(q=>q.topic===d.id).map(q=>q.id)]));
+  const quotas=weightedExamQuotas(cert,number,pools);
+  return shuffle(BLUEPRINTS[cert].domains.flatMap(d=>shuffle(pools[d.id]).slice(0,quotas[d.id])));
+}
+/* END WEIGHTED EXAM */
+
 function learnOrder(rnd){
   const ids = topicIds(route.cert, LRN.topic);
   return (rnd ? shuffle(ids) : ids).slice(0, countFor(LRN.size, ids.length));
@@ -366,7 +455,19 @@ function displayedQuestion(q, state){
 }
 function loadLearn(c){
   const s = LS.get(KEY(c,'learn'));
+  const previousTopic = s?.topic;
+  if(s) s.topic=validTopic(c,s.topic);
   const ids = topicIds(c,s?.topic);
+  // Upgrade old topic filters without discarding previously selected answers/progress.
+  // Old categories (agent/prompt/etc.) no longer exist in the official domain taxonomy.
+  if(s && previousTopic && !s.topic && Array.isArray(s.order) && s.order.every(id=>BY_ID[c][id])){
+    const order = s.shuffle ? shuffle(ids) : ids;
+    const migrated = {...s, topic:'', retry:false, fullOrder:null,
+      order:order.slice(0,countFor(s.size,ids.length)), idx:0,
+      optionOrders:s.shuffle ? optionOrders(ids,c) : null};
+    LS.set(KEY(c,'learn'),migrated);
+    return migrated;
+  }
   if (s && Array.isArray(s.order) && (s.retry ? (s.fullOrder && s.fullOrder.length===countFor(s.size, ids.length)) : s.order.length===countFor(s.size, ids.length)) && s.order.every(i => BY_ID[c][i])) {
     if (s.shuffle && !s.optionOrders) {
       s.optionOrders = optionOrders(ids, c);
@@ -379,6 +480,7 @@ function loadLearn(c){
 const saveLearn = () => LS.set(KEY(route.cert,'learn'), LRN);
 function loadExam(c){
   const s = LS.get(KEY(c,'exam'));
+  if(s) s.topic=validTopic(c,s.topic);
   if (s && s.phase && (s.phase==='intro' || (Array.isArray(s.ids) && s.ids.every(i => BY_ID[c][i])))) return s;
   return {phase:'intro'};
 }
@@ -735,8 +837,15 @@ function startRetryExam(){
   showWrong = false; saveExam(); renderExam(); window.scrollTo(0,0);
 }
 function startExam(){
-  const ids = topicIds(route.cert,EXM.topic);
-  EXM = {topic:EXM.topic, size:EXM.size || '10', phase:'run', ids: shuffle(ids).slice(0, countFor(EXM.size || '10', ids.length)), ans:{}, idx:0, start:Date.now()};
+  const ids = examTopicIds(route.cert,EXM.topic);
+  const size = EXM.size || 'OFFICIAL';
+  const count = examCount(size,ids.length,route.cert);
+  // Domain-specific practice is intentionally not blueprint-weighted.
+  // ALL includes every in-scope question, so its distribution follows the bank.
+  const picked = EXM.topic || count===ids.length
+    ? shuffle(ids).slice(0,count)
+    : weightedExamIds(route.cert,count);
+  EXM = {topic:EXM.topic, size, phase:'run', ids:picked, ans:{}, idx:0, start:Date.now()};
   EXM.optionOrders = optionOrders(EXM.ids, route.cert);
   showWrong = false; saveExam(); renderExam(); window.scrollTo(0,0);
 }
@@ -751,16 +860,29 @@ async function submitExam(){
   showWrong = false; saveExam(); renderExam(); window.scrollTo(0,0);
 }
 function renderExamIntro(c){
-  const choice = EXM.size || '10';
-  const total = topicIds(c.id,EXM.topic).length;
-  const n = countFor(choice,total);
+  const choice = EXM.size || 'OFFICIAL';
+  const total = examTopicIds(c.id,EXM.topic).length;
+  const n = examCount(choice,total,c.id);
+  const weighted = !EXM.topic && n<total;
+  const pools = Object.fromEntries(BLUEPRINTS[c.id].domains.map(d=>[d.id,DATA[c.id].qs.filter(q=>q.topic===d.id)]));
+  const quota = weighted ? weightedExamQuotas(c.id,n,pools) : null;
+  const distribution = weighted ? `<details class="blueprint-distribution"><summary>Xem phân bổ theo blueprint trước 07/12/2026</summary>
+    <ul>${BLUEPRINTS[c.id].domains.map(d=>`<li>D${d.id.slice(1)} · ${d.vi}: ${quota[d.id]} câu (${d.weight}%)</li>`).join('')}</ul></details>` : '';
   $('#app').innerHTML = topbar(c, '') + `<div class="layout single" style="--accent:${c.accent}"><main class="main">
     <section class="panel hero">
       <div class="badge" style="background:${c.accent}">${c.code}</div>
       <h2>Thi thử ${c.name}</h2>
-      ${selectTopic(c.id,EXM.topic)}
-      ${selectSize(choice)}
-      <p>Hệ thống chọn ngẫu nhiên ${n} câu trong số ${total} câu theo chủ đề đã chọn. Bạn có thể làm câu bất kỳ qua bảng bên trái và nộp bài khi sẵn sàng.</p>
+      ${selectTopic(c.id,EXM.topic,true)}
+      ${selectExamSize(choice,c.id)}
+      <p>${weighted
+        ? `Chọn ngẫu nhiên ${n} câu theo trọng số từng domain của Anthropic (blueprint trước 07/12/2026).`
+        : EXM.topic
+          ? `Luyện riêng domain đã chọn: ${n}/${total} câu ngẫu nhiên (không áp dụng trọng số toàn đề).`
+          : `Dùng toàn bộ ${total} câu trong phạm vi đề; tỷ lệ thực tế của ngân hàng có thể khác blueprint.`}
+        Bạn có thể chuyển đến bất kỳ câu nào và nộp bài khi sẵn sàng.</p>
+      ${distribution}
+      <p class="sub">Thang điểm Passed/Failed 80% là quy ước của ứng dụng luyện tập, không phải cách quy đổi điểm 720 của kỳ thi thật.</p>
+      <p class="sub"><a href="${BLUEPRINTS[c.id].source}" target="_blank" rel="noopener noreferrer">Exam Guide chính thức (November 2026)</a></p>
       <div class="rules">
         <div class="rule" style="--accent:${c.accent}"><b>${n}</b><span>câu hỏi ngẫu nhiên</span></div>
         <div class="rule" style="--accent:${c.accent}"><b>≥ ${passMark(n)}</b><span>câu đúng để Passed</span></div>

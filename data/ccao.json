@@ -35,7 +35,7 @@
           "<p>3,1,5,4,2</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d6"
     },
     {
       "id": "964",
@@ -72,7 +72,7 @@
           "<p>Tinh chỉnh các hướng dẫn đã soạn dựa trên những khoảng trống quan sát được từ các lần chạy kiểm chứng.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d5"
     },
     {
       "id": "965",
@@ -109,7 +109,7 @@
           "<p>Thu thập ấn tượng chung sau mỗi lần chạy và áp dụng chúng dưới dạng viết lại prompt trên diện rộng, vì viết lỗi trên diện rộng bao quát nhiều vấn đề tiềm ẩn hạn các thay đổi có mục tiêu.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d7"
     },
     {
       "id": "966",
@@ -146,7 +146,7 @@
           "<p>Một danh sách gạch đầu dòng các nhận xét được nhóm theo khu vực mà không có các chỉ số nhất quán giữa các mục</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d2"
     },
     {
       "id": "967",
@@ -183,7 +183,7 @@
           "<p>Dùng Code Execution để thực hiện các phép tính và tạo biểu đồ, sau đó xác minh các kết quả đã tính với dữ liệu nguồn trước khi chia sẻ output.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d3"
     },
     {
       "id": "968",
@@ -220,7 +220,7 @@
           "<p>Lớp sơ đồ quy trình intake hiện tại, xác định các điểm nghẽn có khả năng xảy ra dựa trên dữ liệu cycle-time, và đề xuất các phương án tối ưu hóa độ con người xem xét.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d4"
     },
     {
       "id": "969",
@@ -257,7 +257,7 @@
           "<p>Khung quản trị xác định khóa đào tạo mà mỗi nhân viên phải hoàn thành trước khi sử dụng các công cụ AI, với các yêu cầu riêng cho từng công cụ mà tổ chức cấp phép.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d6"
     },
     {
       "id": "970",
@@ -300,7 +300,7 @@
           "<p>Đào tạo mới thành viên trong nhóm về Connector mọi thông qua các buổi đào tạo chính thức.</p>"
         ]
       },
-      "topic": "workspace"
+      "topic": "d6"
     },
     {
       "id": "971",
@@ -337,7 +337,7 @@
           "<p>Chỉ nhập thông tin liên quan đến cuộc điều tra vào Claude sau khi cuộc điều tra kết thúc, vì chính sách chỉ áp dụng trong thời gian điều tra.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d6"
     },
     {
       "id": "972",
@@ -380,7 +380,7 @@
           "<p>Giám sát một luồng dữ liệu cảm biến trực tiếp và gắn cả các bất thường ngay khi chúng xảy ra theo thời gian thực</p>"
         ]
       },
-      "topic": "workflow"
+      "topic": "d3"
     },
     {
       "id": "973",
@@ -417,7 +417,7 @@
           "<p>Kiểm thử Project đã cấu hình với một yêu cầu tiêu biểu từ khối lượng công việc.</p>"
         ]
       },
-      "topic": "workspace"
+      "topic": "d5"
     },
     {
       "id": "974",
@@ -454,7 +454,7 @@
           "<p>Hợp nhất các bước liên quan thành ít phản gắn kết hạn, nhóm các ý có liên họ tự nhiên với nhau.</p>"
         ]
       },
-      "topic": "workflow"
+      "topic": "d1"
     },
     {
       "id": "975",
@@ -491,7 +491,7 @@
           "<p>Tất hoàn toàn Memory và dán lại cùng các đoạn ngữ cảnh ở đầu mỗi phiên Claude, dù Memory được thiết kế để tự động lưu giữ ngữ cảnh đó giữa các cuộc hội thoại.</p>"
         ]
       },
-      "topic": "workspace"
+      "topic": "d5"
     },
     {
       "id": "976",
@@ -528,7 +528,7 @@
           "<p>Thói quen này là lý tượng vì một mẫu duy nhất đảm bảo chất lượng nhất quán trên mỗi loại tác vụ.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d7"
     },
     {
       "id": "977",
@@ -565,7 +565,7 @@
           "<p>Dùng cách tiếp cận brainstorming phân kỳ để tạo ra nhiều nhận xét khả dĩ về giá của đối thể, rồi thu hẹp xuống nhưng nhận xét có khả năng nhất.</p>"
         ]
       },
-      "topic": "api"
+      "topic": "d4"
     },
     {
       "id": "978",
@@ -608,7 +608,7 @@
           "<p>Một bản tóm tắt đã ẩn danh của một chính sách HR mà mô hình sẽ diễn đạt lại.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d6"
     },
     {
       "id": "979",
@@ -651,7 +651,7 @@
           "<p>Review các concept do Claude tạo ra và chọn hai concept mạnh nhất để phát triển thêm.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d1"
     },
     {
       "id": "980",
@@ -688,7 +688,7 @@
           "<p>Dùng Claude tạo các concept giải pháp ứng viên theo nhiều phong cách đa dạng.</p>"
         ]
       },
-      "topic": "workflow"
+      "topic": "d4"
     },
     {
       "id": "981",
@@ -725,7 +725,7 @@
           "<p>Phản hồi là một bản nháp chưa chỉnh sửa gửi cho một khách hàng trả phí có chứa cam kết về mặc dịch vụ (service-level).</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d6"
     },
     {
       "id": "982",
@@ -762,7 +762,7 @@
           "<p>Mới tuyên bố cụ thể có thể được truy vết một nguồn đáng tin cậy hoặc về tài liệu đầu vào được cung cấp không?</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d2"
     },
     {
       "id": "983",
@@ -799,7 +799,7 @@
           "<p>Viết lại bạn brief từ đều có kết hợp hai vấn đề cụ thể, vì bắt đầu mỗi tích hợp phản hồi gần gàng hơn so với các chỉnh sửa có mục tiêu.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d7"
     },
     {
       "id": "984",
@@ -836,7 +836,7 @@
           "<p>Xóa phần ghi nguồn và trình bày con số như kiến thức phổ biến.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d2"
     },
     {
       "id": "985",
@@ -873,7 +873,7 @@
           "<p>2, 5, 4, 1, 3</p>"
         ]
       },
-      "topic": "workflow"
+      "topic": "d4"
     },
     {
       "id": "986",
@@ -910,7 +910,7 @@
           "<p>Một mô hình tùy chỉnh, mà người dùng cấp Associate sẽ phải từ xây dựng và huấn luyện.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d3"
     },
     {
       "id": "987",
@@ -947,7 +947,7 @@
           "<p>Cấu hình cả hai Project dùng chung cùng một ngữ cảnh memory để giảm công sắc thiết lập, dù việc chia sẻ memory giữa các hộp động khách hàng không liên quan chính là cấu hình gây ra context bleed.</p>"
         ]
       },
-      "topic": "workspace"
+      "topic": "d5"
     },
     {
       "id": "988",
@@ -984,7 +984,7 @@
           "<p>5, 1, 4, 3, 2</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d2"
     },
     {
       "id": "989",
@@ -1021,7 +1021,7 @@
           "<p>Cung cấp transcript và yêu cầu Claude tóm tắt nó; trích xuất các yêu cầu từ bản tóm tắt ở lượt thứ hai vì hai lượt bắt được nhiều chi tiết hơn.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d1"
     },
     {
       "id": "990",
@@ -1058,7 +1058,7 @@
           "<p>Cấu hình nên được review và cập nhật định kỳ vì các chính sách, thuật ngữ và tài liệu nguồn thay đổi theo thời gian, ngay cả khi chất lượng output chưa suy giảm rõ rệt.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d5"
     },
     {
       "id": "991",
@@ -1095,7 +1095,7 @@
           "<p>Ngữ cảnh cung cấp cho Claude nên được mở rộng với thêm chi tiết nền về chế độ.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d1"
     },
     {
       "id": "992",
@@ -1132,7 +1132,7 @@
           "<p>3, 4, 1, 2, 5</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d7"
     },
     {
       "id": "993",
@@ -1169,7 +1169,7 @@
           "<p>Mở đầu bằng triển vọng tương lai, vì nhà đầu từ quan tâm nhất đến điều sắp tới, rồi trình bày kết quả chính và các động lực sau đó.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d2"
     },
     {
       "id": "994",
@@ -1206,7 +1206,7 @@
           "<p>Triển khai thiết kế trên cơ sở thí điểm và chỉ thông báo cho bộ phận tuân thủ nếu có vấn đề phát sinh trong quá trình sử dụng thực tế.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d6"
     },
     {
       "id": "995",
@@ -1243,7 +1243,7 @@
           "<p>Chia mỗi tài liệu thành các mảnh một ký tự và cung cấp tầng mạnh một.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d3"
     },
     {
       "id": "996",
@@ -1280,7 +1280,7 @@
           "<p>Chỉ dùng một Artifact cho các phép tính, cung cấp một bề mặt ấn định, có thể chỉnh sửa cho kết quả nhưng không thực hiện phép tính xác định mà Code Execution sẽ chạy.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d3"
     },
     {
       "id": "997",
@@ -1317,7 +1317,7 @@
           "<p>3, 5, 1, 2, 4</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d2"
     },
     {
       "id": "998",
@@ -1354,7 +1354,7 @@
           "<p>Chuyển hướng dẫn giọng điệu thường hiệu và chính sách goodwill credit vào knowledge base của Project và chỉ dựa vào các tài liệu để chi phải giọng điệu, độ dài và quyết định vị credit, mà không thay đổi custom instructions.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d5"
     },
     {
       "id": "999",
@@ -1391,7 +1391,7 @@
           "<p>Tiếp tục thực hiện nhiều thay đổi lớn đồng thời cho đến khi output tình cỡ khớp.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d7"
     },
     {
       "id": "1000",
@@ -1434,7 +1434,7 @@
           "<p>Gửi đi các thông điệp đã soạn và thu thập phản hồi để chỉnh sửa.</p>"
         ]
       },
-      "topic": "workflow"
+      "topic": "d4"
     },
     {
       "id": "1001",
@@ -1471,7 +1471,7 @@
           "<p>Xác định các câu hỏi nghiên cứu cụ thể cần được trở lại cho phân khúc.</p>"
         ]
       },
-      "topic": "workflow"
+      "topic": "d4"
     },
     {
       "id": "1002",
@@ -1508,7 +1508,7 @@
           "<p>Bước mà các cá nhân đóng góp báo cáo khối lượng công việc cao nhất trong các cập nhật trạng thái hằng tuần của hệ.</p>"
         ]
       },
-      "topic": "workflow"
+      "topic": "d4"
     },
     {
       "id": "1003",
@@ -1545,7 +1545,7 @@
           "<p>Một prompt bổ sung các ràng buộc rõ ràng về độ dài và giọng điệu.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d1"
     },
     {
       "id": "1004",
@@ -1582,7 +1582,7 @@
           "<p>Độ chính xác của các dữ kiện so với charter, mức mức độ đầy đủ so với các trường báo cáo bắt buộc và mức để liên quan đối với đối tượng nhận báo cáo.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d2"
     },
     {
       "id": "1005",
@@ -1619,7 +1619,7 @@
           "<p>Phê duyệt các sản phẩm bàn giao cuối cùng đề xuất bản ra bên ngoài mà không cần review thêm</p>"
         ]
       },
-      "topic": "workflow"
+      "topic": "d4"
     },
     {
       "id": "1006",
@@ -1656,7 +1656,7 @@
           "<p>Chuyển Project sang một mô hình Claude khác với hy vọng nó hoạt động tốt hơn.</p>"
         ]
       },
-      "topic": "workspace"
+      "topic": "d5"
     },
     {
       "id": "1007",
@@ -1693,7 +1693,7 @@
           "<p>Chọn Haiku để giữ độ trễ thấp và xử lý hiệu quả khối lượng lập luận nhỏ ở quy mô lớn.</p>"
         ]
       },
-      "topic": "api"
+      "topic": "d3"
     },
     {
       "id": "1008",
@@ -1730,7 +1730,7 @@
           "<p>Một tiêu độ bao phủ duy nhất ngắn hạn các tiêu độ bao phủ khác trong tài liệu.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d2"
     },
     {
       "id": "1009",
@@ -1773,7 +1773,7 @@
           "<p>Các slide trình bày từ một buổi đào tạo gần đây của nhóm về các tiêu chuẩn truyền thông nội bộ</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "1010",
@@ -1816,7 +1816,7 @@
           "<p>Xác định và chỉnh sửa hoặc xóa các mục đã lỗi thời, không chính xác hoặc không còn liên quan, và bổ sung ngữ cảnh mà Claude chưa tự động ghi nhận những quy trình vẫn tiếp tục cần.</p>"
         ]
       },
-      "topic": "workflow"
+      "topic": "d5"
     },
     {
       "id": "1011",
@@ -1853,7 +1853,7 @@
           "<p>Cung cấp glossary của tổ chức và hướng dẫn Claude chỉ dùng các thuật ngữ đó xuyên suất phản hồi.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d1"
     },
     {
       "id": "1012",
@@ -1890,7 +1890,7 @@
           "<p>Bỏ qua bước kiểm tra tài liệu nguồn khi rà soát và dựa vào giống vận cùng mạch logic tổng thể để suy ra độ chính xác của dữ kiện.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d2"
     },
     {
       "id": "1013",
@@ -1927,7 +1927,7 @@
           "<p>Tuân theo thẩm quyền của lãnh đảo và loại bỏ bước rà soát của con người khởi nội dung hưởng đến khách hàng, đồng thời theo dõi sát kết quả trong vài tuần đầu.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d6"
     },
     {
       "id": "1014",
@@ -1964,7 +1964,7 @@
           "<p>Xác định chính xác tuyên bố cụ thể có vị không được chứng cố sẵn có hỗ trợ.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d2"
     },
     {
       "id": "1015",
@@ -2007,7 +2007,7 @@
           "<p>Đưa ra các cam kết hợp động có tính ràng buộc pháp lý thay một công ty</p>"
         ]
       },
-      "topic": "workspace"
+      "topic": "d4"
     },
     {
       "id": "1016",
@@ -2050,7 +2050,7 @@
           "<p>Triển khai quy trình onboarding cho mỗi nhân viên mới trên toàn công ty.</p>"
         ]
       },
-      "topic": "workflow"
+      "topic": "d4"
     },
     {
       "id": "1017",
@@ -2093,7 +2093,7 @@
           "<p>Ghi lại các bước của quy trình đã sửa đổi và cập nhật quy trình vận hành chuẩn (SOP) của nhóm.</p>"
         ]
       },
-      "topic": "workflow"
+      "topic": "d7"
     },
     {
       "id": "1018",
@@ -2136,7 +2136,7 @@
           "<p>Một tuyên bố rõ ràng về các giới hạn và các failure mode đã biệt của việc tích hợp</p>"
         ]
       },
-      "topic": "workflow"
+      "topic": "d4"
     },
     {
       "id": "1019",
@@ -2173,7 +2173,7 @@
           "<p>Thêm Skill liên quan vào Project, tải lên các nguồn kiến thức hỗ trợ và viết custom instructions tham chiếu đến cả Skill lần kiến thức đó.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d5"
     },
     {
       "id": "1020",
@@ -2210,7 +2210,7 @@
           "<p>Báo cáo đáp ứng đặc tả deliverable vì cụ nằm chỉ để bắt buộc đầu xuất hiện và phần renewal-risk có một trong đầu ra.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d2"
     },
     {
       "id": "1021",
@@ -2253,7 +2253,7 @@
           "<p>Xác định một bước xác minh đầu ra ngắn gọn, trong đó người rà soát xác nhận kết quả đã tính toán so với một khoảng giá trị kỳ vọng hoặc phép kiểm tra hợp lý (sanity check) trước khi đầu ra được chuyển đến các bên tiêu thứ phía sau.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d4"
     },
     {
       "id": "1022",
@@ -2290,7 +2290,7 @@
           "<p>1, 3, 5, 4, 2</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d6"
     },
     {
       "id": "1023",
@@ -2327,7 +2327,7 @@
           "<p>Các mô hình nhỏ hơn tiêu tốn nhiều tài nguyên hơn cho mỗi yêu cầu so với các mô hình có năng lực cao hơn vì chúng luôn cần nhiều lượt xử lý đủ đặt chất lượng ngang mô hình cao hơn.</p>"
         ]
       },
-      "topic": "api"
+      "topic": "d3"
     },
     {
       "id": "1024",
@@ -2370,7 +2370,7 @@
           "<p>Thêm một mô tả giọng điệu cụ thể và một đối tượng đọc giả cụ thể vào prompt.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d1"
     },
     {
       "id": "1025",
@@ -2413,7 +2413,7 @@
           "<p>Một mô hình năng lực cao hơn cho việc trích xuất từ khóa một dòng ở khối lượng yêu cầu lần</p>"
         ]
       },
-      "topic": "api"
+      "topic": "d3"
     },
     {
       "id": "1026",
@@ -2456,7 +2456,7 @@
           "<p>Các quyết định ảnh hưởng đáng kể đến việc làm của một người mà không có trách nhiệm giải trình của con người</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d6"
     },
     {
       "id": "1027",
@@ -2493,7 +2493,7 @@
           "<p>Coi khẳng định là chưa được xác minh, và hoặc dẫn nguồn từ một tài liệu tham chiếu có thẩm quyền hoặc loại bỏ nó.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d2"
     },
     {
       "id": "1028",
@@ -2536,7 +2536,7 @@
           "<p>Dùng các tiêu đề phần rõ ràng để phân tách các phần khác nhau của tài liệu đầu vào.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d3"
     },
     {
       "id": "1029",
@@ -2573,7 +2573,7 @@
           "<p>Được tạo ra trong một phiên Research đang hoạt động</p>"
         ]
       },
-      "topic": "workspace"
+      "topic": "d3"
     },
     {
       "id": "1030",
@@ -2610,7 +2610,7 @@
           "<p>Haiku 4.5 cho chất lượng suy luận cao nhất trong bản mô hình</p>"
         ]
       },
-      "topic": "api"
+      "topic": "d3"
     },
     {
       "id": "1031",
@@ -2647,7 +2647,7 @@
           "<p>Haiku 4.5, mô hình nhanh nhất và nhỏ nhất</p>"
         ]
       },
-      "topic": "api"
+      "topic": "d3"
     },
     {
       "id": "1032",
@@ -2684,7 +2684,7 @@
           "<p>Đính kèm các trích dẫn vào bản nháp được tạo ra để có thể truy xuất nguồn gốc nguồn</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d6"
     },
     {
       "id": "1033",
@@ -2721,7 +2721,7 @@
           "<p>Dùng giá trị nào gần nhất với điều bạn đã kỳ vọng từ trước</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d2"
     },
     {
       "id": "1034",
@@ -2758,7 +2758,7 @@
           "<p>Research tiêu tốn hơn mức sử dụng nhanh hơn một tin nhắn thông thường</p>"
         ]
       },
-      "topic": "workspace"
+      "topic": "d3"
     },
     {
       "id": "1035",
@@ -2795,7 +2795,7 @@
           "<p>Chỉ cần brainstorming, vì việc lên ý tương tự nhiên bao gồm suy luận và nguồn</p>"
         ]
       },
-      "topic": "api"
+      "topic": "d3"
     },
     {
       "id": "1036",
@@ -2832,7 +2832,7 @@
           "<p>Tạo lại toàn bộ tài liệu từ đầu bằng một prompt mới</p>"
         ]
       },
-      "topic": "workspace"
+      "topic": "d3"
     },
     {
       "id": "1037",
@@ -2869,7 +2869,7 @@
           "<p>Viết lại prompt từ đầu để ngăn ngừa lỗi trong tương lai</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d7"
     },
     {
       "id": "1038",
@@ -2906,7 +2906,7 @@
           "<p>Các lựa chọn về định dạng và bố cục trong một bản nháp memo nội bộ thông thường</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d2"
     },
     {
       "id": "1039",
@@ -2943,7 +2943,7 @@
           "<p>Styles, thiết lập giọng điệu và định dạng cho mỗi cuộc hội thoại</p>"
         ]
       },
-      "topic": "workspace"
+      "topic": "d3"
     },
     {
       "id": "1040",
@@ -2980,7 +2980,7 @@
           "<p>Một Skill chỉ được tại khi Claude đánh giá tác vụ là có liên quan</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d5"
     },
     {
       "id": "1041",
@@ -3017,7 +3017,7 @@
           "<p>Sự chấp thuận rõ ràng của người dùng cho hành động tạo bản nháp cụ thể đó</p>"
         ]
       },
-      "topic": "workspace"
+      "topic": "d6"
     },
     {
       "id": "1042",
@@ -3054,7 +3054,7 @@
           "<p>Một chỉ thị bao quát duy nhất cho toàn bộ tác vụ</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d1"
     },
     {
       "id": "1043",
@@ -3091,7 +3091,7 @@
           "<p>Một Custom Style chỉ áp dụng cho cuộc hội thoại hiện tại</p>"
         ]
       },
-      "topic": "workspace"
+      "topic": "d5"
     },
     {
       "id": "1044",
@@ -3128,7 +3128,7 @@
           "<p>Chuyển sang một mô hình khác với hy vọng mô hình mới xử lý context dài tốt hơn.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d3"
     },
     {
       "id": "1045",
@@ -3165,7 +3165,7 @@
           "<p>Ghi lại mục đích của Connector và các trường hợp sử dụng phù hợp cho nhóm. ab</p>"
         ]
       },
-      "topic": "workspace"
+      "topic": "d5"
     },
     {
       "id": "1046",
@@ -3202,7 +3202,7 @@
           "<p>Event management</p>"
         ]
       },
-      "topic": "itsm"
+      "topic": "review"
     },
     {
       "id": "1047",
@@ -3239,7 +3239,7 @@
           "<p>Claude tìm kiếm và đọc các email mà người dùng có quyền truy cập ở chế độ chỉ đọc, và người dùng phải từ soạn mọi thứ trở lại bên ngoài connector.</p>"
         ]
       },
-      "topic": "workspace"
+      "topic": "d3"
     },
     {
       "id": "1048",
@@ -3276,7 +3276,7 @@
           "<p>Cấu trúc dựa trên tiêu đề của prompt khuyến khích Claude tạo nội dung giữ chỗ dưới mới tiêu đề ngay cả khi nguồn không đề cập đến.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d7"
     },
     {
       "id": "1049",
@@ -3313,7 +3313,7 @@
           "<p>Mở một chat mới và chỉ dán bản nháp hiện tại, sau đó tiếp tục tinh chỉnh ở đó mà không có context về yêu cầu và rà soát dữ liệu trước đó.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d7"
     },
     {
       "id": "1050",
@@ -3350,7 +3350,7 @@
           "<p>Dùng một lệnh gọi mô hình riêng để cô động toàn bộ 60 định nghĩa công cụ thành một chỉ mục gần được thêm vào đầu mỗi lượt của người dùng để chọn công cụ.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "review"
     },
     {
       "id": "1051",
@@ -3387,7 +3387,7 @@
           "<p>Tối tầng truy xuất, nhưng dựa vào một access token duy nhất toàn tổ chức được dùng chung cho mỗi vai trò thay vì phân quyền phạm vi theo từng vai trò</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "review"
     },
     {
       "id": "1052",
@@ -3424,7 +3424,7 @@
           "<p>Release notes hưởng đến người dùng, một từ giới thiệu marketing một trang mô tả triển khai và một FAQ cho khách hàng</p>"
         ]
       },
-      "topic": "workflow"
+      "topic": "d4"
     },
     {
       "id": "1053",
@@ -3461,7 +3461,7 @@
           "<p>Sửa đổi prompt để giải quyết từng điểm yếu đã xác định.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d1"
     },
     {
       "id": "1054",
@@ -3498,7 +3498,7 @@
           "<p>Prompt lặp lại này đặc tả chứa để về đối tượng đọc giả, giọng điệu, định dạng và các phần bắt buộc, nên mỗi lần chạy lệch đi tùy theo điều mô hình nhẫn mảnh ở lượt đó.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d7"
     },
     {
       "id": "1055",
@@ -3536,7 +3536,7 @@
           "<p>Ủy thác trách nhiệm giải trình cho sản phẩm công việc có AI hỗ trợ cho chính Claude thay vì giữ lại đó như một nghĩa vị của con người, trái với nguyên tắc Diligence rộng con người vấn chịu trách nhiệm vụ các đầu ra có AI hỗ trợ.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d1"
     },
     {
       "id": "1056",
@@ -3579,7 +3579,7 @@
           "<p>Gọi lại nhiều lần cùng một prompt là cách đáng tin cậy nhất để cải thiện đầu ra.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d7"
     },
     {
       "id": "1057",
@@ -3616,7 +3616,7 @@
           "<p>Loại bỏ toàn bộ mô tả phân khúc khách hàng khỏi bản brief, vì bất kỳ phân khúc nào liên quan đến đặc điểm nhân khẩu học đều có khả năng gây ra các vấn đề tương tự.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d6"
     },
     {
       "id": "1058",
@@ -3653,7 +3653,7 @@
           "<p>3, 4, 1, 5, 2</p>"
         ]
       },
-      "topic": "workflow"
+      "topic": "d4"
     },
     {
       "id": "1059",
@@ -3696,7 +3696,7 @@
           "<p>Thâm niên của thành viên nhóm hiện đang thực hiện bước đó, vì các vai trò cấp cao hơn thường liên quan đến các tác vụ có mức độ rủi ro cao hơn, đáng để giữ lại cho con người.</p>"
         ]
       },
-      "topic": "workflow"
+      "topic": "d7"
     },
     {
       "id": "1060",
@@ -3739,7 +3739,7 @@
           "<p>Rà soát các quyền hạn và khả năng mà Skill yêu cầu và xác nhận rằng quyền truy cập được yêu cầu là phù hợp với tác vụ mà Skill dự định thực hiện.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d6"
     },
     {
       "id": "1061",
@@ -3776,7 +3776,7 @@
           "<p>Giảm số bước của quy trình xuống mức tối thiểu có thể, vì ít bước hạn đồng nghĩa với cycle time nhanh hơn và tỷ lệ lỗi thấp hơn.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d2"
     },
     {
       "id": "1062",
@@ -3813,7 +3813,7 @@
           "<p>3, 5, 1, 4, 2</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d6"
     },
     {
       "id": "1063",
@@ -3856,7 +3856,7 @@
           "<p>Từ chối chỉnh sửa các phần do Claude tạo ra với lý do output của mô hình cần được tin tượng như đã viết</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d7"
     },
     {
       "id": "1065",
@@ -3899,7 +3899,7 @@
           "<p>Cập nhật tên workspace dùng chung của nhóm để phản ánh quy trình quy trình mới</p>"
         ]
       },
-      "topic": "workflow"
+      "topic": "d4"
     },
     {
       "id": "1066",
@@ -3936,7 +3936,7 @@
           "<p>Cô động cách diễn đạt độ lãnh đảo dữ lượt đọc và xác minh tầng dữ kiện với dữ liệu nguồn; giữ nguyên cấu trúc tiêu đề và thuật ngữ như đã viết để bảo toàn giống văn của bản thảo.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d2"
     },
     {
       "id": "1067",
@@ -3979,7 +3979,7 @@
           "<p>Prompting khám phá mở cho việc brainstorm chiến lược ở giai đoạn đầu về một thư trường mới</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d1"
     },
     {
       "id": "1068",
@@ -4022,7 +4022,7 @@
           "<p>Xác định ngưỡng chất lượng, mức chịu động để trả và khối lượng request dự kiến.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d2"
     },
     {
       "id": "1069",
@@ -4059,7 +4059,7 @@
           "<p>Sonnet là model nhanh nhất trong ba model vì kiến trúc của nó được tối ưu cho tốc để thay vì độ sâu suy luận.</p>"
         ]
       },
-      "topic": "api"
+      "topic": "d3"
     },
     {
       "id": "1070",
@@ -4102,7 +4102,7 @@
           "<p>Định kỳ tóm tắt các quyết định đã đưa ra cho đến nay độ nén trạng thái làm việc.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d3"
     },
     {
       "id": "1071",
@@ -4145,7 +4145,7 @@
           "<p>Coi cuộc hội thoại là phù hợp với thiết lập Memory mặc định, vì con số chỉ được thảo luận ngắn gọn và khó có khả năng bị lưu giữ.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d6"
     },
     {
       "id": "1072",
@@ -4182,7 +4182,7 @@
           "<p>Việc lớp đã đặt đến mục lợi ích giảm dần và bước tiếp theo là human review hoặc một cách tiếp cận khác.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d7"
     },
     {
       "id": "1073",
@@ -4219,7 +4219,7 @@
           "<p>2, 3, 1, 4, 5</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d7"
     },
     {
       "id": "1074",
@@ -4262,7 +4262,7 @@
           "<p>Đánh dấu rõ tầng nguồn bằng delimiter để model có thể quy kết các nhận định một cách chính xác.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d3"
     },
     {
       "id": "1075",
@@ -4299,7 +4299,7 @@
           "<p>Sổ tay nhân viên hiện hành cùng các phiên bản trước của sổ tay tự nằm nằm trả lời, để Claude có thể trở lại các câu hỏi về việc chính sách đã thay đổi như thế nào</p>"
         ]
       },
-      "topic": "workspace"
+      "topic": "d5"
     },
     {
       "id": "1076",
@@ -4336,7 +4336,7 @@
           "<p>Các phản hồi của Claude thay đổi giữa các lần chạy cùng một prompt, nên các bên liên quan nên chạy mỗi prompt vài lần và so sánh output trước khi dùng bất kỳ phản hồi đến lệ nào.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d2"
     },
     {
       "id": "1077",
@@ -4373,7 +4373,7 @@
           "<p>Các chức danh lấy từ sơ đồ tự chức công khai của công ty</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d6"
     },
     {
       "id": "1078",
@@ -4410,7 +4410,7 @@
           "<p>Thực hiện kiểm tra có hệ thống bạn brief so với các yêu cầu của tác vụ, tài liệu nguồn và các tiêu chuẩn nghị nghiệp trước khi chia sẻ.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d2"
     },
     {
       "id": "1079",
@@ -4447,7 +4447,7 @@
           "<p>Dùng Claude độ trực tiếp thực hiện các cuộc phỏng vấn bên liên quan, với analyst xem lại bản ghi sau đó để xác nhận các yêu cầu mà Claude trích xuất.</p>"
         ]
       },
-      "topic": "workflow"
+      "topic": "d4"
     },
     {
       "id": "1080",
@@ -4484,7 +4484,7 @@
           "<p>Đánh dấu các xung đột trong tài liệu yêu cầu, ghi lại nguồn của mỗi bên và chuyển các xung đột vị cho các bên liên quan gốc để giải quyết.</p>"
         ]
       },
-      "topic": "workflow"
+      "topic": "d4"
     },
     {
       "id": "1081",
@@ -4521,7 +4521,7 @@
           "<p>Không phù hợp chỉ vì các lo ngại về độ tin cậy của hệ thống chủ không phải về trách nhiệm giải trình, mặc dù tiêu chí Delegation phân loại các quyết định tuyến dạng cuối cùng là cần con người làm chủ bất kỳ hiệu năng của hệ thống.</p>"
         ]
       },
-      "topic": "workflow"
+      "topic": "d6"
     },
     {
       "id": "1083",
@@ -4558,7 +4558,7 @@
           "<p>Lớp cải tiến quy trình đã tích hợp dựa trên các phát hiện tự đặt thí điểm.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d4"
     },
     {
       "id": "1084",
@@ -4595,7 +4595,7 @@
           "<p>Gọi toàn bộ hệ số về việc và thêm chỉ dẫn yêu cầu Claude không nhắc đến mã định danh do chính phụ cấp hoặc địa chỉ nhà trong bản tóm tắt.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d6"
     },
     {
       "id": "1085",
@@ -4632,7 +4632,7 @@
           "<p>Soạn executive summary trước để neo mạch câu chuyển của báo cáo, rồi soạn từng phần sao cho hỗ trợ bản tóm tắt đã viết.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d1"
     },
     {
       "id": "1086",
@@ -4669,7 +4669,7 @@
           "<p>Redact các trường nhạy cảm và thay chúng bằng các placeholder phù hợp.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d6"
     },
     {
       "id": "1087",
@@ -4706,7 +4706,7 @@
           "<p>Đính kèm bạn tin trước đó, và yêu cầu Claude khớp giọng điệu và cấu trúc của nó trong khi đưa vào các thông điệp chính mới cho ba khu vực đã nêu tên.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d1"
     },
     {
       "id": "1088",
@@ -4749,7 +4749,7 @@
           "<p>Một Connector liên kết tới tài khoản lưu trữ đám mây cá nhân nối các thành viên nhóm lưu bản thảo làm việc cùng với các tập cá nhân</p>"
         ]
       },
-      "topic": "workspace"
+      "topic": "d6"
     },
     {
       "id": "1089",
@@ -4786,7 +4786,7 @@
           "<p>Xử lý mỗi điểm yếu mà phản hồi cho thấy trong một lần sửa đổi duy nhất, rồi so sánh output đã sửa với phiên bản trước.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d7"
     },
     {
       "id": "1090",
@@ -4823,7 +4823,7 @@
           "<p>Review các câu hỏi để đảm bảo chúng áp dụng như nhau cho mỗi ứng viên, tránh các giả định vị xuất thân của ứng viên và tập trung vào các yêu cầu thực tế của vai trò.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d6"
     },
     {
       "id": "1092",
@@ -4860,7 +4860,7 @@
           "<p>Câu lệnh tác vụ của prompt không liệt kê ba câu hỏi bắt buộc để tường minh để Claude trở lại lần lượt từng câu.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d1"
     },
     {
       "id": "1093",
@@ -4897,7 +4897,7 @@
           "<p>Yêu cầu liên quan đến một output duy nhất được xác định rõ với đầu vào rõ ràng và định dạng quen thuộc.</p>"
         ]
       },
-      "topic": "workflow"
+      "topic": "d1"
     },
     {
       "id": "1094",
@@ -4934,7 +4934,7 @@
           "<p>Xử lý hai mối quan ngại cụ thể và thêm một cải tiến thứ ba mà associate tử nhận ra, vì kết hợp feedback của bên liên quan với các cải tiến tử nhận ra là hiệu quả hơn.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d2"
     },
     {
       "id": "1095",
@@ -4971,7 +4971,7 @@
           "<p>Công b? cả hai ngày mà không giải quyết xung đột và để người đọc tự chọn.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d2"
     },
     {
       "id": "1096",
@@ -5008,7 +5008,7 @@
           "<p>4, 1, 3, 2, 5</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d1"
     },
     {
       "id": "1097",
@@ -5045,7 +5045,7 @@
           "<p>Giao toàn bộ việc áp dụng chính sách cho một nhóm compliance tập trung, coi việc sử dụng của cá nhân là nằm ngoài trách nhiệm cá nhân.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d6"
     },
     {
       "id": "1098",
@@ -5082,7 +5082,7 @@
           "<p>Bỏ qua tiêu chí và yêu cầu Claude đưa ra khuyến nghị nhà cung cấp mà không có đầu vào nào.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d1"
     },
     {
       "id": "1099",
@@ -5119,7 +5119,7 @@
           "<p>Việc nhập Memory ghi đè tất cả các memory trước đó khi hoàn tất, nên mới chi tiết có vị bị thiếu hạn đã bị quá trình nhập xóa chủ không phải không được tích hợp trong chính quá trình nhập.</p>"
         ]
       },
-      "topic": "workflow"
+      "topic": "d4"
     },
     {
       "id": "1100",
@@ -5156,7 +5156,7 @@
           "<p>5, 2, 1, 3, 4</p>"
         ]
       },
-      "topic": "workflow"
+      "topic": "d1"
     },
     {
       "id": "1101",
@@ -5193,7 +5193,7 @@
           "<p>Tăng độ dài của prompt bằng cách chèn văn bản đến không chỉ định phạm vi tác vụ, định dạng output, đối tượng hay ràng buộc, độ nguyên các lỗ hổng đặc tả ban đầu trong prompt hoạt động kém.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d1"
     },
     {
       "id": "1102",
@@ -5237,7 +5237,7 @@
           "<p>Số nhất quán của văn phong với các hướng dẫn về giọng điệu đã được thiết lập của tổ chức</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d2"
     },
     {
       "id": "1103",
@@ -5274,7 +5274,7 @@
           "<p>Chỉ trích xuất nội dung phản hồi cần cho bản tóm tắt, redact hoặc anonymize thông tin liên hệ cá nhân, và gửi đầu vào đã được cắt gần.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d6"
     },
     {
       "id": "1104",
@@ -5311,7 +5311,7 @@
           "<p>Sinh synthesis subagent với context giảm bật và để nó yêu cầu các phát hiện cụ thể từ coordinator theo nhu cầu.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "review"
     },
     {
       "id": "1105",
@@ -5348,7 +5348,7 @@
           "<p>2, 3, 4, 1, 5</p>"
         ]
       },
-      "topic": "workspace"
+      "topic": "d7"
     },
     {
       "id": "1106",
@@ -5385,7 +5385,7 @@
           "<p>Kết nối thư mục Google Drive của nhóm nối ba tài liệu được lưu, độ connector hiển thị chúng trong mỗi chat vào đúng thời điểm chat cần.</p>"
         ]
       },
-      "topic": "workspace"
+      "topic": "d5"
     },
     {
       "id": "1107",
@@ -5422,7 +5422,7 @@
           "<p>Ghi nhận sự bực bội và đặt một câu hỏi có mục tiêu để hiệu vấn đề cụ thể trước khi escalate.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d6"
     },
     {
       "id": "1108",
@@ -5459,7 +5459,7 @@
           "<p>3, 5, 1, 4, 2</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d1"
     },
     {
       "id": "1110",
@@ -5502,7 +5502,7 @@
           "<p>Ngữ cảnh liên quan nhỏ đối tượng và mục tiêu của tác vụ</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d1"
     },
     {
       "id": "1112",
@@ -5539,7 +5539,7 @@
           "<p>Khuyến nghị là hợp lý vì mỗi nguồn mà nó trích dẫn đầu ứng hệ kết luận hợp nhất.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d2"
     },
     {
       "id": "1113",
@@ -5582,7 +5582,7 @@
           "<p>Một mẫu đại diện các bài viết trước đây phản ánh phong cách và cấu trúc ưa thích của nhóm</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d5"
     },
     {
       "id": "1114",
@@ -5625,7 +5625,7 @@
           "<p>Soạn một bản tóm tắt triều chứng sẽ bị để hỗ trợ việc xem xét chẩn đoán của bác sĩ lâm sàng</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d6"
     },
     {
       "id": "1115",
@@ -5662,7 +5662,7 @@
           "<p>Opus, vì nó được định vị là mô hình mạnh nhất cho lập luận nâng cao trên các tác vụ chuyên biệt phức tạp.</p>"
         ]
       },
-      "topic": "api"
+      "topic": "d3"
     },
     {
       "id": "1116",
@@ -5705,7 +5705,7 @@
           "<p>Bỏ qua chính sách phân loại dữ liệu vì tác vụ là nội bộ, coi việc xử lý trong sandbox là lý do miễn trừ khởi bước xem xét mà chính sách yêu cầu trước khi tải lên dữ liệu nhạy cảm.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d6"
     },
     {
       "id": "1117",
@@ -5748,7 +5748,7 @@
           "<p>Tool use để gửi một calculator nhằm diễn đạt lại mô tả sản phẩm bằng ngôn ngữ đơn giản hơn.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d4"
     },
     {
       "id": "1118",
@@ -5785,7 +5785,7 @@
           "<p>Yêu cầu Claude đưa ra mười ý tượng riêng biệt mà không có ràng buộc ngân sách, sau đó lực kết quả để chỉ giữ lại các ý tượng phù hợp với ba mục ngân sách.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d1"
     },
     {
       "id": "1244",
@@ -5822,7 +5822,7 @@
           "<p>Nêu vai trò của Claude là người thiết kế khóa học; độ mới prompt trong chat chỉ định các tiêu chuẩn và cấu trúc đầu ra cho bài học đó, vì các bài học rất khác nhau.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d5"
     },
     {
       "id": "1245",
@@ -5865,7 +5865,7 @@
           "<p>Xác định các tiêu chí đánh giá quan trọng đối với tác vụ đang xét.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d2"
     },
     {
       "id": "1246",
@@ -5903,7 +5903,7 @@
           "<p>Ngừng sử dụng đầu ra và bắt đầu một chat mới với prompt được giới hạn phạm vi cẩn thận hơn, vì vấn đề đã được giải quyết miễn là đầu ra ban đều không được sử dụng.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d6"
     },
     {
       "id": "1251",
@@ -5940,7 +5940,7 @@
           "<p>Ánh xạ tầng yêu cầu được đánh số trong RFP với một phần của bạn tóm tắt và xác nhận rộng mỗi yêu cầu đều được thể hiện.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d2"
     },
     {
       "id": "1252",
@@ -5977,7 +5977,7 @@
           "<p>Một Project mới chỉ chứa các ghi chú cuộc họp trước đó của nhóm.</p>"
         ]
       },
-      "topic": "workspace"
+      "topic": "d3"
     },
     {
       "id": "1253",
@@ -6014,7 +6014,7 @@
           "<p>Thay thế ngay mô hình bằng mô hình của một nhà cung cấp khác.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d7"
     },
     {
       "id": "1254",
@@ -6051,7 +6051,7 @@
           "<p>Một thiết lập có thể điều chỉnh, xác định lượng lịch sử hội thoại mà mô hình đưa vào mỗi phản hồi, có thể cấu hình cho từng chat.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d3"
     },
     {
       "id": "1255",
@@ -6088,7 +6088,7 @@
           "<p>Yêu cầu nhiều phương án riêng biệt và yêu cầu Claude khuyến nghị phương án mạnh nhất kèm lập luận, để nhóm bắt đầu thảo luận đánh đổi từ một ứng viên dẫn đầu.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d1"
     },
     {
       "id": "1256",
@@ -6125,7 +6125,7 @@
           "<p>Cung cấp hướng dẫn dưới dạng danh sách đánh số các bước theo đúng thứ tự chúng phải chạy</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d1"
     },
     {
       "id": "1257",
@@ -6162,7 +6162,7 @@
           "<p>Yêu cầu Claude tạo nhiều bản nháp email với các giọng điệu khác nhau (trang trống, thân một, cấp bách), sau đó đánh giá tính thuyết phục, để rõ ràng và sự phù hợp thường hiệu của tầng bản nháp, chọn bản tốt nhất để chỉnh sửa lần cuối, rồi lặp lại nếu cần.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d1"
     },
     {
       "id": "1258",
@@ -6205,7 +6205,7 @@
           "<p>Prompt dài vì có khá nhiều thông tin nền đã được dán kèm theo.</p>"
         ]
       },
-      "topic": "workflow"
+      "topic": "d4"
     },
     {
       "id": "1259",
@@ -6242,7 +6242,7 @@
           "<p>Chuyển bài viết sang định dạng đặc tả chính thức mà nhóm kỹ thuật sử dụng</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d7"
     },
     {
       "id": "1260",
@@ -6279,7 +6279,7 @@
           "<p>Là chính xác nhưng lọc để, vì nó giải thích chỉ để thay vì giải quyết mục tổng mà cô đã hội.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d2"
     },
     {
       "id": "1261",
@@ -6316,7 +6316,7 @@
           "<p>Xác nhận rằng báo cáo tồn tại và đã được xuất bản, điều này xác lập nguồn gốc của trích dẫn.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d2"
     },
     {
       "id": "1262",
@@ -6353,7 +6353,7 @@
           "<p>Thống nhất nhà cung cấp nào và tiêu chí nào thuộc về bản so sánh trước khi yêu cầu bất kỳ đầu ra nào.</p>"
         ]
       },
-      "topic": "workflow"
+      "topic": "d4"
     },
     {
       "id": "1263",
@@ -6390,7 +6390,7 @@
           "<p>Mở các nguồn được trích dẫn và xác nhận rằng mỗi con số trong bản nháp thực sự xuất hiện trong trang mà nó chỉ đến.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d2"
     },
     {
       "id": "1264",
@@ -6427,7 +6427,7 @@
           "<p>Diện đặt lại prompt ban đầu của cô bằng ngôn ngữ mạnh mở hơn để phát biểu sai ít có khả năng tái diện lần sau.</p>"
         ]
       },
-      "topic": "workspace"
+      "topic": "d5"
     },
     {
       "id": "1265",
@@ -6464,7 +6464,7 @@
           "<p>Dạng buổi brainstorm ngay bây giờ và bắt đầu lỗi trong một chat mới để các ý tượng đến từ một cửa sổ hoàn toàn sạch.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d3"
     },
     {
       "id": "1266",
@@ -6507,7 +6507,7 @@
           "<p>Mở một chat riêng cho từng đổi thể để không cuộc hội thoại đến lệ nào trở nên dài.</p>"
         ]
       },
-      "topic": "workspace"
+      "topic": "d3"
     },
     {
       "id": "1267",
@@ -6550,7 +6550,7 @@
           "<p>Dùng tier có khả năng lập luận sâu nhất cho cả hai công việc, vì lựa chọn mạnh nhất không bao giờ là từ.</p>"
         ]
       },
-      "topic": "api"
+      "topic": "d3"
     },
     {
       "id": "1268",
@@ -6593,7 +6593,7 @@
           "<p>Nâng lên một tier là cách khắc phục tiêu chuẩn mới khi một prompt trả về câu trả lời mơ hồ hoặc nông.</p>"
         ]
       },
-      "topic": "api"
+      "topic": "d3"
     },
     {
       "id": "1269",
@@ -6630,7 +6630,7 @@
           "<p>Chọn một tier theo mức độ quan trọng cảm nhận được của tác vụ, sau đó chạy trong một tháng, rồi viết ra thế nào là đầu ra tất, rồi so sánh các kết quả của tháng đó với định nghĩa này.</p>"
         ]
       },
-      "topic": "api"
+      "topic": "d3"
     },
     {
       "id": "1270",
@@ -6667,7 +6667,7 @@
           "<p>Thâm niên của những người sở hữu tổng khối lượng công việc, vì chỉ số hậu cấp cao hơn chịu trách nhiệm vụ khối lượng công việc dễ thấy hạn trong hai khối lượng.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d2"
     },
     {
       "id": "1271",
@@ -6704,7 +6704,7 @@
           "<p>Yêu cầu Claude diễn đạt lại từng mục dưới dạng kết quả mong muốn, sau đó gắn cả các mục mà kết quả đó chưa rõ ràng.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d1"
     },
     {
       "id": "1272",
@@ -6741,7 +6741,7 @@
           "<p>Viết lại các chỉ dẫn để bao phủ những lệnh vực mà chỉ số hậu tin là có khả năng gây ra vấn đề nhất.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d7"
     },
     {
       "id": "1273",
@@ -6778,7 +6778,7 @@
           "<p>S? thay đổi này dự kiến tiết kiệm bao nhiêu thời gian cho nhóm trong suốt mặt nằm đầy đủ.</p>"
         ]
       },
-      "topic": "workflow"
+      "topic": "d4"
     },
     {
       "id": "1274",
@@ -6821,7 +6821,7 @@
           "<p>Bỏ qua quyết định mà nghiên cứu phải hỗ trợ, để Claude không bị dẫn dắt theo một câu trả lời.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d2"
     },
     {
       "id": "1275",
@@ -6864,7 +6864,7 @@
           "<p>Một ví dụ cụ thể, được đo lường về những gì quy trình làm việc đã cải thiện trong pilot mà nó đã chạy.</p>"
         ]
       },
-      "topic": "workflow"
+      "topic": "d4"
     },
     {
       "id": "1276",
@@ -6901,7 +6901,7 @@
           "<p>Tại cả danh sách tham chiếu và quy tắc lên dưới dạng tài liệu trong project knowledge base, để đảm bảo tính nhất quán.</p>"
         ]
       },
-      "topic": "workspace"
+      "topic": "d5"
     },
     {
       "id": "1277",
@@ -6938,7 +6938,7 @@
           "<p>Yêu cầu tăng thành viên tạo bản sao project của riêng hệ để mỗi người kiểm soát knowledge base của chính mình.</p>"
         ]
       },
-      "topic": "workspace"
+      "topic": "d5"
     },
     {
       "id": "1278",
@@ -6981,7 +6981,7 @@
           "<p>Tải lên một bản sao của sổ tay chỉ một lần rồi dựa vào bản sao đó trong phần còn lại của nằm nay.</p>"
         ]
       },
-      "topic": "workspace"
+      "topic": "d5"
     },
     {
       "id": "1279",
@@ -7018,7 +7018,7 @@
           "<p>Các tài liệu bổ sung sẽ làm chậm mỗi câu trả lời trong project cho đến khi thư mục được cắt giảm.</p>"
         ]
       },
-      "topic": "workspace"
+      "topic": "d6"
     },
     {
       "id": "1280",
@@ -7055,7 +7055,7 @@
           "<p>Không có, trừ khi agent được xây dựng bằng một framework của bên thứ ba thay vì các công cụ chính thức của Anthropic</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d6"
     },
     {
       "id": "1281",
@@ -7092,7 +7092,7 @@
           "<p>Chỉ số hữu có thể yêu cầu mỗi đánh giá phải được quản lý phê duyệt trước khi được gửi đi cuối cùng.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d6"
     },
     {
       "id": "1282",
@@ -7129,7 +7129,7 @@
           "<p>Các chat ẩn danh chấp nhận được với dữ liệu được quản lý miễn là tên khách hàng được thay bảng mã tham chiếu.</p>"
         ]
       },
-      "topic": "workspace"
+      "topic": "d6"
     },
     {
       "id": "1283",
@@ -7166,7 +7166,7 @@
           "<p>Hỏi khách hàng xem họ có phản đối việc đã sử dụng sự hỗ trợ của AI cho báo cáo hay không.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d6"
     },
     {
       "id": "1284",
@@ -7203,7 +7203,7 @@
           "<p>Yêu cầu Claude diễn đạt lại các tiêu chí tuyến sinh của khu học chánh để nhóm có thể xác nhận rằng nó hiệu đúng.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d6"
     },
     {
       "id": "1285",
@@ -7240,7 +7240,7 @@
           "<p>Kiểm tra những gì số đồng ý của người tham gia và chính sách công ty cho phép; chạy bản tóm tắt và xem xét nó trước khi lưu hành; xóa các tên và nội làm việc mà bạn tóm tắt không cần; ghi chú những gì đã bị xóa để kết quả có thể được diễn giải đúng.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d6"
     },
     {
       "id": "1286",
@@ -7277,7 +7277,7 @@
           "<p>Viết lại prompt để liệt kê chính xác các danh mục, định dạng đầu ra mong muốn và các tiêu chí độ lựa chọn giữa chúng.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d1"
     },
     {
       "id": "1287",
@@ -7314,7 +7314,7 @@
           "<p>Quyết định cô cần gì trước khi bắt đầu; đặt yêu cầu và tài liệu liên quan vào tin nhắn mở đầu; xử lý các câu hỏi tiếp theo có tham chiếu ngược lại nó; mở chat mới cho tác vụ không liên quan kế tiếp.</p>"
         ]
       },
-      "topic": "api"
+      "topic": "d7"
     },
     {
       "id": "1288",
@@ -7351,7 +7351,7 @@
           "<p>Soạn thảo bên trong một project riêng không có bất kỳ tài liệu nào trong knowledge.</p>"
         ]
       },
-      "topic": "workspace"
+      "topic": "d5"
     },
     {
       "id": "1289",
@@ -7394,7 +7394,7 @@
           "<p>Viết lại ngay các project instructions dùng chung để nhấn mạnh rằng các rủi ro còn mở là quan trọng nhất.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d4"
     }
   ]
 }

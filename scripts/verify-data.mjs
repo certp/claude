@@ -5,16 +5,17 @@ import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 
-// English content and answer keys from the initial, unmodified question bank.
-// Only update these fingerprints when an English-content change is explicitly approved.
+// English content, answers, order and IDs from the initial question bank.
+// Topic/domain metadata is deliberately EXCLUDED from the fingerprint so domain corrections
+// never mask an accidental change to the original English questions or answers.
 const banks = {
-  ccaf: { count: 309, english: '65abaf9f' },
-  ccao: { count: 193, english: '68a9f24e' },
-  ccdf: { count: 155, english: 'c6913270' },
+  ccaf: { count: 309, english: '0bfd5bec', domains: 5 },
+  ccao: { count: 193, english: 'be880d99', domains: 7 },
+  ccdf: { count: 155, english: '629ed52c', domains: 8 },
 };
 
 function englishFingerprint(qs) {
-  const source = JSON.stringify(qs.map(q => [q.id, q.q, q.o, q.a, q.m, q.topic]));
+  const source = JSON.stringify(qs.map(q => [q.id, q.q, q.o, q.a, q.m]));
   let hash = 2166136261;
   for (let i = 0; i < source.length; i++) {
     hash ^= source.charCodeAt(i);
@@ -37,6 +38,10 @@ for (const [cert, expected] of Object.entries(banks)) {
     assert.equal(typeof q.id, 'string', `${cert}: invalid question ID`);
     assert.ok(!ids.has(q.id), `${cert}: duplicated ID ${q.id}`);
     ids.add(q.id);
+    assert.ok(
+      new RegExp('^d[1-' + expected.domains + ']$').test(q.topic) || (cert === 'ccao' && q.topic === 'review'),
+      `${cert}:${q.id} invalid official exam domain ${q.topic}`
+    );
     assert.equal(typeof q.q, 'string', `${cert}:${q.id} missing English question`);
     assert.ok(Array.isArray(q.o) && q.o.length > 0, `${cert}:${q.id} missing choices`);
     assert.ok(q.o.every(o => typeof o.k === 'string' && typeof o.h === 'string'), `${cert}:${q.id} malformed choices`);
@@ -59,6 +64,13 @@ for (const [cert, expected] of Object.entries(banks)) {
         }
       }
     }
+  }
+  const flagged = bank.qs.filter(q => q.topic === 'review').map(q => q.id).sort();
+  assert.deepEqual(flagged, cert === 'ccao' ? ['1046', '1050', '1051', '1104'] : [],
+    `${cert}: review inventory changed; reevaluate question scope`);
+  for (let domain = 1; domain <= expected.domains; domain++) {
+    assert.ok(bank.qs.some(q => q.topic === `d${domain}`),
+      `${cert}: no questions available in domain ${domain}`);
   }
   assert.equal(englishFingerprint(bank.qs), expected.english, `${cert}: original English/answer content changed`);
   console.log(`PASS ${cert}: ${bank.qs.length} questions, English unchanged`);

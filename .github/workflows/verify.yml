@@ -1,0 +1,22 @@
+name: Verify Claude practice exams
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify question banks and English content
+        run: node scripts/verify-data.mjs
+      - name: Verify official weighted exam sampling
+        run: node scripts/verify-weighted-exam.mjs
