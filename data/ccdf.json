@@ -4365,15 +4365,15 @@
       "a": [
         "D"
       ],
-      "e": "Custom tool tốt: schema rõ, description nói rõ khi nào nên gợi, và xử lý lỗi từ dịch vụ bên ngoài một cách tường minh.",
+      "e": "Một custom tool đáng tin cậy cần schema đầu vào rõ ràng, phần mô tả điều kiện sử dụng và cơ chế xử lý lỗi dịch vụ bên ngoài.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang triển khai một custom tool cho agent Claude của mình. </p><p>Công cụ này cần tương tác với một dịch vụ định giá bên ngoài trả về dữ liệu sơn phạm. </p><p>Thực hành tốt nhất nào sau đây bạn sẽ áp dụng khi phát triển công cụ này?</p>",
+        "q": "<p>Bạn xây dựng custom tool cho tác nhân Claude để truy vấn dịch vụ định giá bên ngoài và lấy dữ liệu sản phẩm. Khi triển khai công cụ, nên áp dụng thực hành nào?</p>",
         "o": [
-          "<p>Định nghĩa công cụ với một schema lỏng lẻo và độ mô hình diễn giải đầu vào một cách linh hoạt ở mỗi lần agent gửi.</p>",
-          "<p>Định nghĩa công cụ với một schema rõ ràng, viết mô tả chính xác về thời điểm cần gọi nó, và xử lý tường minh các lỗi của dịch vụ định giá.</p>",
-          "<p>Bỏ qua phần mô tả công cụ và độ mô hình từ suy ra khi nào dùng công cụ dựa trên tên công cụ và phần còn lại của ngữ cảnh prompt.</p>",
-          "<p>Triển khai công cụ mà không xử lý lỗi và để agent loop bật các lại mối khi dịch vụ định giá trả về lỗi trong quá trình hoạt động.</p>"
+          "<p>Dùng schema lỏng để mô hình tự diễn giải tham số mỗi lần gọi.</p>",
+          "<p>Định nghĩa schema rõ ràng, mô tả chính xác khi nào cần gọi công cụ và xử lý lỗi từ dịch vụ định giá.</p>",
+          "<p>Bỏ mô tả, để mô hình đoán mục đích từ tên công cụ.</p>",
+          "<p>Không xử lý lỗi trong công cụ, để agent loop tự khắc phục khi dịch vụ trả lỗi.</p>"
         ]
       },
       "topic": "api"
@@ -4402,15 +4402,15 @@
       "a": [
         "A"
       ],
-      "e": "Tool output chỉ cần trong thời gian ngắn thì cắt bỏ (pruning) khi các bước sau không còn dùng. Caching chỉ giảm tiến, không giảm độ loãng của context.",
+      "e": "Khi kết quả công cụ đã hết giá trị, hãy lược bỏ khỏi ngữ cảnh. Prompt caching giúp giảm chi phí trong một số tình huống nhưng không làm ngữ cảnh ngắn hoặc bớt nhiễu.",
       "m": 1,
       "v": {
-        "q": "<p>Ứng dụng Claude của bạn có các quy trình nhiều bước, trong đó đầu ra của mỗi bước chỉ cần trong thời gian ngắn trước khi agent chuyển sang bước tiếp theo. </p><p>Đầu ra công cụ tích lũy đang lấp đầy cửa sổ ngữ cảnh bằng nội dung không còn liên quan. </p><p>Bạn sẽ xử lý đầu ra công cụ đang tích lũy này như thế nào?</p>",
+        "q": "<p>Quy trình Claude gồm nhiều bước, nhưng kết quả công cụ của từng bước chỉ hữu ích trong thời gian ngắn. Các đầu ra cũ tích lũy khiến cửa sổ ngữ cảnh đầy thông tin không còn liên quan. Nên làm gì?</p>",
         "o": [
-          "<p>Chuyển sang một mô hình Claude nhỏ hơn xử lý ngữ cảnh hiệu quả hơn và chấp nhận mọi sự suy giảm chất lượng như một số đánh đổi để giảm chi phí.</p>",
-          "<p>Giữ mỗi đều ra công cụ trong ngữ cảnh vô thời hạn để agent có bản ghi đầy đủ về mỗi bước nó đã thực hiện trong workflow.</p>",
-          "<p>Áp dụng việc cắt tỉa (pruning) đầu ra công cụ để loại bỏ các đầu ra công cụ mà các bước sau trong quy trình không còn cần.</p>",
-          "<p>Áp dụng prompt caching cho các đầu ra công cụ tích lũy độ ứng dụng không phải trả lời chi phí cho nội dung cũ ở mỗi bước tiếp theo.</p>"
+          "<p>Chuyển sang mô hình nhỏ hơn để xử lý ngữ cảnh tiết kiệm hơn, dù có thể giảm chất lượng.</p>",
+          "<p>Giữ mọi kết quả công cụ mãi trong ngữ cảnh để có lịch sử đầy đủ.</p>",
+          "<p>Dùng tool output pruning để bỏ kết quả công cụ mà các bước sau không còn cần.</p>",
+          "<p>Dùng prompt caching cho toàn bộ kết quả cũ nhằm tiết kiệm chi phí đầu vào.</p>"
         ]
       },
       "topic": "context"
@@ -4439,15 +4439,15 @@
       "a": [
         "A"
       ],
-      "e": "Đồng với kết luận là hallucination. Xem trace production để xác định nguyên nhân thất (hallucination, một context, prompt injection…) rồi mới chọn cách sửa.",
+      "e": "Không nên kết luận nguyên nhân trước khi có bằng chứng. Hãy kiểm tra trace để phân biệt thông tin bịa, thất lạc ngữ cảnh và những nguồn nhiễu hoặc chỉ dẫn không đáng tin.",
       "m": 1,
       "v": {
-        "q": "<p>Một ứng dụng Claude hoạt động tắt trong quá trình thử nghiệm nay thănh thoảng trả về các đầu ra đề cập đến thông tin không có trong đầu vào. </p><p>Nhóm phát triển ban đầu cho rằng mô hình đang hallucinate, nên hỗ như bản khắc phục sự cố. </p><p>Bạn sẽ làm gì trước tiên?</p>",
+        "q": "<p>Ứng dụng Claude từng hoạt động tốt khi kiểm thử nhưng trên production đôi khi trả lời bằng thông tin không xuất hiện trong đầu vào. Nhóm vội kết luận mô hình hallucinate. Bạn nên làm gì trước?</p>",
         "o": [
-          "<p>Thêm một chỉ dẫn vào system prompt yêu cầu mô hình không bủa thông tin, với lý do chỉ dẫn ở cấp prompt là cách sửa nhanh nhất cho các lo ngại về hallucination.</p>",
-          "<p>Áp dụng mẫu retrieval-augmented generation để neo các phản hồi vào nội dung nguồn trước khi điều tra thêm các trace production.</p>",
-          "<p>Thay mô hình hiện tại bằng một mô hình lớn hơn để giảm khả năng hallucination, với lý do các mô hình lớn hơn thường ít hallucinate hạn trong các ứng dụng điển hình.</p>",
-          "<p>Xem xét các trace production để xác định vấn đề là do mô hình hallucinate, mất ngữ cảnh, prompt injection hay một chỉ để lại khác trước khi đề xuất cách sửa.</p>"
+          "<p>Thêm system prompt cấm mô hình tự bịa thông tin.</p>",
+          "<p>Áp dụng RAG ngay để ràng buộc câu trả lời vào nguồn.</p>",
+          "<p>Thay mô hình lớn hơn nhằm giảm hallucination.</p>",
+          "<p>Kiểm tra trace production để xác định nguyên nhân thực sự: hallucination, mất ngữ cảnh, prompt injection hay lỗi khác.</p>"
         ]
       },
       "topic": "quality"
@@ -4476,15 +4476,15 @@
       "a": [
         "B"
       ],
-      "e": "Chiến lược test chuẩn theo kim tự tháp: unit test cho hàm, integration test cho phần tích hợp Claude, end-to-end test cho luồng quan trọng, áp dụng nhất quán.",
+      "e": "Cần chiến lược kiểm thử nhiều lớp: unit test cho logic đơn lẻ, integration test cho tương tác với Claude và end-to-end test cho các hành trình nghiệp vụ quan trọng.",
       "m": 1,
       "v": {
-        "q": "<p>Ứng dụng Claude của nhóm bạn đã chạy trong production được một nắm, và nhóm quyết định chính thức hóa chiến lược kiểm thử. </p><p>Hiện tại, nhóm viết các bài kiểm thử ad-hoc cho từng tính năng nhưng không có cách tiếp cận kiểm thử tổng thể. </p><p>Bạn sẽ chính thức hóa cách tiếp cận kiểm thế nào?</p>",
+        "q": "<p>Ứng dụng Claude đã chạy production một năm, nhưng nhóm mới chỉ viết test rời rạc cho từng tính năng, chưa có chiến lược chung. Nên chuẩn hóa kiểm thử như thế nào?</p>",
         "o": [
-          "<p>Áp dụng thực hành phát triển hướng kiểm thử (TDD), trong đó unit test được viết trước khi triển khai mỗi tính năng và phải vượt qua trước khi mã được merge.</p>",
-          "<p>Định nghĩa unit test cho từng hàm, integration test cho phần tích hợp Claude, và end-to-end test cho các luồng người dùng quan trọng, áp dụng nhất quán trên toàn bộ codebase.</p>",
-          "<p>Định nghĩa một cách tiếp cận kiểm thử duy nhất sử dụng end-to-end test và áp dụng nhất quán cho mỗi tính năng mới khi chúng được thêm vào codebase.</p>",
-          "<p>Tiếp tục viết các bài kiểm thử ad-hoc khi các tính năng được phát hành và bổ sung một bước peer review để đảm bảo mọi bài kiểm thử bao phủ đầy đủ tính năng được phát hành.</p>"
+          "<p>Chỉ dùng TDD với unit test viết trước mọi tính năng và bắt buộc chạy qua trước khi tích hợp.</p>",
+          "<p>Xây dựng unit test cho từng hàm, integration test cho tích hợp Claude và end-to-end test cho luồng quan trọng.</p>",
+          "<p>Chỉ áp dụng end-to-end test cho mọi tính năng.</p>",
+          "<p>Tiếp tục test ad hoc, thêm peer review để bảo đảm từng test đủ tốt.</p>"
         ]
       },
       "topic": "code"
@@ -4513,15 +4513,15 @@
       "a": [
         "C"
       ],
-      "e": "Prompt engineering tối ưu tầng prompt độ ra output mong muốn. Context engineering quản lý toàn bộ dòng chảy context qua nhiều lượt và nhiều bước, giữ state liên quan luôn hiện diện.",
+      "e": "Prompt engineering tập trung vào cách viết chỉ dẫn cho một lời gọi; context engineering quản lý dòng thông tin và trạng thái xuyên suốt nhiều lời gọi, công cụ và tác nhân.",
       "m": 1,
       "v": {
-        "q": "<p>Một đồng nghiệp yêu cầu bạn giải thích sự khác biệt giữa context engineering và prompt engineering. </p><p>Hệ đã nghe hai thuật ngữ này được dùng thay thế cho nhau và chưa chức mới thuật ngữ áp dụng thế nào cho một ứng dụng Claude xử lý các tác vụ nhiều bước chạy dài. </p><p>Bạn sẽ mô tả sự khác biệt như thế nào?</p>",
+        "q": "<p>Một đồng nghiệp muốn hiểu sự khác nhau giữa prompt engineering và context engineering trong ứng dụng Claude có quy trình nhiều bước dài. Bạn sẽ giải thích thế nào?</p>",
         "o": [
-          "<p>Prompt engineering và context engineering đầu xử lý nội dung mà nhóm cung cấp cho Claude, nhưng nhóm có thể gặp chúng vào một quy trình duy nhất vì các thực hành này có các kỹ thuật chứng lần.</p>",
-          "<p>Prompt engineering là thuật ngữ cũ hơn của việc thiết kế prompt, còn context engineering là thuật ngữ mới hơn đã thay thế nó trong các ứng dụng Claude hiện đối trong toàn ngành.</p>",
-          "<p>Prompt engineering tập trung vào phản hồi của mô hình, còn context engineering tập trung vào đầu vào của người dùng qua nhiều phiên trong một ứng dụng Claude nhiều bước chạy dài.</p>",
-          "<p>Prompt engineering định hình tầng prompt riêng lệ để có các đầu ra cụ thể, còn context engineering quản lý cách nội dung luân chuyển qua các lượt và các bước, đồng thời thực hiện các biến pháp để giữ trạng thái liên quan luôn hiển thị.</p>"
+          "<p>Hai thuật ngữ đều nói về nội dung đưa vào Claude, nên có thể gộp thành một khái niệm chung.</p>",
+          "<p>Context engineering chỉ là tên mới thay thế hoàn toàn prompt engineering.</p>",
+          "<p>Prompt engineering tập trung vào câu trả lời của mô hình, còn context engineering chỉ tập trung vào đầu vào của người dùng.</p>",
+          "<p>Prompt engineering thiết kế từng prompt cho mục tiêu cụ thể; context engineering quản lý cách ngữ cảnh được tạo, lưu, lựa chọn và chuyển giữa các lượt, các bước.</p>"
         ]
       },
       "topic": "prompt"
@@ -4550,15 +4550,15 @@
       "a": [
         "A"
       ],
-      "e": "Đánh giá xem phản thiểu có thể bổ sung bằng cách mở rộng tool có sẵn không, hay cần custom tool, rồi chọn theo kết quả đó.",
+      "e": "Trước tiên đánh giá mức độ phù hợp của công cụ hiện có và khả năng mở rộng. Chỉ tạo custom tool nếu chức năng còn thiếu thực sự cần giải pháp riêng.",
       "m": 1,
       "v": {
-        "q": "<p>Nhóm đang tranh luận nên xây dựng một khả năng mới dưới dạng custom tool hay dùng một công cụ tích hợp sẵn gần như bao phủ trường hợp sử dụng những thiếu một tính năng cụ thể. </p><p>Bạn sẽ quyết định như thế nào?</p>",
+        "q": "<p>Nhóm đang cân nhắc xây custom tool hay tận dụng công cụ tích hợp sẵn gần đáp ứng nhu cầu nhưng thiếu một tính năng. Bạn nên quyết định dựa trên điều gì?</p>",
         "o": [
-          "<p>Xem xét phương án custom tool bằng cách độc lượng công sắc triển khai và xác định liệu sự linh hoạt bổ sung có xứng đáng với chi phí phát triển và bảo trì hay không.</p>",
-          "<p>Xem lại tài liệu của công cụ tích hợp sẵn và đánh giá liệu các khả năng hiện có của nó có đủ để bao phủ trường hợp sử dụng mà không cần sửa đổi hay mở rộng hay không.</p>",
-          "<p>Đánh giá liệu tính năng còn thiếu có thể được giải quyết bằng cách mở rộng công cụ tích hợp sẵn hay cần một custom tool, rồi lựa chọn tương ứng.</p>",
-          "<p>Xác định xem nhóm trước đây đã xây dựng các custom tool tương tự hay chưa và dùng các tiến lệ đó để xác định cách tiếp cận nào nhất quán hơn với codebase hiện có.</p>"
+          "<p>Ước tính công sức xây custom tool và xem tính linh hoạt bổ sung có xứng đáng không.</p>",
+          "<p>Đọc tài liệu công cụ tích hợp sẵn và xem nó có đủ khả năng cho tác vụ không.</p>",
+          "<p>Đánh giá liệu có thể mở rộng công cụ sẵn có để đáp ứng phần thiếu, hay cần custom tool; rồi chọn theo nhu cầu thực tế.</p>",
+          "<p>Dựa vào các custom tool tương tự nhóm từng làm để quyết định hướng quen thuộc hơn.</p>"
         ]
       },
       "topic": "tools"
@@ -4587,15 +4587,15 @@
       "a": [
         "B"
       ],
-      "e": "Đồng tin output chủ vì nghe từ tin. Thêm bước validation, yêu cầu dẫn nguồn hoặc hiệu chỉnh confidence trước khi coi là sự thật. Disclaimer không phải cơ chế kiểm soát.",
+      "e": "Sự tự tin trong cách diễn đạt không chứng minh nội dung đúng. Cần xác minh bằng bằng chứng, kiểm tra độc lập hoặc hiệu chỉnh độ tin cậy trước khi dùng trong hệ thống khác.",
       "m": 1,
       "v": {
-        "q": "<p>Ứng dụng Claude của bạn trả về các câu trả lời nghe có vẻ tự tin, những đôi khi các câu trả lời đó chứa lỗi thực tế mà các hệ thống phía sau coi là sự thật hiện nhiên. </p><p>Nhóm lo ngại về khoảng cách giữa đề tư tin và độ chính xác của ứng dụng. </p><p>Bạn sẽ giải quyết khoảng cách này như thế nào?</p>",
+        "q": "<p>Ứng dụng Claude thường trả lời rất tự tin, nhưng đôi khi sai sự thật và hệ thống phía sau lại coi kết quả là dữ kiện đã xác minh. Bạn nên giải quyết khoảng cách giữa vẻ tự tin và độ chính xác thế nào?</p>",
         "o": [
-          "<p>Giảm temperature của mô hình để các phản hồi nghe ít từ tin hơn và các hệ thống phía sau ít có khả năng coi các phản hồi là sự thật hiện nhiên trong văn hành bình thường.</p>",
-          "<p>Giữ thái độ hoài nghi đối với đầu ra từ tin bằng cách thêm các bước xác thực, yêu cầu dẫn nguồn hoặc hiệu chỉnh độ tin cậy trước khi coi đầu ra là sự thật hiện nhiên.</p>",
-          "<p>Từ chối mỗi phản hồi mà ứng dụng tạo ra cho đến khi có đánh giá độ chính xác thủ công trên từng phản hồi bởi một người review trước khi bật kế hệ thống phía sau nào sử dụng.</p>",
-          "<p>Thêm một tuyên bố miễn trỏ vào mỗi đều ra yêu cầu người dùng tỷ kiểm tra độ chính xác của đầu ra và coi tuyên bố miễn trả đó là cơ chế chính để quản lý khoảng cách giữa đề tư tin và độ chính xác.</p>"
+          "<p>Giảm `temperature` để câu trả lời nghe bớt chắc chắn, khiến hệ thống phía sau ít tin hơn.</p>",
+          "<p>Không mặc định tin đầu ra; thêm bước xác thực, yêu cầu dẫn nguồn hoặc hiệu chỉnh điểm tin cậy trước khi sử dụng.</p>",
+          "<p>Bắt buộc người review thủ công tất cả phản hồi trước khi xử lý.</p>",
+          "<p>Chỉ thêm lời cảnh báo “hãy tự kiểm tra” vào mọi phản hồi và coi đó là cơ chế bảo vệ chính.</p>"
         ]
       },
       "topic": "quality"
@@ -4624,15 +4624,15 @@
       "a": [
         "D"
       ],
-      "e": "Luồng chuẩn rõ ràng thì dùng quy trình cố định. Chỉ gửi agent ở điểm cần ra quyết định với format lệ. đơn giản nhất mà để dùng.",
+      "e": "Luồng thông thường ổn định nên được xử lý bằng workflow xác định trước. Chỉ khi phát sinh tình huống cần phán đoán mới gọi tác nhân, tránh tăng độ phức tạp không cần thiết.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang thiết kế một agent xử lý hóa đơn của nhà cung cấp. </p><p>Công việc gồm một số ít bước đã được hiệu rõ, những đôi khi một hóa đến đến với định dạng không mong đợi, đòi hỏi hệ thống phải quyết định giữa việc định tuyến lại, yêu cầu làm rõ, hoặc gần cụ để con người xem xét. </p><p>Kiến trúc phù hợp nhất cho hệ thống này là...</p>",
+        "q": "<p>Bạn xây dựng tác nhân xử lý hóa đơn nhà cung cấp. Quy trình tiêu chuẩn chỉ có vài bước rõ ràng, nhưng thỉnh thoảng hóa đơn có định dạng lạ cần quyết định chuyển tuyến, hỏi thêm hoặc chuyển cho người review. Kiến trúc nào phù hợp nhất?</p>",
         "o": [
-          "<p>Một manager agent ủy quyền từng bước của quy trình xử lý hóa đơn tiêu chuẩn cho một subagent riêng, với một subagent riêng xử lý tầng định dạng không mong đợi.</p>",
-          "<p>Một agent hoàn toàn tự chủ xử lý mới hóa đến từ đầu đến cuối ở mỗi định dạng.</p>",
-          "<p>Một quy trình cho luồng tiêu chuẩn với một agent được gọi tại điểm quyết định cho các định dạng không mong đợi.</p>",
-          "<p>Một prompt lần duy nhất xử lý mới hóa đến đến, cố tiêu chuẩn lớn không mong đợi, trong một lệnh gọi mô hình.</p>"
+          "<p>Dùng manager agent giao từng bước thường lệ cho một tác nhân phụ chuyên trách.</p>",
+          "<p>Dùng tác nhân hoàn toàn tự chủ cho mọi loại hóa đơn và mọi bước.</p>",
+          "<p>Dùng workflow cố định cho luồng thông thường, chỉ gọi tác nhân tại điểm cần quyết định khi gặp định dạng bất thường.</p>",
+          "<p>Dùng một prompt lớn xử lý mọi hóa đơn bằng một lời gọi.</p>"
         ]
       },
       "topic": "agent"
@@ -4661,15 +4661,15 @@
       "a": [
         "D"
       ],
-      "e": "Skill là gói prompt, script và dữ liệu mà model nộp như một đơn vị. MCP server expose resources, tools và prompts qua giao thức chuẩn cho client.",
+      "e": "Skill chủ yếu đóng gói kiến thức/quy trình và tài nguyên đi kèm để tải theo tác vụ; MCP server cung cấp khả năng truy cập dữ liệu và công cụ theo giao thức tích hợp.",
       "m": 1,
       "v": {
-        "q": "<p>Một đồng nghiệp yêu cầu bạn giải thích khi nào một Skill là lựa chọn đúng so với một MCP server. </p><p>Đồng nghiệp chưa chức hai thẻ này khác nhau thế nào trong thực tế khi cả hai đều có thể được tái sử dụng giữa các nhóm. </p><p>Bạn sẽ giải thích sự khác biệt như thế nào?</p>",
+        "q": "<p>Một đồng nghiệp chưa rõ khi nào nên dùng Skill thay vì MCP server dù cả hai đều có thể chia sẻ giữa các nhóm. Bạn nên giải thích khác biệt như thế nào?</p>",
         "o": [
-          "<p>Skill được ưu tiên cho việc tái sử dụng giữa các nhóm vì nó tại hiệu quả hơn MCP server trong quá trình vận hành bình thường với các khối lượng công việc đa nhóm điển hình của nhóm.</p>",
-          "<p>Skill là cơ chế cũ hơn còn MCP server là cơ chế mới hơn, vì vậy nhóm nên ưu tiên MCP server cho mỗi khả năng có thể tái sử dụng mà nhóm xây dựng từ nay về sau.</p>",
-          "<p>Skill và MCP server là các cơ chế mở rộng tượng đường mà nhóm có thể dùng thay thế cho nhau cho mỗi khả năng tái sử dụng cần truy cập được giữa các nhóm.</p>",
-          "<p>Skill đóng gói prompt, script và dữ liệu thành một gói mà mô hình tối như một đơn vị, trong khi MCP server cung cấp resource, tool và prompt thông qua một giao diện client chuẩn.</p>"
+          "<p>Skill luôn hiệu quả hơn MCP server nên ưu tiên trong mọi trường hợp tái sử dụng.</p>",
+          "<p>Skill là cơ chế cũ, MCP server mới hơn nên luôn tốt hơn.</p>",
+          "<p>Skill và MCP server tương đương hoàn toàn, có thể thay thế cho nhau.</p>",
+          "<p>Skill đóng gói hướng dẫn, script và dữ liệu để Claude tải khi cần; MCP server cung cấp resource, tool và prompt qua giao thức chuẩn.</p>"
         ]
       },
       "topic": "prompt"
@@ -4698,15 +4698,15 @@
       "a": [
         "D"
       ],
-      "e": "Chọn cơ chế mở rộng dựa trên phạm vi use case, nhu cầu tái sử dụng và bối cảnh tích hợp, không theo cái quen tay hay cái mới nhất.",
+      "e": "Lựa chọn phải xuất phát từ phạm vi use case, mức độ chia sẻ và yêu cầu tích hợp, không chỉ vì quen tay hoặc vì cơ chế mới.",
       "m": 1,
       "v": {
-        "q": "<p>Nhóm của bạn đang chọn cách thêm một khả năng vào ứng dụng Claude. </p><p>Bạn muốn áp dụng lựa chọn phù hợp, dù là công cụ tích hợp sẵn, custom tool, Skill hay MCP server, dựa trên trường hợp sử dụng. </p><p>Bạn sẽ chọn lựa chọn nào...</p>",
+        "q": "<p>Nhóm cần bổ sung năng lực cho ứng dụng Claude và phân vân giữa công cụ có sẵn, custom tool, Skill hay MCP server. Nên chọn theo tiêu chí nào?</p>",
         "o": [
-          "<p>Phù hợp với phạm vi, nhu cầu tái sử dụng và bối cảnh tích hợp của trường hợp sử dụng.</p>",
-          "<p>Dự xây dựng nhất với các công cụ và quy trình phát triển hiện tại của nhóm.</p>",
-          "<p>Quen thuộc nhất với nhóm dựa trên kinh nghiệm trước đây với các khả năng tương tự.</p>",
-          "<p>Một trong sẽ các công cụ tích hợp sẵn, custom tool, Skill và MCP server.</p>"
+          "<p>Chọn cơ chế phù hợp với phạm vi tác vụ, nhu cầu tái sử dụng và bối cảnh tích hợp.</p>",
+          "<p>Chọn cách dễ xây nhất với công cụ hiện có của nhóm.</p>",
+          "<p>Chọn cách nhóm quen thuộc nhất từ các dự án trước.</p>",
+          "<p>Chọn cơ chế mới nhất trong số các lựa chọn.</p>"
         ]
       },
       "topic": "tools"
@@ -4735,15 +4735,15 @@
       "a": [
         "A"
       ],
-      "e": "Giao việc đọc 40 file cho subagent: các lần đọc nằm trong context riêng của subagent, chỉ bản tóm tắt cuối cùng quay về agent chính.",
+      "e": "Ủy quyền việc đọc và phân tích 40 tệp cho tác nhân phụ. Nội dung tệp nằm trong ngữ cảnh riêng; tác nhân chính chỉ nhận kết quả tổng hợp.",
       "m": 1,
       "v": {
-        "q": "<p>Một code-review agent cần đọc 40 tập, nhưng nhóm muốn cuộc hội thoại chính ngắn gọn để các lượt sau không phải trả phí cho các token dùng cho mỗi tập đã mở trong quá trình review. </p><p>Kiến trúc nào giữ cho ngữ cảnh của agent chính gần như?</p>",
+        "q": "<p>Tác nhân review mã cần đọc 40 tệp, nhưng nhóm muốn giữ ngữ cảnh hội thoại chính gọn để các lượt sau không phải tiếp tục mang token của mọi tệp đã đọc. Kiến trúc nào phù hợp?</p>",
         "o": [
-          "<p>Bắt include_partial_messages độ nội dung tệp được stream về cuộc hội thoại chính từng phần dưới dạng text delta thay vì đơn cùng một lúc.</p>",
-          "<p>Ủy quyền việc review cho một subagent được định nghĩa bằng AgentDefinition; các lệnh gọi công cụ và nội dung tập của nó nằm trong ngữ cảnh riêng, và chỉ một bản tóm tắt cuối cùng được trả về cho agent cha.</p>",
-          "<p>Tầng max_turns trên query chính để Claude có độ ngân sách đọc cả 40 tập trực tiếp trong cuộc hội thoại chính mà vòng lặp không dụng sớm.</p>",
-          "<p>Đặt effort là \"low\" trên query chính để mỗi lượt đọc tập tiêu tốn ít reasoning token hạn, dù cố 40 tập vốn được tải đầy đủ vào cuộc hội thoại chính dùng chung.</p>"
+          "<p>Bật `include_partial_messages` để stream nội dung từng tệp về hội thoại chính theo các đoạn nhỏ.</p>",
+          "<p>Giao review cho tác nhân phụ được khai báo bằng `AgentDefinition`, giữ lời gọi công cụ và nội dung tệp trong ngữ cảnh riêng, chỉ trả bản tổng kết về tác nhân chính.</p>",
+          "<p>Tăng `max_turns` ở truy vấn chính để đọc đủ 40 tệp trong cùng hội thoại.</p>",
+          "<p>Đặt `effort: \"low\"` để dùng ít reasoning token dù vẫn nạp cả 40 tệp vào hội thoại chính.</p>"
         ]
       },
       "topic": "agent"
@@ -4772,15 +4772,15 @@
       "a": [
         "A"
       ],
-      "e": "Hook PreCompact chạy trước khi nén nên archive được transcript đầy đủ. Quy tắc đặt trong CLAUDE.md được nạp lại mối request nên không bị tóm tắt mặt.",
+      "e": "`PreCompact` chạy trước khi nén nên có thể lưu transcript đầy đủ. Quy tắc nằm trong `CLAUDE.md` sẽ được nạp lại, không phụ thuộc độ chính xác của bản tóm tắt.",
       "m": 1,
       "v": {
-        "q": "<p>Một phiên agent chạy dài đang tiến gần đến giới hạn context window. </p><p>Nhóm muốn hai điều: một bản sao đầy đủ, không rút gần của cuộc hội thoại được lưu lại trước khi SDK tóm tắt lịch sử cũ hơn, và một đảm bảo rằng một quy tắc định dạng cụ thể được giữ nguyên qua mỗi lần compaction mà không bị diễn đạt lại làm mất. </p><p>Tự hợp cơ chế nào đáp ứng cả hai nhu cầu?</p>",
+        "q": "<p>Một phiên tác nhân chạy dài sắp đầy cửa sổ ngữ cảnh. Nhóm cần lưu toàn bộ hội thoại nguyên bản trước khi SDK nén lịch sử, đồng thời bảo đảm một quy tắc định dạng luôn được giữ nguyên qua mọi lần compaction. Nên kết hợp cơ chế nào?</p>",
         "o": [
-          "<p>Tầng max_turns độ compaction không bao giờ kích hoạt, và lặp lại quy tắc định dạng ở đầu mỗi tin nhắn người dùng được gọi trong suốt phiên.</p>",
-          "<p>Đăng ký một hook PreCompact để lưu trữ toàn bộ transcript trước, và đặt quy tắc định dạng trong CLAUDE.md để nó được tải lại ở mỗi request thay vì chỉ nằm trong prompt ban đầu.</p>",
-          "<p>Đăng ký một hook PostToolUse để lưu trữ transcript sau mỗi lệnh gọi công cụ hoàn tất, và đặt quy tắc định dạng bên trong prompt của AgentDefinition của một subagent thay vì phiên chính.</p>",
-          "<p>Chỉ dựa vào bản tóm tắt compaction tự động để giữ lại cả transcript lần quy tắc định dạng, vì các bản tóm tắt được thiết kế để giữ nguyên văn các chi tiết của cuộc hội thoại.</p>"
+          "<p>Tăng `max_turns` để không bao giờ compaction và lặp quy tắc trong mọi tin nhắn người dùng.</p>",
+          "<p>Dùng hook `PreCompact` lưu transcript trước khi nén, đặt quy tắc định dạng trong `CLAUDE.md` để được nạp lại.</p>",
+          "<p>Dùng hook `PostToolUse` lưu transcript sau mỗi lời gọi và để quy tắc trong một tin nhắn tạm thời.</p>",
+          "<p>Chỉ dựa vào bản tóm tắt compaction tự động để lưu cả transcript và quy tắc nguyên văn.</p>"
         ]
       },
       "topic": "prompt"
@@ -4818,17 +4818,17 @@
         "A",
         "C"
       ],
-      "e": "Đúng: Strands Agents SDK model-agnostic và hỗ trợ OpenTelemetry; LangGraph mô hình hóa quy trình dụng graph có hướng, kiểm soát được rẽ nhánh và vòng lặp. LangGraph không do Anthropic phát triển và không bị giới hạn ở luồng tuyến tính.",
+      "e": "Đáp án của bộ đề nhấn mạnh Strands Agents SDK không phụ thuộc mô hình và hỗ trợ OpenTelemetry; LangGraph dùng đồ thị có hướng để kiểm soát rẽ nhánh và vòng lặp. LangGraph không phải sản phẩm của Anthropic.",
       "m": 2,
       "v": {
-        "q": "<p>Một kiến trúc sư phần mềm đang so sánh ba framework agent mã nguồn mở cho một dự án yêu cầu tích hợp với nhiều nhà cung cấp LLM và khả năng quan sát (observability) đầu cuối qua OpenTelemetry. </p><p>Logic agent của dự án là tuyến tính và không yêu cầu chỉ định thủ công các đồ thị thực thi. </p><p>Các framework đang được xem xét là Strands Agents SDK, LangGraph và Pydantic AI. </p><p>Dựa trên hiểu biết của bạn về các framework này, những phát biểu nào sau đây là đúng? (Chọn tất cả đáp án phù hợp.)</p>",
+        "q": "<p>Một kiến trúc sư so sánh Strands Agents SDK, LangGraph và Pydantic AI cho dự án cần dùng nhiều nhà cung cấp LLM và quan sát toàn trình qua OpenTelemetry. Logic tác nhân tuyến tính, không cần tự định nghĩa đồ thị thực thi. Phát biểu nào về các framework này là đúng?</p>",
         "o": [
-          "<p>Strands Agents SDK bắt buộc mỗi agent phải được triển khai trên AWS và không cho phép sử dụng các API mô hình của bên thứ ba.</p>",
-          "<p>Strands Agents SDK được thiết kế để không phụ thuộc vào mô hình (model-agnostic) và có hỗ trợ hỏng nhất cho OpenTelemetry, cho phép xuất trace tại các nền tảng observability như AWS CloudWatch.</p>",
-          "<p>LangGraph mô hình hóa quy trình của agent dưới dạng để thể có hướng, giúp lập trình viên kiểm soát chính xác việc rẽ nhánh và lớp trong các đường thực thi.</p>",
-          "<p>LangGraph phù hợp nhất cho các chuỗi agent đơn giản, tuyến tính vì mô hình đồ thị của nó giới hạn lập trình viên trong một đường thực thi duy nhất.</p>",
-          "<p>LangGraph chỉ có thể điều phối các agent sử dụng Anthropic API vì nó được phát triển bởi Anthropic.</p>",
-          "<p>Pydantic AI có sẵn một OpenTelemetry collector tích hợp có thể được cấu hình để gửi trace tại CloudWatch ngay từ đầu.</p>"
+          "<p>Strands Agents SDK không phụ thuộc mô hình và hỗ trợ OpenTelemetry như một tính năng chính.</p>",
+          "<p>Strands Agents SDK bắt buộc triển khai mọi tác nhân trên AWS và cấm API mô hình bên thứ ba.</p>",
+          "<p>LangGraph biểu diễn quy trình thành đồ thị có hướng, giúp kiểm soát nhánh và vòng lặp.</p>",
+          "<p>LangGraph tối ưu cho chuỗi tuyến tính vì mô hình đồ thị không cho rẽ nhánh.</p>",
+          "<p>LangGraph chỉ hoạt động với Anthropic API vì Anthropic phát triển nó.</p>",
+          "<p>Pydantic AI tích hợp sẵn OpenTelemetry collector tự gửi trace đến CloudWatch mà không cần cấu hình thêm.</p>"
         ]
       },
       "topic": "agent"
@@ -4857,15 +4857,15 @@
       "a": [
         "B"
       ],
-      "e": "Chạy cùng một prompt nhiều lần rồi lấy kết quả chiếm đa số: đó là parallelization theo kiểu voting.",
+      "e": "Chạy cùng một nhiệm vụ nhiều lần và lấy kết luận chiếm đa số là mẫu parallelization by voting, không phải chia tác vụ thành phần.",
       "m": 1,
       "v": {
-        "q": "<p>Một nhóm muốn có các câu trả lời đáng tin cậy hơn từ một prompt phát hiện gian lần áp dụng cho mô tả một giao dịch. </p><p>Thay vì xem xét các góc độ khác nhau, hệ chạy chính prompt đó trên cùng một giao dịch năm lần và giữ lại kết luận -- gian lớn hay hợp lệ -- xuất hiện nhiều nhất trong năm lần chạy. </p><p>Hệ đang sử dụng mẫu nào?</p>",
+        "q": "<p>Nhóm chạy cùng một prompt phát hiện gian lận trên cùng một giao dịch năm lần, rồi lấy kết luận “gian lận” hay “hợp lệ” xuất hiện nhiều nhất. Đây là mẫu nào?</p>",
         "o": [
-          "<p>Evaluator-optimizer, trong đó một lệnh gọi LLM thứ hai phê bình kết luận đầu tiên và prompt được sửa đổi cho đến khi thỏa mãn các tiêu chí.</p>",
-          "<p>Prompt chaining, trong đó mỗi lần trong năm lần chạy sử dụng kết luận do lần chạy ngay trước đó tạo ra.</p>",
-          "<p>Parallelization theo kiểu sectioning, trong đó nắm prompt khác nhau mới prompt xem xét độc lập một khía cảnh riêng biệt của cùng một giao dịch.</p>",
-          "<p>Parallelization theo kiểu voting, trong đó cùng một tác vụ được chạy nhiều lần và kết luận đa sẽ được chọn.</p>"
+          "<p>Evaluator–optimizer: một mô hình phản biện kết quả rồi chỉnh prompt đến khi đạt tiêu chí.</p>",
+          "<p>Prompt chaining: lượt sau sử dụng kết quả của lượt trước.</p>",
+          "<p>Parallelization by sectioning: năm prompt khác nhau cùng xét các khía cạnh riêng.</p>",
+          "<p>Parallelization by voting: chạy cùng tác vụ nhiều lần và chọn kết quả theo đa số.</p>"
         ]
       },
       "topic": "prompt"
@@ -4894,15 +4894,15 @@
       "a": [
         "B"
       ],
-      "e": "Bước tần suất cao, đơn giản thì giao cho subagent dùng model nhanh và rẻ. Subagent cấu hình được model riêng.",
+      "e": "Tác vụ phân loại lặp lại thường xuyên và ít phức tạp nên giao cho tác nhân phụ cấu hình mô hình nhẹ, giảm chi phí mà không ảnh hưởng bước suy luận khó.",
       "m": 1,
       "v": {
-        "q": "<p>Một pipeline xử lý ticket hỗ trợ chạy một bước phân loại cảm xúc (sentiment) đơn giản trên mỗi ticket đến trước khi cuộc hội thoại chính tiếp tục với lập luận phức tạp hạn. </p><p>Việc phân loại này xảy ra thường xuyên hạn bất kỳ bước nào khác và không cần mô hình mạnh nhất của nhóm. </p><p>Nhóm nên giảm chi phí cho bước cụ thể này như thế nào?</p>",
+        "q": "<p>Pipeline hỗ trợ khách hàng có bước phân loại cảm xúc đơn giản cho mỗi ticket, chạy thường xuyên hơn nhiều so với các bước suy luận khó. Không cần dùng mô hình mạnh nhất. Nên giảm chi phí bước này thế nào?</p>",
         "o": [
-          "<p>Chuyển bước phân loại thành một vòng lặp evaluator-optimizer, vì mẫu đó luôn dùng một mô hình rẻ hơn cho nữa evaluator của vòng lặp.</p>",
-          "<p>Chạy bước phân loại trong cuộc hội thoại chính bằng cùng mô hình với phần còn lại của pipeline, vì các subagent không thể được cấu hình dùng mô hình khác với bên gửi.</p>",
-          "<p>Định tuyến bước phân loại tới một subagent chuyên biệt được cấu hình dùng mô hình nhanh hơn, rẻ hơn, vì các subagent có thể được gán mô hình riêng độc lập với cuộc hội thoại chính.</p>",
-          "<p>Chuyển pipeline thành một agent team, vì mỗi thành viên trong agent team tự động mặc định dùng mô hình rẻ nhất hiện có.</p>"
+          "<p>Chuyển thành evaluator–optimizer vì mô hình đánh giá luôn rẻ hơn.</p>",
+          "<p>Chạy trong hội thoại chính bằng cùng mô hình với phần còn lại.</p>",
+          "<p>Chuyển bước phân loại cho tác nhân phụ riêng dùng mô hình nhanh và rẻ hơn.</p>",
+          "<p>Chuyển toàn bộ thành agent team vì mỗi thành viên sẽ tự dùng mô hình rẻ nhất.</p>"
         ]
       },
       "topic": "agent"
@@ -4940,17 +4940,17 @@
         "A",
         "B"
       ],
-      "e": "Compaction tóm tắt hội thoại cỡ phía server, còn context editing tự dẫn tool result cả khi gần chấm giới hạn. Cả hai đầu chạy tự động.",
+      "e": "`Compaction` tóm tắt lịch sử cũ, còn `context editing` lược bỏ các kết quả công cụ không cần thiết khi ngữ cảnh lớn dần. Đây là hai cơ chế bổ trợ nhau.",
       "m": 2,
       "v": {
-        "q": "<p>Một cuộc hội thoại agent tự chủ chạy dài thường xuyên tiến gần đến giới hạn cửa sổ ngữ cảnh của mô hình. </p><p>Kiến trúc cần nền tảng tự động tóm tắt các phần trước của cuộc hội thoại ở phía server, và xóa các kết quả công cụ cả khi gần đến giới hạn token, mà client không phải quản lý thủ công. </p><p>Kiến trúc nên bật hai tính năng nào?</p>",
+        "q": "<p>Cuộc hội thoại tác nhân tự chủ chạy dài thường sắp vượt cửa sổ ngữ cảnh. Nhóm muốn nền tảng tự động tóm tắt lịch sử cũ phía server và dọn kết quả công cụ không còn cần khi gần giới hạn token. Nên bật hai tính năng nào?</p>",
         "o": [
-          "<p>Token counting</p>",
-          "<p>Batch processing</p>",
-          "<p>Files API</p>",
-          "<p>Prompt caching</p>",
-          "<p>Context editing</p>",
-          "<p>Compaction</p>"
+          "<p>Token counting.</p>",
+          "<p>Batch processing.</p>",
+          "<p>Files API.</p>",
+          "<p>Prompt caching.</p>",
+          "<p>Context editing.</p>",
+          "<p>Compaction.</p>"
         ]
       },
       "topic": "context"
@@ -4979,15 +4979,15 @@
       "a": [
         "A"
       ],
-      "e": "Lấy `session_id` từ SystemMessage init của lần query đầu, rồi truyền vào option `resume` ở lần query sau để tiếp tục cùng phiên.",
+      "e": "Tái sử dụng `session_id` từ thông báo khởi tạo và truyền vào `resume` giúp tác nhân tiếp tục đúng ngữ cảnh của phiên trước.",
       "m": 1,
       "v": {
-        "q": "<p>Một agent xây dựng bảng Claude Agent SDK đọc một module xác thực trong một lệnh gọi query, và nhóm muốn một lệnh gọi query thứ hai, sau đó, tham chiếu đến 'nó' nghĩa là cùng module đó mà không phải đọc lại hay giải thích lỗi ngữ cảnh. </p><p>Hệ nên lấy và tái sử dụng gì từ lần gọi đầu tiên để đạt được điều này?</p>",
+        "q": "<p>Một tác nhân Claude Agent SDK đọc mô-đun xác thực trong lời gọi `query()` đầu tiên. Nhóm muốn lời gọi `query()` về sau có thể nói “nó” để tham chiếu chính mô-đun đó mà không cần đọc hay giải thích lại. Cần lưu và tái sử dụng gì?</p>",
         "o": [
-          "<p>Lấy session_id tự SystemMessage loại 'init' trong query đầu tiên, rồi truyền nó làm tùy chọn resume ở lệnh gọi query thứ hai.</p>",
-          "<p>Lấy tool_use_id từ lệnh gọi công cụ Read của query đầu tiên và truyền nó làm tham số model ở lệnh gọi query thứ hai.</p>",
-          "<p>Lấy nội dung tệp đã đọc trong query đầu tiên và mã hóa cộng vào system prompt dùng cho lệnh gọi query thứ hai.</p>",
-          "<p>Lấy toàn bộ văn bản của mỗi message tự query đầu tiên và gửi lại nó làm tiền tố của chuỗi prompt ở lệnh gọi query thứ hai.</p>"
+          "<p>Lấy `session_id` từ `SystemMessage` loại `init` trong lời gọi đầu, rồi truyền vào tùy chọn `resume` của lời gọi sau.</p>",
+          "<p>Lấy `tool_use_id` của công cụ Read rồi dùng làm tham số `model` trong lần sau.</p>",
+          "<p>Đưa nguyên nội dung tệp đã đọc vào system prompt của lần gọi sau.</p>",
+          "<p>Ghép toàn bộ văn bản tin nhắn từ lần đầu vào tiền tố prompt mới.</p>"
         ]
       },
       "topic": "context"
@@ -5016,15 +5016,15 @@
       "a": [
         "A"
       ],
-      "e": "Bash chạy được lệnh terminal, kỹ cố git status, git add, git commit.",
+      "e": "Công cụ Bash chạy lệnh terminal, gồm `git status`, `git add` và `git commit`.",
       "m": 1,
       "v": {
-        "q": "<p>Một kỹ sư xây dựng tự động hóa SDLC muốn một agent chạy git status, stage các thay đổi và commit chúng như một phần của quy trình theo kịch bản, ngoài việc đọc và chỉnh sửa tệp nguồn. </p><p>Công cụ Agent SDK tích hợp sản nào cấp khả năng chạy trực tiếp các lệnh quản lý phiên bản?</p>",
+        "q": "<p>Kỹ sư muốn tác nhân tự động hóa SDLC có thể chạy `git status`, stage và commit thay đổi, bên cạnh đọc và sửa tệp. Công cụ tích hợp sẵn nào của Agent SDK cho phép chạy trực tiếp lệnh Git?</p>",
         "o": [
-          "<p>Bash, chạy các lệnh terminal và script, bao gồm các thao tác git, ngoài các tác vụ shell khác</p>",
-          "<p>AskUserQuestion, nhắc người dùng bằng các câu hỏi làm rõ dụng trục nghiệm thay vì thực thi lệnh shell</p>",
-          "<p>WebFetch, truy xuất và phân tích nội dung trang web và không thể thực thi các lệnh quản lý phiên bản cục bộ</p>",
-          "<p>Grep, tìm kiếm nội dung tập bằng regex và không có khả năng gọi các lệnh bên ngoài như git</p>"
+          "<p>Bash, vì chạy được lệnh terminal và script, bao gồm cả lệnh Git.</p>",
+          "<p>AskUserQuestion, vì hỏi người dùng thay cho thực thi shell.</p>",
+          "<p>WebFetch, vì chỉ lấy và phân tích nội dung web, không chạy lệnh Git cục bộ.</p>",
+          "<p>Grep, vì chỉ tìm kiếm nội dung tệp bằng regex, không gọi lệnh ngoài.</p>"
         ]
       },
       "topic": "tools"
@@ -5053,15 +5053,15 @@
       "a": [
         "A"
       ],
-      "e": "`persistSession: false` khiển phiên chỉ tồn tại trong bộ nhớ, không ghi transcript ra đưa. Hợp với task dùng một lần.",
+      "e": "`persistSession: false` phù hợp tác vụ dùng một lần: tránh ghi transcript phiên và không cần khả năng resume.",
       "m": 1,
       "v": {
-        "q": "<p>Một dịch vụ xử lý theo lô chạy hàng nghìn tác vụ phân loại tài liệu đơn lẻ, đọc lớp mới giữ bằng Agent SDK. </p><p>Mỗi tác vụ không liên quan đến các tác vụ khác, không bao giờ được phép tiếp tục (resume) về sau, và nhóm muốn tránh các thao tác ghi đĩa không cần thiết cho các phiên dùng một lần này trong dịch vụ TypeScript của hệ. </p><p>Cấu hình phiên đúng là gì?</p>",
+        "q": "<p>Dịch vụ TypeScript chạy hàng nghìn tác vụ phân loại tài liệu độc lập bằng Agent SDK mỗi giờ. Mỗi tác vụ chỉ gọi một lần, không được resume và không nên ghi phiên tạm ra đĩa. Nên đặt cấu hình nào?</p>",
         "o": [
-          "<p>Dùng `ClaudeSDKClient` của Python SDK thay thế, vì chỉ Python SDK mới có tùy chọn bỏ qua việc ghi transcript phiên ra đưa</p>",
-          "<p>Gọi `resume` với một session ID được tạo ngẫu nhiên cho mỗi tác vụ, điều này tạo một phiên chỉ nằm trong bộ nhớ và bỏ qua việc lưu xuống đưa</p>",
-          "<p>Đặt `continue: true` trên mỗi lệnh gọi để mỗi tác vụ dùng chung một phiên có thể tái sử dụng thay vì tạo phiên mỗi mọi lần</p>",
-          "<p>Đặt `persistSession: false` trên mỗi lệnh gọi `query()`, độ phiên chỉ tồn tại trong bộ nhớ trong suốt lệnh gọi đó và không có gì được ghi xuống đưa</p>"
+          "<p>Chuyển sang `ClaudeSDKClient` của Python vì chỉ SDK Python cho phép bỏ ghi transcript.</p>",
+          "<p>Gọi `resume` với ID ngẫu nhiên để tạo phiên chỉ ở bộ nhớ.</p>",
+          "<p>Đặt `continue: true` để mọi tác vụ dùng chung phiên tái sử dụng.</p>",
+          "<p>Đặt `persistSession: false` cho từng lời gọi `query()` để không ghi phiên ra đĩa.</p>"
         ]
       },
       "topic": "context"
@@ -5090,15 +5090,15 @@
       "a": [
         "A"
       ],
-      "e": "Model cả không còn thì phiên resume chọn model theo thứ tự ưu tiên thông thường, không bị lỗi cổng.",
+      "e": "Khi mô hình đã lưu không còn truy cập được, phiên resume sẽ dùng lại cơ chế chọn mô hình theo thứ tự ưu tiên thông thường, không bị khóa vĩnh viễn vào bản cũ.",
       "m": 1,
       "v": {
-        "q": "<p>Một lập trình viên tiếp tục một phiên chạy dài bằng `claude --resume`, phiên này trước đó chạy trên Opus 4.6. </p><p>Giữa phiên gốc và lúc resume, quản trị viên của tổ chức đã ngừng cung cấp Opus 4.6 và nó không còn truy cập được. </p><p>Điều gì xảy ra khi phiên được resume?</p>",
+        "q": "<p>Lập trình viên dùng `claude --resume` để mở phiên trước đây chạy trên Opus 4.6. Từ đó, quản trị viên đã ngừng cấp quyền dùng Opus 4.6. Khi tiếp tục, Claude Code xử lý thế nào?</p>",
         "o": [
-          "<p>Phiên tự động và vĩnh viễn cập nhật cài đặt `model` đã lưu thành bất kỳ mô hình nào mà lớn resume tình cờ dùng thay thế, ghi đè lựa chọn `/model` tường minh trước đó của người dùng cho mỗi phiên trong tương lai</p>",
-          "<p>Phiên vấn âm thẩm resume trên Opus 4.6, vì Claude Code lưu cục bộ định dạng phản hồi của mô hình và không cần truy cập mô hình đã ngừng cung cấp để tiếp tục mặt transcript hiện có</p>",
-          "<p>Lệnh resume thất bại ngay lập tức với một lỗi không thể khôi phục, vì các phiên được resume bộ khóa cộng vào mô hình đã lưu ban đầu và không có đường dự phòng</p>",
-          "<p>Phiên được resume chuyển sang thứ tự ưu tiên thông thường để chọn mô hình, vì mô hình đã khôi phục không khả dụng, thay vì thất bại hoàn toàn</p>"
+          "<p>Chọn mô hình theo thứ tự ưu tiên thông thường vì mô hình lưu trong phiên không còn dùng được.</p>",
+          "<p>Tự động cập nhật vĩnh viễn cấu hình `model` đã lưu theo mô hình thay thế.</p>",
+          "<p>Vẫn âm thầm chạy Opus 4.6 vì đã cache định dạng phản hồi.</p>",
+          "<p>Thoát ngay với lỗi không thể khắc phục vì phiên bị khóa vào mô hình cũ.</p>"
         ]
       },
       "topic": "code"
