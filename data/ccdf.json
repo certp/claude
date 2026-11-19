@@ -949,15 +949,15 @@
       "a": [
         "B"
       ],
-      "e": "Logic hủy đăng ký rối ở nhiều nối thì dùng plan mode để map các luồng và so sánh điểm can thiệp trước khi sửa, tránh sửa sai tổng abstraction.",
+      "e": "Vì logic hủy đăng ký phân tán ở nhiều thành phần, hãy dùng plan mode để tìm hiểu luồng xử lý và xác định đúng vị trí can thiệp, tránh sửa nhầm tầng trừu tượng.",
       "m": 1,
       "v": {
-        "q": "<p>Một dịch vụ đăng ký legacy có hành vi hủy được phân tán trong các script dòng lệnh, web handler và scheduled job. </p><p>Các chỉnh sửa trực tiếp trước đây thường nhằm sai lập trừu tượng. </p><p>Nên đề xuất quy trình nào trước tiên?</p>",
+        "q": "<p>Trong một dịch vụ quản lý thuê bao cũ, logic hủy đăng ký nằm rải rác ở script dòng lệnh, handler web và tác vụ chạy theo lịch. Những lần sửa trực tiếp trước đây thường can thiệp sai tầng trừu tượng. Nên đề xuất quy trình nào trước tiên?</p>",
         "o": [
-          "<p>Bắt đầu các phiên trực tiếp riêng cho từng module và kết hợp các thay đổi sau.</p>",
-          "<p>Chỉnh sửa trực tiếp và dựa vào các test thất bại để hướng dẫn việc sửa.</p>",
-          "<p>Dùng plan mode để ánh xạ các luồng liên quan và so sánh các điểm triển khai trước khi sửa đổi.</p>",
-          "<p>Đọc mỗi file trong repository trước khi triển khai thay đổi.</p>"
+          "<p>Mở phiên làm việc trực tiếp riêng cho từng mô-đun rồi gộp thay đổi sau.</p>",
+          "<p>Sửa mã ngay và dựa vào test thất bại để điều chỉnh.</p>",
+          "<p>Dùng plan mode để lập bản đồ các luồng liên quan và so sánh vị trí cần sửa trước khi thay đổi mã.</p>",
+          "<p>Đọc mọi tệp trong repository trước khi triển khai.</p>"
         ]
       },
       "topic": "code"
@@ -986,15 +986,15 @@
       "a": [
         "A"
       ],
-      "e": "Phân loại nhất quán cần định nghĩa category rõ ràng kèm ví dụ cho từng loại (few-shot).",
+      "e": "Để phân loại nhất quán, cần định nghĩa rõ từng danh mục và cung cấp ví dụ đầu vào cùng nhãn mong đợi (few-shot).",
       "m": 1,
       "v": {
-        "q": "<p>Một nhóm xây dựng một ứng dụng trong đó Claude phải phân loại các yêu cầu của khách hàng vào các danh mục được định nghĩa trước. </p><p>Cách tiếp cận nào cho kết quả nhất quán nhất?</p>",
+        "q": "<p>Một nhóm xây dựng ứng dụng dùng Claude để phân loại yêu cầu khách hàng theo các danh mục có sẵn. Cách nào cho kết quả nhất quán nhất?</p>",
         "o": [
-          "<p>Yêu cầu Claude tạo danh mục mới khi cần</p>",
-          "<p>Loại bỏ các định nghĩa danh mục khỏi prompt</p>",
-          "<p>Cung cấp các ví dụ cho từng danh mục và các phân loại mong đợi</p>",
-          "<p>Sử dụng cách tiếp cận phân loại ngẫu nhiên.</p>"
+          "<p>Cho phép Claude tự tạo danh mục mới khi cần.</p>",
+          "<p>Bỏ định nghĩa danh mục khỏi prompt.</p>",
+          "<p>Cung cấp ví dụ minh họa từng danh mục và kết quả phân loại mong đợi.</p>",
+          "<p>Phân loại theo cách ngẫu nhiên.</p>"
         ]
       },
       "topic": "prompt"
@@ -1023,15 +1023,15 @@
       "a": [
         "C"
       ],
-      "e": "Mới claim trong ghi chú phải kèm nguồn: loại nguồn, trích đoạn hoặc field của tool, timestamp, trạng thái xác minh. Như vậy lại khách kỳ không bị nhằm thành dự kiến đã kiểm chứng.",
+      "e": "Mỗi nhận định trong ghi chú phải chỉ rõ nguồn và mức độ xác minh. Nhờ ánh xạ nhận định–nguồn có cấu trúc, lời khách hàng sẽ không bị nhầm thành dữ kiện đã được backend xác nhận.",
       "m": 1,
       "v": {
-        "q": "<p><strong>Kịch bản</strong>: </p><p>Customer Support Resolution Agent Bạn đang xây dựng một customer support resolution agent bằng Claude Agent SDK. </p><p>Agent xử lý các yêu cầu có để mơ hồ cao nhỏ trữ hàng, tranh chấp thanh toán và các vấn đề tài khoản. </p><p>Nó truy cập các hệ thống backend thông qua các tool MCP (get_customer, lookup_order, process_refund, escalate_to_human). </p><p>Mục tiêu của bạn là đặt 80%+ tỷ lệ giải quyết ngay lần liên họ đầu tiên đồng thời biết khi nào cần escalate. </p><p>Trong các tranh chấp thanh toán, agent tạo các ghi chú về việc cô động trước khi phản hồi hoặc escalate. </p><p>Các reviewer là con người báo cáo rằng các ghi chú đôi khi nói những điều nhỏ \"refund approved\" hoặc \"customer was promised free return shipping,\" nhưng họ không thể biệt mới nhận định đến từ khách hàng, một bản ghi đơn hàng, một tài liệu chính sách, hay suy luận của agent. Trong nhiều lần escalate, các cáo buộc của khách hàng bị coi là các số thật backend đã được xác minh. </p><p>Thay đổi nào giảm hiệu quả nhất rủi ro về độ tin cậy này?</p>",
+        "q": "<p><strong>Kịch bản: Tác nhân giải quyết yêu cầu hỗ trợ khách hàng</strong></p><p>Bạn xây dựng tác nhân hỗ trợ bằng Claude Agent SDK, xử lý các yêu cầu dễ gây nhầm lẫn như trả hàng, tranh chấp hóa đơn và sự cố tài khoản. Tác nhân truy cập backend qua các công cụ MCP (`get_customer`, `lookup_order`, `process_refund`, `escalate_to_human`). Mục tiêu là giải quyết ít nhất 80% yêu cầu ngay từ lần liên hệ đầu tiên, đồng thời biết khi nào cần chuyển cho nhân viên.</p><p>Khi có tranh chấp thanh toán, tác nhân tạo ghi chú vụ việc ngắn gọn trước khi trả lời hoặc chuyển cấp. Nhân viên kiểm tra thấy ghi chú đôi khi ghi “đã duyệt hoàn tiền” hoặc “đã hứa miễn phí vận chuyển hàng trả lại”, nhưng không rõ thông tin đó đến từ lời khách hàng, dữ liệu đơn hàng, chính sách hay suy luận của tác nhân. Một số lời khai của khách hàng đã bị coi nhầm là dữ kiện backend được xác minh.</p><p>Thay đổi nào giảm rủi ro này hiệu quả nhất?</p>",
         "o": [
-          "<p>Yêu cầu agent chỉ đưa các nhận định có độ tin cậy cao vào các phản hồi cuối cùng, bỏ qua các chi tiết không chắc chắn khỏi các bản tóm tắt và escalation.</p>",
-          "<p>Chỉ lưu các transcript thô hoàn chỉnh và output của tool, dựa vào các reviewer để tái dụng nguồn khi có tranh chấp.</p>",
-          "<p>Nén mới về việc thành một bản tóm tắt tượng thuật ngắn hạn và hướng dẫn các reviewer đặt câu hỏi tiếp theo khi nguồn gốc không rõ ràng.</p>",
-          "<p>Yêu cầu các bản tóm tắt và handoff mang theo ánh xạ claim-source có cấu trúc gồm loại nguồn, đoạn trích hoặc field của tool, timestamp và trạng thái xác minh.</p>"
+          "<p>Chỉ đưa các nhận định có độ tin cậy cao vào phản hồi cuối, bỏ các chi tiết chưa chắc chắn khỏi ghi chú và bản bàn giao.</p>",
+          "<p>Chỉ lưu toàn bộ hội thoại và kết quả công cụ thô, để nhân viên tự dò lại nguồn khi có tranh chấp.</p>",
+          "<p>Nén mỗi vụ việc thành phần tường thuật ngắn và yêu cầu nhân viên hỏi lại khi không rõ nguồn gốc.</p>",
+          "<p>Yêu cầu ghi chú và bản bàn giao chứa ánh xạ có cấu trúc giữa từng nhận định và nguồn, gồm loại nguồn, đoạn trích hoặc trường công cụ, mốc thời gian và trạng thái xác minh.</p>"
         ]
       },
       "topic": "risk"
@@ -1060,15 +1060,15 @@
       "a": [
         "D"
       ],
-      "e": "Thiếu coverage thì thêm vòng review ở coordinator: kiểm tra độ bao phủ, giao việc bổ sung cho phần thiếu, rồi chạy lại synthesis.",
+      "e": "Tác nhân điều phối cần phát hiện phần còn thiếu, giao nhiệm vụ bổ sung có mục tiêu, rồi tổng hợp lại. Chỉ tăng số lần lặp không bảo đảm cải thiện độ bao phủ.",
       "m": 1,
       "v": {
-        "q": "<p>Một hệ thống nghiên cứu tạo ra các báo cáo mạch lạc, nhưng vẫn còn các khoảng trống về độ bao phủ. </p><p>Ví dụ, các báo cáo về quy định AI có độ bao phủ EU mạnh nhưng độ bao phủ Châu Á - Thái Bình Dương yếu. </p><p>Thay đổi nào cải thiện tính đầy đủ?</p>",
+        "q": "<p>Hệ thống nghiên cứu tạo được báo cáo mạch lạc nhưng vẫn thiếu thông tin ở một số khu vực. Chẳng hạn, báo cáo quy định AI bao phủ tốt EU nhưng sơ sài về châu Á – Thái Bình Dương. Thay đổi nào giúp báo cáo đầy đủ hơn?</p>",
         "o": [
-          "<p>Ẩn các phần không được hỗ trợ.</p>",
-          "<p>Thêm một vòng review của coordinator kiểm tra độ bao phủ, giao các việc tiếp theo và chạy lại synthesis.</p>",
-          "<p>Tổng số lần lặp của coordinator lên một con sự cố định.</p>",
-          "<p>Lặp lại các phân công rằng hai lần.</p>"
+          "<p>Ẩn những phần thiếu bằng chứng.</p>",
+          "<p>Thêm vòng rà soát của tác nhân điều phối: đánh giá độ bao phủ, giao nghiên cứu bổ sung và chạy lại bước tổng hợp.</p>",
+          "<p>Tăng số vòng lặp của tác nhân điều phối lên một con số cố định.</p>",
+          "<p>Lặp lại hai lần các nhiệm vụ nghiên cứu chung chung.</p>"
         ]
       },
       "topic": "agent"
@@ -1097,15 +1097,15 @@
       "a": [
         "B"
       ],
-      "e": "Muốn chỉ nhận issue có thể hành động thì định nghĩa rõ thế nào là issue và kèm ví dụ.",
+      "e": "Prompt nên nêu tiêu chí cụ thể để phân biệt lỗi có thể hành động với gợi ý chung chung, kèm ví dụ minh họa cho từng loại.",
       "m": 1,
       "v": {
-        "q": "<p>Một lập trình viên muốn Claude review code và chỉ trả về các vấn đề có thể hành động được. </p><p>Thiết kế prompt nào hiệu quả nhất?</p>",
+        "q": "<p>Một lập trình viên muốn Claude review mã nguồn và chỉ nêu các vấn đề có hướng xử lý cụ thể. Cách thiết kế prompt nào hiệu quả nhất?</p>",
         "o": [
-          "<p>Yêu cầu mỗi cải tiến có thể có</p>",
-          "<p>Tránh mô tả output mong đợi</p>",
-          "<p>Yêu cầu các đề xuất không giới hạn</p>",
-          "<p>Định nghĩa điều gì được coi là một vấn đề và cung cấp các ví dụ.</p>"
+          "<p>Yêu cầu nêu tất cả cải tiến có thể nghĩ ra.</p>",
+          "<p>Không mô tả định dạng đầu ra mong đợi.</p>",
+          "<p>Yêu cầu số lượng đề xuất không giới hạn.</p>",
+          "<p>Định nghĩa rõ tiêu chí thế nào là một vấn đề cần báo cáo và cung cấp ví dụ.</p>"
         ]
       },
       "topic": "prompt"
@@ -1134,15 +1134,15 @@
       "a": [
         "B"
       ],
-      "e": "Không sửa được upstream thì chuẩn hóa ở giữa: hook PostToolUse chuyển timestamp, status code, tier về dạng thống nhất trước khi Claude đọc. đây là deterministic, không phụ thuộc trí nhớ của model.",
+      "e": "Khi không thể sửa hệ thống nguồn, hãy chuẩn hóa dữ liệu tại hook `PostToolUse` trước khi đưa vào Claude. Việc chuyển đổi có quy tắc xác định giúp tránh nhầm lẫn định dạng.",
       "m": 1,
       "v": {
-        "q": "<p><strong>Kịch bản</strong>: </p><p>Customer Support Resolution Agent Log production cho thấy: l get_customer trả về timestamp ISO 8601 và các loyalty tier dụng sự. l lookup_order trả về timestamp Unix và các mã trạng thái dụng sự. </p><p>Agent đôi khi tính sai của số trả hàng hoặc gắn nhãn sai trạng thái đơn hàng. </p><p>Bạn không thể sửa đổi các MCP server upstream. </p><p>Thay đổi nào giải quyết vấn độ độ tin cậy này tốt nhất?</p>",
+        "q": "<p><strong>Kịch bản: Tác nhân giải quyết yêu cầu hỗ trợ khách hàng</strong></p><p>Log production cho thấy `get_customer` trả mốc thời gian ISO 8601 và hạng khách hàng thân thiết dưới dạng số, còn `lookup_order` trả Unix timestamp và mã trạng thái dạng số. Tác nhân đôi khi tính sai thời hạn trả hàng hoặc diễn giải sai trạng thái đơn hàng. Bạn không thể sửa các MCP server nguồn. Thay đổi nào giúp hệ thống đáng tin cậy hơn?</p>",
         "o": [
-          "<p>Sửa đổi bổ phân tích phản hồi cuối cùng cho khách hàng.</p>",
-          "<p>Thêm một hook PostToolUse chuyển đổi kết quả của tool thành các ngày, nhãn trạng thái và field tier chuẩn hóa trước khi Claude nhìn thấy.</p>",
-          "<p>Escalate tất cả các trường hợp có định dạng timestamp hỗn hợp.</p>",
-          "<p>Thêm các chỉ dẫn system yêu cầu Claude ghi nhớ định dạng của từng tool</p>"
+          "<p>Sửa bộ phân tích phản hồi cuối cùng gửi khách hàng.</p>",
+          "<p>Thêm hook `PostToolUse` để chuẩn hóa ngày giờ, nhãn trạng thái và hạng khách hàng trong kết quả công cụ trước khi Claude đọc.</p>",
+          "<p>Chuyển mọi trường hợp có nhiều định dạng thời gian cho nhân viên xử lý.</p>",
+          "<p>Thêm hướng dẫn system yêu cầu Claude ghi nhớ định dạng của từng công cụ.</p>"
         ]
       },
       "topic": "tools"
@@ -1171,15 +1171,15 @@
       "a": [
         "D"
       ],
-      "e": "Confidence cao vẫn có thể sai theo cảm. Lấy mẫu ngẫu nhiên phân tầng theo chỉ để, loại nguồn, section và theo dõi lại theo nhóm để tìm điểm mù trước khi giảm review.",
+      "e": "Điểm tin cậy cao không loại trừ lỗi tập trung ở từng nhóm dữ liệu. Cần lấy mẫu phân tầng theo chủ đề, loại nguồn và phần báo cáo để tìm điểm mù trước khi giảm kiểm tra thủ công.",
       "m": 1,
       "v": {
-        "q": "<p>Một hệ thống nghiên cứu multi-agent gán độ tin cậy cao cho hầu hết các nhận định trong báo cáo, nhưng các cuộc kiểm toán của khách hàng phát hiện các sai lịch trích dẫn tập trung ở các chế để quy định pháp lý và các loại nguồn mới được thêm. </p><p>Nên triển khai chiến lược review nào trước khi giảm thêm phạm vi reviewerẻ</p>",
+        "q": "<p>Một hệ thống nghiên cứu đa tác nhân gán độ tin cậy cao cho phần lớn nhận định trong báo cáo. Tuy nhiên, kiểm toán khách hàng phát hiện lỗi trích dẫn tập trung ở chủ đề pháp lý và các loại nguồn mới. Trước khi giảm tỷ lệ review thủ công, nên áp dụng chiến lược nào?</p>",
         "o": [
-          "<p>Lấy mẫu ngẫu nhiên các nhận định có độ tin cậy cao theo chỉ để, loại nguồn và phần báo cáo, sau đó theo dõi lại theo danh mục.</p>",
-          "<p>Tự động xuất bạn các báo cáo có độ tin cậy cao và chỉ điều tra các lỗi do khách hàng báo.</p>",
-          "<p>Chỉ review các nhận định có điểm confidence thấp.</p>",
-          "<p>Dùng một chỉ số độ chính xác tổng hợp duy nhất và giảm review sau khi đặt mục tiêu.</p>"
+          "<p>Lấy mẫu ngẫu nhiên phân tầng các nhận định có độ tin cậy cao theo chủ đề, loại nguồn và phần báo cáo; theo dõi lỗi theo từng nhóm.</p>",
+          "<p>Tự động xuất bản báo cáo có độ tin cậy cao, chỉ điều tra khi khách hàng phàn nàn.</p>",
+          "<p>Chỉ review những nhận định có điểm tin cậy thấp.</p>",
+          "<p>Dùng một chỉ số độ chính xác tổng hợp, đạt mục tiêu thì giảm review.</p>"
         ]
       },
       "topic": "quality"
@@ -1208,15 +1208,15 @@
       "a": [
         "A"
       ],
-      "e": "Độ chính xác tầng 97,2% có thể che giấu nhóm tài liệu hoặc field rất kém. Phân tích theo loại tài liệu và field, chế tự động hóa nhóm đã đặt ngưỡng.",
+      "e": "Độ chính xác tổng thể 97,2% có thể che khuất lỗi nghiêm trọng ở một số loại tài liệu hoặc trường. Chỉ tự động duyệt những phân khúc đã chứng minh đạt ngưỡng riêng.",
       "m": 1,
       "v": {
-        "q": "<p><strong>Kịch bản</strong>: </p><p>Structured Data Extraction Một lần chạy validation có nhãn báo cáo: l độ chính xác trích xuất tổng hợp 97.2% l độ bao phủ trên NDA, hóa đơn, biểu mẫu bảo hiểm và đơn đặt hàng Ban lãnh đảo muốn bỏ qua review của con người đối với mỗi bản ghi mà Claude trả về độ tin cậy cao, nhưng các khiểu nội trong giai đoạn thí điểm cho thấy lại tập trung ở các nhóm tài liệu và field cụ thể. </p><p>Bạn nên làm gì trước khi giảm phạm vi reviewerẻ</p>",
+        "q": "<p><strong>Kịch bản: Trích xuất dữ liệu có cấu trúc</strong></p><p>Đợt xác thực có nhãn cho thấy độ chính xác trích xuất tổng thể đạt 97,2% trên NDA, hóa đơn, biểu mẫu bảo hiểm và đơn đặt hàng. Lãnh đạo muốn bỏ review thủ công với mọi bản ghi được Claude đánh giá có độ tin cậy cao. Tuy nhiên, phản hồi từ giai đoạn thử nghiệm cho thấy lỗi tập trung ở một số loại tài liệu và trường dữ liệu. Trước khi giảm review, bạn nên làm gì?</p>",
         "o": [
-          "<p>Phân tích độ chính xác theo loại tài liệu và field được trích xuất, sau đó chế tự động hóa các phân đoạn đặt ngưỡng đã được xác thực trong khi chuyển các phân đoạn còn lại đến review.</p>",
-          "<p>Dùng độ chính xác tổng hợp 97.2% để tự động phê duyệt tất cả output có độ tin cậy cao, theo dõi các khiểu nối của người dùng để phát hiện các hải quy mối nối.</p>",
-          "<p>Review ngẫu nhiên một tỷ lệ phần trăm cố định của mỗi danh mục trích xuất, bất kỳ loại tài liệu, field hay hiệu năng validation trước đó.</p>",
-          "<p>Nâng ngưỡng confidence toàn cục cho đến khi độ chính xác validation tổng hợp đặt 99%, sau đó tốt review cho các output còn lại.</p>"
+          "<p>Phân tích độ chính xác theo loại tài liệu và từng trường; chỉ tự động hóa những nhóm đạt ngưỡng đã được xác thực, còn nhóm rủi ro vẫn review.</p>",
+          "<p>Dùng độ chính xác tổng thể 97,2% để tự động duyệt mọi kết quả có độ tin cậy cao rồi theo dõi khiếu nại.</p>",
+          "<p>Review ngẫu nhiên một tỷ lệ cố định ở mọi nhóm, không xét loại tài liệu, trường hay kết quả xác thực trước đó.</p>",
+          "<p>Tăng ngưỡng tin cậy chung đến khi độ chính xác tổng thể đạt 99%, rồi tắt review đối với phần còn lại.</p>"
         ]
       },
       "topic": "quality"
@@ -1245,15 +1245,15 @@
       "a": [
         "D"
       ],
-      "e": "Một lần review 90 trang thì model bộ \"lost in the middle\". Chia thành nhiều pass tập trung theo từng phần, thêm một pass riêng kiểm tra tính nhất quán chéo giữa các phần.",
+      "e": "Rà soát toàn bộ hồ sơ 90 trang trong một lần dễ bỏ sót thông tin ở giữa. Nên chia thành các lượt kiểm tra theo phần và thêm một lượt đối chiếu tính nhất quán giữa các phần.",
       "m": 1,
       "v": {
-        "q": "<p><strong>Kịch bản</strong>: </p><p>Structured Data Extraction Bạn đang xây dựng một hệ thống structured data extraction bằng Claude. </p><p>Hệ thống trích xuất thông tin từ các tài liệu phi cấu trúc, xác thực output bằng JSON schema và duy trì độ chính xác cao. </p><p>Nó phải xử lý các trường hợp biên một cách linh hoạt và tích hợp với các hệ thống downstream. </p><p>Prompt QA của bạn review một gói onboarding nhà cung cấp dài 90 trang và các bản ghi đã trích xuất của nó trong một lần gọi. </p><p>Nó bắt được các lỗi field chi tiết trong vài biểu mẫu đầu tiên, những bỏ sót các mã số thuế không khớp ở các phụ lục giữa gói và tỷ mâu thuẫn về các chữ ký bắt buộc. </p><p>Kiến trúc review nào cải thiện độ tin cậy tốt nhất?</p>",
+        "q": "<p><strong>Kịch bản: Trích xuất dữ liệu có cấu trúc</strong></p><p>Bạn xây dựng hệ thống dùng Claude trích xuất dữ liệu từ tài liệu phi cấu trúc, xác thực bằng JSON Schema và chuyển kết quả cho các hệ thống phía sau. Một prompt QA duy nhất rà soát bộ hồ sơ tiếp nhận nhà cung cấp dài 90 trang cùng các bản ghi trích xuất. Nó phát hiện lỗi chi tiết ở những biểu mẫu đầu nhưng bỏ sót mã số thuế không khớp trong phụ lục giữa hồ sơ và tự mâu thuẫn về yêu cầu chữ ký.</p><p>Kiến trúc review nào giúp cải thiện độ tin cậy nhất?</p>",
         "o": [
-          "<p>Tầng max_tokens và thêm các chỉ dẫn mạnh hơn yêu cầu review toàn diện khi review toàn bộ gói một lần.</p>",
-          "<p>Chạy các lượt review tập trung cho từng phần của gói, sau đó chạy một lượt consistency riêng trên các field liên phản.</p>",
-          "<p>Yêu cầu chính instance trích xuất đó tự phê bình output của nó bằng extended thinking trước khi trả về các bản ghi cuối cùng.</p>",
-          "<p>Chạy ba lượt review toàn gói và chỉ chấp nhận các vấn đề được ít nhất hai reviewer báo cáo.</p>"
+          "<p>Tăng `max_tokens` và yêu cầu rà soát toàn diện hơn trong một lượt duy nhất.</p>",
+          "<p>Rà soát từng phần hồ sơ theo các lượt tập trung, rồi thực hiện lượt riêng để kiểm tra tính nhất quán giữa các trường ở nhiều phần.</p>",
+          "<p>Yêu cầu chính tác nhân trích xuất tự phê bình đầu ra bằng extended thinking trước khi trả kết quả.</p>",
+          "<p>Rà soát toàn bộ hồ sơ ba lần và chỉ nhận lỗi được ít nhất hai reviewer phát hiện.</p>"
         ]
       },
       "topic": "quality"
@@ -1282,15 +1282,15 @@
       "a": [
         "D"
       ],
-      "e": "Tính năng Beta có thể thay đổi lớn hoặc bị bỏ, không cam kết ổn định cho production như tính năng GA. đặt lõi hệ thống billing lên đó là rủi ro.",
+      "e": "Tính năng Beta có thể thay đổi hoặc ngừng cung cấp; chưa có cam kết ổn định như tính năng phát hành chính thức (GA). Dựa toàn bộ logic thanh toán cốt lõi vào Beta là rủi ro kiến trúc.",
       "m": 1,
       "v": {
-        "q": "<p>Một nhóm muốn xây dựng logic cốt lõi của một pipeline thanh toán production hoàn toàn dựa trên một khả năng nền tảng hiện được gắn nhãn Beta trong bảng feature-availability của Anthropic. </p><p>Một tech lead nêu lên một mỗi lo ngại trước khi phê duyệt thiết kế. </p><p>Cố sự chính xác nhất cho mỗi lo ngại đó là gì?</p>",
+        "q": "<p>Một nhóm muốn xây dựng logic cốt lõi của pipeline thanh toán production hoàn toàn dựa trên tính năng Anthropic đang gắn nhãn Beta. Trưởng nhóm kỹ thuật lo ngại trước khi duyệt thiết kế. Cơ sở xác đáng nhất cho lo ngại này là gì?</p>",
         "o": [
-          "<p>Các tính năng Beta không thể dùng cùng với prompt caching hoặc batch processing, điều này sẽ ngăn pipeline mở rộng với chi phí hiệu quả.</p>",
-          "<p>Các tính năng Beta bị giới hạn ở 200k token ngữ cảnh bất kỳ model bên dưới, điều này sẽ hạn chế việc xử lý tài liệu của pipeline.</p>",
-          "<p>Các tính năng Beta có thể thay đổi đáng kể hoặc bị ngừng dựa trên phản hồi và không được đảm bảo cho việc sử dụng production lâu dài, không giống các tính năng GA.</p>",
-          "<p>Các tính năng Beta bị tính phí cao hơn 50% so với các tính năng generally available, khiến chúng không phù hợp với các pipeline thanh toán nhạy cảm về chi phí.</p>"
+          "<p>Tính năng Beta không thể dùng chung với prompt caching hoặc xử lý batch, khiến pipeline không thể mở rộng.</p>",
+          "<p>Tính năng Beta luôn bị giới hạn cửa sổ ngữ cảnh 200.000 token, bất kể mô hình.</p>",
+          "<p>Tính năng Beta có thể thay đổi đáng kể hoặc bị ngừng dựa trên phản hồi, và không được bảo đảm ổn định lâu dài trong production.</p>",
+          "<p>Tính năng Beta luôn có giá cao hơn tính năng đã phát hành chính thức 50%.</p>"
         ]
       },
       "topic": "api"
@@ -1319,15 +1319,15 @@
       "a": [
         "C"
       ],
-      "e": "Routing sai vì thiếu tiêu chí rõ ràng. Viết rõ khi nào cần human review, kèm few-shot phân biệt: field tùy chọn bị thiếu, field bắt buộc không đọc được, loại tài liệu không hỗ trợ.",
+      "e": "Cần phân biệt dữ liệu không có nhưng được phép thiếu với dữ liệu bắt buộc không đọc được hoặc mẫu tài liệu chưa hỗ trợ. Tiêu chí review rõ ràng cùng ví dụ few-shot sẽ giúp định tuyến chính xác hơn.",
       "m": 1,
       "v": {
-        "q": "<p><strong>Kịch bản</strong>: </p><p>Structured Data Extraction Bạn đang xây dựng một hệ thống structured data extraction bằng Claude. </p><p>Hệ thống trích xuất thông tin từ các tài liệu phi cấu trúc, xác thực output bằng JSON schema và duy trì độ chính xác cao. </p><p>Review production cho thấy việc định tuyến không nhất quán: </p><ul><li>Các tài liệu có giá trị bắt buộc không đọc được và bố cục lệ đôi khi đi vào các hệ thống downstream, </li><li>Trong khi các hóa đến thông thường thiểu số đơn đặt hàng tùy chọn lỗi bị gửi đi review thủ công. </li></ul><p>Schema trích xuất đã cho phép các field nullable đối với dữ liệu không có trong nguồn. </p><p>Thay đổi nào cải thiện hiệu quả nhất các quyết định định tuyến?</p>",
+        "q": "<p><strong>Kịch bản: Trích xuất dữ liệu có cấu trúc</strong></p><p>Hệ thống dùng Claude trích xuất và kiểm tra dữ liệu từ tài liệu. Trong production, việc chuyển tài liệu sang bước xử lý tiếp theo đang thiếu nhất quán:</p><ul><li>Tài liệu có trường bắt buộc không đọc được hoặc bố cục chưa quen thuộc đôi khi vẫn được gửi đến hệ thống phía sau.</li><li>Trong khi đó, hóa đơn thông thường thiếu số đơn đặt hàng không bắt buộc lại bị chuyển cho người review.</li></ul><p>Schema đã cho phép `null` khi tài liệu nguồn không chứa dữ liệu. Nên thay đổi điều gì để định tuyến chính xác hơn?</p>",
         "o": [
-          "<p>Yêu cầu retry cho đến khi tất cả các field của schema được điền, sau đó chế escalate các tài liệu văn còn chứa giá trị null</p>",
-          "<p>Escalate các tài liệu dựa trên từ ngữ bực bội, ngôn ngữ khẩn cấp hoặc cảm xúc tiêu cục được phát hiện trong văn bản nguồn.</p>",
-          "<p>Thêm các tiêu chí human-review rõ ràng kèm các ví dụ few-shot phân biệt các field tùy chọn vọng một, các field bắt buộc không đọc được và các loại tài liệu không được hỗ trợ.</p>",
-          "<p>Chuyển các tài liệu đơn reviewer bất cứ khi nào model báo cáo confidence thấp hơn một ngưỡng toàn cục duy nhất sau khi trích xuất.</p>"
+          "<p>Thử lại đến khi mọi trường schema được điền, chỉ chuyển cho người review nếu vẫn còn `null`.</p>",
+          "<p>Chuyển tài liệu cho người review dựa trên từ ngữ bực bội, khẩn cấp hoặc cảm xúc tiêu cực trong văn bản.</p>",
+          "<p>Quy định rõ tiêu chí review thủ công và đưa ví dụ few-shot phân biệt trường tùy chọn bị thiếu, trường bắt buộc không đọc được và bố cục không được hỗ trợ.</p>",
+          "<p>Chuyển cho người review nếu độ tin cậy của mô hình dưới một ngưỡng chung duy nhất.</p>"
         ]
       },
       "topic": "prompt"
@@ -1356,15 +1356,15 @@
       "a": [
         "C"
       ],
-      "e": "Task ổn định thì dùng prompt chain cố định, task điều tra mở thì dùng adaptive planning. đúng công cụ cho đúng loại việc.",
+      "e": "Công việc có tiêu chí cố định phù hợp với chuỗi prompt định sẵn; điều tra lỗi chưa biết nguyên nhân cần kế hoạch linh hoạt theo phát hiện thực tế.",
       "m": 1,
       "v": {
-        "q": "<p>Một nhóm phát triển sử dụng Claude Agent SDK cho các quy trình khác nhau. </p><p>Các review dependency tuân theo các quy tắc cố định, trong khi debug các hệ thống chưa biết đòi hỏi khám phá. </p><p>Chiến lược phân rã nào là tốt nhất?</p>",
+        "q": "<p>Một nhóm dùng Claude Agent SDK cho hai loại quy trình: review dependency theo quy tắc cố định và gỡ lỗi hệ thống chưa quen thuộc cần khám phá. Chiến lược chia nhỏ tác vụ nào phù hợp nhất?</p>",
         "o": [
-          "<p>Dùng lập kế hoạch động cho mỗi quy trình</p>",
-          "<p>Dùng một prompt lớn cho mỗi tác vụ</p>",
-          "<p>Dùng các bước cố định cho mỗi quy trình</p>",
-          "<p>Dùng prompt chain cho các tác vụ ổn định và lập kế hoạch thích ứng cho các cuộc điều tra</p>"
+          "<p>Lập kế hoạch động cho mọi quy trình.</p>",
+          "<p>Gộp tất cả công việc vào một prompt lớn.</p>",
+          "<p>Dùng các bước cố định cho mọi quy trình.</p>",
+          "<p>Dùng chuỗi prompt cho tác vụ ổn định và lập kế hoạch thích ứng cho hoạt động điều tra.</p>"
         ]
       },
       "topic": "prompt"
@@ -1393,15 +1393,15 @@
       "a": [
         "D"
       ],
-      "e": "Coordinator giả shared state và đưa findings liên quan vào prompt của bước sau. Không đủ planner tự đoán dependency tự tên file.",
+      "e": "Tác nhân điều phối nên lưu trạng thái và chuyển rõ các phát hiện liên quan cho tác nhân lập kế hoạch. Không nên yêu cầu tác nhân sau tự đoán dependency từ tên tệp.",
       "m": 1,
       "v": {
-        "q": "<p>Một nhóm phát triển sử dụng Claude Agent SDK với nhiều subagent để phân tích một hệ thống thanh toán legacy. </p><p>Coordinator nên cải thiện độ tin cậy như thế nào khi chuyển các kết quả khám phá cho một planning subagent?</p>",
+        "q": "<p>Một nhóm dùng Claude Agent SDK với nhiều tác nhân phụ để phân tích hệ thống thanh toán cũ. Tác nhân điều phối cần làm gì để chuyển kết quả khám phá cho tác nhân lập kế hoạch đáng tin cậy hơn?</p>",
         "o": [
-          "<p>Thay các subagent chuyên biệt bằng một subagent đa dạng duy nhất</p>",
-          "<p>Cho phép các subagent giao tiếp trực tiếp mà không có điều phối</p>",
-          "<p>Duy trì shared state và đưa các phát hiện liên quan vào các prompt sau đó</p>",
-          "<p>Yêu cầu planner suy luận các dependency còn thiếu từ tên file</p>"
+          "<p>Thay các tác nhân chuyên trách bằng một tác nhân đa năng duy nhất.</p>",
+          "<p>Cho các tác nhân phụ giao tiếp trực tiếp mà không cần điều phối.</p>",
+          "<p>Duy trì trạng thái dùng chung và đưa những phát hiện liên quan vào prompt của bước lập kế hoạch.</p>",
+          "<p>Yêu cầu tác nhân lập kế hoạch đoán các dependency còn thiếu qua tên tệp.</p>"
         ]
       },
       "topic": "agent"
@@ -1430,15 +1430,15 @@
       "a": [
         "C"
       ],
-      "e": "Review license có rubric cố định thì dùng prompt chain cố định để không sót mục. điều tra bug thì đề agent tố điều chỉnh subtask theo phát hiện.",
+      "e": "Review giấy phép có checklist rõ ràng nên dùng chuỗi prompt cố định để không bỏ sót mục. Điều tra bug cần linh hoạt thay đổi bước tiếp theo theo bằng chứng mới.",
       "m": 1,
       "v": {
-        "q": "<p><strong>Kịch bản</strong>: </p><p>Developer Productivity with Claude Bạn đang xây dựng các công cụ nâng cao năng suất cho developer bằng Claude Agent SDK. </p><p>Agent giúp các kỹ sư khám phá các codebase xa lệ, hiệu các hệ thống legacy, sinh code boilerplate và tự động hóa các tác vụ lặp đi lặp lại. </p><p>Các review license của dependency tuân theo một rubric ổn định với các kiểm tra đã biết, trong khi các cuộc điều tra bug production trong các service xa lệ thay đổi tùy theo các call path, log và test thất bại được phát hiện. </p><p>Prompt single-pass hiện tại bị sót các mục checklist trong các review và lãng phí công sắc trong các cuộc điều tra. </p><p>Chiến lược phân rã nào là phù hợp nhất?</p>",
+        "q": "<p><strong>Kịch bản: Nâng cao năng suất lập trình với Claude</strong></p><p>Bạn xây dựng công cụ dùng Claude Agent SDK để khám phá codebase lạ, hiểu hệ thống cũ, tạo mã mẫu và tự động hóa tác vụ lặp lại. Review giấy phép dependency có bộ tiêu chí cố định; ngược lại, điều tra bug production phải thay đổi theo luồng gọi hàm, log và test thất bại vừa phát hiện. Một prompt chạy duy nhất hiện bỏ sót mục kiểm tra khi review và lãng phí công sức khi điều tra.</p><p>Chiến lược chia nhỏ công việc nào phù hợp nhất?</p>",
         "o": [
-          "<p>Dùng cùng một checklist tuần tự cố định cho cả hai quy trình, yêu cầu mỗi cuộc điều tra phải hoàn thành mỗi bước được định nghĩa trước.</p>",
-          "<p>Dùng một prompt lớn cho cả hai loại request, yêu cầu agent suy luận cẩn thận trước khi dùng bất kỳ tool nào.</p>",
-          "<p>Dùng lập kế hoạch task động cho mỗi quy trình, cho phép agent định nghĩa lại các tiêu chí review khi nó khám phá các pattern code.</p>",
-          "<p>Dùng một prompt chain cố định cho các rubric review ổn định, và để agent điều chỉnh các subtask trong các cuộc điều tra mở.</p>"
+          "<p>Dùng cùng checklist cố định cho cả hai, buộc mọi cuộc điều tra phải thực hiện tất cả bước định sẵn.</p>",
+          "<p>Dùng một prompt lớn cho cả hai loại yêu cầu, nhắc tác nhân suy nghĩ kỹ trước khi gọi công cụ.</p>",
+          "<p>Lập kế hoạch động cho mọi quy trình, cho phép tác nhân tự sửa tiêu chí review khi phát hiện mẫu mã mới.</p>",
+          "<p>Dùng chuỗi prompt cố định cho review có tiêu chí ổn định và cho tác nhân tự điều chỉnh các tác vụ con khi điều tra mở.</p>"
         ]
       },
       "topic": "prompt"
@@ -1467,15 +1467,15 @@
       "a": [
         "C"
       ],
-      "e": "CI tạo comment tự động thì cần JSON output kèm validate bằng JSON schema. Chỉ dẫn bằng prompt hay dùng regex parse markdown đầu dễ vỡ.",
+      "e": "Tự động tạo bình luận cần dữ liệu JSON theo schema có xác thực. Chỉ nhắc bằng prompt hoặc phân tích Markdown bằng regex đều dễ lỗi.",
       "m": 1,
       "v": {
-        "q": "<p>Một pipeline CI cần các phát hiện của Claude Code để tạo các comment pull request tự động. </p><p>Cách tiếp cận nào cung cấp tích hợp đáng tin cậy nhất?</p>",
+        "q": "<p>Pipeline CI muốn dùng các phát hiện của Claude Code để tự động tạo bình luận trên pull request. Cách tích hợp nào đáng tin cậy nhất?</p>",
         "o": [
-          "<p>Dùng JSON output với xác thực JSON schema</p>",
-          "<p>Yêu cầu Claude luôn trả về JSON trong prompt</p>",
-          "<p>Viết lại các comment trước đó thành các bản ghi có cấu trúc</p>",
-          "<p>Phân tích markdown output bằng biểu thức chính quy</p>"
+          "<p>Dùng đầu ra JSON và xác thực bằng JSON Schema.</p>",
+          "<p>Chỉ yêu cầu Claude luôn trả JSON trong prompt.</p>",
+          "<p>Chuyển các bình luận trước đó thành bản ghi có cấu trúc.</p>",
+          "<p>Dùng biểu thức chính quy phân tích đầu ra Markdown.</p>"
         ]
       },
       "topic": "code"
@@ -1504,15 +1504,15 @@
       "a": [
         "D"
       ],
-      "e": "Nhiều profile khớp thì danh tính chưa được xác định. Hỏi thêm một định danh phân biệt trước khi tra đến hoặc hoàn tiến. đoán sai số dẫn đến hoàn tiến nhằm và lệ dữ liệu.",
+      "e": "Khi nhiều hồ sơ cùng khớp, chưa đủ căn cứ xác định danh tính. Hãy hỏi thêm định danh phân biệt trước khi truy cập đơn hàng hoặc thực hiện hoàn tiền; không suy đoán theo độ giống tên.",
       "m": 1,
       "v": {
-        "q": "<p>Một agent hỗ trợ khách hàng dùng Claude Agent SDK nhận được nhiều hồ sơ khách hàng có thể khớp khi người dùng cung cấp tên phổ biến và địa chỉ không đầy đủ. </p><p>Agent đôi khi chọn một hệ số dựa trên hoạt động gần đây hoặc độ tương đồng tên, gây ra các khoản hoàn tiến sai và rò rỉ quyền riêng tư. </p><p>Thay đổi nào cải thiện độ tin cậy tốt nhất mà không chuyển các trường hợp thông thường cho con người một cách không cần thiết?</p>",
+        "q": "<p>Tác nhân hỗ trợ khách hàng dùng Claude Agent SDK tìm thấy nhiều hồ sơ khớp khi người dùng chỉ cung cấp tên phổ biến và một phần địa chỉ. Đôi khi tác nhân chọn theo hoạt động gần đây hoặc độ giống tên, dẫn đến hoàn tiền sai và lộ thông tin riêng tư. Nên thay đổi điều gì để bảo đảm đúng danh tính mà không phải chuyển mọi trường hợp cho nhân viên?</p>",
         "o": [
-          "<p>Gọi lookup_order cho từng hồ sơ khách hàng khớp, sau đó chọn tài khoản có chi tiết đơn hàng khớp nhất với tin nhắn.</p>",
-          "<p>Coi nhiều kết quả khớp khách hàng là danh tính chưa được giải quyết và yêu cầu một định danh phân biệt trước khi thực hiện bất kỳ thao tác đơn hàng hoặc hoàn tiến nào.</p>",
-          "<p>Xếp hỏng các khách hàng khớp theo hoạt động gần đây và tiếp tục với hệ số xếp hạng cao nhất khi confidence vượt quá một ngưỡng.</p>",
-          "<p>Escalate mọi yêu cầu có bản ghi khách hàng trùng lặp cho agent con người trước khi thực hiện bất kỳ lại gửi lookup_order nào.</p>"
+          "<p>Gọi `lookup_order` cho từng hồ sơ rồi chọn tài khoản có đơn hàng khớp nhất với lời khách hàng.</p>",
+          "<p>Coi nhiều hồ sơ khớp là chưa xác minh được danh tính; yêu cầu thêm một định danh để phân biệt trước khi tra cứu đơn hàng hoặc hoàn tiền.</p>",
+          "<p>Xếp hạng hồ sơ theo hoạt động gần đây và chọn hồ sơ đứng đầu nếu điểm tin cậy vượt ngưỡng.</p>",
+          "<p>Chuyển mọi trường hợp có hồ sơ trùng cho nhân viên trước khi gọi `lookup_order`.</p>"
         ]
       },
       "topic": "risk"
@@ -1541,15 +1541,15 @@
       "a": [
         "D"
       ],
-      "e": "Hai nguồn uy tín mâu thuẫn thì giả cả hai, ghi nguồn, ghi chú phương pháp và đánh dấu xung đột. Không tự chọn số lớn hơn.",
+      "e": "Khi hai nguồn đáng tin cậy đưa số liệu khác nhau, phải giữ cả hai cùng thông tin nguồn, phương pháp và điểm bất đồng. Không tự chọn số lớn hơn hoặc tính trung bình.",
       "m": 1,
       "v": {
-        "q": "<p>Một báo cáo nghiên cứu chứa hai nghiên cứu đáng tin cậy với các sự liệu thống kê năng suất khác nhau. </p><p>Synthesis agent chọn con số lớn hơn làm kết quả chính thức. </p><p>Thay đổi nào cải thiện độ tin cậy?</p>",
+        "q": "<p>Một báo cáo nghiên cứu dẫn hai công trình đáng tin cậy nhưng có thống kê năng suất khác nhau. Tác nhân tổng hợp chọn con số lớn hơn làm kết luận cuối cùng. Thay đổi nào cải thiện độ tin cậy?</p>",
         "o": [
-          "<p>Chọn nghiên cứu lớn hơn và loại bỏ nghiên cứu nhỏ hơn.</p>",
-          "<p>Tìm kiếm cho đến khi có nguồn khác xác nhận một trong các sự liệu thống kê</p>",
-          "<p>Lấy trung bình hai số liệu thống kê.</p>",
-          "<p>Giữ cả hai số liệu thống kê kèm ghi nhận nguồn, ghi chú phương pháp luận và chú thích xung đột</p>"
+          "<p>Chọn nghiên cứu có quy mô lớn hơn và bỏ nghiên cứu còn lại.</p>",
+          "<p>Tiếp tục tìm cho đến khi có nguồn khác xác nhận một trong hai số liệu.</p>",
+          "<p>Lấy trung bình hai số liệu.</p>",
+          "<p>Giữ cả hai số liệu, ghi rõ nguồn, phương pháp nghiên cứu và chú thích về sự khác biệt.</p>"
         ]
       },
       "topic": "quality"
