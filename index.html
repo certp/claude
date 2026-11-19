@@ -5,7 +5,7 @@
 <meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Claude Cert Practice</title>
-<style>
+<style data-app-style>
 :root{
   --bg:#f4f5fb; --surface:#ffffff; --surface-2:#f1f2f9; --ink:#14172b; --muted:#6a6f8a; --line:#e3e5f1;
   --primary:#4f46e5; --primary-ink:#fff; --primary-soft:#eceafd;
@@ -47,6 +47,12 @@ code{font-family:var(--mono);font-size:.9em;background:var(--surface-2);padding:
 .btn.ghost{background:transparent}
 .btn.lg{padding:13px 26px;font-size:15px;border-radius:14px}
 svg.i{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+.update-banner{position:fixed;z-index:250;left:50%;bottom:max(16px,env(safe-area-inset-bottom));transform:translateX(-50%);
+  width:max-content;max-width:calc(100vw - 32px);padding:12px 14px;border:1px solid var(--line);border-radius:14px;
+  background:var(--surface);box-shadow:var(--shadow);display:flex;align-items:center;gap:12px;justify-content:center;
+  flex-wrap:wrap;font-size:14px;text-align:center}
+.update-banner[hidden]{display:none}
 
 /* ---------- Home ---------- */
 .home{max-width:1100px;margin:0 auto;padding:clamp(32px,7vw,88px) 20px 56px}
@@ -231,10 +237,16 @@ svg.i{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke
 <body>
 <div id="app"></div>
 <div id="modal-root"></div>
-<script>
+<div id="update-banner" class="update-banner" hidden role="status" aria-live="polite">
+  <span>Đã có phiên bản mới của bộ đề.</span>
+  <button id="reload-app" type="button" class="btn primary">Cập nhật ngay</button>
+</div>
+<script data-app-main>
 const DATA = Object.create(null);
 const BY_ID = Object.create(null);
 const QUESTION_COUNTS = Object.freeze({"ccaf":309,"ccao":193,"ccdf":155});
+// Git blob digests: immutable data URL revisions, checked against file bytes in CI.
+const BANK_REVISIONS = Object.freeze({"ccaf":"8ecebcaf6226f3cd902f3bb19c9713827253bc9c","ccao":"9dddbdd0ceb70b6c5d3b3ac08e194b7e441c1a56","ccdf":"5ff829d5629160abb073ec7599c956da4662a448"});
 const BANK_LOADING = new Map();
 
 // Load only the selected certification. Keep the original question IDs and order.
@@ -244,7 +256,8 @@ async function loadQuestionBank(cert) {
   if (BANK_LOADING.has(cert)) return BANK_LOADING.get(cert);
 
   const pending = (async () => {
-    const response = await fetch(`./data/${cert}.json`);
+    // Both the URL revision and no-store protect against stale JSON (browser and CDN).
+    const response = await fetch(`./data/${cert}.json?v=${BANK_REVISIONS[cert]}`, {cache:'no-store'});
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const bank = await response.json();
     if (!bank || !Array.isArray(bank.qs) || bank.qs.length !== QUESTION_COUNTS[cert])
@@ -416,6 +429,51 @@ function learnOrder(rnd){
 const passMark = n => Math.ceil(n * 4 / 5);
 const certById = id => CERTS.find(c => c.id === id);
 const ALL_IDS = id => DATA[id].qs.map(q => q.id);
+
+/* ---------- app updates ---------- */
+// A static host (e.g. GitHub Pages) cannot always enforce no-store for index.html.
+// Probe the original HTML with a unique URL, without running or injecting its content.
+// Compare only authored style/script; the app DOM changes during learning/exams.
+const UPDATE_CHECK_MIN_INTERVAL = 60 * 1000;
+let updateLastChecked = 0;
+let updateCheckPending = null;
+function showUpdateAvailable(){
+  const banner = document.getElementById('update-banner');
+  if (!banner || !banner.hidden) return;
+  banner.hidden = false;
+  document.getElementById('reload-app').onclick = () => {
+    // New URL bypasses the cached navigation HTML; hash preserves the current course.
+    const target = new URL(location.href);
+    target.searchParams.set('v', String(Date.now()));
+    location.replace(target.href);
+  };
+}
+function checkForAppUpdate(){
+  if (updateCheckPending) return updateCheckPending;
+  if (document.hidden || !navigator.onLine || Date.now() - updateLastChecked < UPDATE_CHECK_MIN_INTERVAL)
+    return Promise.resolve();
+  updateLastChecked = Date.now();
+  updateCheckPending = (async () => {
+    const url = new URL('./index.html', location.href);
+    url.searchParams.set('_check', String(Date.now()));
+    const response = await fetch(url.href, {cache:'no-store'});
+    if (!response.ok || !(response.headers.get('content-type') || '').includes('text/html')) return;
+    const remote = new DOMParser().parseFromString(await response.text(),'text/html');
+    const selectors = ['script[data-app-main]', 'style[data-app-style]'];
+    if (selectors.some(selector => {
+      const newest = remote.querySelector(selector)?.textContent;
+      const current = document.querySelector(selector)?.textContent;
+      return typeof newest === 'string' && typeof current === 'string' && newest !== current;
+    })) showUpdateAvailable();
+  })().catch(() => { /* network-offline is not an application error */ })
+    .finally(() => { updateCheckPending = null; });
+  return updateCheckPending;
+}
+window.addEventListener('pageshow', () => { void checkForAppUpdate(); });
+window.addEventListener('focus', () => { void checkForAppUpdate(); });
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) void checkForAppUpdate();
+});
 
 /* ---------- storage ---------- */
 const LS = {
