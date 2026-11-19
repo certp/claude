@@ -24,7 +24,7 @@
       "a": [
         "A"
       ],
-      "e": "Khi các bước đã rõ và có thể lặp lại, một chuỗi lời nhắc cố định sẽ dễ kiểm thử và cho kết quả ổn định hơn.",
+      "e": "Với quy trình đã xác định rõ và có thể lặp lại, chuỗi prompt cố định giúp hệ thống hoạt động nhất quán, dễ kiểm thử và dễ dự đoán hơn.",
       "m": 1,
       "v": {
         "q": "<p>Một lập trình viên đang xây dựng trợ lý AI hỗ trợ viết mã. Quy trình đã được xác định rõ và các bước có thể lặp lại.</p><p>Thiết kế nào phù hợp?</p>",
@@ -61,15 +61,15 @@
       "a": [
         "D"
       ],
-      "e": "Muốn tự động hóa thì output phải parse được bằng máy: JSON theo schema định nghĩa trước. Heading markdown hay review thủ công không ổn định.",
+      "e": "Để xử lý tự động một cách đáng tin cậy, kết quả phải có cấu trúc máy đọc được, chẳng hạn JSON tuân theo schema xác định trước. Chỉ dựa vào tiêu đề Markdown hoặc review thủ công không đáp ứng yêu cầu này.",
       "m": 1,
       "v": {
-        "q": "<p>Một nhóm muốn có kết quả review pull request ổn định, tự động từ Claude Code. </p><p>Phương pháp nào hỗ trợ tự động hóa tốt nhất?</p>",
+        "q": "<p>Một nhóm muốn Claude Code tự động review pull request và trả về kết quả ổn định, nhất quán. Phương pháp nào phù hợp nhất để tích hợp vào quy trình tự động hóa?</p>",
         "o": [
-          "<p>Tách phản hồi bằng các heading</p>",
-          "<p>Sử dụng các quy tắc phân tích markdown nghiêm ngặt hơn</p>",
-          "<p>Đồng toàn bộ phản hồi để review thủ công</p>",
-          "<p>Sử dụng JSON output với một schema được định nghĩa</p>"
+          "<p>Chia phản hồi thành các phần bằng tiêu đề.</p>",
+          "<p>Áp dụng quy tắc phân tích cú pháp Markdown nghiêm ngặt hơn.</p>",
+          "<p>Đăng toàn bộ phản hồi để người khác review thủ công.</p>",
+          "<p>Trả về JSON theo một schema đã định nghĩa.</p>"
         ]
       },
       "topic": "code"
@@ -98,15 +98,15 @@
       "a": [
         "B"
       ],
-      "e": "Tìm file theo tên hoặc đuôi thì dùng Glob (`**/*.fixture.json`) rồi Read các file khớp. Grep tìm theo nội dung nên vừa nhiều vừa sót.",
+      "e": "Glob tìm tệp theo tên hoặc mẫu đường dẫn nên phù hợp với phần mở rộng `.fixture.json`. Grep tìm trong nội dung, dễ tạo kết quả nhiễu và không bảo đảm tìm đủ tệp.",
       "m": 1,
       "v": {
-        "q": "<p>Một nhóm cần cập nhật tất cả các tệp có đuôi `.fixture.json` trong một monorepo. Việc tìm kiếm từ “fixture” tạo ra nhiều kết quả nhiễu và bỏ sót một số tệp. </p><p>Nên áp dụng chiến lược tool use nào?</p>",
+        "q": "<p>Một nhóm cần cập nhật tất cả tệp có phần mở rộng `.fixture.json` trong một monorepo. Tìm kiếm từ “fixture” trong nội dung tạo ra nhiều kết quả nhiễu và vẫn bỏ sót một số tệp. Nên chọn chiến lược sử dụng công cụ nào?</p>",
         "o": [
-          "<p>Dùng các lệnh Bash và dán toàn bộ danh sách thư mục.</p>",
-          "<p>Đọc tất cả các file có thể trước khi tìm kiếm.</p>",
-          "<p>Dùng Grep với \"fixture\" và suy luận ra các file khớp.</p>",
-          "<p>Dùng các Glob pattern như `**/*.fixture.json` rồi Read các file khớp.</p>"
+          "<p>Chạy lệnh Bash rồi dán toàn bộ danh sách thư mục vào hội thoại.</p>",
+          "<p>Đọc tất cả các tệp có thể liên quan trước khi tìm kiếm.</p>",
+          "<p>Dùng Grep tìm từ “fixture” rồi suy đoán các tệp phù hợp.</p>",
+          "<p>Dùng Glob với mẫu `**/*.fixture.json`, sau đó dùng Read để đọc các tệp khớp.</p>"
         ]
       },
       "topic": "code"
@@ -135,15 +135,15 @@
       "a": [
         "C"
       ],
-      "e": "Prompt \"chỉ trả JSON\" chưa để đảm bảo. `--output-format json` cùng `--json-schema` ép output đúng schema ngay ở tầng CLI, sau đó map findings đã validate thành inline comment.",
+      "e": "Yêu cầu “chỉ trả JSON” trong prompt chưa đủ bảo đảm định dạng. Dùng `--output-format json` cùng `--json-schema` để ràng buộc đầu ra theo schema, rồi chuyển các phát hiện hợp lệ thành bình luận tại dòng mã tương ứng.",
       "m": 1,
       "v": {
-        "q": "<p><strong>Kịch bản</strong>: </p><p>Developer Productivity with Claude Job CI của bạn gửi Claude Code thành công và đăng một bình luận tóm tắt pull request duy nhất. </p><p>Nhóm hiện muốn có các comment inline tự động cho từng phát hiện, nhưng việc tích hợp thường xuyên bị hỏng vì Claude đôi khi thêm văn xuôi, đổi tên field, hoặc định dạng các phát hiện thành markdown. </p><p>Thay đổi nào hỗ trợ tự động hóa đáng tin cậy nhất?</p>",
+        "q": "<p><strong>Kịch bản: Nâng cao năng suất lập trình với Claude</strong></p><p>Job CI đã gọi Claude Code thành công và đăng một bình luận tóm tắt pull request. Nhóm muốn tự động đăng bình luận trực tiếp tại từng dòng mã cho mỗi phát hiện. Tuy nhiên, tích hợp thường lỗi vì Claude đôi khi thêm văn bản diễn giải, đổi tên trường hoặc định dạng kết quả bằng Markdown. Thay đổi nào giúp tự động hóa đáng tin cậy nhất?</p>",
         "o": [
-          "<p>Lưu các comment trước đó và yêu cầu Claude viết lại chúng thành các bản ghi.</p>",
-          "<p>Tăng cường prompt để yêu cầu chỉ trả về JSON hợp lệ.</p>",
-          "<p>Chạy Claude Code với `--output-format json` và `--json-schema`, sau đó ánh xạ các phát hiện đã được xác thực thành các comment inline trên PR.</p>",
-          "<p>Phân tích các gạch đầu dòng markdown của Claude bằng biểu thức chính quy.</p>"
+          "<p>Lưu các bình luận trước đó rồi yêu cầu Claude chuyển chúng thành các bản ghi có cấu trúc.</p>",
+          "<p>Điều chỉnh prompt để yêu cầu Claude chỉ xuất JSON hợp lệ.</p>",
+          "<p>Chạy Claude Code với `--output-format json` và `--json-schema`, sau đó ánh xạ các phát hiện đã được xác thực thành bình luận trực tiếp trên PR.</p>",
+          "<p>Dùng biểu thức chính quy để phân tích các gạch đầu dòng Markdown do Claude tạo.</p>"
         ]
       },
       "topic": "code"
@@ -172,15 +172,15 @@
       "a": [
         "B"
       ],
-      "e": "Hạn chế ngay ở từng tool, đồng chỉ dẫn bằng prompt: thay fetch_url tổng quát bằng load_document chỉ nhận ID trong catalog hoặc URL được duyệt, có validate. Agent không còn khả năng đi lực.",
+      "e": "Cần thực thi giới hạn ngay tại công cụ, không chỉ bằng prompt. `load_document` chỉ cho phép truy xuất ID hoặc URL đã được duyệt, ngăn tác nhân đi theo các liên kết ngoài phạm vi nguồn tin cậy.",
       "m": 1,
       "v": {
-        "q": "<p><strong>Kịch bản</strong>: </p><p>Multi-Agent Research System Subagent phân tích tài liệu nhận các file PDF và báo cáo do coordinator chọn từ một catalog đã được phê duyệt, nhưng nó có một tool truy xuất URL chung. </p><p>Đôi khi nó theo các liên kết bên trong tài liệu để đến: l blog l trang đăng nhập l các bản tóm tắt HTML trùng lặp rồi trích dẫn các trang đó thay vì các nguồn đã được phê duyệt. </p><p>Thay đổi nào giải quyết vấn đề này tốt nhất?</p>",
+        "q": "<p><strong>Kịch bản: Hệ thống nghiên cứu đa tác nhân</strong></p><p>Tác nhân phân tích tài liệu nhận các PDF và báo cáo do tác nhân điều phối chọn từ danh mục nguồn đã phê duyệt, nhưng vẫn có công cụ truy xuất URL bất kỳ. Đôi khi nó mở các liên kết bên trong tài liệu, chẳng hạn:</p><ul><li>Blog</li><li>Trang đăng nhập</li><li>Trang HTML tóm tắt trùng lặp</li></ul><p>Sau đó tác nhân lại trích dẫn những trang này thay cho nguồn được phê duyệt. Thay đổi nào khắc phục vấn đề tốt nhất?</p>",
         "o": [
-          "<p>Thay fetch_url bằng một tool load_document chấp nhận ID tài liệu trong catalog hoặc các URL đã được phê duyệt và xác thực trước khi fetch.</p>",
-          "<p>Cho phép fetch_url với bất kỳ liên kết nào, sau đó để bước synthesis loại bỏ các trích dẫn có domain không nằm trong catalog đã phê duyệt.</p>",
-          "<p>Cung cấp thêm các tool web search cho subagent phân tích tài liệu, để nó có thể tự xác nhận các trang được liên kết có liên quan hay không.</p>",
-          "<p>Giữ nguyên fetch_url, những thêm chỉ dẫn trong prompt cảnh báo subagent không bao giờ mở các liên kết tìm thấy bên trong tài liệu.</p>"
+          "<p>Thay `fetch_url` bằng công cụ `load_document` chỉ nhận ID tài liệu trong danh mục hoặc URL được duyệt và xác thực đầu vào trước khi tải.</p>",
+          "<p>Cho phép `fetch_url` mở mọi liên kết, rồi yêu cầu tác nhân tổng hợp loại bỏ các trích dẫn từ tên miền ngoài danh mục được duyệt.</p>",
+          "<p>Cấp thêm công cụ tìm kiếm web để tác nhân phân tích tài liệu tự kiểm tra mức độ liên quan của các trang liên kết.</p>",
+          "<p>Giữ `fetch_url` và thêm hướng dẫn trong prompt yêu cầu không mở liên kết xuất hiện trong tài liệu.</p>"
         ]
       },
       "topic": "agent"
@@ -209,15 +209,15 @@
       "a": [
         "D"
       ],
-      "e": "Handoff giữa các agent phải là dữ liệu có cấu trúc: đường dẫn, symbol, khoảng dòng, đoạn bằng chứng. Như vậy synthesizer không phải đoán vị trí.",
+      "e": "Kết quả bàn giao phải có cấu trúc và kèm bằng chứng định vị được: đường dẫn tệp, tên ký hiệu, khoảng dòng và đoạn trích. Nhờ đó tác nhân tổng hợp không phải đoán nguồn cho từng nhận định.",
       "m": 1,
       "v": {
-        "q": "<p>Một coordinator khởi chạy các subagent để phân tích API handler, các thao tác ghi database và các scheduled job. </p><p>Các báo cáo kiến trúc cuối cùng thường gắn các nhận định vào sai file hoặc thiếu phạm vi dòng. </p><p>Điều gì cải thiện độ tin cậy của việc handoff?</p>",
+        "q": "<p>Một tác nhân điều phối giao cho các tác nhân chuyên trách phân tích API handler, thao tác ghi cơ sở dữ liệu và tác vụ chạy theo lịch. Báo cáo kiến trúc cuối cùng thường trích dẫn nhầm tệp hoặc thiếu số dòng làm bằng chứng. Cách nào giúp bàn giao kết quả giữa các tác nhân đáng tin cậy hơn?</p>",
         "o": [
-          "<p>Dùng regex để phân tích các bản tóm tắt.</p>",
-          "<p>Yêu cầu các bản ghi handoff có cấu trúc gồm đường dẫn, symbol, phạm vi dòng và các đoạn bằng chứng.</p>",
-          "<p>Nội toàn bộ transcript hoàn chỉnh</p>",
-          "<p>Yêu cầu synthesizer tái dụng các vị trí.</p>"
+          "<p>Dùng biểu thức chính quy để phân tích các bản tóm tắt.</p>",
+          "<p>Yêu cầu bản ghi bàn giao có cấu trúc, gồm đường dẫn tệp, ký hiệu mã, khoảng số dòng và đoạn trích làm bằng chứng.</p>",
+          "<p>Ghép toàn bộ bản ghi hội thoại của các tác nhân.</p>",
+          "<p>Yêu cầu tác nhân tổng hợp tự suy ra vị trí mã nguồn.</p>"
         ]
       },
       "topic": "agent"
@@ -246,15 +246,15 @@
       "a": [
         "B"
       ],
-      "e": "Muốn biệt vì sao analyst chấp nhận hay từ chối finding thì cần dữ liệu để phân tích: thêm trường detected_pattern rủi thống kê tỷ lệ chấp nhận theo pattern và loại tài liệu. Measure trước, rồi mới tune.",
+      "e": "Trước khi điều chỉnh mô hình, cần biết loại phát hiện nào thường đúng hoặc bị bác bỏ. Trường `detected_pattern` giúp đo tỷ lệ chấp nhận theo mẫu lỗi và loại tài liệu, từ đó cải thiện QA có cơ sở.",
       "m": 1,
       "v": {
-        "q": "<p><strong>Kịch bản</strong>: </p><p>Structured Data Extraction Pipeline QA của bạn gần cả các lỗi trong hộp động nhà cung cấp. </p><p>Các analyst chấp nhận nhiều phát hiện về điều khoản gia hạn bị thiếu những bác bộ hầu hết các phát hiện liên quan đến ngôn ngữ giá cả không chính thức. </p><p>Log hiện tại chỉ lưu: l Document ID l Field name l Confidence l Finding text </p><p>Bạn nên thực hiện thay đổi nào trước tiên?</p>",
+        "q": "<p><strong>Kịch bản: Trích xuất dữ liệu có cấu trúc</strong></p><p>Pipeline kiểm thử chất lượng (QA) phát hiện lỗi trong hợp đồng nhà cung cấp. Chuyên viên phân tích chấp nhận nhiều phát hiện về điều khoản gia hạn bị thiếu, nhưng bác bỏ phần lớn phát hiện liên quan đến cách diễn đạt giá cả không chính thức. Log hiện chỉ lưu:</p><ul><li>ID tài liệu</li><li>Tên trường</li><li>Độ tin cậy</li><li>Nội dung phát hiện</li></ul><p>Bạn nên thay đổi điều gì trước tiên?</p>",
         "o": [
-          "<p>Yêu cầu Claude chỉ báo cáo nhưng phát hiện mà analyst chấp nhận.</p>",
-          "<p>Thêm một trường có cấu trúc detected_pattern vào mỗi phát hiện QA, sau đó phân tích tỷ lệ chấp nhận theo pattern và loại tài liệu.</p>",
-          "<p>Chỉ lưu các quyết định của analyst.</p>",
-          "<p>Tầng ngưỡng confidence của QA trên toàn cục.</p>"
+          "<p>Yêu cầu Claude chỉ báo cáo những phát hiện mà chuyên viên phân tích chấp nhận.</p>",
+          "<p>Thêm trường `detected_pattern` có cấu trúc vào mỗi phát hiện QA, rồi phân tích tỷ lệ chấp nhận theo mẫu lỗi và loại tài liệu.</p>",
+          "<p>Chỉ lưu quyết định của chuyên viên phân tích.</p>",
+          "<p>Tăng ngưỡng độ tin cậy cho toàn bộ kết quả QA.</p>"
         ]
       },
       "topic": "quality"
@@ -283,15 +283,15 @@
       "a": [
         "D"
       ],
-      "e": "MCP server cố team cần dùng thì đặt trong `.mcp.json` ở phạm vi project (commit vào repo). Ai clone về cũng có ngay.",
+      "e": "Những MCP server mà cả nhóm cần sử dụng nên được cấu hình trong `.mcp.json` ở phạm vi dự án và commit cùng repository. Khi clone dự án, các thành viên nhận được cấu hình chung thay vì phải thiết lập lại từ đầu.",
       "m": 1,
       "v": {
-        "q": "<p>Một hệ thống multi-agent sử dụng một coordinator và các researcher chuyên biệt. </p><p>Cấu hình MCP server bắt buộc nên được chia sẻ như thế nào trong một repository của nhómở</p>",
+        "q": "<p>Một hệ thống đa tác nhân có tác nhân điều phối và các tác nhân nghiên cứu chuyên trách. Nên chia sẻ cấu hình MCP server bắt buộc trong repository của nhóm như thế nào?</p>",
         "o": [
-          "<p>Gặp tất cả các tích hợp vào một MCP server</p>",
-          "<p>Lưu tất cả các server trong cấu hình người dùng cá nhân</p>",
-          "<p>Yêu cầu mỗi người dùng tự tạo lại các server thủ công</p>",
-          "<p>Đặt các server dùng chung bắt buộc trong .mcp.json ở phạm vi project</p>"
+          "<p>Gộp tất cả tích hợp vào một MCP server duy nhất.</p>",
+          "<p>Lưu toàn bộ cấu hình server trong thiết lập cá nhân của từng người dùng.</p>",
+          "<p>Yêu cầu từng thành viên tự tạo lại các server theo cách thủ công.</p>",
+          "<p>Khai báo các server bắt buộc dùng chung trong tệp `.mcp.json` ở phạm vi dự án.</p>"
         ]
       },
       "topic": "tools"
@@ -320,15 +320,15 @@
       "a": [
         "D"
       ],
-      "e": "Claude chọn tool dựa vào description. Description tự sinh quá ngắn thì phải viết lại: mục đích, ID được chấp nhận, field trả về, edge case và ranh giới với tool khác.",
+      "e": "Claude dựa vào phần mô tả để quyết định sử dụng công cụ nào. Mô tả cần làm rõ chức năng, đầu vào được hỗ trợ, dữ liệu trả về và khác biệt với công cụ gần giống, thay vì chỉ có vài từ chung chung.",
       "m": 1,
       "v": {
-        "q": "<p>Một agent hỗ trợ khách hàng luân phiên không dự đoán được giữa `get_customer` và `lookup_order` khi xử lý các yêu cầu hỗn hợp. </p><p>Catalog tool MCP chỉ chứa các mô tả ngắn được tạo tự động. </p><p>Bạn nên thực hiện thay đổi nào trước tiên để cải thiện độ tin cậy khi chọn tool?</p>",
+        "q": "<p>Khi xử lý yêu cầu hỗn hợp, một tác nhân hỗ trợ khách hàng chọn không nhất quán giữa `get_customer` và `lookup_order`. Danh mục công cụ MCP chỉ có các mô tả ngắn được sinh tự động. Bạn nên thay đổi điều gì trước tiên để tác nhân chọn đúng công cụ hơn?</p>",
         "o": [
-          "<p>Thêm một keyword router ánh xạ các cụm từ như “order” hoặc “refund” tới một tool.</p>",
-          "<p>Cập nhật system prompt để yêu cầu Claude suy nghĩ cẩn thận trước khi chọn tool.</p>",
-          "<p>Viết lại mô tả của từng tool MCP để nêu rõ mục đích, các định danh được chấp nhận, các field trả về, các trường hợp biên và ranh giới.</p>",
-          "<p>Hợp nhất get_customer và lookup_order thành một tool tra cứu rằng duy nhất.</p>"
+          "<p>Thêm bộ định tuyến theo từ khóa, ánh xạ các cụm như “order” hoặc “refund” vào một công cụ cố định.</p>",
+          "<p>Thêm chỉ dẫn trong system prompt yêu cầu Claude suy nghĩ cẩn thận trước khi chọn công cụ.</p>",
+          "<p>Viết lại mô tả cho từng công cụ MCP, nêu rõ mục đích, định danh đầu vào, trường trả về, trường hợp biên và ranh giới sử dụng.</p>",
+          "<p>Hợp nhất `get_customer` và `lookup_order` thành một công cụ tra cứu tổng quát.</p>"
         ]
       },
       "topic": "tools"
@@ -357,15 +357,15 @@
       "a": [
         "C"
       ],
-      "e": "Policy \"không bao giờ được xuất hiện\" phải enforce bằng code: lực output một cách deterministic trước khi đơn người dùng. System prompt chỉ là lớp phụ, không phải cơ chế enforce chính.",
+      "e": "Nếu một loại nội dung bị cấm tuyệt đối, ứng dụng cần kiểm tra và chặn bằng cơ chế xác định trước khi trả phản hồi. System prompt chỉ hỗ trợ định hướng hành vi, không thể thay thế lớp kiểm soát đầu ra.",
       "m": 1,
       "v": {
-        "q": "<p>Chính sách nội dung của ứng dụng Claude của bạn quy định các danh mục nội dung không được tạo ra trong bất kỳ trường hợp nào. </p><p>Ứng dụng hiện không có cơ chế nào để thực thi chính sách này, và nội dung thuộc các danh mục đó đang xuất hiện trong output của ứng dụng. </p><p>Bạn số thực thi chính sách nội dung bằng cách nào?</p>",
+        "q": "<p>Chính sách nội dung của ứng dụng Claude quy định một số loại nội dung tuyệt đối không được xuất hiện trong đầu ra. Hiện ứng dụng chưa có cơ chế thực thi, nên những nội dung bị cấm vẫn đến tay người dùng. Bạn nên thực thi chính sách này như thế nào?</p>",
         "o": [
-          "<p>Chuyển việc thực thi cho người dùng bằng cách yêu cầu họ báo cáo các vi phạm chính sách nội dung sau khi nội dung vi phạm đã đến tay họ trong các phản hồi của ứng dụng.</p>",
-          "<p>Tăng cường system prompt để chứa các chỉ dẫn rõ ràng về các danh mục cần tránh, kèm ví dụ cho từng danh mục. Coi prompt đã được tăng cường là cơ chế thực thi chính cho chính sách nội dung của ứng dụng trên mỗi phản hồi.</p>",
-          "<p>Thêm bộ lọc output mang tính xác định (deterministic) kiểm tra các phản hồi theo chính sách nội dung trước khi chúng đơn người dùng.</p>",
-          "<p>Loại bỏ hoàn toàn chính sách nội dung và độ mới output đơn người dùng trong quá trình vận hành bình thường, chấp nhận bất kỳ nội dung nào mà ứng dụng tạo ra để đáp lỗi lưu lượng đơn.</p>"
+          "<p>Yêu cầu người dùng tự báo cáo vi phạm sau khi họ đã nhận được nội dung bị cấm.</p>",
+          "<p>Bổ sung hướng dẫn và ví dụ về nội dung cần tránh trong system prompt, rồi coi prompt là cơ chế thực thi chính.</p>",
+          "<p>Thêm bộ lọc đầu ra hoạt động theo quy tắc xác định, kiểm tra phản hồi trước khi trả cho người dùng.</p>",
+          "<p>Bỏ chính sách nội dung và cho phép mọi phản hồi được chuyển đến người dùng.</p>"
         ]
       },
       "topic": "risk"
