@@ -35,7 +35,7 @@
           "<p>Tác nhân tổng hợp cần công cụ để lấy kết quả trực tiếp từ lịch sử hội thoại của các tác nhân khác.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "149",
@@ -72,7 +72,7 @@
           "<p>Yêu cầu các subagent đưa ngày xuất bản hoặc ngày thu thập dữ liệu vào đầu ra có cấu trúc của chúng.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "150",
@@ -109,7 +109,7 @@
           "<p>Bắt đầu lại từ đầu và đọc lại các file tương tự</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "151",
@@ -146,7 +146,7 @@
           "<p>Resume subagent từ transcript trước đó và thông báo cho nó về các hàm đã được đổi tên.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "152",
@@ -183,7 +183,7 @@
           "<p>Tóm tắt các phát hiện chính về rendering, rồi tạo một sub-agent để khám phá physics với bản tóm tắt đó trong context ban đầu của nó.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "153",
@@ -220,7 +220,7 @@
           "<p>Triển khai một message queue trong đó các tác vụ phân tích tiến lệ được xử lý bất đồng bộ bởi một pool các worker agent</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "154",
@@ -257,7 +257,7 @@
           "<p>Triển khai việc tự động xóa context mới 15 phút để đảm bảo agent bắt đầu với context mới, không bị nhiệm.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "155",
@@ -294,7 +294,7 @@
           "<p>Chấp nhận đây là hành vi bình thường vì các tool đơn giản hạn như sed dễ dự đoán hơn các tool refactoring chuyên biệt.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "156",
@@ -331,7 +331,7 @@
           "<p>Tạo một subagent để khám phá các file còn lại, cung cấp bản tóm tắt các pattern đã phát hiện làm context ban đầu của nó.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "157",
@@ -368,7 +368,7 @@
           "<p>Resume phiên hôm qua để khám phá hướng đầu tiên, rồi bắt đầu một phiên mới cho hướng thứ hai, từ tái tạo context ban đầu.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "158",
@@ -405,7 +405,7 @@
           "<p>Thêm một bước xác minh trong đó report generator dùng so khớp độ tương đồng ngữ nghĩa với các nguồn gốc để tái dụng claim nào đến từ tài liệu nào.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d5"
     },
     {
       "id": "159",
@@ -442,7 +442,7 @@
           "<p>Cung cấp cho subagent các định nghĩa tool cho phép nó yêu cầu output từ các subagent khác thông qua callback</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "160",
@@ -479,7 +479,7 @@
           "<p>Cả hai agent truy cập một shared memory store, nội tác nhân tìm kiếm trên web ghi các phát hiện và tác nhân phân tích tài liệu đọc chúng.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "161",
@@ -516,7 +516,7 @@
           "<p>Truyền bản nháp synthesis cùng với một source index có cấu trúc ánh xạ các claim chính tại URL nguồn và các đoạn trích liên quan.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d5"
     },
     {
       "id": "162",
@@ -553,7 +553,7 @@
           "<p>Triển khai xếp hạng theo mức độ liên quan phía server và chỉ trả về 50 mục liên quan nhất.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "163",
@@ -590,7 +590,7 @@
           "<p>Trả về danh sách chuyển bay rộng như thế việc tìm kiếm thành công nhưng không tìm thấy chuyển bay phù hợp.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "164",
@@ -627,7 +627,7 @@
           "<p>Báo cáo cả ba dưới dạng JSON-RPC protocol error.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "165",
@@ -664,7 +664,7 @@
           "<p>Các URL mà người dùng có thể nhập vào để mở tài liệu trong trình duyệt của hệ.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "166",
@@ -701,7 +701,7 @@
           "<p>Thiết kế một tool tổng hợp find_and_execute(description, params) tìm kiếm và thực thi ngay connector khớp nhất.</p>"
         ]
       },
-      "topic": "workspace"
+      "topic": "d2"
     },
     {
       "id": "167",
@@ -738,7 +738,7 @@
           "<p>Triển khai một error handler chung bật tất cả exception và trả về thông báo chung chung \"tool unavailable-try again later\", che chắn agent khỏi sự phức tạp của lỗi.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "168",
@@ -775,7 +775,7 @@
           "<p>Thêm kiểm tra hợp lệ phía server chỉ cho phép dry_run=false khi đã có một lệnh gọi dry_run=true với các tham số giống hết trong vòng 60 giây qua.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "169",
@@ -812,7 +812,7 @@
           "<p>Tool process reimbursement nhận amount và details, và tế thực thi ngưỡng bên trong; các khoản $500 trỏ xuống được tự động giải ngân và tool trả về xác nhận thành công. Các khoản &gt;$500 khiển tool tạo một yêu cầu phê duyệt đang chỉ và trả về trạng thái cho biết đang chỉ manager xem xét.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d2"
     },
     {
       "id": "170",
@@ -849,7 +849,7 @@
           "<p>Giữ một tool thống nhất với tất cả tham số được đánh dấu tùy chọn, những thêm các ví dụ few-shot trong system prompt cho thấy các tổ hợp tham số đúng cho từng thao tác.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "171",
@@ -886,7 +886,7 @@
           "<p>JSON có cấu trúc tiêu thể ít token hơn đáng kể so với ngôn ngữ tự nhiên, giảm đáng kể chi phí API.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "172",
@@ -923,7 +923,7 @@
           "<p>Thêm một tool hold_slot(provider_id, slot_time) tạo một giữ chỗ tạm thời 60 giây, yêu cầu agent gửi nó giữa lúc kiểm tra tình trạng trống và đặt lịch.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "173",
@@ -960,7 +960,7 @@
           "<p>Thêm các ràng buộc enum cho measurement giới hạn các giá trị là \"minutes\", \"miles\", \"reps\" hoặc \"sets\" để ngăn các chuỗi measurement tùy ý.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "174",
@@ -997,7 +997,7 @@
           "<p>Triển khai kiểm tra hợp lệ phía server từ chối các lệnh gọi delete_file đối với các file được gắn thể là backup, trả về thông báo lỗi gợi ý archive_file.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "175",
@@ -1034,7 +1034,7 @@
           "<p>Yêu cầu người dùng cung cấp ID bản ghi chính xác từ giao diện CRM thay vì dùng các tham chiếu bằng ngôn ngữ tự nhiên đến tên liên hệ.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "176",
@@ -1071,7 +1071,7 @@
           "<p>Sửa schema độ citations và methodology là tùy chọn, và đánh dấu các bản ghi không đầy đủ để xem xét thủ công thay vì để việc kiểm tra thất bại.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d4"
     },
     {
       "id": "177",
@@ -1108,7 +1108,7 @@
           "<p>Định tuyến các báo cáo tiêu chuẩn đến Batch API để tiết kiệm 50% chi phí, và định tuyến các báo cáo ngoại lệ khẩn cập đến Messages API thời gian thực.</p>"
         ]
       },
-      "topic": "api"
+      "topic": "d4"
     },
     {
       "id": "178",
@@ -1145,7 +1145,7 @@
           "<p>Model trích xuất ngày dưới dạng chuỗi datetime ISO 8601 (\"2003-03-15T00:00:00Z\") trong khi schema chủ yêu cầu phần ngày.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d4"
     },
     {
       "id": "179",
@@ -1182,7 +1182,7 @@
           "<p>Triển khai logic hậu xử lý tự động sửa các lỗi phổ biến, chứng hơn tính lại tầng từ các line item khi các tầng không khớp.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d4"
     },
     {
       "id": "180",
@@ -1219,7 +1219,7 @@
           "<p>Xử lý 2,000 tài liệu mẫu qua API thời gian thực để xác định các mẫu thất bại và tinh chỉnh prompt, sau đó xử lý batch tất cả 50,000 tài liệu với các prompt đã được tối ưu.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "181",
@@ -1256,7 +1256,7 @@
           "<p>Tiền xử lý tài liệu bảng một bộ phân loại xác định và loại bỏ các phần đã bị thay thế trước bước trích xuất chính.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "182",
@@ -1293,7 +1293,7 @@
           "<p>Đưa các hướng dẫn định dạng JSON chi tiết và schema đích vào prompt, sau đó phân tích phản hồi văn bản của Claude dưới dạng JSON.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "183",
@@ -1330,7 +1330,7 @@
           "<p>Chỉ định các mục tiêu nghiên cứu và tiêu chí chất lượng (độ rộng phạm vi bao phủ, số đa dạng nguồn, loại nội dung) thay vì các hướng dẫn thủ tục, để subagent tự quyết định cách thực hiện.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "184",
@@ -1367,7 +1367,7 @@
           "<p>Đặt tool choice là \"auto\" và sắp xếp lại các định nghĩa tool độ extract_metadata xuất hiện đầu tiên trong mảng tools, vì Claude ưu tiên các tool được liệt kê trước.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "185",
@@ -1404,7 +1404,7 @@
           "<p>So sánh độ chính xác ở các ngưỡng độ tin cậy khác nhau (85%, 90%, 95%) để tìm ngưỡng cắt tối ưu nhằm tối đa hóa mục tự động hóa trong khi giảm thiểu lại.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d4"
     },
     {
       "id": "186",
@@ -1441,7 +1441,7 @@
           "<p>Các tài liệu rất dài vượt quá khoảng attention hiệu quả của model bất kỳ giới hạn context, gây suy giảm độ chính xác đối với nội dung ở xa hơn so với các hướng dẫn trong prompt.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "187",
@@ -1478,7 +1478,7 @@
           "<p>Thêm một trường \"calculated total\" trong đó model cộng các line item đã trích xuất, bên cạnh một trường \"stated_total\". đánh dấu các bản ghi đồ con người xem xét khi các giá trị khác nhau.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d4"
     },
     {
       "id": "188",
@@ -1515,7 +1515,7 @@
           "<p>Bắt prompt caching trên synthesis subagent để giảm chi phí phát sinh khi truyền lặp đi lặp lại cùng các phát hiện nghiên cứu.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "189",
@@ -1552,7 +1552,7 @@
           "<p>Gặp tất cả các loại tài liệu vào một tool trích xuất duy nhất với schema thống nhất và ép buộc dùng tool đó.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "190",
@@ -1589,7 +1589,7 @@
           "<p>Triển khai một pipeline phụ dùng model tier lớn hơn để xử lý lỗi các tài liệu thất bại trong kiểm tra</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d4"
     },
     {
       "id": "191",
@@ -1626,7 +1626,7 @@
           "<p>Dùng semantic embedding độ lớp chỉ mục toàn bộ lịch sử hội thoại và chỉ truy xuất các trao đổi quá khả liên quan cho mỗi truy vấn của người dùng, thay thế định dạng hội thoại tuyến tính bằng các đoạn được truy xuất.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "192",
@@ -1663,7 +1663,7 @@
           "<p>Lưu toàn bộ cuộc hội thoại ở bên ngoài và dùng semantic search để truy xuất các phần liên quan cho mỗi lượt, chỉ nạp các đoạn khớp vào context.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "193",
@@ -1700,7 +1700,7 @@
           "<p>Ứng dụng của bạn không đưa các tin nhắn trước đó vào mạng messages</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "194",
@@ -1737,7 +1737,7 @@
           "<p>Toàn bộ transcript hội thoại cùng tất cả tool result.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d5"
     },
     {
       "id": "195",
@@ -1774,7 +1774,7 @@
           "<p>Bạn cần bật tính năng lưu trữ hội thoại (conversation persistence) bằng cách truyền một tham số session ID với mỗi lệnh gọi API.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "196",
@@ -1811,7 +1811,7 @@
           "<p>Các phản hồi tích lũy của trợ lý đang làm loãng ảnh hưởng của system prompt.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "197",
@@ -1848,7 +1848,7 @@
           "<p>Thêm một lệnh gọi API riêng ở mỗi lượt để tóm tắt các tin nhắn bị loại bỏ, đặt bản tóm tắt chạy liên tục này vào đầu cuộc hội thoại.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "198",
@@ -1885,7 +1885,7 @@
           "<p>Lưu toàn bộ lịch sử hội thoại và tool response vào cơ sở dữ liệu, rồi gửi escalate_to_human với một reference ID.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d5"
     },
     {
       "id": "199",
@@ -1922,7 +1922,7 @@
           "<p>Chuyển các hướng dẫn hành vi từ system prompt sang tin nhắn user đầu tiên.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "200",
@@ -1959,7 +1959,7 @@
           "<p>Nén tất cả kết quả RAG thành một tài liệu tóm tắt hợp nhất, được cập nhật dẫn sau mỗi lần truy xuất</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "201",
@@ -1996,7 +1996,7 @@
           "<p>Được thêm vào đầu mỗi tin nhắn của người dùng trước khi gọi tới API</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "202",
@@ -2033,7 +2033,7 @@
           "<p>Thêm trạng thái vận chuyển hiện tại vào system prompt trước lần gọi API kế tiếp.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "203",
@@ -2070,7 +2070,7 @@
           "<p>Tạo một playlist \"Focus\" mới với các bản nhạc được tuyến chọn và thông báo cho người dùng rằng nó đã sẵn sàng.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "204",
@@ -2107,7 +2107,7 @@
           "<p>Giảm tham số temperature để phần mở đầu phản hồi mang tính xác định hơn và ít biến thiên hạn</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "205",
@@ -2144,7 +2144,7 @@
           "<p>Khả năng ghi nhớ của Claude mặc định bộ giới hạn ở hai lượt hội thoại, cần cấu hình tường minh để mở rộng.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "206",
@@ -2181,7 +2181,7 @@
           "<p>Triển khai logic tự động thử lại ở cấp tool chỉ cho lỗi kỹ thuật, và chuyển lại nghiệp vị cho Claude mà không thể lại.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "207",
@@ -2218,7 +2218,7 @@
           "<p>Resume cùng với toàn bộ cuộc hội thoại và thêm chỉ dẫn vào system prompt yêu cầu agent ưu tiên giải quyết khoản hoàn tiến đang chỉ xử lý.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "208",
@@ -2255,7 +2255,7 @@
           "<p>Triển khai tự động thử lại với exponential backoff cho process_refund, giữ cuộc hội thoại mở cho đến khi khoản hoàn tiến được xử lý thành công</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d5"
     },
     {
       "id": "209",
@@ -2292,7 +2292,7 @@
           "<p>Văn thể hoàn tiến bằng process_refund, chỉ escalate nếu hệ thống từ chối giao dịch.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d5"
     },
     {
       "id": "210",
@@ -2329,7 +2329,7 @@
           "<p>Triển khai logic thử lại với exponential backoff trong MCP server của bạn cho tất cả các lỗi, chỉ trả về cho agent sau khi đã hết các lần thử lại.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d5"
     },
     {
       "id": "211",
@@ -2366,7 +2366,7 @@
           "<p>Trích xuất và lưu trữ dữ liệu văn để có cấu trúc (order ID, số tiền, trạng thái) vào một lớp context riêng.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "227",
@@ -2403,7 +2403,7 @@
           "<p>Độ report generator truy vấn agent tìm kiếm web nhằm tìm lại nguồn cho các khẳng định trong báo cáo cuối cùng.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "212",
@@ -2440,7 +2440,7 @@
           "<p>Các phản hồi lại chi tiết giải thích lý do các giá trị tham số không hợp lệ bị từ chối</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "229",
@@ -2477,7 +2477,7 @@
           "<p>Agent tuân theo một decision tree được cấu hình sẵn ánh xạ các thuộc tính đến hàng tại các lệnh gọi tool cụ thể.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "213",
@@ -2514,7 +2514,7 @@
           "<p>Triển khai tự động thử lại với backoff cho network timeout bên trong tool; trả về lỗi cú pháp ngay lập tức kèm chi tiết xác thực tham số.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d5"
     },
     {
       "id": "230",
@@ -2551,7 +2551,7 @@
           "<p>Tool xác minh đang xóa trạng thái nội bộ của agent sau mỗi bước xác thực thành công.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "214",
@@ -2588,7 +2588,7 @@
           "<p>Triển khai một biểu mẫu tiếp nhận có cấu trúc thu thập tất cả các tham số bắt buộc (ngày, số lượng khách, ngân sách, loại địa điểm) ngay từ đầu trước khi trợ lý bắt đầu đưa ra bất kỳ đề xuất nào.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "231",
@@ -2625,7 +2625,7 @@
           "<p>Trả về thông báo lỗi trong nội dung kết quả của tool với cả isError được đặt thành true</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "215",
@@ -2662,7 +2662,7 @@
           "<p>Trả về các trường cùng điểm confidence, cộng với một boolean requires_review được tính bằng các ngưỡng confidence đã kiểm thử của bạn, cùng một mảng review_reasons giải thích những trường nào đã kích hoạt việc xem xét.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d4"
     },
     {
       "id": "232",
@@ -2699,7 +2699,7 @@
           "<p>Thêm few-shot examples minh họa việc trích xuất đúng từ các cuộc họp dài có thông tin nắm rải rác.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d4"
     },
     {
       "id": "216",
@@ -2736,7 +2736,7 @@
           "<p>Thêm tham số season khả năng phân biệt các trộn tái đầu, và thêm cố confirm_before_update trả về chi tiết trộn đầu đã được xác định để agent kiểm tra trước khi điểm sẽ được ghi nhận.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "233",
@@ -2773,7 +2773,7 @@
           "<p>Fine-tune model trên 847 kết quả trích xuất đã được sửa.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "217",
@@ -2810,7 +2810,7 @@
           "<p>Triển khai khoảng chờ 60 giây trước khi việc thực thi hoàn tất, cho phép người dùng có thời gian xem xét các phân bổ đang chỉ và hủy nếu cần</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "234",
@@ -2847,7 +2847,7 @@
           "<p>Để coordinator tế xử lý trực tiếp các yêu cầu tóm tắt đơn giản bảng context hiện có của nó, dành việc tạo subagent cho các tác vụ phân tích phức tạp.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "218",
@@ -2884,7 +2884,7 @@
           "<p>Tóm tắt toàn bộ lịch sử hội thoại thành một bản tóm lược cô đằng sau mỗi 20 lượt, thay thế lịch sử đầy đủ để giải phóng token.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "235",
@@ -2921,7 +2921,7 @@
           "<p>Tách tool chung thành các tool chuyên biệt theo mục đích - extract_data_points, summarize_content, verify_claim_against_source - mỗi tool có hợp động đầu vào/đầu ra được xác định rõ</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "219",
@@ -2958,7 +2958,7 @@
           "<p>Thêm một bước tiền xử lý dùng model nhỏ hơn để phân loại mục để mơ hồ của yêu cầu trên thang 1-5, định tuyến các yêu cầu có để mơ hồ cao tối hộp thoại làm rõ và các yêu cầu có độ mờ hạ thấp trực tiếp tới trợ lý.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "236",
@@ -2995,7 +2995,7 @@
           "<p>Triển khai lấy mẫu ngẫu nhiên phân tầng, review một tỷ lệ phần trăm cố định các kết quả trích xuất có confidence cao mới tuần, cho phép đo tỷ lệ lại và phát hiện các mẫu lại mối.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d4"
     },
     {
       "id": "220",
@@ -3032,7 +3032,7 @@
           "<p>Duy trì một đối tượng state có cấu trúc chứa các tùy chọn hiện tại, cập nhật nó khi có thay đổi, và đưa nó vào mỗi request.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "237",
@@ -3069,7 +3069,7 @@
           "<p>Liên tục mở rộng enum để bao gồm các loại bất đồng sẵn mối quan sát được và thêm giám sát cho các trường hợp biên khác.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "221",
@@ -3106,7 +3106,7 @@
           "<p>Chèn một lỗi nhắc cô động về các yêu cầu trình độ vào cuộc hội thoại dưới dạng system message sau mỗi 4-5 lượt.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "238",
@@ -3143,7 +3143,7 @@
           "<p>Đặt temperature bằng 0 để loại bỏ tính ngẫu nhiên và đảm bảo đầu ra mang tính xác định</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "222",
@@ -3180,7 +3180,7 @@
           "<p>Đánh phiên bản cho các system prompt và gắn mới cuộc hội thoại với phiên bản prompt mà nó bắt đầu, chỉ áp dụng các bản cập nhật cho các cuộc hội thoại mới.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "239",
@@ -3217,7 +3217,7 @@
           "<p>Gọi một batch duy nhất vào cuối ngày chứa tất cả tài liệu của ngày hôm đó</p>"
         ]
       },
-      "topic": "api"
+      "topic": "d4"
     },
     {
       "id": "223",
@@ -3254,7 +3254,7 @@
           "<p>Cài đặt max_tokens của coordinator quá thấp, khiến lệnh gọi tool Task bị cắt cụt trước khi tham số loại subagent có thể được chỉ định.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "240",
@@ -3291,7 +3291,7 @@
           "<p>Yêu cầu nhiều lần trích xuất cho mỗi tài liệu và chọn định dạng phụ biến nhất.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "224",
@@ -3328,7 +3328,7 @@
           "<p>Thêm một verification subagent đối chiếu chéo các phát hiện giữa các nguồn, chỉ chuyển cho bước tổng hợp những khẳng định được ít nhất hai nguồn độc lập xác nhận.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "241",
@@ -3365,7 +3365,7 @@
           "<p>Thêm một bước post-processing dùng lệnh gọi LLM thứ hai để xác minh tăng giá trị đã trích xuất có tồn tại trong tài liệu nguồn.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "225",
@@ -3402,7 +3402,7 @@
           "<p>Việc chọn từ 18 tool thay vì 4-5 tool liên quan làm tăng độ phức tập của quyết định vượt quá các ngưỡng chọn lựa đáng tin cậy.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "242",
@@ -3439,7 +3439,7 @@
           "<p>Duy trì một cơ sở dữ liệu có cấu trúc chứa các sự kiện chính được trích xuất từ mọi bài báo (cỡ mẫu, thống kê, phương pháp) và truy xuất các mục liên quan vào context khi phát hiện các câu hỏi đòi hỏi độ chính xác.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "226",
@@ -3476,7 +3476,7 @@
           "<p>Thêm một API call riêng mỗi lượt để tóm tắt các tin nhắn sắp bị loại bỏ, thêm bản tóm tắt liên tục này vào đầu cuộc hội thoại.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "243",
@@ -3513,7 +3513,7 @@
           "<p>Thêm nhiều nhánh điều kiện hạn để bao quát các tín hiệu trình độ bổ sung, chẳng hạn \"If user mentions specific rep ranges or asks about periodization, treat as advanced.\"</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "244",
@@ -3550,7 +3550,7 @@
           "<p>Read file entry chính của dự án và lần theo các câu lệnh import để truy xuất nguồn gốc nối eval có thể được dùng.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "228",
@@ -3587,7 +3587,7 @@
           "<p>Ngay lập tức gửi một API request với bản cập nhật dưới dạng tin nhắn user giả lập, tạo ra một phản hồi assistant không được yêu cầu.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "245",
@@ -3624,7 +3624,7 @@
           "<p>Dùng tool Read để lần lượt tại cả 15 file, xây dựng số hiểu biết đầy đủ về toàn bộ triển khai caching.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "246",
@@ -3661,7 +3661,7 @@
           "<p>Bắt đầu mới và đọc lại cùng các file đó</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "248",
@@ -3698,7 +3698,7 @@
           "<p>Tạo một custom slash command đóng gói các phép biến đổi migration, sau đó thực thi nó trên từng file mà không khám phá codebase trước.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "249",
@@ -3735,7 +3735,7 @@
           "<p>Để agent duy trì một file scratchpad ghi lại các phát hiện chính, tham chiếu nó cho các câu hỏi tiếp theo.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "250",
@@ -3772,7 +3772,7 @@
           "<p>Dùng Bash để nội định nghĩa hàm vào cuối file bằng cú pháp heredoc</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "251",
@@ -3809,7 +3809,7 @@
           "<p>Bắt đầu với extended thinking mode được bật để đảm bảo suy luận kỳ lường về logic xác thực</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "252",
@@ -3846,7 +3846,7 @@
           "<p>Chia các quy tắc định dạng thành các file .claude/rules/ có phạm vi theo đường dẫn, được tại khi Claude làm việc trên các loại file khớp.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "253",
@@ -3883,7 +3883,7 @@
           "<p>Cho Claude xem một báo cáo mẫu được định dạng đúng và yêu cầu nó làm khớp với đầu ra đó, thay vì liệt kê các vấn đề kỹ thuật cụ thể.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d3"
     },
     {
       "id": "254",
@@ -3920,7 +3920,7 @@
           "<p>Viết một bản đặc tả với các yêu cầu bạn đã biết và các đánh dấu \"TBD\" cho những phần chứa chắc chắn, để Claude đề xuất giải pháp cho từng TBD khi triển khai.</p>"
         ]
       },
-      "topic": "api"
+      "topic": "d3"
     },
     {
       "id": "255",
@@ -3957,7 +3957,7 @@
           "<p>Viết mất bị test bao phủ hành vi mong đợi, các trường hợp biên và yêu cầu hiệu năng trước khi triển khai. Yêu cầu Claude viết mã vượt qua các test, sau đó lặp lại bằng cách chia sẻ các test thất bại trong mỗi yêu cầu tinh chỉnh.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "256",
@@ -3994,7 +3994,7 @@
           "<p>Thêm cả hai server vào ~/.claude.json cục bộ của bạn</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "257",
@@ -4031,7 +4031,7 @@
           "<p>Giữ CLAUDE.md gốc và dùng cú pháp @path/to/import để đưa các tập hướng dẫn riêng cho từng công cụ từ các tài liệu riêng biệt vào theo kiểu mô-đun.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "258",
@@ -4068,7 +4068,7 @@
           "<p>Trong .claude/skills/migrate-component/SKILL.md tới thư mục gốc của dự án, được commit vào version control</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "259",
@@ -4105,7 +4105,7 @@
           "<p>Vào plan mode để khám phá kiến trúc và các dependency của module trước khi thử bất kỳ bản sửa nào.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d4"
     },
     {
       "id": "260",
@@ -4142,7 +4142,7 @@
           "<p>Mô tả các pattern tự ba module bằng ngôn ngữ tự nhiên trong prompt của bạn, giải thích cách xử lý giao dịch, định dạng lại và các quy ước logging mà Claude cần tuân theo.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "261",
@@ -4179,7 +4179,7 @@
           "<p>Từ chỉnh sửa thủ công mã được tạo để sửa phản xử lý null, sau đó tiếp tục làm việc với Claude ở các phần khác.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "262",
@@ -4216,7 +4216,7 @@
           "<p>Tìm kiếm các hướng dẫn xung đột trong ~/.claude/CLAUDE.md hoặc ~/.claude/rules/ có thể ghi đè các quy ước dự án của bạn.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "263",
@@ -4253,7 +4253,7 @@
           "<p>Tạo các tập claude/rules/ cho từng tiêu chuẩn với YAML frontmatter paths liệt kê mọi thư mục package mà tiêu chuẩn đó cần áp dụng.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "264",
@@ -4290,7 +4290,7 @@
           "<p>Thêm một trường extraction_confidence (0.0-1.0) cho từng giá trị, và lọc bộ các đầu ra có bất kỳ độ tin cậy nào dưới một ngưỡng.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "265",
@@ -4327,7 +4327,7 @@
           "<p>Từng tham số max_tokens cho 300 tài liệu thất bại và gửi lại chúng trong một batch mọi</p>"
         ]
       },
-      "topic": "api"
+      "topic": "d4"
     },
     {
       "id": "247",
@@ -4364,7 +4364,7 @@
           "<p>Phát ngay các bài hát tập trung phổ biến và để người dùng chuyển hướng nếu cần</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "266",
@@ -4401,7 +4401,7 @@
           "<p>Phân tích phản hồi văn bản của Claude bằng các regex pattern để trích xuất các đối tượng JSON, dùng logic retry cho các phản hồi bị lỗi định dạng.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "267",
@@ -4438,7 +4438,7 @@
           "<p>Triển khai bước hậu xử lý dùng so khớp từ khóa để lọc bộ các phát hiện chứa các thuật ngữ như \"convention,\" \"context-dependent,\" hoặc \"trade-off.\"</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "268",
@@ -4475,7 +4475,7 @@
           "<p>Bắt tool search tool với defer_loading cho sáu tool mới, giữ bạn tool ban đầu luôn được nạp, để agent gửi nó một cách linh hoạt khi cần.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "269",
@@ -4512,7 +4512,7 @@
           "<p>Bộ is_error: true và trả về chi tiết lỗi nhỏ nội dung tool thông thường, để Claude suy luận về phản hồi như dữ liệu thay vì coi đó là mất điều kiện thất bại được gắn cụ văn làm lệch hành vi retry.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "270",
@@ -4549,7 +4549,7 @@
           "<p>Loại bỏ các chỉ dẫn lực thận trống và yêu cầu Claude báo cáo mới vấn đề tiềm năng, sau đó áp dụng một bộ lọc theo chương trình độ loại trùng lặp và loại bỏ các danh mục vốn thường tạo ra false positive.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d5"
     },
     {
       "id": "271",
@@ -4586,7 +4586,7 @@
           "<p>Tách review thành các prompt riêng tập trung - một cho bảo mật và thiết kế API, một cho logic nghiệp về - mới prompt có các ví dụ riêng, sau đó kết hợp các phát hiện trước khi đồng.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "273",
@@ -4623,7 +4623,7 @@
           "<p>Tiếp tục thực hiện thêm các lượt tra cứu mà không sửa đổi context đầu ra tool hiện có</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "274",
@@ -4660,7 +4660,7 @@
           "<p>Thêm mã ở tầng orchestration kiểm tra kết quả của agent sau mỗi lần loop kết thúc - nếu loop kết thúc mà không có giải quyết hoàn tất hoặc escalation, thì gửi escalate_to_human bằng chương trình với context hội thoại và các tool result đã tích lũy.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d5"
     },
     {
       "id": "276",
@@ -4697,7 +4697,7 @@
           "<p>Tạo một fast-path cho các câu hỏi thực tế bỏ qua hoàn toàn các subagent, định tuyến mới truy vấn khác qua toàn bộ pipeline để đảm bảo để kế lượng của nghiên cứu.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "277",
@@ -4734,7 +4734,7 @@
           "<p>Để mỗi agent tả duy trì một tập trạng thái lưu trữ riêng và tỷ nạp lại nó một cách độc lập khi bắt đầu mỗi phiên.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "278",
@@ -4771,7 +4771,7 @@
           "<p>Tiếp tục trong phiên gốc, phát triển các test end-to-end trước, sau đó đến snapshot test một cách tuần tự.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "279",
@@ -4808,7 +4808,7 @@
           "<p>Cấu trúc coordinator để phát ra cả hai lệnh gọi Task tool (cho web search và document analysis) trong một tin nhắn phản hồi duy nhất.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "280",
@@ -4845,7 +4845,7 @@
           "<p>Dùng fork_session để tạo hai nhánh từ phân tích của hôm qua, khám phá một cách tiếp cận trong mỗi fork.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "281",
@@ -4882,7 +4882,7 @@
           "<p>Tạo một lịch kiểm thử cố định từ trước dựa trên cấu trúc thư mục, phân bổ nỗ lực bằng nhau cho mỗi thư mục cấp cao nhất bất kỳ để phục tệp hay tạm quan trọng của mã.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "282",
@@ -4919,7 +4919,7 @@
           "<p>Chuyển từ tool_use sang việc yêu cầu Claude trả về các finding dưới dạng danh sách markdown.</p>"
         ]
       },
-      "topic": "api"
+      "topic": "d4"
     },
     {
       "id": "283",
@@ -4956,7 +4956,7 @@
           "<p>Loại bỏ hoàn toàn --system-prompt và đặt các hướng dẫn review trong một tập CLAUDE.md ở thư mục gốc repo, vì --system-prompt không tương thích với tool use dưới -p.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d3"
     },
     {
       "id": "284",
@@ -4993,7 +4993,7 @@
           "<p>Thêm phân tích để bao phủ sau khi tạo tự động lực bỏ bất kỳ test được tạo nào không làm tăng độ bao phủ dòng so với các test hiện có.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "287",
@@ -5030,7 +5030,7 @@
           "<p>Tiếp tục phiên và yêu cầu agent ngay lập tức đọc lại tất cả 12 tập đã phân tích trước đó để đảm bảo khớp hoàn toàn.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "288",
@@ -5067,7 +5067,7 @@
           "<p>Dùng Grep để tìm tất cả các tập import module xử lý lỗi của dự án, sau đó Read các tập đó để xác định các định nghĩa lại tùy chỉnh.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "289",
@@ -5104,7 +5104,7 @@
           "<p>Bạn phải chỉ định server MCP nào dùng cho mỗi lượt, và agent chỉ có thể truy cập các tool của một server tới một thời điểm.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "290",
@@ -5141,7 +5141,7 @@
           "<p>Thêm các ví dụ few-shot vào prompt thể hiện hành vi escalation đúng ở nhiều mục hoàn tiến khác nhau ($40, $500, $600).</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d5"
     },
     {
       "id": "294",
@@ -5178,7 +5178,7 @@
           "<p>Triển khai phân tích sentiment theo dõi các chỉ báo bực bội (ví dụ: viết hoa toàn bộ, câu hỏi lặp lại, dấu chấm than) và kích hoạt escalation khi điểm bực bội vượt quá một ngưỡng đã cấu hình.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d5"
     },
     {
       "id": "295",
@@ -5215,7 +5215,7 @@
           "<p>Đan xen phản triển khai và các test trong prompt, trình bày mỗi hàm ngay trước các test case của nó.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "296",
@@ -5252,7 +5252,7 @@
           "<p>Thay prompt mặc định bằng --system-prompt-file ./CLAUDE.md, cách này bỏ qua việc lập ráp prompt mặc định và chỉ nạp các quy tắc của dự án.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "272",
@@ -5289,7 +5289,7 @@
           "<p>Báo cáo cả ba dưới dạng tool result với isError: true</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "297",
@@ -5326,7 +5326,7 @@
           "<p>Yêu cầu A, tác vụ đổi tên hàm</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "298",
@@ -5363,7 +5363,7 @@
           "<p>Môi trường CI có thể truy cập toàn bộ repository, trong khi một phiên Claude Code cục bộ chỉ có thể truy cập tập hiện tại.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "300",
@@ -5400,7 +5400,7 @@
           "<p>Định tuyến các báo cáo tiêu chuẩn tại Message Batches API để tiết kiệm 50% chi phí, và định tuyến các báo cáo ngoại lệ khẩn cấp tại Messages API thời gian thực.</p>"
         ]
       },
-      "topic": "api"
+      "topic": "d4"
     },
     {
       "id": "275",
@@ -5437,7 +5437,7 @@
           "<p>Cung cấp toàn bộ repository làm context thay vì chỉ các tập đã thay đổi và mã xung quanh, giúp model nhìn sâu hơn vào logic nghiệp về.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "301",
@@ -5474,7 +5474,7 @@
           "<p>Thêm các chỉ dẫn tường minh vào prompt nêu rõ “only extract information explicitly stated in the document; use placeholder text for missing values.”</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d4"
     },
     {
       "id": "302",
@@ -5511,7 +5511,7 @@
           "<p>Dùng biểu thức chính quy để định vị và trích xuất JSON tự văn bản phản hồi, xử lý các trường hợp Claude đưa văn bản giải thích bao quanh khởi JSON.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "303",
@@ -5548,7 +5548,7 @@
           "<p>Hợp nhất cả ba hệ thống vào một MCP server thống nhất duy nhất với khả năng tham chiếu chéo.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "304",
@@ -5585,7 +5585,7 @@
           "<p>Thêm các chỉ thị dự phòng yêu cầu các cách diễn đạt truy vấn thay thế bắt cả khi nào các tìm kiếm được chỉ định cho ra ít kết quả hơn một số lượng định trước.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "305",
@@ -5622,7 +5622,7 @@
           "<p>Cho tác nhân tổng hợp quyền truy cập trực tiếp vào các web-search tool để nó tự động lớp đẩy các khoảng trống kiến thức mà không trả quyền điều khiển về coordinator.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "306",
@@ -5659,7 +5659,7 @@
           "<p>Thêm các hướng dẫn review tùy chỉnh vào một tập quy trình GitHub Actions, dùng tham số prompt của action để loại bỏ các phát hiện lint trùng lặp, bỏ qua mã template được tạo tự động và áp đặt các yêu cầu bằng chứng chất chế hơn cho các vấn đề liên quan đến rendering.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "307",
@@ -5696,7 +5696,7 @@
           "<p>Chúng được hiển thị dưới dạng các resource có thể @-mention cùng với các tập, được lấy và đính kèm vào tin nhắn của bạn khi được tham chiếu.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "308",
@@ -5733,7 +5733,7 @@
           "<p>Gọi 200 yêu cầu tại Message Batches API với các giá trị custom_id duy nhất và lấy kết quả sau khi batch hoàn tất, việc này áp dụng mặc giảm giá 50% cho tất cả token đầu vào và đầu ra.</p>"
         ]
       },
-      "topic": "api"
+      "topic": "d4"
     },
     {
       "id": "309",
@@ -5770,7 +5770,7 @@
           "<p>Dùng tool Bash với curl để gửi REST API của Jira, bao gồm các header xác thực và phân tích phản hồi JSON ngay trong dòng.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1220",
@@ -5807,7 +5807,7 @@
           "<p>Thêm một lớp chuyển đổi định dạng để biến mới kết quả của subagent thành một biểu diễn trung gian chung trước khi tổng hợp.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "285",
@@ -5844,7 +5844,7 @@
           "<p>Tạo các file trong .claude/rules/ với YAML frontmatter giới hạn theo đường dẫn (ví dụ: paths: [\"terraform/**/*\"]), chỉ nạp các quy tắc khi chỉnh sửa các file khớp.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1221",
@@ -5881,7 +5881,7 @@
           "<p>Thêm một research-planning agent trước giai đoạn tìm kiếm ban đầu để phân rã mọi chế độ thành các câu hỏi con chi tiết.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d5"
     },
     {
       "id": "286",
@@ -5918,7 +5918,7 @@
           "<p>Chia các tool cho hai sub-agent - một agent \"financial resolution\" với process_refund, issue_credit và apply_promo_code, và một agent \"delivery\" với các tool giao hàng còn lại - cùng một coordinator điều phối giữa chúng.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1222",
@@ -5955,7 +5955,7 @@
           "<p>Thêm các ví dụ few-shot cho thấy cách phân biệt lỗi có thể thử lại và không thể thử lại bằng cách phân tích văn bản thông báo lỗi.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1223",
@@ -5992,7 +5992,7 @@
           "<p>Đặt --permission-mode dontAsk để tự động từ chối các yêu cầu quyền của tool không nằm trong tập được cho phép tường minh.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1224",
@@ -6029,7 +6029,7 @@
           "<p>Orchestrator-workers—độ mặt LLM trung tâm phân tích tầng PR nhằm xác định động những kiểm tra nào cần thiết, rồi giao cho các worker LLM chuyên biệt cho từng tác vụ con được xác định.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1225",
@@ -6066,7 +6066,7 @@
           "<p>Sinh ra các subagent (hoặc sub-task) để điều tra các câu hỏi cụ thể (ví dụ: \"find all test files for payment processing,\" \"trace refund flow dependencies\") trong khi agent chính điều phối các phát hiện và giữ lại context ở mức cao.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "1226",
@@ -6103,7 +6103,7 @@
           "<p>Tóm tắt các phát hiện chính về rendering (bao gồm tên các lớp cụ thể và các mẫu kiến trúc), xóa hoặc reset cửa sổ ngữ cảnh chính (hoặc ủy quyền cho một sub-agent được khởi tạo với bản tóm tắt đó), rồi tiến hành khám phá tích hợp physics.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "291",
@@ -6140,7 +6140,7 @@
           "<p>Thêm bước phân tích coverage sau khi tạo để tự động lực bỏ bất kỳ test được tạo nào không làm tăng line coverage vượt quá mục mà các test hiện có đã cung cấp.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1228",
@@ -6177,7 +6177,7 @@
           "<p>Resume subagent từ transcript trước đó và thông báo cho nó về các hàm đã được đổi tên.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "292",
@@ -6214,7 +6214,7 @@
           "<p>Triển khai việc kiểm tra ngưỡng trong một PreToolUse hook kiểm tra tham số amount trước khi process reimbursement chạy. Nếu số tiền vượt quá $500, hook sửa đổi context để thêm cố requires approval: true mà tool sẽ kiểm tra trước khi giải ngân.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d5"
     },
     {
       "id": "1229",
@@ -6251,7 +6251,7 @@
           "<p>Mở rộng schema thành skill: string, confidence: float, source_quote: string để ghi lại độ tin cậy của việc trích xuất.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "293",
@@ -6288,7 +6288,7 @@
           "<p>JSON có cấu trúc được model xử lý một cách xác định (deterministic), cải thiện đáng kể độ chính xác khi trích xuất giá trị.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1230",
@@ -6325,7 +6325,7 @@
           "<p>Chuyển 'tool_choice' từ \"auto\" sang \"any\" để buộc agent thực hiện một lệnh gọi tool ở mỗi lượt.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1232",
@@ -6362,7 +6362,7 @@
           "<p>Tùy chọn D</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1233",
@@ -6400,7 +6400,7 @@
           "<p>Escalate một giao dịch khi nó vượt quá một ngưỡng nghiệp vụ lập trình được thực thi thông qua một PostToolUse hook.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d5"
     },
     {
       "id": "1234",
@@ -6438,7 +6438,7 @@
           "<p>Chia sẻ đầu ra lỗi test cụ thể với Claude để hướng dẫn cải thiện dẫn phản triển khai.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1235",
@@ -6475,7 +6475,7 @@
           "<p>Cung cấp 8 đến 10 ví dụ để đảm bảo mới danh mục cảm xúc có thể có đều được bao phủ toàn diện.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "299",
@@ -6512,7 +6512,7 @@
           "<p>Agent truy vấn tuần tự tầng server để xác định server nào xử lý mỗi tool, định tuyến các lệnh gọi dựa trên tiền tố tên tool.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1236",
@@ -6549,7 +6549,7 @@
           "<p>Dùng tool Glob để xác minh đường dẫn của file tồn tại trước khi cố đọc nó.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1237",
@@ -6586,7 +6586,7 @@
           "<p>/ init</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "1238",
@@ -6623,7 +6623,7 @@
           "<p>Giữ lại cả hai giá trị và chú thích rõ ràng mâu thuẫn kèm ghi nguồn, để coordinator hoặc người dùng từ đối chiếu.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "1239",
@@ -6660,7 +6660,7 @@
           "<p>Cấu trúc system prompt dưới dạng một dictionary với một text block và bao gồm một trường cache_control được đặt là {\"type\": \" ephemeral \" }</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "1240",
@@ -6697,7 +6697,7 @@
           "<p>/ clear</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "1241",
@@ -6735,7 +6735,7 @@
           "<p>Một lỗi truy cập (ví dụ: database timeout) nên trả về isError: true để agent biết rằng việc kiểm tra thực sự chưa được thực hiện.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1242",
@@ -6772,7 +6772,7 @@
           "<p>Concrete Transformation</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "1243",
@@ -6809,7 +6809,7 @@
           "<p>Triển khai một model classifier riêng để dự đoán những yêu cầu nào cần escalation trước khi agent chính bắt đầu.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d5"
     },
     {
       "id": "1384",
@@ -6846,7 +6846,7 @@
           "<p>Đọc từ định dạng đầu vào, các truy vấn ví dụ, edge case và các điều kiện biên tượng minh so với các tool tương tự.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1385",
@@ -6883,7 +6883,7 @@
           "<p>CLAUDE .md gốc không thể xử lý các framework kiểm thử nhỏ Jest hoặc Vitest.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1386",
@@ -6920,7 +6920,7 @@
           "<p>Chỉ chẩn đoán của bạn và số tiền hoàn.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d5"
     },
     {
       "id": "1387",
@@ -6957,7 +6957,7 @@
           "<p>Viết một test thất bại -&gt; triển khai code để vượt qua test -&gt; chạy test -&gt; tinh chỉnh phản triển khai trong khi giữ các test ở trạng thái pass.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1388",
@@ -6994,7 +6994,7 @@
           "<p>Cố tuân thủ về cấu trúc lần tính đúng đơn vị ngữ nghĩa của dữ liệu được trích xuất.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d4"
     },
     {
       "id": "1389",
@@ -7031,7 +7031,7 @@
           "<p>Dùng các lệnh gọi API đồng bộ cho cả hai quy trình, vì Batch API không hỗ trả đầu ra JSON schema có cấu trúc.</p>"
         ]
       },
-      "topic": "api"
+      "topic": "d4"
     },
     {
       "id": "1390",
@@ -7068,7 +7068,7 @@
           "<p>Tự động phê duyệt các bài động thông thường và chỉ yêu cầu xác nhận tượng minh cho các mẫu bất thường như động lên tài khoản mới hoặc tập đối tượng lớn</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d5"
     },
     {
       "id": "1391",
@@ -7105,7 +7105,7 @@
           "<p>Trả về một chuỗi ngôn ngữ tự nhiên mô tả kết quả, cho phép agent diễn giải kết quả theo ngữ cảnh dựa trên nội dung thông điệp.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1392",
@@ -7143,7 +7143,7 @@
           "<p>Độ chính session đó review code mới tạo của nó nhằm giả tối đa context kiến trúc.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d5"
     },
     {
       "id": "1393",
@@ -7180,7 +7180,7 @@
           "<p>Tool_choice</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1394",
@@ -7217,7 +7217,7 @@
           "<p>Cung cấp các ví dụ few-shot minh họa việc trích xuất đúng từ các tài liệu có định dạng đa dạng.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "1227",
@@ -7254,7 +7254,7 @@
           "<p>Thay model hỏng Sonnet bằng một model hỏng Haiku để có giá trên mỗi token thấp hơn.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1395",
@@ -7291,7 +7291,7 @@
           "<p>Đặt is_error: false với một thông điệp lực quan cho biết lệnh đã được gửi đi thành công nhưng việc xác nhận từ thiết bị vẫn đang chỉ.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1396",
@@ -7328,7 +7328,7 @@
           "<p>Bằng cách dùng lệnh fork_session cho từng subagent một cách tuần tự.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "1397",
@@ -7365,7 +7365,7 @@
           "<p>Personal &gt; Enterprise &gt; Project &gt; Plugins</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1398",
@@ -7402,7 +7402,7 @@
           "<p>Phân tích sentiment đòi hỏi fine-tuning một embedding model tùy chỉnh, điều này gây ra để trả.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d5"
     },
     {
       "id": "1231",
@@ -7439,7 +7439,7 @@
           "<p>Resume với toàn bộ lịch sử và thêm một chỉ dẫn system prompt yêu cầu agent luôn ưu tiên các kết quả tool gần đây nhất khi có nhiều lệnh gọi cùng một tool trong context.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1399",
@@ -7476,7 +7476,7 @@
           "<p>Tạo một tool curate_collection(topic, collection_id) xử lý khám phá, phân tích và lựa chọn bên trong bảng các ngưỡng chất lượng có thể cấu hình.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1400",
@@ -7513,7 +7513,7 @@
           "<p>Vòng lặp chỉ dựa vào một chuỗi các PreTool1Jse hook để xác định luồng điều khiển.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1401",
@@ -7550,7 +7550,7 @@
           "<p>Read (\" config. j son</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1402",
@@ -7593,7 +7593,7 @@
           "<p>Biên soạn các bản tóm tắt handoff có cấu trúc chưa nguyên nhân gốc và hành động để xuất khi escalate cho nhân viên con người.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "1403",
@@ -7630,7 +7630,7 @@
           "<p>Xây dựng một hệ thống retrieval lưu trữ tất cả các lượt hội thoại và dùng semantic search độ kéo vào context lịch sử liên quan chỉ khi truy vấn hiện tại có vị tham chiếu thông tin trong quá khả.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "1404",
@@ -7668,7 +7668,7 @@
           "<p>Các kết quả trích xuất được chọn ngẫu nhiên từ các tài liệu được phân loại là có độ chính xác lịch sử 99%.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d4"
     },
     {
       "id": "1405",
@@ -7705,7 +7705,7 @@
           "<p>Gọi escalate_to_human ngay lập tốc độ đáp ứng yêu cầu của khách hàng</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d5"
     },
     {
       "id": "1406",
@@ -7743,7 +7743,7 @@
           "<p>Allowed-tools: Read, Grep, Glob</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1407",
@@ -7780,7 +7780,7 @@
           "<p>Tạo các tool khôi phục lại chuyên dụng (retry_tracking_lookup, search_by_order_number) để model có thể gửi sau khi tool theo dõi chính trả về chữ báo thất bại.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1408",
@@ -7817,7 +7817,7 @@
           "<p>Trả về is_error: true kèm thông báo truyền đạt sự không chắc chắn: \"Timeout - status unknown. Message may have been sent. Avoid retry.\"</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1409",
@@ -7854,7 +7854,7 @@
           "<p>Gọi ngay escalate_to_human cùng lịch sử hội thoại.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "1410",
@@ -7891,7 +7891,7 @@
           "<p>Sử dụng các file scratchpad để lưu trữ các phát hiện chính và dùng lệnh /compact để giảm mức sử dụng context.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "1411",
@@ -7928,7 +7928,7 @@
           "<p>Điểm từ đánh giá mức độ từ tin của model đặt 0.9.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "1412",
@@ -7965,7 +7965,7 @@
           "<p>Tùy chọn D</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1413",
@@ -8002,7 +8002,7 @@
           "<p>Trả về một mảng JSON rỗng hợp lệ [ ] để tránh làm sắp agentic loop.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1414",
@@ -8039,7 +8039,7 @@
           "<p>Nó buộc agent phải dùng tool_choice: \"auto\".</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "1415",
@@ -8076,7 +8076,7 @@
           "<p>Sửa một bug cụ thể có stack trace rõ ràng trong một file TypeScript duy nhất.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1416",
@@ -8113,7 +8113,7 @@
           "<p>Dùng một slash command tùy chỉnh được thiết kế để vượt qua giới hạn context.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1417",
@@ -8150,7 +8150,7 @@
           "<p>Cung cấp 5 ví dụ few-shot tiêu cục cho thấy agent từ chối thành công các khoản hoàn tiến giá trị cao.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1418",
@@ -8187,7 +8187,7 @@
           "<p>Tài liệu được truy xuất</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "1419",
@@ -8224,7 +8224,7 @@
           "<p>Gọi cả ba vấn đề trong một prompt duy nhất để tiết kiệm token.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1420",
@@ -8261,7 +8261,7 @@
           "<p>Một file cấu hình CLAUDE .md phạm vi dự án.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1421",
@@ -8298,7 +8298,7 @@
           "<p>Dùng regex để phân tích đầu ra văn bản markdown không có cấu trúc do Claude trả về.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1422",
@@ -8335,7 +8335,7 @@
           "<p>Trả về một chuỗi chung chung {\"error\": \"Operation failed\"}.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "1423",
@@ -8373,7 +8373,7 @@
           "<p>Việc thực thi song song các subagent đạt được bằng cách phát ra nhiều lệnh gọi Task tool trong một phản hồi duy nhất của coordinator.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "1424",
@@ -8410,7 +8410,7 @@
           "<p>Thêm logic retry và xử lý timeout cho get_property_details.</p>"
         ]
       },
-      "topic": "api"
+      "topic": "d2"
     },
     {
       "id": "1425",
@@ -8447,7 +8447,7 @@
           "<p>Escalate mỗi tài liệu có độ dài vượt quá 5 trang.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d5"
     },
     {
       "id": "1426",
@@ -8484,7 +8484,7 @@
           "<p>Rút ngắn tất cả đầu ra.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d5"
     },
     {
       "id": "1427",
@@ -8521,7 +8521,7 @@
           "<p>Dùng lệnh /compact độ tóm tắt lịch sử của coordinator trước khi truyền cho subagent.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "1428",
@@ -8558,7 +8558,7 @@
           "<p>Tùy chọn B</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1429",
@@ -8595,7 +8595,7 @@
           "<p>Phân rã yêu cầu thành các mục riêng biệt, điều tra tăng mức song song bằng context dùng chung, và tổng hợp thành một giải pháp thống nhất.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "1430",
@@ -8633,7 +8633,7 @@
           "<p>Kết quả phải được truyền lại bên trong một message với role assistant kèm cố is_error'. false.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1431",
@@ -8670,7 +8670,7 @@
           "<p>Thực hiện các lượt đánh giá bên trong một hook PreToolUse.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d4"
     },
     {
       "id": "1432",
@@ -8708,7 +8708,7 @@
           "<p>System_prompt_override</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1433",
@@ -8745,7 +8745,7 @@
           "<p>Cửa sổ ngữ cảnh tự động cắt bớt các phần giữa của bạn tóm tắt.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d5"
     },
     {
       "id": "1434",
@@ -8782,7 +8782,7 @@
           "<p>Khi bạn cần thực thi các lệnh bash trên máy cục bộ.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1435",
@@ -8820,7 +8820,7 @@
           "<p>Dùng Message Batches API để thực thi các kiểm tra pull request chọn (blocking) trước khi merge nhằm tiết kiệm chi phí.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1436",
@@ -8857,7 +8857,7 @@
           "<p>Dùng lệnh fork_session để nhân bản vĩnh viễn agent chính.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "1437",
@@ -8894,7 +8894,7 @@
           "<p>Trả về một lỗi có cấu trúc và chấm dứt workflow.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1438",
@@ -8931,7 +8931,7 @@
           "<p>Lệnh /compact được chạy tự động bên trong một hook PreToolUse.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "1439",
@@ -8968,7 +8968,7 @@
           "<p>Dùng direct execution với một prompt yêu cầu Claude phân tích tất cả các cách tiếp cận và triển khai cách mà nó xác định là tốt nhất.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1440",
@@ -9006,7 +9006,7 @@
           "<p>Nó được tối ưu để hỗ trợ các quy trình chatbot tương tác, thời gian thực ở quy mô lớn.</p>"
         ]
       },
-      "topic": "api"
+      "topic": "d4"
     },
     {
       "id": "1441",
@@ -9043,7 +9043,7 @@
           "<p>Dùng Grep để tìm tên gốc của hàm trên toàn codebase.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1442",
@@ -9080,7 +9080,7 @@
           "<p>Độ dài cuộc hội thoại vượt quá 5 lượt.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d5"
     },
     {
       "id": "1443",
@@ -9117,7 +9117,7 @@
           "<p>Viết lại cả ba yêu cầu trong CLAUDE.md bằng ngôn ngữ chỉ thị mạnh hơn và thêm các ví dụ few-shot minh họa Claude từ chối sửa file migration và chạy Prettier sau khi chỉnh sửa.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1444",
@@ -9154,7 +9154,7 @@
           "<p>Dùng một Enum cộng nhắc chỉ chứa các loại tài liệu đã biết hiện tại.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "1445",
@@ -9191,7 +9191,7 @@
           "<p>Chuyển các kết quả trích xuất chứa các loại thực thể ưu tiên cao cụ thể (ví dụ: số liệu tài chính, ngày tháng) đơn human review, bất kỳ độ tin cậy của việc trích xuất.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d4"
     },
     {
       "id": "1446",
@@ -9228,7 +9228,7 @@
           "<p>Xử lý từng ticket riêng lẻ rối kết hợp các bản tóm tắt.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "1447",
@@ -9266,7 +9266,7 @@
           "<p>Đảm bảo mật đối tượng JSON do model trích xuất không chứa lỗi suy luận ngữ nghĩa.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1448",
@@ -9304,7 +9304,7 @@
           "<p>Description</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1449",
@@ -9341,7 +9341,7 @@
           "<p>Claude đang bỏ trực trục.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "1450",
@@ -9378,7 +9378,7 @@
           "<p>Để trống mô tả và dựa vào khả năng hiệu ngữ nghĩa của Claude đối với tên của tool.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1451",
@@ -9415,7 +9415,7 @@
           "<p>Lấy mẫu ngẫu nhiên 20% kết quả trích xuất để review, dùng các chỉnh sửa để theo dõi độ chính xác và xác định các mẫu lại.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d4"
     },
     {
       "id": "1452",
@@ -9452,7 +9452,7 @@
           "<p>Liệu phản hồi review đến muốn tới 24 giờ sau khi tạo PR có còn hữu ích để xử lý hay không.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1453",
@@ -9489,7 +9489,7 @@
           "<p>Thêm các chỉ dẫn chain-of-thought yêu cầu model liệt kê tất cả tham chiếu bên ngoài trong diff, sau đó suy luận từng bước về việc mỗi thay đổi có thể ảnh hưởng đến các nội gọi trong các file khác như thế nào.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1454",
@@ -9526,7 +9526,7 @@
           "<p>Thêm chỉ dẫn yêu cầu Claude đánh giá độ tin cậy của mỗi phát hiện (1-10) và chỉ đưa vào các phát hiện được đánh giá t? 8 trở lên</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1455",
@@ -9563,7 +9563,7 @@
           "<p>Ghi lại các mẫu được chấp nhận và quy ước có chỉ đích của nhóm trong file CLAUDE.md của dự án để model nhận được context này trong mỗi review.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1456",
@@ -9600,7 +9600,7 @@
           "<p>Cung cấp 2-3 ví dụ input/output cụ thể minh họa chính xác phép biến đổi mong đợi.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "1457",
@@ -9637,7 +9637,7 @@
           "<p>Chỉ dẫn model báo cáo tất cả phát hiện kèm mức độ tin cậy và thư mục để nghiêm trọng, độ việc lọc cho bước downstream.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1458",
@@ -9674,7 +9674,7 @@
           "<p>Đọc tất cả các file có chứa \"auth\", \"login\", \"permission\" hoặc \"token\" trong nội dung hoặc tên file.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1459",
@@ -9711,7 +9711,7 @@
           "<p>Tầng tần suất tóm tắt để diễn ra mọi 3 lượt thay vì mỗi 10 lượt.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "1460",
@@ -9749,7 +9749,7 @@
           "<p>Nó hỗ trợ các trường paths trong YAML frontmatter chưa glob pattern để kích hoạt rule có điều kiện, nhắm đúng mục tiêu.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1461",
@@ -9787,7 +9787,7 @@
           "<p>Âm thẩm loại bỏ các kết quả còn tranh cãi để báo cáo tổng hợp cuối cùng trông có độ tin cậy cao.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "1462",
@@ -9824,7 +9824,7 @@
           "<p>\"Giúp tôi.\"</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "1463",
@@ -9861,7 +9861,7 @@
           "<p>Tạo một slash command /review chưa checklist, được gọi khi bắt đầu các phiên review.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1464",
@@ -9898,7 +9898,7 @@
           "<p>Xóa các hướng dẫn về định dạng.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "1465",
@@ -9935,7 +9935,7 @@
           "<p>Temperature ngăn việc giải thích.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "1466",
@@ -9972,7 +9972,7 @@
           "<p>Grep, để tìm kiếm mẫu câu lệnh import trong nội dung các file</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1467",
@@ -10009,7 +10009,7 @@
           "<p>Nó huấn luyện lại Claude vĩnh viễn.</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "1468",
@@ -10046,7 +10046,7 @@
           "<p>Bạn kiểm tra trường stop_reason trong mỗi phản hồi API-vòng lặp tiếp tục khi nó bằng \"tool_use\" và thoát khi nó chuyển thành \"end_turn\" hoặc một giá trị kết thúc khác.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "1469",
@@ -10083,7 +10083,7 @@
           "<p>System prompt</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "1470",
@@ -10120,7 +10120,7 @@
           "<p>Tắt retrieval.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "1471",
@@ -10157,7 +10157,7 @@
           "<p>Tắt các system prompt</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "1472",
@@ -10194,7 +10194,7 @@
           "<p>Độ dài prompt</p>"
         ]
       },
-      "topic": "api"
+      "topic": "d4"
     },
     {
       "id": "1473",
@@ -10231,7 +10231,7 @@
           "<p>Thêm một subagent chuyên dụng áp dụng chính sách retry, logging và backoff cho các subagent khác, để coordinator chỉ định tuyến công việc</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "1474",
@@ -10268,7 +10268,7 @@
           "<p>Chạy tool, thêm đầu ra của nó dưới dạng một tool_result block với tool_use_id khớp trong một assistant message, và gửi lại lịch sử không có lượt tool_use</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1475",
@@ -10305,7 +10305,7 @@
           "<p>Vòng lặp xử lý phản hồi bị cắt cụt như một lần hoàn thành bình thường, nên một báo cáo dữ dang được trả về làm kết quả cuối cùng và quá trình chạy kết thúc mà không có lỗi gọi nào nữa</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "1476",
@@ -10342,7 +10342,7 @@
           "<p>Cấp cho subagent synthesis các search tool giống như web-researcher, để nó từ chạy các tìm kiếm về chế độ trước khi viết báo cáo</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "1477",
@@ -10379,7 +10379,7 @@
           "<p>Mở rộng bạn bước thành mười bước, nêu rõ cách diễn đạt truy vấn tìm kiếm, thứ tự click và cách trích xuất trường ngày để mỗi điểm quyết định được cố định trước</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "1478",
@@ -10416,7 +10416,7 @@
           "<p>Trả về permissionDecision \"allow\" không có updatedInput, độ việc hoàn tiến chạy với customer_id do model cung cấp khi session state đã có ID đã xác minh</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "1479",
@@ -10453,7 +10453,7 @@
           "<p>Giữ trường notes là văn bản tự do những tầng giới hạn ký tự của nó, cho agent để chỉ ghi lại toàn bộ context nó thu thập được trong cuộc hội thoại</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d5"
     },
     {
       "id": "1480",
@@ -10490,7 +10490,7 @@
           "<p>Lại gửi resume nạp một session ID khác với session gốc, nên các snapshot file được chấp trong session đó không khả dụng</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "1481",
@@ -10527,7 +10527,7 @@
           "<p>Review từng file trong một lượt riêng để tìm các vấn đề cục bộ, rồi chạy lượt thứ hai trên các phát hiện đó để kiểm tra cách các file tương tác với nhau</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1482",
@@ -10564,7 +10564,7 @@
           "<p>GetSessionMessages() cho danh sách session, getSessionInfo() cho transcript của một session</p>"
         ]
       },
-      "topic": "context"
+      "topic": "d5"
     },
     {
       "id": "1483",
@@ -10601,7 +10601,7 @@
           "<p>Dùng tool_choice: {\"type\": \"tool\", \"name\": \"create_profile\"} chỉ cho lượt đầu tiên, rồi chuyển sang tool_choice: {\"type\": \"auto\"} cho các lượt tiếp theo</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1484",
@@ -10638,7 +10638,7 @@
           "Thêm server với user scope trong ~/.claude.json, và đặt header là `Authorization: Bearer"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1485",
@@ -10675,7 +10675,7 @@
           "<p>Bash, chạy find từ thư mục gốc dự án với -name '*.test.tsx' độ liệt kê các đường dẫn file test trong các thư mục feature lồng nhau</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1486",
@@ -10712,7 +10712,7 @@
           "<p>Với subagent 2, giữ các kết quả một phần trong index và theo dõi một file mà nó báo cáo là bộ chọn do lỗi permission; với subagent 3, xếp hàng toàn bộ thư mục cho một lần lặp chỉ mục mới và coi không file nào của nó được xác nhận là đã lớp chỉ mục.</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "1487",
@@ -10749,7 +10749,7 @@
           "<p>Tool được khai báo sau các tool chỉ đọc trong danh sách, nên model dành cho nó mức ưu tiên thấp hơn và điền các trường mà schema không định nghĩa.</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1488",
@@ -10786,7 +10786,7 @@
           "<p>Một kết quả <code>isError: true</code> liệt kê hai lần connection reset và việc load cuối cùng thành công, để coordinator quyết định có chạy lại migration từ đầu hay không</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "1489",
@@ -10823,7 +10823,7 @@
           "<p>Dùng thực thi trực tiếp để Claude xây dựng cơ phương án queue và phương án đồng bộ trên các branch riêng, rồi so sánh các pull request và giữ lại một</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1490",
@@ -10860,7 +10860,7 @@
           "<p>Claude -p \"review this diff\" --append-system-prompt \"Reply only with a JSON object: {passed: boolean, issues: string[]}\"</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1491",
@@ -10897,7 +10897,7 @@
           "<p>Session transcript .jsonl dưới ~/.claude/projects, ghi lại mức sử dụng token cho mỗi lại gửi model trong lần chạy</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1492",
@@ -10934,7 +10934,7 @@
           "<p><code>allowed-tools</code> cần các wildcard pattern như <code>Write*</code> và <code>Edit*</code> độ hoạt động như một hạn chế, nên các tên tool trộn không được coi là giới hạn. Viết lại các mục trên skill với dấu <code>*</code> ở cuối để chỉ hai tool đó có thể được gọi.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1493",
@@ -10971,7 +10971,7 @@
           "<p>Yêu cầu Claude xây dựng limiter trước, rồi viết test cho hành vi throttling, giới hạn burst và reset cửa sổ, và chia sẻ từng kết quả test thất bại lời đủ tinh chỉnh code trước khi phát hành.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1494",
@@ -11008,7 +11008,7 @@
           "<p>Chọn một trình soạn thảo cộng tác mã nguồn mở trường thành, được đánh giá cao và để Claude sao chép kiến trúc của nó, rồi review các mẫu caching, xung đột và xử lý lỗi đã sao chép để quyết định mẫu nào phù hợp với sản phẩm này.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1495",
@@ -11045,7 +11045,7 @@
           "<p>CLAUDE.md của dự án import các rule bằng @-import cần được mọi người dùng phê duyệt một lần, nên session của kỹ sư mới bỏ qua chúng.</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1496",
@@ -11082,7 +11082,7 @@
           "<p>Gặp hai file thành một trước khi review để một lượt theo file duy nhất bao phủ cả hai mà không cần bước tích hợp</p>"
         ]
       },
-      "topic": "code"
+      "topic": "d3"
     },
     {
       "id": "1497",
@@ -11119,7 +11119,7 @@
           "<p><code>tool_choice: {\"type\": \"auto\"}</code>, kết hợp với một chỉ dẫn tường minh trong user message yêu cầu dùng tool <code>parse_resume</code> và chia sẻ mới suy luận liên quan dưới dạng văn bản</p>"
         ]
       },
-      "topic": "tools"
+      "topic": "d2"
     },
     {
       "id": "1498",
@@ -11156,7 +11156,7 @@
           "<p>Chỉ gần cứ một comment khi nó nêu một hành vi cụ thể mà code mâu thuẫn, chứng hơn một docstring nói hàm trả về None trong khi hàm trả về một giá trị trên mỗi đường đi, và trích dẫn dòng code xung đột với nó.</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "1499",
@@ -11193,7 +11193,7 @@
           "<p>Gọi lại PDF cùng JSON bị lỗi và một thông điệp nêu tên <code>invoice_number</code> là trường bắt buộc mà đầu ra trước đó đã bị sót</p>"
         ]
       },
-      "topic": "prompt"
+      "topic": "d4"
     },
     {
       "id": "1500",
@@ -11230,7 +11230,7 @@
           "<p>Thêm vào prompt của reviewer một cách dùng bộ gắn cụ và một cách dùng được cho phép của mẫu này, mỗi cái được gắn nhãn với kết luận của nó</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d4"
     },
     {
       "id": "1501",
@@ -11267,7 +11267,7 @@
           "<p>Không, số bước tự nó không phải là điều kiện kích hoạt, nên agent cần giải quyết trực tiếp khi chính sách bao phủ từng bước</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d5"
     },
     {
       "id": "1502",
@@ -11304,7 +11304,7 @@
           "<p>Thêm một quy tắc vào prompt gán đơn vị phổ biến nhất từ các tài liệu trước đây cho một con số weight trộn, và phát hành các giá trị đó ra đầu ra mà không có reviewer.</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d4"
     },
     {
       "id": "1503",
@@ -11341,7 +11341,7 @@
           "<p>Độ pipeline giữ giá trị từ trang đều làm điều khoản chi phối, và gửi trường tại human review nếu điều khoản đó bị thiếu hoặc không đọc được.</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d4"
     },
     {
       "id": "1504",
@@ -11378,7 +11378,7 @@
           "<p>Citations ghi lại ngày xuất bản của tầng nguồn được trích dẫn bên cạnh phát biểu, nên pipeline không cần bước theo dõi ngày riêng</p>"
         ]
       },
-      "topic": "quality"
+      "topic": "d5"
     },
     {
       "id": "1505",
@@ -11415,7 +11415,7 @@
           "<p>Báo cáo timeout là kết quả rộng hợp lệ, và phản hồi 200 không có hàng nào là lỗi truy cập có thể retry cần một truy vấn mới</p>"
         ]
       },
-      "topic": "agent"
+      "topic": "d1"
     },
     {
       "id": "1506",
@@ -11452,7 +11452,7 @@
           "<p>Hỏi khách hàng họ cần nhân viên con người để làm gì, rồi chuyển nếu vấn đề quá phức tạp</p>"
         ]
       },
-      "topic": "risk"
+      "topic": "d5"
     }
   ]
 }
