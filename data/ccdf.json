@@ -5133,16 +5133,16 @@
         "B",
         "C"
       ],
-      "e": "Giới hạn của Message Batches: tối đa 100.000 request hoặc 256 MB mỗi batch; batch hết hạn nếu chưa xong trong 24 giờ; kết quả tại được trong 29 ngày. Request trong batch không stream được, và batch không chia sẻ giữa các Workspace.",
+      "e": "Theo bộ đề: giới hạn một batch là 100.000 request hoặc 256 MB; batch chưa hoàn tất sẽ hết hạn sau 24 giờ; kết quả được lưu cho phép tải trong 29 ngày. Request bên trong batch không hỗ trợ streaming, và batch không tự chia sẻ giữa các Workspace.",
       "m": 3,
       "v": {
-        "q": "<p>Một nhóm đang xác định phạm vi các giới hạn vận hành của Message Batches API trước khi cam kết dùng nó cho một job hỏng đêm định kỳ. </p><p>Hãy chọn các phát biểu dưới đây mô tả chính xác nhưng giới hạn này.</p>",
+        "q": "<p>Nhóm đang xem xét giới hạn vận hành của Message Batches API trước khi sử dụng cho tác vụ định kỳ mỗi đêm. Những phát biểu nào sau đây mô tả đúng các giới hạn đó?</p>",
         "o": [
-          "<p>Một batch có thể bao gồm `stream: true` trên từng request riêng lẻ miễn là bản thân lệnh gọi batch được gọi không streaming, cho phép mọi request từ chỉ định hành vi streaming của nó.</p>",
-          "<p>Một batch hết hạn nếu nó chưa xử lý xong trong vòng 24 giờ kể từ khi tạo, và mọi request chưa được xử lý tại thời điểm đó sẽ tự động được đánh dấu là hết hạn.</p>",
-          "<p>Một Message Batch đơn lẻ bị giới hạn tối đa 100.000 request hoặc 256 MB, và API sẽ từ chối ngay lập tức mỗi batch vượt quá một trong hai giới hạn này.</p>",
-          "<p>Kết quả batch vẫn có thể tải xuống trong 29 ngày kể từ khi tạo batch, sau đó bản ghi batch vẫn tồn tại nhưng không thể tải kết quả xuống nữa.</p>",
-          "<p>Các batch mặc định hiển thị trên mỗi Workspace trong một tổ chức, nên một batch được tạo ở một Workspace có thể được liệt kê và tối kết quả bởi bất kỳ Workspace nào khác.</p>"
+          "<p>Trong batch, từng request được phép đặt `stream: true` miễn là lời gọi batch không dùng streaming.</p>",
+          "<p>Batch hết hạn nếu chưa xử lý xong sau 24 giờ kể từ lúc tạo; các request chưa hoàn tất được đánh dấu hết hạn.</p>",
+          "<p>Mỗi Message Batch có tối đa 100.000 request hoặc 256 MB; vượt một trong hai giới hạn sẽ bị API từ chối ngay.</p>",
+          "<p>Kết quả batch có thể tải trong 29 ngày kể từ khi tạo; sau đó bản ghi còn nhưng không tải được kết quả.</p>",
+          "<p>Các batch mặc định hiển thị xuyên suốt mọi Workspace trong cùng tổ chức, nên Workspace khác cũng xem và tải được.</p>"
         ]
       },
       "topic": "risk"
@@ -5171,15 +5171,15 @@
       "a": [
         "A"
       ],
-      "e": "Permission rule được merge giữa các scope, không scope nào ghi đè scope khác. Deny ở cấp project vẫn có hiệu lực, allow ở local không gỡ được.",
+      "e": "Quy tắc quyền từ các phạm vi được kết hợp; deny ở dự án vẫn chặn dù cấu hình cá nhân có allow cho cùng thao tác.",
       "m": 1,
       "v": {
-        "q": "<p>Một nhóm nền tảng triển khai `.claude/settings.json` tại mỗi repository với một quy tắc `permissions.deny` chọn `Bash(curl *)`. </p><p>Một lập trình viên riêng lẻ thêm quy tắc ngược lại, một mục `allow` cho `Bash(curl *)`, trong `.claude/settings.local.json` của riêng hệ vì họ cần curl cho một script gỡ lỗi cá nhân. </p><p>Khi lập trình viên đó chạy Claude Code trong repo, điều gì xảy ra với các lệnh `curl`ở</p>",
+        "q": "<p>Nhóm nền tảng đưa `.claude/settings.json` vào mọi repository với quy tắc `permissions.deny` chặn `Bash(curl *)`. Một lập trình viên thêm `allow` cho cùng mẫu vào `.claude/settings.local.json` để dùng curl khi debug cá nhân. Khi chạy Claude Code trong repo, lệnh `curl` sẽ thế nào?</p>",
         "o": [
-          "<p>Các lệnh curl vấn bộ chọn chỉ cho đến khi lập trình viên khởi động lại Claude Code, sau đó quy tắc allow của tập cài đặt cục bộ có hiệu lực ở phiên tiếp theo</p>",
-          "<p>Các lệnh curl được cho phép, vì `settings.local.json` có mức ưu tiên cao hơn `settings.json` và các quy tắc quyền của nó thay thế hoàn toàn các quy tắc của tập có phạm vi thấp hơn</p>",
-          "<p>Các lệnh curl vấn bộ chọn, vì các quy tắc quyền được gặp (merge) giữa các phạm vi thay vì một phạm vi ghi đè phạm vi khác, nên một allow cục bộ không thể gỡ bỏ một deny ở cấp dự án</p>",
-          "<p>Các lệnh curl yêu cầu phê duyệt thủ công mỗi lần, vì các quy tắc allow và deny xung đột giữa các phạm vi triệt tiêu lẫn nhau và quay về xác nhận tương tác</p>"
+          "<p>Vẫn bị chặn đến khi khởi động lại Claude Code, sau đó quy tắc allow cục bộ thắng.</p>",
+          "<p>Được phép chạy vì `settings.local.json` có ưu tiên cao hơn `settings.json`.</p>",
+          "<p>Vẫn bị chặn vì các quy tắc quyền được kết hợp giữa các phạm vi và deny vẫn có hiệu lực.</p>",
+          "<p>Luôn hiện lời nhắc phê duyệt thủ công vì allow và deny triệt tiêu nhau.</p>"
         ]
       },
       "topic": "code"
@@ -5208,15 +5208,15 @@
       "a": [
         "A"
       ],
-      "e": "Đóng gói skills, agents, hooks và `.mcp.json` thành một plugin, rồi mới project nộp qua option `plugins`. Không phải copy file.",
+      "e": "Plugin cho phép đóng gói Skill, tác nhân, hook và cấu hình MCP thành một đơn vị có thể phân phối, nạp lại ở nhiều dự án mà không cần copy thủ công.",
       "m": 1,
       "v": {
-        "q": "<p>Một nhà cung cấp muốn đóng gói một tập các skill quy trình nội bộ, một subagent tùy chỉnh, một hook ghi nhật ký kiểm toán và một MCP server cơ sở dữ liệu thành một đơn vị có thể tái sử dụng để các nhóm dự án khác nhau tại vào phiên Claude Code của riêng hệ mà không phải sao chép tập vào tầng dự án. </p><p>Thiết kế nào đáp ứng yêu cầu này?</p>",
+        "q": "<p>Một nhà cung cấp muốn đóng gói các Skill nội bộ, tác nhân phụ tùy chỉnh, hook ghi audit và MCP server cơ sở dữ liệu thành một đơn vị dùng lại cho nhiều nhóm, không phải sao chép tệp vào từng dự án. Nên dùng thiết kế nào?</p>",
         "o": [
-          "<p>Đăng ký các skill, logic subagent, script hook và cấu hình MCP server như một hàm custom tool duy nhất trong tool registry của Agent SDK, và để mỗi nhóm dự án bắt nó bằng cách thêm công cụ vào vòng lặp gọi công cụ của phiên của hệ.</p>",
-          "<p>Xuất bạn các skill, định nghĩa subagent, script hook và cấu hình MCP server như một tập CLAUDE.md duy nhất với các mục như `## Skills`, `## Agents`, `## Hooks` và `## MCP`, và độ mới dự án tại nó bằng cách thêm một chỉ thị import trong cấu hình dự án.</p>",
-          "<p>Đóng gói các skill, agent, hook và định nghĩa MCP server vào một thư mục plugin (với `skills/`, `agents/`, `hooks/` và `.mcp.json`) và độ mới dự án tại nó qua tùy chọn `plugins` trợ tại đường dẫn của plugin.</p>",
-          "<p>Đặt các skill, subagent, hook và cấu hình MCP vào một thư mục cố sự; sau đó để mỗi nhóm sao chép các skill vào thư mục `.claude/skills/` của hệ và thêm thủ công các cài đặt subagent, hook và MCP vào cấu hình dự án của hệ.</p>"
+          "<p>Gộp mọi Skill, tác nhân, hook và MCP vào một hàm custom tool.</p>",
+          "<p>Đưa tất cả vào một tệp `CLAUDE.md` dài chứa nhiều phần.</p>",
+          "<p>Đóng gói trong thư mục plugin gồm `skills/`, `agents/`, `hooks/` và cấu hình MCP, để từng dự án nạp plugin.</p>",
+          "<p>Đặt trong thư mục mẫu rồi yêu cầu mỗi nhóm sao chép tệp cần dùng vào dự án.</p>"
         ]
       },
       "topic": "code"
@@ -5245,10 +5245,10 @@
       "a": [
         "C"
       ],
-      "e": "Cân bằng tốt nhất giữa tốc độ và trí tu? cho code, phân tích dữ liệu và agent ở quy mô lớn là Sonnet. Opus mạnh hơn nhưng đặt hạn.",
+      "e": "Trong các lựa chọn của câu hỏi, Sonnet được định vị là phương án cân bằng tốc độ và năng lực cho tác vụ lập trình, phân tích và sử dụng công cụ; Opus thiên về năng lực cao nhất với chi phí lớn hơn.",
       "m": 1,
       "v": {
-        "q": "<p>Một nhóm sản phẩm cần một mô hình cho việc sinh mã, phân tích dữ liệu và sử dụng công cụ kiểu agent trên một cố sự người dùng lần. </p><p>Hệ muốn sự kết hợp tốt nhất giữa tốc độ và trí thông minh thay vì mô hình có năng lực cao nhất và đặt nhất. </p><p>Mô hình Claude hiện tại nào phù hợp với yêu cầu này?</p>",
+        "q": "<p>Nhóm sản phẩm cần mô hình cho sinh mã, phân tích dữ liệu và tác nhân dùng công cụ ở quy mô nhiều người dùng. Ưu tiên cân bằng tốc độ và năng lực, không nhất thiết chọn mô hình mạnh nhất, đắt nhất. Theo các lựa chọn trong bộ đề, mô hình Claude nào phù hợp nhất?</p>",
         "o": [
           "<p>Claude Haiku 4.5</p>",
           "<p>Claude Opus 5.5</p>",
@@ -5282,15 +5282,15 @@
       "a": [
         "A"
       ],
-      "e": "Traffic tăng đột ngột dù chưa chấm RPM thì có thể đã vương acceleration limit, cơ chế chọn tầng tối đặt biến. Hãy tăng lưu lượng tự từ.",
+      "e": "Dù chưa chạm mức RPM công bố, lưu lượng tăng đột biến có thể kích hoạt giới hạn tăng tốc (*acceleration limit*). Nên tăng tải dần và hạn chế biến động quá mạnh.",
       "m": 1,
       "v": {
-        "q": "<p>Mức sử dụng của một nhóm nằm thấp hơn nhiều so với giới hạn requests-per-minute đã công bố, những hệ bắt đầu gặp lỗi 429 sau khi một chiến dịch marketing khiển lưu lượng API tăng gấp ba trong vài phút. </p><p>Mức sử dụng trước đó ổn định trước đợt tăng đột biến. </p><p>Giải thích khả dĩ nhất là gì, và nhóm nên thay đổi điều gì để tránh tái diện?</p>",
+        "q": "<p>Nhóm dùng API thấp hơn nhiều so với giới hạn request/phút (RPM) đã công bố, nhưng bắt đầu nhận lỗi 429 sau chiến dịch marketing khiến lưu lượng tăng gấp ba chỉ trong vài phút. Trước đó lưu lượng ổn định. Nguyên nhân nào có thể xảy ra nhất và nên phòng tránh ra sao?</p>",
         "o": [
-          "<p>Giới hạn RPM đã công bố chỉ áp dụng cho Message Batches API, nên mới đợt tăng đột biến lưu lượng Messages API đồng bộ sẽ luôn trả về 429 bất kỳ nhắp để gửi</p>",
-          "<p>Các phản hồi 429 cho biết API key của tổ chức đã tự động bị thu hồi vì nghi ngữ lốm dụng và phải được tạo lại trong Console</p>",
-          "<p>Đặt tầng đặt biến có khả năng đã kích hoạt các giới hạn gia tốc (acceleration limits) được thiết kế để bắt các đặt tầng sử dụng đột ngột; nhóm nên tổng lưu lượng dần dẫn và giữ các mẫu sử dụng nhất quán hạn</p>",
-          "<p>Đặt tầng đặt biến đã vượt quá giới hạn kích thước request của Messages API, nên mỗi request quá cỡ bị từ chối riêng lệ với lỗi rate-limit</p>"
+          "<p>RPM chỉ áp dụng cho Message Batches API nên mọi đợt tăng lưu lượng Messages API đồng bộ đều trả 429.</p>",
+          "<p>API key bị tự động thu hồi vì nghi lạm dụng và phải tạo lại.</p>",
+          "<p>Lưu lượng tăng quá nhanh có thể kích hoạt acceleration limit; nên tăng tải từ từ và giữ mức sử dụng ổn định hơn.</p>",
+          "<p>Mỗi request vượt giới hạn kích thước của Messages API nên bị từ chối với lỗi rate limit.</p>"
         ]
       },
       "topic": "api"
@@ -5325,16 +5325,16 @@
         "B",
         "D"
       ],
-      "e": "Streaming hay tầng max_tokens không sửa được: 401 (key hết hạn), 413 (payload quá lớn), 409 (xung đột tài nguyên). Lại stop_reason=max_tokens thì tầng max_tokens là sửa được; 504 timeout với request dài thì streaming sẽ giúp.",
+      "e": "Streaming hay tăng `max_tokens` không giải quyết được khóa hết hạn (401), payload vượt kích thước (413) hoặc xung đột ghi dữ liệu (409). Dừng do `max_tokens` có thể xử lý bằng tăng giới hạn; timeout khi chờ phản hồi dài có thể cải thiện bằng streaming.",
       "m": 3,
       "v": {
-        "q": "<p>Một kỹ sư đang cân nhắc, đối với một số request thất bại, liệu chỉ chuyển sang streaming API hay tầng max_tokens có giải quyết được lại hay không. </p><p>Hãy chọn tất cả các kịch bản dưới đây mà cả hai thay đổi đó đều không khắc phục được lại được mô tả.</p>",
+        "q": "<p>Một kỹ sư xem xét các yêu cầu bị lỗi và cân nhắc chỉ chuyển sang streaming hoặc tăng `max_tokens`. Trong những trường hợp nào cả hai cách đó đều không sửa được lỗi? (Chọn tất cả phương án phù hợp.)</p>",
         "o": [
-          "<p>Một request thất bại với lỗi 401 authentication_error vì API key dùng để ký request đã hết hạn</p>",
-          "<p>Một request thất bại với lỗi 413 request_too_large vì bản thân nội dung message được nhúng trực tiếp vượt quá kích thước payload request tối đa của Messages API</p>",
-          "<p>Một request thất bại với lỗi 409 conflict_error vì hai worker đồng thời sửa đổi cùng một tài nguyên bên dưới trước khi request này được gọi</p>",
-          "<p>Một phần hỏi hoàn tất với stop_reason là max_tokens vì nội dung được sinh ra đã đặt giới hạn output token đã cấu hình</p>",
-          "<p>Một request thất bại với lỗi 504 timeout_error vì một lần sinh không streaming rất lớn chạy quá giới hạn kết nối nhàn rủi trên một mảng không ổn định</p>"
+          "<p>Lỗi 401 `authentication_error` vì API key dùng xác thực đã hết hạn.</p>",
+          "<p>Lỗi 413 `request_too_large` vì nội dung đầu vào vượt kích thước request tối đa của Messages API.</p>",
+          "<p>Lỗi 409 `conflict_error` vì hai worker cùng sửa một tài nguyên gây xung đột.</p>",
+          "<p>Phản hồi dừng với `stop_reason: max_tokens` vì chạm giới hạn token đầu ra.</p>",
+          "<p>Lỗi 504 `timeout_error` vì tạo phản hồi không streaming quá lâu, vượt giới hạn kết nối nhàn rỗi.</p>"
         ]
       },
       "topic": "api"
@@ -5363,15 +5363,15 @@
       "a": [
         "A"
       ],
-      "e": "Muốn biết chính xác số token trước khi gửi thì dùng token counting endpoint.",
+      "e": "Dùng API token counting để biết lượng token đầu vào dự kiến trước khi gọi sinh phản hồi. Lưu ý chi phí thực tế còn phụ thuộc token đầu ra.",
       "m": 1,
       "v": {
-        "q": "<p>Một khối lượng công việc nhạy cảm về chi phí cần biết chính xác một prompt lần số tiêu tốn bao nhiêu token trước khi gọi tới Claude, để nhóm có thể giữ trong ngân sách. </p><p>Hệ nên dùng gì?</p>",
+        "q": "<p>Một ứng dụng nhạy cảm về chi phí cần biết số token của prompt lớn trước khi gửi tới Claude để bảo đảm không vượt ngân sách. Nên dùng gì?</p>",
         "o": [
-          "<p>Files API, vì các tệp được tải lên tự động báo cáo kích thước token trước khi bắt đầu sinh</p>",
-          "<p>Trường budget_tokens của extended thinking, giới hạn và báo cáo tăng mức sử dụng token của request</p>",
-          "<p>Tham số effort đặt là low, trả về số token ước tính trong metadata của phản hồi</p>",
-          "<p>Một lệnh gọi token counting, để xác định số token trong một message trước khi gửi</p>"
+          "<p>Files API, vì tệp tải lên tự báo số token trước khi sinh.</p>",
+          "<p>Trường `budget_tokens` của extended thinking để giới hạn và báo tổng token request.</p>",
+          "<p>Tham số `effort: low` để nhận số token ước tính trong metadata.</p>",
+          "<p>API đếm token (*token counting*) để tính số token của tin nhắn trước khi gửi.</p>"
         ]
       },
       "topic": "api"
@@ -5400,15 +5400,15 @@
       "a": [
         "A"
       ],
-      "e": "`signature_delta` cung cấp chữ ký để xác minh tính toàn vẹn của thinking block, đảm bảo nó không bị chỉnh sửa khi gửi lại.",
+      "e": "`signature_delta` mang chữ ký phục vụ kiểm tra tính toàn vẹn của thinking block, đặc biệt khi nội dung được gửi lại ở các lượt sau.",
       "m": 1,
       "v": {
-        "q": "<p>Khi streaming một phần hồi có bất extended thinking, một client nhận được một thinking content block kết thúc bằng một sự kiện signature_delta ngay trước content_block_stop. </p><p>Mục đích của sự kiện signature_delta này là gì?</p>",
+        "q": "<p>Khi streaming với extended thinking, client nhận một thinking block kết thúc bằng sự kiện `signature_delta` ngay trước `content_block_stop`. `signature_delta` có mục đích gì?</p>",
         "o": [
-          "<p>Nó báo hiệu rằng một mô hình dự phòng đã tiếp quản việc sinh cho phần còn lại của phản hồi.</p>",
-          "<p>Nó đánh dấu điểm mà tại đó mức sử dụng token của thinking block nên được cộng vào tăng mức sử dụng tích lũy.</p>",
-          "<p>Nó cung cấp một chữ ký dùng để xác minh tính toàn vẹn của nội dung thinking block.</p>",
-          "<p>Nó cho biết thinking block đã bị che (redacted) vì tuân thủ chính sách và nội dung của nó nên bị loại bỏ.</p>"
+          "<p>Báo rằng mô hình dự phòng đã tiếp tục sinh phần còn lại.</p>",
+          "<p>Đánh dấu thời điểm cộng token của thinking block vào tổng usage.</p>",
+          "<p>Cung cấp chữ ký để xác minh tính toàn vẹn của nội dung thinking block.</p>",
+          "<p>Báo thinking block đã bị ẩn vì tuân thủ chính sách và cần loại bỏ.</p>"
         ]
       },
       "topic": "quality"
@@ -5437,15 +5437,15 @@
       "a": [
         "A"
       ],
-      "e": "LLM sinh văn bản theo cơ chế autoregressive: dự đoán token tiếp theo dựa trên prompt và các token đã sinh, lặp lại cho đến khi xong.",
+      "e": "LLM sinh văn bản theo cơ chế tự hồi quy (*autoregressive*): mỗi bước dự đoán token kế tiếp dựa trên ngữ cảnh và các token đã sinh.",
       "m": 1,
       "v": {
-        "q": "<p>Một kỹ sư mỗi hải vì sao Claude dường như tạo văn bản từng đoạn một thay vì sinh toàn bộ phản hồi ngay lập tức. </p><p>Giải thích nào khớp nhất với cách Claude sinh đầu ra?</p>",
+        "q": "<p>Một kỹ sư mới hỏi vì sao Claude sinh văn bản từng phần thay vì tạo toàn bộ phản hồi ngay lập tức. Giải thích nào đúng với cơ chế sinh của mô hình?</p>",
         "o": [
-          "<p>Claude sinh toàn bộ phản hồi như một chuỗi hoàn chỉnh trong một lần forward pass qua mô hình, rồi chế chia nó thành token độ truyền cho client.</p>",
-          "<p>Claude sinh các token theo thứ tự ngẫu nhiên, rồi áp dụng một hàm sắp xếp lại đã học để sắp xếp chúng thành một phản hồi mạch lọc trước khi trả về.</p>",
-          "<p>Claude dự đoán token tiếp theo theo kiểu tự hồi quy (autoregressive) dựa trên prompt và các token đã sinh trước đó, lặp lại quy trình độ xây dựng toàn bộ phản hồi.</p>",
-          "<p>Claude truy xuất toàn bộ phận hội tụ một bảng tra cứu tính toán sơn bằng cách khớp embedding của prompt với một cơ sở dữ liệu các embedding phản hồi và trả về văn bản đầy đủ gần nhất.</p>"
+          "<p>Claude sinh toàn bộ chuỗi trong một lượt xử lý rồi mới tách thành token để hiển thị.</p>",
+          "<p>Claude sinh token theo thứ tự ngẫu nhiên rồi sắp xếp lại thành văn bản.</p>",
+          "<p>Claude dự đoán token kế tiếp dựa trên prompt và các token đã sinh trước đó, lặp lại theo cơ chế tự hồi quy.</p>",
+          "<p>Claude lấy nguyên câu trả lời từ bảng tra cứu đã tính sẵn bằng cách so khớp embedding.</p>"
         ]
       },
       "topic": "prompt"
@@ -5474,15 +5474,15 @@
       "a": [
         "A"
       ],
-      "e": "Prefix 6.000 token lặp lại, request cách nhau khoảng 30 giây, nằm trong TTL 5 phút, nên đặt `cache_control` ephemeral để các request sau đặc tả cache, rẻ hơn nhiều.",
+      "e": "Phần tiền tố không đổi được gọi lại trong vòng TTL 5 phút nên phù hợp với prompt caching. Đặt `cache_control: ephemeral` giúp tái sử dụng cache và giảm chi phí đầu vào.",
       "m": 1,
       "v": {
-        "q": "<p>Một dịch vụ phân loại ticket hỗ trợ gửi cùng một system prompt 6.000 token và các định nghĩa công cụ với mỗi request, theo sau là một tin nhắn khách hàng duy nhất. </p><p>Các request đơn theo từng đặt khoảng mới 30 giây trong suốt cố ngày. </p><p>Nhóm muốn cất giảm chi phí input token cho phần tiền tố lặp lại mà không thêm hỗ tầng. </p><p>Thay đổi nào giải quyết trực tiếp nhất?</p>",
+        "q": "<p>Dịch vụ phân loại ticket gửi lặp lại cùng system prompt và định nghĩa công cụ dài 6.000 token, theo sau là nội dung riêng của từng khách hàng. Các request đến thành đợt cách nhau khoảng 30 giây. Nhóm muốn giảm chi phí token của phần tiền tố lặp lại mà không thêm hạ tầng. Nên làm gì?</p>",
         "o": [
-          "<p>Chuyển system prompt và các định nghĩa công cụ vào user message của mỗi request độ tiền tố cố định 6.000 token được cache theo từng message, cắt giảm chi phí input qua chu kỳ đặt 30 giây.</p>",
-          "<p>Giảm tham số max_tokens trên mỗi request xuống mức tối thiểu cần cho một phản hồi phân loại ngăn, để các completion của Claude ngắn gọn và chi phí token trung bình mỗi lệnh gọi giảm.</p>",
-          "<p>Chuyển các định nghĩa công cụ sang một JSON schema gần hơn với tên thuộc tính ngắn hạn và ít đối tượng lồng nhau hạn, độ tiền tố 6.000 token co lại và mọi request tiêu tốn ít input token hạn.</p>",
-          "<p>Đánh dấu system prompt và các định nghĩa công cụ bằng một breakpoint cache_control ephemeral 5 phút; các request lặp lại sau đó đọc tiền tố tự cache, tránh được giá input đầy đủ.</p>"
+          "<p>Chuyển system prompt và định nghĩa công cụ vào tin nhắn người dùng để tiền tố có thể cache tự động.</p>",
+          "<p>Giảm `max_tokens` ở mọi request để phản hồi phân loại ngắn hơn, qua đó giảm chi phí tiền tố.</p>",
+          "<p>Rút ngắn tên trường và cấu trúc JSON Schema của công cụ để giảm token đầu vào.</p>",
+          "<p>Đặt cache breakpoint `cache_control` loại `ephemeral` với TTL 5 phút cho system prompt và định nghĩa công cụ để tái sử dụng tiền tố.</p>"
         ]
       },
       "topic": "tools"
@@ -5511,15 +5511,15 @@
       "a": [
         "A"
       ],
-      "e": "Giao việc đọc nhiều file cho subagent: context riêng của nó chứa các lần đọc, chỉ bản tóm tắt quay về agent chính.",
+      "e": "Đọc nhiều tệp trong tác nhân phụ giúp cô lập nội dung trung gian. Hội thoại chính chỉ nhận phát hiện cô đọng nên không bị tràn ngữ cảnh.",
       "m": 1,
       "v": {
-        "q": "<p>Một kỹ sư đang xây dựng một research agent cần đọc hàng chức tập trong một repository lớn để trở lại một câu hỏi, mà không độ toàn bộ nội dung tập đó chất động trong ngữ cảnh của cuộc hội thoại chính. </p><p>Thiết kế nào đạt được điều này tốt nhất?</p>",
+        "q": "<p>Tác nhân nghiên cứu phải đọc hàng chục tệp trong repository lớn để trả lời một câu hỏi, nhưng không muốn toàn bộ nội dung tệp làm đầy ngữ cảnh hội thoại chính. Nên thiết kế thế nào?</p>",
         "o": [
-          "<p>Lưu toàn bộ nội dung tập trong một MCP resource tùy chỉnh và để agent chính tại một resource URI gặp duy nhất thay vì từng tập riêng lẻ</p>",
-          "<p>Đọc mọi tập trực tiếp trong vòng lặp agent chính, rồi ngay sau đó phát lệnh /compact thủ công để thu gọn lịch sử tích lũy</p>",
-          "<p>Đọc mọi tập trực tiếp trong vòng lặp agent chính, những đặt effort là low độ nội dung tập bổ sung tiêu tốn ít token hạn mỗi lượt</p>",
-          "<p>Ủy quyền việc khám phá tệp cho một subagent, có ngữ cảnh mới hợp thị toàn bộ các lần đọc trung gian trong khi chỉ thông điệp tóm tắt cuối cùng của nó được trả về cho agent cha</p>"
+          "<p>Gộp toàn bộ tệp vào một MCP resource lớn để tác nhân chính tải một lần.</p>",
+          "<p>Đọc mọi tệp trong hội thoại chính, sau đó chạy `/compact` thủ công.</p>",
+          "<p>Đọc mọi tệp trong hội thoại chính nhưng đặt `effort: low` để dùng ít reasoning token.</p>",
+          "<p>Giao việc đọc và khám phá tệp cho tác nhân phụ với ngữ cảnh riêng; chỉ chuyển bản tổng kết về tác nhân chính.</p>"
         ]
       },
       "topic": "agent"
@@ -5548,15 +5548,15 @@
       "a": [
         "A"
       ],
-      "e": "Đưa prompt cho một đồng nghiệp ít context đọc và làm theo. Chỉ nào người đó bởi rồi thì Claude nhiều khả năng cộng bởi rủi.",
+      "e": "Người đọc không có bối cảnh trước đó sẽ dễ nhận ra hướng dẫn đang thiếu rõ ràng. Nếu họ hiểu sai hoặc không biết phải làm gì, Claude cũng có thể diễn giải không nhất quán.",
       "m": 1,
       "v": {
-        "q": "<p>Một prompt được viết cho một công cụ tóm tắt tài liệu pháp lý tạo ra cấu trúc không nhất quán qua các lần chạy, và các kỹ sư trong nhóm bất đồng về nguyên nhân. </p><p>Trước khi tinh chỉnh prompt thêm, thực hành nào sẽ trực tiếp bộc lộ sự mơ hồ trong cách diễn đạt hiện tại nhất?</p>",
+        "q": "<p>Prompt tóm tắt tài liệu pháp lý tạo cấu trúc đầu ra thiếu nhất quán giữa các lần chạy. Các kỹ sư chưa thống nhất nguyên nhân. Trước khi tinh chỉnh, cách nào trực tiếp bộc lộ điểm mơ hồ trong câu chữ?</p>",
         "o": [
-          "<p>Yêu cầu Claude giải thích lại các chỉ dẫn của chính nó trong một lệnh gọi riêng, coi bạn diễn giải prompt của mô hình là sự thay thế đáng tin cậy cho việc kiểm tra mức độ hiệu của con người</p>",
-          "<p>Chạy lại chính prompt đó, không chỉnh sửa, trên mô hình hai mươi lần và chỉ giữ cấu trúc kết quả phổ biến nhất, coi biểu quyết đa số là sự thay thế cho việc tìm ra chỉ mơ hồ</p>",
-          "<p>Giảm temperature về không cho các request của công cụ tóm tắt, với giả định rằng sự mơ hồ trong cách diễn đạt được giải quyết bằng lấy mẫu có phương sai thấp hơn thay vì bằng các chỉ dẫn rõ ràng hạn</p>",
-          "<p>Cho một đồng nghiệp có rất ít ngữ cảnh về tác vụ xem prompt và yêu cầu họ làm theo đúng như được viết, vì sự bối rối của người đọc là con người thường dự đoán sự bối rối của Claude</p>"
+          "<p>Yêu cầu Claude giải thích lại prompt và coi đó là sự thay thế đáng tin cho việc kiểm tra cách hiểu của con người.</p>",
+          "<p>Chạy nguyên prompt 20 lần và lấy cấu trúc xuất hiện nhiều nhất thay vì tìm điểm mơ hồ.</p>",
+          "<p>Đặt temperature về 0 vì giảm biến thiên cũng tự giải quyết được chỉ dẫn mơ hồ.</p>",
+          "<p>Đưa prompt cho đồng nghiệp ít biết về tác vụ và yêu cầu họ làm theo đúng câu chữ; xem họ vướng ở đâu.</p>"
         ]
       },
       "topic": "prompt"
@@ -5585,15 +5585,15 @@
       "a": [
         "A"
       ],
-      "e": "`stop_reason = max_tokens` nghĩa là output bị cắt. Bắt lỗi parse, kiểm tra stop_reason và xử lý như response chưa hoàn chỉnh (ví dụ tầng max_tokens hoặc chia nhỏ).",
+      "e": "`stop_reason: max_tokens` cho biết phản hồi đã bị cắt do giới hạn token đầu ra. Phải xử lý như dữ liệu chưa hoàn chỉnh, không cố phân tích hay chấp nhận JSON hỏng.",
       "m": 1,
       "v": {
-        "q": "<p>Một dịch vụ tóm tắt phân tích văn bản phản hồi dưới dạng JSON. Với các bản ghi hội thoại rất dài, chuỗi JSON đôi khi bị cắt giữa chứng một đối tượng và parser báo lỗi giải mã. Khi điều tra, kỹ sư thấy stop_reason là \"max_tokens\" ở mỗi lệnh gọi thất bại. </p><p>Logic phân tích phòng thế nên làm gì?</p>",
+        "q": "<p>Dịch vụ tóm tắt phân tích phản hồi dưới dạng JSON. Với transcript rất dài, JSON đôi khi bị cắt giữa đối tượng và parser báo lỗi. Trace cho thấy mọi yêu cầu lỗi đều có `stop_reason: max_tokens`. Logic phân tích phòng thủ nên làm gì?</p>",
         "o": [
-          "<p>Bắt lỗi giải mã, kiểm tra stop_reason xem có phải max_tokens không, và coi phản hồi là chưa hoàn chỉnh</p>",
-          "<p>Coi mỗi lỗi giải mã JSON là sự cố mừng tạm thời và gửi lại chính request đó</p>",
-          "<p>Giảm max_tokens thêm nữa để Claude buộc phải tạo các completion ngắn hạn, an toàn hơn</p>",
-          "<p>Bỏ qua stop_reason và thể phân tích lại bằng một JSON parser dữ dãi chấp nhận dấu phẩy thừa ở cuối</p>"
+          "<p>Bắt lỗi giải mã, kiểm tra `stop_reason` có phải `max_tokens` không và coi phản hồi là chưa hoàn chỉnh.</p>",
+          "<p>Coi mọi lỗi parse JSON là lỗi mạng tạm thời rồi gửi lại yêu cầu giống hệt.</p>",
+          "<p>Giảm `max_tokens` để buộc Claude sinh ngắn hơn.</p>",
+          "<p>Bỏ qua `stop_reason` và dùng parser dễ dãi chấp nhận dấu phẩy cuối.</p>"
         ]
       },
       "topic": "agent"
@@ -5632,17 +5632,17 @@
         "B",
         "C"
       ],
-      "e": "Cách xử lý đúng: trả về tool_result với `is_error: true`, nêu rõ field bị thiếu để Claude gửi lại; bắt `strict: true` độ validate input theo schema; viết description nói rõ priority là bắt buộc.",
+      "e": "Cách phù hợp là trả lỗi có cấu trúc nêu rõ trường thiếu, dùng chế độ xác thực đầu vào theo schema và cải thiện mô tả công cụ. Không nên âm thầm bỏ qua trường bắt buộc.",
       "m": 3,
       "v": {
-        "q": "<p>Trong quá trình thử nghiệm, một agent đôi khi gọi công cụ create_ticket mà bỏ sót trường priority bắt buộc. </p><p>Những cách nào sau đây là phù hợp để xử lý điều này trong cuộc hội thoại, theo khuyến nghị xử lý lỗi tool-use? (Chọn tất cả đáp án phù hợp)</p>",
+        "q": "<p>Trong kiểm thử, tác nhân đôi khi gọi công cụ `create_ticket` nhưng bỏ trường `priority` bắt buộc. Theo cách xử lý lỗi tool-use được khuyến nghị, những lựa chọn nào phù hợp? (Chọn tất cả phương án đúng.)</p>",
         "o": [
-          "<p>Trả về một tool_result với is_error: true nêu rõ trường bị thiếu để Claude thử lại với trường đó được cung cấp</p>",
-          "<p>Ghi log việc bị sót một cách im lặng và tiếp tục tạo ticket với giá trị priority là null</p>",
-          "<p>Viết lỗi schema độ priority là tùy chọn nhằm không bao giữ bị báo là thiếu nữa</p>",
-          "<p>Thêm strict: true vào định nghĩa công cụ để đầu vào được xác thực theo schema trước handler của bạn</p>",
-          "<p>Cải thiện phần mô tả của công cụ để yêu cầu về trường priority được nêu rõ ràng hạn</p>",
-          "<p>Tự động chấm dứt phiên và yêu cầu người dùng bắt đầu một cuộc hội thoại hoàn toàn mới</p>"
+          "<p>Trả `tool_result` với `is_error: true` và nêu rõ trường thiếu để Claude thử lại.</p>",
+          "<p>Ghi log rồi âm thầm tạo ticket với `priority: null`.</p>",
+          "<p>Sửa schema để `priority` thành tùy chọn nhằm không bao giờ báo thiếu.</p>",
+          "<p>Thêm `strict: true` vào định nghĩa công cụ để kiểm tra tham số theo schema trước handler.</p>",
+          "<p>Mô tả công cụ rõ hơn để nhấn mạnh `priority` là bắt buộc.</p>",
+          "<p>Tự kết thúc phiên và yêu cầu người dùng bắt đầu hội thoại khác.</p>"
         ]
       },
       "topic": "tools"
@@ -5671,15 +5671,15 @@
       "a": [
         "A"
       ],
-      "e": "Bắc mỗi tài liệu trong tag XML riêng (kèm tag con cho nội dung và nguồn) nằm trong một tag cha. Ranh giới rõ ràng nên attribution chính xác hơn.",
+      "e": "Cấu trúc XML có thẻ riêng cho từng tài liệu, kèm thông tin nguồn và nội dung, giúp mô hình phân biệt ranh giới và trích dẫn đúng nguồn hơn.",
       "m": 1,
       "v": {
-        "q": "<p>Một prompt nối hai tài liệu nguồn dưới dạng văn bản thuần, không phân biệt, và các phản hồi của Claude đôi khi gán nhằm một sự kiện đến từ tài liệu nào. </p><p>Việc tái cấu trúc nào khắc phục tốt nhất vấn đề gán nguồn này?</p>",
+        "q": "<p>Prompt ghép hai tài liệu nguồn thành văn bản thuần không có ranh giới, khiến Claude đôi khi gán nhầm thông tin sang tài liệu khác. Cách tổ chức lại nào khắc phục tốt nhất?</p>",
         "o": [
-          "<p>Chuyển cả hai tài liệu thành một tập CSV duy nhất trong đó mỗi hàng chứa một đoạn văn và cắt bên trái ghi nhãn tài liệu nguồn, để Claude đọc dữ liệu dạng bằng và gán các sự kiện về đúng nguồn.</p>",
-          "<p>Chèn một ký tự điều khiển ngắt trang giữa hai tài liệu, chẳng hạn form feed, và thêm vào đầu một ghi chú hệ thống ngăn hướng dẫn Claude coi ngắt trang là dấu phân cách tài liệu để gán nguồn.</p>",
-          "<p>Thêm tiền tư cho mỗi tài liệu bảng mặt tiêu đề markdown được đánh số (ví dụ: \"# Document 1\") và sau đó đưa vào prompt một chỉ dẫn để Claude gán các sự kiện chỉ dựa trên tiêu để mà chúng xuất hiện bên dưới.</p>",
-          "<p>Bao mỗi tài liệu trong một thư riêng của nó với các thư <source> và thử con lồng nhau, đặt bên trong một thư ngoài, qua đó cung cấp ranh giới và metadata rõ ràng.</source></p>"
+          "<p>Chuyển hai tài liệu thành CSV, mỗi dòng là một đoạn văn, cột đầu ghi tên nguồn.</p>",
+          "<p>Chèn ký tự ngắt trang giữa hai tài liệu rồi thêm chỉ dẫn coi đó là ranh giới.</p>",
+          "<p>Đặt tiêu đề Markdown đánh số trước từng tài liệu, yêu cầu gán nguồn theo tiêu đề.</p>",
+          "<p>Bọc từng tài liệu trong thẻ XML riêng với thẻ con xác định nguồn và nội dung, đặt trong thẻ cha để có ranh giới và metadata rõ ràng.</p>"
         ]
       },
       "topic": "prompt"
@@ -5708,15 +5708,15 @@
       "a": [
         "A"
       ],
-      "e": "Giới hạn độ sâu lồng nhau được cấu hình bằng setting tương ứng. Muốn chọn một subagent sinh subagent con thì bị tool `Agent` khối danh sách tool của nó (hoặc thêm vào disallowedTools).",
+      "e": "Độ sâu được kiểm soát bằng cấu hình `CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH`. Muốn một tác nhân phụ không tạo con, không cấp công cụ `Agent` hoặc thêm nó vào `disallowedTools`.",
       "m": 1,
       "v": {
-        "q": "<p>Một subagent được định nghĩa để tự động sinh thêm các subagent khác nhằm chia nhỏ khối lượng công việc của chính nó, và những subagent đó đơn lượt có thể sinh thêm nữa. </p><p>Điều gì chi phối độ sâu của việc lồng nhau này, và làm thế nào một nhóm có thể ngăn một subagent cụ thể sinh ra bất kỳ subagent con nào?</p>",
+        "q": "<p>Tác nhân phụ được phép tạo thêm tác nhân phụ để chia công việc; tác nhân con có thể tiếp tục tạo cấp sau. Điều gì giới hạn độ sâu lồng nhau và làm sao cấm một tác nhân phụ cụ thể tạo con?</p>",
         "o": [
-          "<p>Việc lồng nhau mặc định là ba cấp bên dưới agent chính và có thể thay đổi bảng cài đặt `CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH`; bộ `Agent` khối danh sách tools của subagent (hoặc thêm nó vào `disallowedTools`) ngăn subagent đó sinh các subagent con.</p>",
-          "<p>Việc lồng nhau không có giới hạn độ sâu miễn là mỗi subagent chạy ở chế độ nền, vì thực thi nền bỏ qua giới hạn độ sâu đã cấu hình, và để ngăn một subagent cụ thể sinh subagent con, hãy đặt mặc effort của nó là low, điều này ngăn nó sinh subagent con.</p>",
-          "<p>Việc lồng nhau chỉ bị giới hạn ở hai cập khi subagent chạy ở foreground, vì thực thi foreground giới hạn việc lồng nhau ở hai cập, và để ngăn một subagent sinh subagent con, hãy đặt `permissionMode` của nó là `plan` để hạn chế nó ở chế độ chỉ đọc và ngăn việc sinh.</p>",
-          "<p>Việc lồng nhau là không giới hạn bất kỳ chế để thực thi, vì không có giới hạn độ sâu tích hợp, và để ngăn một subagent cụ thể sinh subagent con, nhóm phải loại công cụ `Bash` khối danh sách tools của nó để chọn việc thực thi các lệnh sinh subagent con.</p>"
+          "<p>Mặc định lồng tối đa ba cấp dưới tác nhân chính, có thể điều chỉnh bằng `CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH`; bỏ `Agent` khỏi công cụ của tác nhân phụ hoặc thêm vào `disallowedTools` để cấm tạo con.</p>",
+          "<p>Không giới hạn độ sâu nếu chạy nền; đặt `effort: low` là đủ cấm tạo con.</p>",
+          "<p>Chỉ giới hạn hai cấp khi chạy foreground; đặt `permissionMode: plan` để cấm tạo con.</p>",
+          "<p>Không có giới hạn ở mọi chế độ; cần bỏ `Bash` để chặn lệnh tạo tác nhân con.</p>"
         ]
       },
       "topic": "agent"
@@ -5755,17 +5755,17 @@
         "B",
         "E"
       ],
-      "e": "Giảm lệ PII: redact hoặc mask trước khi dữ liệu rồi hệ thống, áp dụng tương tự cho log nội bộ, và rà soát xem vendor thực sự cần field nào. Nén file không phải là redact.",
+      "e": "Cần xác định trường dữ liệu thật sự cần, che hoặc loại bỏ PII trước khi chuyển ra ngoài và áp dụng nguyên tắc tương tự cho log nội bộ. Nén dữ liệu không phải là ẩn danh hay che PII.",
       "m": 3,
       "v": {
-        "q": "<p>Một agent hỗ trợ xây dựng trên Claude có quyền truy cập một công cụ cơ sở dữ liệu khách hàng và chuyển tiếp các bản ghi hội thoại tới một nhà cung cấp phân tích bên thứ ba để giám sát chất lượng. </p><p>Các bản ghi hội thoại thường xuyên chưa hỗ tên đầy đủ, email và sử tài khoản của khách hàng. </p><p>Nhóm nên thực hiện những hành động nào sau đây để ngăn việc lệ PII không cần thiết? (Chọn tất cả đáp án phù hợp.)</p>",
+        "q": "<p>Tác nhân hỗ trợ Claude truy cập cơ sở dữ liệu khách hàng và chuyển transcript hội thoại cho nhà cung cấp phân tích bên thứ ba. Transcript thường chứa họ tên, email và số tài khoản. Nhóm nên làm gì để tránh lộ PII không cần thiết? (Chọn tất cả phương án phù hợp.)</p>",
         "o": [
-          "<p>Xem xét những trường nào mà trường hợp sử dụng giám sát chất lượng của nhà cung cấp phân tích thực sự cần trước khi quyết định đưa gì vào mỗi lần xuất bản ghi hội thoại</p>",
-          "<p>Áp dụng cùng việc tối thiểu hóa PII cho dữ liệu được ghi log nội bộ để gỡ lỗi, không chỉ cho dữ liệu gọi tới nhà cung cấp bên ngoài</p>",
-          "<p>Gọi nguyên các bản ghi hội thoại đầy đủ chưa che, vì hộp động của nhà cung cấp phân tích đã bao gồm các nghĩa về chung về xử lý dữ liệu và bảo mật</p>",
-          "<p>Che hoặc làm mờ thông tin nhắn dạng cá nhân trong các bản ghi hội thoại trước khi chúng rời khỏi hệ thống, chỉ gửi cho nhà cung cấp những trường mà họ thực sự cần</p>",
-          "<p>Yêu cầu Claude cảnh báo bằng lại với khách hàng ở đầu mỗi cuộc chat rằng dữ liệu của họ có thể được chia sẻ ra bên ngoài, rồi tiếp tục mà không thay đổi gì thêm</p>",
-          "<p>Nén các bản ghi hội thoại trước khi gửi, vì nén được coi là tương đương với che dữ liệu nhằm mục đích bảo vệ dữ liệu cá nhân</p>"
+          "<p>Xác định chính xác những trường dữ liệu nhà cung cấp thực sự cần cho mục đích giám sát chất lượng trước khi chia sẻ.</p>",
+          "<p>Áp dụng nguyên tắc tối thiểu hóa PII cả với log gỡ lỗi nội bộ, không chỉ dữ liệu gửi bên thứ ba.</p>",
+          "<p>Gửi toàn bộ transcript chưa che vì hợp đồng nhà cung cấp đã có điều khoản bảo vệ dữ liệu chung.</p>",
+          "<p>Che hoặc xóa PII trong transcript trước khi dữ liệu rời hệ thống, chỉ gửi phần cần thiết.</p>",
+          "<p>Chỉ nhắc khách hàng bằng lời rằng dữ liệu có thể được chia sẻ rồi tiếp tục gửi nguyên bản.</p>",
+          "<p>Nén transcript trước khi gửi vì nén tương đương với che thông tin cá nhân.</p>"
         ]
       },
       "topic": "risk"
@@ -5804,17 +5804,17 @@
         "B",
         "E"
       ],
-      "e": "Đa tenant an toàn: giới hạn tool của mỗi phiên trong đúng dữ liệu khách hàng đã xác thực; backend tự kiểm tra quyền trước mọi giao dịch; lực instruction bộ chèn trong ghi chú và tin nhắn trước khi trả về cho Claude.",
+      "e": "Bảo vệ đa tenant cần giới hạn quyền truy cập theo khách hàng đã xác thực, kiểm tra phân quyền ở backend trước giao dịch và lọc nội dung nguồn có thể chứa prompt injection. Không dùng ngữ cảnh tác nhân thay cho kiểm soát quyền.",
       "m": 3,
       "v": {
-        "q": "<p>Một công ty fintech đang triển khai một cố vẫn chạy bằng Claude đa tenant, đọc dữ liệu tài khoản của một khách hàng mỗi phiên và có thể đặt giao dịch thông qua một API nội bộ. </p><p>Tự hợp thực hành nào hỗ trợ tốt nhất cho xác thực, phân quyền và bảo mật thông tin giữa các tenant? (Chọn tất cả đáp án phù hợp.)</p>",
+        "q": "<p>Công ty fintech triển khai cố vấn Claude đa tenant, mỗi phiên chỉ làm việc với dữ liệu của một khách hàng và có thể đặt giao dịch qua API nội bộ. Những thực hành nào giúp bảo đảm xác thực, phân quyền và bảo mật giữa các tenant? (Chọn tất cả phương án phù hợp.)</p>",
         "o": [
-          "<p>Yêu cầu một bước kiểm tra phân quyền mới ở backend trước khi thực thi bất kỳ hành động giao dịch nào mà agent yêu cầu, thay vì chỉ tin vào phán đoán của chính agent</p>",
-          "<p>Cho phép một phiên tiếp tục đọc dữ liệu của một khách hàng khác giữa cuộc hội thoại nếu agent quyết định điều đó liên quan theo ngữ cảnh đến lời khuyên hiện tại</p>",
-          "<p>Giới hạn phạm vi truy cập công cụ của mỗi phiên để nó chỉ có thể đọc và hành động trên dữ liệu thuộc về khách hàng đã xác thực của phiên đó</p>",
-          "<p>Cấp mất thông tin xác thực dịch vụ dùng chung cho API giao dịch mà mỗi phiên khách hàng tái sử dụng, độ đơn giản hóa việc xoay vòng thông tin xác thực</p>",
-          "<p>Sàng lọc các ghi chú tài khoản và tin nhắn hỗ trợ đầu vào để phát hiện các chỉ dẫn bị chèn vào trước khi chúng được trả về cho Claude dưới dạng kết quả công cụ</p>",
-          "<p>Ghi log đầy đủ số tài khoản và số dư danh mục đầu từ dưới dạng văn bản thuần trong nhật ký ứng dụng để nhân viên hỗ trợ có thể tìm kiếm lịch sử tự do</p>"
+          "<p>Backend phải kiểm tra lại quyền trước mỗi giao dịch, không chỉ tin quyết định của tác nhân.</p>",
+          "<p>Cho phép phiên đọc dữ liệu khách hàng khác giữa hội thoại nếu tác nhân thấy liên quan.</p>",
+          "<p>Giới hạn quyền công cụ theo danh tính đã xác thực, chỉ được đọc và thao tác trên tài khoản của khách hàng tương ứng.</p>",
+          "<p>Dùng một credential dịch vụ chung cho mọi phiên để dễ vận hành.</p>",
+          "<p>Kiểm tra ghi chú tài khoản và tin nhắn hỗ trợ để phát hiện chỉ dẫn bị chèn trước khi trả chúng về Claude qua công cụ.</p>",
+          "<p>Ghi số tài khoản và số dư đầy đủ dạng plaintext để nhân viên hỗ trợ dễ tra cứu.</p>"
         ]
       },
       "topic": "tools"
