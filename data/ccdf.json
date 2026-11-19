@@ -1578,15 +1578,15 @@
       "a": [
         "A"
       ],
-      "e": "Findings không nhất quán thì đưa ví dụ mẫu về một finding đầy đủ, có thể hành động (few-shot).",
+      "e": "JSON đúng cú pháp chưa bảo đảm phát hiện hữu ích. Ví dụ few-shot về một phát hiện có bằng chứng, mô tả vấn đề và hướng khắc phục giúp đầu ra nhất quán hơn.",
       "m": 1,
       "v": {
-        "q": "<p>Một hệ thống QA structured extraction tạo ra JSON hợp lệ, nhưng các phát hiện của reviewer không nhất quán và khó hành động. </p><p>Điều gì nên cải thiện tính nhất quán?</p>",
+        "q": "<p>Hệ thống QA cho dữ liệu trích xuất tạo JSON hợp lệ, nhưng các phát hiện của người review thiếu nhất quán và khó chuyển thành hành động. Nên cải thiện điều gì?</p>",
         "o": [
-          "<p>Thêm các ví dụ cho thấy các phát hiện đầy đủ, có thể hành động được</p>",
-          "<p>Chỉ yêu cầu các phản hồi ngắn gọn có độ tin cậy cao</p>",
-          "<p>Yêu cầu mỗi field của schema đều không null</p>",
-          "<p>Dùng biểu thức chính quy để sửa các chi tiết còn thiếu</p>"
+          "<p>Bổ sung ví dụ minh họa một phát hiện đầy đủ, rõ ràng và có thể hành động.</p>",
+          "<p>Chỉ yêu cầu phản hồi ngắn và có độ tin cậy cao.</p>",
+          "<p>Bắt buộc mọi trường schema phải khác `null`.</p>",
+          "<p>Dùng biểu thức chính quy để bổ sung các chi tiết còn thiếu.</p>"
         ]
       },
       "topic": "prompt"
@@ -1615,15 +1615,15 @@
       "a": [
         "C"
       ],
-      "e": "API key lưu trong secrets manager hoặc config theo môi trường (không commit vào git) và load lúc runtime.",
+      "e": "API key phải nằm trong secret manager hoặc cấu hình bí mật theo môi trường, tách khỏi repository. Ứng dụng đọc khóa lúc chạy, không lưu khóa trực tiếp trong mã nguồn.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang thiết lập một ứng dụng Claude yêu cầu các API key cho nhiều dịch vụ bên ngoài. </p><p>Cách tốt nhất để lưu trữ các key là gì?</p>",
+        "q": "<p>Bạn đang xây dựng ứng dụng Claude sử dụng API key của nhiều dịch vụ bên ngoài. Cách lưu trữ khóa nào an toàn và phù hợp nhất?</p>",
         "o": [
-          "<p>Gọi email các key cho từng developer khi cần và độ mới developer dán các key vào môi trường cục bộ của hệ khi bắt đều làm việc với code của ứng dụng.</p>",
-          "<p>Đặt các key trong file cấu hình của ứng dụng và check file cấu hình đó vào repository của nhóm cùng với phần còn lại của source code.</p>",
-          "<p>Lưu các key trong một secrets manager hoặc cấu hình theo từng môi trường không được check vào source code, và nộp chúng khi runtime.</p>",
-          "<p>Dùng một key dùng chung duy nhất cho tất cả các dịch vụ bên ngoài, độ bất kỳ developer nào làm việc với ứng dụng cũng có thể dễ dàng tìm thấy các key trong quá trình phát triển.</p>"
+          "<p>Gửi API key qua email cho từng lập trình viên khi cần, rồi để họ tự dán vào môi trường cục bộ.</p>",
+          "<p>Đặt khóa trong tệp cấu hình ứng dụng và commit tệp đó cùng mã nguồn.</p>",
+          "<p>Lưu khóa trong hệ thống quản lý bí mật hoặc cấu hình riêng theo môi trường, không commit vào mã nguồn.</p>",
+          "<p>Dùng một khóa chung cho mọi dịch vụ bên ngoài để lập trình viên nào cũng dễ tìm thấy.</p>"
         ]
       },
       "topic": "risk"
@@ -1652,15 +1652,15 @@
       "a": [
         "B"
       ],
-      "e": "Session lifecycle cận độ ba phản: quy tắc hết hạn, trigger reset state và quy tắc bắt đầu phiên mới, độ context cả không rò sang hội thoại mới.",
+      "e": "Vòng đời phiên cần ba phần rõ ràng: điều kiện hết hạn, sự kiện đặt lại trạng thái và quy tắc bắt đầu phiên mới. Như vậy ngữ cảnh cũ không vô tình lọt vào cuộc hội thoại khác.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang thiết kế một ứng dụng Claude duy trì các phiên người dùng qua các cuộc hội thoại nhiều lượt. </p><p>Nhóm sản phẩm đã hội ứng dụng sự xử lý vòng đời phiên như thế nào: khi nào phiên nên hết hạn, trạng thái được reset ra sao, và ứng dụng tránh mang ngữ cảnh cả vào các cuộc hội thoại mới như thế nào. </p><p>Bạn sẽ thiết kế vòng đời phiên như thế nào?</p>",
+        "q": "<p>Bạn thiết kế ứng dụng Claude duy trì phiên làm việc qua nhiều lượt hội thoại. Nhóm sản phẩm muốn biết khi nào phiên hết hạn, lúc nào cần đặt lại trạng thái và cách tránh mang ngữ cảnh cũ sang cuộc hội thoại mới. Nên thiết kế vòng đời phiên thế nào?</p>",
         "o": [
-          "<p>Định nghĩa các quy tắc hết hạn phiên rõ ràng nhưng dựa vào người dùng để bắt đầu các cuộc hội thoại mới khi họ muốn ngữ cảnh mới, không có trigger reset tự động nào trong ứng dụng.</p>",
-          "<p>Định nghĩa một timeout phiên ngăn duy nhất áp dụng cho mỗi cuộc hội thoại và coi timeout đó là toàn bộ cơ chế vòng đời phiên của ứng dụng.</p>",
-          "<p>Định nghĩa các quy tắc hết hạn phiên rõ ràng, các trigger reset trạng thái và các quy tắc bắt đầu phiên mới để ngữ cảnh cả không rò rỉ vào các cuộc hội thoại mới.</p>",
-          "<p>Định nghĩa các trigger reset trạng thái gắn với các sự kiện ứng dụng cụ thể những áp dụng chúng trên mỗi phiên một cách toàn cục, không có quy tắc hết hạn theo từng phiên.</p>"
+          "<p>Định nghĩa thời hạn phiên nhưng để người dùng tự mở hội thoại mới khi muốn ngữ cảnh sạch.</p>",
+          "<p>Dùng một thời gian chờ rất ngắn cho mọi hội thoại và coi đó là toàn bộ cơ chế quản lý vòng đời.</p>",
+          "<p>Xác định rõ quy tắc hết hạn, điều kiện đặt lại trạng thái và cách khởi tạo phiên mới để không mang ngữ cảnh cũ sang.</p>",
+          "<p>Đặt lại trạng thái khi xảy ra một số sự kiện ứng dụng, nhưng áp dụng trên toàn bộ phiên dùng chung mà không phân biệt người dùng.</p>"
         ]
       },
       "topic": "context"
@@ -1689,15 +1689,15 @@
       "a": [
         "B"
       ],
-      "e": "MCP server dùng chung: định nghĩa rõ resources, tools, prompts; chọn transport phù hợp; deploy ở nối các ứng dụng truy cập được.",
+      "e": "MCP server dùng chung cần định nghĩa rõ resource, tool và prompt, chọn transport phù hợp và triển khai ở địa chỉ các ứng dụng tích hợp có thể truy cập.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang xây dựng một MCP server cung cấp nhiều nguồn dữ liệu nội bộ dưới dạng các MCP resource. </p><p>Server cần được triển khai độ nhiều ứng dụng Claude có thể tích hợp với nó. </p><p>Bạn sẽ tiếp cận việc xây dựng và triển khai như thế nào?</p>",
+        "q": "<p>Bạn đang xây dựng MCP server cung cấp nhiều nguồn dữ liệu nội bộ dưới dạng MCP resource. Server phải phục vụ nhiều ứng dụng Claude. Bạn nên thiết kế và triển khai như thế nào?</p>",
         "o": [
-          "<p>Xây dựng MCP server với các định nghĩa resource và tool giới hạn trong ứng dụng Claude đầu tiên cần nó, và mở rộng các định nghĩa cho các ứng dụng bổ sung khi tầng tích hợp được yêu cầu.</p>",
-          "<p>Bỏ qua MCP server và nhúng trực tiếp từng nguồn dữ liệu vào mọi ứng dụng Claude cần dữ liệu đó, với mỗi ứng dụng tỷ duy trì tích hợp của riêng nó.</p>",
-          "<p>Viết server với các resource, tool và prompt được định nghĩa rõ ràng, chọn một mẫu giao tiếp, và triển khai lên một môi trường hosting có thể truy cập được.</p>",
-          "<p>Chỉ triển khai MCP server trên máy của tầng developer, với các ứng dụng Claude không thể truy cập server bên ngoài máy của tầng developer.</p>"
+          "<p>Định nghĩa resource và tool chỉ cho ứng dụng đầu tiên, sau đó mở rộng khi có ứng dụng khác.</p>",
+          "<p>Bỏ MCP server và nhúng trực tiếp từng nguồn dữ liệu vào mọi ứng dụng cần dùng.</p>",
+          "<p>Xác định rõ resource, tool và prompt, chọn cơ chế giao tiếp phù hợp, rồi triển khai server tại nơi các ứng dụng có thể kết nối.</p>",
+          "<p>Chỉ chạy MCP server trên máy lập trình viên dù các ứng dụng Claude không thể truy cập.</p>"
         ]
       },
       "topic": "tools"
@@ -1726,15 +1726,15 @@
       "a": [
         "A"
       ],
-      "e": "Cost model phải gồm: số yêu cầu, số token input và output trung bình, bảng giá của model và phần tiết kiệm như caching. Output token thường đắt hơn token đầu vào nên không được bỏ qua.",
+      "e": "Mô hình chi phí cần tính cả số lượt gọi, token đầu vào, token đầu ra và đơn giá của mô hình, đồng thời xét tác động của prompt caching nếu áp dụng. Không thể bỏ chi phí token đầu ra.",
       "m": 1,
       "v": {
-        "q": "<p>Nhóm của bạn đang chuẩn bị mất ứng dụng Claude mới cho production, và nhóm sản phẩm đã yêu cầu một bản dự toán chi phí. </p><p>Nhóm cần ước tính chi phí dựa trên khối lượng request dự kiến, độ dài input trung bình và độ dài output trung bình. </p><p>Bạn sẽ xây dựng bản dự toán như thế nào?</p>",
+        "q": "<p>Nhóm chuẩn bị đưa ứng dụng Claude vào production và cần dự toán chi phí theo số yêu cầu, độ dài đầu vào trung bình và độ dài đầu ra trung bình. Bạn sẽ lập dự toán như thế nào?</p>",
         "o": [
-          "<p>Xây dựng một mô hình chi phí kết hợp khối lượng request dự kiến, số input token trung bình, số output token trung bình, giá của model được chọn và mọi lợi ích tự caching.</p>",
-          "<p>Xây dựng một mô hình chi phí dựa trên khối lượng request dự kiến và giá của model được chọn, coi số lượng input và output token trung bình là các biến sẽ được ước tính sau khi ra một.</p>",
-          "<p>Xây dựng một mô hình chi phí kết hợp khối lượng request dự kiến và số input token trung bình, coi output token là một phần chi phí độ nhỏ để bỏ ra khỏi bản dự toán.</p>",
-          "<p>Xây dựng một mô hình chi phí dùng chi phí trung bình mỗi request từ một ứng dụng Claude tương tự mà nhóm đã xây dựng nắm ngoái, nhân con số đó theo khối lượng request dự kiến.</p>"
+          "<p>Tính số yêu cầu dự kiến, token đầu vào và đầu ra trung bình, đơn giá của mô hình cùng các yếu tố giảm chi phí như caching.</p>",
+          "<p>Chỉ dựa vào số yêu cầu và đơn giá mô hình, coi số token đầu vào/đầu ra không đáng kể.</p>",
+          "<p>Dựa vào số yêu cầu và token đầu vào trung bình, bỏ token đầu ra vì ảnh hưởng nhỏ.</p>",
+          "<p>Lấy chi phí trung bình mỗi yêu cầu từ ứng dụng Claude tương tự đã làm trước đây làm toàn bộ dự toán.</p>"
         ]
       },
       "topic": "api"
@@ -1763,15 +1763,15 @@
       "a": [
         "C"
       ],
-      "e": "Defensive parsing: xử lý được field lệ, giá trị thiếu, sai kiểu dữ liệu mà không làm sắp downstream. Không crash, nhưng cũng không âm thẩm bỏ dữ liệu.",
+      "e": "Cần defensive parsing: xác thực và xử lý các trường hợp đầu ra thiếu trường, sai kiểu hoặc có trường lạ theo nhánh lỗi rõ ràng; không làm sập hệ thống và cũng không âm thầm làm mất dữ liệu.",
       "m": 1,
       "v": {
-        "q": "<p>Ứng dụng Claude của bạn sử dụng đầu ra có cấu trúc được code downstream tiêu thể. </p><p>Nhóm muốn xử lý output sai định dạng hoặc không mong đợi một cách linh hoạt để nó không làm sắp các hệ thống downstream. </p><p>Lựa chọn tốt nhất để xử lý vấn đề này là...</p>",
+        "q": "<p>Ứng dụng Claude trả dữ liệu có cấu trúc để mã phía sau xử lý. Nhóm cần tránh việc đầu ra sai định dạng, thiếu trường hoặc sai kiểu làm sập các hệ thống tiếp theo. Nên chọn cách xử lý nào?</p>",
         "o": [
-          "<p>Dùng output mà model tạo ra và độ việc thực thi schema cho một giai đoạn sau của production khi ứng dụng đã hoàn thiện hạn.</p>",
-          "<p>Crash khi gặp bất kỳ output không mong đợi nào và yêu cầu khôi phục thủ công đối với các request bị ảnh hưởng mà ứng dụng xử lý trong quá trình vận hành bình thường.</p>",
-          "<p>Áp dụng defensive parsing để xử lý các field không mong đợi, giá trị bị thiếu và sự không khớp về kiểu dữ liệu mà code downstream có thể bị crash vì chúng.</p>",
-          "<p>Âm thẩm loại bỏ bất kỳ output nào không khớp kỳ vọng để các hệ thống downstream không thấy output sai định dạng mà ứng dụng nhận được từ model.</p>"
+          "<p>Cứ sử dụng đầu ra của mô hình, để việc kiểm tra schema sang giai đoạn sau.</p>",
+          "<p>Dừng chương trình khi gặp đầu ra không mong đợi và yêu cầu người vận hành phục hồi thủ công.</p>",
+          "<p>Phân tích đầu ra theo cách phòng thủ, xử lý trường ngoài dự kiến, giá trị thiếu và sai kiểu dữ liệu.</p>",
+          "<p>Âm thầm bỏ mọi đầu ra không đúng kỳ vọng để hệ thống phía sau không nhìn thấy lỗi.</p>"
         ]
       },
       "topic": "prompt"
@@ -1800,15 +1800,15 @@
       "a": [
         "A"
       ],
-      "e": "Plugin cũng như dependency: phải theo dõi version (pin) để biết bản nào đang chạy ẩn, và chỉ động nâng cấp.",
+      "e": "Plugin là dependency nên phải theo dõi và ghim phiên bản. Nhờ đó có thể biết bản đang hoạt động, xác định bản gây lỗi và lên kế hoạch nâng cấp an toàn.",
       "m": 1,
       "v": {
-        "q": "<p>Nhóm của bạn sử dụng nhiều plugin trên nhiều ứng dụng Claude, và một bản cập nhật plugin gần đây đã gây ra một regression. </p><p>Nhóm đã không theo dõi các phiên bản plugin, nên không thể dễ dàng xác định phiên bản nào trước đó hoạt động tốt. </p><p>Bạn sẽ xử lý việc này như thế nào?</p>",
+        "q": "<p>Nhóm dùng nhiều plugin trong các ứng dụng Claude. Một bản cập nhật gần đây gây lỗi hồi quy, nhưng nhóm không theo dõi phiên bản nên không biết bản nào từng hoạt động tốt. Nên xử lý thế nào?</p>",
         "o": [
-          "<p>Coi các plugin là code bên thứ ba không thể theo dõi và dựa vào các tác giả plugin để thông báo các thay đổi gây lỗi khi chúng xảy ra, không có theo dõi phiên bản nội bộ.</p>",
-          "<p>Thêm theo dõi phiên bản plugin rõ ràng vào cấu hình của project để nhóm có thể xác định, ghim (pin) và nâng cấp các phiên bản plugin một cách có chỉ đích.</p>",
-          "<p>Nâng cấp mỗi plugin lên phiên bản mới nhất theo một chu kỳ đầu đến để giữ độ lệch phiên bản nhỏ, với lý do độ lệch góp phần vào rủi ro regression.</p>",
-          "<p>Ngừng sử dụng tất cả plugin cho đến khi nhóm có thể xây dựng lại chức năng tương đương trực tiếp vào code ứng dụng, coi việc tránh plugin là cách loại bỏ rủi ro liên quan đến phiên bản.</p>"
+          "<p>Coi plugin là mã bên thứ ba không thể kiểm soát; chỉ trông chờ tác giả thông báo thay đổi không tương thích.</p>",
+          "<p>Ghi rõ phiên bản plugin trong cấu hình dự án để có thể xác định, ghim và nâng cấp có kiểm soát.</p>",
+          "<p>Nâng tất cả plugin lên bản mới nhất theo lịch cố định để giảm chênh lệch phiên bản.</p>",
+          "<p>Ngừng sử dụng mọi plugin cho đến khi tự xây dựng lại các tính năng tương đương.</p>"
         ]
       },
       "topic": "code"
@@ -1837,15 +1837,15 @@
       "a": [
         "B"
       ],
-      "e": "Data residency là yêu cầu bắt buộc, không đánh đổi lấy tốc độ. Chọn BYOC để đáp ứng compliance, rồi cùng đổi hệ tăng giảm chi phí vận hành.",
+      "e": "Yêu cầu data residency là ràng buộc bắt buộc, không nên đánh đổi lấy tốc độ phát hành. BYOC đáp ứng phạm vi kiểm soát dữ liệu; có thể tối ưu việc vận hành cùng nhóm hạ tầng.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang cân nhắc giữa việc triển khai một agent chạy bằng Claude trên hạ tầng do Anthropic lưu trữ hoặc từ lưu trữ theo mô hình \"bring your own cloud\" trong tài khoản AWS của riêng bạn. </p><p>Agent xử lý dữ liệu khách hàng chịu số điều chỉnh của các chính sách data residency của doanh nghiệp bạn, nhưng nhóm muốn ship nhanh và tránh phải quản lý hạ tầng. </p><p>Bạn sơ đồ xuất mô hình triển khai nào?</p>",
+        "q": "<p>Bạn phải chọn giữa hạ tầng Anthropic lưu trữ và mô hình tự lưu trữ “bring your own cloud” (BYOC) trong AWS của doanh nghiệp. Tác nhân Claude xử lý dữ liệu khách hàng chịu chính sách lưu trú dữ liệu (*data residency*). Nhóm muốn phát hành nhanh và ít phải vận hành hạ tầng. Nên chọn cách triển khai nào?</p>",
         "o": [
-          "<p>Triển khai trên hạ tầng do Anthropic lưu trữ trong khi nhóm soạn một yêu cầu cập nhật chính sách data residency của doanh nghiệp để chấp nhận các triển khai AI được lưu trữ.</p>",
-          "<p>Từ lưu trữ theo BYOC để đáp ứng yêu cầu data residency, trong khi làm việc với nhóm hỗ tăng để giảm chi phí vận hành khi quản lý việc triển khai.</p>",
-          "<p>Triển khai trên hạ tầng do Anthropic lưu trữ để đáp ứng tiến độ ship của nhóm, và đánh dấu yêu cầu data residency độ review tuân thủ tiếp theo sau khi ra một.</p>",
-          "<p>Từ lưu trữ theo BYOC cho một đặt pilot ban đầu, sau đó đánh giá xem có nên chuyển sang hồ tầng do Anthropic lưu trữ hay không khi các pattern xử lý dữ liệu của agent đã được hiệu rõ hơn.</p>"
+          "<p>Dùng hạ tầng Anthropic rồi đề nghị doanh nghiệp sửa chính sách lưu trú dữ liệu để chấp nhận cách này.</p>",
+          "<p>Tự triển khai theo BYOC để đáp ứng yêu cầu lưu trú dữ liệu, đồng thời phối hợp nhóm hạ tầng giảm gánh nặng vận hành.</p>",
+          "<p>Dùng hạ tầng Anthropic để kịp phát hành rồi kiểm tra tuân thủ sau khi ra mắt.</p>",
+          "<p>Thí điểm BYOC trước, sau đó cân nhắc chuyển lên hạ tầng Anthropic khi hiểu rõ cách xử lý dữ liệu hơn.</p>"
         ]
       },
       "topic": "risk"
@@ -1874,15 +1874,15 @@
       "a": [
         "B"
       ],
-      "e": "Validate tham số trong tool_use theo schema trước khi gửi tool, và coi tham số sai là một nhánh lại được xử lý rõ ràng.",
+      "e": "Phải xác thực đối số của `tool_use` trước khi thực thi công cụ. Nếu sai schema, trả lỗi có kiểm soát thay vì chuyển tiếp dữ liệu không hợp lệ.",
       "m": 1,
       "v": {
-        "q": "<p>Ứng dụng Claude của bạn sử dụng tool calling để lấy dữ liệu bềnh nhân và tạo các báo cáo tóm tắt. </p><p>Luồng đôi khi thất bại vì model trả về một block tool_use tham chiếu các argument không có trong schema, và code ứng dụng của bạn không xử lý trường hợp này một cách linh hoạt. </p><p>Bạn sẽ xử lý việc này như thế nào?</p>",
+        "q": "<p>Ứng dụng Claude dùng lời gọi công cụ để lấy dữ liệu bệnh nhân và tạo báo cáo tóm tắt. Đôi khi mô hình trả về khối `tool_use` chứa tham số không có trong schema, khiến mã ứng dụng xử lý lỗi không tốt. Bạn sẽ khắc phục thế nào?</p>",
         "o": [
-          "<p>Ngừng hoàn toàn việc dùng tool calling và thay các tool bằng việc sinh văn bản theo prompt yêu cầu model mô tả những gì nó sẽ làm.</p>",
-          "<p>Retry cùng một request lặp đi lặp lại cho đến khi model trả về một block tool_use hợp lệ khớp với schema như mong đợi.</p>",
-          "<p>Xác thực các argument của block tool_use theo schema của tool trước khi điều phối tool và xử lý các argument không hợp lệ như một đường lại được ghi nhận.</p>",
-          "<p>Ghi log các block tool_use không hợp lệ khi chúng xảy ra và cho phép việc điều phối tool tiếp tục, dựa vào cơ chế xử lý lỗi của chính tool để đưa các lại trả lời ứng dụng.</p>"
+          "<p>Bỏ hoàn toàn lời gọi công cụ và yêu cầu mô hình tự viết văn bản mô tả dữ liệu.</p>",
+          "<p>Thử lại nguyên yêu cầu liên tục đến khi `tool_use` tình cờ khớp schema.</p>",
+          "<p>Xác thực tham số trong `tool_use` theo schema trước khi gọi công cụ; xử lý đầu vào không hợp lệ bằng nhánh lỗi rõ ràng.</p>",
+          "<p>Chỉ ghi log `tool_use` không hợp lệ, vẫn cho công cụ chạy và tin rằng nó tự xử lý được.</p>"
         ]
       },
       "topic": "tools"
@@ -1911,15 +1911,15 @@
       "a": [
         "C"
       ],
-      "e": "Prompt yếu ở một nhóm input thì iterate prompt, validate bằng eval (tránh regression ở các case phổ biến) và tiếp tục tinh chỉnh.",
+      "e": "Hãy bổ sung các trường hợp yếu vào bộ eval, chỉnh prompt và đo lại cả nhóm mới lẫn các trường hợp phổ biến để tránh tạo lỗi hồi quy.",
       "m": 1,
       "v": {
-        "q": "<p>Prompt của ứng dụng Claude của bạn được viết từ nhiều tháng trước và chưa được cập nhật. </p><p>Nhóm đã phát hiện qua các eval rằng prompt cho kết quả tốt trên các trường hợp phổ biến nhưng hoạt động kém trên một danh mục input cụ thể đã tảng về khối lượng. </p><p>Bạn sẽ phản ứng như thế nào?</p>",
+        "q": "<p>Prompt của ứng dụng Claude đã lâu không cập nhật. Kết quả eval cho thấy nó xử lý tốt các trường hợp thông thường nhưng kém hiệu quả với một nhóm đầu vào đang xuất hiện ngày càng nhiều. Bạn nên làm gì?</p>",
         "o": [
-          "<p>Chuyển danh mục hoạt động kém sang một ứng dụng Claude riêng với prompt riêng để prompt gốc không thay đổi.</p>",
-          "<p>Yêu cầu người dùng tránh danh mục hoạt động kém bằng cách thêm các cảnh báo trong giao diện người dùng của ứng dụng về các input được xử lý.</p>",
-          "<p>Thay prompt bằng một prompt mới phù hợp với danh mục hoạt động kém, coi mỗi thay đổi hiệu năng ở các trường hợp phổ biến là một số đánh đổi đã biết.</p>",
-          "<p>Lặp lại cải thiện prompt để giải quyết danh mục hoạt động kém, xác thực thay đổi bằng các eval, và tiếp tục tinh chỉnh khi cần.</p>"
+          "<p>Tách nhóm đầu vào xử lý kém sang ứng dụng Claude khác và giữ prompt cũ.</p>",
+          "<p>Cảnh báo người dùng tránh gửi loại đầu vào mà ứng dụng xử lý kém.</p>",
+          "<p>Viết lại prompt chỉ để tối ưu nhóm đầu vào yếu, chấp nhận mọi suy giảm ở các trường hợp cũ.</p>",
+          "<p>Tinh chỉnh prompt cho nhóm đầu vào yếu, kiểm chứng bằng eval và tiếp tục cải tiến mà không làm hồi quy các trường hợp phổ biến.</p>"
         ]
       },
       "topic": "prompt"
@@ -1948,15 +1948,15 @@
       "a": [
         "B"
       ],
-      "e": "Các mối đe dựa đặc thù AI: prompt injection, rò dữ liệu từ prompt hoặc context, jailbreak, output không an toàn vượt qua kiểm soát của ứng dụng.",
+      "e": "Ngoài rủi ro web truyền thống, ứng dụng AI cần xét prompt injection, rò rỉ thông tin qua prompt/ngữ cảnh, jailbreak và việc đầu ra mô hình vượt qua các cơ chế kiểm soát an toàn.",
       "m": 1,
       "v": {
-        "q": "<p>Một đồng nghiệp đang xem xét threat model của nhóm cho một ứng dụng Claude và như bạn xác định các danh mục mới đe dựa đặc thù của AI mà mô hình nên bao gồm. </p><p>Đồng nghiệp đã liệt kê các mối đe dựa ứng dụng web truyền thống và muốn biệt cần thêm những danh mục nào áp dụng cho một ứng dụng Claude. </p><p>Bạn sẽ bị sung những danh mục mới đe dựa đặc thù của AI nào?</p>",
+        "q": "<p>Một đồng nghiệp đang rà soát mô hình đe dọa của ứng dụng Claude. Nhóm đã liệt kê các rủi ro web truyền thống và cần bổ sung những loại đe dọa đặc thù của AI. Bạn nên thêm nhóm nào?</p>",
         "o": [
-          "<p>Tần công chuỗi cung ứng (supply chain) nhắm vào Claude SDK, vì bản thân SDK là điểm dự bị tần thường duy nhất mà một ứng dụng Claude đưa thêm vào so với các mối đe dựa ứng dụng web truyền thống.</p>",
-          "<p>Cross-site scripting và SQL injection, vì các mối đe dựa ứng dụng web truyền thống này áp dụng với mục để ngang nhau cho bất kỳ ứng dụng nào sử dụng Claude theo bất kỳ cách nào.</p>",
-          "<p>Prompt injection, rò rỉ dữ liệu từ prompt hoặc context, các nỗ lực jailbreak, và output không an toàn của model vượt qua các biến pháp kiểm soát của ứng dụng.</p>",
-          "<p>Tần công từ chối dịch vụ ở cấp mạng và tấn công vào hệ từng vật lý, vì các danh mục này bao gồm những mới đe dựa có nhiều khả năng ảnh hưởng đến bất kỳ ứng dụng Claude nào trong môi trường production.</p>"
+          "<p>Chỉ tấn công chuỗi cung ứng vào Claude SDK vì đó là điểm yếu duy nhất của ứng dụng Claude.</p>",
+          "<p>XSS và SQL injection vì những đe dọa web truyền thống cũng xuất hiện trong ứng dụng AI.</p>",
+          "<p>Prompt injection, rò rỉ dữ liệu từ prompt hoặc ngữ cảnh, jailbreak và đầu ra mô hình không an toàn vượt qua cơ chế kiểm soát.</p>",
+          "<p>Tấn công từ chối dịch vụ ở cấp mạng và tấn công hạ tầng vật lý.</p>"
         ]
       },
       "topic": "prompt"
@@ -1985,15 +1985,15 @@
       "a": [
         "A"
       ],
-      "e": "Code đã thành technical debt cần trị tính năng mới thì lên kế hoạch refactor có chỉ đích (gặp logic trùng, tách concern, đơn giản hóa luồng điều khiển) trước khi thêm tính năng.",
+      "e": "Khi nợ kỹ thuật đã cản trở mở rộng, cần chủ động refactor: loại trùng lặp, tách các trách nhiệm và đơn giản hóa luồng xử lý thay vì tiếp tục chồng tính năng.",
       "m": 1,
       "v": {
-        "q": "<p>Ứng dụng Claude mà nhóm bản xây dựng đã phát triển qua sáu tháng, và mã xử lý prompt đã tích tử sự trùng lặp cùng luồng điều khiển rối rắm. </p><p>Chức năng vẫn hoạt động, những việc thêm tính năng mới ngày càng khó. </p><p>Bạn sẽ giải quyết vấn đề này như thế nào?</p>",
+        "q": "<p>Sau sáu tháng phát triển, mã xử lý prompt của ứng dụng Claude bị trùng lặp và luồng điều khiển rối rắm. Chức năng vẫn chạy nhưng ngày càng khó thêm tính năng mới. Bạn nên giải quyết thế nào?</p>",
         "o": [
-          "<p>Refactor mã xử lý prompt theo từng bước nhỏ như một phần của mỗi ticket tính năng mới, coi việc dọn dẹp là hệ quả phụ của công việc phát triển tính năng.</p>",
-          "<p>Chuyển toàn bộ mã xử lý prompt vào một hàm lần duy nhất để giảm số lượng tập mà lập trình viên phải duyệt khi đọc mã.</p>",
-          "<p>Lên kế hoạch cho một đặt refactoring nhằm hợp nhất logic trùng lặp, tách biệt các mối quan tâm (separate concerns) và đơn giản hóa luồng điều khiển trước khi thêm tính năng mới.</p>",
-          "<p>Tiếp tục thêm tính năng và lên kế hoạch cho đặt refactoring sau hai chu kỳ phát hành tiếp theo, khi nhóm có nhiều nguồn lực hơn cho công việc nội bộ.</p>"
+          "<p>Chỉ refactor từng chút trong các ticket tính năng tương lai, coi dọn dẹp là việc phụ.</p>",
+          "<p>Gộp toàn bộ mã xử lý prompt vào một hàm lớn để giảm số tệp cần đọc.</p>",
+          "<p>Lập kế hoạch refactor riêng để hợp nhất logic trùng lặp, tách trách nhiệm và đơn giản hóa luồng điều khiển trước khi tiếp tục mở rộng.</p>",
+          "<p>Tiếp tục thêm tính năng, hoãn refactor qua hai chu kỳ phát hành nữa.</p>"
         ]
       },
       "topic": "prompt"
@@ -2022,15 +2022,15 @@
       "a": [
         "B"
       ],
-      "e": "Hiển thị output dần dẫn khi đang sinh thì dùng streaming. Batch API dành cho xử lý offline.",
+      "e": "Streaming cho phép ứng dụng nhận và hiển thị các phần đầu ra liên tục khi chúng được tạo. Batch API phù hợp tác vụ xử lý không tương tác, không phải phản hồi trực tiếp.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang xây dựng một ứng dụng Claude cần chuyển output của model đơn người dùng cuối ngay khi nó được tạo ra, thay vì chỉ toàn bộ phận hỏi hoàn tất. </p><p>Cơ chế của Claude API mà bạn sẽ dùng là...</p>",
+        "q": "<p>Bạn muốn ứng dụng Claude hiển thị đầu ra cho người dùng ngay khi mô hình đang sinh, thay vì chờ toàn bộ phản hồi hoàn tất. Nên dùng cơ chế Claude API nào?</p>",
         "o": [
-          "<p>Prompt caching, giúp cải thiện chi phí cho các request sau và không ảnh hưởng đến thời điểm phân phối của phản hồi đầu tiên.</p>",
-          "<p>Structured JSON output, chỉ phân phối phản hồi sau khi model đã hoàn thiện cấu trúc JSON của toàn bộ phản hồi.</p>",
-          "<p>Batch API, phân phối phản hồi đầy đủ sau một khoảng trả, phù hợp với các workload không tương tác.</p>",
-          "<p>Streaming responses, phân phối các token một cách tăng dần khi model tạo ra chúng để người dùng thấy output xuất hiện từng phần.</p>"
+          "<p>Prompt caching, giúp giảm chi phí các yêu cầu sau nhưng không thay đổi cách hiển thị phản hồi đang sinh.</p>",
+          "<p>Đầu ra JSON có cấu trúc, chỉ được trả sau khi hoàn tất toàn bộ nội dung.</p>",
+          "<p>Batch API, trả phản hồi hoàn chỉnh sau một khoảng chờ, phù hợp công việc không tương tác.</p>",
+          "<p>Streaming, gửi dữ liệu tăng dần khi mô hình sinh token để người dùng thấy kết quả ngay.</p>"
         ]
       },
       "topic": "api"
@@ -2059,15 +2059,15 @@
       "a": [
         "C"
       ],
-      "e": "Có 6 tháng thì làm an toàn: viết regression test cho hành vi hiện tại, rồi migrate tầng đặt và kiểm tra bằng test, vì tham số mới có ngữ nghĩa hơi khác.",
+      "e": "Vì tham số mới có ngữ nghĩa hơi khác, cần viết regression test cho hành vi hiện tại, chuyển đổi theo từng đợt và xác thực kết quả. Mốc sáu tháng cho phép làm có kiểm soát.",
       "m": 1,
       "v": {
-        "q": "<p>Anthropic API đã deprecate một tham số request mà ứng dụng Claude của bạn sử dụng ở khoảng 40 vị trí trong codebase. </p><p>Thông báo deprecation đưa ra khoảng thời gian sáu tháng trước khi tham sẽ bị gỡ bỏ và đề xuất một tham số thay thế có ngữ nghĩa hơi khác. </p><p>Bạn sẽ phản ứng với việc deprecation này bằng cách...</p>",
+        "q": "<p>Anthropic API thông báo ngừng hỗ trợ một tham số request đang được dùng ở khoảng 40 vị trí trong mã nguồn. Tham số sẽ bị loại bỏ sau sáu tháng; tham số thay thế có ngữ nghĩa hơi khác. Bạn nên ứng phó thế nào?</p>",
         "o": [
-          "<p>Thay thế cơ 40 vị trí gọi trong một thay đổi duy nhất ngay lập tốc để tránh công việc migration kéo dài làm chậm hoạt động hiện tại.</p>",
-          "<p>Giữ nguyên tham số đã bị deprecate và viết một hàm wrapper bao quanh nó để cách ly phần còn lại của codebase khởi thay đổi sẽ xảy ra sau này.</p>",
-          "<p>Migrate cố 40 vị trí gọi trong một thay đổi duy nhất gần ngày gỡ bỏ để đảm bảo tham số đã bị deprecate tiếp tục hoạt động càng lâu càng tốt.</p>",
-          "<p>Thêm các regression test bao phủ hành vi của tham số, sau đó migrate các vị trí gửi theo từng đặt và xác thực chúng bằng các regression test.</p>"
+          "<p>Thay đồng loạt cả 40 vị trí ngay để tránh kéo dài việc di chuyển.</p>",
+          "<p>Tiếp tục dùng tham số cũ và viết wrapper để cách ly mã nguồn khỏi thay đổi sau này.</p>",
+          "<p>Chờ sát ngày ngừng hỗ trợ rồi thay cả 40 vị trí trong một lần.</p>",
+          "<p>Viết regression test bảo vệ hành vi cũ, sau đó chuyển đổi từng nhóm vị trí và chạy lại test sau mỗi nhóm.</p>"
         ]
       },
       "topic": "api"
@@ -2096,15 +2096,15 @@
       "a": [
         "C"
       ],
-      "e": "Phần lịch sử lặp lại mối lượt là prefix tĩnh, nên prompt caching giúp không phải trỏ giá input đầy đủ cho nó mỗi lần. Cắt bật hay tóm tắt sẽ làm mất thông tin.",
+      "e": "Phần lịch sử đã gửi ở những lượt trước là tiền tố có thể lưu trong prompt cache. Caching giúp giảm chi phí xử lý lặp lại mà không phải cắt mất thông tin hội thoại.",
       "m": 1,
       "v": {
-        "q": "<p>Ứng dụng của bạn dùng Messages API để xử lý các cuộc hội thoại nhiều lượt (multi-turn). </p><p>Mới lượt mỗi gửi lại toàn bộ lịch sử hội thoại, và chi phí token tăng lên khi cuộc hội thoại dài hạn. </p><p>Bạn nghi ngờ có một cách hiểu quả hơn. </p><p>Bạn sẽ giải quyết vấn đề này như thế nào?</p>",
+        "q": "<p>Ứng dụng dùng Messages API cho hội thoại nhiều lượt và phải gửi lại toàn bộ lịch sử ở mỗi lượt. Chi phí token tăng dần khi hội thoại kéo dài. Cách nào giúp tiết kiệm hơn?</p>",
         "o": [
-          "<p>Tóm tắt mới cuộc hội thoại sau mỗi lượt và thay toàn bộ lịch sử bằng bản tóm tắt ở request tiếp theo, giảm số lượng token những đánh đổi độ chính xác chi tiết.</p>",
-          "<p>Cắt bớt mới cuộc hội thoại chỉ còn hai message cuối độ mức sử dụng token luôn thấp và chi phí dễ dự đoán trong quá trình vận hành bình thường của ứng dụng.</p>",
-          "<p>Dùng prompt caching để tái sử dụng các phần tĩnh của context hội thoại qua các lượt, thay vì trị theo mặc giá input-token thông thường cho chúng ở mỗi request mà ứng dụng gửi đi.</p>",
-          "<p>Chuyển sang Batch API cho mỗi lượt để giảm chi phí mỗi lệnh gọi, coi batch là cơ chế kiểm soát chi phí chính của nhóm cho công việc multi-turn.</p>"
+          "<p>Tóm tắt hội thoại sau mỗi lượt, dùng bản tóm tắt thay toàn bộ lịch sử ở yêu cầu kế tiếp.</p>",
+          "<p>Chỉ giữ hai tin nhắn cuối của mọi hội thoại để chi phí thấp và dễ đoán.</p>",
+          "<p>Dùng prompt caching để tái sử dụng những phần ngữ cảnh không đổi giữa các lượt thay vì trả toàn bộ chi phí đầu vào mỗi lần.</p>",
+          "<p>Dùng Batch API cho từng lượt hội thoại để giảm chi phí mỗi lời gọi.</p>"
         ]
       },
       "topic": "api"
@@ -2133,15 +2133,15 @@
       "a": [
         "D"
       ],
-      "e": "Cấu hình Claude Code chung cho cả team (permissions, model, môi trường) đặt trong `.claude/settings.json` ở cấp project và commit vào repo.",
+      "e": "Các thiết lập Claude Code dùng chung nên đặt trong `.claude/settings.json` ở phạm vi dự án và đưa vào hệ thống quản lý phiên bản.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang cấu hình Claude Code cho một dự án mới. </p><p>Nhóm cần thiết lập quyền (permissions), lựa chọn model mặc định và hành vi theo môi trường ở cấp dự án để cấu hình nhất quán giữa tất cả lập trình viên làm việc trên repository. </p><p>Cơ chế của Claude Code mà bạn sẽ dùng là...</p>",
+        "q": "<p>Khi cấu hình Claude Code cho dự án mới, nhóm cần chia sẻ thiết lập quyền, mô hình mặc định và hành vi theo môi trường để mọi lập trình viên dùng cùng cấu hình. Nên sử dụng cơ chế nào?</p>",
         "o": [
-          "<p>Một system prompt được mới lập trình viên nhúng vào mỗi cuộc hội thoại Claude Code ở đầu mỗi phiên làm việc trong dự án.</p>",
-          "<p>Tập settings.json, được đặt phạm vi ở cấp dự án để cấu hình áp dụng nhất quán giữa các lập trình viên và được lưu cùng repository.</p>",
-          "<p>Một bảng tính dùng chung liệt kê các giá trị cấu hình để các thành viên trong nhóm tham khảo và cập nhật thủ công khi dự án phát triển.</p>",
-          "<p>Các biến môi trường mà mỗi lập trình viên từ thiết lập trên máy của mình khi làm việc với Claude Code trong dự án.</p>"
+          "<p>Mỗi lập trình viên tự chèn system prompt vào mọi phiên Claude Code.</p>",
+          "<p>Tệp `settings.json` ở phạm vi dự án để các thiết lập được áp dụng nhất quán và có thể chia sẻ.</p>",
+          "<p>Bảng tính chung ghi các cấu hình để thành viên tra cứu, cập nhật thủ công.</p>",
+          "<p>Mỗi lập trình viên tự đặt biến môi trường trên máy mình.</p>"
         ]
       },
       "topic": "code"
@@ -2170,15 +2170,15 @@
       "a": [
         "D"
       ],
-      "e": "Trước khi rollout thay đổi prompt, đánh giá tác động lên tầng hệ thống downstream và phải hợp với chỉ của các hệ thống đó. Staging test chứa để.",
+      "e": "Prompt thay đổi có thể ảnh hưởng cấu trúc và ngữ nghĩa đầu ra mà các hệ thống khác đang dựa vào. Cần đánh giá tương thích từng hệ thống trước khi rollout; chỉ kiểm thử staging là chưa đủ.",
       "m": 1,
       "v": {
-        "q": "<p>Nhóm của bạn đang chuẩn bị triển khai một thay đổi cấu hình cấp nhất nhiều phiên bản prompt trong một ứng dụng Claude được nhiều hệ thống downstream sử dụng. </p><p>Thay đổi đã được kiểm thử trên staging, nhưng nhóm chứa đánh giá thay đổi prompt sổ ảnh hưởng thế nào đến tầng hệ thống downstream phụ thuộc vào output của ứng dụng. </p><p>Bạn sẽ làm gì trước khi triển khai thay đổi?</p>",
+        "q": "<p>Nhóm chuẩn bị triển khai thay đổi cấu hình cập nhật nhiều phiên bản prompt trong ứng dụng Claude được các hệ thống khác sử dụng. Đã kiểm thử trên staging nhưng chưa đánh giá tác động lên từng hệ thống phụ thuộc đầu ra. Trước khi phát hành, bạn cần làm gì?</p>",
         "o": [
-          "<p>Ghi lại các thay đổi phiên bản prompt trong changelog của ứng dụng và tiến hành triển khai, coi kết quả kiểm thử trên staging là bằng chứng để về tác động đối với mỗi hệ thống downstream.</p>",
-          "<p>Giới hạn việc triển khai ở những hệ thống đã được đưa vào kiểm thử staging và hoãn tất cả các hệ thống downstream khác sang một chu kỳ phát hành sau.</p>",
-          "<p>Thông báo cho chỉ số hậu các hệ thống downstream rằng sắp có thay đổi và lên lịch triển khai vào tuần sau mà không thực hiện đánh giá tác động chính thức.</p>",
-          "<p>Đánh giá tác động của cấu hình lên tầng hệ thống downstream trước khi triển khai, và phải hợp với chỉ số hậu các hệ thống downstream khi cần.</p>"
+          "<p>Ghi thay đổi vào changelog rồi triển khai, coi việc kiểm thử staging là đủ.</p>",
+          "<p>Chỉ triển khai cho hệ thống đã xuất hiện trong kiểm thử staging, hoãn phần còn lại.</p>",
+          "<p>Thông báo trước một tuần cho chủ hệ thống phía sau rồi triển khai mà không cần phân tích thêm.</p>",
+          "<p>Đánh giá tác động thay đổi cấu hình lên từng hệ thống phụ thuộc và phối hợp với chủ hệ thống để bảo đảm tương thích.</p>"
         ]
       },
       "topic": "prompt"
