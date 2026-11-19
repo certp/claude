@@ -2873,15 +2873,15 @@
       "a": [
         "C"
       ],
-      "e": "Gom config về một hệ thống có version control, ghi rõ version model được pin, version prompt và plugin dependency cho từng môi trường.",
+      "e": "Nên có một nguồn cấu hình được quản lý phiên bản, mô tả rõ mô hình, prompt và plugin của từng môi trường. Nhờ đó các thay đổi có thể được theo dõi và tái hiện.",
       "m": 1,
       "v": {
-        "q": "<p>Ứng dụng Claude của bạn được triển khai lên các môi trường development, staging và production. </p><p>Mỗi môi trường dùng một phiên bản model khác nhau, các phiên bản prompt khác nhau và các plugin dependency khác nhau, nhưng cấu hình hiện đang nằm rải rác trong các biến môi trường, các giá trị hard-code và các script thiết lập không có tài liệu. </p><p>Bạn sẽ quản lý cấu hình như thế nào?</p>",
+        "q": "<p>Ứng dụng Claude chạy trên development, staging và production, mỗi môi trường dùng phiên bản mô hình, prompt và plugin khác nhau. Cấu hình hiện rải rác trong biến môi trường, giá trị hard-code và script không có tài liệu. Bạn nên quản lý cấu hình thế nào?</p>",
         "o": [
-          "<p>Chuẩn hóa tất cả môi trường để dùng cùng các giá trị cấu hình nhằm loại bỏ sự khác biệt giữa development, staging và production.</p>",
-          "<p>Hợp nhất cấu hình vào một hệ thống được version-control, ghi tài liệu việc ghim phiên bản model (model version pinning), phiên bản prompt và các plugin dependency cho từng môi trường.</p>",
-          "<p>Dùng phiên bản model mới nhất có sẵn ở mỗi nối và ngừng ghim phiên bản model, với lý do việc ghim làm tăng chi phí bảo trì mà nhóm nên hướng tới giảm bớt.</p>",
-          "<p>Chuyển toàn bộ cấu hình vào mã ứng dụng được hard-code để giảm số phụ thuộc vào các nguồn cấu hình bên ngoài vấn khó theo dõi theo thời gian.</p>"
+          "<p>Chuẩn hóa để mọi môi trường có cùng giá trị cấu hình, loại bỏ mọi khác biệt.</p>",
+          "<p>Tập trung cấu hình vào hệ thống quản lý phiên bản, ghi rõ phiên bản mô hình được ghim, phiên bản prompt và plugin cho từng môi trường.</p>",
+          "<p>Luôn dùng mô hình mới nhất và không ghim phiên bản để giảm công bảo trì.</p>",
+          "<p>Hard-code toàn bộ cấu hình trong mã ứng dụng để không phụ thuộc nguồn bên ngoài.</p>"
         ]
       },
       "topic": "prompt"
@@ -2910,15 +2910,15 @@
       "a": [
         "D"
       ],
-      "e": "Định nghĩa schema, prompt yêu cầu đúng schema, và validate output trước khi đẩy xuống downstream.",
+      "e": "Cần xác định schema, yêu cầu mô hình tuân thủ và xác thực kết quả trước khi chuyển tiếp. Chỉ hướng dẫn bằng prompt chưa đủ bảo đảm dữ liệu hợp lệ.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang thiết kế một ứng dụng Claude sẽ yêu cầu đầu ra JSON có cấu trúc cho xử lý downstream. </p><p>Schema output đã được định nghĩa rõ ràng, và các hệ thống downstream sẽ từ chối JSON sai định dạng. </p><p>Thiết kế ứng dụng của bạn sẽ ...</p>",
+        "q": "<p>Bạn thiết kế ứng dụng Claude phải xuất JSON có schema rõ ràng để hệ thống phía sau xử lý. Hệ thống này sẽ từ chối JSON không hợp lệ. Nên thiết kế theo cách nào?</p>",
         "o": [
-          "<p>Cấu trúc prompt để yêu cầu output theo một schema được mô tả bằng tiếng Anh thông thường, với các hệ thống downstream phân tích bất kỳ hình dạng nào mà Claude tạo ra.</p>",
-          "<p>Định nghĩa một schema rõ ràng và cấu trúc prompt để yêu cầu output theo schema đó, với các hệ thống downstream xử lý bất kỳ việc validation nào cần thiết.</p>",
-          "<p>Định nghĩa một schema rõ ràng, cấu trúc prompt để yêu cầu output theo schema đó, và validate output của Claude theo schema trước khi chuyển xuống downstream.</p>",
-          "<p>Tránh đầu ra có cấu trúc và dùng văn bản tự do ở mỗi nối, với lý do văn bản tự do linh hoạt hơn và xử lý các trường hợp biên tốt hơn so với các schema có cấu trúc.</p>"
+          "<p>Mô tả schema bằng lời trong prompt và để hệ thống phía sau tự xử lý kết quả không phù hợp.</p>",
+          "<p>Định nghĩa schema rõ ràng và yêu cầu prompt tuân thủ, nhưng để hệ thống phía sau xử lý mọi lỗi định dạng.</p>",
+          "<p>Định nghĩa schema, yêu cầu Claude trả đúng schema và xác thực đầu ra trước khi chuyển cho hệ thống phía sau.</p>",
+          "<p>Không dùng đầu ra có cấu trúc, chuyển sang văn bản tự do vì linh hoạt hơn.</p>"
         ]
       },
       "topic": "prompt"
@@ -2947,15 +2947,15 @@
       "a": [
         "C"
       ],
-      "e": "Hai giai đoạn có input, output và tiêu chí thành công khác nhau thì tách thành hai lại gửi riêng với prompt tập trung (prompt chaining).",
+      "e": "Phân loại và soạn phản hồi là hai tác vụ có mục tiêu riêng. Tách thành hai lời gọi với prompt chuyên biệt giúp kiểm soát và đánh giá kết quả của từng giai đoạn.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang thiết kế một ứng dụng Claude sự xử lý các ticket hỗ trợ khách hàng theo hai giai đoạn: giai đoạn triage phân loại ticket và giai đoạn response soạn thảo phản hồi. </p><p>Nhóm đang tranh luận có nên dùng một lệnh gọi Claude duy nhất xử lý cả hai giai đoạn hay các lệnh gọi Claude riêng cho từng giai đoạn. </p><p>Bạn sẽ cấu trúc ứng dụng như thế nào?</p>",
+        "q": "<p>Ứng dụng Claude xử lý ticket hỗ trợ theo hai bước: phân loại ticket (triage), rồi soạn phản hồi. Nhóm đang cân nhắc một lời gọi Claude xử lý cả hai bước hay tách ra. Nên thiết kế thế nào?</p>",
         "o": [
-          "<p>Dùng nhiều lệnh gọi Claude song song, mỗi lệnh soạn một phần hồi ticket hoàn chỉnh, sau đó dùng một lệnh gọi Claude thứ tự để chọn bản tốt nhất gửi cho khách hàng.</p>",
-          "<p>Dùng một lệnh gọi Claude duy nhất cho cả hai giai đoạn, với lý do một lệnh gọi rỡ hơn nhiều lệnh gọi trong mỗi thiết lập ứng dụng Claude production.</p>",
-          "<p>Dùng một lệnh gọi Claude duy nhất cho triage và sau đó dùng một hệ thống dựa trên luật (rule-based) không phải Claude để tạo phản hồi, với lý do các hệ thống rule-based đáng tin cậy hạn trong việc soạn phản hồi.</p>",
-          "<p>Dùng các lệnh gọi Claude riêng cho triage và response, vì mỗi giai đoạn có input, output và tiêu chí thành công riêng biệt được hướng lại từ các prompt tập trung.</p>"
+          "<p>Gọi Claude song song nhiều lần để mỗi lần soạn một phản hồi hoàn chỉnh, rồi dùng lời gọi thứ tư chọn kết quả.</p>",
+          "<p>Gộp cả hai bước vào một lời gọi vì luôn rẻ hơn nhiều lời gọi.</p>",
+          "<p>Chỉ dùng Claude cho phân loại, dùng hệ thống luật cố định để tạo phản hồi.</p>",
+          "<p>Tách lời gọi Claude cho phân loại và soạn trả lời vì mỗi bước có đầu vào, đầu ra và tiêu chí thành công khác nhau.</p>"
         ]
       },
       "topic": "prompt"
@@ -2984,15 +2984,15 @@
       "a": [
         "C"
       ],
-      "e": "Ticket gồm nhiều mừng (billing, shipping, product) thì dùng orchestrator giao tăng trưởng cho subagent chuyên trách. Mỗi phần được theo dõi riêng, không bị xử lý lặp lại.",
+      "e": "Một ticket có nhiều mảng nghiệp vụ cần được chia thành tác vụ con và theo dõi tiến độ độc lập. Tác nhân điều phối kết hợp các tác nhân chuyên trách giúp hạn chế xử lý lặp và bỏ sót.",
       "m": 1,
       "v": {
-        "q": "<p>Một agent mới mà nhóm bản xây dựng xử lý các ticket hỗ trợ khách hàng, nhưng nó thường xuyên bối rối khi một ticket duy nhất trồi rằng qua các vấn đề về thanh toán (billing), văn chuyển (shipping) và sơn phạm. </p><p>Agent thường mất dấu những sub-issue nào nó đã xử lý và quay lại xử lý cùng một vấn đề. </p><p>Nhóm đang cân nhắc các thay đổi kiến trúc. </p><p>Bạn sẽ khuyến nghị thay đổi kiến trúc nào?</p>",
+        "q": "<p>Tác nhân hỗ trợ khách hàng thường bị lẫn khi một ticket đồng thời có vấn đề về thanh toán, giao hàng và sản phẩm. Nó quên phần nào đã xử lý và lặp lại công việc. Nên điều chỉnh kiến trúc thế nào?</p>",
         "o": [
-          "<p>Tổng kích thước cửa sổ ngữ cảnh của agent để nó có thể chứa toàn bộ lịch sử ticket cùng một lúc.</p>",
-          "<p>Thêm prompting chi tiết hướng dẫn agent theo dõi nhưng sub-issue nào đã được giải quyết và những sub-issue nào còn lại.</p>",
-          "<p>Đưa vào một orchestrator agent giao các sub-issue về billing, shipping và sản phẩm cho các subagent chuyên trách.</p>",
-          "<p>Chuyển sang một quy trình tất định (deterministic) xử lý các vấn đề về billing, shipping và sản phẩm theo một trình tự cố định.</p>"
+          "<p>Tăng cửa sổ ngữ cảnh để chứa toàn bộ lịch sử ticket.</p>",
+          "<p>Bổ sung prompt hướng dẫn tự theo dõi các vấn đề con đã và chưa giải quyết.</p>",
+          "<p>Dùng tác nhân điều phối giao từng vấn đề về thanh toán, giao hàng và sản phẩm cho tác nhân chuyên trách.</p>",
+          "<p>Dùng quy trình cố định luôn xử lý ba nhóm vấn đề theo cùng một thứ tự.</p>"
         ]
       },
       "topic": "agent"
@@ -3021,15 +3021,15 @@
       "a": [
         "A"
       ],
-      "e": "Chỉ gần hook cho hành động rủi ro cao (xóa, truy cập dữ liệu nhạy cảm), bộ hook ở hành động vô hỏi để cân bằng giữa an toàn và hiệu năng.",
+      "e": "Hook nên tập trung vào hành động có rủi ro thực sự, không chạy vô điều kiện. Giới hạn đúng phạm vi giúp duy trì kiểm soát an toàn mà giảm overhead.",
       "m": 1,
       "v": {
-        "q": "<p>Các hook của Claude agent của bạn hiện được kích hoạt cho mỗi hành động, làm agent chấm đi đáng kể ngay cả khi các hành động không có rủi ro. </p><p>Nhóm muốn giới hạn phạm vi hook cẩn thận hơn. </p><p>Bạn sẽ giới hạn phạm vi hook như thế nào?</p>",
+        "q": "<p>Hook của tác nhân Claude đang chạy cho mọi hành động, kể cả hành động an toàn, khiến hệ thống chậm đáng kể. Nhóm muốn thu hẹp phạm vi hook. Bạn nên làm gì?</p>",
         "o": [
-          "<p>Vô hiệu hóa agent trong giờ cao điểm để chi phí hook không làm chậm ứng dụng trong những khoảng thời gian bản rạn nhất trong ngày trong quá trình vận hành ứng dụng.</p>",
-          "<p>Thay hook bằng các chỉ dẫn trong system prompt, với lý do các chỉ dẫn trong prompt có thể tạo ra cùng hiệu quả thực thi mà hook tạo ra đối với các hành động của agent.</p>",
-          "<p>Vô hiệu hóa tất cả hook trong khi nhóm giới hạn lại phạm vi của chúng, coi khoảng thời gian không có hook thực thi là trạng thái tạm thời trong công việc giới hạn lại phạm vi.</p>",
-          "<p>Giới hạn phạm vi hook chỉ cho các hành động rủi ro cao, như các thao tác phá hủy hoặc truy cập dữ liệu nhạy cảm, và gỡ hook khỏi các hành động rủi ro thấp để cân bằng giữa an toàn và hiệu năng.</p>"
+          "<p>Tắt tác nhân vào giờ cao điểm để giảm chi phí chạy hook.</p>",
+          "<p>Thay hook bằng hướng dẫn trong system prompt vì hiệu quả tương đương.</p>",
+          "<p>Tạm tắt mọi hook trong lúc đánh giá lại phạm vi, dù mất kiểm soát an toàn.</p>",
+          "<p>Chỉ áp dụng hook cho hành động rủi ro cao, chẳng hạn xóa dữ liệu hoặc truy cập thông tin nhạy cảm.</p>"
         ]
       },
       "topic": "code"
@@ -3058,15 +3058,15 @@
       "a": [
         "A"
       ],
-      "e": "Định nghĩa rõ ranh giới ứng dụng, xác định dữ liệu nào được phép gọi ra cho Claude, và lọc hoặc redact ngay tại ranh giới đó. Prompt hay log không ngăn được dữ liệu đã bị gửi đi.",
+      "e": "Phải xác định dữ liệu nào được phép rời ứng dụng và lọc/che dữ liệu nhạy cảm trước khi gửi cho mô hình. Prompt hay việc đọc log sau đó không thể ngăn dữ liệu đã bị chuyển đi.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang thiết kế một ứng dụng Claude xử lý văn bản do người dùng gửi. </p><p>Một số văn bản đó có thể chứa thông tin nhạy cảm nhớ sử tài khoản hoặc mật khẩu mà ứng dụng không nên gửi cho Claude. </p><p>Bạn sẽ thiết kế ứng dụng như thế nào?</p>",
+        "q": "<p>Ứng dụng Claude xử lý văn bản do người dùng gửi, trong đó có thể chứa mật khẩu hoặc số tài khoản không được phép chuyển cho Claude. Nên thiết kế ranh giới xử lý dữ liệu thế nào?</p>",
         "o": [
-          "<p>Áp dụng lực tại ranh giới cho các mẫu dữ liệu nhạy cảm thường gặp nhất và mở rộng phạm vi bao phủ sang các mẫu bổ sung dựa trên các phát hiện từ việc giám sát production.</p>",
-          "<p>Xác định rõ ranh giới của ứng dụng, xác định nội dung nào được phép rời khỏi ranh giới để đơn Claude, và thêm bước lọc hoặc che giấu (redaction) tại ranh giới.</p>",
-          "<p>Thêm một chỉ dẫn prompt trong system prompt chỉ rõ các danh mục thông tin nhạy cảm mà Claude nên bỏ qua khi xử lý văn bản do người dùng gửi.</p>",
-          "<p>Ghi log toàn bộ văn bản do người dùng gửi trước khi gửi cho Claude và định kỳ xem lại log để xác định xem thông tin nhạy cảm có đang đơn được model hay không.</p>"
+          "<p>Lọc ở ranh giới với các mẫu dữ liệu nhạy cảm thường gặp, rồi mở rộng dần các mẫu khác.</p>",
+          "<p>Xác định rõ ranh giới ứng dụng và dữ liệu được phép gửi ra ngoài, bổ sung bước lọc hoặc che thông tin nhạy cảm trước khi gọi Claude.</p>",
+          "<p>Chỉ thêm chỉ dẫn trong system prompt yêu cầu Claude bỏ qua thông tin nhạy cảm.</p>",
+          "<p>Ghi log toàn bộ văn bản trước khi gửi và định kỳ kiểm tra xem có thông tin nhạy cảm hay không.</p>"
         ]
       },
       "topic": "risk"
@@ -3095,15 +3095,15 @@
       "a": [
         "B"
       ],
-      "e": "Sau nhiều tool call, context bộ loãng. Dùng context engineering (cắt bớt tool output, compaction) để giữ task state và constraint luôn rõ.",
+      "e": "Sau nhiều lượt công cụ, thông tin quan trọng có thể bị chìm. Nên cắt bớt hoặc nén đầu ra cũ, đồng thời giữ rõ mục tiêu, trạng thái và ràng buộc hiện tại.",
       "m": 1,
       "v": {
-        "q": "<p>Ứng dụng Claude của bạn chạy các agentic quy trình dài trong đó agent thực hiện nhiều lệnh gọi tool, và lịch sử hội thoại tăng nhanh. </p><p>Sau khoảng 20 lệnh gọi tool, bạn nhận thấy phản hồi của agent trở nên kém tập trung hơn và đôi khi bỏ qua các ràng buộc của tác vụ ở trước đó. </p><p>Bạn sẽ giải quyết vấn đề này như thế nào?</p>",
+        "q": "<p>Ứng dụng chạy quy trình tác nhân dài với nhiều lời gọi công cụ. Sau khoảng 20 lượt gọi, lịch sử phình to, tác nhân trả lời kém tập trung và bỏ qua các ràng buộc ban đầu. Nên khắc phục thế nào?</p>",
         "o": [
-          "<p>Khởi động lại agent sau mỗi nắm lệnh gọi tool để ngăn mới sự trôi lệch (drift), với việc agent mất toàn bộ trạng thái tác vụ tại mỗi điểm khởi động lại trong workflow.</p>",
-          "<p>Loại bỏ hoàn toàn việc gửi tool khởi quy trình độ agent hoạt động như một bước sinh văn bản duy nhất, không có output tool tích lũy trong context window.</p>",
-          "<p>Tầng cửa sổ ngữ cảnh của model để agent có thể giữ mỗi output tool ở mức chi tiết đầy đủ trong toàn bộ quy trình bất kỳ nó tích lũy bao nhiêu lệnh gọi tool.</p>",
-          "<p>Áp dụng các kỹ thuật context engineering như loại bỏ output tool (tool output pruning) hoặc compaction để giữ trạng thái tác vụ đang hoạt động luôn hiển thị trong khi giảm khối lượng nội dung cũ hơn.</p>"
+          "<p>Khởi động lại tác nhân sau mỗi năm lượt gọi và chấp nhận mất toàn bộ trạng thái.</p>",
+          "<p>Loại bỏ lời gọi công cụ, thay bằng một bước sinh văn bản.</p>",
+          "<p>Tăng cửa sổ ngữ cảnh để giữ nguyên mọi kết quả công cụ.</p>",
+          "<p>Dùng context engineering, chẳng hạn lược bỏ kết quả công cụ cũ hoặc nén ngữ cảnh, nhưng bảo toàn trạng thái và ràng buộc đang áp dụng.</p>"
         ]
       },
       "topic": "context"
@@ -3132,15 +3132,15 @@
       "a": [
         "A"
       ],
-      "e": "Có vòng lặp qua lại giữa trích xuất dữ kiện và đánh giá điều kiện, mới subtask có tiêu chí riêng, nên pattern dụng graph (chuyển bước theo state) là phù hợp. Chain tuyến tính không quay lui được.",
+      "e": "Quy trình có nhiều trạng thái và nhánh quay lại nên phù hợp với đồ thị điều phối. Một chuỗi tuyến tính không diễn tả được vòng lặp giữa trích xuất và đánh giá.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang thiết kế một agent xử lý quy trình xử lý yêu cầu bởi thường (claim) phục tập. </p><p>Mới claim đi qua các bước trích xuất sự kiện (fact extraction), đánh giá điều kiện để (eligibility evaluation) và bước quyết định. </p><p>Ba tác vụ con có tiêu chí thành công riêng biệt, và một số claim cần lặp lại giữa trích xuất sự kiện và đánh giá điều kiện độ trước khi có thể đưa ra quyết định. </p><p>Bạn sẽ áp dụng mẫu agent nào?</p>",
+        "q": "<p>Bạn thiết kế tác nhân xử lý yêu cầu bồi thường: trích xuất dữ kiện, đánh giá điều kiện và ra quyết định. Mỗi bước có tiêu chí thành công riêng; đôi khi phải quay lại bổ sung dữ kiện sau khi kiểm tra điều kiện. Nên chọn mẫu kiến trúc nào?</p>",
         "o": [
-          "<p>Mẫu chuỗi tuyến tính (linear chain) xử lý mỗi claim qua trích xuất sự kiện, rồi đánh giá điều kiện để, rồi quyết định, không có đường quay lại giữa các tác vụ con.</p>",
-          "<p>Mẫu vòng lặp tool-use đơn lẻ, cho một agent quyền truy cập tất cả các tool cần thiết cho trích xuất sự kiện, đánh giá điều kiện độ và ra quyết định.</p>",
-          "<p>Mẫu dựa trên đồ thị (graph-based) cho phép agent di chuyển giữa các tác vụ con dựa trên trạng thái của tầng claim, với mỗi tác vụ con được đánh giá theo tiêu chí riêng của nó.</p>",
-          "<p>Mẫu streaming phát ra các quyết định từng phần khi agent xử lý mỗi claim, tinh chỉnh output cho đến khi một quyết định cuối cùng xuất hiện từ luồng.</p>"
+          "<p>Chuỗi tuyến tính luôn đi từ trích xuất, đánh giá sang quyết định, không quay lại bước trước.</p>",
+          "<p>Vòng lặp dùng công cụ của một tác nhân duy nhất có quyền truy cập mọi công cụ.</p>",
+          "<p>Mẫu dựa trên đồ thị, cho phép chuyển giữa các tác vụ theo trạng thái từng yêu cầu bồi thường.</p>",
+          "<p>Streaming các quyết định tạm thời và điều chỉnh dần đến kết quả cuối.</p>"
         ]
       },
       "topic": "quality"
@@ -3169,15 +3169,15 @@
       "a": [
         "C"
       ],
-      "e": "Hợp đồng bắt buộc đi qua Bedrock thì gửi Claude qua Bedrock ngay từ đầu, và giờ logic ứng dụng không phụ thuộc provider.",
+      "e": "Cần tuân thủ tuyến API bắt buộc qua Amazon Bedrock ngay từ đầu. Tách phần gọi nhà cung cấp khỏi logic nghiệp vụ để ứng dụng dễ bảo trì.",
       "m": 1,
       "v": {
-        "q": "<p>Doanh nghiệp của bạn có hợp động với AWS yêu cầu các lệnh gọi Claude API phải đi qua Amazon Bedrock thay vì Anthropic API trực tiếp. </p><p>Nhóm của bạn đang xây dựng một ứng dụng Claude mới và chưa quen với ràng buộc này. </p><p>Bạn sẽ xây dựng ứng dụng như thế nào?</p>",
+        "q": "<p>Hợp đồng giữa doanh nghiệp và AWS bắt buộc mọi lời gọi Claude phải đi qua Amazon Bedrock, không dùng Anthropic API trực tiếp. Nhóm chưa quen với ràng buộc này. Nên xây ứng dụng như thế nào?</p>",
         "o": [
-          "<p>Xây dựng ứng dụng dựa trên Anthropic API trực tiếp và bỏ qua yêu cầu hợp đồng về việc định tuyến các lệnh gọi Claude qua Amazon Bedrock.</p>",
-          "<p>Xây dựng hai bản triển khai song song cho mỗi lệnh gọi, một cho Anthropic API trực tiếp và mặt cho Bedrock, và chọn bản nhanh hơn khi chạy.</p>",
-          "<p>Cấu hình ứng dụng để gửi Claude qua đường dẫn API tương thích Bedrock trong khi giữ logic của ứng dụng độc lập với nhà cung cấp (provider-agnostic).</p>",
-          "<p>Xây dựng ứng dụng dựa trên Anthropic API trực tiếp bây giờ và migrate sang Bedrock trong một bản phát hành sau khi nhóm có thêm kinh nghiệm với Bedrock API.</p>"
+          "<p>Dùng Anthropic API trực tiếp và bỏ qua điều khoản hợp đồng.</p>",
+          "<p>Viết song song hai bản triển khai của mọi lời gọi API để chọn tùy ý.</p>",
+          "<p>Cấu hình gọi Claude thông qua API tương thích Bedrock, đồng thời giữ logic ứng dụng độc lập với nhà cung cấp.</p>",
+          "<p>Dùng Anthropic API trước rồi chuyển sang Bedrock ở bản phát hành sau.</p>"
         ]
       },
       "topic": "api"
@@ -3206,15 +3206,15 @@
       "a": [
         "C"
       ],
-      "e": "Thông tin cỡ bộ đánh trống quá cao thì dùng compaction: tóm tắt phần cũ, giữ ý chính những giảm chi tiết.",
+      "e": "Compaction giúp giữ bối cảnh cốt lõi nhưng giảm sức ảnh hưởng của chi tiết cũ hoặc không còn liên quan, từ đó hạn chế trôi lệch ngữ cảnh.",
       "m": 1,
       "v": {
-        "q": "<p>Ứng dụng Claude của bạn đã chạy qua nhiều lượt hội thoại, và bạn nhận thấy model đôi khi tham chiếu đến thông tin đã được thảo luận từ nhiều lượt trước nhưng không còn liên quan. </p><p>Bạn nghi ngữ context drift đang khiển model đánh giá quá cao nội dung đã cũ. </p><p>Bạn sẽ giải quyết tình trạng trôi lệch ngữ cảnh này như thế nào?</p>",
+        "q": "<p>Sau nhiều lượt hội thoại, ứng dụng Claude đôi khi dựa quá nhiều vào thông tin cũ không còn liên quan. Bạn nghi có hiện tượng *context drift*. Nên xử lý thế nào?</p>",
         "o": [
-          "<p>Cắt bớt cuộc hội thoại để model chỉ thấy lượt gần nhất trong mỗi phản hồi tiếp theo.</p>",
-          "<p>Tổng kích thước cửa sổ ngữ cảnh độ tắt cả các lượt của cuộc hội thoại văn hiện thể với model ở mức chi tiết đầy đủ.</p>",
-          "<p>Áp dụng compaction độ tóm tắt các phần cũ hơn của cuộc hội thoại sao cho phần cốt lõi vốn được giữ lại trong khi các chi tiết cụ thể có trọng số thấp hơn.</p>",
-          "<p>Reset cuộc hội thoại sau mỗi lượt để model mất toàn bộ các lượt trước khi tạo phản hồi.</p>"
+          "<p>Chỉ giữ lại lượt hội thoại gần nhất để loại hết ngữ cảnh cũ.</p>",
+          "<p>Tăng cửa sổ ngữ cảnh để giữ toàn bộ lịch sử không thay đổi.</p>",
+          "<p>Dùng compaction để tóm tắt phần hội thoại cũ, giữ ý chính và bỏ các chi tiết không còn cần thiết.</p>",
+          "<p>Đặt lại toàn bộ hội thoại sau mỗi lượt, không giữ thông tin trước đó.</p>"
         ]
       },
       "topic": "context"
@@ -3243,15 +3243,15 @@
       "a": [
         "B"
       ],
-      "e": "Kết nối hai chiều, liên tục, real-time thì dùng WebSocket.",
+      "e": "WebSocket phù hợp với giao tiếp hai chiều kéo dài và các luồng cập nhật thời gian thực giữa client và server.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang xây dựng một ứng dụng Claude cần duy trì kết nối liên tục tới một service truyền các cập nhật thời gian thực. </p><p>Nhóm chứa chức nên dùng mẫu giao tiếp nào.</p><p>Bạn sẽ dùng mẫu giao tiếp nào?</p>",
+        "q": "<p>Ứng dụng Claude cần duy trì kết nối với dịch vụ gửi cập nhật thời gian thực liên tục. Nhóm đang chọn mô hình giao tiếp. Nên dùng cách nào?</p>",
         "o": [
-          "<p>Một HTTP request dài duy nhất mà server giữ mở vô thời hạn, không có framing WebSocket tiêu chuẩn trên kết nối.</p>",
-          "<p>Các HTTP polling request ngăn lặp đi lặp lại, trong đó ứng dụng mở một kết nối HTTP mỗi mọi lần kiểm tra cập nhật.</p>",
-          "<p>Một WebSocket, vì WebSocket được thiết kế cho giao tiếp hai chiều, liên tục, thời gian thực giữa client và streaming service.</p>",
-          "<p>Giao tiếp dựa trên tập, trong đó service ghi các cập nhật mới vào đưa và ứng dụng thăm dò (poll) hệ thống tập để phát hiện thay đổi.</p>"
+          "<p>Giữ mở một HTTP request vô hạn mà không dùng giao thức WebSocket chuẩn.</p>",
+          "<p>Liên tục mở các kết nối HTTP ngắn để hỏi có cập nhật mới hay không.</p>",
+          "<p>Dùng WebSocket để có kết nối hai chiều, bền vững và hỗ trợ cập nhật thời gian thực.</p>",
+          "<p>Ghi cập nhật ra tệp và để ứng dụng liên tục thăm dò hệ thống tệp.</p>"
         ]
       },
       "topic": "api"
@@ -3280,15 +3280,15 @@
       "a": [
         "D"
       ],
-      "e": "SDK mặc định đã retry nhiều lỗi tạm thời (lỗi mạng, 429, 5xx), và có thể cấu hình như `max_retries` hoặc mở rộng thêm.",
+      "e": "SDK hỗ trợ retry mặc định cho nhiều lỗi tạm thời, chẳng hạn lỗi kết nối và phản hồi giới hạn tốc độ. Ứng dụng có thể điều chỉnh cấu hình retry theo nhu cầu.",
       "m": 1,
       "v": {
-        "q": "<p>Một đồng nghiệp hỏi Claude SDK xử lý các lỗi API tạm thời (transient), chẳng hạn sự cố mừng tạm thời hoặc phản hồi rate-limit ngăn, như thế nào. </p><p>Hệ muốn biết mã ứng dụng có cần xử lý mỗi lỗi tạm thời hay SDK có cung cấp hành vi mặc định nào không. </p><p>Bạn sẽ mô tả hành vi mặc định của SDK như thế nào?</p>",
+        "q": "<p>Một đồng nghiệp hỏi SDK Claude có tự thử lại các lỗi API tạm thời như lỗi mạng ngắn hạn hoặc rate limit hay ứng dụng phải tự xử lý mọi trường hợp. Bạn nên mô tả hành vi mặc định thế nào?</p>",
         "o": [
-          "<p>SDK cung cấp hành vi retry mặc định cho nhiều lỗi tạm thời, và mã ứng dụng có thể cấu hình hoặc mở rộng hành vi đó khi cần.</p>",
-          "<p>SDK cung cấp hành vi retry mặc định cho các lỗi tạm thời tối đa một số lần thử cố định, và hành vi này không thể cấu hình.</p>",
-          "<p>SDK ghi log các lỗi tạm thời vào một luồng lỗi mặc định và tiếp tục thực thi mà không retry, độ mã ứng dụng chịu trách nhiệm phát hiện và phản ứng với các lệnh gọi thất bại.</p>",
-          "<p>SDK cung cấp hành vi retry mặc định cho các lỗi mạng những đưa thống các phản hồi rate-limit lên mã ứng dụng, mã này phải từ triển khai logic retry cho các trường hợp đó.</p>"
+          "<p>SDK có cơ chế thử lại mặc định cho nhiều lỗi tạm thời; ứng dụng có thể cấu hình hoặc mở rộng hành vi này.</p>",
+          "<p>SDK thử lại tối đa một số lần cố định và không thể thay đổi cấu hình.</p>",
+          "<p>SDK chỉ ghi lỗi rồi tiếp tục, không tự thử lại.</p>",
+          "<p>SDK thử lại lỗi mạng nhưng luôn chuyển lỗi rate limit trực tiếp cho ứng dụng.</p>"
         ]
       },
       "topic": "api"
@@ -3317,15 +3317,15 @@
       "a": [
         "D"
       ],
-      "e": "Prompt là code: một nguồn duy nhất, version-control cùng code và bắt buộc review khi thay đổi.",
+      "e": "Prompt ảnh hưởng trực tiếp đến hành vi ứng dụng. Cần có một nguồn chuẩn, quản lý phiên bản và review thay đổi như mã nguồn.",
       "m": 1,
       "v": {
-        "q": "<p>Nhóm của bạn đang tranh luận về cách quản lý các prompt được dùng trong ứng dụng Claude. </p><p>Một số prompt được commit vào repository mã nguồn, một số nằm trong tập cấu hình riêng, và một số được xây dựng trực tiếp (inline) khi chạy. </p><p>Kết quả là không nhất quán, và một thay đổi prompt gần đây đã được đưa ra mà không qua code review. </p><p>Bạn số thực hiện những bước nào?</p>",
+        "q": "<p>Prompt của ứng dụng Claude hiện nằm rải rác: một số trong repository, một số trong tệp cấu hình, một số được tạo inline khi chạy. Một thay đổi prompt vừa được đưa lên production mà không qua review. Nhóm nên làm gì?</p>",
         "o": [
-          "<p>Thiết lập một nguồn sự thật duy nhất cho các prompt nhưng để việc review thay đổi là tùy chọn, cho phép lập trình viên cập nhật prompt trực tiếp khi thay đổi khẩn cấp.</p>",
-          "<p>Chuyển tất cả prompt sang xây dựng inline khi chạy để nhóm có thể cập nhật chúng nhanh chóng qua một quy trình tinh gần nằm ngoài quy trình code review tiêu chuẩn.</p>",
-          "<p>Thiết lập một nguồn sự thật duy nhất cho các prompt, version-control chúng cùng với mã, và yêu cầu code review cho các thay đổi prompt.</p>",
-          "<p>Chuyển tất cả prompt ra khỏi version control sang một bảng tính riêng mà các thành viên nhóm có thể chỉnh sửa tự do khi ứng dụng phát triển theo thời gian.</p>"
+          "<p>Đặt prompt ở một nguồn duy nhất nhưng cho phép thay đổi không cần review.</p>",
+          "<p>Chuyển tất cả prompt sang tạo inline để sửa nhanh hơn.</p>",
+          "<p>Tạo một nguồn quản lý prompt duy nhất, đưa vào version control cùng mã nguồn và bắt buộc review thay đổi.</p>",
+          "<p>Chuyển prompt khỏi version control sang bảng tính cho mọi người chỉnh tự do.</p>"
         ]
       },
       "topic": "prompt"
@@ -3354,15 +3354,15 @@
       "a": [
         "A"
       ],
-      "e": "Temperature điều chỉnh độ ngẫu nhiên, không liên quan đến dung lượng context. Vấn đề context thì giải bằng tóm tắt hoặc chia nhỏ (chunking).",
+      "e": "`temperature` chỉ điều chỉnh cách lấy mẫu token, không tăng cửa sổ ngữ cảnh. Khi quá dài, cần chia nhỏ hoặc tóm tắt dữ liệu và quản lý ngữ cảnh phù hợp.",
       "m": 1,
       "v": {
-        "q": "<p>Ứng dụng Claude của bạn đang chấm giới hạn cửa sổ ngữ cảnh khi xử lý các bản ghi (transcript) dịch vụ khách hàng dài. </p><p>Một lập trình viên junior đề xuất từng tham số temperature để khắc phục vấn đề. </p><p>Bạn sẽ phản hồi như thế nào?</p>",
+        "q": "<p>Ứng dụng Claude chạm giới hạn cửa sổ ngữ cảnh khi xử lý các transcript hỗ trợ khách hàng dài. Một lập trình viên đề xuất tăng `temperature` để khắc phục. Bạn nên giải thích thế nào?</p>",
         "o": [
-          "<p>Từng tham số temperature như lập trình viên junior đề xuất và quan sát xem vấn đề cửa sổ ngữ cảnh có được giải quyết trong vài lần chạy tiếp theo của ứng dụng trong production hay không.</p>",
-          "<p>Xóa hoàn toàn system prompt để nhường chỉ cho các transcript dài hạn trong mỗi request, giải phóng không gian cửa sổ ngữ cảnh mà system prompt sẽ chiếm.</p>",
-          "<p>Điều chỉnh tham số temperature cùng với tham số max_tokens, coi việc điều chỉnh kết hợp này là cơ chế của nhóm để quản lý áp lực cửa sổ ngữ cảnh trong quá trình xử lý transcript dài.</p>",
-          "<p>Giải thích rỗng temperature điều khiển độ ngẫu nhiên của sampling và không liên quan đến dung lượng context, sau đó giải quyết vấn đề context bằng cách tóm tắt hoặc chia nhỏ (chunking).</p>"
+          "<p>Tăng `temperature` rồi quan sát xem giới hạn ngữ cảnh có thay đổi không.</p>",
+          "<p>Xóa toàn bộ system prompt để dành chỗ cho transcript.</p>",
+          "<p>Điều chỉnh cả `temperature` và `max_tokens` như cơ chế xử lý giới hạn ngữ cảnh.</p>",
+          "<p>Giải thích `temperature` điều khiển độ ngẫu nhiên khi sinh, không làm tăng dung lượng ngữ cảnh; xử lý bằng tóm tắt hoặc chia nhỏ nội dung.</p>"
         ]
       },
       "topic": "api"
@@ -3391,15 +3391,15 @@
       "a": [
         "B"
       ],
-      "e": "Dùng Python SDK chính thức theo cách tài liệu hướng dẫn: SDK đã lo xác thực, retry và parse response.",
+      "e": "SDK Python chính thức giúp đơn giản hóa xác thực, retry và xử lý phản hồi; không cần tự viết lại lớp HTTP cho nhu cầu thông thường.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang tích hợp Claude vào một ứng dụng viết bằng Python. </p><p>Claude SDK cung cấp một Python client bao bọc REST API bên dưới. </p><p>Bạn sẽ tích hợp SDK như thế nào?</p>",
+        "q": "<p>Bạn tích hợp Claude vào ứng dụng Python. SDK Python cung cấp client bao bọc REST API. Nên tích hợp theo cách nào?</p>",
         "o": [
-          "<p>Dùng Claude Python SDK và để nó xử lý xác thực, retry và phân tích phản hồi thông qua các mẫu được tài liệu hóa tiêu chuẩn cho tích hợp Python.</p>",
-          "<p>Dùng SDK của một nhà cung cấp LLM khác và chuyển đổi các phản hồi sang dạng API của Claude đề ứng dụng có thể đổi nhà cung cấp trong tương lai.</p>",
-          "<p>Gọi trực tiếp REST API bằng các HTTP request thô đề ứng dụng tránh lập trừu tượng của SDK giữa mã ứng dụng và API.</p>",
-          "<p>Bỏ qua SDK và nhúng các lệnh gọi Claude vào các lệnh shell được gọi từ Python, độ ứng dụng chạy các lệnh gọi bên ngoài tiến trình Python chính.</p>"
+          "<p>Dùng SDK Python chính thức để xử lý xác thực, thử lại và phân tích phản hồi theo các cơ chế đã có.</p>",
+          "<p>Dùng SDK của một nhà cung cấp LLM khác rồi chuyển phản hồi về định dạng Claude.</p>",
+          "<p>Gọi HTTP trực tiếp để tránh lớp trừu tượng của SDK.</p>",
+          "<p>Gọi Claude bằng lệnh shell từ Python thay vì SDK.</p>"
         ]
       },
       "topic": "api"
@@ -3428,15 +3428,15 @@
       "a": [
         "B"
       ],
-      "e": "Giữ schema chất, validate tham số trước khi gửi, trở lại có cấu trúc để agent tự sửa và gửi lại. Nội schema chỉ làm lại trôi xuống dưới.",
+      "e": "Không nên nới schema để che lỗi. Hãy xác thực tham số trước khi thực thi, trả lỗi rõ ràng để tác nhân có thể sửa lời gọi.",
       "m": 1,
       "v": {
-        "q": "<p>Claude agent của bạn có quyền truy cập một tool truy xuất bản ghi khách hàng. </p><p>Một đồng nghiệp nhận thấy agent đôi khi gửi tool với các đối số mà schema không khai báo, và service downstream của tool trả về lỗi mối lần. </p><p>Đồng nghiệp đề xuất nới lỏng schema độ tool chấp nhận bất kỳ đối số nào mà model tạo ra. </p><p>Bạn sẽ phản hồi như thế nào?</p>",
+        "q": "<p>Tác nhân Claude có công cụ tra cứu hồ sơ khách hàng. Đôi khi mô hình truyền tham số không khai báo trong schema, làm dịch vụ phía sau trả lỗi. Một đồng nghiệp đề nghị nới schema để nhận mọi tham số. Bạn nên phản hồi thế nào?</p>",
         "o": [
-          "<p>Xóa hoàn toàn schema và dựa vào service downstream độ từ chối các lệnh gọi không hợp lệ, coi service downstream là lớp thực thi chính của nhóm.</p>",
-          "<p>Giữ schema chất chỉ, validate các đối số trước khi dispatch, và trả về một lỗi có cấu trúc để agent có thể thử lại.</p>",
-          "<p>Thêm một chỉ dẫn system prompt yêu cầu model tạo các đối số tuân thủ schema, coi chỉ dẫn prompt là cơ chế chính để giữ cho các lệnh gọi tool của agent hợp lệ.</p>",
-          "<p>Nới lỏng schema như đồng nghiệp đề xuất để service downstream nhận mỗi lệnh gọi mà agent thực hiện trong văn hành bình thường.</p>"
+          "<p>Bỏ schema, để dịch vụ phía sau tự từ chối yêu cầu sai.</p>",
+          "<p>Giữ schema chặt chẽ, kiểm tra tham số trước khi gọi công cụ và trả lỗi có cấu trúc để tác nhân sửa và thử lại.</p>",
+          "<p>Chỉ thêm hướng dẫn trong system prompt yêu cầu tham số đúng schema.</p>",
+          "<p>Nới lỏng schema để mọi lời gọi của tác nhân đều được chuyển đến dịch vụ.</p>"
         ]
       },
       "topic": "tools"
@@ -3465,15 +3465,15 @@
       "a": [
         "D"
       ],
-      "e": "Debug có hệ thống: thu đầy đủ trace (input, system prompt, message, output, tham số) rồi so sánh các lần chạy ổn định với lớn không ổn định.",
+      "e": "Muốn tìm nguyên nhân, cần dữ liệu tái hiện: đầy đủ đầu vào, prompt, tham số, đầu ra và trace liên quan. So sánh các lần chạy giúp phát hiện khác biệt có hệ thống.",
       "m": 1,
       "v": {
-        "q": "<p>Ứng dụng Claude của bạn đang tạo ra các output không nhất quán cho các input tương tự, ngay cả khi dùng cùng model và prompt. </p><p>Bạn muốn debug vấn đề một cách có hệ thống. </p><p>Cách debug của bạn sẽ...</p>",
+        "q": "<p>Ứng dụng Claude trả kết quả không nhất quán cho những đầu vào tương tự dù dùng cùng prompt và mô hình. Bạn muốn điều tra có hệ thống. Nên làm gì?</p>",
         "o": [
-          "<p>Hệ temperature của model và chạy lại các input không nhất quán để xác định xem thay đổi tham số có làm giảm sự biến thiên output giữa các lần chạy hay không.</p>",
-          "<p>Retry mỗi request tạo ra output không mong đợi và ghi log kết quả để xác định xem các lệnh gọi lặp lại có hội tụ về một mẫu phản hồi nhất quán hay không.</p>",
-          "<p>Giả định rằng các output không nhất quán phản ánh tính không tất định bình thường của LLM và ghi lại sự biến thiên như một ước tính được chấp nhận trong hành vi của ứng dụng.</p>",
-          "<p>Thu thập các trace đầy đủ của input, system prompt, user message, output của model và các tham số, sau đó phân tích sự khác biệt giữa các lần chạy nhất quán và không nhất quán.</p>"
+          "<p>Giảm `temperature` rồi chạy lại các đầu vào để xem biến thiên có giảm hay không.</p>",
+          "<p>Thử lại mọi yêu cầu có kết quả lạ rồi ghi log các lượt thử.</p>",
+          "<p>Coi khác biệt là tính không tất định bình thường của LLM và chấp nhận.</p>",
+          "<p>Thu thập trace đầy đủ: đầu vào, system prompt, tin nhắn, đầu ra mô hình và tham số; sau đó so sánh các lượt ổn định với lượt bất thường.</p>"
         ]
       },
       "topic": "prompt"
@@ -3502,15 +3502,15 @@
       "a": [
         "A"
       ],
-      "e": "Đã chọn Agent SDK thì dùng tool interface của SDK và độ SDK lo vòng lặp, dispatch và lịch sử. Không tự viết lại.",
+      "e": "Đã dùng Agent SDK thì nên tận dụng cơ chế định nghĩa công cụ, thực thi vòng lặp và điều phối có sẵn, tránh tự xây lại các thành phần không cần thiết.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang xây dựng một agent cần gửi nhiều API nội bộ và một cơ sở dữ liệu theo cách có cấu trúc, lặp lại được. </p><p>Nhóm của bạn đã quyết định dùng Claude Agent SDK thay vì xây dựng một vòng lặp tùy chỉnh. </p><p>Bạn đang thiết lập các định nghĩa tool và vòng lặp thực thi của agent. </p><p>Bạn sự thiết lập các tool và vòng lặp thực thi như thế nào?</p>",
+        "q": "<p>Bạn xây dựng tác nhân cần gọi nhiều API nội bộ và cơ sở dữ liệu theo quy trình lặp lại có cấu trúc. Nhóm đã chọn Claude Agent SDK thay vì tự viết agent loop. Nên thiết lập công cụ và vòng lặp ra sao?</p>",
         "o": [
-          "<p>Dùng giao diện tool của SDK và viết vòng lặp cùng lập lịch sử trong mã của chính nhóm.</p>",
-          "<p>Dùng giao diện tool của SDK và độ SDK xử lý vòng lặp, dispatch và lịch sử.</p>",
-          "<p>Dùng giao diện tool và vòng lặp của SDK, với lịch sử hội thoại được lưu trong một cơ sở dữ liệu riêng của nhóm.</p>",
-          "<p>Gọi trực tiếp Messages API và để model định dạng các lệnh gọi tool của nó dưới dạng văn bản thuần.</p>"
+          "<p>Dùng giao diện công cụ của SDK nhưng tự viết lại vòng lặp và quản lý lịch sử.</p>",
+          "<p>Dùng giao diện công cụ SDK và để SDK quản lý vòng lặp, điều phối lời gọi và lịch sử.</p>",
+          "<p>Dùng công cụ và vòng lặp SDK, nhưng bắt buộc tự lưu lịch sử vào cơ sở dữ liệu riêng của nhóm.</p>",
+          "<p>Gọi trực tiếp Messages API và để mô hình mô tả lời gọi công cụ bằng văn bản tự do.</p>"
         ]
       },
       "topic": "agent"
@@ -3539,15 +3539,15 @@
       "a": [
         "D"
       ],
-      "e": "Chưa đo thì chưa tối ưu được. Thêm tracking token theo từng tính năng để biết tính năng nào tồn tiến nhất.",
+      "e": "Không thể tối ưu chi phí nếu không biết nó phát sinh ở đâu. Hãy đo token theo tính năng, sau đó ưu tiên cải thiện phần tốn kém nhất.",
       "m": 1,
       "v": {
-        "q": "<p>Chi phí token của ứng dụng Claude của bạn từng nhanh hơn dự kiến. </p><p>Nhóm chưa theo dõi mức sử dụng token theo tính năng, nên nhóm không thể xác định tính năng nào đang đẩy chi phí lên. </p><p>Nhóm đang tranh luận cách ứng phó. </p><p>Bạn sẽ phản hồi như thế nào?</p>",
+        "q": "<p>Chi phí token của ứng dụng Claude tăng nhanh hơn dự kiến nhưng nhóm chưa theo dõi mức dùng token theo tính năng, nên không biết tính năng nào gây tốn kém. Bạn nên đề xuất gì?</p>",
         "o": [
-          "<p>Giảm mức sử dụng token đồng đều trên tất cả tính năng một nửa, áp dụng mặc cắt giảm đầu khớp ứng dụng trong văn hành bình thường.</p>",
-          "<p>Thêm theo dõi mức sử dụng token theo tính năng vào phần ghi log của ứng dụng để nhóm có thể xác định tính năng nào đầy chi phí lên trước khi đề xuất thay đổi.</p>",
-          "<p>Chuyển mỗi tính năng sang model nhỏ nhất để cắt giảm chi phí trên diện rộng trong ứng dụng trong văn hành bình thường.</p>",
-          "<p>Nói với nhóm rộng chi phí từng là không thể tránh khỏi khi ứng dụng mở rộng quy mô và không có cuộc điều tra nào sẽ thay đổi xu hướng chi phí của ứng dụng trong vài quý tại.</p>"
+          "<p>Cắt một nửa token ở mọi tính năng, không phân biệt nhu cầu.</p>",
+          "<p>Bổ sung theo dõi và ghi log mức sử dụng token theo từng tính năng để xác định nguồn phát sinh chi phí.</p>",
+          "<p>Chuyển mọi tính năng sang mô hình nhỏ nhất để giảm chi phí.</p>",
+          "<p>Coi chi phí tăng là điều tất yếu khi mở rộng ứng dụng và không cần điều tra.</p>"
         ]
       },
       "topic": "api"
@@ -3576,15 +3576,15 @@
       "a": [
         "B"
       ],
-      "e": "Có ví dụ edge case kèm đáp án mẫu thì đưa vào prompt làm few-shot.",
+      "e": "Few-shot examples có đầu vào và đầu ra mong đợi giúp mô hình nhận ra cách xử lý những trường hợp khó, không cần huấn luyện mô hình mới.",
       "m": 1,
       "v": {
-        "q": "<p>Ứng dụng Claude của bạn tạo ra các phản hồi tắt cho các input điển hình nhưng gặp khó khăn với các trường hợp biên (edge case). </p><p>Bạn có một số ví dụ được gán nhãn về các input trường hợp biên và phản hồi mong muốn cho mỗi input. </p><p>Bạn muốn dùng các ví dụ này để cải thiện cách model xử lý các trường hợp biên. </p><p>Cách tốt nhất để sử dụng các ví dụ này là gì?</p>",
+        "q": "<p>Ứng dụng Claude trả lời tốt các trường hợp thường gặp nhưng xử lý kém một số tình huống biên. Bạn có các ví dụ đầu vào khó cùng phản hồi mong đợi đã gán nhãn. Nên tận dụng chúng thế nào?</p>",
         "o": [
-          "<p>Nhúng các ví dụ vào một cơ sở dữ liệu để model tìm thấy trong quá trình inference.</p>",
-          "<p>Huấn luyện một model tùy chỉnh trên các ví dụ trường hợp biên và triển khai model tùy chỉnh đó thay cho phần tích hợp Claude hiện tại của nhóm.</p>",
-          "<p>Thêm các ví dụ trường hợp biên được gán nhãn vào prompt dưới dạng few-shot example để model có thể học được mẫu.</p>",
-          "<p>Yêu cầu người dùng tránh gửi các input trường hợp biên cho ứng dụng bằng cách thêm cảnh báo vào giao diện người dùng của ứng dụng.</p>"
+          "<p>Đưa ví dụ vào cơ sở dữ liệu để mô hình tự tìm khi suy luận.</p>",
+          "<p>Huấn luyện mô hình riêng trên các ví dụ này để thay mô hình hiện tại.</p>",
+          "<p>Thêm các ví dụ tình huống biên có nhãn vào prompt theo kỹ thuật few-shot.</p>",
+          "<p>Yêu cầu người dùng tránh gửi các tình huống biên.</p>"
         ]
       },
       "topic": "prompt"
