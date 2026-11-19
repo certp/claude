@@ -1840,7 +1840,7 @@
       "e": "Yêu cầu data residency là ràng buộc bắt buộc, không nên đánh đổi lấy tốc độ phát hành. BYOC đáp ứng phạm vi kiểm soát dữ liệu; có thể tối ưu việc vận hành cùng nhóm hạ tầng.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn phải chọn giữa hạ tầng Anthropic lưu trữ và mô hình tự lưu trữ “bring your own cloud” (BYOC) trong AWS của doanh nghiệp. Tác nhân Claude xử lý dữ liệu khách hàng chịu chính sách lưu trú dữ liệu (*data residency*). Nhóm muốn phát hành nhanh và ít phải vận hành hạ tầng. Nên chọn cách triển khai nào?</p>",
+        "q": "<p>Bạn phải chọn giữa hạ tầng do Anthropic quản lý và mô hình tự lưu trữ “bring your own cloud” (BYOC) trong AWS của doanh nghiệp. Tác nhân Claude xử lý dữ liệu khách hàng chịu chính sách lưu trú dữ liệu (data residency). Nhóm muốn phát hành nhanh và ít phải vận hành hạ tầng. Nên chọn cách triển khai nào?</p>",
         "o": [
           "<p>Dùng hạ tầng Anthropic rồi đề nghị doanh nghiệp sửa chính sách lưu trú dữ liệu để chấp nhận cách này.</p>",
           "<p>Tự triển khai theo BYOC để đáp ứng yêu cầu lưu trú dữ liệu, đồng thời phối hợp nhóm hạ tầng giảm gánh nặng vận hành.</p>",
