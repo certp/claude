@@ -3613,15 +3613,15 @@
       "a": [
         "C"
       ],
-      "e": "Sau khi ship là giai đoạn văn hành và bảo trì: monitoring, xử lý sự cố, lên kế hoạch phát triển tiếp.",
+      "e": "Sau khi triển khai là giai đoạn vận hành và bảo trì liên tục: theo dõi, khắc phục sự cố và lên kế hoạch phát triển.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn vừa đĩa một ứng dụng sử dụng Claude mới vào production. </p><p>Giai đoạn phát triển đã hoàn tất, và hệ thống hiện đang được các nhóm nội bộ sử dụng tích cực. </p><p>Giai đoạn công việc tiếp theo của hệ thống này là...</p>",
+        "q": "<p>Bạn vừa phát hành ứng dụng dùng Claude lên production. Giai đoạn phát triển đã hoàn tất và các nhóm nội bộ đang sử dụng hệ thống. Giai đoạn tiếp theo trong vòng đời ứng dụng là gì?</p>",
         "o": [
-          "<p>Bàn giao hệ thống cho một nhóm vận hành riêng sẽ quản lý nó độc lập với nhóm phát triển từ nay về sau.</p>",
-          "<p>Văn hành và bảo trì hệ thống, bao gồm giám sát, phản ứng với các sự cố và lập kế hoạch cho sự phát triển.</p>",
-          "<p>Chạy một buổi review chính thức sau triển khai đánh giá giai đoạn phát triển trước khi nhóm thực hiện bất kỳ công việc nào tiếp theo trên hệ thống.</p>",
-          "<p>Ngừng sử dụng (retire) hệ thống, vì việc phát hành là giai đoạn cuối cùng của vòng đổi đối với bất kỳ ứng dụng nào đã lên production.</p>"
+          "<p>Bàn giao hoàn toàn cho một nhóm vận hành riêng, không cần nhóm phát triển tham gia nữa.</p>",
+          "<p>Vận hành và bảo trì: giám sát, xử lý sự cố và lên kế hoạch cải tiến hệ thống.</p>",
+          "<p>Chỉ thực hiện một đợt đánh giá phát hành rồi mới cân nhắc mọi hoạt động tiếp theo.</p>",
+          "<p>Ngừng sử dụng vì phát hành là giai đoạn cuối của vòng đời ứng dụng.</p>"
         ]
       },
       "topic": "api"
@@ -3650,15 +3650,15 @@
       "a": [
         "C"
       ],
-      "e": "Skill đặt trong thư mục Skills mà Claude Code nhận diện được (ví dụ `.claude/skills/`), để Claude tử phát hiện và nộp khi cần.",
+      "e": "Skill nên được đặt trong thư mục Skill mà Claude Code hỗ trợ, chẳng hạn `.claude/skills/`, kèm hướng dẫn và tài nguyên liên quan để có thể phát hiện và tải khi cần.",
       "m": 1,
       "v": {
-        "q": "<p>Một đồng nghiệp hỏi cách mở rộng Claude Code bằng một Skill tùy chỉnh mà nhóm có thể gửi trong các phiên làm việc. </p><p>Skill gồm một tập các chỉ dẫn và một vài script hỗ trợ mà nhóm muốn Claude có thể gửi khi Skill được nạp. </p><p>Đâu là nối đúng để định nghĩa Skill?</p>",
+        "q": "<p>Một đồng nghiệp muốn tạo Skill tùy chỉnh cho Claude Code, gồm hướng dẫn và vài script hỗ trợ có thể chạy khi Skill được nạp. Nên đặt định nghĩa Skill ở đâu?</p>",
         "o": [
-          "<p>Định nghĩa Skill trong một thư mục Skills được Claude Code nhận diện, nội Claude có thể phát hiện và nộp nó trong các phiên làm việc cho các repository của nhóm.</p>",
-          "<p>Định nghĩa Skill như một chỉ dẫn inline dài ở đầu mỗi tập CLAUDE.md trong các repository của nhóm để Claude có quyền truy cập nó ở mỗi phiên.</p>",
-          "<p>Định nghĩa Skill trong một thư mục nháp cá nhân trên máy của mỗi lập trình viên và nộp thủ công trước mỗi phiên Claude Code cần đến nó.</p>",
-          "<p>Định nghĩa Skill bên trong mã nguồn của ứng dụng như một module thư viện thông thường và gửi nó từ mã ứng dụng thay vì tỷ Claude Code.</p>"
+          "<p>Đặt trong thư mục Skills mà Claude Code nhận diện để có thể tự phát hiện và nạp khi cần.</p>",
+          "<p>Chèn toàn bộ nội dung Skill thành hướng dẫn dài ở đầu mọi tệp `CLAUDE.md`.</p>",
+          "<p>Lưu Skill trong thư mục nháp cá nhân và yêu cầu từng người nạp thủ công.</p>",
+          "<p>Viết Skill thành mô-đun thư viện thông thường bên trong mã ứng dụng.</p>"
         ]
       },
       "topic": "code"
@@ -3687,15 +3687,15 @@
       "a": [
         "A"
       ],
-      "e": "Bước đầu tiên: xác định các câu hỏi bị từ chối và so sánh với các câu đã được trả lời trước đó để tìm điểm khác biệt giữa lượt thành công và lượt bị từ chối (đầu vào, hướng dẫn, model hoặc ngữ cảnh). Bằng chứng này giúp khoanh vùng nguyên nhân trước khi sửa. (Sửa/bộ hướng dẫn ngay là thay đổi trước khi tìm nguyên nhân; phân tích phân bổ hay xem trace hữu ích nhưng chưa so trực tiếp lượt thành công và thất bại đã biết.)",
+      "e": "Trước khi sửa prompt, cần khoanh vùng trường hợp bị từ chối và đối chiếu với các lượt đã trả lời thành công. Những khác biệt về đầu vào và ngữ cảnh giúp xác định nguyên nhân để điều tra tiếp.",
       "m": 1,
       "v": {
-        "q": "<p>Một ứng dụng Claude đôi khi từ chối trở lại các câu hỏi lẽ ra thuộc phạm vi, bao gồm cả các câu hỏi mà ứng dụng đã trả lời đúng trong quá khả. </p><p>Bạn muốn điều tra. </p><p>Bước đầu tiên trong cuộc điều tra của bạn là gì?</p>",
+        "q": "<p>Ứng dụng Claude đôi khi từ chối các câu hỏi vốn nằm trong phạm vi được phép, kể cả những câu đã từng trả lời chính xác. Bạn muốn điều tra. Bước đầu tiên nên làm gì?</p>",
         "o": [
-          "<p>Xem xét các trace của các request bị từ chối để xác định điều gì kích hoạt việc từ chối, dù là mẫu input, nội dung system prompt hay context khác.</p>",
-          "<p>Đánh giá xem các lần từ chối có tập trung quanh các mẫu input, loại câu hỏi hoặc khoảng thời gian cụ thể hay không bằng cách phân tích phân bổ của các request bị từ chối trong log.</p>",
-          "<p>Kiểm tra xem việc xóa hoặc điều chỉnh các chỉ dẫn đó có giải quyết được hành vi này hay không.</p>",
-          "<p>Xác định những câu hỏi nào đã bị từ chối và so sánh chúng với các câu hỏi đã được trả lời trước đó để xác định điều gì đã thay đổi giữa các tương tác thành công và bị từ chối.</p>"
+          "<p>Xem trace của yêu cầu bị từ chối để tìm mẫu đầu vào, hướng dẫn hệ thống hoặc điều kiện kích hoạt.</p>",
+          "<p>Phân tích xem việc từ chối có tập trung ở loại câu hỏi, mẫu đầu vào hoặc thời điểm cụ thể hay không.</p>",
+          "<p>Thử xóa hoặc điều chỉnh hướng dẫn để xem hiện tượng có biến mất không.</p>",
+          "<p>Liệt kê những câu bị từ chối và so sánh với câu đã từng được trả lời để tìm khác biệt.</p>"
         ]
       },
       "topic": "quality"
@@ -3724,15 +3724,15 @@
       "a": [
         "D"
       ],
-      "e": "Yêu cầu dạng business thì trước hết phải diễn giải ra yêu cầu chức năng và hạ tổng mà mục tiêu đó ngụ ý, rồi mới chọn model hay thiết kế.",
+      "e": "Trước khi chọn mô hình hay kiến trúc, hãy làm rõ các yêu cầu chức năng và hạ tầng suy ra từ mục tiêu kinh doanh. Đây là cơ sở để triển khai và nghiệm thu.",
       "m": 1,
       "v": {
-        "q": "<p>Nhóm sản phẩm đã mô tả một tính năng Claude mới bằng ngôn ngữ kinh doanh: \"các agent nên giúp các nhà phân tích của chúng tôi tạo memo cho khách hàng nhanh hơn.\" </p><p>Bạn cần chuyển điều này thành các yêu cầu kỹ thuật có thể hành động cho nhóm kỹ sư. </p><p>Bước đầu tiên của bạn sẽ là...</p>",
+        "q": "<p>Nhóm sản phẩm mô tả yêu cầu kinh doanh: “Các tác nhân AI nên giúp chuyên viên phân tích soạn bản ghi nhớ khách hàng nhanh hơn.” Bạn cần chuyển mục tiêu này thành yêu cầu kỹ thuật cho nhóm phát triển. Bước đầu tiên là gì?</p>",
         "o": [
-          "<p>Hỏi các nhà phân tích về quy trình tạo memo hiện tại để xem hệ nghị Claude có thể được đưa vào ở đâu như một bước soạn thảo dựa trên prompt.</p>",
-          "<p>Xem xét các khả năng của model và các tùy chọn tier có sẵn và xác định cái nào hỗ trợ tốt nhất cho quy trình soạn thảo memo mà nhóm sản phẩm mô tả.</p>",
-          "<p>Diện giải các yêu cầu về chức năng và hạ tầng được hàm ý bởi mục tiêu kinh doanh.</p>",
-          "<p>Đánh giá những tính năng dựa trên agent tương tự đã được xây dựng nội bộ hoặc trong ngành và dùng các tiến lệ đó để xác định phạm vi cách tiếp cận kỹ thuật.</p>"
+          "<p>Hỏi chuyên viên về quy trình soạn bản ghi nhớ hiện tại và chỗ họ muốn bổ sung Claude để tạo bản nháp.</p>",
+          "<p>Xem năng lực và các cấp mô hình hiện có rồi chọn mô hình phù hợp nhất.</p>",
+          "<p>Diễn giải mục tiêu kinh doanh thành các yêu cầu chức năng và hạ tầng cần thiết.</p>",
+          "<p>Khảo sát tính năng AI tương tự đã triển khai để quyết định phạm vi kỹ thuật.</p>"
         ]
       },
       "topic": "workflow"
@@ -3761,15 +3761,15 @@
       "a": [
         "A"
       ],
-      "e": "Chia task, giao cho subagent chuyên biệt rồi gom kết quả: đó là pattern orchestrator–subagent.",
+      "e": "Chia việc, giao tác nhân phụ chuyên trách và gom kết quả là mẫu orchestrator–subagent.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang thiết kế một agent xử lý một tác vụ nghiên cứu nhiều bước. </p><p>Bạn muốn agent chia tác vụ thành các phần nhỏ hơn, giao từng phần cho một subagent tập trung và hợp nhất các kết quả. </p><p>Mẫu agent mà bạn sẽ áp dụng là...</p>",
+        "q": "<p>Bạn thiết kế tác nhân nghiên cứu nhiều bước: chia nhiệm vụ thành các phần nhỏ, giao mỗi phần cho tác nhân phụ chuyên trách rồi tổng hợp kết quả. Nên dùng mẫu tác nhân nào?</p>",
         "o": [
-          "<p>Một vòng lặp tool-use duy nhất bao gồm mọi tool mà agent có thể cần cho tất cả các tác vụ con.</p>",
-          "<p>Một mẫu memory lưu trữ toàn bộ lịch sử nghiên cứu từ trước, trước khi bất kỳ tác vụ con nào bắt đầu thực thi.</p>",
-          "<p>Một mẫu orchestrator và subagent với các subagent chuyên biệt được giao cho từng tác vụ con.</p>",
-          "<p>Một mẫu pruning cửa sổ ngữ cảnh loại bỏ nội dung của mỗi tác vụ con sau khi agent chuyển sang tác vụ tiếp theo.</p>"
+          "<p>Một vòng lặp duy nhất với mọi công cụ có thể cần.</p>",
+          "<p>Mẫu bộ nhớ lưu sẵn toàn bộ lịch sử nghiên cứu trước khi chạy.</p>",
+          "<p>Orchestrator kết hợp các tác nhân phụ chuyên trách cho từng tác vụ.</p>",
+          "<p>Mẫu cắt tỉa ngữ cảnh, xóa nội dung tác vụ con sau khi hoàn tất.</p>"
         ]
       },
       "topic": "agent"
@@ -3798,15 +3798,15 @@
       "a": [
         "A"
       ],
-      "e": "Input không tin cậy phải được validate và làm sạch, và luôn coi là dữ liệu, không phải chỉ dẫn. đây là biến pháp chứng prompt injection.",
+      "e": "Đầu vào không đáng tin cậy phải được xác thực/làm sạch và phân biệt với chỉ dẫn có thẩm quyền, giúp giảm nguy cơ prompt injection.",
       "m": 1,
       "v": {
-        "q": "<p>Ứng dụng Claude của bạn nhận input không đáng tin cậy (untrusted) từ các nguồn bên ngoài. </p><p>Nhóm đang xác lập cách ứng dụng nên xử lý input không đáng tin cậy này. </p><p>Input không đáng tin cậy sẽ được...</p>",
+        "q": "<p>Ứng dụng Claude nhận dữ liệu từ các nguồn ngoài không đáng tin cậy. Nên xử lý dữ liệu này như thế nào trước khi đưa vào prompt?</p>",
         "o": [
-          "<p>Chọn hoàn toàn độ ứng dụng chỉ chấp nhận input đáng tin cậy, không có đường nào cho input bên ngoài hợp lệ mà ứng dụng có thể xử lý.</p>",
-          "<p>Định tuyến qua một ứng dụng Claude riêng với các biến pháp kiểm soát bảo mật lỏng lẻo hạn độ ứng dụng gốc không xử lý trực tiếp input không đáng tin cậy.</p>",
-          "<p>Xử lý giống hệt input đáng tin cậy từ các nguồn nội bộ, với lý do mới input mà ứng dụng nhận được đều có thể được xử lý theo cùng một cách.</p>",
-          "<p>Được validate và sanitize trước khi đưa vào prompt, và được coi là dữ liệu mà model không nên diễn giải như chỉ dẫn.</p>"
+          "<p>Chặn toàn bộ dữ liệu bên ngoài, kể cả nội dung hợp lệ.</p>",
+          "<p>Chuyển sang ứng dụng Claude khác có kiểm soát bảo mật lỏng lẻo hơn.</p>",
+          "<p>Đối xử như dữ liệu nội bộ đáng tin cậy vì ứng dụng đã nhận được.</p>",
+          "<p>Kiểm tra và làm sạch dữ liệu; coi đó là nội dung tham khảo, không phải chỉ dẫn mà mô hình phải làm theo.</p>"
         ]
       },
       "topic": "prompt"
@@ -3835,15 +3835,15 @@
       "a": [
         "B"
       ],
-      "e": "Gom chỉ dẫn hành vi và format vào system prompt, còn user message chỉ chứa input của người dùng.",
+      "e": "Các quy tắc hành vi và định dạng dùng chung nên tập trung trong system prompt; phần người dùng chỉ mang nội dung của từng yêu cầu.",
       "m": 1,
       "v": {
-        "q": "<p>Output của ứng dụng Claude của bạn không nhất quán về định dạng. </p><p>Các chỉ dẫn của nhóm nằm rải rác trong system prompt và các user message, với một số chỉ dẫn chỉ được nêu một lần và một sự khác được lặp lại. </p><p>Bạn sẽ khắc phục sự không nhất quán này như thế nào?</p>",
+        "q": "<p>Ứng dụng Claude thường trả đầu ra thiếu nhất quán về định dạng. Hướng dẫn nằm rải rác ở system prompt và tin nhắn người dùng, có chỗ chỉ nhắc một lần, chỗ lặp nhiều lần. Nên sửa thế nào?</p>",
         "o": [
-          "<p>Chuyển tất cả chỉ dẫn vào user message đồ hành vi của ứng dụng được kiểm soát tại điểm input.</p>",
-          "<p>Hợp nhất các chỉ dẫn về hành vi và định dạng trong system prompt và giữ cho user message tập trung vào input của người dùng.</p>",
-          "<p>Lặp lại tất cả chỉ dẫn trong cơ system prompt và user message để model thấy mới chỉ dẫn nhiều hơn một lần.</p>",
-          "<p>Đặt mới chỉ dẫn ở nơi mà lập trình viên đầu tiên viết nó thấy tự nhiên nhất, giữ nguyên ý định ban đầu.</p>"
+          "<p>Chuyển mọi hướng dẫn sang tin nhắn người dùng.</p>",
+          "<p>Tập trung hướng dẫn về hành vi và định dạng trong system prompt, để tin nhắn người dùng chỉ cung cấp đầu vào tác vụ.</p>",
+          "<p>Lặp toàn bộ hướng dẫn trong cả system prompt và tin nhắn người dùng.</p>",
+          "<p>Để nguyên hướng dẫn ở nơi lập trình viên ban đầu đã viết.</p>"
         ]
       },
       "topic": "prompt"
@@ -3872,15 +3872,15 @@
       "a": [
         "B"
       ],
-      "e": "Phân cấp CLAUDE.md: chuẩn chung đặt ở cấp rằng (user hoặc tổ chức), context riêng của tầng repo đặt trong CLAUDE.md của repo đó. Hạt trùng lặp.",
+      "e": "Phân cấp hướng dẫn: các quy tắc chung ở mức người dùng hoặc tổ chức, còn ngữ cảnh riêng nằm trong `CLAUDE.md` của từng repository. Cách này giảm trùng lặp.",
       "m": 1,
       "v": {
-        "q": "<p>Nhóm của bạn sử dụng Claude Code trên nhiều repository. </p><p>Bạn muốn các quy tắc và tiêu chuẩn lập trình chung của nhóm áp dụng cho tất cả repository, còn các quy tắc khác chỉ áp dụng cho một số repository cụ thể. </p><p>Hiện tại nhóm đang sao chép lặp lại các hướng dẫn trong tập CLAUDE.md của tầng repository. </p><p>Bạn sẽ giải quyết vấn đề này như thế nào?</p>",
+        "q": "<p>Nhóm dùng Claude Code trong nhiều repository. Muốn áp dụng tiêu chuẩn chung cho mọi dự án và quy tắc đặc thù cho từng repo, thay vì sao chép `CLAUDE.md` ở khắp nơi. Nên làm gì?</p>",
         "o": [
-          "<p>Sử dụng một hệ thống phân cấp CLAUDE.md, trong đó các tiêu chuẩn chung có phạm vi áp dụng rộng và ngữ cảnh riêng của dự án nằm trong CLAUDE.md cục bộ của tầng repository.</p>",
-          "<p>Chuyển toàn bộ hướng dẫn sang một trang tài liệu riêng để các lập trình viên tra cứu trong các phiên Claude Code trên tất cả repository.</p>",
-          "<p>Dùng CLAUDE.md của một repository làm nguồn tham chiếu trung tâm và liên kết tới nó từ tập CLAUDE.md của mỗi repository khác.</p>",
-          "<p>Ngừng sử dụng CLAUDE.md hoàn toàn và yêu cầu tăng lập trình viên từ cấu hình Claude Code thủ công cho mỗi dự án họ làm việc.</p>"
+          "<p>Dùng hệ thống phân cấp `CLAUDE.md`: quy tắc chung ở phạm vi rộng, hướng dẫn đặc thù trong từng repository.</p>",
+          "<p>Chuyển mọi hướng dẫn sang website tài liệu để lập trình viên tự đọc.</p>",
+          "<p>Chọn `CLAUDE.md` của một repo làm nguồn duy nhất, các repo còn lại chỉ dẫn liên kết đến.</p>",
+          "<p>Bỏ `CLAUDE.md` và để từng lập trình viên tự cấu hình dự án.</p>"
         ]
       },
       "topic": "code"
@@ -3909,15 +3909,15 @@
       "a": [
         "B"
       ],
-      "e": "CI pipeline thì chạy Claude Code headless (`-p`), cấu hình quyền sẵn trong settings.json và capture output để xử lý tiếp.",
+      "e": "Trong CI, chạy Claude Code không tương tác (chẳng hạn `-p`), cấu hình quyền phù hợp và thu đầu ra có cấu trúc để chuyển cho các bước pipeline.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang chạy Claude Code như một phần của pipeline tích hợp liên tục (CI) tự động. </p><p>Pipeline cần Claude Code thực thi một tập các tác vụ đã được xác định rõ mà không yêu cầu xác nhận, và đầu ra cần được ghi lại để xử lý ở các bước tiếp theo. </p><p>Bạn sẽ cấu hình pipeline như thế nào?</p>",
+        "q": "<p>Claude Code chạy tự động trong pipeline CI, phải thực hiện các tác vụ xác định trước mà không hỏi xác nhận và cần ghi lại đầu ra cho bước tiếp theo. Bạn nên cấu hình thế nào?</p>",
         "o": [
-          "<p>Chạy Claude Code ở chế độ interactive và độ mặt lập trình viên phê duyệt thủ công mỗi lỗi nhắc xác nhận trong khi pipeline thực thi các tác vụ.</p>",
-          "<p>Tắt các lời nhắc xác nhận của Claude Code trên toàn cục ở mỗi môi trường để pipeline chạy mà không bị gián đoạn bởi bất kỳ lời nhắc nào.</p>",
-          "<p>Thay Claude Code bằng một công cụ khác không cần cấu hình gì để hoạt động mà không có lỗi nhắc xác nhận trong pipeline.</p>",
-          "<p>Chạy Claude Code ở chế độ headless với các quyền cần thiết được cấu hình trong settings.json và ghi lại đầu ra của nó để xử lý ở các bước tiếp theo.</p>"
+          "<p>Chạy tương tác và yêu cầu lập trình viên duyệt mọi lời nhắc.</p>",
+          "<p>Tắt xác nhận trên mọi môi trường để CI không bị gián đoạn.</p>",
+          "<p>Đổi công cụ khác vì Claude Code không thể chạy không tương tác.</p>",
+          "<p>Chạy Claude Code ở chế độ headless, cấp quyền cần thiết qua `settings.json` và thu đầu ra để xử lý tiếp.</p>"
         ]
       },
       "topic": "code"
@@ -3946,15 +3946,15 @@
       "a": [
         "D"
       ],
-      "e": "Output token thường đắt hơn token đầu vào token, nên cost model phải tính hai mức giá riêng.",
+      "e": "Đơn giá token đầu vào và đầu ra khác nhau; token đầu ra thường đắt hơn. Mô hình chi phí cần tính riêng từng loại theo bảng giá.",
       "m": 1,
       "v": {
-        "q": "<p>Một đồng nghiệp yêu cầu bạn giải thích vì sao ứng dụng Claude của nhóm bị tính phí cho output token ở mức giá khác với input token. </p><p>Hệ đã cho rằng hai mức giá này bằng nhau. Bạn sẽ giải thích sự khác biệt này như thế nào?</p>",
+        "q": "<p>Một đồng nghiệp thắc mắc vì sao giá token đầu ra của Claude khác token đầu vào; họ tưởng hai loại có cùng đơn giá. Bạn sẽ giải thích thế nào?</p>",
         "o": [
-          "<p>Output token thường được tính phí thấp hơn input token, vì output token rẻ hơn để tạo ra so với chi phí xử lý input token.</p>",
-          "<p>Output token thường được tính phí cao hơn input token, và mô hình chi phí của ứng dụng nên phản ánh riêng từng mức giá.</p>",
-          "<p>Output token thường được tính phí bằng input token, và sự chênh lệch giá hiện thể là lỗi thanh toán cần báo cho Anthropic.</p>",
-          "<p>Output token hoàn toàn không bị tính phí, vì chi phí chỉ được xác định bởi các input token gọi tới mô hình trong mỗi request.</p>"
+          "<p>Token đầu ra thường rẻ hơn token đầu vào.</p>",
+          "<p>Token đầu ra thường có đơn giá cao hơn; dự toán chi phí phải tính riêng hai loại.</p>",
+          "<p>Token đầu ra có giá bằng token đầu vào; chênh lệch chỉ là lỗi tính phí.</p>",
+          "<p>Token đầu ra không bị tính phí, chi phí chỉ dựa trên đầu vào.</p>"
         ]
       },
       "topic": "api"
@@ -3983,15 +3983,15 @@
       "a": [
         "A"
       ],
-      "e": "Task đơn giản trên file và shell thì dùng ngay các tool có sẵn của SDK (Read, Edit, Bash, Glob, Grep), không cần custom tool hay MCP.",
+      "e": "Với tác vụ thao tác tệp và shell thông thường, các công cụ có sẵn của SDK đã đủ. Không cần xây thêm custom tool hay MCP.",
       "m": 1,
       "v": {
-        "q": "<p>Một công cụ nội bộ nhớ cần đọc tập, chạy lệnh shell và tìm kiếm trong codebase cho một tác vụ refactor một lần bằng Claude Agent SDK. </p><p>Không có hệ thống bên ngoài hay logic nghiệp về tùy chỉnh nào liên quan. </p><p>Điểm khởi đầu phù hợp nhất là gì?</p>",
+        "q": "<p>Một công cụ nội bộ nhỏ cần dùng Claude Agent SDK để đọc tệp, chạy lệnh shell và tìm trong codebase cho tác vụ refactor một lần. Không có hệ thống ngoài hay nghiệp vụ đặc thù. Điểm khởi đầu phù hợp nhất là gì?</p>",
         "o": [
-          "<p>Sử dụng các công cụ tích hợp sẵn của SDK như Read, Edit, Bash, Glob và Grep mà không cần xây dựng công cụ tùy chỉnh hay MCP server nào</p>",
-          "<p>Viết một Skill chưa hướng dẫn cách đọc tập và chạy lệnh để thay cho các công cụ tích hợp sẵn</p>",
-          "<p>Kết nối một MCP server bên ngoài triển khai lại việc truy cập hệ thống tập và shell qua một giao thức mừng</p>",
-          "<p>Xây dựng một công cụ tùy chỉnh để đọc tập và một công cụ khác để chạy lệnh shell trước khi viết bất kỳ đoạn mã nào</p>"
+          "<p>Dùng công cụ tích hợp sẵn như Read, Edit, Bash, Glob và Grep; không cần tạo custom tool.</p>",
+          "<p>Viết Skill chỉ dẫn cách đọc tệp và chạy lệnh thay cho công cụ tích hợp sẵn.</p>",
+          "<p>Dùng MCP server bên ngoài để triển khai lại quyền truy cập tệp và shell qua mạng.</p>",
+          "<p>Tạo hai custom tool đọc tệp và chạy shell trước khi bắt đầu.</p>"
         ]
       },
       "topic": "tools"
@@ -4020,15 +4020,15 @@
       "a": [
         "A"
       ],
-      "e": "Hệ thống nội bộ không có MCP hay SDK sản thì viết custom tool gửi REST gateway, đăng ký qua in-process MCP server (SDK MCP server).",
+      "e": "Dịch vụ nội bộ không có tích hợp sẵn thì nên viết custom tool gọi REST gateway có kiểm soát và đăng ký qua in-process MCP server của SDK.",
       "m": 1,
       "v": {
-        "q": "<p>Một công ty khởi nghiệp fintech đang xây dựng một agent hỗ trợ nội bộ bảng Claude Agent SDK. </p><p>Agent phải tra cầu số dư tài khoản từ một dịch vụ sổ cái đặc quyền chỉ có thể truy cập qua một cộng REST nội bộ, không có MCP server hay SDK công khai nào sẵn có. </p><p>Cách tiếp cận nào phù hợp nhất với yêu cầu này?</p>",
+        "q": "<p>Một startup fintech xây dựng tác nhân hỗ trợ nội bộ với Claude Agent SDK. Tác nhân phải đọc số dư tài khoản từ dịch vụ sổ cái riêng, chỉ truy cập qua REST gateway nội bộ, chưa có MCP server hoặc SDK công khai. Nên tích hợp thế nào?</p>",
         "o": [
-          "<p>Định nghĩa một custom tool gọi tới cộng REST nội bộ và đăng ký nó thông qua một MCP server chạy trong cùng tiến trình (in-process)</p>",
-          "<p>Dựa vào công cụ WebFetch tích hợp sẵn để truy vấn trực tiếp cộng này từ prompt của agent</p>",
-          "<p>Viết một Skill mô tả schema của sổ cái và mong Claude suy luận số dư từ trí nhỏ</p>",
-          "<p>Tìm một MCP server của cộng đồng có thể cung cấp khả năng tra cầu số dư sổ cái tương tự</p>"
+          "<p>Định nghĩa custom tool gọi REST gateway nội bộ và đăng ký qua MCP server chạy trong cùng tiến trình.</p>",
+          "<p>Dùng WebFetch tích hợp sẵn để truy cập gateway trực tiếp từ prompt.</p>",
+          "<p>Viết Skill mô tả schema sổ cái và yêu cầu Claude suy ra số dư từ bộ nhớ.</p>",
+          "<p>Tìm một MCP server cộng đồng có chức năng giống sổ cái này.</p>"
         ]
       },
       "topic": "tools"
@@ -4057,15 +4057,15 @@
       "a": [
         "A"
       ],
-      "e": "`allowed_tools` cho tập tool cố định cũng với `permission_mode: dontAsk`: tool trong danh sách chạy bình thường, mỗi tool khác bị từ chối ngay, không chỉ ai duyệt.",
+      "e": "Kết hợp danh sách `allowed_tools` với chế độ `dontAsk`: các công cụ được phép chạy không cần tương tác; lời gọi khác bị từ chối thay vì chờ người duyệt.",
       "m": 1,
       "v": {
-        "q": "<p>Một nhóm đang xây dựng một agent tự động bằng Claude Agent SDK chạy không giám sát trong pipeline CI. </p><p>Agent cần chạy một tập công cụ cố định (`Read`, `Grep`, `Bash(npm test)`) mà không có con người để phê duyệt các lời nhắc, và mới lệnh gọi công cụ nằm ngoài tập cố định đó phải bị từ chối ngay lập tức thay vì treo chỉ phê duyệt. </p><p>Cấu hình nào đạt được điều này?</p>",
+        "q": "<p>Tác nhân Claude Agent SDK chạy CI không có người giám sát. Chỉ được dùng `Read`, `Grep`, `Bash(npm test)` mà không hỏi duyệt; mọi công cụ khác phải bị từ chối ngay, không được treo chờ xác nhận. Cấu hình nào đáp ứng?</p>",
         "o": [
-          "<p>Đặt `permission_mode` là `bypassPermissions` và bỏ qua hoàn toàn `allowed_tools`, vì chỉ để bypass mặc định đã giới hạn việc thực thi trong một tập công cụ an toàn tối thiểu.</p>",
-          "<p>Đặt `permission_mode` là `plan` và đặt `allowed_tools` là tập cố định, vì chỉ để plan tự động tự chổi mới lệnh gọi công cụ không được phê duyệt trước một cách tường minh.</p>",
-          "<p>Đặt `permission_mode` là `default` và đăng ký một callback `canUseTool` luôn ném ngoại lệ đối với các công cụ nằm ngoài tập cố định.</p>",
-          "<p>Đặt `allowed_tools` là tập cố định và `permission_mode` là `dontAsk`; các công cụ được liệt kê sẽ chạy, và mới lệnh gọi khác đều bị từ chối mà không gửi `canUseTool`.</p>"
+          "<p>Đặt `permission_mode` thành `bypassPermissions` và bỏ `allowed_tools`.</p>",
+          "<p>Đặt `permission_mode` thành `plan` và `allowed_tools` theo danh sách cố định.</p>",
+          "<p>Dùng `default` với callback `canUseTool` luôn ném lỗi đối với công cụ ngoài danh sách.</p>",
+          "<p>Đặt `allowed_tools` theo danh sách cố định và `permission_mode` thành `dontAsk`; công cụ hợp lệ được chạy, công cụ khác bị từ chối.</p>"
         ]
       },
       "topic": "tools"
@@ -4094,15 +4094,15 @@
       "a": [
         "A"
       ],
-      "e": "Matcher có ký tự regex như `|` hay `.*` sẽ được đánh giá như regex: `Bash|Edit.*` khớp Bash, Edit và NotebookEdit (vì chưa \"Edit\").",
+      "e": "Matcher regex `Bash|Edit.*` khớp `Bash` hoặc tên có phần `Edit` phù hợp. Nhờ đó có thể bao phủ nhiều công cụ mà không liệt kê từng tên.",
       "m": 1,
       "v": {
-        "q": "<p>Một kỹ sư cấu hình một hook của Claude Code muốn nó kích hoạt cho mỗi lệnh gọi công cụ Bash, Edit và NotebookEdit mà không cần liệt kê tường minh từng tên công cụ. </p><p>Theo tài liệu của Anthropic về matcher dựa trên regex, cấu hình nào đạt được điều này?</p>",
+        "q": "<p>Một kỹ sư muốn hook Claude Code kích hoạt cho mọi lời gọi Bash, Edit và NotebookEdit mà không cần liệt kê riêng từng tên. Theo tài liệu matcher regex của Anthropic, nên cấu hình gì?</p>",
         "o": [
-          "<p>Dùng một matcher như `Bash|Edit.*`; hệ thống chuyển sang đánh giá bằng regex và khớp với mỗi tên công cụ chứa các chuỗi đó như chuỗi con.</p>",
-          "<p>B? hoàn toàn trường matcher, khiến hook chế kích hoạt cho các công cụ có tên dài hạn bản ký tự, chẳng hạn Bash và NotebookEdit.</p>",
-          "<p>Một matcher là `Bash+Edit+NotebookEdit`, trong đó dấu cộng đóng vai trò toán tử nối chuỗi, khiến mẫu được đánh giá như một chuỗi khớp chính xác duy nhất.</p>",
-          "<p>Một matcher là `Bash, Edit, NotebookEdit` với dấu phẩy, điều này kích hoạt đánh giá regex, khiến mẫu khớp với mỗi tên công cụ chứa các chuỗi con đó.</p>"
+          "<p>Dùng matcher `Bash|Edit.*`; regex khớp với Bash, Edit và NotebookEdit.</p>",
+          "<p>Bỏ trường matcher vì khi đó hook chỉ chạy cho tên công cụ dài hơn một ngưỡng.</p>",
+          "<p>Dùng matcher `Bash+Edit+NotebookEdit`, coi dấu cộng là phép ghép chuỗi.</p>",
+          "<p>Dùng matcher `Bash, Edit, NotebookEdit`, cho rằng dấu phẩy tạo lựa chọn regex.</p>"
         ]
       },
       "topic": "tools"
@@ -4141,17 +4141,17 @@
         "B",
         "C"
       ],
-      "e": "Đúng: `settings.local.json` bộ gitignore, chỉ dùng local; managed policy do admin quản lý và có ưu tiên cao nhất; khi các hook xung đột thì deny &gt; defer &gt; ask &gt; allow. Sai: PostToolUse chạy sau khi tool đã thực thi nên không chọn được; hook async không thể chọn hay sửa thao tác.",
+      "e": "Theo đáp án của bộ đề, ba ý đúng là cấu hình cá nhân `settings.local.json`, chính sách quản trị tổ chức và ưu tiên deny > defer > ask > allow. `PostToolUse` chạy sau công cụ nên không thể ngăn thực thi; hook bất đồng bộ không được dùng để chặn hay sửa thao tác đang chạy.",
       "m": 3,
       "v": {
-        "q": "<p>Những phát biểu nào sau đây về mặc ưu tiên quyết định của hook và phạm vi cấu hình là chính xác theo tài liệu của Anthropic? (Chọn 3)</p>",
+        "q": "<p>Những phát biểu nào về thứ tự ưu tiên quyết định của hook và phạm vi cấu hình Claude Code là đúng theo tài liệu Anthropic? (Chọn 3.)</p>",
         "o": [
-          "<p>Hook PostToolUse có thể chọn một lệnh gọi công cụ trước khi nó thực thi, giống như hook PreToolUse</p>",
-          "<p>`.claude/settings.local.json` được gitignore và dành cho cấu hình chỉ dùng cục bộ, không phải để chia sẻ hook với nhóm</p>",
-          "<p>Đầu ra của hook bất đồng bộ (async) có thể chọn, sửa đổi hoặc chèn ngữ cảnh vào thao tác một cách an toàn miễn là `asyncTimeout` được đặt độ cao</p>",
-          "<p>Cài đặt managed policy áp dụng trên toàn tổ chức và do quản trị viên kiểm soát, có mức ưu tiên mà cài đặt cục bộ của dự án không thể ghi đè</p>",
-          "<p>Khi nhiều hook trả về các quyết định xung đột, deny được ưu tiên hơn defer, defer được ưu tiên hơn ask, và ask được ưu tiên hơn allow</p>",
-          "<p>Một hook matcher là `*` về chức năng giống hết việc bị matcher, vì chỉ có `*` mới vô hiệu hóa hoàn toàn việc đánh giá regex cho hook đó</p>"
+          "<p>Hook `PostToolUse` có thể chặn lời gọi trước khi công cụ thực thi, giống `PreToolUse`.</p>",
+          "<p>`.claude/settings.local.json` được Git bỏ qua, dùng cho cấu hình cá nhân, không phải chia sẻ hook của nhóm.</p>",
+          "<p>Hook bất đồng bộ có thể chặn, sửa hoặc chèn ngữ cảnh vào thao tác chỉ cần đặt `asyncTimeout`.</p>",
+          "<p>Managed policy do quản trị viên kiểm soát và áp dụng toàn tổ chức, có mức ưu tiên cao hơn cấu hình thông thường.</p>",
+          "<p>Khi hook đưa quyết định mâu thuẫn, thứ tự ưu tiên là deny, rồi defer, ask và cuối cùng allow.</p>",
+          "<p>Matcher `*` tương đương với bỏ trường matcher vì chỉ `*` mới tắt toàn bộ xử lý regex.</p>"
         ]
       },
       "topic": "code"
@@ -4180,15 +4180,15 @@
       "a": [
         "A"
       ],
-      "e": "Từ chắc có HIPAA mà không có Zero Data Retention thì không dùng được code execution. Bộ tool đó khối request và chỉ dùng các tính năng để điều kiện HIPAA.",
+      "e": "Thông báo lỗi cho biết công cụ code execution không được phép trong cấu hình hiện tại. Hãy bỏ công cụ đó khỏi yêu cầu và chỉ dùng tính năng đáp ứng chính sách HIPAA, thay vì retry nguyên yêu cầu.",
       "m": 1,
       "v": {
-        "q": "<p>Một tổ chức y tự có từ chức Claude API đã bật HIPAA gửi một request có bao gồm công cụ code execution. </p><p>API phản hồi lại 400 invalid_request_error cho biết tính năng này không khả dụng đối với các tổ chức chịu quy định HIPAA nếu không có Zero Data Retention. </p><p>Biến pháp khắc phục ngay lập tức phù hợp nhất cho request cụ thể này là gì?</p>",
+        "q": "<p>Tổ chức y tế dùng Claude API đã kích hoạt HIPAA gửi yêu cầu có công cụ code execution. API trả lỗi `400 invalid_request_error`: công cụ này không được hỗ trợ cho tổ chức thuộc diện HIPAA nếu không có Zero Data Retention. Cách khắc phục ngay cho yêu cầu này là gì?</p>",
         "o": [
-          "<p>Loại bỏ công cụ code execution khởi request và chỉ dùng các tính năng được liệt kê là để điều kiện cho HIPAA readiness trong bảng điều kiện tính năng</p>",
-          "<p>Thử lại chính request đó với giá trị max_tokens cao hơn, vì lỗi do ngân sách token không để cho lệnh gọi công cụ</p>",
-          "<p>Chuyển request sang một organization ID khác không liên quan và không có BAA để hạn chế tính năng không còn áp dụng</p>",
-          "<p>Bỏ qua lại và gửi lại cùng request nhiều lần, vì các hạn chế tính năng của HIPAA chỉ là cảnh báo mang tính khuyến nghị chủ không phải chọn thực sự</p>"
+          "<p>Loại công cụ code execution khỏi yêu cầu và chỉ dùng những tính năng đủ điều kiện theo HIPAA.</p>",
+          "<p>Gửi lại yêu cầu với `max_tokens` lớn hơn vì lỗi là do thiếu token.</p>",
+          "<p>Đổi sang ID tổ chức khác chưa có BAA để bỏ qua hạn chế.</p>",
+          "<p>Tiếp tục gửi lại yêu cầu cũ vì hạn chế HIPAA chỉ mang tính khuyến nghị.</p>"
         ]
       },
       "topic": "risk"
@@ -4217,15 +4217,15 @@
       "a": [
         "D"
       ],
-      "e": "Hai cách đều có trade-off. Trước hết phải xác định tính chất nào quan trọng hơn với use case thực tế (suy luận xuyên suốt hay độ chính xác trích dẫn), rồi validate trên bề hợp đồng mẫu.",
+      "e": "Hai hướng có đánh đổi khác nhau. Cần xác định ưu tiên của use case — suy luận xuyên suốt hay độ chính xác trích dẫn — rồi đánh giá trên tài liệu đại diện để chọn cách phù hợp.",
       "m": 1,
       "v": {
-        "q": "<p>Ứng dụng Claude của bạn xử lý các hộp động pháp lý 50 trang và tạo bản tóm tắt kèm tham chiếu trích dẫn về nguồn. </p><p>Nhóm đang tranh luận nên gợi nguyên cụ hộp động hay chia thành các phần nhỏ hơn. </p><p>Các hộp động vừa với cửa sổ ngữ cảnh của Claude. </p><p>Thứ nghiệm ban đầu cho thấy xử lý toàn bộ tài liệu tạo ra các bản tóm tắt có khả năng suy luận liên phản mạnh hơn nhưng đôi khi lịch độ chính xác của trích dẫn ở các phần sau. </p><p>Xử lý theo chunk cho độ chính xác trích dẫn tốt hơn trên mỗi chunk những mặt khả năng suy luận liên phản. </p><p>Nhóm chưa quyết định thuộc tính nào quan trọng hạn. </p><p>Bạn sẽ hướng dẫn quyết định của nhóm như thế nào?</p>",
+        "q": "<p>Ứng dụng Claude tóm tắt hợp đồng pháp lý dài 50 trang, kèm trích dẫn đến tài liệu nguồn. Tài liệu vừa trong cửa sổ ngữ cảnh. Thử nghiệm cho thấy xử lý nguyên tài liệu giúp suy luận giữa các phần tốt hơn, còn chia đoạn có thể giúp xác định trích dẫn nhưng làm mất ngữ cảnh xuyên suốt. Bạn nên chọn hướng nào?</p>",
         "o": [
-          "<p>Đánh giá tác động về chi phí và độ trễ của cả hai cách tiếp cận so với yêu cầu hiệu năng của ứng dụng trước khi đề xuất chiến lược xử lý nào để áp dụng.</p>",
-          "<p>Xác định thuộc tính nào quan trọng hơn đối với trường hợp sử dụng thực tế của ứng dụng và độ quyết định đó dẫn dắt cách tiếp cận chia chunk, sau đó kiểm chứng lựa chọn trên các hộp động đối diện.</p>",
-          "<p>Xem xét kết quả độ chính xác trích dẫn từ xử lý theo chunk và xác định liệu việc mất khả năng suy luận liên phần có tạo ra các bản tóm tắt vốn đặt ngưỡng chất lượng của ứng dụng hay không.</p>",
-          "<p>Xem xét các trường hợp lại suy luận liên phản xảy ra và đánh giá liệu xử lý toàn bộ tài liệu có đáp ứng yêu cầu về độ chính xác của ứng dụng trên một mẫu hợp đồng đại diện hay không.</p>"
+          "<p>Đánh giá chi phí và độ trễ của hai cách so với yêu cầu hiệu năng.</p>",
+          "<p>Xác định thuộc tính quan trọng nhất với nhu cầu thực tế và dùng tiêu chí đó để quyết định giữa xử lý nguyên tài liệu hay chia đoạn.</p>",
+          "<p>Kiểm tra độ chính xác trích dẫn của cách chia đoạn và xem suy giảm suy luận xuyên phần có chấp nhận được không.</p>",
+          "<p>Xem các trường hợp suy luận xuyên phần thất bại và đánh giá liệu xử lý nguyên tài liệu có đáp ứng được yêu cầu hay không.</p>"
         ]
       },
       "topic": "quality"
@@ -4254,15 +4254,15 @@
       "a": [
         "D"
       ],
-      "e": "Prompt phải mô tả rõ JSON schema bắt buộc và yêu cầu chỉ xuất output đúng schema. Kết hợp đầu ra có cấu trúc hoặc validation sẽ an toàn hơn.",
+      "e": "Hướng dẫn phải mô tả chính xác cấu trúc JSON và yêu cầu không thêm nội dung ngoài schema. Nên kết hợp tính năng đầu ra có cấu trúc và xác thực tại ứng dụng để bảo đảm hơn.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang viết một system prompt cho một ứng dụng Claude cần tạo đầu ra theo một cấu trúc JSON cụ thể. </p><p>Hệ thống phía sau sẽ từ chối mỗi đều ra không khớp với schema. </p><p>Prompt của bạn cần phải...</p>",
+        "q": "<p>Bạn viết system prompt cho ứng dụng Claude phải xuất JSON theo schema cụ thể; hệ thống phía sau sẽ từ chối dữ liệu không khớp. Prompt cần yêu cầu điều gì?</p>",
         "o": [
-          "<p>Hướng dẫn Claude đôi khi trả về JSON và đôi khi trả về văn bản tự do để đầu ra của ứng dụng bao gồm cả hai định dạng.</p>",
-          "<p>Bỏ qua mọi đề cập đến định dạng và dựa vào một bước hậu xử lý trong ứng dụng để định hình lại đầu ra của Claude.</p>",
-          "<p>Hướng dẫn Claude dùng bất kỳ định dạng đầu ra nào mà nó cho là phù hợp nhất cho mỗi request mà ứng dụng xử lý.</p>",
-          "<p>Bao gồm các ràng buộc tường minh mô tả JSON schema bắt buộc và một chỉ dẫn chỉ tạo đầu ra khớp với schema đó.</p>"
+          "<p>Cho phép lúc trả JSON, lúc trả văn bản tự do để linh hoạt.</p>",
+          "<p>Không đề cập định dạng, chỉ dựa vào hậu xử lý để ép dữ liệu.</p>",
+          "<p>Cho phép Claude tự chọn định dạng phù hợp với từng yêu cầu.</p>",
+          "<p>Nêu rõ ràng buộc JSON Schema và yêu cầu chỉ tạo đầu ra phù hợp schema.</p>"
         ]
       },
       "topic": "prompt"
@@ -4291,15 +4291,15 @@
       "a": [
         "A"
       ],
-      "e": "10.000 email xử lý qua đêm, không cần tương tác, có thời hạn linh hoạt thì dùng Batch API: rẻ hơn khoảng 50%.",
+      "e": "Với 10.000 email chạy theo lô qua đêm, không cần phản hồi ngay, Batch API phù hợp và có thể giúp giảm chi phí so với gọi thời gian thực.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang xây dựng một ứng dụng Claude xử lý 10.000 email khách hàng qua đêm để trích xuất dữ liệu có cấu trúc. </p><p>Công việc này không tương tác, chạy một lần mới ngày và có khung thời gian hoàn thành linh hoạt vài giả. </p><p>Bạn sẽ dùng Claude API nào?</p>",
+        "q": "<p>Ứng dụng Claude xử lý 10.000 email khách hàng mỗi đêm để trích xuất dữ liệu có cấu trúc. Tác vụ chạy mỗi ngày, không cần tương tác và có thể hoàn thành trong vài giờ. Nên dùng API nào?</p>",
         "o": [
-          "<p>Messages API thời gian thực, xử lý từng email một cách tuần tự để đảm bảo thứ từ kết quả nhất quán.</p>",
-          "<p>API streaming để xử lý từng email và trả kết quả một phần vào cơ sở dữ liệu khi mô hình đang sinh ra.</p>",
-          "<p>Batch API, được thiết kế cho các khối lượng công việc không tương tác với khung thời gian hoàn thành linh hoạt.</p>",
-          "<p>Messages API thời gian thực với các request đồng thời để xử lý email nhanh nhất có thể trong khoảng thời gian qua đêm.</p>"
+          "<p>Messages API thời gian thực, xử lý email tuần tự từng cái.</p>",
+          "<p>Streaming API để gửi kết quả từng phần vào cơ sở dữ liệu ngay khi sinh.</p>",
+          "<p>Batch API, phù hợp khối lượng công việc không tương tác và thời hạn hoàn thành linh hoạt.</p>",
+          "<p>Messages API thời gian thực với nhiều yêu cầu đồng thời để xử lý nhanh nhất.</p>"
         ]
       },
       "topic": "api"
@@ -4328,15 +4328,15 @@
       "a": [
         "D"
       ],
-      "e": "YAGNI: không có nhu cầu multi-provider thì tích hợp thống qua SDK của Claude. Thêm abstraction chỉ tăng độ phức tạp mà không có lợi ích.",
+      "e": "Không nên xây tính năng chưa có nhu cầu thực tế (YAGNI). Khi sản phẩm chỉ dùng Claude, tích hợp qua SDK trực tiếp đơn giản và dễ bảo trì hơn.",
       "m": 1,
       "v": {
-        "q": "<p>Nhóm đang tranh luận nên tích hợp trực tiếp với Claude API hay thông qua một lớp trừu tượng của bên thứ ba hỗ trợ nhiều nhà cung cấp LLM. </p><p>Nhóm đã xác định rằng mỗi trường hợp sử dụng hiện tại và dữ kiện đầu chạy trên Claude, không có khách hàng nội bộ nào yêu cầu khả năng chuyển đổi LLM, và lệ trình sản phẩm không đề cập hỗ trợ đa nhà cung cấp trong hai nằm tại. </p><p>Lớp trừu tượng của bên thứ ba sẽ làm tăng khoảng 15 phần trăm để phục tập của mã và thêm một dependency. </p><p>Bạn sơ đồ xuất cách tích hợp nào?</p>",
+        "q": "<p>Nhóm phân vân giữa tích hợp Claude API trực tiếp và dùng lớp trừu tượng bên thứ ba hỗ trợ nhiều nhà cung cấp LLM. Hiện tại và trong kế hoạch hai năm tới, mọi use case đều dùng Claude; không ai yêu cầu chuyển đổi nhà cung cấp. Nên chọn hướng nào?</p>",
         "o": [
-          "<p>Lớp trừu tượng của bên thứ ba, với lý do hỗ trợ đa nhà cung cấp có giá trị đối với mỗi ứng dụng như một số linh hoạt dài hạn giữa các nhà cung cấp.</p>",
-          "<p>Cả hai đường tích hợp song song, trong đó ứng dụng dùng mỗi đường ở các lần chạy khác nhau để so sánh đường nào hoạt động tốt hơn trong môi trường production theo thời gian.</p>",
-          "<p>Một lớp trừu tượng đa nhà cung cấp từ xây dựng nội bộ để nhóm kiểm soát mỗi phần của lớp trừu tượng mà ứng dụng dùng cho các lệnh gọi API.</p>",
-          "<p>Tích hợp trực tiếp với Claude thông qua SDK của nó, vì không có nhu cầu đa nhà cung cấp và lớp trừu tượng sẽ thêm độ phức tạp mà không mang lỗi lợi ích tương xứng.</p>"
+          "<p>Dùng lớp trừu tượng đa nhà cung cấp vì ứng dụng nào cũng cần khả năng này.</p>",
+          "<p>Triển khai cả hai đường tích hợp song song để so sánh từng lượt.</p>",
+          "<p>Tự xây lớp trừu tượng đa nhà cung cấp để kiểm soát toàn bộ kiến trúc.</p>",
+          "<p>Tích hợp trực tiếp qua Claude SDK vì hiện không có nhu cầu đa nhà cung cấp; lớp trừu tượng chỉ làm tăng độ phức tạp.</p>"
         ]
       },
       "topic": "api"
