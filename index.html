@@ -455,8 +455,19 @@ function displayedQuestion(q, state){
 }
 function loadLearn(c){
   const s = LS.get(KEY(c,'learn'));
+  const previousTopic = s?.topic;
   if(s) s.topic=validTopic(c,s.topic);
   const ids = topicIds(c,s?.topic);
+  // Upgrade old topic filters without discarding previously selected answers/progress.
+  // Old categories (agent/prompt/etc.) no longer exist in the official domain taxonomy.
+  if(s && previousTopic && !s.topic && Array.isArray(s.order) && s.order.every(id=>BY_ID[c][id])){
+    const order = s.shuffle ? shuffle(ids) : ids;
+    const migrated = {...s, topic:'', retry:false, fullOrder:null,
+      order:order.slice(0,countFor(s.size,ids.length)), idx:0,
+      optionOrders:s.shuffle ? optionOrders(ids,c) : null};
+    LS.set(KEY(c,'learn'),migrated);
+    return migrated;
+  }
   if (s && Array.isArray(s.order) && (s.retry ? (s.fullOrder && s.fullOrder.length===countFor(s.size, ids.length)) : s.order.length===countFor(s.size, ids.length)) && s.order.every(i => BY_ID[c][i])) {
     if (s.shuffle && !s.optionOrders) {
       s.optionOrders = optionOrders(ids, c);
