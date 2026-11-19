@@ -469,6 +469,8 @@ function checkForAppUpdate(){
     .finally(() => { updateCheckPending = null; });
   return updateCheckPending;
 }
+// Also detect deployments during long-running sessions without interrupting an exam.
+setInterval(() => { void checkForAppUpdate(); }, 5 * 60 * 1000);
 window.addEventListener('pageshow', () => { void checkForAppUpdate(); });
 window.addEventListener('focus', () => { void checkForAppUpdate(); });
 document.addEventListener('visibilitychange', () => {
