@@ -44,6 +44,21 @@ for (const [cert, expected] of Object.entries(banks)) {
     assert.ok(q.a.every(k => q.o.some(o => o.k === k)), `${cert}:${q.id} answer key missing from choices`);
     assert.ok(q.v && typeof q.v.q === 'string' && Array.isArray(q.v.o) && q.v.o.length === q.o.length, `${cert}:${q.id} translated choices mismatch`);
     assert.equal(typeof q.e, 'string', `${cert}:${q.id} missing explanation`);
+    if (cert === 'ccdf') {
+      // CCD-F was retranslated end-to-end; catch garbled words and broken markup.
+      const vietnamese = [q.v.q, ...q.v.o, q.e];
+      for (const translation of vietnamese) {
+        assert.ok(typeof translation === 'string' && translation.trim().length > 0,
+          `${cert}:${q.id} missing Vietnamese text`);
+        assert.ok(!/(?:^|\\s)(?:s\\?|b\\?|d\\?|m\\?|r\\?|v\\?)(?=\\s|$)/u.test(translation),
+          `${cert}:${q.id} contains corrupted Vietnamese characters`);
+        for (const tag of ['p', 'ul', 'ol', 'li']) {
+          const openings = (translation.match(new RegExp(`<${tag}(?:\\s[^>]*)?>`, 'g')) || []).length;
+          const closings = (translation.match(new RegExp(`</${tag}>`, 'g')) || []).length;
+          assert.equal(openings, closings, `${cert}:${q.id} unbalanced <${tag}> tags`);
+        }
+      }
+    }
   }
   assert.equal(englishFingerprint(bank.qs), expected.english, `${cert}: original English/answer content changed`);
   console.log(`PASS ${cert}: ${bank.qs.length} questions, English unchanged`);
