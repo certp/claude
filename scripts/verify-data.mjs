@@ -5,17 +5,16 @@ import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 
-// English content, answers, order and IDs from the initial question bank.
-// Topic/domain metadata is deliberately EXCLUDED from the fingerprint so domain corrections
-// never mask an accidental change to the original English questions or answers.
+// Pin original English question/choice text separately from the curated answer keys.
+// Answer keys are also fingerprinted, but their baseline may be updated after a reviewed fix.
+// Domain metadata is intentionally excluded so relabeling never changes these hashes.
 const banks = {
-  ccaf: { count: 309, english: '0bfd5bec', domains: 5 },
-  ccao: { count: 193, english: 'be880d99', domains: 7 },
-  ccdf: { count: 155, english: '629ed52c', domains: 8 },
+  ccaf: { count: 309, english: '0bfd5bec', englishText: '86a599d8', domains: 5 },
+  ccao: { count: 193, english: '86bde794', englishText: '0207dba6', domains: 7 },
+  ccdf: { count: 155, english: '629ed52c', englishText: 'a889909d', domains: 8 },
 };
 
-function englishFingerprint(qs) {
-  const source = JSON.stringify(qs.map(q => [q.id, q.q, q.o, q.a, q.m]));
+function fnv1a(source) {
   let hash = 2166136261;
   for (let i = 0; i < source.length; i++) {
     hash ^= source.charCodeAt(i);
@@ -23,6 +22,19 @@ function englishFingerprint(qs) {
   }
   return (hash >>> 0).toString(16).padStart(8, '0');
 }
+
+const englishFingerprint = qs => fnv1a(JSON.stringify(qs.map(q => [q.id, q.q, q.o, q.a, q.m])));
+const englishTextFingerprint = qs => fnv1a(JSON.stringify(qs.map(q => [q.id, q.q, q.o])));
+
+const associateTopics = {
+  '972':'d6', '975':'d3', '976':'d1', '977':'d1', '1002':'d7',
+  '1047':'d5', '1052':'review', '1055':'d2', '1058':'d7',
+  '1059':'d6', '1061':'d7', '1065':'d7', '1068':'d3',
+  '1076':'d4', '1094':'d4', '1096':'d4', '1099':'d3',
+  '1105':'d3', '1117':'d3', '1258':'d1', '1259':'d2',
+  '1264':'review', '1270':'d3', '1271':'d4',
+  '1274':'d4', '1289':'d7'
+};
 
 const html = readFileSync(join(root, 'index.html'), 'utf8');
 assert.ok(!html.includes('const DATA = {"ccaf"'), 'Question banks must not be embedded in HTML');
@@ -66,14 +78,26 @@ for (const [cert, expected] of Object.entries(banks)) {
     }
   }
   const flagged = bank.qs.filter(q => q.topic === 'review').map(q => q.id).sort();
-  assert.deepEqual(flagged, cert === 'ccao' ? ['1046', '1050', '1051', '1104'] : [],
+  assert.deepEqual(flagged, cert === 'ccao' ? ['1046', '1050', '1051', '1052', '1104', '1264'] : [],
     `${cert}: review inventory changed; reevaluate question scope`);
   for (let domain = 1; domain <= expected.domains; domain++) {
     assert.ok(bank.qs.some(q => q.topic === `d${domain}`),
       `${cert}: no questions available in domain ${domain}`);
   }
-  assert.equal(englishFingerprint(bank.qs), expected.english, `${cert}: original English/answer content changed`);
-  console.log(`PASS ${cert}: ${bank.qs.length} questions, English unchanged`);
+  if (cert === 'ccao') {
+    const byId = new Map(bank.qs.map(q => [q.id, q]));
+    for (const [id, topic] of Object.entries(associateTopics)) {
+      assert.equal(byId.get(id)?.topic, topic, `ccao:${id} reviewed domain drifted`);
+    }
+    for (const [id, correct] of [['1055', 'D'], ['1246', 'A']]) {
+      const q = byId.get(id);
+      assert.deepEqual(q.a, [correct], `ccao:${id} incorrect answer key`);
+      assert.equal(q.m, 1, `ccao:${id} is a single-answer question`);
+    }
+  }
+  assert.equal(englishTextFingerprint(bank.qs), expected.englishText, `${cert}: original English question/choice text changed`);
+  assert.equal(englishFingerprint(bank.qs), expected.english, `${cert}: reviewed English/answer baseline changed`);
+  console.log(`PASS ${cert}: ${bank.qs.length} questions, English text and reviewed answers intact`);
   total += bank.qs.length;
 }
 console.log(`PASS: ${total} questions across ${Object.keys(banks).length} JSON banks`);
