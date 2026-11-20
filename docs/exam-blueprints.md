@@ -18,24 +18,15 @@ This app intentionally targets the **November 2026 v1.1** Anthropic Exam Guides,
 
 Every question has a `topic` field using an exam-specific official domain ID: `d1`, `d2`, etc. The IDs are **local to each exam**: `ccaf/d2` and `ccao/d2` are different competencies. The localized labels and percentages are maintained in `BLUEPRINTS` in `index.html`. Original question IDs, English prompts, choice text/order, and translations remain unchanged by domain reclassification. Two separately reviewed answer-key defects were corrected in CCAO-F; see [Associate domain and answer audit](associate-domain-audit.md).
 
-Six Associate questions require scope review and are assigned `topic: "review"`:
+All **193 Associate questions** are now assigned to their nearest primary blueprint domain. The six questions previously marked `review` (**1046, 1050, 1051, 1052, 1104, 1264**) were individually mapped by their core competency; none are excluded from random mock exams. **1046 remains a borderline SIAM/ITSM knowledge question** with only a weak connection to Claude: it is mapped to D7 as the closest category, not as a claim that Anthropic officially includes ITSM incident management. See the [Associate domain audit](associate-domain-audit.md) for all six decisions.
 
-| ID | Scope concern |
-| --- | --- |
-| 1046 | SIAM/ITSM incident management does not directly assess an Associate Claude objective |
-| 1050 | Technical design of progressive tool discovery across 60 internal tools is an architect/developer competency |
-| 1051 | Technical authorization and retrieval-layer isolation for multi-audience document access is an architect/developer competency |
-| 1052 | Technical architecture/handoff artifacts (ADRs, component diagrams, runbooks, on-call playbooks) are beyond Associate scope |
-| 1104 | Coordinator/subagent orchestration and token optimization belongs in a technical certification |
-| 1264 | Reporting an incorrect response via the thumbs-down UI does not map clearly to a published Associate objective |
-
-These questions remain accessible in **Học → Cần kiểm tra phạm vi** so the original content is not lost, but are excluded from random mock exams. Future reviewers should check this list against the specific official objectives before reassigning a domain.
+The former **Học → Cần kiểm tra phạm vi** filter disappears because there are no longer any review-only questions. Saved learning sessions using this old filter automatically migrate to **Tất cả**, avoiding an empty question screen.
 
 ## Exam sampling rules
 
 When a user selects **all domains** with 10, 20, 30 or **official exam length**, the sampler:
 
-1. Creates a pool per official domain; review-only questions are excluded.
+1. Creates a pool per official domain. Every Associate question is eligible (193 in total).
 2. Converts official percentages into integer quotas by the largest-remainder method.
 3. Caps quotas by available questions and redistributes any remaining slots to nonempty domains.
 4. Shuffles each pool and samples **without replacement**, then shuffles the final question order (and the answer option order through existing logic).
@@ -59,4 +50,4 @@ node scripts/verify-data.mjs
 node scripts/verify-weighted-exam.mjs
 ```
 
-The first command independently guards original English text and reviewed answer fingerprints, translations, official domain IDs, the Associate's curated domain classifications and answer-key corrections, and review inventory. The second verifies published weights, all official-length quotas, no duplicate question IDs, correct counts across repeated random samples and capacity-aware quota redistribution. Domain assignment is a maintained editorial classification: borderline questions should still receive human review, and future questions must be assigned to an official objective rather than reusing broad topical tags. The [Associate audit trail](associate-domain-audit.md) lists the objective-level reason for all 26 changes and documents the two corrected single-answer questions.
+The first command independently guards original English text and reviewed answer fingerprints, translations, official domain IDs, the Associate's curated domain classifications and answer-key corrections, and confirms that every question belongs to a domain. The second verifies published weights, all official-length quotas, no duplicate question IDs, correct counts across repeated random samples and capacity-aware quota redistribution. Domain assignment is a maintained editorial classification: borderline questions should still receive human review, and future questions must be assigned to an official objective rather than reusing broad topical tags. The [Associate audit trail](associate-domain-audit.md) documents 30 reviewed classification decisions (including the six previously deferred questions) and the two corrected single-answer questions.
