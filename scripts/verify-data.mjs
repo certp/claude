@@ -52,7 +52,7 @@ for (const [cert, expected] of Object.entries(banks)) {
     assert.ok(!ids.has(q.id), `${cert}: duplicated ID ${q.id}`);
     ids.add(q.id);
     assert.ok(
-      new RegExp('^d[1-' + expected.domains + ']
+      new RegExp('^d[1-' + expected.domains + ']' + String.fromCharCode(36)).test(q.topic),
       `${cert}:${q.id} invalid official exam domain ${q.topic}`
     );
     assert.equal(typeof q.q, 'string', `${cert}:${q.id} missing English question`);
@@ -80,56 +80,6 @@ for (const [cert, expected] of Object.entries(banks)) {
   }
   const flagged = bank.qs.filter(q => q.topic === 'review').map(q => q.id).sort();
   assert.deepEqual(flagged, [], `${cert}: each question must belong to a primary official domain`);
-  for (let domain = 1; domain <= expected.domains; domain++) {
-    assert.ok(bank.qs.some(q => q.topic === `d${domain}`),
-      `${cert}: no questions available in domain ${domain}`);
-  }
-  if (cert === 'ccao') {
-    const byId = new Map(bank.qs.map(q => [q.id, q]));
-    for (const [id, topic] of Object.entries(associateTopics)) {
-      assert.equal(byId.get(id)?.topic, topic, `ccao:${id} reviewed domain drifted`);
-    }
-    for (const [id, correct] of [['1055', 'D'], ['1246', 'A']]) {
-      const q = byId.get(id);
-      assert.deepEqual(q.a, [correct], `ccao:${id} incorrect answer key`);
-      assert.equal(q.m, 1, `ccao:${id} is a single-answer question`);
-    }
-  }
-  assert.equal(englishTextFingerprint(bank.qs), expected.englishText, `${cert}: original English question/choice text changed`);
-  assert.equal(englishFingerprint(bank.qs), expected.english, `${cert}: reviewed English/answer baseline changed`);
-  console.log(`PASS ${cert}: ${bank.qs.length} questions, English text and reviewed answers intact`);
-  total += bank.qs.length;
-}
-console.log(`PASS: ${total} questions across ${Object.keys(banks).length} JSON banks`);
-).test(q.topic),
-      `${cert}:${q.id} invalid official exam domain ${q.topic}`
-    );
-    assert.equal(typeof q.q, 'string', `${cert}:${q.id} missing English question`);
-    assert.ok(Array.isArray(q.o) && q.o.length > 0, `${cert}:${q.id} missing choices`);
-    assert.ok(q.o.every(o => typeof o.k === 'string' && typeof o.h === 'string'), `${cert}:${q.id} malformed choices`);
-    assert.ok(Array.isArray(q.a) && q.a.length === q.m, `${cert}:${q.id} answer count mismatch`);
-    assert.ok(q.a.every(k => q.o.some(o => o.k === k)), `${cert}:${q.id} answer key missing from choices`);
-    assert.ok(q.v && typeof q.v.q === 'string' && Array.isArray(q.v.o) && q.v.o.length === q.o.length, `${cert}:${q.id} translated choices mismatch`);
-    assert.equal(typeof q.e, 'string', `${cert}:${q.id} missing explanation`);
-    if (cert === 'ccdf' || cert === 'ccao') {
-      // Associate and Developer Vietnamese banks: guard against corrupted text and markup.
-      const vietnamese = [q.v.q, ...q.v.o, q.e];
-      for (const translation of vietnamese) {
-        assert.ok(typeof translation === 'string' && translation.trim().length > 0,
-          `${cert}:${q.id} missing Vietnamese text`);
-        assert.ok(!/(?:^|\s)(?:s\?|b\?|d\?|m\?|r\?|v\?)(?=\s|$)/u.test(translation),
-          `${cert}:${q.id} contains corrupted Vietnamese characters`);
-        for (const tag of ['p', 'ul', 'ol', 'li']) {
-          const openings = (translation.match(new RegExp(`<${tag}(?:\\s[^>]*)?>`, 'g')) || []).length;
-          const closings = (translation.match(new RegExp(`</${tag}>`, 'g')) || []).length;
-          assert.equal(openings, closings, `${cert}:${q.id} unbalanced <${tag}> tags`);
-        }
-      }
-    }
-  }
-  const flagged = bank.qs.filter(q => q.topic === 'review').map(q => q.id).sort();
-  assert.deepEqual(flagged, cert === 'ccao' ? ['1046', '1050', '1051', '1052', '1104', '1264'] : [],
-    `${cert}: review inventory changed; reevaluate question scope`);
   for (let domain = 1; domain <= expected.domains; domain++) {
     assert.ok(bank.qs.some(q => q.topic === `d${domain}`),
       `${cert}: no questions available in domain ${domain}`);
