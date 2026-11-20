@@ -27,7 +27,7 @@
       "e": "Thứ tự đúng là 1 → 3 → 5 → 4 → 2: xác định đối tượng và mức độ ảnh hưởng; đối chiếu tiêu chí chuyển cấp; kiểm tra độ chính xác, tính đầy đủ và các thông tin chưa xác minh; quyết định cách xử lý; cuối cùng ghi lại quyết định và lý do.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang cân nhắc liệu một kết quả do Claude tạo ra có cần được chuyển lên cấp có thẩm quyền xem xét hay không.</p><p>Bạn nên thực hiện các bước sau theo thứ tự nào?</p><ol><li>Xác định người sẽ sử dụng kết quả và hậu quả nếu kết quả sai.</li><li>Ghi lại quyết định và lý do để có thể kiểm tra lại.</li><li>Đối chiếu mức rủi ro với tiêu chí chuyển cấp của tổ chức.</li><li>Quyết định sử dụng kết quả, tiếp tục chỉnh sửa hay chuyển cấp.</li><li>Đánh giá độ chính xác, mức độ đầy đủ và những nhận định chưa được kiểm chứng.</li></ol>",
+        "q": "<p>Bạn đang cân nhắc có nên chuyển cấp để rà soát một đầu ra do Claude tạo ra.</p><p>Thứ tự nào đúng cho các bước ra quyết định sau?</p><ol><li>Xác định đối tượng sử dụng và hậu quả nếu đầu ra sai.</li><li>Ghi lại quyết định và lý do để có thể truy vết.</li><li>Đối chiếu mức độ rủi ro của đầu ra với tiêu chí chuyển cấp của tổ chức.</li><li>Quyết định sử dụng, tiếp tục cải thiện hoặc chuyển cấp.</li><li>Đánh giá độ chính xác, tính đầy đủ và những khẳng định chưa được kiểm chứng.</li></ol>",
         "o": [
           "<p>4, 3, 2, 1, 5</p>",
           "<p>5,1,3,4,2</p>",
@@ -865,7 +865,7 @@
       "e": "Thứ tự đúng là 2 → 4 → 5 → 1 → 3: ghi nhận quy trình hiện tại; xác định bước Claude hỗ trợ và bước con người quyết định; định nghĩa đầu vào, đầu ra và điểm bàn giao; thử nghiệm; sau đó cập nhật và triển khai rộng.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn là một process consultant đang tích hợp Claude vào một quy trình hằng tuần hiện có. </p><p>Thứ tự đúng của các bước tích hợp là gì?</p><ol><li>Chạy thử (pilot) quy trình đã tích hợp với một nhóm nhỏ và thu thập phản hồi.</li><li>Ghi lại các bước của quy trình hiện tại, người chịu trách nhiệm và các điểm quyết định.</li><li>Cập nhất quy trình đã ghi lại và triển khai cho nhóm rộng hơn.</li><li>Xác định các bước mà Claude có thể bổ trợ cho công việc và các bước con người phải được giữ lại.</li><li>Xác định các đầu vào Claude cần, các output Claude trả về và các bước bàn giao xung quanh mỗi bước.</li></ol>",
+        "q": "<p>Bạn đang tích hợp Claude vào quy trình làm việc hằng tuần hiện có.</p><p>Thứ tự nào đúng cho các bước tích hợp sau?</p><ol><li>Thử nghiệm quy trình với một nhóm nhỏ và thu thập phản hồi.</li><li>Ghi lại các bước hiện tại, người phụ trách và điểm ra quyết định.</li><li>Cập nhật tài liệu quy trình và triển khai rộng cho nhóm.</li><li>Xác định bước Claude có thể hỗ trợ và bước nào con người vẫn phải chịu trách nhiệm.</li><li>Xác định dữ liệu đầu vào, đầu ra của Claude và điểm bàn giao giữa các bước.</li></ol>",
         "o": [
           "<p>4,2, 5, 1, 3</p>",
           "<p>1, 2, 4, 5, 3</p>",
@@ -976,7 +976,7 @@
       "e": "Thứ tự rà soát: đọc toàn bộ và đánh dấu nội dung đáng ngờ (5) → liệt kê các khẳng định, số liệu và trích dẫn (4) → đối chiếu nguồn (1) → ghi lại sai lệch (3) → quyết định sửa, yêu cầu Claude tạo lại hay chuyển cấp (2).",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang review một bản brief về đối thủ cạnh tranh do Claude tạo ra để tìm các tuyên bố không có căn cứ. </p><p>Thứ tự đúng của các bước review là gì?</p><ol><li>Đổi chiều từng tuyên bố cụ thể với tài liệu nguồn được cung cấp hoặc các tham chiếu bên ngoài đáng tin cậy.</li><li>Quyết định sửa, re-prompt hay escalate dựa trên các phát hiện.</li><li>Ghi lại từng tuyên bố không có căn cứ hoặc không nhất quán cùng vị trí và mức độ nghiêm trọng của nó.</li><li>Xác định các tuyên bố thực tế, số liệu thống kê và trích dẫn cụ thể trong bản brief.</li><li>Đọc bản brief từ đầu đến cuối và gắn cụ mới tuyên bị có vẻ gây ngọc nhiên.</li></ol>",
+        "q": "<p>Bạn đang rà soát bản tóm tắt về đối thủ do Claude tạo để phát hiện những khẳng định thiếu căn cứ.</p><p>Thứ tự nào đúng cho các bước kiểm tra sau?</p><ol><li>Đối chiếu từng khẳng định với tài liệu nguồn hoặc nguồn bên ngoài đáng tin cậy.</li><li>Dựa vào kết quả, quyết định sửa, viết lại prompt hoặc chuyển cấp.</li><li>Ghi lại từng khẳng định thiếu căn cứ hoặc mâu thuẫn, kèm vị trí và mức độ nghiêm trọng.</li><li>Xác định các khẳng định thực tế, số liệu và trích dẫn cụ thể trong bản tóm tắt.</li><li>Đọc toàn bộ bản tóm tắt và đánh dấu những khẳng định gây nghi ngờ.</li></ol>",
         "o": [
           "<p>1, 4, 5, 3, 2</p>",
           "<p>4, 5, 1, 3, 2</p>",
@@ -1500,7 +1500,7 @@
       "e": "Vì có dữ liệu thời gian xử lý của từng bước, tín hiệu trực tiếp để tìm điểm nghẽn là bước có thời gian xử lý trung bình cao nhất. Cần xem thêm thời gian chờ và hàng đợi nếu có dữ liệu.",
       "m": 1,
       "v": {
-        "q": "<p>Một Claude associate đang xác định điểm nghẽn trong một quy trình nội dung mất quá nhiều thời gian đề xuất bản. </p><p>Workflow có nằm bước: </p><ul><li>Nghiên cứu, </li><li>Soạn thảo, </li><li>Review nội bộ, </li><li>Review pháp lý, </li><li>Và xuất bản. </li></ul><p>Có dữ liệu cycle-time cho từng bước trong tháng vừa qua. </p><p>Tín hiệu nào xác định trực tiếp nhất điểm nghẽn?</p>",
+        "q": "<p>Bạn đang xác định điểm nghẽn khiến quy trình xuất bản nội dung mất quá nhiều thời gian.</p><p>Quy trình gồm năm bước:</p><ul><li>Nghiên cứu</li><li>Soạn thảo</li><li>Rà soát nội bộ</li><li>Rà soát pháp lý</li><li>Xuất bản</li></ul><p>Bạn có dữ liệu thời gian xử lý của từng bước trong tháng vừa qua.</p><p>Tín hiệu nào giúp nhận diện điểm nghẽn trực tiếp nhất?</p>",
         "o": [
           "<p>Bước có cycle time trung bình trên mỗi mục cao nhất trong các lần chạy của tháng vừa qua.</p>",
           "<p>Bước có hàng đợi dài nhất hoặc tần động lớn nhất các mục đang chỉ vào bước đó.</p>",
@@ -1616,7 +1616,7 @@
           "<p>Đàm phán các điều khoản hợp động với các bên ngoài thay một công ty</p>",
           "<p>Đưa ra các quyết định nhân sự cuối cùng vị tuyến dụng, thống chức hoặc chấm dứt hợp đồng</p>",
           "<p>Soạn thảo và tổng hợp từ nhiều nguồn cho một người review ở khâu sau</p>",
-          "<p>Phê duyệt các sản phẩm bàn giao cuối cùng đề xuất bản ra bên ngoài mà không cần review thêm</p>"
+          "<p>Phê duyệt các sản phẩm bàn giao cuối cùng để xuất bản ra bên ngoài mà không cần review thêm</p>"
         ]
       },
       "topic": "d4"
@@ -2282,7 +2282,7 @@
       "e": "Thứ tự đánh giá đạo đức: xác định đối tượng và tác động (3) → kiểm tra độ chính xác, tính công bằng và các khái quát hóa không phù hợp (5) → kiểm tra yêu cầu minh bạch (1) → sửa hoặc chuyển cấp (4) → ghi lại kết quả (2).",
       "m": 1,
       "v": {
-        "q": "<p>Bạn là một Claude associate đang thực hiện đánh giá đạo đức (ethics review) cho một deliverable có Claude hỗ trợ trước khi xuất bản. </p><p>Thứ tự đúng của các bước rà soát là gì? </p><p>(1) Xác nhận rằng các yêu cầu về tính minh bếch được đáp ứng đối với đối tượng nhận deliverable. </p><p>(2) Ghi lại kết quả rà soát và mọi thay đổi đã thực hiện. </p><p>(3) Xác định đối tượng và tác động tiềm tàng của deliverable đối với đối tượng đó. </p><p>(4) Thực hiện các chỉnh sửa có mục tiêu hoặc báo cáo lên cấp cao hơn (escalate) nếu một mỗi quan ngại cần thẩm quyền lớn hơn để giải quyết. </p><p>(5) Kiểm tra nội dung về các khái quát hóa không có căn cứ, các vấn đề công bảng và các vấn đề về độ chính xác.</p>",
+        "q": "<p>Bạn là một Claude associate đang thực hiện đánh giá đạo đức (ethics review) cho một deliverable có Claude hỗ trợ trước khi xuất bản. </p><p>Thứ tự đúng của các bước rà soát là gì? </p><p>(1) Xác nhận rằng các yêu cầu về tính minh bạch được đáp ứng đối với đối tượng nhận deliverable. </p><p>(2) Ghi lại kết quả rà soát và mọi thay đổi đã thực hiện. </p><p>(3) Xác định đối tượng và tác động tiềm tàng của deliverable đối với đối tượng đó. </p><p>(4) Thực hiện các chỉnh sửa có mục tiêu hoặc báo cáo lên cấp cao hơn (escalate) nếu một mỗi quan ngại cần thẩm quyền lớn hơn để giải quyết. </p><p>(5) Kiểm tra nội dung về các khái quát hóa không có căn cứ, các vấn đề công bảng và các vấn đề về độ chính xác.</p>",
         "o": [
           "<p>3, 1, 5, 4, 2</p>",
           "<p>5, 3, 1, 4, 2</p>",
@@ -2681,7 +2681,7 @@
           "<p>Rà soát của chuyên gia có chuyên môn trước khi nội dung đến tay người tiêu dùng</p>",
           "<p>Tắt tùy chọn huấn luyện cải thiện mô hình</p>",
           "<p>Chuyển sang mô hình mạnh nhất hiện có của tài khoản</p>",
-          "<p>Đính kèm các trích dẫn vào bản nháp được tạo ra để có thể truy xuất nguồn gốc nguồn</p>"
+          "<p>Đính kèm các trích dẫn vào bản nháp được tạo ra để có thể truy xuất nguồn gốc</p>"
         ]
       },
       "topic": "d6"
@@ -3455,7 +3455,7 @@
       "v": {
         "q": "<p>Khi đầu ra của Claude chưa đáp ứng mong đợi, bước nào phải thực hiện đầu tiên trong quá trình tinh chỉnh lặp lại?</p>",
         "o": [
-          "<p>Gọi prompt đã sửa đổi và ghi lại đầu ra mọi.</p>",
+          "<p>Gửi prompt đã sửa đổi và ghi lại đầu ra mọi.</p>",
           "<p>So sánh đầu ra mới với các tiêu chí ban đầu.</p>",
           "<p>Xác định các điểm yếu cụ thể trong đầu ra hiện tại.</p>",
           "<p>Sửa đổi prompt để giải quyết từng điểm yếu đã xác định.</p>"
@@ -3645,7 +3645,7 @@
       "e": "Thứ tự tối ưu: lập sơ đồ quy trình hiện tại (4) → đo để xác định điểm nghẽn (3) → tối ưu bước đó (1) → thử nghiệm và đo lại (5) → triển khai rộng và ghi tài liệu (2).",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang chạy một đợt tối ưu hóa cho một quy trình lặp lại. </p><p>Thứ tự đúng của các bước tối ưu hóa là gì? </p><p>(1) Áp dụng tối ưu hóa có mục tiêu cho bước nút thắt (bottleneck) </p><p>(2) Triển khai quy trình đã tối ưu cho nhóm rộng hơn và ghi lại thay đổi </p><p>(3) Xác định bước nút thắt bằng thời gian đo được cho mỗi bước và độ dài hàng đợi </p><p>(4) Lớp bản để các bước quy trình hiện tại, người phụ trách và các điểm quyết định </p><p>(5) Chạy thử (pilot) thay đổi với một nhóm nhỏ và đo lường hiệu quả so với đường cơ sở (baseline) trước đó</p>",
+        "q": "<p>Bạn đang chạy một đợt tối ưu hóa cho một quy trình lặp lại. </p><p>Thứ tự đúng của các bước tối ưu hóa là gì? </p><p>(1) Áp dụng tối ưu hóa có mục tiêu cho bước nút thắt (bottleneck) </p><p>(2) Triển khai quy trình đã tối ưu cho nhóm rộng hơn và ghi lại thay đổi </p><p>(3) Xác định bước nút thắt bằng thời gian đo được cho mỗi bước và độ dài hàng đợi </p><p>(4) Lập bản đồ các bước quy trình hiện tại, người phụ trách và các điểm quyết định </p><p>(5) Chạy thử (pilot) thay đổi với một nhóm nhỏ và đo lường hiệu quả so với đường cơ sở (baseline) trước đó</p>",
         "o": [
           "<p>1, 4, 3, 5, 2</p>",
           "<p>4, 1, 3, 5, 2</p>",
@@ -4476,7 +4476,7 @@
       "e": "Khi yêu cầu từ các bên liên quan mâu thuẫn, cần đánh dấu xung đột, ghi lại nguồn của từng yêu cầu và đề nghị các bên làm rõ, thay vì tự chọn một phương án.",
       "m": 1,
       "v": {
-        "q": "<p>Một account manager đã dùng Claude để trích xuất yêu cầu tự ghi chú của stakeholder. </p><p>Ba yêu cầu dường như xung đột: </p><ul><li>Hai bên liên quan chỉ định các bước quy trình loại trừ lẫn nhau, </li><li>Và yêu cầu thứ ba giả định một kết quả mà hai yêu cầu đầu sẽ ngăn cản. </li></ul><p>Bước nào là phù hợp nhất?</p>",
+        "q": "<p>Một quản lý khách hàng dùng Claude để trích xuất yêu cầu từ ghi chú của các bên liên quan.</p><p>Ba yêu cầu có vẻ mâu thuẫn:</p><ul><li>Hai bên liên quan đề xuất các bước quy trình loại trừ lẫn nhau.</li><li>Yêu cầu thứ ba giả định một kết quả mà hai yêu cầu đầu không cho phép đạt được.</li></ul><p>Hành động nào phù hợp nhất?</p>",
         "o": [
           "<p>Chọn yêu cầu có lý do kinh doanh mạnh nhất trong ghi chú nguồn, gác các yêu cầu xung đột sang một bên và tiếp tục với yêu cầu đã chọn.</p>",
           "<p>Trình bày cả ba yêu cầu xung đột như các phương án thay thế trong tài liệu yêu cầu, độ việc giải quyết cho quy trình ra quyết định của dự án xử lý sau.</p>",
@@ -5000,7 +5000,7 @@
       "e": "Theo trình tự trong đáp án: (4) thu thập và gắn nhãn nguồn → (1) nhóm các yêu cầu, đánh dấu xung đột → (3) gửi đầu vào có cấu trúc cho Claude → (2) kiểm tra kết quả với nguồn → (5) hoàn thiện và ghi nhận các điểm cần làm rõ. Bước nhóm ban đầu là hoạt động chuẩn bị của nhà phân tích.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn là một senior analyst đang dùng Claude để phân tích yêu cầu từ nhiều nguồn stakeholder. </p><p>Thứ tự đúng của các bước là gì? </p><p>(1) Nhóm các yêu cầu liên quan và đánh dấu các xung đột hoặc điểm mơ hồ độ bên liên quan review. </p><p>(2) Xác thực đầu ra có cấu trúc so với các nguồn gốc về độ chính xác và tính đầy đủ. </p><p>(3) Gọi các đầu vào đã hợp nhất cho Claude cùng một prompt trích xuất có cấu trúc. </p><p>(4) Thu thập và gắn nhãn các tài liệu nguồn để mọi yêu cầu có thể được truy vết. </p><p>(5) Ghi lại tập yêu cầu cuối cùng kèm khả năng truy xuất nguồn gốc nguồn và trạng thái.</p>",
+        "q": "<p>Bạn là một senior analyst đang dùng Claude để phân tích yêu cầu từ nhiều nguồn stakeholder. </p><p>Thứ tự đúng của các bước là gì? </p><p>(1) Nhóm các yêu cầu liên quan và đánh dấu các xung đột hoặc điểm mơ hồ để các bên liên quan rà soát. </p><p>(2) Xác thực đầu ra có cấu trúc so với các nguồn gốc về độ chính xác và tính đầy đủ. </p><p>(3) Gửi các đầu vào đã hợp nhất cho Claude cùng một prompt trích xuất có cấu trúc. </p><p>(4) Thu thập và gắn nhãn các tài liệu nguồn để mọi yêu cầu có thể được truy vết. </p><p>(5) Ghi lại tập yêu cầu cuối cùng kèm khả năng truy xuất nguồn gốc và trạng thái.</p>",
         "o": [
           "<p>3, 4, 1, 2, 5</p>",
           "<p>4, 3, 1, 2, 5</p>",
@@ -5148,7 +5148,7 @@
       "e": "Trình tự xây dựng hành trình khách hàng: xác định chân dung và phạm vi (2) → các giai đoạn chính (5) → điểm tiếp xúc (1) → khó khăn và cơ hội (3) → tổng hợp thành bản đồ (4).",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang phân rã yêu cầu “xây dựng một customer journey map”. </p><p>Thứ tự đúng của các bước phân rã là gì? </p><p>(1) Xác định các touchpoint mà khách hàng gặp phải trong từng giai đoạn. </p><p>(2) Xác định persona và phạm vi hành trình cần được lập bản đồ. </p><p>(3) Ghi nhận các pain point và cơ hội tới tầng touchpoint. </p><p>(4) Tổng hợp các phát hiện thành sản phẩm journey-map cuối cùng. </p><p>(5) Xác định các giai đoạn chính mà persona đi qua.</p>",
+        "q": "<p>Bạn đang phân rã yêu cầu “xây dựng một customer journey map”. </p><p>Thứ tự đúng của các bước phân rã là gì? </p><p>(1) Xác định các touchpoint mà khách hàng gặp phải trong từng giai đoạn. </p><p>(2) Xác định persona và phạm vi hành trình cần được lập bản đồ. </p><p>(3) Ghi nhận các pain point và cơ hội tại từng điểm tiếp xúc. </p><p>(4) Tổng hợp các phát hiện thành sản phẩm journey-map cuối cùng. </p><p>(5) Xác định các giai đoạn chính mà persona đi qua.</p>",
         "o": [
           "<p>1, 2, 5, 3, 4</p>",
           "<p>2, 1, 5, 3, 4</p>",
@@ -5340,7 +5340,7 @@
       "e": "Trình tự chuyển phiên: tóm tắt mục tiêu và quyết định (2) → chọn tài liệu cần giữ (3) → đưa tài liệu phù hợp vào Project knowledge (4) → mở chat mới với bản tóm tắt (1) → kiểm tra kết quả đầu tiên (5).",
       "m": 1,
       "v": {
-        "q": "<p>Bạn là một người làm công việc tri thức đang chuyển từ một cuộc hội thoại dài, bị lệch chủ đề sang một phiên mọi tập trung. </p><p>Thứ tự đúng của các bước chuyển tiếp là gì? </p><p>(1) Bắt đầu một chat mới và dán bản tóm tắt làm ngữ cảnh khởi đầu. </p><p>(2) Tóm tắt các mục tiêu, quyết định chính và câu hỏi còn mở t? cuộc hội thoại dài. </p><p>(3) Xác định những tài liệu tham chiếu nào nên được giữ lại ngoài chat hiện tại. </p><p>(4) Chuyển các tài liệu tham chiếu cần giữ lại vào knowledge base của một Project hoặc đính kèm khi cần. </p><p>(5) Xác nhận chat mới đang đi đúng trọng tâm trước khi tiếp tục công việc.</p>",
+        "q": "<p>Bạn là một người làm công việc tri thức đang chuyển từ một cuộc hội thoại dài, bị lệch chủ đề sang một phiên mới tập trung. </p><p>Thứ tự đúng của các bước chuyển tiếp là gì? </p><p>(1) Bắt đầu một chat mới và dán bản tóm tắt làm ngữ cảnh khởi đầu. </p><p>(2) Tóm tắt các mục tiêu, quyết định chính và câu hỏi còn mở từ cuộc hội thoại dài. </p><p>(3) Xác định những tài liệu tham chiếu nào nên được giữ lại ngoài chat hiện tại. </p><p>(4) Chuyển các tài liệu tham chiếu cần giữ lại vào knowledge base của một Project hoặc đính kèm khi cần. </p><p>(5) Xác nhận chat mới đang đi đúng trọng tâm trước khi tiếp tục công việc.</p>",
         "o": [
           "<p>1, 2, 3, 4, 5</p>",
           "<p>2, 4, 3, 1, 5</p>",
@@ -5451,7 +5451,7 @@
       "e": "Chuyển yêu cầu sơ lược thành prompt: xác định nhiệm vụ (3) → đối tượng và quyết định cần hỗ trợ (1) → nguồn dữ liệu, ràng buộc (5) → độ dài, giọng điệu và định dạng (4) → gửi prompt (2).",
       "m": 1,
       "v": {
-        "q": "<p>Một business analyst đang chuyển một yêu cầu viết trên sticky-note của bên liên quan thành một prompt có cấu trúc cho Claude. </p><p>Thứ tự đúng của các bước chuyển đổi là gì? </p><p>(1) Xác nhận đối tượng và quyết định mà phản hồi phải hỗ trợ. </p><p>(2) Gọi prompt có cấu trúc cho Claude. </p><p>(3) Xác định tác vụ cơ bản ẩn trong ngôn ngữ trên sticky-note. </p><p>(4) Chỉ định độ dài, giọng điệu và định dạng output mong muốn. </p><p>(5) Thêm các dữ kiện hỗ trợ và ràng buộc liên quan đến tác vụ.</p>",
+        "q": "<p>Một business analyst đang chuyển một yêu cầu viết trên sticky-note của bên liên quan thành một prompt có cấu trúc cho Claude. </p><p>Thứ tự đúng của các bước chuyển đổi là gì? </p><p>(1) Xác nhận đối tượng và quyết định mà phản hồi phải hỗ trợ. </p><p>(2) Gửi prompt có cấu trúc cho Claude. </p><p>(3) Xác định tác vụ cơ bản ẩn trong ngôn ngữ trên sticky-note. </p><p>(4) Chỉ định độ dài, giọng điệu và định dạng output mong muốn. </p><p>(5) Thêm các dữ kiện hỗ trợ và ràng buộc liên quan đến tác vụ.</p>",
         "o": [
           "<p>2, 3, 1, 5, 4</p>",
           "<p>1, 3, 5, 4, 2</p>",
@@ -5777,7 +5777,7 @@
       "e": "Khi động não có ràng buộc, hãy nêu rõ đối tượng và giới hạn ngân sách, đồng thời yêu cầu mỗi ý tưởng gắn với một phân khúc và nhóm ngân sách để dễ kiểm tra.",
       "m": 1,
       "v": {
-        "q": "<p>Một quản lý marketing đang chuẩn bị một tác vụ brainstorming có ràng buộc: </p><ul><li>Đưa ra mười ý tưởng chiến dịch, </li><li>Mới ý tưởng gần với một phân khúc đối tượng đã nêu và phù hợp với một trong ba mục ngân sách đã định nghĩa. </li></ul><p>Cách tiếp cận prompting nào phù hợp với tác vụ này?</p>",
+        "q": "<p>Quản lý marketing muốn Claude đề xuất ý tưởng chiến dịch với các ràng buộc:</p><ul><li>Tạo mười ý tưởng chiến dịch.</li><li>Mỗi ý tưởng phải gắn với một phân khúc khách hàng xác định và thuộc một trong ba mức ngân sách đã quy định.</li></ul><p>Nên viết prompt theo cách nào?</p>",
         "o": [
           "<p>Yêu cầu Claude đưa ra mười ý tưởng riêng biệt với các ràng buộc về đối tượng và ngân sách được nêu trong prompt, và yêu cầu mỗi ý tưởng chỉ rõ nó hưởng đến đối tượng nào và mục ngân sách nào.</p>",
           "<p>Yêu cầu Claude đưa ra mười ý tưởng riêng biệt, nêu ràng buộc về đối tượng trong prompt và độ ngân sách không bị ràng buộc để không hạn chế sự sáng tạo ổ giai đoạn lên ý tưởng.</p>",
@@ -6893,7 +6893,7 @@
       "e": "Danh sách từ viết tắt được phê duyệt là tài liệu tham chiếu nên đặt trong Project knowledge. Quy tắc chỉ được dùng các từ trong danh sách thuộc custom instructions.",
       "m": 1,
       "v": {
-        "q": "<p>Một quản lý vận hành có hai thể cần thêm vào một project: </p><ul><li>Danh sách viết tắt đã được phê duyệt dài hai trang của nhóm, </li><li>Và quy tắc rằng câu trả lời không bao giờ được dùng các từ viết tắt nằm ngoài danh sách đó. </li></ul><p>Cách bố trí nào là tốt nhất?</p>",
+        "q": "<p>Một quản lý vận hành cần thêm hai nội dung vào Project:</p><ul><li>Danh sách từ viết tắt dài hai trang, đã được nhóm phê duyệt.</li><li>Quy tắc rằng câu trả lời không được dùng từ viết tắt ngoài danh sách này.</li></ul><p>Nên đặt hai nội dung ở đâu cho phù hợp nhất?</p>",
         "o": [
           "<p>Tối tài liệu tham chiếu lên project knowledge và đặt quy tắc về các từ viết tắt chưa được phê duyệt vào phần instructions.</p>",
           "<p>Giữ danh sách tham chiếu trên wiki của nhóm và dán quy tắc vào đầu mỗi chat cần đến nó.</p>",
