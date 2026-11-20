@@ -28,11 +28,12 @@ const englishTextFingerprint = qs => fnv1a(JSON.stringify(qs.map(q => [q.id, q.q
 
 const associateTopics = {
   '972':'d6', '975':'d3', '976':'d1', '977':'d1', '1002':'d7',
-  '1047':'d5', '1052':'review', '1055':'d2', '1058':'d7',
+  '1046':'d7', '1047':'d5', '1050':'d4', '1051':'d6',
+  '1052':'d4', '1055':'d2', '1058':'d7',
   '1059':'d6', '1061':'d7', '1065':'d7', '1068':'d3',
   '1076':'d4', '1094':'d4', '1096':'d4', '1099':'d3',
-  '1105':'d3', '1117':'d3', '1258':'d1', '1259':'d2',
-  '1264':'review', '1270':'d3', '1271':'d4',
+  '1104':'d7', '1105':'d3', '1117':'d3', '1258':'d1', '1259':'d2',
+  '1264':'d7', '1270':'d3', '1271':'d4',
   '1274':'d4', '1289':'d7'
 };
 
@@ -51,7 +52,7 @@ for (const [cert, expected] of Object.entries(banks)) {
     assert.ok(!ids.has(q.id), `${cert}: duplicated ID ${q.id}`);
     ids.add(q.id);
     assert.ok(
-      new RegExp('^d[1-' + expected.domains + ']$').test(q.topic) || (cert === 'ccao' && q.topic === 'review'),
+      new RegExp('^d[1-' + expected.domains + ']' + String.fromCharCode(36)).test(q.topic),
       `${cert}:${q.id} invalid official exam domain ${q.topic}`
     );
     assert.equal(typeof q.q, 'string', `${cert}:${q.id} missing English question`);
@@ -78,8 +79,7 @@ for (const [cert, expected] of Object.entries(banks)) {
     }
   }
   const flagged = bank.qs.filter(q => q.topic === 'review').map(q => q.id).sort();
-  assert.deepEqual(flagged, cert === 'ccao' ? ['1046', '1050', '1051', '1052', '1104', '1264'] : [],
-    `${cert}: review inventory changed; reevaluate question scope`);
+  assert.deepEqual(flagged, [], `${cert}: each question must belong to a primary official domain`);
   for (let domain = 1; domain <= expected.domains; domain++) {
     assert.ok(bank.qs.some(q => q.topic === `d${domain}`),
       `${cert}: no questions available in domain ${domain}`);
