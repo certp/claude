@@ -3196,10 +3196,10 @@
       "v": {
         "q": "<p>Trong SIAM, quy trình nào có trách nhiệm khôi phục một dịch vụ bị gián đoạn hoặc suy giảm chất lượng?</p>",
         "o": [
-          "<p>Incident management</p>",
-          "<p>Problem management</p>",
-          "<p>Measuring and monitoring</p>",
-          "<p>Event management</p>"
+          "<p>Quản lý sự cố (Incident Management).</p>",
+          "<p>Quản lý vấn đề (Problem Management).</p>",
+          "<p>Đo lường và giám sát.</p>",
+          "<p>Quản lý sự kiện (Event Management).</p>"
         ]
       },
       "topic": "review"
@@ -3233,10 +3233,10 @@
       "v": {
         "q": "<p>Một nhân viên sắp dùng Gmail Connector với Claude lần đầu. Mô tả nào phản ánh chính xác nhất cách Connector hoạt động đối với người dùng?</p>",
         "o": [
-          "<p>Claude tìm kiếm và đọc các email mà người dùng có quyền truy cập và gán nhãn cho chúng theo các quy tắc do người dùng định nghĩa, còn việc soạn thư trở lại được xử lý trong một quy trình riêng.</p>",
-          "<p>Claude tìm kiếm và đọc các email mà người dùng có quyền truy cập và soạn thư trả lời đủ người dùng từ gợi, với mỗi hành động đầu yêu cầu sự chấp thuận rõ ràng của người dùng.</p>",
-          "<p>Claude tìm kiếm và đọc các email mà người dùng có quyền truy cập và gửi thư trở lại thay một người dùng đối với các thể có rủi ro thấp, còn các thể có rủi ro cao hơn được chuyển đến người dùng để phê duyệt.</p>",
-          "<p>Claude tìm kiếm và đọc các email mà người dùng có quyền truy cập ở chế độ chỉ đọc, và người dùng phải từ soạn mọi thứ trở lại bên ngoài connector.</p>"
+          "<p>Claude tìm và đọc những email người dùng có quyền truy cập, rồi gắn nhãn theo quy tắc họ đặt ra; việc soạn trả lời thuộc quy trình riêng.</p>",
+          "<p>Claude tìm và đọc email trong phạm vi quyền của người dùng, soạn bản nháp để họ tự gửi; mỗi hành động cần được người dùng phê duyệt rõ ràng.</p>",
+          "<p>Claude tự gửi trả lời những email ít rủi ro và chỉ chuyển email rủi ro cao cho người dùng phê duyệt.</p>",
+          "<p>Claude chỉ được tìm và đọc email; người dùng phải tự soạn mọi câu trả lời bên ngoài Connector.</p>"
         ]
       },
       "topic": "d3"
@@ -3270,10 +3270,10 @@
       "v": {
         "q": "<p>Claude đưa vào câu trả lời những dữ kiện không có trong tài liệu nguồn đã cung cấp. Nguyên nhân trực tiếp nào có khả năng xảy ra nhất?</p>",
         "o": [
-          "<p>Prompt không ràng buộc Claude chỉ sử dụng các dữ kiện có trong nguồn được cung cấp.</p>",
-          "<p>Prompt yêu cầu Claude đóng vai một nhà nghiên cứu thay vì một người viết.</p>",
-          "<p>Prompt yêu cầu một phản hồi toàn diện, khiến Claude lấp đầy những khoảng trống mà nó cảm nhận bằng các chi tiết nghe có vị hợp lý nhưng chưa được xác minh.</p>",
-          "<p>Cấu trúc dựa trên tiêu đề của prompt khuyến khích Claude tạo nội dung giữ chỗ dưới mới tiêu đề ngay cả khi nguồn không đề cập đến.</p>"
+          "<p>Prompt chưa giới hạn Claude chỉ sử dụng các sự kiện có trong tài liệu nguồn được cung cấp.</p>",
+          "<p>Prompt yêu cầu Claude đóng vai nhà nghiên cứu thay vì người viết.</p>",
+          "<p>Prompt yêu cầu câu trả lời đầy đủ, khiến Claude bổ sung những chi tiết nghe hợp lý nhưng chưa được kiểm chứng vào chỗ thiếu thông tin.</p>",
+          "<p>Cấu trúc prompt theo tiêu đề khiến Claude tự điền nội dung mẫu dưới từng mục dù nguồn không đề cập.</p>"
         ]
       },
       "topic": "d7"
@@ -3307,10 +3307,10 @@
       "v": {
         "q": "<p>Bạn đang làm việc trong một cuộc hội thoại Claude dài khoảng 60 lượt, bao gồm phân tích yêu cầu, nhiều lần rà soát dữ liệu và soạn bản nháp. Các phản hồi gần đây dần lệch khỏi yêu cầu đã thống nhất. Bước nào xử lý vấn đề này trực tiếp nhất?</p>",
         "o": [
-          "<p>Chuyển dữ liệu nguồn và các yêu cầu vào một Project knowledge base, sau đó tiếp tục công việc soạn thảo trong một chat mỗi bên trong Project đó.</p>",
-          "<p>Chuyển cuộc hội thoại sang một mô hình có cửa sổ ngữ cảnh lớn hơn để lịch sử tích lũy không còn gây lịch và tiếp tục mà không cấu trúc lại các đầu vào.</p>",
-          "<p>Tóm tắt các yêu cầu đã thống nhất, các phát hiện dữ liệu chính và trạng thái bản nháp hiện tại, sau đó tiếp tục trong cùng chat bằng cách khẳng định lại bản tóm tắt làm context làm việc.</p>",
-          "<p>Mở một chat mới và chỉ dán bản nháp hiện tại, sau đó tiếp tục tinh chỉnh ở đó mà không có context về yêu cầu và rà soát dữ liệu trước đó.</p>"
+          "<p>Chuyển dữ liệu nguồn và yêu cầu sang Project knowledge base, rồi tiếp tục soạn thảo trong một chat mới thuộc Project.</p>",
+          "<p>Chuyển cuộc hội thoại sang mô hình có cửa sổ ngữ cảnh lớn hơn rồi tiếp tục mà không tổ chức lại dữ liệu đầu vào.</p>",
+          "<p>Tóm tắt yêu cầu đã thống nhất, các phát hiện quan trọng từ dữ liệu và trạng thái bản thảo; sau đó xác lập lại bản tóm tắt làm ngữ cảnh cho chính cuộc hội thoại hiện tại.</p>",
+          "<p>Mở chat mới và chỉ dán bản thảo đang làm, không mang theo yêu cầu trước đó hoặc bối cảnh rà soát dữ liệu.</p>"
         ]
       },
       "topic": "d7"
@@ -3344,10 +3344,10 @@
       "v": {
         "q": "<p>Bạn đang thiết kế trợ lý Claude có quyền dùng 60 công cụ nội bộ thuộc nhiều lĩnh vực. Tải mọi định nghĩa công cụ trong mỗi yêu cầu làm tăng token và độ trễ phản hồi. Mẫu thiết kế nào phù hợp nhất?</p>",
         "o": [
-          "<p>Nhóm 60 công cụ thành nắm danh mục cố định và tới một danh mục cho mỗi yêu cầu dựa trên một ánh xạ tĩnh tự loại tác vụ sang danh mục.</p>",
-          "<p>Tăng độ dài context tối đa độ toàn bộ 60 định nghĩa công cụ vừa trong một yêu cầu mà không vượt giới hạn.</p>",
-          "<p>Áp dụng progressive tool discovery để một tập con ban đều được chọn lọc được cung cấp và các công cụ bổ sung được tải theo nhu cầu dựa trên tác vụ.</p>",
-          "<p>Dùng một lệnh gọi mô hình riêng để cô động toàn bộ 60 định nghĩa công cụ thành một chỉ mục gần được thêm vào đầu mỗi lượt của người dùng để chọn công cụ.</p>"
+          "<p>Chia 60 công cụ thành năm nhóm cố định, mỗi yêu cầu nạp một nhóm dựa trên quy tắc ánh xạ loại tác vụ.</p>",
+          "<p>Tăng giới hạn ngữ cảnh để mọi định nghĩa công cụ đều nằm trong một yêu cầu.</p>",
+          "<p>Dùng cơ chế khám phá công cụ tăng dần: ban đầu chỉ cung cấp một nhóm công cụ cần thiết, sau đó nạp thêm theo nhu cầu tác vụ.</p>",
+          "<p>Gọi thêm một mô hình để tóm tắt cả 60 định nghĩa công cụ thành chỉ mục ngắn gọn, rồi chèn chỉ mục vào mỗi lượt người dùng.</p>"
         ]
       },
       "topic": "review"
@@ -3381,10 +3381,10 @@
       "v": {
         "q": "<p>Bạn đang thiết kế trợ lý Claude nội bộ cho chuyên viên phân tích tài chính và kiểm toán viên bên ngoài. Mỗi nhóm chỉ được phép truy cập tài liệu theo vai trò. Cần thực thi kiểm soát truy cập theo vai trò ở bước nào trong quy trình xử lý?</p>",
         "o": [
-          "<p>Bên trong system prompt dưới dạng một chỉ thị bằng ngôn ngữ tự nhiên nêu tên các nhóm truy cập theo vai trò cụ thể mà Claude nên coi là không được ủy quyền</p>",
-          "<p>Sau khi phản hồi được tạo ra, bằng cách lục hậu kiếm nội dung lẽ ra không được truy xuất</p>",
-          "<p>Tối tầng truy xuất (retrieval layer), trước khi bất kỳ nội dung bị hạn chế theo vai trò nào đến bước dụng prompt hoặc đến mô hình</p>",
-          "<p>Tối tầng truy xuất, nhưng dựa vào một access token duy nhất toàn tổ chức được dùng chung cho mỗi vai trò thay vì phân quyền phạm vi theo từng vai trò</p>"
+          "<p>Đặt chỉ dẫn bằng ngôn ngữ tự nhiên trong system prompt về những nhóm quyền mà Claude không được phục vụ.</p>",
+          "<p>Lọc nội dung bị cấm sau khi mô hình đã sinh câu trả lời, dù tài liệu đó đã được truy xuất.</p>",
+          "<p>Thực thi phân quyền tại tầng truy xuất, trước khi nội dung hạn chế theo vai trò được đưa vào prompt hoặc mô hình.</p>",
+          "<p>Thực thi tại tầng truy xuất nhưng dùng chung một access token cho toàn tổ chức thay vì giới hạn quyền theo vai trò.</p>"
         ]
       },
       "topic": "review"
@@ -3418,10 +3418,10 @@
       "v": {
         "q": "<p>Khi bàn giao hệ thống ứng dụng Claude, bộ tài liệu nào là đầy đủ nhất?</p>",
         "o": [
-          "<p>Tổng quan kiến trúc, ADR, sơ đồ cập thành phần, runbook cho các thao tác thường gặp, on-call playbook và danh sách các hạn chế đã biết</p>",
-          "<p>Để xuất thiết kế ban đầu, các nhận xét rà soát của nó, ghi chú cuộc họp từ các buổi thiết kế và tài liệu yêu cầu đã được phê duyệt</p>",
-          "<p>Tài liệu retrospective dự án, bản tóm tắt bài học kinh nghiệm (lessons-learned) và danh sách người đóng góp</p>",
-          "<p>Release notes hưởng đến người dùng, một từ giới thiệu marketing một trang mô tả triển khai và một FAQ cho khách hàng</p>"
+          "<p>Tổng quan kiến trúc, các quyết định kiến trúc (ADR), sơ đồ thành phần, runbook vận hành, quy trình trực sự cố và danh sách giới hạn đã biết.</p>",
+          "<p>Đề xuất thiết kế ban đầu, bình luận đánh giá, biên bản họp thiết kế và tài liệu yêu cầu đã duyệt.</p>",
+          "<p>Báo cáo tổng kết dự án, bài học kinh nghiệm và danh sách người tham gia.</p>",
+          "<p>Ghi chú phát hành cho người dùng, tài liệu quảng bá tóm tắt triển khai và FAQ cho khách hàng.</p>"
         ]
       },
       "topic": "d4"
@@ -3455,10 +3455,10 @@
       "v": {
         "q": "<p>Khi đầu ra của Claude chưa đáp ứng mong đợi, bước nào phải thực hiện đầu tiên trong quá trình tinh chỉnh lặp lại?</p>",
         "o": [
-          "<p>Gửi prompt đã sửa đổi và ghi lại đầu ra mọi.</p>",
-          "<p>So sánh đầu ra mới với các tiêu chí ban đầu.</p>",
-          "<p>Xác định các điểm yếu cụ thể trong đầu ra hiện tại.</p>",
-          "<p>Sửa đổi prompt để giải quyết từng điểm yếu đã xác định.</p>"
+          "<p>Gửi prompt đã sửa và ghi nhận kết quả mới.</p>",
+          "<p>So sánh đầu ra mới với tiêu chí đánh giá ban đầu.</p>",
+          "<p>Xác định rõ từng điểm yếu trong đầu ra hiện tại.</p>",
+          "<p>Sửa prompt để khắc phục những điểm yếu đã xác định.</p>"
         ]
       },
       "topic": "d1"
@@ -3492,10 +3492,10 @@
       "v": {
         "q": "<p>Một tác vụ hằng tuần dùng cùng prompt nhưng đầu ra không nhất quán: khi thì đúng mục nhưng sai giọng văn, khi thì đúng giọng văn nhưng thiếu mục. Dữ liệu đầu vào thay đổi mỗi tuần nhưng cấu trúc luôn giống nhau. Nguyên nhân nào có khả năng nhất?</p>",
         "o": [
-          "<p>Mô hình là phi xác định (non-deterministic), nên các prompt giống hệt nhau tự nhiên cho ra các đầu ra khác nhau ngay cả khi bản thân prompt được viết tắt, và nhóm nên chấp nhận sự biến thiên đó.</p>",
-          "<p>Các đầu vào nguồn thay đổi quá nhiều tự tuần này sang tuần khác, và nhóm nên chuẩn hóa các đầu vào trước khi thay đổi prompt.</p>",
-          "<p>Nhóm nên tách prompt thành các prompt riêng cho giọng điệu và cấu trúc, vì gộp cả hai trong một prompt tạo ra sự không nhất quán hỗn hợp mà nhóm đang gặp.</p>",
-          "<p>Prompt lặp lại này đặc tả chứa để về đối tượng đọc giả, giọng điệu, định dạng và các phần bắt buộc, nên mỗi lần chạy lệch đi tùy theo điều mô hình nhẫn mảnh ở lượt đó.</p>"
+          "<p>Mô hình không hoàn toàn xác định nên cùng prompt tự nhiên cho kết quả khác nhau, kể cả khi prompt đã tốt; nhóm nên chấp nhận điều đó.</p>",
+          "<p>Dữ liệu nguồn thay đổi quá nhiều qua từng tuần nên phải chuẩn hóa nguồn trước khi sửa prompt.</p>",
+          "<p>Phải tách yêu cầu về giọng điệu và cấu trúc thành hai prompt riêng vì ghép chúng gây ra sự không nhất quán.</p>",
+          "<p>Prompt định kỳ chưa mô tả đủ đối tượng, giọng điệu, định dạng và các mục bắt buộc, khiến mỗi lần chạy nhấn mạnh những yếu tố khác nhau.</p>"
         ]
       },
       "topic": "d7"
@@ -3530,10 +3530,10 @@
       "v": {
         "q": "<p>Trước khi giao sản phẩm có AI hỗ trợ cho bên ngoài, người quản lý áp dụng năng lực Diligence của AI Fluency Framework. Bước nào thể hiện đúng nguyên tắc này?</p>",
         "o": [
-          "<p>Giao sẵn phạm công việc mà không có xác minh độc lập với lý do rằng sự hỗ trợ của AI chuyển trách nhiệm giải trình khởi con người, mặc dù Diligence quy định con người hoàn toàn chịu trách nhiệm vụ đầu ra.</p>",
-          "<p>Xác định các thành phần của sản phẩm công việc phải được xác minh độc lập hoặc sửa chữa trước khi giao, và nhấn trách nhiệm thực hiện các xác minh đó như một nghĩa vị giải trình chuyên môn.v</p>",
-          "<p>Bỏ qua việc xác minh bất kỳ thành phần nào với giả định rằng đầu ra trôi chạy đồng nghĩa với chính xác, mặc dù Diligence yêu cầu con người xác minh và sửa các đầu ra có AI hỗ trợ trước khi hành động dựa trên chúng.</p>",
-          "<p>Ủy thác trách nhiệm giải trình cho sản phẩm công việc có AI hỗ trợ cho chính Claude thay vì giữ lại đó như một nghĩa vị của con người, trái với nguyên tắc Diligence rộng con người vấn chịu trách nhiệm vụ các đầu ra có AI hỗ trợ.</p>"
+          "<p>Giao sản phẩm mà không xác minh độc lập vì cho rằng AI chịu trách nhiệm thay con người, trái với nguyên tắc Diligence.</p>",
+          "<p>Xác định những thành phần phải kiểm chứng hoặc chỉnh sửa độc lập trước khi bàn giao và chủ động chịu trách nhiệm về việc kiểm chứng đó.</p>",
+          "<p>Bỏ qua kiểm chứng vì đầu ra trôi chảy nên được cho là chính xác, trái với nguyên tắc cần xác minh và sửa đầu ra AI.</p>",
+          "<p>Giao trách nhiệm giải trình về sản phẩm cho chính Claude thay vì con người, trái với nguyên tắc Diligence.</p>"
         ]
       },
       "topic": "d1"
@@ -3572,11 +3572,11 @@
       "v": {
         "q": "<p>Bạn đang rà soát các nhận định về việc lặp chỉnh prompt trong buổi đào tạo. Hai nhận định nào đúng? (Chọn hai.) Mỗi lựa chọn đúng là một giải pháp hoàn chỉnh.</p>",
         "o": [
-          "<p>Việc lặp lại việc chỉnh sửa hiệu quả nhất khi mỗi thay đổi nhắm vào mất điểm yếu cụ thể đã được chẩn đoán.</p>",
-          "<p>Nhiều lần lặp hạn luôn tạo ra đầu ra tốt hơn bất kỳ đã thay đổi điều gì.</p>",
-          "<p>Việc lặp lại việc chỉnh sửa chỉ nên dụng sau khi mới cách diễn đạt thay thế có thể có đầu đã được thể.</p>",
-          "<p>Việc so sánh đầu ra với các tiêu chí ban đầu xác nhận liệu việc lặp lại việc chỉnh sửa có giúp ích hay không.</p>",
-          "<p>Gọi lại nhiều lần cùng một prompt là cách đáng tin cậy nhất để cải thiện đầu ra.</p>"
+          "<p>Mỗi lần chỉnh sửa sẽ hiệu quả hơn khi nhắm vào một điểm yếu cụ thể đã được chẩn đoán.</p>",
+          "<p>Chỉnh sửa càng nhiều lần thì đầu ra luôn càng tốt, bất kể đã thay đổi gì.</p>",
+          "<p>Chỉ dừng điều chỉnh sau khi thử hết mọi cách diễn đạt có thể.</p>",
+          "<p>So sánh đầu ra mới với tiêu chí ban đầu để xác định việc chỉnh sửa có hiệu quả không.</p>",
+          "<p>Gửi lại cùng prompt nhiều lần là cách cải thiện đầu ra đáng tin cậy nhất.</p>"
         ]
       },
       "topic": "d7"
@@ -3610,10 +3610,10 @@
       "v": {
         "q": "<p>Bạn đang rà soát mô tả phân khúc khách hàng do Claude soạn. Một đoạn khái quát hành vi mua sắm của cả nhóm nhân khẩu học nhưng không phù hợp với mọi khách hàng trong phân khúc. Cách phản hồi nào tốt nhất?</p>",
         "o": [
-          "<p>Sửa mô tả để tập trung vào các hành vi quan sát được thay vì các khái quát hóa vị con người, và xác thực bản sửa với dữ liệu khách hàng thực tế.</p>",
-          "<p>Thêm một tuyên bố miễn trỏ vào mô tả, lưu ý rằng khái quát hóa có thể không áp dụng cho mỗi cá nhân trong phân khúc, và giữ nguyên mô tả gốc.</p>",
-          "<p>Giữ nguyên mô tả như đã viết cho bản brief nội bộ, vì việc dùng nội bộ không mang cùng mục rủi ro như việc công bỏ ra bên ngoài các khái quát hóa vị nhân khẩu học.</p>",
-          "<p>Loại bỏ toàn bộ mô tả phân khúc khách hàng khỏi bản brief, vì bất kỳ phân khúc nào liên quan đến đặc điểm nhân khẩu học đều có khả năng gây ra các vấn đề tương tự.</p>"
+          "<p>Sửa mô tả để tập trung vào hành vi quan sát được thay vì khái quát hóa về con người; kiểm chứng bản sửa bằng dữ liệu khách hàng thực tế.</p>",
+          "<p>Chỉ thêm chú thích rằng khái quát hóa có thể không đúng với mọi cá nhân, giữ nguyên phần mô tả còn lại.</p>",
+          "<p>Giữ nguyên mô tả vì bản tóm tắt chỉ dùng nội bộ nên không có rủi ro như khi công bố bên ngoài.</p>",
+          "<p>Xóa toàn bộ mô tả phân khúc vì cho rằng phân loại theo đặc điểm nhân khẩu học luôn gây vấn đề tương tự.</p>"
         ]
       },
       "topic": "d6"
@@ -3689,11 +3689,11 @@
       "v": {
         "q": "<p>Bạn đang thiết kế lại quy trình và áp dụng năng lực Delegation trong AI Fluency Framework. Hai tiêu chí nào quan trọng nhất khi quyết định giao việc cho AI? (Chọn hai.)</p>",
         "o": [
-          "<p>Khoảng thời gian quy trình đã tồn tại ở dạng hiện tại, vì các quy trình lâu đổi đã được xác thực độ độ ủy thác cho AI.</p>",
-          "<p>Khả năng đảo ngược của tác vụ và hậu quả của một lỗi, hai yếu tố cùng cho biết bước đó có an toàn độ ủy thác cho Claude hay nên giữ lại cho con người quyết định.</p>",
-          "<p>Độ phức tạp trực quan của sơ đồ quy trình, vì các bước có nhiều kết nối và phụ thuộc hơn thì có nhiều khả năng cần sự giám sát của con người hạn.</p>",
-          "<p>Nhu cầu về sự sáng tạo, đồng cắm hoặc phán đoán của con người trong bước đó, cho biết tác vụ có phù hợp để ủy thác cho AI hay đòi hỏi những năng lực của con người mà Claude không thể cung cấp.</p>",
-          "<p>Thâm niên của thành viên nhóm hiện đang thực hiện bước đó, vì các vai trò cấp cao hơn thường liên quan đến các tác vụ có mức độ rủi ro cao hơn, đáng để giữ lại cho con người.</p>"
+          "<p>Thời gian quy trình đã tồn tại, vì quy trình lâu năm được cho là đủ kiểm chứng để giao cho AI.</p>",
+          "<p>Khả năng đảo ngược công việc và hậu quả khi xảy ra lỗi; từ đó đánh giá có an toàn để giao Claude hay phải giữ quyền quyết định cho con người.</p>",
+          "<p>Độ phức tạp của sơ đồ quy trình, vì bước có nhiều kết nối được cho là cần giám sát của con người hơn.</p>",
+          "<p>Mức độ cần sáng tạo, thấu cảm hoặc phán đoán của con người, qua đó xác định việc có thể giao cho AI hay không.</p>",
+          "<p>Thâm niên của người đang thực hiện công việc, vì vị trí cấp cao thường được cho là có nhiệm vụ rủi ro hơn.</p>"
         ]
       },
       "topic": "d7"
@@ -3732,11 +3732,11 @@
       "v": {
         "q": "<p>Bạn đang đánh giá có nên bật Skill do bên thứ ba không quen thuộc cung cấp. Hai bước kiểm tra nào giúp quyết định mức độ tin cậy? (Chọn hai.)</p>",
         "o": [
-          "<p>Bỏ qua việc rà soát quyền hạn với giả định rằng Skill không thể vượt quá ranh giới của quy trình, mặc dù các Skill có thể yêu cầu quyền truy cập mà tác vụ không cần.</p>",
-          "<p>Coi việc Skill xuất hiện trong một danh sách công khai là đủ để xác thực, mà không xác nhận nguồn, các quyền hạn được yêu cầu hoặc sử phù hợp với danh sách Skill được phê duyệt của tổ chức.</p>",
-          "<p>Bắt Skill ngay lập tức dựa trên các đánh giá bên ngoài tích cực, mặc dù nguồn chưa được xác thực với danh sách Skill được phê duyệt của tổ chức và các quyền hạn vẫn chưa được xác minh.</p>",
-          "<p>Xác minh nguồn của Skill với danh sách Skill được phê duyệt của tổ chức trước khi bật nó trong claude.ai hoặc bất kỳ Project nào mà nhóm sử dụng cho công việc.</p>",
-          "<p>Rà soát các quyền hạn và khả năng mà Skill yêu cầu và xác nhận rằng quyền truy cập được yêu cầu là phù hợp với tác vụ mà Skill dự định thực hiện.</p>"
+          "<p>Bỏ qua kiểm tra quyền vì cho rằng Skill không thể vượt ngoài phạm vi quy trình, dù Skill có thể yêu cầu quyền không cần thiết.</p>",
+          "<p>Cho rằng Skill xuất hiện trong danh sách công khai là đủ đáng tin mà không xác minh nguồn, quyền yêu cầu hoặc danh sách được tổ chức phê duyệt.</p>",
+          "<p>Bật Skill ngay vì có nhiều đánh giá tốt từ bên ngoài, dù chưa xác minh nguồn và quyền theo quy định tổ chức.</p>",
+          "<p>Kiểm tra nguồn cung cấp Skill với danh sách Skill được tổ chức phê duyệt trước khi bật trong Claude hoặc Project.</p>",
+          "<p>Rà soát quyền và chức năng Skill yêu cầu, bảo đảm mức truy cập phù hợp với công việc cần thực hiện.</p>"
         ]
       },
       "topic": "d6"
@@ -3770,10 +3770,10 @@
       "v": {
         "q": "<p>Bạn đang định nghĩa 'tối ưu quy trình' ở cấp Associate cho công việc lặp lại có AI hỗ trợ. Mô tả nào chính xác nhất?</p>",
         "o": [
-          "<p>Giảm số dư thừa, loại bỏ các bước ít giá trị và áp dụng Claude ở những nơi mang lại giá trị đo lường được, đồng thời vẫn giữ các bước review và quality gate bắt buộc.</p>",
-          "<p>Chuẩn hóa mỗi bước của quy trình theo một template cố định để mỗi lần chạy đầu cho ra output giống hệt nhau, không điều chỉnh theo sự biến thiên của đầu vào workflow.</p>",
-          "<p>Thay thế các bước thủ công bằng các bước có Claude hỗ trợ bất cứ khi nào có thể, vì mỗi lần thay thế đầu tạo thêm giá trị nhỏ giảm thời gian nhóm dành cho workflow.</p>",
-          "<p>Giảm số bước của quy trình xuống mức tối thiểu có thể, vì ít bước hạn đồng nghĩa với cycle time nhanh hơn và tỷ lệ lỗi thấp hơn.</p>"
+          "<p>Giảm trùng lặp, bỏ bước ít giá trị và dùng Claude ở nơi tạo hiệu quả đo lường được, nhưng vẫn giữ các bước rà soát và kiểm soát chất lượng bắt buộc.</p>",
+          "<p>Chuẩn hóa mọi bước quy trình theo một khuôn cố định để đầu ra luôn y hệt nhau mà không xét sự khác biệt của dữ liệu đầu vào.</p>",
+          "<p>Thay thế càng nhiều bước thủ công bằng Claude càng tốt, vì mỗi lần thay thế đều được coi là tạo ra giá trị.</p>",
+          "<p>Giảm số bước xuống ít nhất có thể, vì số bước ít hơn được cho là luôn nhanh hơn và ít lỗi hơn.</p>"
         ]
       },
       "topic": "d2"
@@ -3849,11 +3849,11 @@
       "v": {
         "q": "<p>Bạn đang rà soát cách đồng nghiệp phản hồi góp ý đối với nội dung truyền thông do Claude soạn. Hai cách xử lý nào mang tính xây dựng? (Chọn hai.)</p>",
         "o": [
-          "<p>Ánh xạ từng phần feedback tại thay đổi cụ thể đã thực hiện trong bản thảo tiếp theo</p>",
-          "<p>Đặt câu hỏi làm rõ khi feedback mơ hồ trước khi hành động theo feedback đó</p>",
-          "<p>Hoãn toàn bộ feedback sang một chu kỳ chỉnh sửa sau để tránh làm gián đoạn tính nhất quán của bản thảo hiện tại</p>",
-          "<p>Đồng thời đưa tất cả feedback nhận được, kỹ cả các gợi ý mâu thuẫn nhau, vào bản thảo tiếp theo</p>",
-          "<p>Từ chối chỉnh sửa các phần do Claude tạo ra với lý do output của mô hình cần được tin tượng như đã viết</p>"
+          "<p>Liên kết từng nhận xét phản hồi với thay đổi cụ thể ở bản nháp tiếp theo.</p>",
+          "<p>Hỏi lại để làm rõ trước khi thực hiện những phản hồi còn mơ hồ.</p>",
+          "<p>Dời toàn bộ phản hồi đến vòng chỉnh sửa sau để tránh ảnh hưởng tính nhất quán của bản nháp hiện tại.</p>",
+          "<p>Đưa đồng thời mọi phản hồi, kể cả những đề xuất mâu thuẫn, vào bản nháp tiếp theo.</p>",
+          "<p>Từ chối chỉnh sửa phần do Claude tạo vì tin rằng kết quả mô hình vốn đáng tin.</p>"
         ]
       },
       "topic": "d7"
@@ -3892,11 +3892,11 @@
       "v": {
         "q": "<p>Bạn đang đánh giá những thay đổi đề xuất cho quy trình Claude định kỳ. Hai thay đổi nào thực sự cải thiện quy trình? (Chọn hai.)</p>",
         "o": [
-          "<p>Gán tên mô tả cho từng bước quy trình độ cải thiện khả năng đọc hiểu cho các thành viên mới</p>",
-          "<p>Sắp xếp lại các tiêu đề mục của tài liệu quy trình độ cải thiện việc điều hướng</p>",
-          "<p>Đưa tài liệu tham chiếu chuẩn vào một Project để tránh phải lặp lại</p>",
-          "<p>Thêm bước kiểm tra chất lượng trên các output trước khi chúng đi vào quy trình downstream</p>",
-          "<p>Cập nhật tên workspace dùng chung của nhóm để phản ánh quy trình quy trình mới</p>"
+          "<p>Đặt tên mô tả cho từng bước để người mới dễ đọc quy trình.</p>",
+          "<p>Sắp xếp lại các tiêu đề trong tài liệu quy trình để dễ điều hướng.</p>",
+          "<p>Đưa tài liệu tham chiếu chuẩn vào Project để khỏi lặp lại dữ liệu ở mỗi lần thực hiện.</p>",
+          "<p>Bổ sung bước kiểm tra chất lượng đầu ra trước khi chuyển sang công đoạn tiếp theo.</p>",
+          "<p>Đổi tên workspace chung của nhóm theo quy trình mới.</p>"
         ]
       },
       "topic": "d4"
@@ -3930,10 +3930,10 @@
       "v": {
         "q": "<p>Bạn đang hoàn thiện bản ghi nhớ cho hội đồng quản trị từ bản nháp của Claude. Hội đồng sẽ đọc trước cuộc họp và cần nội dung dễ theo dõi, số liệu được xác minh, thuật ngữ nhất quán. Nên thực hiện những chỉnh sửa nào?</p>",
         "o": [
-          "<p>Áp dụng các tiêu đề nhất quán, mở rộng từng phần để cung cấp đầy đủ bối cảnh cho hỏi động và đồng bộ thuật ngữ với tiêu chuẩn của tổ chức.</p>",
-          "<p>Áp dụng các tiêu đề nhất quán, cô động cách diễn đạt độ lãnh đạo dữ lượt đọc, đồng bộ thuật ngữ với tiêu chuẩn của tổ chức và xác minh tầng dữ kiện với dữ liệu nguồn.</p>",
-          "<p>Áp dụng các tiêu đề nhất quán và đồng bộ thuật ngữ với tiêu chuẩn của tổ chức; dựa vào việc xác minh dự kiến của Claude, vì bản thảo được tạo ra từ dữ liệu nguồn.</p>",
-          "<p>Cô động cách diễn đạt độ lãnh đạo dữ lượt đọc và xác minh tầng dữ kiện với dữ liệu nguồn; giữ nguyên cấu trúc tiêu đề và thuật ngữ như đã viết để bảo toàn giống văn của bản thảo.</p>"
+          "<p>Đặt tiêu đề nhất quán, mở rộng mọi phần để cung cấp đầy đủ ngữ cảnh cho hội đồng và chuẩn hóa thuật ngữ.</p>",
+          "<p>Đặt tiêu đề nhất quán, viết gọn để lãnh đạo dễ nắm ý, chuẩn hóa thuật ngữ và xác minh từng dữ kiện bằng nguồn.</p>",
+          "<p>Đặt tiêu đề và thuật ngữ nhất quán nhưng chỉ dựa vào việc Claude đã tự kiểm tra dữ kiện từ nguồn.</p>",
+          "<p>Viết gọn để dễ đọc và kiểm tra dữ kiện với nguồn, nhưng giữ nguyên tiêu đề và cách dùng thuật ngữ để bảo toàn giọng văn bản nháp.</p>"
         ]
       },
       "topic": "d2"
@@ -3972,11 +3972,11 @@
       "v": {
         "q": "<p>Bạn đang đánh giá chiến lược viết prompt do đồng nghiệp đề xuất cho từng loại công việc. Hai cặp chiến lược và tác vụ nào phù hợp? (Chọn hai.)</p>",
         "o": [
-          "<p>Prompting theo template cộng nhắc cho việc lên ý tưởng đặt tên và tagline sáng tạo ổ giai đoạn đầu</p>",
-          "<p>Prompting khám phá mở cho việc redline hợp đồng pháp lý dựa trên thư viện điều khoản</p>",
-          "<p>Prompting theo template cộng nhắc cho các báo cáo tuân thủ hỏng tháng theo một schema cố định</p>",
-          "<p>Prompting theo template cộng nhắc cho việc tóm tắt phản hồi khách hàng thông thường không có schema</p>",
-          "<p>Prompting khám phá mở cho việc brainstorm chiến lược ở giai đoạn đầu về một thư trường mới</p>"
+          "<p>Dùng prompt theo khuôn cứng cho hoạt động sáng tạo tên gọi và khẩu hiệu ở giai đoạn đầu.</p>",
+          "<p>Dùng prompt thăm dò mở khi rà soát chỉnh sửa hợp đồng pháp lý theo thư viện điều khoản.</p>",
+          "<p>Dùng prompt theo khuôn cố định để tạo báo cáo tuân thủ hằng tháng theo schema đã quy định.</p>",
+          "<p>Dùng prompt theo khuôn cứng để tóm tắt phản hồi khách hàng thân mật không có schema.</p>",
+          "<p>Dùng prompt thăm dò mở khi động não chiến lược ban đầu cho thị trường mới.</p>"
         ]
       },
       "topic": "d1"
@@ -4015,11 +4015,11 @@
       "v": {
         "q": "<p>Bạn là quản lý dự án tại Orinexa, Inc., đang chọn mô hình Claude cho một tác vụ production mới. Cần hoàn thành hai bước xác định yêu cầu nào TRƯỚC KHI kiểm thử các mô hình ứng viên? (Chọn hai.)</p>",
         "o": [
-          "<p>Thứ nghiệm lại model đã chọn mới khi có phiên bản model mới được phát hành.</p>",
-          "<p>Chọn một candidate model dựa trên hệ số yêu cầu và các khả năng đã biết.</p>",
-          "<p>Đưa model đã chọn vào lưu lượng production cho workload.</p>",
-          "<p>Phê duyệt kế hoạch triển khai production cùng với các nhóm platform và security.</p>",
-          "<p>Xác định ngưỡng chất lượng, mức chịu động để trả và khối lượng request dự kiến.</p>"
+          "<p>Kiểm thử lại mô hình đã chọn mỗi khi có phiên bản mô hình mới.</p>",
+          "<p>Chọn mô hình ứng viên theo hồ sơ yêu cầu và khả năng đã biết.</p>",
+          "<p>Đưa mô hình đã chọn vào luồng lưu lượng production.</p>",
+          "<p>Phê duyệt kế hoạch triển khai production với nhóm nền tảng và an ninh.</p>",
+          "<p>Xác định ngưỡng chất lượng, độ trễ cho phép và số lượng yêu cầu dự kiến.</p>"
         ]
       },
       "topic": "d2"
@@ -4053,10 +4053,10 @@
       "v": {
         "q": "<p>Bạn cần chuẩn bị thẻ ghi nhớ nhanh về ba dòng mô hình Claude cho nhóm vận hành. Mô tả nào đúng nhất?</p>",
         "o": [
-          "<p>Haiku nhanh và như, Sonnet là mặc định cân bằng cho hầu hết công việc hằng ngày, và Opus có năng lực mạnh nhất cho suy luận phục tập với độ trợ và chi phí cao hơn.</p>",
-          "<p>Cố ba model có cùng độ sâu suy luận và chỉ khác nhau về tốc độ phản hồi và chi phí.</p>",
-          "<p>Haiku là model mạnh nhất cho suy luận sâu nhất, trong khi Opus là model nhỏ cho các phản hồi nhanh.</p>",
-          "<p>Sonnet là model nhanh nhất trong ba model vì kiến trúc của nó được tối ưu cho tốc để thay vì độ sâu suy luận.</p>"
+          "<p>Haiku nhanh, gọn nhẹ; Sonnet cân bằng cho phần lớn công việc hằng ngày; Opus mạnh nhất cho suy luận phức tạp nhưng độ trễ và chi phí cao hơn.</p>",
+          "<p>Cả ba mô hình có độ sâu suy luận như nhau, chỉ khác tốc độ và chi phí.</p>",
+          "<p>Haiku mạnh nhất để suy luận sâu, còn Opus là mô hình nhẹ chuyên trả lời nhanh.</p>",
+          "<p>Sonnet nhanh nhất trong ba mô hình vì được cho là tối ưu tốc độ hơn là suy luận.</p>"
         ]
       },
       "topic": "d3"
@@ -4095,11 +4095,11 @@
       "v": {
         "q": "<p>Bạn là quản lý dự án, đang thực hiện cuộc hội thoại lập kế hoạch dài với Claude. Hai cách làm nào giúp cuộc hội thoại tiếp tục hiệu quả khi ngữ cảnh ngày càng nhiều? (Chọn hai.)</p>",
         "o": [
-          "<p>Mở một thread mới cho mỗi câu hỏi tiếp theo nhớ để giữ các thread ngăn.</p>",
-          "<p>Tránh tóm tắt để model giữ lại tầng tự gốc mà nó đã tạo ra.</p>",
-          "<p>Nhắc lại các ràng buộc và mục tiêu khi trọng tâm chuyển sang một chủ đề con mới.</p>",
-          "<p>Chuyển ngữ cảnh liên tục giữa các chế độ lập kế hoạch không liên quan trong cùng một thread.</p>",
-          "<p>Định kỳ tóm tắt các quyết định đã đưa ra cho đến nay độ nén trạng thái làm việc.</p>"
+          "<p>Mở hội thoại mới cho mỗi câu hỏi tiếp nối nhỏ để giữ các cuộc hội thoại ngắn.</p>",
+          "<p>Tránh tóm tắt để mô hình giữ nguyên từng từ trong lịch sử.</p>",
+          "<p>Nhắc lại mục tiêu và ràng buộc khi chuyển sang chủ đề con mới.</p>",
+          "<p>Liên tục chuyển qua lại giữa các chủ đề lập kế hoạch không liên quan trong cùng một chat.</p>",
+          "<p>Định kỳ tóm tắt các quyết định đã chốt để thu gọn ngữ cảnh làm việc.</p>"
         ]
       },
       "topic": "d3"
@@ -4138,11 +4138,11 @@
       "v": {
         "q": "<p>Bạn là quản lý tài chính sắp trao đổi với Claude về số liệu bí mật chưa công bố. Hai thiết lập nào phù hợp nhất với yêu cầu riêng tư của cuộc hội thoại? (Chọn hai.)</p>",
         "o": [
-          "<p>Tắt Memory contribution cho cuộc hội thoại nếu không dùng chế độ Incognito, độ con số bảo mật không bị lưu giữ làm ngữ cảnh lâu dài có thể xuất hiện trong các phiên không liên quan sau này.</p>",
-          "<p>Mở cuộc hội thoại ở chế độ Incognito, giúp cuộc hội thoại không đóng góp vào Memory và tránh việc lưu giữ lâu dài con số bảo mật trước khi công bỏ giữa các phiên.</p>",
-          "<p>Bỏ qua quyết định vị thiết lập quyền riêng tư và tiếp tục với hành vi mặc định, vì cuộc hội thoại số không yêu cầu Claude ghi nhớ con số đó một cách tường minh.</p>",
-          "<p>Bật Memory contribution cho cuộc hội thoại độ ngữ cảnh được mang sang hỗ trợ phân tích tiếp theo trong các phiên sau.</p>",
-          "<p>Coi cuộc hội thoại là phù hợp với thiết lập Memory mặc định, vì con số chỉ được thảo luận ngắn gọn và khó có khả năng bị lưu giữ.</p>"
+          "<p>Tắt đóng góp vào Memory của cuộc hội thoại nếu không dùng Incognito, để số liệu bí mật không trở thành ngữ cảnh lâu dài có thể xuất hiện ở phiên không liên quan.</p>",
+          "<p>Mở chat ở chế độ Incognito để cuộc hội thoại không đóng góp vào Memory, tránh lưu thông tin bí mật đó thành ngữ cảnh lâu dài giữa các phiên.</p>",
+          "<p>Bỏ qua thiết lập riêng tư và dùng mặc định vì chưa hề yêu cầu Claude ghi nhớ số liệu.</p>",
+          "<p>Bật đóng góp vào Memory để dùng số liệu trong các phiên phân tích về sau.</p>",
+          "<p>Giữ Memory mặc định vì số liệu chỉ được nhắc ngắn gọn và có vẻ ít khả năng được lưu lại.</p>"
         ]
       },
       "topic": "d6"
@@ -4176,10 +4176,10 @@
       "v": {
         "q": "<p>Bạn đã chỉnh một prompt tám lần, nhưng bốn lần gần nhất chất lượng đầu ra không cải thiện. Kết luận nào phù hợp nhất?</p>",
         "o": [
-          "<p>Nên dạng lớp và bỏ tác vụ mà không thông báo cho các bên liên quan.</p>",
-          "<p>Nên dạng lớp và chấp nhận output hiện tại nguyên trạng bất kỳ các vấn đề còn lại.</p>",
-          "<p>Nên tiếp tục lặp vô thời hạn vì thế nhiều lớn hơn luôn cải thiện chất lượng.</p>",
-          "<p>Việc lớp đã đặt đến mục lợi ích giảm dần và bước tiếp theo là human review hoặc một cách tiếp cận khác.</p>"
+          "<p>Dừng chỉnh sửa và bỏ luôn công việc mà không thông báo cho các bên liên quan.</p>",
+          "<p>Dừng chỉnh sửa và chấp nhận đầu ra hiện tại bất kể lỗi còn lại.</p>",
+          "<p>Tiếp tục chỉnh sửa vô thời hạn vì càng nhiều lần thử càng tốt.</p>",
+          "<p>Việc chỉnh sửa đã đạt mức lợi ích giảm dần; nên chuyển sang con người rà soát hoặc cách tiếp cận khác.</p>"
         ]
       },
       "topic": "d7"
