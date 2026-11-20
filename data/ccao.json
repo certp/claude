@@ -380,7 +380,7 @@
           "<p>Giám sát luồng dữ liệu cảm biến trực tiếp và phát hiện bất thường ngay khi chúng xuất hiện.</p>"
         ]
       },
-      "topic": "d3"
+      "topic": "d6"
     },
     {
       "id": "973",
@@ -491,7 +491,7 @@
           "<p>Tắt Memory hoàn toàn và dán lại cùng nội dung ngữ cảnh ở đầu mọi phiên Claude, dù Memory được thiết kế để duy trì thông tin giữa các cuộc hội thoại.</p>"
         ]
       },
-      "topic": "d5"
+      "topic": "d3"
     },
     {
       "id": "976",
@@ -528,7 +528,7 @@
           "<p>Đây là thói quen lý tưởng vì một mẫu duy nhất bảo đảm chất lượng nhất quán cho tất cả tác vụ.</p>"
         ]
       },
-      "topic": "d7"
+      "topic": "d1"
     },
     {
       "id": "977",
@@ -565,7 +565,7 @@
           "<p>Động não phân kỳ để tạo nhiều nhận định khả dĩ về giá đối thủ, rồi lọc ra những nhận định có vẻ đúng nhất.</p>"
         ]
       },
-      "topic": "d4"
+      "topic": "d1"
     },
     {
       "id": "978",
@@ -1508,7 +1508,7 @@
           "<p>Bước được nhân viên báo cáo là có khối lượng công việc lớn nhất trong các bản cập nhật hằng tuần.</p>"
         ]
       },
-      "topic": "d4"
+      "topic": "d7"
     },
     {
       "id": "1003",
@@ -3239,7 +3239,7 @@
           "<p>Claude chỉ được tìm và đọc email; người dùng phải tự soạn mọi câu trả lời bên ngoài Connector.</p>"
         ]
       },
-      "topic": "d3"
+      "topic": "d5"
     },
     {
       "id": "1048",
@@ -3424,7 +3424,7 @@
           "<p>Ghi chú phát hành cho người dùng, tài liệu quảng bá tóm tắt triển khai và FAQ cho khách hàng.</p>"
         ]
       },
-      "topic": "d4"
+      "topic": "review"
     },
     {
       "id": "1053",
@@ -3522,11 +3522,10 @@
         }
       ],
       "a": [
-        "D",
-        "C"
+        "D"
       ],
-      "e": "Diligence nhấn mạnh trách nhiệm của con người khi sử dụng AI. Trước khi giao sản phẩm ra bên ngoài, cần xác định thông tin nào phải được kiểm chứng, ai có quyền phê duyệt và các nghĩa vụ cần tuân thủ.",
-      "m": 2,
+      "e": "Diligence yêu cầu con người chịu trách nhiệm về sản phẩm có AI hỗ trợ. Trước khi bàn giao ra bên ngoài, phải xác định những phần cần kiểm chứng hoặc chỉnh sửa độc lập, thực hiện việc kiểm chứng và chịu trách nhiệm về kết quả. Các lựa chọn bỏ qua xác minh hoặc chuyển trách nhiệm cho Claude đều trái nguyên tắc này.",
+      "m": 1,
       "v": {
         "q": "<p>Trước khi giao sản phẩm có AI hỗ trợ cho bên ngoài, người quản lý áp dụng năng lực Diligence của AI Fluency Framework. Bước nào thể hiện đúng nguyên tắc này?</p>",
         "o": [
@@ -3536,7 +3535,7 @@
           "<p>Giao trách nhiệm giải trình về sản phẩm cho chính Claude thay vì con người, trái với nguyên tắc Diligence.</p>"
         ]
       },
-      "topic": "d1"
+      "topic": "d2"
     },
     {
       "id": "1056",
@@ -3653,7 +3652,7 @@
           "<p>3, 4, 1, 5, 2</p>"
         ]
       },
-      "topic": "d4"
+      "topic": "d7"
     },
     {
       "id": "1059",
@@ -3696,7 +3695,7 @@
           "<p>Thâm niên của người đang thực hiện công việc, vì vị trí cấp cao thường được cho là có nhiệm vụ rủi ro hơn.</p>"
         ]
       },
-      "topic": "d7"
+      "topic": "d6"
     },
     {
       "id": "1060",
@@ -3776,7 +3775,7 @@
           "<p>Giảm số bước xuống ít nhất có thể, vì số bước ít hơn được cho là luôn nhanh hơn và ít lỗi hơn.</p>"
         ]
       },
-      "topic": "d2"
+      "topic": "d7"
     },
     {
       "id": "1062",
@@ -3899,7 +3898,7 @@
           "<p>Đổi tên workspace chung của nhóm theo quy trình mới.</p>"
         ]
       },
-      "topic": "d4"
+      "topic": "d7"
     },
     {
       "id": "1066",
@@ -4022,7 +4021,7 @@
           "<p>Xác định ngưỡng chất lượng, độ trễ cho phép và số lượng yêu cầu dự kiến.</p>"
         ]
       },
-      "topic": "d2"
+      "topic": "d3"
     },
     {
       "id": "1069",
@@ -4336,7 +4335,7 @@
           "<p>Cùng một prompt có thể cho kết quả khác nhau; nên chạy mọi prompt nhiều lần và so sánh trước khi dùng.</p>"
         ]
       },
-      "topic": "d2"
+      "topic": "d4"
     },
     {
       "id": "1077",
@@ -4934,7 +4933,7 @@
           "<p>Sửa hai điểm được nêu và thêm một cải tiến khác tự phát hiện, vì cho rằng làm cả hai sẽ hiệu quả hơn.</p>"
         ]
       },
-      "topic": "d2"
+      "topic": "d4"
     },
     {
       "id": "1095",
@@ -5008,7 +5007,7 @@
           "<p>4, 1, 3, 2, 5</p>"
         ]
       },
-      "topic": "d1"
+      "topic": "d4"
     },
     {
       "id": "1097",
@@ -5119,7 +5118,7 @@
           "<p>Nhập Memory sẽ ghi đè toàn bộ Memory cũ, nên thông tin thiếu chắc chắn đã bị xóa trong quá trình nhập.</p>"
         ]
       },
-      "topic": "d4"
+      "topic": "d3"
     },
     {
       "id": "1100",
@@ -5348,7 +5347,7 @@
           "<p>2, 3, 4, 1, 5</p>"
         ]
       },
-      "topic": "d7"
+      "topic": "d3"
     },
     {
       "id": "1106",
@@ -5748,7 +5747,7 @@
           "<p>Gọi công cụ máy tính để diễn đạt mô tả sản phẩm bằng ngôn ngữ đơn giản hơn.</p>"
         ]
       },
-      "topic": "d4"
+      "topic": "d3"
     },
     {
       "id": "1118",
@@ -5889,11 +5888,10 @@
         }
       ],
       "a": [
-        "D",
         "A"
       ],
-      "e": "Khi đầu ra có thể chứa dữ liệu tài chính bị hạn chế, cần dừng việc sử dụng hoặc chia sẻ, đồng thời ghi nhận thông tin liên quan theo quy trình bảo mật của tổ chức trước khi xử lý tiếp.",
-      "m": 2,
+      "e": "Khi đầu ra có thể chứa số liệu tài chính thuộc diện hạn chế, cần dừng sử dụng hoặc chia sẻ, ghi nhận prompt và nguồn liên quan, rồi báo cáo theo kênh quản trị hoặc xử lý sự cố đã quy định. Việc chưa chia sẻ ra ngoài không có nghĩa là có thể tiếp tục sử dụng mà bỏ qua quy trình bảo mật.",
+      "m": 1,
       "v": {
         "q": "<p>Bạn phát hiện đầu ra của Claude có thể chứa số liệu tài chính bí mật từ tài liệu nội bộ được phân loại hạn chế. Nội dung mới chỉ hiển thị cho bạn, chưa chia sẻ ra ngoài. Việc đầu tiên cần làm là gì?</p>",
         "o": [
@@ -6205,7 +6203,7 @@
           "<p>Prompt dài vì chứa nhiều ngữ cảnh nền đã được dán vào.</p>"
         ]
       },
-      "topic": "d4"
+      "topic": "d1"
     },
     {
       "id": "1259",
@@ -6242,7 +6240,7 @@
           "<p>Chuyển bài thành tài liệu đặc tả trang trọng dùng trong nhóm kỹ thuật.</p>"
         ]
       },
-      "topic": "d7"
+      "topic": "d2"
     },
     {
       "id": "1260",
@@ -6427,7 +6425,7 @@
           "<p>Viết lại prompt ban đầu bằng mệnh lệnh mạnh hơn để ít lặp lại lỗi.</p>"
         ]
       },
-      "topic": "d5"
+      "topic": "review"
     },
     {
       "id": "1265",
@@ -6667,7 +6665,7 @@
           "<p>Cấp bậc của người phụ trách, vì người cấp cao được cho là chịu trách nhiệm về tác vụ dễ thấy hơn.</p>"
         ]
       },
-      "topic": "d2"
+      "topic": "d3"
     },
     {
       "id": "1271",
@@ -6704,7 +6702,7 @@
           "<p>Nhờ Claude diễn đạt mỗi phiếu thành kết quả thực sự muốn đạt, rồi đánh dấu phiếu có mục tiêu còn mơ hồ.</p>"
         ]
       },
-      "topic": "d1"
+      "topic": "d4"
     },
     {
       "id": "1272",
@@ -6821,7 +6819,7 @@
           "<p>Bỏ qua quyết định mà nghiên cứu cần hỗ trợ để Claude không bị định hướng.</p>"
         ]
       },
-      "topic": "d2"
+      "topic": "d4"
     },
     {
       "id": "1275",
@@ -7394,7 +7392,7 @@
           "<p>Sửa ngay hướng dẫn Project để nhấn mạnh rủi ro chưa xử lý là quan trọng nhất.</p>"
         ]
       },
-      "topic": "d4"
+      "topic": "d7"
     }
   ]
 }
