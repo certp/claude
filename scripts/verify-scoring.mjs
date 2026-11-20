@@ -17,6 +17,24 @@ assert.ok(html.includes('/* BEGIN SCORING */') && html.includes('/* END SCORING 
 const banks = Object.fromEntries(Object.keys(BLUEPRINTS).map(cert => [
   cert, JSON.parse(readFileSync(join(root, 'data', cert + '.json'), 'utf8')).qs
 ]));
+// Regression: an old persisted `review` filter must migrate to all domains now
+// that all 193 Associate questions have been assigned a primary domain.
+const DATA = Object.fromEntries(Object.entries(banks).map(([cert, qs]) => [cert, { qs }]));
+const topicStart = html.indexOf('const domainLabel = ', blueprintEnd);
+const topicEnd = html.indexOf('function selectExamSize(', topicStart);
+assert.ok(topicStart > blueprintEnd && topicEnd > topicStart, 'Missing domain filtering helpers');
+const { validTopic, topicIds, examTopicIds, selectTopic } = new Function(
+  'BLUEPRINTS', 'DATA',
+  html.slice(topicStart, topicEnd) + '\nreturn { validTopic, topicIds, examTopicIds, selectTopic };'
+)(BLUEPRINTS, DATA);
+assert.equal(validTopic('ccao', 'review'), '', 'Old review filter should migrate to all domains');
+assert.equal(validTopic('ccao', 'd4'), 'd4', 'Valid domain filter must remain intact');
+assert.equal(validTopic('ccao', 'missing'), '', 'Invalid topic must reset');
+assert.equal(topicIds('ccao').length, 193, 'Learning mode must retain all Associate questions');
+assert.equal(examTopicIds('ccao').length, 193, 'Exam mode must include every Associate question');
+assert.ok(!selectTopic('ccao', '', false).includes('value="review"'),
+  'Learning UI must not offer an empty review filter');
+console.log('PASS: all Associate questions eligible and stale review topic migrated');
 const BY_ID = Object.fromEntries(Object.entries(banks).map(([cert, qs]) => [
   cert, Object.fromEntries(qs.map(q => [q.id, q]))
 ]));
