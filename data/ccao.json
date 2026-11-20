@@ -66,10 +66,10 @@
       "v": {
         "q": "<p>Bạn đang viết hướng dẫn cấp hệ thống cho một Claude Project phục vụ các công việc viết lặp lại. Khi soạn hướng dẫn này, bước nào cần thực hiện đầu tiên?</p>",
         "o": [
-          "<p>Kiểm chứng các hướng dẫn đã soạn với các yêu cầu tiêu biểu của Project.</p>",
-          "<p>Phân phối các hướng dẫn đã hoàn thiện cho các cộng tác viên trong Project.</p>",
-          "<p>Xác định mục đích của Project và các ranh giới mà hướng dẫn phải tuân thủ.</p>",
-          "<p>Tinh chỉnh các hướng dẫn đã soạn dựa trên những khoảng trống quan sát được từ các lần chạy kiểm chứng.</p>"
+          "<p>Kiểm tra bản hướng dẫn đã soạn bằng các yêu cầu tiêu biểu của Project.</p>",
+          "<p>Chia sẻ bản hướng dẫn đã hoàn thiện cho các thành viên cộng tác trong Project.</p>",
+          "<p>Xác định mục đích của Project và các giới hạn mà hướng dẫn phải tuân thủ.</p>",
+          "<p>Tinh chỉnh bản hướng dẫn theo những thiếu sót phát hiện trong quá trình kiểm thử.</p>"
         ]
       },
       "topic": "d5"
@@ -103,10 +103,10 @@
       "v": {
         "q": "<p>Một nhân viên tri thức đang giải thích cách dùng phản hồi để liên tục cải thiện công việc được Claude hỗ trợ. Mô tả nào chính xác nhất?</p>",
         "o": [
-          "<p>Chỉ thu thập phản hồi sau nhiều lần chạy để các quy luật xuất hiện từ khối lượng quan sát, sau đó áp dụng thay đổi dựa trên các quy luật thay vì dựa trên bất kỳ lần chạy đơn lẻ nào.</p>",
-          "<p>Thu thập phản hồi dưới dạng điểm chất lượng tổng hợp cho mỗi lần chạy, vì điểm tổng hợp cho thấy chất lượng có đang cải thiện hay không mà không cần chi tiết về từng vấn đề riêng lẻ.</p>",
-          "<p>Thu thập phản hồi cụ thể sau mỗi lần chạy, chuyển phản hồi đó thành các thay đổi có mục tiêu đối với prompt hoặc quy trình, và quan sát xem các lần chạy tiếp theo có cải thiện hay không.</p>",
-          "<p>Thu thập ấn tượng chung sau mỗi lần chạy và áp dụng chúng dưới dạng viết lại prompt trên diện rộng, vì viết lại trên diện rộng bao quát nhiều vấn đề tiềm ẩn hơn các thay đổi có mục tiêu.</p>"
+          "<p>Chỉ thu thập phản hồi sau nhiều lần chạy, khi đã có đủ quan sát để nhận diện xu hướng; sau đó điều chỉnh dựa trên xu hướng thay vì một lần chạy riêng lẻ.</p>",
+          "<p>Ghi nhận phản hồi dưới dạng điểm chất lượng tổng hợp sau mỗi lần chạy, vì điểm số cho thấy xu hướng cải thiện mà không cần xem xét từng vấn đề.</p>",
+          "<p>Thu thập phản hồi cụ thể sau mỗi lần chạy, chuyển thành các điều chỉnh có mục tiêu đối với prompt hoặc quy trình, rồi quan sát xem các lần chạy sau có tốt hơn không.</p>",
+          "<p>Ghi lại cảm nhận chung sau mỗi lần chạy và viết lại prompt toàn diện, vì cách sửa rộng bao phủ nhiều vấn đề tiềm ẩn hơn những điều chỉnh có mục tiêu.</p>"
         ]
       },
       "topic": "d7"
@@ -140,10 +140,10 @@
       "v": {
         "q": "<p>Bạn là trợ lý vận hành và yêu cầu Claude tóm tắt 200 bản ghi chỉ số hằng tuần từ nhiều khu vực. Định dạng đầu ra nào giúp truyền đạt dữ liệu rõ ràng nhất?</p>",
         "o": [
-          "<p>Một bản tóm tắt dạng văn xuôi được tổ chức theo khu vực, mô tả các xu hướng và các bản ghi đáng chú ý bằng văn bản</p>",
-          "<p>Một loạt bản tóm lược theo từng khu vực, mỗi bản mô tả hiệu suất hằng tuần dưới dạng đoạn văn</p>",
-          "<p>Một bảng có cấu trúc với mỗi bản ghi trên một hàng và mỗi chỉ số trên một cột, được sắp xếp theo khu vực</p>",
-          "<p>Một danh sách gạch đầu dòng các nhận xét được nhóm theo khu vực mà không có các chỉ số nhất quán giữa các mục</p>"
+          "<p>Bản tóm tắt bằng văn xuôi chia theo khu vực, mô tả xu hướng và những bản ghi đáng chú ý.</p>",
+          "<p>Nhiều bản tóm tắt bằng đoạn văn cho từng khu vực, mô tả tình hình hằng tuần.</p>",
+          "<p>Bảng có cấu trúc, mỗi hàng là một bản ghi, mỗi cột là một chỉ số, được sắp xếp theo khu vực.</p>",
+          "<p>Danh sách gạch đầu dòng theo khu vực, nhưng không thống nhất chỉ số giữa các mục.</p>"
         ]
       },
       "topic": "d2"
@@ -177,10 +177,10 @@
       "v": {
         "q": "<p>Một nhà phân tích cần tính các chỉ số thống kê tổng hợp từ tệp dữ liệu bán hàng đã tải lên, đồng thời tạo biểu đồ cho báo cáo hằng tuần. Cách tạo đầu ra nào phù hợp nhất?</p>",
         "o": [
-          "<p>Tạo một phần giữ chỗ bằng văn bản cho biểu đồ trong phản hồi chat mà không tạo trực quan hóa thực sự, khiến báo cáo hằng tuần thiếu output trực quan cần có.</p>",
-          "<p>Yêu cầu một mô tả dạng văn xuôi về dữ liệu trong phản hồi chat mà không tính toán các giá trị, khiến các thống kê tóm tắt và biểu đồ không được tạo ra và báo cáo hằng tuần không hoàn chỉnh.</p>",
-          "<p>Yêu cầu Claude ước tính các thống kê tóm tắt từ một bản xem trước ngắn của tập, chấp nhận các con số chưa được xác minh thay vì chạy các phép tính trên toàn bộ tập dữ liệu đã tải lên.</p>",
-          "<p>Dùng Code Execution để thực hiện các phép tính và tạo biểu đồ, sau đó xác minh các kết quả đã tính với dữ liệu nguồn trước khi chia sẻ output.</p>"
+          "<p>Chỉ ghi mô tả chỗ dành cho biểu đồ trong câu trả lời chat, không tạo biểu đồ thực tế, khiến báo cáo thiếu phần trực quan được yêu cầu.</p>",
+          "<p>Yêu cầu Claude mô tả dữ liệu bằng văn xuôi trong chat mà không tính toán giá trị, nên không tạo được cả thống kê tổng hợp lẫn biểu đồ.</p>",
+          "<p>Yêu cầu Claude ước lượng thống kê từ bản xem trước ngắn của tệp và chấp nhận số liệu chưa được kiểm chứng, thay vì tính trên toàn bộ dữ liệu đã tải lên.</p>",
+          "<p>Dùng Code Execution để tính toán và tạo biểu đồ; đối chiếu kết quả với dữ liệu nguồn trước khi chia sẻ.</p>"
         ]
       },
       "topic": "d3"
@@ -214,10 +214,10 @@
       "v": {
         "q": "<p>Một trợ lý vận hành dùng Claude để tối ưu quy trình tiếp nhận hiện tại. Người này có tài liệu mô tả quy trình và dữ liệu thời gian xử lý gần đây. Nên dùng Claude vào hoạt động nào để hỗ trợ tối ưu hóa hiệu quả nhất?</p>",
         "o": [
-          "<p>Dùng Claude để phỏng vấn từng thành viên trong nhóm làm việc với quy trình intake và tổng hợp output phỏng vấn thành một quy trình được thiết kế lại.</p>",
-          "<p>Áp dụng Claude để dự đoán tác đăng lên cycle-time của từng thay đổi được đề xuất và xếp hạng chúng để nhóm triển khai các cải tiến theo thứ tự ưu tiên.</p>",
-          "<p>Tạo một phiên bản tối ưu của quy trình intake dựa trên các chuẩn mực ngành, sau đó so sánh với quy trình hiện tại để xác định các khoảng cách.</p>",
-          "<p>Lập sơ đồ quy trình intake hiện tại, xác định các điểm nghẽn có khả năng xảy ra dựa trên dữ liệu cycle-time, và đề xuất các phương án tối ưu hóa để con người xem xét.</p>"
+          "<p>Dùng Claude để phỏng vấn từng nhân viên tham gia quy trình tiếp nhận rồi tổng hợp các cuộc phỏng vấn thành quy trình mới.</p>",
+          "<p>Yêu cầu Claude dự đoán tác động của từng đề xuất lên thời gian xử lý và xếp hạng để nhóm triển khai theo mức ưu tiên.</p>",
+          "<p>Tạo quy trình tiếp nhận tối ưu theo chuẩn đối sánh của ngành rồi so với quy trình hiện tại để tìm khác biệt.</p>",
+          "<p>Lập sơ đồ quy trình tiếp nhận hiện tại, xác định các điểm nghẽn có thể có dựa trên thời gian xử lý và đề xuất phương án tối ưu để con người xem xét.</p>"
         ]
       },
       "topic": "d4"
@@ -251,10 +251,10 @@
       "v": {
         "q": "<p>Một nhân viên tri thức đang giải thích mục đích của khung quản trị AI trong tổ chức cho đồng nghiệp. Mô tả nào chính xác nhất?</p>",
         "o": [
-          "<p>Khung quản trị xác định các công cụ được phê duyệt, dữ liệu được phép, các bước review bắt buộc và các kênh báo cáo để AI được sử dụng nhất quán và có trách nhiệm giải trình.</p>",
-          "<p>Khung quản trị liệt kê các công cụ AI mà tổ chức cấp phép và chi phí của từng công cụ, để người dùng chọn công cụ tiết kiệm chi phí nhất cho từng tác vụ.</p>",
-          "<p>Khung quản trị ghi lại các chính sách AI mà tổ chức bắt buộc phải áp dụng theo luật, tập trung vào tuân thủ quy định thay vì việc sử dụng hằng ngày.</p>",
-          "<p>Khung quản trị xác định khóa đào tạo mà mỗi nhân viên phải hoàn thành trước khi sử dụng các công cụ AI, với các yêu cầu riêng cho từng công cụ mà tổ chức cấp phép.</p>"
+          "<p>Khung quản trị quy định các công cụ được phê duyệt, dữ liệu được phép sử dụng, các bước rà soát bắt buộc và kênh báo cáo để việc sử dụng AI nhất quán và có trách nhiệm giải trình.</p>",
+          "<p>Khung quản trị liệt kê công cụ AI được tổ chức mua giấy phép và chi phí từng công cụ, giúp người dùng chọn giải pháp tiết kiệm nhất.</p>",
+          "<p>Khung quản trị chỉ ghi nhận những chính sách AI mà pháp luật bắt buộc áp dụng, tập trung vào tuân thủ quy định thay vì việc sử dụng thường ngày.</p>",
+          "<p>Khung quản trị xác định khóa đào tạo mỗi nhân viên phải hoàn thành trước khi dùng AI, với yêu cầu riêng cho từng công cụ đã được cấp phép.</p>"
         ]
       },
       "topic": "d6"
@@ -293,11 +293,11 @@
       "v": {
         "q": "<p>Bạn đang lên kế hoạch kết nối các nguồn dữ liệu cho nhóm và phải hoàn tất khâu chuẩn bị trước khi cấp quyền kết nối. Cần hoàn thành hai bước nào TRƯỚC KHI cho phép kết nối một Connector mới? (Chọn hai.) Mỗi lựa chọn đúng là một phần của giải pháp.</p>",
         "o": [
-          "<p>Chuyển mỗi báo cáo hiện có từ nguồn dữ liệu cũ sang Connector mới.</p>",
-          "<p>Ngừng sử dụng mỗi Connector cũ không dùng đến mà có thể vẫn đang được ủy quyền.</p>",
-          "<p>Xác nhận phân loại dữ liệu của nguồn và quyền của nhóm trong việc sử dụng nguồn đó.</p>",
-          "<p>Xác nhận Connector nằm trong danh sách nhà cung cấp được phê duyệt do IT duy trì.</p>",
-          "<p>Đào tạo mọi thành viên trong nhóm về Connector mới thông qua các buổi đào tạo chính thức.</p>"
+          "<p>Chuyển toàn bộ báo cáo hiện có từ nguồn dữ liệu cũ sang Connector mới.</p>",
+          "<p>Ngừng sử dụng các Connector cũ không còn cần thiết nhưng vẫn có quyền kết nối.</p>",
+          "<p>Xác nhận mức phân loại dữ liệu của nguồn và quyền sử dụng dữ liệu của nhóm.</p>",
+          "<p>Xác nhận Connector có trong danh sách nhà cung cấp được bộ phận IT phê duyệt.</p>",
+          "<p>Đào tạo chính thức cho tất cả thành viên nhóm về Connector mới.</p>"
         ]
       },
       "topic": "d6"
@@ -331,10 +331,10 @@
       "v": {
         "q": "<p>Một chuyên viên nhân sự định dùng Claude để xử lý vấn đề nhân sự nhạy cảm. Chính sách AI của tổ chức nghiêm cấm nhập thông tin về các cuộc điều tra đang diễn ra vào công cụ AI. Cách xử lý nào phù hợp nhất với chính sách?</p>",
         "o": [
-          "<p>Nhập thông tin liên quan đến cuộc điều tra vào Claude trong một chat Incognito, vì các chat Incognito không lưu giữ thông tin và do đó nằm ngoài ý định của chính sách.</p>",
-          "<p>Không nhập thông tin liên quan đến cuộc điều tra vào Claude và tham vấn lãnh đạo HR để tìm một cách thay thế được phê duyệt nhằm xử lý vấn đề.</p>",
-          "<p>Nhập một phiên bản diễn đạt lại của thông tin liên quan đến cuộc điều tra đã loại bỏ các chi tiết nhận dạng, vì việc diễn đạt lại đáp ứng tinh thần của chính sách.</p>",
-          "<p>Chỉ nhập thông tin liên quan đến cuộc điều tra vào Claude sau khi cuộc điều tra kết thúc, vì chính sách chỉ áp dụng trong thời gian điều tra.</p>"
+          "<p>Đưa thông tin điều tra vào Claude qua chat Incognito vì cho rằng chế độ này không lưu thông tin nên không thuộc phạm vi chính sách.</p>",
+          "<p>Không đưa thông tin điều tra vào Claude; trao đổi với lãnh đạo nhân sự để tìm phương án xử lý thay thế đã được phê duyệt.</p>",
+          "<p>Diễn đạt lại thông tin điều tra và bỏ dữ liệu định danh rồi đưa vào Claude vì cho rằng cách này đáp ứng tinh thần chính sách.</p>",
+          "<p>Chỉ đưa thông tin điều tra vào Claude sau khi cuộc điều tra kết thúc vì chính sách chỉ áp dụng trong thời gian điều tra.</p>"
         ]
       },
       "topic": "d6"
@@ -373,11 +373,11 @@
       "v": {
         "q": "<p>Bạn phụ trách vận hành và cần xác định tác vụ thực tế nào phù hợp với thế mạnh của các mô hình Claude để đặt kỳ vọng hợp lý. Hai tác vụ nào phù hợp nhất? (Chọn hai.) Mỗi lựa chọn đúng là một giải pháp hoàn chỉnh.</p>",
         "o": [
-          "<p>Tổng hợp một bản tóm tắt điều hành duy nhất từ nhiều tài liệu nguồn dài</p>",
-          "<p>Tính giá trị thanh toán chính xác của một hợp đồng phái sinh bằng dữ liệu thị trường trực tiếp</p>",
-          "<p>Đưa ra một phán quyết pháp lý ràng buộc chỉ dựa trên phân tích của Claude đối với tài liệu về việc</p>",
-          "<p>Soạn một email gửi khách hàng có chú ý đến giọng điệu và đối tượng, dưới sẽ review của con người</p>",
-          "<p>Giám sát một luồng dữ liệu cảm biến trực tiếp và gắn cờ các bất thường ngay khi chúng xảy ra theo thời gian thực</p>"
+          "<p>Tổng hợp một bản tóm tắt điều hành từ nhiều tài liệu nguồn dài.</p>",
+          "<p>Tính chính xác giá trị thanh toán của hợp đồng phái sinh bằng dữ liệu thị trường cập nhật trực tiếp.</p>",
+          "<p>Tự ra quyết định pháp lý có giá trị ràng buộc chỉ dựa trên tài liệu vụ việc do Claude phân tích.</p>",
+          "<p>Soạn email gửi khách hàng với giọng điệu phù hợp đối tượng, có người rà soát.</p>",
+          "<p>Giám sát luồng dữ liệu cảm biến trực tiếp và phát hiện bất thường ngay khi chúng xuất hiện.</p>"
         ]
       },
       "topic": "d3"
@@ -411,10 +411,10 @@
       "v": {
         "q": "<p>Bạn đang cấu hình một Claude Project cho công việc định kỳ cụ thể. Bước cấu hình nào cần thực hiện đầu tiên?</p>",
         "o": [
-          "<p>Mời các cộng tác viên vào Project và xác nhận các mức truy cập phù hợp.</p>",
-          "<p>Xác định mục đích của Project và các tác vụ lặp lại mà nó phải hỗ trợ.</p>",
-          "<p>Thêm các tài liệu tham khảo và hướng dẫn mà Project sẽ dựa vào.</p>",
-          "<p>Kiểm thử Project đã cấu hình với một yêu cầu tiêu biểu từ khối lượng công việc.</p>"
+          "<p>Mời người cộng tác vào Project và xác nhận quyền truy cập phù hợp.</p>",
+          "<p>Xác định mục đích của Project và những công việc định kỳ cần hỗ trợ.</p>",
+          "<p>Thêm tài liệu tham chiếu và hướng dẫn cho Project.</p>",
+          "<p>Kiểm thử Project đã cấu hình bằng một yêu cầu đại diện cho công việc thực tế.</p>"
         ]
       },
       "topic": "d5"
@@ -448,10 +448,10 @@
       "v": {
         "q": "<p>Bạn đã chia yêu cầu 'soạn bản ghi nhớ cho hội đồng quản trị' thành 15 bước rất nhỏ, khiến kết quả thiếu mạch lạc vì các ý liên quan bị tách rời. Điều chỉnh nào phù hợp nhất?</p>",
         "o": [
-          "<p>Gộp yêu cầu ban đầu trở lại thành một câu duy nhất không có cấu trúc.</p>",
-          "<p>Chia nhỏ mỗi bước nhỏ thành mười bước nhỏ hơn nữa để tăng độ chính xác.</p>",
-          "<p>Loại bỏ mọi trình tự để các bước chạy theo thứ tự ngẫu nhiên.</p>",
-          "<p>Hợp nhất các bước liên quan thành ít phần gắn kết hơn, nhóm các ý có liên hệ tự nhiên với nhau.</p>"
+          "<p>Gộp yêu cầu ban đầu thành một câu duy nhất, không còn cấu trúc.</p>",
+          "<p>Chia mỗi bước nhỏ thành mười bước nhỏ hơn để tăng độ chi tiết.</p>",
+          "<p>Bỏ toàn bộ trình tự, cho các bước thực hiện ngẫu nhiên.</p>",
+          "<p>Gộp những bước liên quan thành ít phần mạch lạc hơn để các ý liên kết tự nhiên.</p>"
         ]
       },
       "topic": "d1"
@@ -485,10 +485,10 @@
       "v": {
         "q": "<p>Một nhân viên tri thức thường xuyên chuyển giữa Claude và một dịch vụ AI khác khi thực hiện dự án dài hạn. Tính năng nào của Claude giúp giảm việc phải cung cấp lại ngữ cảnh giữa các phiên rõ rệt nhất?</p>",
         "o": [
-          "<p>Bật Memory và dùng khả năng import để đưa ngữ cảnh liên quan từ dịch vụ AI khác vào Claude làm điểm khởi đầu cho công việc của dự án.</p>",
-          "<p>Mở mỗi phiên Claude ở chế độ Incognito, chế độ này ngăn cuộc hội thoại đóng góp vào Memory và do đó loại bỏ tính liên tục giữa các phiên mà dự án có thể hưởng lợi.</p>",
-          "<p>Chỉ dựa vào một Artifact tĩnh duy nhất được dán vào mỗi chat làm cơ chế liên tục duy nhất, bỏ qua tính năng Memory vốn được xây dựng riêng để lưu giữ ngữ cảnh liên quan đến công việc giữa các phiên.</p>",
-          "<p>Tắt hoàn toàn Memory và dán lại cùng các đoạn ngữ cảnh ở đầu mỗi phiên Claude, dù Memory được thiết kế để tự động lưu giữ ngữ cảnh đó giữa các cuộc hội thoại.</p>"
+          "<p>Bật Memory và nhập thông tin liên quan từ dịch vụ AI khác để làm ngữ cảnh khởi đầu cho dự án trong Claude.</p>",
+          "<p>Luôn mở các phiên Claude ở chế độ Incognito, ngăn chúng đóng góp vào Memory và làm mất khả năng duy trì ngữ cảnh giữa các phiên.</p>",
+          "<p>Chỉ dùng một Artifact tĩnh và dán vào mọi chat làm cách duy trì ngữ cảnh, bỏ qua tính năng Memory chuyên dùng cho việc này.</p>",
+          "<p>Tắt Memory hoàn toàn và dán lại cùng nội dung ngữ cảnh ở đầu mọi phiên Claude, dù Memory được thiết kế để duy trì thông tin giữa các cuộc hội thoại.</p>"
         ]
       },
       "topic": "d5"
@@ -522,10 +522,10 @@
       "v": {
         "q": "<p>Bạn là trưởng dự án và nhận thấy đồng nghiệp dùng cùng một mẫu prompt cho mọi công việc, bất kể loại tác vụ. Bạn nên đưa ra nhận xét nào?</p>",
         "o": [
-          "<p>Chiến lược prompting nên được điều chỉnh cho từng loại tác vụ vì một mẫu duy nhất không tạo ra output mạnh như nhau trên mỗi tác vụ.</p>",
-          "<p>Chiến lược prompting không nên thay đổi giữa các tác vụ vì việc điều chỉnh lãng phí thời gian và không mang lại giá trị.</p>",
-          "<p>Loại tác vụ không ảnh hưởng đến chiến lược prompting phù hợp.</p>",
-          "<p>Thói quen này là lý tưởng vì một mẫu duy nhất đảm bảo chất lượng nhất quán trên mỗi loại tác vụ.</p>"
+          "<p>Cần điều chỉnh cách viết prompt theo từng loại tác vụ vì một mẫu không thể cho chất lượng tốt như nhau với mọi công việc.</p>",
+          "<p>Không nên thay đổi cách viết prompt giữa các tác vụ vì việc điều chỉnh chỉ tốn thời gian và không tạo giá trị.</p>",
+          "<p>Loại tác vụ không ảnh hưởng đến cách viết prompt phù hợp.</p>",
+          "<p>Đây là thói quen lý tưởng vì một mẫu duy nhất bảo đảm chất lượng nhất quán cho tất cả tác vụ.</p>"
         ]
       },
       "topic": "d7"
@@ -559,10 +559,10 @@
       "v": {
         "q": "<p>Bạn nhận yêu cầu mơ hồ 'hãy xem xét giá của chúng ta'. Sau khi làm rõ, mục tiêu thực tế là lập bản tổng hợp có cấu trúc về giá của đối thủ cạnh tranh để nhóm có thể hành động, chứ không phải đề xuất ý tưởng định giá mới. Chiến lược nào phù hợp nhất?</p>",
         "o": [
-          "<p>Dùng chiến lược nghiên cứu thu thập thông tin có cấu trúc về giá của đối thủ, nêu tên các nguồn và ghi chú mức độ tin cậy của từng phát hiện.</p>",
-          "<p>Dùng chiến lược hội thoại mở khám phá giá của đối thủ theo cách lặp qua nhiều prompt, để cấu trúc dần hình thành từ cuộc hội thoại.</p>",
-          "<p>Dùng chiến lược phân tích so sánh đối chiếu giá của công ty với một đối thủ duy nhất có tên cụ thể, vì so sánh theo cặp tạo ra output rõ ràng nhất.</p>",
-          "<p>Dùng cách tiếp cận brainstorming phân kỳ để tạo ra nhiều nhận xét khả dĩ về giá của đối thủ, rồi thu hẹp xuống những nhận xét có khả năng nhất.</p>"
+          "<p>Dùng phương pháp nghiên cứu để thu thập có cấu trúc thông tin giá của đối thủ, ghi rõ nguồn và mức độ tin cậy của từng kết quả.</p>",
+          "<p>Thăm dò giá đối thủ qua một chuỗi trao đổi mở, để cấu trúc dần hình thành trong cuộc hội thoại.</p>",
+          "<p>Chỉ so sánh giá công ty với một đối thủ được nêu tên, vì so sánh từng cặp cho kết quả rõ ràng nhất.</p>",
+          "<p>Động não phân kỳ để tạo nhiều nhận định khả dĩ về giá đối thủ, rồi lọc ra những nhận định có vẻ đúng nhất.</p>"
         ]
       },
       "topic": "d4"
