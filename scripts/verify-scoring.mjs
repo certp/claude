@@ -22,7 +22,7 @@ const banks = Object.fromEntries(Object.keys(BLUEPRINTS).map(cert => [
 const DATA = Object.fromEntries(Object.entries(banks).map(([cert, qs]) => [cert, { qs }]));
 const topicStart = html.indexOf('const domainLabel = ', blueprintEnd);
 const topicEnd = html.indexOf('function selectExamSize(', topicStart);
-assert.ok(topicStart > blueprintEnd && topicEnd > topicStart, 'Missing domain filtering helpers');
+assert.ok(topicStart === blueprintEnd && topicEnd > topicStart, 'Missing domain filtering helpers');
 const { validTopic, topicIds, examTopicIds, selectTopic } = new Function(
   'BLUEPRINTS', 'DATA',
   html.slice(topicStart, topicEnd) + '\nreturn { validTopic, topicIds, examTopicIds, selectTopic };'
