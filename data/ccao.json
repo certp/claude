@@ -1124,7 +1124,7 @@
       "e": "Thứ tự chẩn đoán: đọc đầu ra và xác định lỗi cụ thể (3) → so sánh với prompt để tìm điểm thiếu hoặc mâu thuẫn (4) → đặt giả thuyết (1) → thử một thay đổi có mục tiêu (2) → ghi lại nguyên nhân và kết quả (5).",
       "m": 1,
       "v": {
-        "q": "<p>Bạn là một Claude associate đang khắc phục sự cố một output kém lặp đi lặp lại. </p><p>Thứ tự đúng của các bước chẩn đoán là gì? </p><p>(1) đưa ra giả thuyết về thành phần prompt nào có khả năng nhất gây ra khiếm khuyết. </p><p>(2) Áp dụng một thay đổi có mục tiêu duy nhất và quan sát tác động lên output. </p><p>(3) đọc output từ đầu đến cuối và xác định khiếm khuyết cụ thể. </p><p>(4) So sánh output có khiếm khuyết với prompt để phát hiện các điểm không khớp giữa input và output. </p><p>(5) Ghi lại nguyên nhân gốc và cách giải quyết để tham khảo trong tương lai.</p>",
+        "q": "<p>Bạn đang xử lý tình trạng Claude liên tục tạo ra kết quả kém chất lượng. Thứ tự nào đúng cho các bước chẩn đoán sau? (1) Đặt giả thuyết về thành phần prompt có khả năng gây lỗi nhất. (2) Thực hiện một thay đổi có mục tiêu và quan sát tác động lên kết quả. (3) Đọc toàn bộ đầu ra và xác định chính xác điểm yếu. (4) Đối chiếu đầu ra lỗi với prompt để tìm những điểm không khớp giữa yêu cầu và kết quả. (5) Ghi lại nguyên nhân gốc và cách xử lý để tham khảo về sau.</p>",
         "o": [
           "<p>4,3, 1, 2, 5</p>",
           "<p>3, 1, 4, 2, 5</p>",
@@ -3805,7 +3805,7 @@
       "e": "Thứ tự đánh giá use case: xác định đối tượng, tác động và khả năng đảo ngược (3) → xác định loại dữ liệu (5) → so với chính sách, quy định (1) → ra quyết định (4) → ghi lý do (2).",
       "m": 1,
       "v": {
-        "q": "<p>Bạn là một Claude associate đang đánh giá một use case Claude được đề xuất trước khi phê duyệt cho nhóm của mình. </p><p>Thứ tự đúng của các bước đánh giá là gì? </p><p>(1) So sánh use case với các chính sách của tổ chức và các cân nhắc về quy định pháp lý liên quan. </p><p>(2) Ghi lại kết quả đánh giá và lý do để có thể truy vết. </p><p>(3) Xác định đối tượng sử dụng, tác động đến quyết định và khả năng đảo ngược của các output. </p><p>(4) Quyết định use case được tiến hành, cần điều chỉnh hay bị từ chối. </p><p>(5) Xác định các loại dữ liệu liên quan và liệu có dữ liệu nhạy cảm hay không.</p>",
+        "q": "<p>Bạn đang đánh giá một trường hợp sử dụng Claude trước khi cho phép nhóm triển khai. Thứ tự nào đúng cho các bước đánh giá sau? (1) Đối chiếu với chính sách tổ chức và những quy định pháp lý liên quan. (2) Ghi lại kết quả đánh giá và lý do để có thể truy vết. (3) Xác định đối tượng sử dụng, tác động đến quyết định và khả năng đảo ngược kết quả. (4) Quyết định chấp thuận, yêu cầu điều chỉnh hoặc từ chối. (5) Xác định loại dữ liệu cần xử lý và liệu có dữ liệu nhạy cảm hay không.</p>",
         "o": [
           "<p>5, 3, 1, 4, 2</p>",
           "<p>1, 3, 5, 4, 2</p>",
@@ -4211,7 +4211,7 @@
       "e": "Chu kỳ phản hồi: ghi nhận nhận xét cụ thể (3) → chọn một hoặc hai điều chỉnh (1) → chạy lại và so sánh (2) → ghi kết quả (4) → quyết định bước tiếp theo (5).",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang chạy một chu kỳ phản hồi và điều chỉnh hằng tuần. </p><p>Thứ tự đúng của các bước trong chu kỳ là gì? </p><p>(1) Chuyển feedback thành một hoặc hai điều chỉnh có mục tiêu cho chu kỳ tiếp theo. </p><p>(2) Chạy chu kỳ tiếp theo và so sánh kết quả với chu kỳ trước. </p><p>(3) Ghi lại feedback cụ thể nhận được trong buổi review. </p><p>(4) Ghi lại điều gì đã thay đổi, nó tạo ra hiệu quả gì và các vấn đề còn lại. </p><p>(5) Quyết định tiếp tục lặp, đổi cách tiếp cận hay escalate.</p>",
+        "q": "<p>Bạn đang thực hiện chu kỳ thu thập phản hồi và điều chỉnh hằng tuần. Thứ tự nào đúng cho các bước sau? (1) Chuyển phản hồi thành một hoặc hai thay đổi cụ thể cho chu kỳ tiếp theo. (2) Thực hiện chu kỳ mới và so sánh kết quả với chu kỳ trước. (3) Ghi lại những phản hồi cụ thể nhận được khi rà soát. (4) Ghi nhận đã thay đổi gì, tác động ra sao và vấn đề nào còn tồn tại. (5) Quyết định tiếp tục cải tiến, đổi cách tiếp cận hoặc chuyển cấp.</p>",
         "o": [
           "<p>3, 1, 2, 4, 5</p>",
           "<p>1, 3, 2, 4, 5</p>",
