@@ -368,7 +368,10 @@ const BLUEPRINTS = {
   }
 };
 const domainLabel = (cert, id) => BLUEPRINTS[cert].domains.find(d => d.id===id);
-const validTopic = (cert, topic) => domainLabel(cert,topic) || topic==='review' ? topic : '';
+// A saved review filter is valid only while its bank still has review questions.
+// Otherwise upgrade it to all domains instead of rendering an empty question list.
+const validTopic = (cert, topic) =>
+  (domainLabel(cert,topic) || (topic==='review' && DATA[cert]?.qs.some(q=>q.topic==='review'))) ? topic : '';
 function topicIds(cert, topic){
   return DATA[cert].qs.filter(q => !topic || q.topic === topic).map(q => q.id);
 }
