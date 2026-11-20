@@ -2241,7 +2241,7 @@
         "A",
         "E"
       ],
-      "e": "Độ Code Execution chạy ấn định: chuẩn hóa format input và thêm bước người kiểm tra kết quả (sanity check) trước khi chuyển xuống downstream. Code chạy không lỗi chưa có nghĩa là kết quả đúng.",
+      "e": "Để tích hợp Code Execution đáng tin cậy, cần chuẩn hóa định dạng dữ liệu đầu vào và thêm bước kiểm tra tính hợp lý của kết quả trước khi chuyển sang công đoạn tiếp theo. Chương trình chạy thành công chưa bảo đảm kết quả đúng.",
       "m": 2,
       "v": {
         "q": "<p>Một trợ lý vận hành đang thiết kế lại một bước quy trình xử lý dữ liệu lặp lại để sử dụng Code Execution. </p><p>Hai lựa chọn thiết kế nào hỗ trợ tốt nhất cho việc tích hợp đáng tin cậy? (Chọn hai.)</p>",
@@ -2279,7 +2279,7 @@
       "a": [
         "A"
       ],
-      "e": "Ethics review: xác định audience và tác động (3) ở kiểm tra nội dung về khái quát hóa, công bằng, độ chính xác (5) ở kiểm tra yêu cầu minh bếch (1) ở sửa hoặc escalate (4) ở ghi lại (2).",
+      "e": "Thứ tự đánh giá đạo đức: xác định đối tượng và tác động (3) → kiểm tra độ chính xác, tính công bằng và các khái quát hóa không phù hợp (5) → kiểm tra yêu cầu minh bạch (1) → sửa hoặc chuyển cấp (4) → ghi lại kết quả (2).",
       "m": 1,
       "v": {
         "q": "<p>Bạn là một Claude associate đang thực hiện đánh giá đảo đọc (ethics review) cho một deliverable có Claude hỗ trợ trước khi xuất bản. </p><p>Thứ tự đúng của các bước rà soát là gì? </p><p>(1) Xác nhận rằng các yêu cầu về tính minh bếch được đáp ứng đối với đối tượng nhận deliverable. </p><p>(2) Ghi lại kết quả rà soát và mọi thay đổi đã thực hiện. </p><p>(3) Xác định đối tượng và tác động tiềm tàng của deliverable đối với đối tượng đó. </p><p>(4) Thực hiện các chỉnh sửa có mục tiêu hoặc báo cáo lên cấp cao hơn (escalate) nếu một mỗi quan ngại cần thẩm quyền lớn hơn để giải quyết. </p><p>(5) Kiểm tra nội dung về các khái quát hóa không có căn cứ, các vấn đề công bảng và các vấn đề về độ chính xác.</p>",
@@ -2316,7 +2316,7 @@
       "a": [
         "B"
       ],
-      "e": "Model mạnh hơn thì tần tài nguyên hơn và chậm hơn, model nhỏ thì nhanh và rẻ. đó là trade-off cơ bản giữa Haiku, Sonnet và Opus.",
+      "e": "Mô hình mạnh hơn thường xử lý tốt nhiệm vụ khó nhưng tốn chi phí và có thể chậm hơn; mô hình nhỏ thường nhanh và tiết kiệm hơn. Đây là sự đánh đổi cơ bản giữa các dòng Haiku, Sonnet và Opus.",
       "m": 1,
       "v": {
         "q": "<p>Một người làm công việc tri thức đang giải thích cho đồng nghiệp về sự đánh đổi giữa chi phí, tốc độ và chất lượng của các mô hình Claude. </p><p>Nhận định khái quát nào mô tả đúng sự đánh đổi này?</p>",
@@ -2358,7 +2358,7 @@
         "A",
         "B"
       ],
-      "e": "Cách cải thiện thực sự: thêm mô tả tone và audience cụ thể, đồng thời đưa ví dụ output đặt chuẩn (few-shot). Gọi lại y nguyên hay thêm \"làm tốt hơn đi\" không giải quyết gốc vấn đề.",
+      "e": "Để cải thiện giọng điệu và mức độ chi tiết, hãy mô tả rõ đối tượng, giọng văn mong muốn và cung cấp một hoặc vài ví dụ đầu ra đạt yêu cầu. Lặp lại prompt cũ hoặc chỉ nói 'làm tốt hơn' không giải quyết đúng vấn đề.",
       "m": 2,
       "v": {
         "q": "<p>Đầu ra đầu tiên từ Claude hữu ích một phần nhưng có vấn đề về giọng điệu và mức độ chi tiết. </p><p>Hai hành động tinh chỉnh nào có khả năng tạo ra đầu ra tốt hơn đáng kể nhất? (Chọn hai.) Mỗi đáp án đúng là một giải pháp hoàn chỉnh.</p>",
@@ -2401,7 +2401,7 @@
         "C",
         "E"
       ],
-      "e": "Model năng cho suy luận pháp lý phức tạp nhiều bước, model nhớ cho FAQ cần latency thấp. Hai lựa chọn còn lại bị đảo ngược (dùng model nhớ cho tổng hợp chiến lược, model năng cho trích keyword volume cao).",
+      "e": "Nên chọn mô hình có khả năng suy luận sâu cho tác vụ phân tích phức tạp, còn các tác vụ hỏi đáp ngắn cần phản hồi nhanh có thể dùng mô hình nhẹ hơn. Tránh dùng mô hình quá yếu cho nhiệm vụ đòi hỏi phân tích sâu hoặc quá mạnh cho việc đơn giản.",
       "m": 2,
       "v": {
         "q": "<p>Bạn là một chuyên viên nhân sự (HR) đang xem xét các lựa chọn mô hình mà đồng nghiệp đã đưa ra cho nhiều tác vụ khác nhau. </p><p>Hai lựa chọn mô hình nào thể hiện sự phù hợp giữa mô hình và tác vụ? (Chọn hai.) Mỗi đáp án đúng là một giải pháp hoàn chỉnh.</p>",
@@ -2444,7 +2444,7 @@
         "B",
         "D"
       ],
-      "e": "Rủi ro đảo đọc lớn nhất: output gây bắt lỗi có hệ thống cho nhóm được bảo vệ (bias) và quyết định ảnh hưởng việc làm của một người mà không có ai chịu trách nhiệm. Typo hay format chỉ là lỗi nhỏ.",
+      "e": "Trong bối cảnh nhân sự, rủi ro đạo đức nghiêm trọng nhất là thiên lệch gây bất lợi cho nhóm người được bảo vệ và quyết định ảnh hưởng đến việc làm mà không có người chịu trách nhiệm. Lỗi trình bày không tương đương với các rủi ro này.",
       "m": 2,
       "v": {
         "q": "<p>Bạn là một chuyên viên nhân sự (HR) đang phân loại các rủi ro đảo đọc tiềm tàng của một quy trình có Claude hỗ trợ. </p><p>Hai rủi ro nào gây ra mối quan ngại đạo đức cao nhất trong một quy trình liên quan đến Hr? (Chọn hai.) Mỗi đáp án đúng là một giải pháp hoàn chỉnh.</p>",
@@ -2482,7 +2482,7 @@
       "a": [
         "D"
       ],
-      "e": "\"Well-known industry standard\" mà không có nguồn là claim chưa được kiểm chứng. Hoặc tìm nguồn có thẩm quyền để dẫn, hoặc xóa đi. Viết từ tin hơn không làm nó đúng hạn.",
+      "e": "Khẳng định về một 'tiêu chuẩn ngành phổ biến' nhưng không có dẫn chứng phải được xác minh bằng nguồn có thẩm quyền hoặc loại bỏ. Cách diễn đạt tự tin không thể thay cho bằng chứng.",
       "m": 1,
       "v": {
         "q": "<p>Bạn là một người làm công việc tri thức đang rà soát một bản brief do Claude tạo ra, trong đó khẳng định một \"tiêu chuẩn ngành nối tiếng\" mà không nêu nguồn nào. </p><p>Nên xử lý khẳng định này như thế nào?</p>",
@@ -2524,7 +2524,7 @@
         "D",
         "E"
       ],
-      "e": "Dùng cửa sổ ngữ cảnh hiệu quả: cắt bộ phận không liên quan và tách các phần input bằng header rõ ràng. Paste cố email thread hay nối tài liệu liền nhau không có dấu phân cách đều làm nhiều context.",
+      "e": "Sử dụng cửa sổ ngữ cảnh hiệu quả bằng cách chỉ giữ phần tài liệu liên quan và phân tách các nguồn bằng tiêu đề rõ ràng. Dán toàn bộ luồng email hoặc nối tài liệu không có ranh giới dễ gây nhiễu.",
       "m": 2,
       "v": {
         "q": "<p>Bạn là một business analyst đang quyết định nên khuyến nghị cho đồng nghiệp những thực hành định dạng đầu ra và cửa sổ ngữ cảnh nào. </p><p>Hai thực hành nào thể hiện việc sử dụng cửa sổ ngữ cảnh hiệu quả? (Chọn hai.) Mỗi đáp án đúng là một phần của giải pháp.</p>",
@@ -2562,7 +2562,7 @@
       "a": [
         "A"
       ],
-      "e": "Artifact dành cho nội dung lần, đồng độc lập và tái sử dụng được (code, tài liệu, mockup…), giống một file riêng thay vì một tin nhắn chat. Chỉ vài đoạn văn thì vẫn trả lời inline.",
+      "e": "Artifact phù hợp với nội dung lớn, độc lập, có thể sử dụng lại hoặc chỉnh sửa riêng, như mã nguồn, tài liệu hay bản mẫu. Các câu trả lời ngắn thường không cần tách thành Artifact.",
       "m": 1,
       "v": {
         "q": "<p>Claude chuyển một phản hồi thành một Artifact riêng thay vì một câu trả lời trong chat chủ yếu khi nội dung đó:</p>",
@@ -2599,7 +2599,7 @@
       "a": [
         "D"
       ],
-      "e": "Haiku 4.5 không phải \"hàng hệ cấp\", mà là lựa chọn có chỉ đích cho task nhanh, số lượng lần, cần latency thấp và chi phí rẻ.",
+      "e": "Haiku không chỉ là lựa chọn 'kém hơn'; đây là mô hình phù hợp với tác vụ cần tốc độ, độ trễ thấp và chi phí tiết kiệm, kể cả khi người dùng có quyền truy cập mô hình mạnh hơn.",
       "m": 1,
       "v": {
         "q": "<p>Một người dùng gói Pro tránh dùng Haiku 4.5 hoàn toàn, vì tin rỗng đó chỉ là mô hình kém hơn dành cho những người không thể truy cập các mô hình tốt hơn. </p><p>Phát biểu nào sửa lỗi nhận định này?</p>",
@@ -2636,7 +2636,7 @@
       "a": [
         "C"
       ],
-      "e": "Theo hướng dẫn của Anthropic, Sonnet là model mặc định cân bằng cho phần lớn công việc viết và phân tích hằng ngày. Opus dành cho bài toán phức tạp, rủi ro cao; Haiku cho task nhanh, như.",
+      "e": "Sonnet là lựa chọn cân bằng cho nhiều công việc viết và phân tích hằng ngày. Opus phù hợp với suy luận phức tạp; Haiku phù hợp với tác vụ đơn giản cần tốc độ.",
       "m": 1,
       "v": {
         "q": "<p>Một người dùng doanh nghiệp không chắc nên chọn mô hình nào cho công việc viết và phân tích hằng ngày thông thường. </p><p>Theo hướng dẫn của Anthropic, mô hình nào là mặc định được khuyến nghị?</p>",
@@ -2673,7 +2673,7 @@
       "a": [
         "A"
       ],
-      "e": "Nội dung gửi ra ngoài hoặc nhạy cảm thì ngoài việc công khai có dùng AI, còn cần người có chuyên môn review trước khi đến tay người dùng cuối.",
+      "e": "Với nội dung nhạy cảm hoặc công bố ra bên ngoài, bên cạnh việc minh bạch về sự tham gia của AI, cần có người đủ chuyên môn rà soát trước khi phát hành.",
       "m": 1,
       "v": {
         "q": "<p>Đối với nội dung hướng ra bên ngoài hoặc nhạy cảm, Anthropic khuyến nghị công bố sự tham gia của AI cùng với biến pháp bảo vệ nào khác?</p>",
@@ -2710,7 +2710,7 @@
       "a": [
         "D"
       ],
-      "e": "Ba lần chạy cho ba con sự khác nhau là dấu hiệu model đang đoán. Lấy trung bình hay chọn theo số đông đầu sai cách. Phải quay về dữ liệu nguồn để tính và kiểm chứng.",
+      "e": "Nếu cùng một prompt tạo ra ba giá trị khác nhau cho chỉ số tài chính, không nên lấy trung bình hoặc chọn theo đa số. Phải trở lại dữ liệu nguồn, tính toán và xác minh con số.",
       "m": 1,
       "v": {
         "q": "<p>Việc tạo lại (regenerate) cùng một prompt cho ra ba giá trị khác nhau rõ rệt của một chỉ số quan trọng qua ba lần thử. Bạn cần một con số đáng tin cậy duy nhất cho bản tóm tắt tài chính phải nạp cho ban lãnh đảo hôm nay. </p><p>Với sự không nhất quán qua các lần tạo lại, hành động nào là phù hợp nhất?</p>",
@@ -2747,7 +2747,7 @@
       "a": [
         "C"
       ],
-      "e": "Research chạy nhiều bước tìm kiếm nên tần quota nhanh hơn tin nhắn thường. Dùng cho câu hỏi status routine hằng ngày là lãng phí.",
+      "e": "Research thường sử dụng nhiều bước tìm kiếm và xử lý nên tiêu tốn hạn mức hơn câu hỏi thông thường. Chạy Research cho mọi câu hỏi trạng thái hằng ngày có thể rất tốn kém.",
       "m": 1,
       "v": {
         "q": "<p>Một nhóm dự định chạy một phiên Research cho mỗi câu hỏi trạng thái thông thường trong quy trình hằng ngày. </p><p>Cân nhắc chi phí chính mà họ nên xem xét là gì?</p>",
@@ -2784,7 +2784,7 @@
       "a": [
         "C"
       ],
-      "e": "Bài toán vừa cần suy luận kỳ vừa cần thu thập nhiều nguồn thì kết hợp Research (tìm nguồn, có trích dẫn) với Extended Thinking (suy luận sâu).",
+      "e": "Phân tích thị trường cần thu thập nhiều nguồn và suy luận sâu có thể kết hợp Research để tìm tài liệu có dẫn nguồn với Extended Thinking để phân tích kỹ.",
       "m": 1,
       "v": {
         "q": "<p>Một chiến lược gia cần cả suy luận cẩn thận lần việc thu thập nhiều nguồn cho một bản phân tích thâm nhập thị trường chi tiết. </p><p>Tự hợp nào được hướng dẫn hỗ trợ cho tác vụ này?</p>",
@@ -2821,7 +2821,7 @@
       "a": [
         "C"
       ],
-      "e": "Chỉ một section cần đối giống thì bôi chọn đúng phần đó và yêu cầu sửa có mục tiêu, giống sửa một hàm thay vì viết lại cả module.",
+      "e": "Nếu chỉ một phần của Artifact cần đổi giọng điệu, hãy chọn đúng phần đó và yêu cầu chỉnh sửa có mục tiêu; giữ nguyên các phần đã đúng.",
       "m": 1,
       "v": {
         "q": "<p>Một phần của một tài liệu Markdown dài trong một Artifact cần đối giọng điệu cho một đối tượng khác, trong khi phần còn lại đã đúng. </p><p>Cách chỉnh sửa phù hợp nhất là gì?</p>",
@@ -2858,7 +2858,7 @@
       "a": [
         "A"
       ],
-      "e": "Prompt vấn ẩn suất cố tuần mà chỉ một lần ra kết quả lần xỉn thì nhiều khả năng do tính ngẫu nhiên. Bấm Retry trước, chưa cần viết lại prompt hay đối model.",
+      "e": "Khi prompt đã hoạt động tốt suốt tuần nhưng chỉ một lần cho kết quả bất thường, nên thử tạo lại câu trả lời trước khi sửa prompt hoặc chuyển mô hình.",
       "m": 1,
       "v": {
         "q": "<p>Một prompt đã cho kết quả xuất sắc suất cố tuần bằng trả về một câu trả lời lần xỉn lệ thường. Người dùng tin rỗng bản thân prompt vấn ẩn. </p><p>Hành động đầu tiên tốt nhất là gì?</p>",
@@ -2895,7 +2895,7 @@
       "a": [
         "C"
       ],
-      "e": "Số liệu thống kê, nhận định pháp lý, trích dẫn và câu quote nguyên văn là những thư Claude dễ sai nhất và hậu quả lớn nhất. Luôn kiểm tra với nguồn gốc.",
+      "e": "Các số liệu, trích dẫn nguyên văn và nhận định pháp lý cần được đối chiếu với nguồn gốc có thẩm quyền trước khi sử dụng. Những nội dung này có thể nghe rất thuyết phục dù không chính xác.",
       "m": 1,
       "v": {
         "q": "<p>Bạn đang thông báo cho các bên liên quan về nhưng chỉ đầu ra của Claude cần được xem xét kỳ hạn. </p><p>Bạn nên bảo hệ luôn đổi chiều loại nào sau đây với một nguồn gốc (primary source) có thẩm quyền trước khi sử dụng?</p>",
@@ -2932,7 +2932,7 @@
       "a": [
         "D"
       ],
-      "e": "Artifacts hiển thị ở panel riêng, có thể tương tác và chỉnh sửa lặp lại, rất hợp để làm mockup hoặc prototype.",
+      "e": "Artifacts hiển thị nội dung trong khung riêng, hỗ trợ tương tác và chỉnh sửa nhiều lần, phù hợp để phát triển bản mẫu hoặc prototype.",
       "m": 1,
       "v": {
         "q": "<p>Tính năng nào sau đây cho phép người dùng xây dựng một bản mockup tương tác hoạt động được và lớp chỉnh sửa trong khung bên (side panel) riêng của nó?</p>",
@@ -2969,7 +2969,7 @@
       "a": [
         "D"
       ],
-      "e": "Skill dùng progressive disclosure: chỉ được nạp khi Claude thấy task liên quan, không bị chèn vào mỗi prompt như project instructions.",
+      "e": "Skill sử dụng cơ chế nạp thông tin theo nhu cầu: nội dung liên quan được đưa vào ngữ cảnh khi cần, thay vì mặc định đưa toàn bộ tài liệu Skill vào mọi yêu cầu.",
       "m": 1,
       "v": {
         "q": "<p>Bạn đã bật một Skill tùy chỉnh và một đồng nghiệp lo ngại rằng nó sẽ làm phình mới prompt giống như project instructions. </p><p>Thông tin nào giúp hệ yên tâm?</p>",
@@ -3006,7 +3006,7 @@
       "a": [
         "B"
       ],
-      "e": "Connector Gmail yêu cầu người dùng phê duyệt rõ ràng cho từng hành động như tạo draft (human-in-the-loop). Không có kiểu cấp quyền một lần cho mỗi hành động.",
+      "e": "Đối với hành động tạo bản nháp qua Gmail Connector, người dùng cần phê duyệt theo cơ chế kiểm soát của Connector. Không nên mặc định rằng việc kết nối tài khoản đồng nghĩa cho phép mọi hành động.",
       "m": 1,
       "v": {
         "q": "<p>Khi Gmail connector đang hoạt động, một người dùng yêu cầu Claude chuẩn bị mất thể trở lại cho nhà cung cấp. </p><p>Trước khi thực sự tạo bản nháp đó, connector yêu cầu:</p>",
@@ -3043,7 +3043,7 @@
       "a": [
         "B"
       ],
-      "e": "Prompt hiệu quả cần ba thể: context rõ ràng, task cụ thể và format output mong muốn. Viết in hoa hay ép bằng giống ra lệnh không giúp gì.",
+      "e": "Một prompt rõ ràng cần có ngữ cảnh phù hợp, nhiệm vụ cụ thể và định dạng đầu ra mong muốn. Viết hoa hoặc sử dụng mệnh lệnh mạnh không thay thế được các thông tin này.",
       "m": 1,
       "v": {
         "q": "<p>Một người dùng doanh nghiệp nhận được bản nháp đầu tiên tiên mơ hồ, không hữu ích từ Claude. </p><p>Theo hướng dẫn của Anthropic, một prompt hiệu quả đáng tin cậy nhất cần gì?</p>",
@@ -3080,7 +3080,7 @@
       "a": [
         "A"
       ],
-      "e": "Project knowledge base được chia sẻ cho mỗi chat trong Project. đây là cơ chế độ tài liệu dùng chung ở mỗi cuộc hội thoại.",
+      "e": "Project knowledge giúp tài liệu đã tải lên được dùng chung trong các cuộc hội thoại thuộc cùng Project.",
       "m": 1,
       "v": {
         "q": "<p>Trong một Project đơn lẻ, cơ chế nào làm cho tài liệu đã tải lên khả dụng với mỗi chat trong Project đó?</p>",
@@ -3117,7 +3117,7 @@
       "a": [
         "A"
       ],
-      "e": "Context dài và output bắt đầu lịch thì bước đầu tiên là tóm tắt trạng thái hiện tại (đã quyết gì, còn gì). Bạn tóm tắt này sau đó có thể mang sang chat mới.",
+      "e": "Khi hội thoại dài dẫn đến kết quả không nhất quán, trước tiên hãy tóm tắt mục tiêu, quyết định và trạng thái hiện tại để tái lập ngữ cảnh. Có thể dùng bản tóm tắt này khi bắt đầu cuộc hội thoại mới.",
       "m": 1,
       "v": {
         "q": "<p>Context của cuộc hội thoại của bạn đã trả nên dài và mô hình đang tạo ra các đầu ra không nhất quán. </p><p>Bước quản lý context nào nên được thực hiện đầu tiên?</p>",
@@ -3154,7 +3154,7 @@
       "a": [
         "D"
       ],
-      "e": "Với Connector dùng chung, việc đầu tiên là compliance: kiểm tra Connector đã được phê duyệt chưa và dữ liệu thuộc mức phân loại nào. Rời mới kết nối, document và dùng thứ.",
+      "e": "Trước khi kết nối nguồn dữ liệu dùng chung, cần kiểm tra Connector đã được phê duyệt và việc truy cập dữ liệu có phù hợp với chính sách phân loại hay không.",
       "m": 1,
       "v": {
         "q": "<p>Bạn đang thiết lập một Connector cho một nguồn dữ liệu dùng chung mà nhiễu đồng nghiệp sẽ sử dụng. </p><p>Bước thiết lập Connector nào nên được thực hiện đầu tiên?</p>",
@@ -3191,7 +3191,7 @@
       "a": [
         "A"
       ],
-      "e": "Theo ITIL/SIAM, Incident Management có nhiệm vụ khôi phục dịch vụ nhanh nhất có thể. Problem Management mới đi tìm root cause.",
+      "e": "Theo SIAM/ITIL, Incident Management tập trung khôi phục dịch vụ bị gián đoạn hoặc suy giảm nhanh nhất có thể. Problem Management tập trung tìm và xử lý nguyên nhân gốc.",
       "m": 1,
       "v": {
         "q": "<p>Quy trình SIAM nào chịu trách nhiệm khôi phục một dịch vụ đã bị suy giảm hoặc bị gián đoạn?</p>",
@@ -3228,7 +3228,7 @@
       "a": [
         "B"
       ],
-      "e": "Connector Gmail đọc và tìm email mà user có quyền truy cập, soạn draft độ user từ gợi, và mỗi hành động cần user duyệt. Claude không tự gửi email.",
+      "e": "Gmail Connector cho phép hỗ trợ tìm, đọc và chuẩn bị bản nháp từ dữ liệu mà người dùng có quyền truy cập. Các thao tác được thực hiện theo quyền và cơ chế phê duyệt hiện hành.",
       "m": 1,
       "v": {
         "q": "<p>Một người làm công việc tri thức đang chuẩn bị sử dụng Gmail connector với Claude lần đầu tiên. </p><p>Phát biểu nào mô tả chính xác nhất hành vi của connector ở cấp để người dùng?</p>",
@@ -3265,7 +3265,7 @@
       "a": [
         "C"
       ],
-      "e": "Output có thông tin ngoài nguồn vì prompt không ràng buộc Claude \"chỉ dùng thông tin trong tài liệu đã cung cấp\". Thêm ràng buộc grounding này là cách sửa trực tiếp nhất.",
+      "e": "Việc Claude thêm các dữ kiện không có trong nguồn có thể do prompt thiếu ràng buộc chỉ sử dụng thông tin được cung cấp. Cần yêu cầu dựa trên nguồn và đánh dấu điều chưa được xác minh.",
       "m": 1,
       "v": {
         "q": "<p>Bạn là một Claude associate đang khắc phục sự cố một phần hồi của Claude đưa vào các dữ kiện không có trong nguồn được cung cấp. </p><p>Nguyên nhân gốc nào được chỉ ra trực tiếp nhất?</p>",
@@ -3302,7 +3302,7 @@
       "a": [
         "D"
       ],
-      "e": "Tóm tắt requirements đã thống nhất, các phát hiện chính tả dữ liệu và trạng thái bản nháp, rồi tiếp tục trong cùng chat bằng cách tái xác lập bản tóm tắt làm working context. Cách này giữ tiến độ và loại bỏ ý cố gây nhiễu; có thể chuyển sang chat mới sau nếu văn quá dài. (Chuyển sang Project/chat mới mà không có summary trạng thái và làm mất tiến độ; đổi model có cửa sổ ngữ cảnh lớn hơn không tự sửa việc ưu tiên thông tin cũ/mới.)",
+      "e": "Hãy tóm tắt các yêu cầu đã thống nhất, kết quả rà soát dữ liệu và trạng thái bản nháp rồi xác lập lại chúng làm ngữ cảnh làm việc. Cách này giúp hạn chế việc hội thoại dài làm lệch yêu cầu.",
       "m": 1,
       "v": {
         "q": "<p>Một nhà phân tích đang làm việc trong một cuộc hội thoại Claude dài. Cuộc hội thoại có khoảng 60 lượt, bao gồm phân tích yêu cầu ban đầu, nhiều vòng rà soát dữ liệu và giai đoạn soạn thảo hiện tại. Các phản hồi gần đây bắt đầu lịch khỏi các yêu cầu đã thống nhất. </p><p>Bước nào giải quyết trực tiếp nhất tình trạng lịch này trong khi vẫn giữ được tiến độ của nhà phân tích?</p>",
@@ -3339,7 +3339,7 @@
       "a": [
         "B"
       ],
-      "e": "60 tool nộp hạt mỗi lần thì tần token và tăng latency. Progressive tool discovery chỉ đưa ra một nhóm tool cốt lõi và nộp thêm khi task cần, nên vẫn giữ độ khả năng mà nhỏ hơn.",
+      "e": "Khi có nhiều công cụ, nên dùng cơ chế khám phá công cụ theo nhu cầu: chỉ nạp định nghĩa của công cụ cần thiết, thay vì đưa toàn bộ 60 công cụ vào mọi lần gọi.",
       "m": 1,
       "v": {
         "q": "<p>Bạn là một solution architect đang thiết kế một trợ lý dựa trên Claude có quyền truy cập 60 công cụ nội bộ trồi dài nhiều lệnh vực kinh doanh. Việc tại mỗi định nghĩa công cụ ở mọi yêu cầu làm tăng mức sử dụng token và thời gian đến phản hồi đầu tiên. </p><p>Mẫu thiết kế nào giải quyết tốt nhất vấn đề này mà không hy sinh độ rộng của năng lực?</p>",
@@ -3376,7 +3376,7 @@
       "a": [
         "B"
       ],
-      "e": "RBAC phải enforce ở retrieval layer: tài liệu người dùng không có quyền thì không bao giờ được đưa vào prompt. Prompt hay lọc sau khi sinh không phải lặp bảo mật đáng tin.",
+      "e": "Phải thực thi phân quyền ngay tại tầng truy xuất dữ liệu, để tài liệu người dùng không có quyền không thể được đưa vào prompt. Chỉ yêu cầu Claude tự lọc hoặc lọc sau khi sinh câu trả lời không đủ an toàn.",
       "m": 1,
       "v": {
         "q": "<p>Bạn là một platform architect đang thiết kế một trợ lý nội bộ dựa trên Claude phục vụ cả các nhà phân tích tài chính lần kiểm toán viên bên ngoài. Mỗi nhóm đối tượng chỉ được truy cập các tài liệu mà vai trò của hệ cho phép. </p><p>Kiểm soát truy cập dựa trên vai trò (role-based access control) nên được thực thi ở đâu trong pipeline?</p>",
@@ -3413,7 +3413,7 @@
       "a": [
         "C"
       ],
-      "e": "Bộ tài liệu bàn giao vận hành: architecture overview, ADR, sơ đồ component, runbook, on-call playbook và known limitations. đó là thể đổi văn hành thực sẽ cần.",
+      "e": "Bộ tài liệu bàn giao đầy đủ nên có tổng quan kiến trúc, quyết định thiết kế, sơ đồ thành phần, hướng dẫn vận hành, quy trình ứng trực và các giới hạn đã biết.",
       "m": 1,
       "v": {
         "q": "<p>Bạn đang chọn bộ tài liệu cần đi kèm một triển khai dựa trên Claude khi bàn giao. </p><p>B? nào đầy đủ nhất?</p>",
@@ -3450,7 +3450,7 @@
       "a": [
         "C"
       ],
-      "e": "Refine như debug: xác định điểm yếu cụ thể trước, rồi sửa prompt ở chạy lại ở so sánh với tiêu chí ban đầu.",
+      "e": "Đầu tiên cần chỉ rõ đầu ra chưa đạt ở điểm nào. Sau đó mới chỉnh prompt có mục tiêu, chạy lại và so sánh với tiêu chí ban đầu.",
       "m": 1,
       "v": {
         "q": "<p>Khi tinh chỉnh một đầu ra của Claude không đáp ứng kỳ vọng. </p><p>Bước tinh chỉnh lớp nào nên được thực hiện đầu tiên?</p>",
@@ -3487,7 +3487,7 @@
       "a": [
         "B"
       ],
-      "e": "Output lúc thiếu section, lúc sai giống là dấu hiệu prompt chưa đọc từ độ (audience, tone, format, các section bắt buộc). Model sẽ tự điền vào chỗ trống theo cách khác nhau mỗi lần.",
+      "e": "Khi đầu ra lúc thiếu phần nội dung, lúc sai giọng điệu, nguyên nhân thường là prompt chưa nêu rõ các mục bắt buộc, đối tượng, giọng văn và cấu trúc. Cần mô tả chúng tường minh.",
       "m": 1,
       "v": {
         "q": "<p>Một người làm công việc tri thức nhận thấy cùng một prompt cho một tác vụ hằng tuần lặp lại tạo ra các đầu ra không nhất quán giữa các lần chạy. Có tuần đầu ra dùng đúng các phần những sai giọng điệu, có tuần giọng điệu đúng những thiếu một phần. Các đầu vào nguồn thay đổi mọi tuần những theo cùng một cấu trúc. </p><p>Nguyên nhân nào đáng được điều tra trước tiên nhất?</p>",
@@ -3525,7 +3525,7 @@
         "D",
         "C"
       ],
-      "e": "Diligence yêu cầu con người chịu trách nhiệm về cách sử dụng AI và sản phẩm cuối cùng. Trước khi giao tài liệu ra bên ngoài, người quản lý cần xác định thông tin, lập luận hoặc kết luận nào phải được kiểm chứng độc lập, sửa các vấn đề phát hiện được và chịu trách nhiệm cho quá trình kiểm tra. Claude hỗ trợ tạo nội dung nhưng không thay thế trách nhiệm nghị nghiệp của người phát hành.",
+      "e": "Diligence nhấn mạnh trách nhiệm của con người khi sử dụng AI. Trước khi giao sản phẩm ra bên ngoài, cần xác định thông tin nào phải được kiểm chứng, ai có quyền phê duyệt và các nghĩa vụ cần tuân thủ.",
       "m": 2,
       "v": {
         "q": "<p>Khi chuẩn bị mất sản phẩm công việc có AI hỗ trợ để giao ra bên ngoài, một senior manager đang áp dụng năng lực Diligence của AI Fluency Framework. </p><p>Bước nào phản ánh đúng nhất các nguyên tắc của Diligence?</p>",
@@ -3567,7 +3567,7 @@
         "B",
         "C"
       ],
-      "e": "Iterate hiệu quả khi mỗi thay đổi nhắm vào mất điểm yếu đã xác định, và so output với tiêu chí ban đầu để biết có cải thiện thất không. Spam retry hay iterate vô hạn không có ích.",
+      "e": "Lặp chỉnh prompt hiệu quả khi mỗi thay đổi nhắm vào một thiếu sót cụ thể và kết quả được đối chiếu với tiêu chí ban đầu. Việc thử đi thử lại không có mục tiêu không bảo đảm cải thiện.",
       "m": 2,
       "v": {
         "q": "<p>Bạn đang xem xét các nhận định vị việc lập chỉnh sửa prompt (prompt iteration) mà đồng nghiệp đã đưa ra trong một buổi đào tạo gần đây. </p><p>Hai nhận định nào về prompt iteration là chính xác? (Chọn hai.) Mỗi đáp án đúng là một giải pháp hoàn chỉnh.</p>",
@@ -3605,7 +3605,7 @@
       "a": [
         "A"
       ],
-      "e": "Khái quát hóa theo nhóm nhân khẩu học là stereotype. Viết lại dựa trên hành vi quan sát được và kiểm chứng với dữ liệu khách hàng thất. Chỉ thêm disclaimer hay xóa hết đều không đúng cách.",
+      "e": "Khái quát hóa hành vi mua sắm theo nhóm nhân khẩu học có thể tạo định kiến. Hãy sửa mô tả dựa trên hành vi được quan sát và kiểm chứng bằng dữ liệu khách hàng thực tế.",
       "m": 1,
       "v": {
         "q": "<p>Một Claude associate đang rà soát một tập mô tả phân khúc khách hàng do Claude soạn cho một bản brief marketing nội bộ. Một mô tả áp dụng một khái quát hóa về hành vi mua sớm của một nhóm nhân khẩu học mà không đúng với tầng khách hàng trong phân khúc. </p><p>Phản hồi nào là phù hợp nhất?</p>",
@@ -3642,7 +3642,7 @@
       "a": [
         "B"
       ],
-      "e": "Tối ưu: map quy trình hiện tại (4) ở tìm bottleneck bằng số ảo (3) ở tối ưu đúng bước nghẽn (1) ở pilot và đo (5) ở rollout và document (2).",
+      "e": "Thứ tự tối ưu: lập sơ đồ quy trình hiện tại (4) → đo để xác định điểm nghẽn (3) → tối ưu bước đó (1) → thử nghiệm và đo lại (5) → triển khai rộng và ghi tài liệu (2).",
       "m": 1,
       "v": {
         "q": "<p>Bạn đang chạy một đặt tối ưu hóa cho một quy trình lặp lại. </p><p>Thứ tự đúng của các bước tối ưu hóa là gì? </p><p>(1) Áp dụng tối ưu hóa có mục tiêu cho bước nút thắt (bottleneck) </p><p>(2) Triển khai quy trình đã tối ưu cho nhóm rộng hơn và ghi lại thay đổi </p><p>(3) Xác định bước nút thắt bằng thời gian đo được cho mỗi bước và độ dài hàng đợi </p><p>(4) Lớp bản để các bước quy trình hiện tại, người phụ trách và các điểm quyết định </p><p>(5) Chạy thử (pilot) thay đổi với một nhóm như và đo lường hiệu quả so với đường cơ sở (baseline) trước đó</p>",
@@ -3684,7 +3684,7 @@
         "A",
         "B"
       ],
-      "e": "Delegation dựa trên: task có đảo ngược được không, sai thì hậu quả thế nào, và task có cần sáng tạo, thấu cảm hay phán đoán của con người không. Thâm niên hay để phục tập của sơ đồ không liên quan.",
+      "e": "Quyết định giao việc cho AI cần xét hậu quả nếu sai, khả năng đảo ngược và nhu cầu phán đoán, sáng tạo hoặc thấu cảm của con người. Chức danh hay độ phức tạp của sơ đồ không phải tiêu chí chính.",
       "m": 2,
       "v": {
         "q": "<p>Trong khuôn khả việc thiết kế lại quy trình, một nhà phân tích quy trình đang áp dụng năng lực Delegation của AI Fluency Framework. </p><p>Hai tiêu chí nào trực tiếp cung cấp thông tin nhất cho các quyết định Delegation? (Chọn hai.)</p>",
@@ -3727,7 +3727,7 @@
         "A",
         "D"
       ],
-      "e": "Với Skill từ bên thứ ba: xác minh nguồn có nằm trong danh sách được phê duyệt không và review permission xem có xin quyền quá mục cần thiết không. Giống kiểm tra một npm package lệ trước khi cài.",
+      "e": "Với Skill từ bên thứ ba chưa quen thuộc, cần xác minh nguồn cung cấp có đáng tin và được phê duyệt không, đồng thời xem các quyền được yêu cầu có vượt mức cần thiết hay không.",
       "m": 2,
       "v": {
         "q": "<p>Một Claude associate đang đánh giá có nên bật một Skill do một bên thứ ba không quen thuộc cung cấp hay không. </p><p>Hai kiểm tra nào hỗ trợ tốt nhất cho một quyết định tin cậy đúng đắn? (Chọn hai.)</p>",
@@ -3765,7 +3765,7 @@
       "a": [
         "B"
       ],
-      "e": "Tối ưu quy trình là bộ bước thừa và bước giá trị thấp, dùng Claude ở chế đo được giá trị, nhưng vẫn giữ các bước review và quality gate bắt buộc. Không phải tự động hóa mới thế bằng mọi giá.",
+      "e": "Tối ưu quy trình là loại bỏ bước thừa, nâng hiệu quả ở những khâu phù hợp và vẫn duy trì kiểm tra chất lượng cùng trách nhiệm của con người. Không đồng nghĩa với tự động hóa mọi thứ.",
       "m": 1,
       "v": {
         "q": "<p>Một người làm công việc tri thức đang xác định \"tối ưu hóa quy trình\" có nghĩa là gì ở cấp Associate đối với các quy trình có hỗ trợ AI lặp đi lặp lại của nhóm. Mô tả nào chính xác nhất?</p>",
@@ -3802,7 +3802,7 @@
       "a": [
         "D"
       ],
-      "e": "Đánh giá use case: xác định audience, tác động và khả năng đảo ngược (3) ở xác định loại dữ liệu và có dữ liệu nhạy cảm không (5) ở đối chiếu policy và quy định (1) ở quyết định (4) ở ghi lại (2).",
+      "e": "Thứ tự đánh giá use case: xác định đối tượng, tác động và khả năng đảo ngược (3) → xác định loại dữ liệu (5) → so với chính sách, quy định (1) → ra quyết định (4) → ghi lý do (2).",
       "m": 1,
       "v": {
         "q": "<p>Bạn là một Claude associate đang đánh giá một use case Claude được đề xuất trước khi phê duyệt cho nhóm của mình. </p><p>Thứ tự đúng của các bước đánh giá là gì? </p><p>(1) So sánh use case với các chính sách của tổ chức và các cân nhắc về quy định pháp lý liên quan. </p><p>(2) Ghi lại kết quả đánh giá và lý do để có thể truy vết. </p><p>(3) Xác định đối tượng sử dụng, tác động đến quyết định và khả năng đảo ngược của các output. </p><p>(4) Quyết định use case được tiến hành, cần điều chỉnh hay bị từ chối. </p><p>(5) Xác định các loại dữ liệu liên quan và liệu có dữ liệu nhạy cảm hay không.</p>",
@@ -3844,7 +3844,7 @@
         "D",
         "E"
       ],
-      "e": "Phản hồi feedback hiệu quả: hỏi lỗi khi feedback mơ hồ, và map tầng feedback với thay đổi cụ thể trong bản sau (giống link commit với issue). Nhấn hạt cũ feedback mâu thuẫn hay hoãn lại đều không tốt.",
+      "e": "Phản hồi mang tính xây dựng gồm yêu cầu làm rõ nhận xét mơ hồ và liên kết từng nhận xét với thay đổi cụ thể trong bản tiếp theo. Không nên bỏ qua hoặc sửa một cách tùy tiện.",
       "m": 2,
       "v": {
         "q": "<p>Bạn đang xem xét cách các đồng nghiệp phản hồi đối với feedback nhận được về các bản thảo truyền thông do Claude soạn. </p><p>Hai cách phản hồi feedback nào là hiệu quả? (Chọn hai.) Mỗi đáp án đúng trình bày một giải pháp hoàn chỉnh.</p>",
@@ -3887,7 +3887,7 @@
         "C",
         "E"
       ],
-      "e": "Cải thiện thực chất: đưa tài liệu tham chiếu chuẩn vào Project để khởi lặp lại, và thêm bước kiểm tra chất lượng trước khi chuyển xuống downstream. đổi tên hay sắp lại heading chỉ là thay đổi bị mất.",
+      "e": "Cải tiến có giá trị là đưa nguồn tham chiếu chuẩn vào Project để tránh khởi tạo lại và bổ sung bước kiểm soát chất lượng trước khi bàn giao. Chỉ thay tên hoặc sắp xếp tiêu đề chưa chắc cải thiện quy trình.",
       "m": 2,
       "v": {
         "q": "<p>Bạn đang đánh giá các thay đổi quy trình được đề xuất xem chúng có thực sự cải thiện quy trình hay không. </p><p>Hai thay đổi được đề xuất nào thực sự cải thiện một quy trình Claude lặp đi lặp lại? (Chọn hai.) Mỗi đáp án đúng trình bày một giải pháp hoàn chỉnh.</p>",
@@ -3925,7 +3925,7 @@
       "a": [
         "A"
       ],
-      "e": "Memo cho board cần để bạn thử: heading nhất quán, câu chỉ gần để đọc lượt, thuật ngữ chuẩn của tổ chức và mọi sự liệu được kiểm chứng với dữ liệu nguồn. Không giao việc kiểm chứng cho Claude.",
+      "e": "Bản ghi nhớ cho hội đồng quản trị cần tiêu đề dễ theo dõi, câu ngắn rõ ý, thuật ngữ nhất quán và dữ kiện được kiểm chứng từ nguồn. Không thể chỉ dựa vào sự tự tin của bản thảo.",
       "m": 1,
       "v": {
         "q": "<p>Một project manager đang chuyển một bản thảo do Claude tạo ra thành một board memo hoàn chỉnh. </p><p>Hỏi động quản trị đục memo trước cuộc họp và mong đợi nó dữ lượt đọc, đã được xác minh về một thực tế và nhất quán với thuật ngữ chuẩn của tổ chức. </p><p>Bộ chỉnh sửa nào là phù hợp nhất?</p>",
@@ -3967,7 +3967,7 @@
         "C",
         "E"
       ],
-      "e": "Template cũng hợp với báo cáo theo schema cố định (compliance), prompt mở hộp với brainstorm giai đoạn đầu. Các lựa chọn còn lại bị ghép ngược.",
+      "e": "Báo cáo tuân thủ theo khuôn cố định phù hợp với prompt có mẫu và cấu trúc rõ ràng; giai đoạn động não ý tưởng phù hợp với prompt mở để khám phá nhiều phương án.",
       "m": 2,
       "v": {
         "q": "<p>Bạn là một operations lead đang đánh giá các chiến lược prompting mà động đổi đề xuất cho nhiều loại tác vụ khác nhau. </p><p>Hai chiến lược nào là sự kết hợp phù hợp giữa chiến lược và loại tác vụ? (Chọn hai.) Mỗi đáp án đúng trình bày một phần của giải pháp.</p>",
@@ -4010,7 +4010,7 @@
         "A",
         "C"
       ],
-      "e": "Trước khi test model phải có requirement profile (ngưỡng chất lượng, latency, volume) và chọn model ứng viên dựa trên đó. Promote production, retest hay sign-off rollout là các bước sau.",
+      "e": "Trước khi thử mô hình, cần xác định ngưỡng chất lượng, độ trễ, khối lượng và các ràng buộc, rồi chọn những ứng viên phù hợp. Đưa vào production và phê duyệt triển khai là bước sau.",
       "m": 2,
       "v": {
         "q": "<p>Bạn là một project manager tại Orinexa, Inc. </p><p>Bạn đang chọn một model Claude cho một workload production mới và phải hoàn thành các bước về yêu cầu trước khi thử nghiệm các candidate. </p><p>Hai bước nào phải được hoàn thành Trước KHI thử nghiệm các candidate model trên một mẫu đại diện? (Chọn hai.) Mỗi đáp án đúng trình bày một phần của giải pháp.</p>",
@@ -4048,7 +4048,7 @@
       "a": [
         "C"
       ],
-      "e": "Haiku: nhanh và như. Sonnet: mặc định cân bằng cho phần lớn công việc. Opus: mạnh nhất cho suy luận phức tạp, chậm hơn và đặt hạn.",
+      "e": "Haiku ưu tiên tốc độ và chi phí thấp; Sonnet cân bằng cho phần lớn công việc; Opus phù hợp với suy luận khó và thường tốn kém hơn.",
       "m": 1,
       "v": {
         "q": "<p>Bạn là một operations manager đang chuẩn bị mất thị tham khảo nhanh cho nhóm. </p><p>Mô tả nào đặc trưng đúng cho ba tier model của Claude nói chung?</p>",
@@ -4090,7 +4090,7 @@
         "B",
         "C"
       ],
-      "e": "Hội thoại dài vấn hiệu quả nếu nhắc lại constraint và mục tiêu khi đổi chế độ con, và định kỳ tóm tắt các quyết định đã chết (nén state).",
+      "e": "Để hội thoại lập kế hoạch dài vẫn hiệu quả, cần nhắc lại mục tiêu và ràng buộc khi chuyển chủ đề, đồng thời định kỳ tóm tắt các quyết định đã chốt.",
       "m": 2,
       "v": {
         "q": "<p>Bạn là một project manager đang thực hiện một cuộc hội thoại lập kế hoạch dài với Claude và phải giữ cho cuộc hội thoại hiệu quả khi nó dài ra. </p><p>Hai thực hành nào giúp một cuộc hội thoại lập kế hoạch dài luôn hiệu quả? (Chọn hai.) Mỗi đáp án đúng trình bày một giải pháp hoàn chỉnh.</p>",
@@ -4133,7 +4133,7 @@
         "B",
         "E"
       ],
-      "e": "Với số liệu mặt chưa công bố: dùng Incognito, hoặc nếu không dùng Incognito thì tắt Memory cho cuộc trò chuyển đó, để thông tin không bị lưu lâu dài và xuất hiện lại ở phiên khác.",
+      "e": "Với dữ liệu tài chính chưa công bố, cần tuân thủ chính sách tổ chức và chọn các thiết lập riêng tư phù hợp, chẳng hạn Incognito hoặc quản lý Memory theo các tùy chọn có sẵn. Thiết lập riêng tư không thay thế quyền được phép sử dụng dữ liệu.",
       "m": 2,
       "v": {
         "q": "<p>Một finance manager sắp thảo luận một con số bảo mật trước khi công bố với Claude. </p><p>Hai thiết lập nào phù hợp nhất với thực hành bảo mật quyền riêng tư tắt cho cuộc hội thoại này? (Chọn hai.)</p>",
@@ -4171,7 +4171,7 @@
       "a": [
         "C"
       ],
-      "e": "Tám lần iterate mà bạn lần gần nhất không cải thiện là đã đến diminishing returns. Chuyển sang human review hoặc đổi cách tiếp cận, đồng cơ thêm.",
+      "e": "Nếu chất lượng không tăng sau nhiều lần điều chỉnh liên tiếp, đó là dấu hiệu lợi ích giảm dần. Nên chuyển sang đánh giá thủ công hoặc thay đổi cách tiếp cận thay vì sửa prompt vô hạn.",
       "m": 1,
       "v": {
         "q": "<p>Bạn đã lặp lại một prompt Claude tám lần, và chất lượng output đã chứng lỗi trong bản lần thử gần nhất. </p><p>Kết luận nào là phù hợp nhất?</p>",
@@ -4208,7 +4208,7 @@
       "a": [
         "C"
       ],
-      "e": "Vòng feedback: ghi nhận feedback (3) ở chuyển thành 1–2 điều chỉnh (1) ở chạy và so sánh (2) ở ghi lại kết quả (4) ở quyết định bước tiếp (5).",
+      "e": "Chu kỳ phản hồi: ghi nhận nhận xét cụ thể (3) → chọn một hoặc hai điều chỉnh (1) → chạy lại và so sánh (2) → ghi kết quả (4) → quyết định bước tiếp theo (5).",
       "m": 1,
       "v": {
         "q": "<p>Bạn đang chạy một chu kỳ phản hồi và điều chỉnh hằng tuần. </p><p>Thứ tự đúng của các bước trong chu kỳ là gì? </p><p>(1) Chuyển feedback thành một hoặc hai điều chỉnh có mục tiêu cho chu kỳ tiếp theo. </p><p>(2) Chạy chu kỳ tiếp theo và so sánh kết quả với chu kỳ trước. </p><p>(3) Ghi lại feedback cụ thể nhận được trong buổi review. </p><p>(4) Ghi lại điều gì đã thay đổi, nó tạo ra hiệu quả gì và các vấn đề còn lại. </p><p>(5) Quyết định tiếp tục lặp, đổi cách tiếp cận hay escalate.</p>",
@@ -4250,7 +4250,7 @@
         "B",
         "E"
       ],
-      "e": "Từ chức context tốt: phân tách nguồn bằng delimiter (như tag XML) độ attribution chính xác, và đặt tài liệu quan trọng ở đầu hoặc cuối context, nội model chú ý tốt nhất.",
+      "e": "Phân tách nguồn bằng nhãn hoặc dấu phân cách rõ ràng giúp truy xuất thông tin chính xác. Với tác vụ dài, cần bố trí những tài liệu quan trọng ở vị trí dễ được chú ý trong ngữ cảnh.",
       "m": 2,
       "v": {
         "q": "<p>Bạn là một knowledge manager đang cấu trúc tài liệu nguồn trong cửa sổ ngữ cảnh cho một tác vụ đánh giá Claude dài. </p><p>Hai thực hành nào giúp sử dụng cửa sổ ngữ cảnh hiệu quả hơn? (Chọn hai.) Mỗi đáp án đúng trình bày một giải pháp hoàn chỉnh.</p>",
@@ -4288,7 +4288,7 @@
       "a": [
         "D"
       ],
-      "e": "Knowledge base nên chưa đúng các tài liệu hiện hành được dùng chung: handbook, leveling guide, FAQ. Bạn cụ hay email cố gây nhiễu và có thể trở lại theo policy đã lỗi thời.",
+      "e": "Knowledge base của Project nên chứa tài liệu dùng chung còn hiệu lực như sổ tay, hướng dẫn cấp bậc và FAQ. Tài liệu lỗi thời hoặc hồ sơ cá nhân không liên quan có thể gây nhiễu.",
       "m": 1,
       "v": {
         "q": "<p>Một HR business partner đang cấu hình một Project mới cho các câu hỏi chính sách lặp đi lặp lại từ các manager. </p><p>Project sẽ được dùng trong nhiều chat bởi một số thành viên nhóm HR. </p><p>Nội dung nào thuộc về knowledge base của Project?</p>",
@@ -4325,7 +4325,7 @@
       "a": [
         "B"
       ],
-      "e": "Rủi ro lớn nhất với công việc gửi khách hàng: Claude có thể sai mà vẫn rất từ tin. Vì vậy công việc tác động cao bắt buộc phải có người review.",
+      "e": "Claude có thể tạo câu trả lời nghe rất tự tin dù chứa sai sót. Vì vậy, nội dung có tác động cao, đặc biệt là nội dung gửi khách hàng, cần được con người kiểm chứng.",
       "m": 1,
       "v": {
         "q": "<p>Một người làm công việc tri thức đang trình bày cho một nhóm bên liên quan về các hạn chế của Claude. </p><p>Các bên liên quan sẽ dùng Claude cho công việc hướng tới khách hàng, nội output nghe có vẻ tự tin nhưng chưa lại sẽ gây hỏi thực sự. </p><p>Hạn chế nào quan trọng nhất cần truyền đạt rõ ràng?</p>",
@@ -4362,7 +4362,7 @@
       "a": [
         "B"
       ],
-      "e": "S? định danh do nhà nước cấp và số thứ thanh toán gắn với người cụ thể là PII hoặc dữ liệu tài chính nhạy cảm nhất. Bắt buộc redact hoặc ẩn danh trước khi đưa vào prompt.",
+      "e": "Thông tin định danh do cơ quan nhà nước cấp và dữ liệu thanh toán gắn với cá nhân là dữ liệu nhạy cảm. Cần xử lý theo chính sách, chẳng hạn che hoặc ẩn danh thông tin không cần thiết trước khi đưa vào prompt.",
       "m": 1,
       "v": {
         "q": "<p>Bạn là một người làm công việc tri thức đang chuẩn bị đầu vào cho một prompt Claude. </p><p>Loại dữ liệu nào rõ ràng nhất cần xử lý bổ sung như redaction hoặc anonymization trước khi đưa vào prompt?</p>",
@@ -4399,7 +4399,7 @@
       "a": [
         "D"
       ],
-      "e": "Discernment là kiểm tra có hệ thống so với yêu cầu, nguồn và chuẩn nghị nghiệp, không dựa vào cảm giác vấn viết trôi chạy.",
+      "e": "Discernment là đánh giá kết quả một cách có hệ thống dựa trên yêu cầu, nguồn và chuẩn chuyên môn, không chỉ dựa vào cảm giác rằng bài viết có vẻ trôi chảy.",
       "m": 1,
       "v": {
         "q": "<p>Trước khi chia sẻ một bản brief do Claude tạo, một analyst đang áp dụng năng lực Discernment của AI Fluency Framework để đánh giá nó. </p><p>Cách review nào phản ánh tốt nhất các nguyên tắc Discernment?</p>",
@@ -4436,7 +4436,7 @@
       "a": [
         "C"
       ],
-      "e": "Claude phù hợp tổng hợp input tự bên liên quan và tài liệu quy trình thành danh sách requirement có truy xuất nguồn. Không nên để Claude tự bịa requirement hay tự đi phỏng vấn.",
+      "e": "Claude có thể tổng hợp ghi chú phỏng vấn và tài liệu quy trình thành danh sách yêu cầu có nguồn đối chiếu. Không nên tự bịa yêu cầu hoặc thay thế hoàn toàn hoạt động làm rõ của nhóm.",
       "m": 1,
       "v": {
         "q": "<p>Một project manager đang xác định cách Claude có thể hỗ trợ phân tích yêu cầu cho một dự án sắp tới. Nhóm của hệ số thực hiện các cuộc phỏng vấn bên liên quan và xem xét tài liệu quy trình hiện có như một phần của giai đoạn discovery. </p><p>Hoạt động nào phù hợp với lệnh vực này?</p>",
@@ -4473,7 +4473,7 @@
       "a": [
         "D"
       ],
-      "e": "Requirement mâu thuẫn thì không tự chọn bên nào. đánh dấu xung đột, ghi rõ nguồn tầng bên và gửi lại cho bên liên quan giải quyết.",
+      "e": "Khi yêu cầu từ các bên liên quan mâu thuẫn, cần đánh dấu xung đột, ghi lại nguồn của từng yêu cầu và đề nghị các bên làm rõ, thay vì tự chọn một phương án.",
       "m": 1,
       "v": {
         "q": "<p>Một account manager đã dùng Claude để trích xuất yêu cầu tự ghi chú của stakeholder. </p><p>Ba yêu cầu dường như xung đột: </p><ul><li>Hai bên liên quan chỉ định các bước quy trình loại trừ lẫn nhau, </li><li>Và yêu cầu thứ ba giả định một kết quả mà hai yêu cầu đầu sẽ ngăn cản. </li></ul><p>Bước nào là phù hợp nhất?</p>",
@@ -4510,7 +4510,7 @@
       "a": [
         "A"
       ],
-      "e": "Quyết định tuyến dạng cuối cùng cần phán đoán, trách nhiệm giải trình và có hậu quả lớn với con người, nên không được giao hoàn toàn cho AI.",
+      "e": "Quyết định tuyển dụng cuối cùng có hậu quả đáng kể và cần trách nhiệm giải trình. Không nên giao hoàn toàn cho Claude khi không có sự rà soát của con người.",
       "m": 1,
       "v": {
         "q": "<p>Một Claude associate đang đánh giá một use case được đề xuất trong đó Claude sẽ đưa ra các quyết định tuyến dạng cuối cùng mà không có bất kỳ human review nào, áp dụng năng lực Delegation của AI Fluency Framework. </p><p>Cách phân loại nào phản ánh tốt nhất các nguyên tắc Delegation?</p>",
@@ -4547,7 +4547,7 @@
       "a": [
         "A"
       ],
-      "e": "Tích hợp vào quy trình nhóm: trước tiên xác định Claude tạo giá trị ở đâu và chữ nào bàn giao cho người. Pilot, iterate và onboarding làm sau.",
+      "e": "Trước khi tích hợp Claude vào quy trình nhóm, cần xác định bước nào Claude hỗ trợ tốt và điểm nào phải chuyển cho con người quyết định. Sau đó mới thử nghiệm và triển khai.",
       "m": 1,
       "v": {
         "q": "<p>Bạn là một operations lead đang tích hợp Claude vào một quy trình của nhóm nhiều người. </p><p>Bước tích hợp nào nên được thực hiện đầu tiên?</p>",
@@ -4584,7 +4584,7 @@
       "a": [
         "C"
       ],
-      "e": "Nguyên tốc tối thiểu hóa dữ liệu: tóm tắt vấn đề không cần thông tin định danh hay địa chỉ nhà, nên xóa trước khi gửi. Dọn Claude \"đồng nhắc đến\" không ngăn được việc dữ liệu đã bị gửi đi.",
+      "e": "Tóm tắt vấn đề khách hàng không cần mã định danh, địa chỉ nhà hoặc thông tin tài khoản. Phải loại bỏ dữ liệu không cần thiết trước khi gửi, chứ không chỉ yêu cầu Claude đừng nhắc đến chúng.",
       "m": 1,
       "v": {
         "q": "<p>Một customer-success associate đang soạn một prompt yêu cầu Claude tóm tắt mặt vấn đề của khách hàng từ hệ số về việc. </p><p>Hệ số về việc bao gồm mã định danh do chính phụ cấp đầy đủ của khách hàng, địa chỉ nhà, tên, số tài khoản và mô tư vấn đề. </p><p>Bạn tóm tắt mà associate cần là vị vấn đề. </p><p>Cách tiếp cận nào là phù hợp nhất?</p>",
@@ -4621,7 +4621,7 @@
       "a": [
         "A"
       ],
-      "e": "Báo cáo nhiều mừng do nhiều chỉ dữ liệu: chất mục tiêu ở gom input theo từng section ở viết tầng section bằng prompt riêng ở cuối cùng tổng hợp executive summary từ các section đã viết.",
+      "e": "Báo cáo đa lĩnh vực nên được chia theo mục tiêu, nguồn dữ liệu và phần nội dung. Soạn từng phần dựa trên nguồn tương ứng, rồi tổng hợp thành bản tóm tắt điều hành thống nhất.",
       "m": 1,
       "v": {
         "q": "<p>Một senior project coordinator được yêu cầu dùng Claude để tạo báo cáo cuối nằm bao gồm tài chính, văn hành và kết quả khách hàng. </p><p>Ba mừng này có các chỉ số hậu dữ liệu riêng và các tài liệu nguồn riêng. </p><p>Cách tiếp cận phân rã nào có khả năng tạo ra một báo cáo tốt nhất?</p>",
@@ -4658,7 +4658,7 @@
       "a": [
         "B"
       ],
-      "e": "Xử lý tài liệu có nhiều mục nhạy cảm: phân loại nội dung và xác định trường nhạy cảm trước, rồi mới redact, review và submit.",
+      "e": "Với tài liệu có nhiều mức độ nhạy cảm, bước đầu tiên là phân loại nội dung và xác định trường nhạy cảm; sau đó mới che dữ liệu, rà soát và sử dụng theo chính sách.",
       "m": 1,
       "v": {
         "q": "<p>Bạn đang xử lý một tài liệu chưa nội dung có mức độ nhạy cảm hỗn hợp trước khi dùng nó với Claude. </p><p>Bước xử lý dữ liệu nào nên được thực hiện đầu tiên?</p>",
@@ -4695,7 +4695,7 @@
       "a": [
         "D"
       ],
-      "e": "Prompt tốt nêu rõ audience, khu vực, độ dài, tone và key message, còn bạn newsletter cơ chế dùng làm ví dụ về giống vấn. Nếu bảo \"làm giống bản cố\" thì dự bị copy cả nội dung cũ.",
+      "e": "Prompt nên chỉ rõ đối tượng đọc, ba khu vực, thông điệp chính, giọng văn, độ dài và sử dụng bản tin trước làm ví dụ về phong cách. Tránh sao chép nguyên thông tin cũ.",
       "m": 1,
       "v": {
         "q": "<p>Một communications manager đang soạn một prompt để Claude tạo bản tin hằng quý cho các store manager ở ba khu vực. </p><p>Các thông điệp chính đã thống nhất, chi tiết tầng khu vực và một bản tin trước đó mà nhóm yêu thích đều có sẵn. </p><p>Cách tiếp cận prompt nào có khả năng tạo ra bản thảo đầu tiên dùng được nhất?</p>",
@@ -4737,7 +4737,7 @@
         "B",
         "D"
       ],
-      "e": "Connector an toàn: read-only tại knowledge base công khai, và workspace quản lý dự án với phạm vi đã được phê duyệt. Hệ số nhân sự, payroll hay cloud cá nhân đều có rủi ro cao.",
+      "e": "Connector an toàn cần phù hợp phân loại dữ liệu, quyền đã được phê duyệt và nguyên tắc truy cập tối thiểu. Nguồn thông tin công khai hoặc không gian dự án có quyền rõ ràng thường phù hợp hơn dữ liệu nhân sự nhạy cảm.",
       "m": 2,
       "v": {
         "q": "<p>Bạn đang xem xét các thiết lập Connector mà đồng nghiệp đề xuất cho nhiều tác vụ khác nhau. </p><p>Hai thiết lập Connector nào là cách sử dụng an toàn và phù hợp? (Chọn hai.) Mỗi đáp án đúng trình bày một giải pháp hoàn chỉnh.</p>",
@@ -4775,7 +4775,7 @@
       "a": [
         "A"
       ],
-      "e": "Đổi một biến mỗi lần, ghi lại thay đổi và tác động, giống A/B test hoặc git bisect. Như vậy biết chính xác thay đổi nào có hiệu quả.",
+      "e": "Thay đổi từng yếu tố một, ghi lại thay đổi và kết quả giúp biết điều chỉnh nào thực sự hiệu quả qua các vòng lặp.",
       "m": 1,
       "v": {
         "q": "<p>Một người làm công việc tri thức đang lập cải tiến một prompt đã tạo ra phản hồi chấp nhận được một phần. </p><p>Thực hành tinh chỉnh nào tạo ra việc học mạnh nhất qua các lần lặp?</p>",
