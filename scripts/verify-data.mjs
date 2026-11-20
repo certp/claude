@@ -49,8 +49,8 @@ for (const [cert, expected] of Object.entries(banks)) {
     assert.ok(q.a.every(k => q.o.some(o => o.k === k)), `${cert}:${q.id} answer key missing from choices`);
     assert.ok(q.v && typeof q.v.q === 'string' && Array.isArray(q.v.o) && q.v.o.length === q.o.length, `${cert}:${q.id} translated choices mismatch`);
     assert.equal(typeof q.e, 'string', `${cert}:${q.id} missing explanation`);
-    if (cert === 'ccdf') {
-      // CCD-F was retranslated end-to-end; catch garbled words and broken markup.
+    if (cert === 'ccdf' || cert === 'ccao') {
+      // Associate and Developer Vietnamese banks: guard against corrupted text and markup.
       const vietnamese = [q.v.q, ...q.v.o, q.e];
       for (const translation of vietnamese) {
         assert.ok(typeof translation === 'string' && translation.trim().length > 0,
