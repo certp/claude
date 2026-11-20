@@ -5816,10 +5816,10 @@
       "v": {
         "q": "<p>Một chuyên viên đào tạo đang cấu hình Project cho việc thiết kế khóa học. Tổ chức đã có chuẩn thiết kế giảng dạy nội bộ và cấu trúc ưu tiên cho giáo án. Bộ custom instructions nào phù hợp nhất?</p>",
         "o": [
-          "<p>Nêu vai trò của Claude là người thiết kế khóa học và yêu cầu tuân thủ các tiêu chuẩn thiết kế giảng dạy của tổ chức; để Claude tự quyết định cấu trúc đầu ra dựa trên chế độ của từng bài học.</p>",
-          "<p>Chỉ chỉ định cấu trúc đầu ra ưu tiên cho các độ cường bài học, vì cấu trúc đã ngầm chứa các tiêu chuẩn và việc nêu vai trò không mang lại giá trị gì.</p>",
-          "<p>Nêu vai trò của Claude là người thiết kế khóa học, yêu cầu tuân thủ các tiêu chuẩn thiết kế giảng dạy của tổ chức, và chỉ định cấu trúc đầu ra ưu tiên cho các độ cường bài học.</p>",
-          "<p>Nêu vai trò của Claude là người thiết kế khóa học; độ mỗi prompt trong chat chỉ định các tiêu chuẩn và cấu trúc đầu ra cho bài học đó, vì các bài học rất khác nhau.</p>"
+          "<p>Xác định vai trò Claude là người thiết kế khóa học và yêu cầu tuân thủ chuẩn thiết kế giảng dạy của tổ chức; để Claude tự chọn cấu trúc bài theo chủ đề.</p>",
+          "<p>Chỉ định cấu trúc đầu ra ưu tiên cho đề cương bài học, vì cho rằng cấu trúc đã ngầm bao gồm các chuẩn và không cần nêu vai trò.</p>",
+          "<p>Nêu vai trò Claude là người thiết kế khóa học, yêu cầu tuân thủ chuẩn thiết kế giảng dạy và chỉ định cấu trúc đề cương bài học mong muốn.</p>",
+          "<p>Nêu vai trò Claude là người thiết kế khóa học; để mỗi prompt trong chat tự quy định tiêu chuẩn và cấu trúc bài học vì các bài học rất khác nhau.</p>"
         ]
       },
       "topic": "d5"
@@ -5858,11 +5858,11 @@
       "v": {
         "q": "<p>Bạn đang xây dựng checklist đánh giá đầu ra Claude. Cần hoàn thành hai bước nào trước khi chấm điểm đầu ra theo checklist? (Chọn hai.) Mỗi lựa chọn đúng là một phần của giải pháp.</p>",
         "o": [
-          "<p>Ghi lại điểm số điểm cuối cùng và nhận xét của người đánh giá để phục vụ kiểm toán (audit trail).</p>",
-          "<p>Xác định ngưỡng phân biệt đầu ra chấp nhận được với đầu ra không chấp nhận được.</p>",
-          "<p>Đưa đầu ra đã được phê duyệt vào quy trình sản xuất ở hệ nguồn.</p>",
-          "<p>Chuyển các đầu ra không chấp nhận được cho người đánh giá cấp cao hơn để xem xét lần hai.</p>",
-          "<p>Xác định các tiêu chí đánh giá quan trọng đối với tác vụ đang xét.</p>"
+          "<p>Ghi lại điểm cuối cùng và nhận xét của người rà soát để phục vụ kiểm toán.</p>",
+          "<p>Xác định ngưỡng phân biệt đầu ra đạt và không đạt yêu cầu.</p>",
+          "<p>Đưa đầu ra đã phê duyệt vào quy trình production tiếp theo.</p>",
+          "<p>Chuyển đầu ra không đạt cho người rà soát cấp cao kiểm tra lần nữa.</p>",
+          "<p>Xác định các tiêu chí đánh giá quan trọng đối với nhiệm vụ hiện tại.</p>"
         ]
       },
       "topic": "d2"
@@ -5897,10 +5897,10 @@
       "v": {
         "q": "<p>Bạn phát hiện đầu ra của Claude có thể chứa số liệu tài chính bí mật từ tài liệu nội bộ được phân loại hạn chế. Nội dung mới chỉ hiển thị cho bạn, chưa chia sẻ ra ngoài. Việc đầu tiên cần làm là gì?</p>",
         "o": [
-          "<p>Chỉnh sửa đầu ra để xóa con số đó, lưu bạn đã chỉnh sửa cho mục đích sử dụng dự định, và ghi lại thay đổi trong nhật ký cá nhân mà không liên quan đến kênh quản trị (governance).</p>",
-          "<p>Tiếp tục sử dụng đầu ra cho mục đích nội bộ dữ định, vì con số chưa rời khỏi quyền sở hữu của người dùng và chưa có sự tiết lộ ra bên ngoài.</p>",
-          "<p>Ngừng sử dụng đầu ra, ghi lại vấn đề — bao gồm prompt và nguồn — và báo cáo qua kênh quản trị hoặc kênh sự cố đã được ghi nhận.</p>",
-          "<p>Ngừng sử dụng đầu ra và bắt đầu một chat mới với prompt được giới hạn phạm vi cẩn thận hơn, vì vấn đề đã được giải quyết miễn là đầu ra ban đều không được sử dụng.</p>"
+          "<p>Sửa đầu ra để bỏ số liệu, lưu bản đã sửa cho công việc và ghi lại trong nhật ký cá nhân mà không báo qua kênh quản trị.</p>",
+          "<p>Tiếp tục sử dụng đầu ra trong nội bộ vì số liệu chưa ra ngoài và chưa xảy ra việc tiết lộ công khai.</p>",
+          "<p>Dừng sử dụng đầu ra, ghi lại sự cố cùng prompt và nguồn liên quan, rồi báo cáo qua kênh quản trị hoặc xử lý sự cố đã quy định.</p>",
+          "<p>Dừng sử dụng đầu ra và mở chat mới với prompt giới hạn tốt hơn, vì cho rằng vấn đề đã được giải quyết nếu không dùng bản cũ.</p>"
         ]
       },
       "topic": "d6"
@@ -5934,10 +5934,10 @@
       "v": {
         "q": "<p>Một quản lý mua hàng đang đối chiếu bản tóm tắt đề xuất nhà cung cấp do Claude tạo với RFP gốc gồm 12 yêu cầu về giá cả, bảo mật và mức dịch vụ. Nên kiểm tra tính đầy đủ như thế nào?</p>",
         "o": [
-          "<p>Đọc bản tóm tắt từ đầu đến cuối và xác nhận rằng nó tạo thành một phản hồi mạch lọc cho RFP, vì các bản tóm tắt mạch lạc thường phản ánh việc bao phủ nguồn.</p>",
-          "<p>So sánh các tiêu đề mục trong bản tóm tắt với các tiêu đề mục trong RFP, vì các tiêu để khớp nhau cho thấy nội dung khớp nhau.</p>",
-          "<p>Kiểm tra ngẫu nhiên ba yêu cầu từ RFP so với bản tóm tắt, vì lấy mẫu ngẫu nhiên là cách kiểm tra tính đầy đủ tiêu chuẩn cho các bản tóm tắt.</p>",
-          "<p>Ánh xạ từng yêu cầu được đánh số trong RFP với một phần của bản tóm tắt và xác nhận rộng mỗi yêu cầu đều được thể hiện.</p>"
+          "<p>Đọc bản tóm tắt từ đầu đến cuối và xác nhận nó trả lời RFP mạch lạc, vì bản tóm tắt mạch lạc thường được cho là bao phủ nguồn.</p>",
+          "<p>So sánh tiêu đề của bản tóm tắt với các tiêu đề RFP, vì tiêu đề giống nhau được coi là nội dung đầy đủ.</p>",
+          "<p>Kiểm tra ngẫu nhiên ba yêu cầu trong RFP đối chiếu bản tóm tắt, vì lấy mẫu được cho là kiểm tra độ đầy đủ chuẩn.</p>",
+          "<p>Lập bảng đối chiếu từng yêu cầu đánh số trong RFP với phần tương ứng của bản tóm tắt và kiểm tra không bỏ sót yêu cầu nào.</p>"
         ]
       },
       "topic": "d2"
@@ -5971,10 +5971,10 @@
       "v": {
         "q": "<p>Bạn là quản lý sản phẩm, muốn Claude tạo bản mẫu trang đích (landing page) tương tác để nhóm chỉnh sửa và chia sẻ qua nhiều vòng. Tính năng nào phù hợp nhất?</p>",
         "o": [
-          "<p>Một câu trả lời hội thoại ngăn được nhúng trực tiếp trong lịch sử chat.</p>",
-          "<p>Một Artifact, hiển thị nội dung độc lập có thể chỉnh sửa trong một bảng điều khiến bên cạnh chuyên dụng để lặp lại chỉnh sửa.</p>",
-          "<p>Một lần chạy Research tạo ra một bản khảo sát bên ngoài nhiều trang về các trang web của đối thủ cạnh tranh.</p>",
-          "<p>Một Project mới chỉ chứa các ghi chú cuộc họp trước đó của nhóm.</p>"
+          "<p>Một câu trả lời trò chuyện ngắn hiển thị ngay trong lịch sử chat.</p>",
+          "<p>Artifact, cung cấp nội dung độc lập có thể chỉnh sửa và lặp lại trong khung bên riêng.</p>",
+          "<p>Một phiên Research tạo báo cáo nhiều trang về website đối thủ.</p>",
+          "<p>Project mới chỉ chứa ghi chú họp trước đó của nhóm.</p>"
         ]
       },
       "topic": "d3"
@@ -6008,10 +6008,10 @@
       "v": {
         "q": "<p>Bạn phụ trách vận hành và thấy chất lượng cuộc hội thoại Claude đang giảm. Nên thử biện pháp khôi phục nào đầu tiên?</p>",
         "o": [
-          "<p>Loại bỏ toàn bộ cuộc hội thoại và xây dựng lại công việc từ prompt ban đầu.</p>",
-          "<p>Tóm tắt trạng thái hiện tại và tiếp tục với một prompt tiếp theo có trọng tâm.</p>",
-          "<p>Chuyển lên một kiến trúc sư cấp cao để xem xét thủ công lịch sử hội thoại.</p>",
-          "<p>Thay thế ngay mô hình bằng mô hình của một nhà cung cấp khác.</p>"
+          "<p>Bỏ toàn bộ cuộc hội thoại và làm lại từ prompt ban đầu.</p>",
+          "<p>Tóm tắt trạng thái hiện tại và tiếp tục với một prompt cụ thể, tập trung.</p>",
+          "<p>Chuyển cho kiến trúc sư cấp cao rà soát thủ công lịch sử hội thoại.</p>",
+          "<p>Đổi ngay sang mô hình của nhà cung cấp khác.</p>"
         ]
       },
       "topic": "d7"
@@ -6045,10 +6045,10 @@
       "v": {
         "q": "<p>Bạn đang giải thích khái niệm cửa sổ ngữ cảnh cho đồng nghiệp. Phát biểu nào mô tả chính xác nhất?</p>",
         "o": [
-          "<p>Một lượng văn bản có giới hạn mà mô hình có thể xem xét cùng lúc, bao gồm lịch sử hội thoại, các tài liệu đính kèm và đầu vào hiện tại.</p>",
-          "<p>Tập con của cuộc hội thoại mà mô hình xác định là liên quan nhất đến đầu vào hiện tại, có thể nhỏ hơn toàn bộ cuộc hội thoại.</p>",
-          "<p>Toàn bộ lịch sử hội thoại được lưu giữ qua các phiên, mà mô hình có thể tham chiếu bất cứ khi nào tạo phản hồi trong bất kỳ chat nào.</p>",
-          "<p>Một thiết lập có thể điều chỉnh, xác định lượng lịch sử hội thoại mà mô hình đưa vào mỗi phản hồi, có thể cấu hình cho từng chat.</p>"
+          "<p>Lượng văn bản có giới hạn mà mô hình có thể xét cùng lúc, bao gồm lịch sử hội thoại, tài liệu đính kèm và đầu vào hiện tại.</p>",
+          "<p>Phần lịch sử mà mô hình tự chọn là liên quan nhất đến đầu vào hiện tại, có thể nhỏ hơn toàn bộ cuộc hội thoại.</p>",
+          "<p>Toàn bộ lịch sử hội thoại được giữ xuyên các phiên và mô hình có thể tham chiếu trong bất kỳ chat nào.</p>",
+          "<p>Một thiết lập tùy chỉnh riêng theo chat để quyết định bao nhiêu lịch sử được đưa vào mỗi câu trả lời.</p>"
         ]
       },
       "topic": "d3"
@@ -6082,10 +6082,10 @@
       "v": {
         "q": "<p>Bạn đang dùng Claude tìm nhiều phương án cho một cổng tự phục vụ mới. Nhóm cần khám phá rộng trước, rồi mới đánh giá ưu nhược điểm trong buổi riêng. Chiến lược viết prompt nào phù hợp nhất ở giai đoạn này?</p>",
         "o": [
-          "<p>Yêu cầu nhiều phương án riêng biệt được sắp xếp theo đánh giá của Claude về tính khả thi, để nhóm có thể tập trung thảo luận đánh đổi vào các phương án khả thi nhất trước.</p>",
-          "<p>Yêu cầu nhiều phương án riêng biệt kèm các đánh đổi được nêu rõ, và tránh đưa ra một khuyến nghị duy nhất trong vòng này.</p>",
-          "<p>Yêu cầu một phương án được khuyến nghị duy nhất với lập luận chắc chắn, vì các phương án đến lệ được lập luận tắt cho nhóm mất điểm khởi đầu rõ ràng hơn so với nhiều lựa chọn thay thế được lập luận yếu.</p>",
-          "<p>Yêu cầu nhiều phương án riêng biệt và yêu cầu Claude khuyến nghị phương án mạnh nhất kèm lập luận, để nhóm bắt đầu thảo luận đánh đổi từ một ứng viên dẫn đầu.</p>"
+          "<p>Yêu cầu nhiều phương án riêng biệt, xếp theo đánh giá tính khả thi của Claude để nhóm tập trung trước vào phương án khả thi nhất.</p>",
+          "<p>Yêu cầu nhiều phương án khác nhau, nêu rõ sự đánh đổi và chưa chốt một khuyến nghị ở vòng này.</p>",
+          "<p>Yêu cầu một phương án được khuyến nghị với lập luận mạnh, vì cho rằng một phương án tốt hữu ích hơn nhiều phương án ít được phân tích.</p>",
+          "<p>Yêu cầu nhiều phương án nhưng cũng để Claude chọn ngay phương án mạnh nhất, giúp nhóm bắt đầu thảo luận từ ứng viên dẫn đầu.</p>"
         ]
       },
       "topic": "d1"
@@ -6119,10 +6119,10 @@
       "v": {
         "q": "<p>Prompt mô tả một quy trình thiết lập gồm nhiều bước, chẳng hạn cấu hình môi trường rồi chạy script, nhưng Claude đôi khi làm sai thứ tự. Cần thay đổi gì để thứ tự trở nên rõ ràng và bắt buộc?</p>",
         "o": [
-          "<p>Gặp tất cả các bước thành một câu dài duy nhất, chỉ ngăn cách bảng dấu phẩy</p>",
-          "<p>Bộ số thứ từ các bước và chỉ dựa vào việc ngắt đoạn để ngầm chỉ ra thứ tự đúng</p>",
-          "<p>Mô tả các bước theo thứ tự ngẫu nhiên và để Claude tự suy ra trình tự đúng</p>",
-          "<p>Cung cấp hướng dẫn dưới dạng danh sách đánh số các bước theo đúng thứ tự chúng phải chạy</p>"
+          "<p>Gộp tất cả bước thành một câu dài, chỉ ngăn cách bằng dấu phẩy.</p>",
+          "<p>Bỏ số thứ tự và chỉ dựa vào đoạn văn để ngầm thể hiện trình tự.</p>",
+          "<p>Trình bày các bước theo thứ tự ngẫu nhiên rồi để Claude tự suy ra thứ tự đúng.</p>",
+          "<p>Đưa chỉ dẫn thành danh sách đánh số đúng theo thứ tự bắt buộc thực hiện.</p>"
         ]
       },
       "topic": "d1"
@@ -6156,10 +6156,10 @@
       "v": {
         "q": "<p>Bạn là quản lý marketing, cần soạn email quảng bá sản phẩm mới với tiêu đề thu hút, nêu lợi ích nổi bật và lời kêu gọi hành động. Cách viết prompt nào hiệu quả nhất?</p>",
         "o": [
-          "<p>Yêu cầu Claude soạn một email thông báo sản phẩm mới, để hoàn toàn cấu trúc và nội dung cho mô hình từ quyết mà không đưa ra bất kỳ hướng dẫn cụ thể nào về đối tượng, giọng điệu hay các lợi ích chính của sản phẩm cần làm nổi bật.</p>",
-          "<p>Hướng dẫn Claude tạo một email marketing: trước tiên, viết một dòng tiêu để thu hút sự chú ý; sau đó mở đầu bằng một câu dẫn dắt (hook); tiếp theo trình bày ba lợi ích chính bằng ngôn ngữ thuyết phục; và cuối cùng, đưa vào một lời kêu gọi hành động rõ ràng liên kết đến trang sản phẩm.</p>",
-          "<p>Chỉ thị Claude viết một báo cáo mô tả sản phẩm kỳ lượng bao gồm mỗi tính năng, thông số kỹ thuật, chi tiết kỹ thuật và thông tin giá, được định dạng như một tài liệu chính thức phù hợp với các bên liên quan nội bộ hạn là đối tượng marketing.</p>",
-          "<p>Yêu cầu Claude tạo nhiều bản nháp email với các giọng điệu khác nhau (trang trống, thân một, cấp bách), sau đó đánh giá tính thuyết phục, để rõ ràng và sự phù hợp thường hiệu của tầng bản nháp, chọn bản tốt nhất để chỉnh sửa lần cuối, rồi lặp lại nếu cần.</p>"
+          "<p>Chỉ yêu cầu Claude viết email thông báo sản phẩm mới, để mô hình tự quyết định toàn bộ nội dung và cấu trúc mà không hướng dẫn đối tượng, giọng văn hay lợi ích sản phẩm.</p>",
+          "<p>Hướng dẫn Claude viết email marketing theo trình tự: tiêu đề thu hút, mở đầu gây chú ý, trình bày ba lợi ích quan trọng bằng ngôn ngữ thuyết phục, rồi kết bằng lời kêu gọi hành động dẫn đến trang sản phẩm.</p>",
+          "<p>Yêu cầu Claude viết báo cáo sản phẩm chi tiết với mọi tính năng, thông số kỹ thuật và giá cả, định dạng tài liệu trang trọng cho nội bộ thay vì khách hàng marketing.</p>",
+          "<p>Yêu cầu nhiều email có giọng khác nhau (trang trọng, thân mật, khẩn trương), đánh giá tính thuyết phục, rõ ràng và phù hợp thương hiệu, chọn bản tốt nhất rồi tiếp tục chỉnh nếu cần.</p>"
         ]
       },
       "topic": "d1"
@@ -6198,11 +6198,11 @@
       "v": {
         "q": "<p>Bạn đang cân nhắc gửi một yêu cầu lớn cho Claude hay chia thành nhiều giai đoạn. Hai đặc điểm nào là dấu hiệu rõ nhất rằng yêu cầu cần được phân rã? (Chọn hai.)</p>",
         "o": [
-          "<p>Nó gộp nhiều sản phẩm bàn giao riêng biệt dành cho các đối tượng và mục đích sử dụng khác nhau.</p>",
-          "<p>Các phần sau chỉ đáng thực hiện nếu công việc thực tế ở các phần trước là đúng.</p>",
-          "<p>Nó liên quan đến một lĩnh vực mà analyst đã không tự mình làm việc trong nhiều nắm.</p>",
-          "<p>Nó yêu cầu câu trả lời cuối cùng được trình bày dưới dạng bằng thay vì các đoạn văn liền mạch.</p>",
-          "<p>Prompt dài vì có khá nhiều thông tin nền đã được dán kèm theo.</p>"
+          "<p>Yêu cầu gom nhiều đầu ra khác nhau cho các nhóm đối tượng và mục đích khác nhau.</p>",
+          "<p>Các phần sau chỉ có giá trị khi phần kiểm chứng dữ kiện trước đó đúng.</p>",
+          "<p>Người phân tích đã lâu không làm việc trong lĩnh vực này.</p>",
+          "<p>Yêu cầu trình bày kết quả dưới dạng bảng thay vì đoạn văn.</p>",
+          "<p>Prompt dài vì chứa nhiều ngữ cảnh nền đã được dán vào.</p>"
         ]
       },
       "topic": "d4"
@@ -6236,10 +6236,10 @@
       "v": {
         "q": "<p>Trưởng nhóm hỗ trợ thấy bài hướng dẫn khắc phục sự cố do Claude soạn chính xác nhưng quá khó hiểu với khách hàng thông thường. Yêu cầu chỉnh sửa tiếp theo nào giúp dễ đọc hơn mà vẫn đúng kỹ thuật?</p>",
         "o": [
-          "<p>Thêm nhiễu chi tiết kỹ thuật hạn độ khách hàng hiệu đầy đủ nguyên nhân gốc rễ</p>",
-          "<p>Viết lại bài viết với các câu ngắn hạn và từ ngữ hàng ngày, giữ mỗi bước đầu chính xác</p>",
-          "<p>Loại bỏ các bước khắc phục sự cố ít phổ biến nhất để bài viết ngắn hạn đôi chút</p>",
-          "<p>Chuyển bài viết sang định dạng đặc tả chính thức mà nhóm kỹ thuật sử dụng</p>"
+          "<p>Bổ sung chi tiết kỹ thuật để khách hàng hiểu đầy đủ nguyên nhân bên dưới.</p>",
+          "<p>Viết lại bài bằng câu ngắn, từ ngữ thông dụng và giữ nguyên độ chính xác của từng bước.</p>",
+          "<p>Bỏ các bước khắc phục ít gặp để bài viết ngắn hơn.</p>",
+          "<p>Chuyển bài thành tài liệu đặc tả trang trọng dùng trong nhóm kỹ thuật.</p>"
         ]
       },
       "topic": "d7"
@@ -6273,10 +6273,10 @@
       "v": {
         "q": "<p>Người phụ trách giữ chân khách hàng hỏi vì sao lượt hủy tăng mạnh trong quý trước. Claude lại giải thích dài dòng khái niệm tỷ lệ hủy và cách đo lường chung, không phân tích nguyên nhân. Nên đánh giá câu trả lời này thế nào?</p>",
         "o": [
-          "<p>Là một câu trả lời đúng chỉ cần rút gọn, vì phần giải thích chứa nhiều chi tiết hơn mặc cô cần ở đây.</p>",
-          "<p>Là tạm độ ở thời điểm này, vì thông tin nền về cách thước đo hoạt động là điểm khởi đầu hợp lý cho phân tích.</p>",
-          "<p>Là bằng chứng cho thấy câu hỏi không thể được trả lời, vì phản hồi đã né tránh mục tầng cụ thể mà cô đang hỏi.</p>",
-          "<p>Là chính xác nhưng lọc để, vì nó giải thích chỉ để thay vì giải quyết mục tổng mà cô đã hội.</p>"
+          "<p>Đó là câu trả lời đúng và chỉ cần rút ngắn vì có nhiều chi tiết hơn mong muốn.</p>",
+          "<p>Tạm chấp nhận vì việc giải thích cách đo lường là điểm bắt đầu phân tích hợp lý.</p>",
+          "<p>Đó là bằng chứng không thể trả lời câu hỏi vì phản hồi tránh bàn về mức tăng cụ thể.</p>",
+          "<p>Đầu ra đúng về kiến thức nhưng lệch mục tiêu, vì chỉ giải thích khái niệm thay vì nguyên nhân lượt hủy tăng.</p>"
         ]
       },
       "topic": "d2"
@@ -6310,10 +6310,10 @@
       "v": {
         "q": "<p>Claude gán một câu trích dẫn nguyên văn cho một báo cáo ngành có tên cụ thể. Bạn cần xác minh thế nào?</p>",
         "o": [
-          "<p>Mở báo cáo và tìm chính xác câu đó, vì một cách diễn đạt gần giống có thể không xuất hiện trong đó.</p>",
-          "<p>Hỏi Claude số trang, và chấp nhận trích dẫn khi đã được cung cấp một con số.</p>",
-          "<p>Tìm kiếm cụm từ khóa của câu và chấp nhận nếu có cách diện đất tương tự ở bất kỳ đâu.</p>",
-          "<p>Xác nhận rằng báo cáo tồn tại và đã được xuất bản, điều này xác lập nguồn gốc của trích dẫn.</p>"
+          "<p>Mở báo cáo gốc và tìm đúng từng từ của câu trích dẫn, vì cách diễn đạt gần giống chưa đủ để xác nhận trích dẫn nguyên văn.</p>",
+          "<p>Hỏi Claude số trang rồi chấp nhận trích dẫn khi có số trang.</p>",
+          "<p>Tìm cụm từ quan trọng và chấp nhận nếu thấy nội dung tương tự ở bất kỳ đâu.</p>",
+          "<p>Chỉ xác nhận báo cáo có thật và đã xuất bản, coi đó là đủ chứng minh nguồn của câu trích dẫn.</p>"
         ]
       },
       "topic": "d2"
@@ -6347,10 +6347,10 @@
       "v": {
         "q": "<p>Một quản lý cần so sánh sáu nhà cung cấp theo năm tiêu chí, nhưng thông tin đang nằm trong nhiều câu trả lời riêng của Claude. Bước đầu tiên nên làm gì?</p>",
         "o": [
-          "<p>Chọn định dạng đầu ra ngay bây giờ, để mỗi câu trả lời tiếp theo đều có thể được tạo ra theo cùng hình thức đó.</p>",
-          "<p>Yêu cầu Claude gặp tất cả các câu trả lời trước đó thành một tài liệu dài để cô đặc tả đầu đến cuối.</p>",
-          "<p>Yêu cầu Claude xếp hạng sáu nhà cung cấp ngay lập tức và làm ngược lại từ bảng xếp hạng mà nó đưa ra.</p>",
-          "<p>Thống nhất nhà cung cấp nào và tiêu chí nào thuộc về bản so sánh trước khi yêu cầu bất kỳ đầu ra nào.</p>"
+          "<p>Chọn định dạng đầu ra ngay để mọi câu trả lời sau cùng cấu trúc.</p>",
+          "<p>Yêu cầu Claude gộp tất cả câu trả lời trước thành một tài liệu dài để đọc.</p>",
+          "<p>Đề nghị Claude xếp hạng ngay sáu nhà cung cấp rồi suy ngược lý do từ thứ hạng.</p>",
+          "<p>Thống nhất sáu nhà cung cấp và năm tiêu chí cần so sánh trước khi yêu cầu đầu ra.</p>"
         ]
       },
       "topic": "d4"
@@ -6384,10 +6384,10 @@
       "v": {
         "q": "<p>Một nhân viên truyền thông sắp đăng bản tin thị trường do Claude soạn lên blog công ty trong vòng một giờ. Claude dùng web search và mọi số liệu đều có dẫn nguồn. Trước khi đăng, việc đầu tiên cần làm là gì?</p>",
         "o": [
-          "<p>Thêm một dòng ở cuối bản tóm tắt ghi chú rằng nó được chuẩn bị với số trợ giúp của một trợ lý AI.</p>",
-          "<p>Hỏi Claude mức độ tin cậy của nó đối với từng con số, và sửa lại những con số mà nó đánh giá là ít tin cậy nhất.</p>",
-          "<p>Tạo lại bản tóm tắt trong một cuộc hội thoại mới, và động nếu hai bản nháp báo cáo cùng các con số.</p>",
-          "<p>Mở các nguồn được trích dẫn và xác nhận rằng mỗi con số trong bản nháp thực sự xuất hiện trong trang mà nó chỉ đến.</p>"
+          "<p>Thêm dòng ghi chú cuối bản tin rằng nội dung có sự hỗ trợ của AI.</p>",
+          "<p>Hỏi Claude độ tin cậy của mỗi số liệu rồi chỉ sửa những số Claude cho là ít chắc chắn nhất.</p>",
+          "<p>Tạo lại bản tin trong chat mới và công bố nếu hai bản có cùng số liệu.</p>",
+          "<p>Mở từng nguồn được trích dẫn và kiểm tra mỗi số liệu trong bản nháp có thực sự xuất hiện ở trang được dẫn đến hay không.</p>"
         ]
       },
       "topic": "d2"
@@ -6421,10 +6421,10 @@
       "v": {
         "q": "<p>Bạn là trợ lý truyền thông và thấy Claude đưa ra một thông tin rõ ràng sai về tổ chức của mình. Bạn đã sửa bản nháp, nhưng còn muốn báo lỗi để hệ thống ghi nhận. Nên làm gì?</p>",
         "o": [
-          "<p>Bắt đầu lại cùng tác vụ trong một cuộc hội thoại mới, với với lý do là một chat sạch ít có khả năng lặp lại lời hạn.</p>",
-          "<p>Dùng nút thumbs-down trên phản hồi chưa phát biểu sai, bên cạnh việc sửa bản nháp của chính cô.</p>",
-          "<p>Thêm một dòng vào cuộc hội thoại ghi chú rằng phát biểu trước đó là sai, độ phản chỉnh sửa nằm trong lịch sử chat.</p>",
-          "<p>Diện đặt lại prompt ban đầu của cô bằng ngôn ngữ mạnh mở hơn để phát biểu sai ít có khả năng tái diện lần sau.</p>"
+          "<p>Làm lại nhiệm vụ trong chat mới vì cho rằng chat sạch ít lặp lại lỗi hơn.</p>",
+          "<p>Dùng nút đánh giá không tốt (thumbs-down) ở câu trả lời chứa phát biểu sai, bên cạnh việc tự sửa bản nháp.</p>",
+          "<p>Thêm tin nhắn trong chat ghi rằng phát biểu trước đó sai để lịch sử có phần đính chính.</p>",
+          "<p>Viết lại prompt ban đầu bằng mệnh lệnh mạnh hơn để ít lặp lại lỗi.</p>"
         ]
       },
       "topic": "d5"
@@ -6458,10 +6458,10 @@
       "v": {
         "q": "<p>Một người làm marketing đang động não ý tưởng chỉ cho một lần sử dụng, không cần xem lại, và cuộc hội thoại sắp chạm giới hạn ngữ cảnh. Nên xử lý thế nào?</p>",
         "o": [
-          "<p>Độ cuộc hội thoại tiếp tục và tỷ cô động, vì không có gì trong đó cần tồn tại lâu hơn phiên này.</p>",
-          "<p>Tạo một Project và chuyển toàn bộ buổi brainstorm vào project knowledge trước khi viết thêm bất cứ điều gì.</p>",
-          "<p>Chia buổi brainstorm ra bạn chat riêng biệt để không cuộc hội thoại đến lệ nào đạt đến giới hạn.</p>",
-          "<p>Dạng buổi brainstorm ngay bây giờ và bắt đầu lỗi trong một chat mới để các ý tưởng đến từ một cửa sổ hoàn toàn sạch.</p>"
+          "<p>Để cuộc hội thoại tiếp tục và tự nén ngữ cảnh nếu cần, vì nội dung không cần duy trì sau phiên này.</p>",
+          "<p>Tạo Project và chuyển toàn bộ ý tưởng vào Project knowledge trước khi viết tiếp.</p>",
+          "<p>Chia buổi động não thành bốn chat riêng để không chat nào gần chạm giới hạn.</p>",
+          "<p>Dừng buổi động não và làm lại từ đầu trong chat mới hoàn toàn sạch ngữ cảnh.</p>"
         ]
       },
       "topic": "d3"
@@ -6500,11 +6500,11 @@
       "v": {
         "q": "<p>Nhóm cần tạo bản nghiên cứu về đối thủ từ nhiều nguồn công khai và tiếp tục sửa bản nghiên cứu trong nhiều tuần. Hai tính năng Claude nào phù hợp nhất? (Chọn hai.)</p>",
         "o": [
-          "<p>Yêu cầu bản tóm tắt dưới dạng artifact, để nhóm có thể chỉnh sửa và tái sử dụng nó bên ngoài chat.</p>",
-          "<p>Bật một mail connector trước để các thông tin về đối thủ được lấy tổ hợp thể của nhóm.</p>",
-          "<p>Giữ bản tóm tắt trực tiếp trong chat và dán lại phiên bản mới nhất mới khi có chỉnh sửa.</p>",
-          "<p>Dùng chế độ Research, độ bản tóm tắt được xây dựng bảng tìm kiếm nhiều bước và trả về các trích dẫn.</p>",
-          "<p>Mở một chat riêng cho từng đối thủ để không cuộc hội thoại đến lệ nào trở nên dài.</p>"
+          "<p>Tạo bản nghiên cứu dưới dạng Artifact để nhóm chỉnh sửa và tái sử dụng ngoài chat.</p>",
+          "<p>Bật mail Connector trước để lấy thông tin đối thủ từ hộp thư nhóm.</p>",
+          "<p>Giữ toàn bộ bản nghiên cứu trong chat và dán lại bản mới nhất mỗi khi có chỉnh sửa.</p>",
+          "<p>Dùng Research để tìm nhiều nguồn theo từng bước, có trích dẫn nguồn.</p>",
+          "<p>Mở chat riêng cho từng đối thủ để tránh hội thoại quá dài.</p>"
         ]
       },
       "topic": "d3"
@@ -6543,11 +6543,11 @@
       "v": {
         "q": "<p>Bộ phận hỗ trợ cần phân loại nhiều tin nhắn ngắn mỗi ngày, đồng thời phân tích sâu một tranh chấp hợp đồng phức tạp. Nên chọn hai loại mô hình nào cho hai việc này? (Chọn hai.)</p>",
         "o": [
-          "<p>Dùng bất kỳ tier nào mà nhóm đang mở sẵn, vì tier hiểm khi thay đổi kết quả trả về.</p>",
-          "<p>Dùng tier có khả năng lập luận sâu nhất cho tranh chấp hợp đồng, chấp nhận hơn mặc lớn hơn mà nó sử dụng.</p>",
-          "<p>Dùng tier nhanh nhất, rẻ nhất cho việc phân loại số lượng lớn, nội thông lượng là điều quan trọng.</p>",
-          "<p>Dùng tier nhanh nhất, rẻ nhất cho cả hai công việc, vì các tier khác nhau chủ yếu ở tốc độ phản hồi.</p>",
-          "<p>Dùng tier có khả năng lập luận sâu nhất cho cả hai công việc, vì lựa chọn mạnh nhất không bao giờ là từ.</p>"
+          "<p>Dùng bất kỳ mô hình nào nhóm đang mở vì cho rằng dòng mô hình ít ảnh hưởng kết quả.</p>",
+          "<p>Dùng mô hình suy luận sâu nhất cho tranh chấp hợp đồng, chấp nhận tiêu tốn hạn mức nhiều hơn.</p>",
+          "<p>Dùng mô hình nhanh và rẻ nhất cho phân loại khối lượng lớn, nơi tốc độ xử lý quan trọng.</p>",
+          "<p>Dùng mô hình nhanh và rẻ nhất cho cả hai việc vì cho rằng các dòng chỉ khác tốc độ.</p>",
+          "<p>Dùng mô hình suy luận sâu nhất cho cả hai vì cho rằng mô hình mạnh nhất luôn phù hợp.</p>"
         ]
       },
       "topic": "d3"
@@ -6586,11 +6586,11 @@
       "v": {
         "q": "<p>Một thành viên mới muốn hiểu sự khác biệt giữa các dòng mô hình Claude trong công việc hằng ngày. Hai nhận định nào đúng? (Chọn hai.)</p>",
         "o": [
-          "<p>Tier sâu nhất phù hợp với các vấn đề thực sự khó, và nó tiêu thị nhiều hơn mặc hơn đáng kể.</p>",
-          "<p>Tier nhỏ nhất cho câu trả lời có độ sâu vượt trội, chỉ chậm hơn hai tier còn lại.</p>",
-          "<p>Các tier chỗ khác nhau về văn phong, vì vậy có thể dùng bất kỳ tier nào cho bất kỳ tác vụ nào vào bất kỳ lúc nào.</p>",
-          "<p>Tier trung bình là mặc định nhanh và có năng lực, và là lựa chọn đúng cho hầu hết công việc hằng ngày.</p>",
-          "<p>Nâng lên một tier là cách khắc phục tiêu chuẩn mới khi một prompt trả về câu trả lời mơ hồ hoặc nông.</p>"
+          "<p>Mô hình mạnh nhất phù hợp với bài toán thật sự khó và tiêu tốn hạn mức đáng kể.</p>",
+          "<p>Mô hình nhẹ nhất cho câu trả lời sâu như nhau nhưng chậm hơn hai dòng còn lại.</p>",
+          "<p>Các dòng chỉ khác phong cách viết nên dùng dòng nào cho tác vụ nào cũng được.</p>",
+          "<p>Dòng tầm trung là lựa chọn mặc định nhanh, đủ mạnh cho phần lớn công việc hằng ngày.</p>",
+          "<p>Cứ prompt trả lời mơ hồ hoặc nông là tiêu chuẩn phải nâng lên một dòng mô hình.</p>"
         ]
       },
       "topic": "d3"
@@ -6624,10 +6624,10 @@
       "v": {
         "q": "<p>Nhóm chuẩn bị triển khai tác vụ hằng tuần mới và cần xác định mức suy luận cần thiết. Trình tự nào đúng?</p>",
         "o": [
-          "<p>Chạy tác vụ trên nhiều tier cùng lúc, sau đó viết ra thế nào là đầu ra tất, rồi so sánh các kết quả với định nghĩa đó, rồi giữ lại tier làm tốt nhất.</p>",
-          "<p>Viết ra thế nào là đầu ra tất, sau đó chạy một mẫu thực tế trên tier mặc định, rồi so sánh mẫu đó với định nghĩa, rồi chỉ đổi tier ở những chỗ chưa đạt.</p>",
-          "<p>So sánh một mẫu kết quả với những gì đồng nghiệp tạo ra thủ công, sau đó viết ra thế nào là đầu ra tất, rồi chọn một tier dựa trên cơ sở đó, rồi chạy tác vụ mới tuần từ đó trở đi.</p>",
-          "<p>Chọn một tier theo mức độ quan trọng cảm nhận được của tác vụ, sau đó chạy trong một tháng, rồi viết ra thế nào là đầu ra tất, rồi so sánh các kết quả của tháng đó với định nghĩa này.</p>"
+          "<p>Chạy tác vụ trên nhiều dòng mô hình trước, rồi mới định nghĩa đầu ra tốt, so sánh kết quả và giữ mô hình tốt nhất.</p>",
+          "<p>Định nghĩa đầu ra đạt yêu cầu, chạy mẫu thực tế trên mô hình mặc định, đánh giá theo tiêu chí rồi chỉ đổi mô hình nếu chưa đạt.</p>",
+          "<p>So kết quả với công việc thủ công của đồng nghiệp trước, rồi mới định nghĩa đầu ra tốt, chọn mô hình và vận hành hằng tuần.</p>",
+          "<p>Chọn mô hình theo cảm giác nhiệm vụ quan trọng đến đâu, chạy một tháng rồi mới định nghĩa đầu ra tốt và đánh giá.</p>"
         ]
       },
       "topic": "d3"
@@ -6661,10 +6661,10 @@
       "v": {
         "q": "<p>Hai tác vụ có khối lượng và chủ đề tương tự nhau: một tác vụ luôn được chuyên gia rà từng dòng trước khi dùng; tác vụ kia tự động công bố mà không ai kiểm tra. Yếu tố nào quan trọng nhất khi chọn mô hình cho mỗi tác vụ?</p>",
         "o": [
-          "<p>Khối lượng của hai công việc, vì khối lượng bằng nhau ngụ ý nhu cầu thông lượng bằng nhau và do đó cùng một số cân bằng giữa tốc độ và chi phí.</p>",
-          "<p>Mức độ mà một bước kiểm tra của con người ở hệ nguồn sẽ phát hiện được, vì khối lượng công việc không được kiểm tra phải từ đảm bảo chất lượng của mình mà không có lưới an toàn.</p>",
-          "<p>Chế độ mà hai khối lượng công việc có chung, vì tài liệu tương đương nên được xử lý giống nhau để đảm bảo tính nhất quán của đầu ra.</p>",
-          "<p>Thâm niên của những người sở hữu tổng khối lượng công việc, vì chủ sở hữu cấp cao hơn chịu trách nhiệm vụ khối lượng công việc dễ thấy hơn trong hai khối lượng.</p>"
+          "<p>Khối lượng của hai tác vụ, vì khối lượng bằng nhau được cho là cần cân bằng tốc độ và chi phí giống nhau.</p>",
+          "<p>Khả năng bước kiểm tra của con người ở khâu sau phát hiện lỗi; tác vụ không qua kiểm tra phải tự đáp ứng chất lượng mà không có lớp bảo vệ.</p>",
+          "<p>Chủ đề chung của hai tác vụ, vì nội dung tương tự được cho là nên xử lý y hệt để bảo đảm đầu ra nhất quán.</p>",
+          "<p>Cấp bậc của người phụ trách, vì người cấp cao được cho là chịu trách nhiệm về tác vụ dễ thấy hơn.</p>"
         ]
       },
       "topic": "d2"
@@ -6698,10 +6698,10 @@
       "v": {
         "q": "<p>Khi rà soát nhiều phiếu yêu cầu, bạn thấy đa số chỉ nêu giải pháp như 'chúng tôi cần dashboard', thay vì nhu cầu thực tế. Claude có thể hỗ trợ tốt nhất như thế nào?</p>",
         "o": [
-          "<p>Yêu cầu Claude từ chối các mục nêu tên một công cụ và yêu cầu người gửi nạp lại chúng theo đúng hình thức.</p>",
-          "<p>Yêu cầu Claude thiết kế dashboard được mô tả trong mỗi mục để người gọi có thể xác nhận họ muốn gì.</p>",
-          "<p>Yêu cầu Claude nhóm các mục theo phòng ban đã gửi chúng và báo cáo tổng số cho các nhà tài trả.</p>",
-          "<p>Yêu cầu Claude diễn đạt lại từng mục dưới dạng kết quả mong muốn, sau đó gắn cả các mục mà kết quả đó chưa rõ ràng.</p>"
+          "<p>Nhờ Claude loại các phiếu chỉ nêu tên công cụ và yêu cầu người gửi nộp lại theo mẫu chuẩn.</p>",
+          "<p>Nhờ Claude thiết kế dashboard được nêu ở từng phiếu để người gửi xác nhận yêu cầu.</p>",
+          "<p>Nhờ Claude nhóm các phiếu theo bộ phận gửi và báo cáo số lượng cho nhà tài trợ.</p>",
+          "<p>Nhờ Claude diễn đạt mỗi phiếu thành kết quả thực sự muốn đạt, rồi đánh dấu phiếu có mục tiêu còn mơ hồ.</p>"
         ]
       },
       "topic": "d1"
@@ -6735,10 +6735,10 @@
       "v": {
         "q": "<p>Trong đợt thử nghiệm quy trình tóm tắt mới có Claude hỗ trợ, ba trong tám người dùng nhận xét kết quả 'chưa đúng lắm' nhưng không nêu chi tiết. Người phụ trách nên làm gì đầu tiên?</p>",
         "o": [
-          "<p>Tạm dừng pilot cho đến khi chủ sở hữu có thể ngại cùng từng người thử nghiệm và quan sát toàn bộ một bản tóm tắt được tạo ra. </p>",
-          "<p>Hỏi nắm người thử nghiệm hài lòng xem họ đã làm khác điều gì và lưu hành điều đó như hướng dẫn cho mỗi người.</p>",
-          "<p>Yêu cầu ba người thử nghiệm đưa ra các ví dụ cụ thể, kèm đầu ra đã nói gì và lẽ ra phải nói gì.</p>",
-          "<p>Viết lại các chỉ dẫn để bao phủ những lĩnh vực mà chủ sở hữu tin là có khả năng gây ra vấn đề nhất.</p>"
+          "<p>Tạm dừng thử nghiệm đến khi người phụ trách có thể ngồi cùng từng người và quan sát toàn bộ quá trình tạo báo cáo.</p>",
+          "<p>Hỏi năm người hài lòng họ đã làm gì khác và phổ biến cách làm cho cả nhóm.</p>",
+          "<p>Yêu cầu ba người phản hồi đưa ví dụ cụ thể: đầu ra đã viết gì và đáng ra phải viết thế nào.</p>",
+          "<p>Tự sửa hướng dẫn theo các nguyên nhân người phụ trách cho rằng dễ gây vấn đề nhất.</p>"
         ]
       },
       "topic": "d7"
@@ -6772,10 +6772,10 @@
       "v": {
         "q": "<p>Một quản lý sắp thông báo rằng Claude sẽ soạn bản nháp đầu tiên cho mọi báo cáo sự cố. Nội dung quan trọng nhất cần nói rõ là gì?</p>",
         "o": [
-          "<p>Cách quản lý đã thử nghiệm cách sắp xếp mới trước khi quyết định giới thiệu nó với nhóm.</p>",
-          "<p>Những phòng ban khác nào đã áp dụng cùng cách tiếp cận cho các báo cáo của hệ.</p>",
-          "<p>Điều gì thay đổi, điều gì vấn thuộc về mọi người, và việc xem xét của hệ vốn được yêu cầu ở đâu.</p>",
-          "<p>S? thay đổi này dự kiến tiết kiệm bao nhiêu thời gian cho nhóm trong suốt mặt nằm đầy đủ.</p>"
+          "<p>Cách quản lý đã kiểm thử phương án trước khi quyết định áp dụng cho nhóm.</p>",
+          "<p>Những bộ phận khác đã dùng phương án tương tự cho báo cáo của họ.</p>",
+          "<p>Điều gì thay đổi, trách nhiệm nào vẫn thuộc về mỗi người và bước nào vẫn cần họ rà soát.</p>",
+          "<p>Thời gian tiết kiệm dự kiến cho cả nhóm trong một năm.</p>"
         ]
       },
       "topic": "d4"
@@ -6814,11 +6814,11 @@
       "v": {
         "q": "<p>Trưởng bộ phận chiến lược chuẩn bị nghiên cứu thị trường mới và muốn Claude hỗ trợ giai đoạn tìm hiểu thông tin. Hai cách làm nào hợp lý? (Chọn hai.)</p>",
         "o": [
-          "<p>Yêu cầu Claude soạn thảo kế hoạch nghiên cứu và các câu hỏi mờ của nó, sau đó để nhóm tinh chỉnh.</p>",
-          "<p>Yêu cầu kết luận hoàn chỉnh trong một prompt duy nhất và đồng nó mà không có bước trung gian nào.</p>",
-          "<p>Chấp nhận các số liệu thư trường mà Claude đưa ra là cuối cùng, vì câu trả lời đọc có vẻ từ tin và đầy đủ.</p>",
-          "<p>Dùng chế độ Research và đối chiếu các trích dẫn mà nó trả về với các nguồn gốc.</p>",
-          "<p>Bỏ qua quyết định mà nghiên cứu phải hỗ trợ, để Claude không bị dẫn dắt theo một câu trả lời.</p>"
+          "<p>Nhờ Claude phác thảo kế hoạch nghiên cứu và câu hỏi còn mở, sau đó nhóm hoàn thiện.</p>",
+          "<p>Yêu cầu kết luận cuối cùng chỉ trong một prompt rồi công bố không qua bước trung gian.</p>",
+          "<p>Chấp nhận số liệu thị trường Claude đưa ra vì câu trả lời nghe đầy đủ và tự tin.</p>",
+          "<p>Dùng Research và kiểm tra các trích dẫn với nguồn gốc.</p>",
+          "<p>Bỏ qua quyết định mà nghiên cứu cần hỗ trợ để Claude không bị định hướng.</p>"
         ]
       },
       "topic": "d2"
@@ -6857,11 +6857,11 @@
       "v": {
         "q": "<p>Tuần tới, bạn phải trình bày quy trình có Claude hỗ trợ cho các lãnh đạo cấp cao còn hoài nghi. Bài trình bày cần có hai nội dung nào? (Chọn hai.)</p>",
         "o": [
-          "<p>Nội con người vấn xem xét đầu ra, và lý do bước xem xét đó được giữ lại.</p>",
-          "<p>Một bản so sánh điểm benchmark kỹ thuật giữa tầng tier mô hình nền tảng.</p>",
-          "<p>Một lỗi họa rằng quy trình làm việc loại bỏ mọi nhu cầu kiểm tra đầu ra từ thời điểm này trở đi.</p>",
-          "<p>Một tuyên bố rằng Claude sẽ không mục bất kỳ lỗi thực tế nào một khi mới chỉ dẫn của nó được viết tắt.</p>",
-          "<p>Một ví dụ cụ thể, được đo lường về những gì quy trình làm việc đã cải thiện trong pilot mà nó đã chạy.</p>"
+          "<p>Bước nào con người vẫn rà soát đầu ra và vì sao cần giữ bước này.</p>",
+          "<p>Bảng so sánh điểm benchmark kỹ thuật của các dòng mô hình bên dưới.</p>",
+          "<p>Cam kết rằng từ nay không cần kiểm tra bất kỳ đầu ra nào của quy trình.</p>",
+          "<p>Khẳng định Claude sẽ không sai dữ kiện nếu viết hướng dẫn đủ tốt.</p>",
+          "<p>Ví dụ đo lường cụ thể về cải thiện của quy trình trong đợt thử nghiệm.</p>"
         ]
       },
       "topic": "d4"
@@ -6895,10 +6895,10 @@
       "v": {
         "q": "<p>Một quản lý vận hành cần thêm hai nội dung vào Project:</p><ul><li>Danh sách từ viết tắt dài hai trang, đã được nhóm phê duyệt.</li><li>Quy tắc rằng câu trả lời không được dùng từ viết tắt ngoài danh sách này.</li></ul><p>Nên đặt hai nội dung ở đâu cho phù hợp nhất?</p>",
         "o": [
-          "<p>Tối tài liệu tham chiếu lên project knowledge và đặt quy tắc về các từ viết tắt chưa được phê duyệt vào phần instructions.</p>",
-          "<p>Giữ danh sách tham chiếu trên wiki của nhóm và dán quy tắc vào đầu mỗi chat cần đến nó.</p>",
-          "<p>Đặt cả danh sách tham chiếu và quy tắc vào project instructions để hai thư luôn được đọc cùng nhau.</p>",
-          "<p>Tại cả danh sách tham chiếu và quy tắc lên dưới dạng tài liệu trong project knowledge base, để đảm bảo tính nhất quán.</p>"
+          "<p>Tải danh sách vào Project knowledge và đặt quy tắc cấm từ viết tắt không được duyệt trong instructions.</p>",
+          "<p>Giữ danh sách ở wiki của nhóm và dán quy tắc vào đầu mỗi chat cần dùng.</p>",
+          "<p>Đặt cả danh sách và quy tắc vào Project instructions để luôn đọc cùng nhau.</p>",
+          "<p>Tải cả danh sách và quy tắc thành tài liệu trong Project knowledge để thống nhất.</p>"
         ]
       },
       "topic": "d5"
@@ -6932,10 +6932,10 @@
       "v": {
         "q": "<p>Project được chia sẻ trong workspace gói Team vừa cập nhật ma trận chuyển cấp mới. Chủ sở hữu Project cần làm gì thêm?</p>",
         "o": [
-          "<p>Cho các thành viên sử dụng project biệt điều gì đã thay đổi, để hỗ biệt các câu trả lời trước đó có thể không còn đúng.</p>",
-          "<p>Xóa lịch sử chat của project, vì các cuộc hội thoại trước đây nếu không ghi đè tài liệu mới.</p>",
-          "<p>Để lại một ghi chú trong tiêu đề project, vì các thành viên được nhắc đọc tiêu đề trước mỗi chat mới.</p>",
-          "<p>Yêu cầu tăng thành viên tạo bản sao project của riêng hệ để mỗi người kiểm soát knowledge base của chính mình.</p>"
+          "<p>Thông báo cho thành viên Project nội dung thay đổi để họ biết câu trả lời cũ có thể không còn đúng.</p>",
+          "<p>Xóa lịch sử chat của Project vì cho rằng cuộc hội thoại cũ sẽ ghi đè tài liệu mới.</p>",
+          "<p>Ghi chú vào tên Project vì cho rằng thành viên đều phải đọc tên trước khi chat.</p>",
+          "<p>Yêu cầu mỗi thành viên sao chép Project riêng để tự quản lý knowledge base.</p>"
         ]
       },
       "topic": "d5"
@@ -6974,11 +6974,11 @@
       "v": {
         "q": "<p>Nhóm chính sách có sổ tay trong thư mục Drive được cập nhật hằng tuần và báo cáo thường niên không thay đổi. Nên thiết lập hai tài liệu này như thế nào? (Chọn hai.)</p>",
         "o": [
-          "<p>Kết nối báo cáo thường niên và xóa nó khỏi Drive, để chỉ tồn tại một bản sao duy nhất.</p>",
-          "<p>Tối báo cáo thường niên cố định lên Project knowledge, vì nội dung của nó sẽ không thay đổi.</p>",
-          "<p>Dán toàn bộ sổ tay vào mỗi chat mới, độ phiên bản mới nhất luôn có một.</p>",
-          "<p>Kết nối thư mục Drive, để các thay đổi hằng tuần cửa sổ tay được lấy từ nguồn.</p>",
-          "<p>Tải lên một bản sao của sổ tay chỉ một lần rồi dựa vào bản sao đó trong phần còn lại của nằm nay.</p>"
+          "<p>Kết nối báo cáo năm rồi xóa bản trên Drive để chỉ còn một bản.</p>",
+          "<p>Tải báo cáo năm cố định vào Project knowledge vì nội dung không thay đổi.</p>",
+          "<p>Dán toàn bộ sổ tay vào mọi chat mới để luôn có bản mới nhất.</p>",
+          "<p>Kết nối thư mục Drive để các cập nhật hằng tuần được lấy từ nguồn.</p>",
+          "<p>Chỉ tải một bản sao sổ tay vào Project một lần rồi dùng suốt năm.</p>"
         ]
       },
       "topic": "d5"
@@ -7012,10 +7012,10 @@
       "v": {
         "q": "<p>Một trưởng nhóm vận hành chia sẻ Project thuộc gói Enterprise cho toàn công ty, rồi tải vào Project knowledge cả thư mục nhóm có chứa bảng tính lương cá nhân. Rủi ro lớn nhất là gì?</p>",
         "o": [
-          "<p>Claude sẽ từ chối mọi yêu cầu trong project khi vẫn còn một tài liệu lượng được tải lên.</p>",
-          "<p>Bảng tính lượng không thể bị gỡ bỏ nữa khi các thành viên khác đã mở project.</p>",
-          "<p>Bất kỳ ai mở project được chia sẻ đều có thể rút ra chi tiết lượng thông qua các câu hỏi thông thường.</p>",
-          "<p>Các tài liệu bổ sung sẽ làm chậm mỗi câu trả lời trong project cho đến khi thư mục được cắt giảm.</p>"
+          "<p>Claude sẽ từ chối mọi yêu cầu trong Project chừng nào còn tải tài liệu lương.</p>",
+          "<p>Bảng lương không thể xóa sau khi thành viên khác mở Project.</p>",
+          "<p>Bất kỳ người nào mở Project được chia sẻ đều có thể hỏi và trích xuất thông tin lương.</p>",
+          "<p>Tài liệu bổ sung khiến mọi câu trả lời Project chậm hơn cho đến khi rút gọn thư mục.</p>"
         ]
       },
       "topic": "d6"
@@ -7049,10 +7049,10 @@
       "v": {
         "q": "<p>Một lập trình viên muốn agent Claude nội bộ tự gửi email và sửa dữ liệu production với quyền rộng, không giám sát hay phê duyệt của con người. Vấn đề đạo đức quan trọng nhất của thiết kế này là gì?</p>",
         "o": [
-          "<p>Nó chấp nhận được vì việc sử dụng agentic được khuyến khích mà không có yêu cầu giám sát trong chính sách</p>",
-          "<p>Nó loại bỏ sự giám sát của con người đối với các hành động khó đảo ngược, gây rủi ro tác hỏi trước khi bất kỳ ai có thể can thiệp</p>",
-          "<p>Không có, miền là agent dùng Claude API thay vì sản phẩm chat dành cho người tiêu dùng</p>",
-          "<p>Không có, trừ khi agent được xây dựng bằng một framework của bên thứ ba thay vì các công cụ chính thức của Anthropic</p>"
+          "<p>Có thể chấp nhận vì việc dùng agent được khuyến khích mà không cần giám sát.</p>",
+          "<p>Thiết kế bỏ giám sát của con người với những hành động khó đảo ngược, có thể gây hại trước khi ai đó can thiệp.</p>",
+          "<p>Không có vấn đề miễn là agent dùng Claude API thay vì ứng dụng chat.</p>",
+          "<p>Không có vấn đề trừ khi agent sử dụng framework bên thứ ba thay vì công cụ chính thức của Anthropic.</p>"
         ]
       },
       "topic": "d6"
@@ -7086,10 +7086,10 @@
       "v": {
         "q": "<p>Chủ sở hữu gói Team lo rằng nội dung hội thoại có thể rời tổ chức khi thành viên đánh giá câu trả lời Claude. Họ có thể sử dụng quyền kiểm soát nào?</p>",
         "o": [
-          "<p>Chỉ số hữu có thể đặt các đánh giá chỉ được lưu trữ bên trong workspace riêng của tổ chức.</p>",
-          "<p>Chỉ số hữu có thể tắt tính năng đánh giá chat cho toàn bộ tổ chức trong phần cài đặt của nó.</p>",
-          "<p>Chỉ số hữu có thể cho các cuộc hội thoại được che giấu (redact) tự động trước khi bất kỳ đánh giá nào được gửi đi.</p>",
-          "<p>Chỉ số hữu có thể yêu cầu mỗi đánh giá phải được quản lý phê duyệt trước khi được gửi đi cuối cùng.</p>"
+          "<p>Chủ sở hữu có thể chỉ lưu đánh giá trong workspace riêng tư nội bộ của tổ chức.</p>",
+          "<p>Chủ sở hữu có thể tắt chức năng đánh giá chat cho toàn tổ chức trong Settings.</p>",
+          "<p>Chủ sở hữu có thể tự động che nội dung cuộc hội thoại trước khi gửi đánh giá.</p>",
+          "<p>Chủ sở hữu có thể buộc mọi đánh giá phải được quản lý phê duyệt trước khi gửi.</p>"
         ]
       },
       "topic": "d6"
@@ -7123,10 +7123,10 @@
       "v": {
         "q": "<p>Trưởng nhóm hỏi liệu dùng chat Incognito trên gói cá nhân có cho phép dán dữ liệu khách hàng thuộc diện quản lý nghiêm ngặt vào Claude hay không. Cách trả lời tốt nhất là gì?</p>",
         "o": [
-          "<p>Các chat ẩn danh không bao giờ được dùng để cải thiện Claude, nhưng các quy tắc của chính sách vị dữ liệu được quản lý văn áp dụng.</p>",
-          "<p>Các chat ẩn danh tương đương với workspace được quản lý của công ty, vì vậy không cần phê duyệt riêng.</p>",
-          "<p>Các chat ẩn danh thỏa mãn chính sách, vì không có gì tự cuộc hội thoại được lưu giữ ở bất kỳ đâu sau khi nó kết thúc.</p>",
-          "<p>Các chat ẩn danh chấp nhận được với dữ liệu được quản lý miễn là tên khách hàng được thay bảng mã tham chiếu.</p>"
+          "<p>Chat Incognito không được dùng để cải thiện Claude, nhưng chính sách về dữ liệu được quản lý nghiêm ngặt vẫn áp dụng.</p>",
+          "<p>Chat Incognito tương đương workspace do công ty quản lý nên không cần phê duyệt riêng.</p>",
+          "<p>Chat Incognito đáp ứng chính sách vì được cho là mọi dữ liệu biến mất hoàn toàn sau khi đóng.</p>",
+          "<p>Chat Incognito được phép dùng với dữ liệu nhạy cảm nếu thay tên khách hàng bằng mã tham chiếu.</p>"
         ]
       },
       "topic": "d6"
@@ -7160,10 +7160,10 @@
       "v": {
         "q": "<p>Một tư vấn viên sắp gửi báo cáo do Claude hỗ trợ soạn cho khách hàng. Chính sách AI công ty có nhiều yêu cầu đối với nội dung gửi khách nhưng cô chưa rõ mục nào áp dụng cho báo cáo này. Cần làm gì đầu tiên?</p>",
         "o": [
-          "<p>Xác định chính sách yêu cầu gì đối với một sản phẩm bàn giao thuộc loại này, trước khi báo cáo được gửi đi.</p>",
-          "<p>Yêu cầu quản lý dự án của cô ký duyệt báo cáo, độ trách nhiệm vụ nó thuộc về anh ủy thay vì cô.</p>",
-          "<p>Thêm một dòng ngăn nêu rõ báo cáo được soạn thảo với sự hỗ trợ của AI, rồi gửi cho khách hàng.</p>",
-          "<p>Hỏi khách hàng xem họ có phản đối việc đã sử dụng sự hỗ trợ của AI cho báo cáo hay không.</p>"
+          "<p>Tìm hiểu yêu cầu chính sách áp dụng cho loại tài liệu này trước khi gửi báo cáo.</p>",
+          "<p>Nhờ quản lý dự án ký duyệt để chuyển trách nhiệm hoàn toàn sang người quản lý.</p>",
+          "<p>Chỉ thêm ghi chú báo cáo được soạn với AI rồi gửi khách.</p>",
+          "<p>Hỏi khách hàng có phản đối việc dùng AI để soạn báo cáo không.</p>"
         ]
       },
       "topic": "d6"
@@ -7197,10 +7197,10 @@
       "v": {
         "q": "<p>Bộ phận vận hành của một học khu muốn Claude áp dụng tiêu chí tuyển sinh và soạn thư thông báo gia đình nào có con được nhận vào trường đang quá số lượng đăng ký so với chỉ tiêu. Nhóm cần làm gì trước?</p>",
         "o": [
-          "<p>Chạy các thể cho một trường trước và xem có gia đình nào phàn nàn về cách diễn đạt hay không.</p>",
-          "<p>Tách việc quyết định ai được nhận khỏi việc viết thư, và giờ quyết định đó cho nhân viên.</p>",
-          "<p>Thêm một chỉ dẫn yêu cầu Claude áp dụng các tiêu chí tuyển sinh đúng như được viết.</p>",
-          "<p>Yêu cầu Claude diễn đạt lại các tiêu chí tuyển sinh của khu học chánh để nhóm có thể xác nhận rằng nó hiệu đúng.</p>"
+          "<p>Trước tiên thử thư cho một trường để xem gia đình có phàn nàn về cách viết không.</p>",
+          "<p>Tách quyết định ai được nhận vào học khỏi việc soạn thư và giữ quyền quyết định cho nhân viên.</p>",
+          "<p>Chỉ thêm hướng dẫn yêu cầu Claude áp dụng chính xác tiêu chí tuyển sinh.</p>",
+          "<p>Yêu cầu Claude viết lại tiêu chí tuyển sinh để nhóm kiểm tra đã hiểu đúng.</p>"
         ]
       },
       "topic": "d6"
@@ -7234,10 +7234,10 @@
       "v": {
         "q": "<p>Bạn cần dùng Claude for Work để tóm tắt phản hồi tự do trong khảo sát, có chứa tên và cơ quan làm việc của người trả lời. Thứ tự xử lý nào phù hợp nhất?</p>",
         "o": [
-          "<p>Xóa các tên và nội làm việc mà bản tóm tắt không cần; kiểm tra những gì số đồng ý của người tham gia và chính sách công ty cho phép; chạy bản tóm tắt và xem xét nó trước khi lưu hành; ghi chú những gì đã bị xóa để kết quả có thể được diễn giải đúng.</p>",
-          "<p>Chạy bản tóm tắt và xem xét nó trước khi lưu hành; kiểm tra những gì số đồng ý của người tham gia và chính sách công ty cho phép; xóa các tên và nội làm việc mà bản tóm tắt không cần; ghi chú những gì đã bị xóa để kết quả có thể được diễn giải đúng.</p>",
-          "<p>Kiểm tra những gì số đồng ý của người tham gia và chính sách công ty cho phép; xóa các tên và nội làm việc mà bản tóm tắt không cần; chạy bản tóm tắt và xem xét nó trước khi lưu hành; ghi chú những gì đã bị xóa để kết quả có thể được diễn giải đúng.</p>",
-          "<p>Kiểm tra những gì số đồng ý của người tham gia và chính sách công ty cho phép; chạy bản tóm tắt và xem xét nó trước khi lưu hành; xóa các tên và nội làm việc mà bản tóm tắt không cần; ghi chú những gì đã bị xóa để kết quả có thể được diễn giải đúng.</p>"
+          "<p>Xóa tên và đơn vị làm việc không cần thiết; kiểm tra sự đồng ý và chính sách; tóm tắt và rà soát trước khi phổ biến; ghi lại những gì đã xóa để giải thích kết quả.</p>",
+          "<p>Tóm tắt và rà soát trước; sau đó mới kiểm tra sự đồng ý và chính sách; xóa tên và nơi làm việc; ghi lại phần đã xóa.</p>",
+          "<p>Kiểm tra sự đồng ý của người tham gia và chính sách công ty; xóa tên và đơn vị làm việc không cần thiết; tóm tắt, rà soát trước khi phổ biến; ghi lại phần đã xóa.</p>",
+          "<p>Kiểm tra sự đồng ý và chính sách; tóm tắt, rà soát; sau đó mới xóa tên và đơn vị làm việc không cần thiết; ghi lại phần đã xóa.</p>"
         ]
       },
       "topic": "d6"
@@ -7271,10 +7271,10 @@
       "v": {
         "q": "<p>Prompt dùng để phân loại ticket chỉ ghi 'Categorize this ticket', khiến kết quả không nhất quán. Nhóm muốn giải quyết nguyên nhân gốc thay vì thêm bước xử lý sau. Trước tiên nên sửa prompt như thế nào?</p>",
         "o": [
-          "<p>Hệ tham số temperature về không đủ việc lấy mẫu trở nên xác định và cùng một ticket luôn trả về cùng một danh mục.</p>",
-          "<p>Độ một người đánh giá gán nhãn lại thứ công bất kỳ ticket nào trông bổ phân loại sai trước khi ticket đơn hàng đợi hưởng đến khách hàng.</p>",
-          "<p>Chuyển mỗi ticket sang một mô hình lớn hơn với giả định rằng năng lực mô hình tăng thêm sự suy ra các định nghĩa danh mục còn thiếu.</p>",
-          "<p>Viết lại prompt để liệt kê chính xác các danh mục, định dạng đầu ra mong muốn và các tiêu chí độ lựa chọn giữa chúng.</p>"
+          "<p>Hạ temperature về 0 để việc lấy mẫu hoàn toàn xác định và mọi ticket luôn về cùng nhãn.</p>",
+          "<p>Để người rà soát sửa thủ công mọi ticket có vẻ sai nhãn trước khi vào hàng đợi gửi khách.</p>",
+          "<p>Chuyển mọi ticket sang mô hình lớn hơn với giả định mô hình tự hiểu được các danh mục chưa định nghĩa.</p>",
+          "<p>Viết lại prompt với danh mục chính xác, định dạng đầu ra mong muốn và tiêu chí phân biệt giữa các nhãn.</p>"
         ]
       },
       "topic": "d1"
@@ -7308,10 +7308,10 @@
       "v": {
         "q": "<p>Bạn muốn sử dụng hiệu quả hơn hạn mức Claude hằng tuần mà vẫn giữ chất lượng công việc. Trình tự thói quen làm việc nào phù hợp nhất?</p>",
         "o": [
-          "<p>Đặt yêu cầu và tài liệu liên quan vào tin nhắn mở đầu; xử lý các câu hỏi tiếp theo có tham chiếu ngược lại nó; mở chat mới cho tác vụ không liên quan kế tiếp; quyết định cô cần gì trước khi bắt đầu.</p>",
-          "<p>Mở chat mới cho tác vụ không liên quan kế tiếp; quyết định cô cần gì trước khi bắt đầu; xử lý các câu hỏi tiếp theo có tham chiếu ngược lại nó; đặt yêu cầu và tài liệu liên quan vào tin nhắn mở đầu.</p>",
-          "<p>Xử lý các câu hỏi tiếp theo có tham chiếu ngược lại nó; mở chat mới cho tác vụ không liên quan kế tiếp; quyết định cô cần gì trước khi bắt đầu; đặt yêu cầu và tài liệu liên quan vào tin nhắn mở đầu.</p>",
-          "<p>Quyết định cô cần gì trước khi bắt đầu; đặt yêu cầu và tài liệu liên quan vào tin nhắn mở đầu; xử lý các câu hỏi tiếp theo có tham chiếu ngược lại nó; mở chat mới cho tác vụ không liên quan kế tiếp.</p>"
+          "<p>Đưa yêu cầu và tài liệu vào tin nhắn đầu; hỏi tiếp trong cùng chat; mở chat mới cho nhiệm vụ không liên quan; cuối cùng mới xác định cần gì.</p>",
+          "<p>Mở chat mới cho nhiệm vụ khác; xác định nhu cầu; hỏi tiếp trong cùng chat; cuối cùng mới đưa yêu cầu và tài liệu vào tin nhắn mở đầu.</p>",
+          "<p>Hỏi tiếp trong cùng chat; mở chat mới cho việc khác; xác định nhu cầu; cuối cùng mới cung cấp yêu cầu và tài liệu ban đầu.</p>",
+          "<p>Xác định mục tiêu trước; đưa yêu cầu cùng tài liệu liên quan ngay vào tin nhắn đầu; xử lý câu hỏi tiếp nối trong cùng chat; mở chat mới cho nhiệm vụ không liên quan.</p>"
         ]
       },
       "topic": "d7"
@@ -7345,10 +7345,10 @@
       "v": {
         "q": "<p>Bạn đang soạn nội dung đơn giản, nhưng nhiều Connector và công cụ không dùng đến vẫn bật. Có thể làm gì để quy trình thường ngày gọn nhẹ hơn?</p>",
         "o": [
-          "<p>Yêu cầu Claude trong mỗi tin nhắn tránh dùng bất kỳ connector nào trong khi cô làm việc soạn thảo.</p>",
-          "<p>Tắt các connector và công cụ mà tác vụ này không cần, và bật lại sau.</p>",
-          "<p>Gỡ các connector khối tài khoản của cô vĩnh viễn, để không có gì có thể gửi đến chúng do nhằm lần.</p>",
-          "<p>Soạn thảo bên trong một project riêng không có bất kỳ tài liệu nào trong knowledge.</p>"
+          "<p>Trong mỗi tin nhắn yêu cầu Claude không dùng Connector trong lúc soạn.</p>",
+          "<p>Tắt những Connector và công cụ không cần cho nhiệm vụ hiện tại, rồi bật lại khi cần.</p>",
+          "<p>Gỡ vĩnh viễn Connector khỏi tài khoản để tránh vô tình sử dụng.</p>",
+          "<p>Soạn nội dung trong Project khác không có tài liệu nào trong knowledge base.</p>"
         ]
       },
       "topic": "d5"
@@ -7387,11 +7387,11 @@
       "v": {
         "q": "<p>Nhiều kỹ sư phản ánh rằng bản tóm tắt bàn giao ca do Claude tạo 'bỏ sót rủi ro chưa giải quyết', nhưng không ai chỉ rõ ca nào hoặc rủi ro nào. Điều phối viên nên thực hiện hai bước nào đầu tiên? (Chọn hai.)</p>",
         "o": [
-          "<p>So sánh các bản tóm tắt đó với nhật ký ca để thấy chính xác những gì đã bị bỏ sót.</p>",
-          "<p>Chuyển các bản tóm tắt sang định dạng bằng, vì các rủi ro còn mở có thể dễ phát hiện hơn trong một bảng.</p>",
-          "<p>Yêu cầu mỗi người chấm điểm trên mười cho mỗi bản tóm tắt trong tương lai để có thể theo dõi xu hướng theo thời gian.</p>",
-          "<p>Yêu cầu hai bản tóm tắt trong đó một rủi ro còn mở bộ bỏ sót, kèm tên rủi ro bị thiếu thực sự.</p>",
-          "<p>Viết lại ngay các project instructions dùng chung để nhấn mạnh rằng các rủi ro còn mở là quan trọng nhất.</p>"
+          "<p>Đối chiếu các bản tóm tắt với nhật ký bàn giao ca để xác định chính xác nội dung bị bỏ sót.</p>",
+          "<p>Chuyển bản tóm tắt sang dạng bảng vì có thể dễ nhìn thấy rủi ro chưa giải quyết hơn.</p>",
+          "<p>Yêu cầu mọi người chấm điểm tất cả bản tóm tắt tương lai theo thang mười để theo dõi xu hướng.</p>",
+          "<p>Yêu cầu hai bản tóm tắt cụ thể có bỏ sót rủi ro, kèm tên rủi ro bị bỏ sót.</p>",
+          "<p>Sửa ngay hướng dẫn Project để nhấn mạnh rủi ro chưa xử lý là quan trọng nhất.</p>"
         ]
       },
       "topic": "d4"
