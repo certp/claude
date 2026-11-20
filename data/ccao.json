@@ -2246,11 +2246,11 @@
       "v": {
         "q": "<p>Bạn đang thiết kế lại một bước xử lý dữ liệu định kỳ để dùng Code Execution. Hai lựa chọn thiết kế nào giúp tích hợp đáng tin cậy nhất? (Chọn hai.)</p>",
         "o": [
-          "<p>Thay đổi định dạng tập đầu vào từ lần chạy này sang lần chạy khác để phù hợp với các hệ thống nguồn khác nhau cung cấp dữ liệu mới tuần.</p>",
-          "<p>Chuẩn hóa định dạng tập đầu vào mà bước này mong đợi, để mỗi lần chạy Code Execution nhận được đầu vào nhất quán và tạo ra đầu ra có thể so sánh, kiểm chứng được qua các chu kỳ hàng tuần lặp lại.</p>",
-          "<p>Loại bỏ bước rà soát của con người sau Code Execution, vì môi trường sandbox đã xác minh rằng code chạy không có lỗi.</p>",
-          "<p>Nhúng bước Code Execution vào quy trình mà không ghi lỗi định dạng đầu ra mong đợi hoặc các trường mà nó tạo ra.</p>",
-          "<p>Xác định một bước xác minh đầu ra ngắn gọn, trong đó người rà soát xác nhận kết quả đã tính toán so với một khoảng giá trị kỳ vọng hoặc phép kiểm tra hợp lý (sanity check) trước khi đầu ra được chuyển đến các bên tiêu thứ phía sau.</p>"
+          "<p>Thay đổi định dạng tệp đầu vào mỗi lần chạy cho phù hợp với các hệ thống nguồn khác nhau theo từng tuần.</p>",
+          "<p>Chuẩn hóa định dạng tệp đầu vào để mọi lần chạy Code Execution nhận dữ liệu nhất quán, cho kết quả có thể đối chiếu và kiểm chứng giữa các tuần.</p>",
+          "<p>Bỏ bước con người rà soát sau Code Execution vì sandbox đã xác nhận mã chạy không lỗi.</p>",
+          "<p>Đặt Code Execution vào quy trình mà không cần mô tả định dạng đầu ra hoặc các trường dữ liệu được tạo.</p>",
+          "<p>Đặt bước kiểm tra ngắn để người rà soát so kết quả tính toán với phạm vi dự kiến hoặc kiểm tra tính hợp lý trước khi bàn giao.</p>"
         ]
       },
       "topic": "d4"
@@ -2321,10 +2321,10 @@
       "v": {
         "q": "<p>Bạn đang giải thích cho đồng nghiệp sự đánh đổi về chi phí, tốc độ và chất lượng giữa các dòng mô hình Claude. Nhận định nào đúng?</p>",
         "o": [
-          "<p>Các mô hình có năng lực cao hơn nhìn chung tiêu tốn ít hơn mức sử dụng hạn vì khả năng suy luận hiệu quả hơn, dù chạy chậm hơn các mô hình nhỏ hơn.</p>",
-          "<p>Tốc độ và mục tiêu thể tài nguyên độc lập với năng lực của mô hình; sự khác biệt giữa Haiku, Sonnet và Opus chỉ nằm ở độ sâu suy luận.</p>",
-          "<p>Các mô hình có năng lực cao hơn nhìn chung tiêu tốn nhiều tài nguyên hơn và chạy chậm hơn, trong khi các mô hình nhỏ hơn thường nhanh hơn và rẻ hơn.</p>",
-          "<p>Các mô hình nhỏ hơn tiêu tốn nhiều tài nguyên hơn cho mỗi yêu cầu so với các mô hình có năng lực cao hơn vì chúng luôn cần nhiều lượt xử lý đủ đặt chất lượng ngang mô hình cao hơn.</p>"
+          "<p>Mô hình càng mạnh càng dùng ít hạn mức vì suy luận hiệu quả hơn, dù chạy chậm hơn mô hình nhẹ.</p>",
+          "<p>Tốc độ và mức dùng tài nguyên hoàn toàn không liên quan đến khả năng mô hình; Haiku, Sonnet và Opus chỉ khác độ sâu suy luận.</p>",
+          "<p>Mô hình mạnh hơn thường dùng nhiều tài nguyên và chạy chậm hơn; mô hình nhẹ thường nhanh và ít tốn kém hơn.</p>",
+          "<p>Mô hình nhẹ luôn tốn nhiều tài nguyên hơn trên mỗi yêu cầu vì phải chạy nhiều lượt để đạt chất lượng như mô hình mạnh.</p>"
         ]
       },
       "topic": "d3"
@@ -2363,11 +2363,11 @@
       "v": {
         "q": "<p>Câu trả lời đầu tiên của Claude có phần hữu ích nhưng chưa đúng giọng điệu và mức độ chi tiết. Hai cách tinh chỉnh nào có khả năng cải thiện rõ rệt nhất? (Chọn hai.)</p>",
         "o": [
-          "<p>Cung cấp một ví dụ về đầu ra đáp ứng tiêu chuẩn mong muốn.</p>",
-          "<p>Gọi lại cùng một prompt nhiều lần và chọn phản hồi tốt nhất.</p>",
-          "<p>Thêm cầm tự \"please do better\" vào cuối prompt gốc.</p>",
-          "<p>Tầng thiết lập temperature và gửi lại prompt không thay đổi.</p>",
-          "<p>Thêm một mô tả giọng điệu cụ thể và một đối tượng đọc giả cụ thể vào prompt.</p>"
+          "<p>Cung cấp ví dụ về đầu ra đáp ứng tiêu chuẩn mong muốn.</p>",
+          "<p>Gửi lại cùng prompt nhiều lần rồi chọn kết quả tốt nhất.</p>",
+          "<p>Thêm cụm 'hãy làm tốt hơn' vào cuối prompt ban đầu.</p>",
+          "<p>Tăng tham số temperature rồi gửi lại prompt không đổi.</p>",
+          "<p>Bổ sung mô tả giọng điệu cụ thể và xác định rõ người đọc trong prompt.</p>"
         ]
       },
       "topic": "d1"
@@ -2406,11 +2406,11 @@
       "v": {
         "q": "<p>Bạn là chuyên viên nhân sự đang rà soát mô hình Claude mà đồng nghiệp chọn cho các tác vụ khác nhau. Hai cách kết hợp mô hình và tác vụ nào phù hợp? (Chọn hai.)</p>",
         "o": [
-          "<p>Một mô hình nhỏ hơn, nhanh hơn cho việc tổng hợp chiến lược nhiều tài liệu đòi hỏi sắc thái</p>",
-          "<p>Một mô hình mạnh lực cao hơn được chọn chỉ vì đó là lựa chọn đặt nhất</p>",
-          "<p>Một mô hình mạnh lực cao hơn cho suy luận pháp lý nhiều bước phục tập đang được rà soát</p>",
-          "<p>Một mô hình nhỏ hơn, nhanh hơn cho các phản hồi kiểu FAQ thông thường với ngân sách độ trễ (latency) chất chỉ</p>",
-          "<p>Một mô hình mạnh lực cao hơn cho việc trích xuất từ khóa một dòng ở khối lượng yêu cầu lần</p>"
+          "<p>Dùng mô hình nhẹ, nhanh cho việc tổng hợp chiến lược phức tạp từ nhiều tài liệu.</p>",
+          "<p>Chọn mô hình mạnh hơn chỉ vì đó là lựa chọn đắt nhất.</p>",
+          "<p>Dùng mô hình mạnh hơn cho suy luận pháp lý phức tạp nhiều bước, có người kiểm tra.</p>",
+          "<p>Dùng mô hình nhẹ, nhanh cho câu trả lời kiểu FAQ thường lệ khi giới hạn độ trễ nghiêm ngặt.</p>",
+          "<p>Dùng mô hình mạnh hơn để trích xuất từ khóa một dòng với lượng yêu cầu lớn.</p>"
         ]
       },
       "topic": "d3"
@@ -2449,11 +2449,11 @@
       "v": {
         "q": "<p>Bạn là chuyên viên nhân sự, đang phân loại các rủi ro đạo đức của quy trình có Claude hỗ trợ. Hai rủi ro nào nghiêm trọng nhất đối với công việc liên quan đến nhân sự? (Chọn hai.)</p>",
         "o": [
-          "<p>Một lỗi đánh máy vấn thị trong một lại mối lịch nội bộ thông thường</p>",
-          "<p>Các đầu ra gây bật lại một cách có hệ thống cho các thành viên của một nhóm được bảo vệ</p>",
-          "<p>Việc sử dụng không nhất quán kiểu dấu gạch ngang mà công ty ưa dùng trong các tài liệu</p>",
-          "<p>Giống điều và định dạng không nhất quán trong các thông báo HR nội bộ gửi đến nhân viên</p>",
-          "<p>Các quyết định ảnh hưởng đáng kể đến việc làm của một người mà không có trách nhiệm giải trình của con người</p>"
+          "<p>Một lỗi gõ chữ trong lời mời lịch nội bộ thông thường.</p>",
+          "<p>Đầu ra gây bất lợi có hệ thống cho thành viên thuộc nhóm được bảo vệ.</p>",
+          "<p>Dùng dấu gạch ngang không nhất quán theo quy chuẩn công ty.</p>",
+          "<p>Giọng điệu và định dạng không nhất quán trong thông báo nhân sự nội bộ.</p>",
+          "<p>Quyết định ảnh hưởng đáng kể đến việc làm của một người mà không có trách nhiệm giải trình của con người.</p>"
         ]
       },
       "topic": "d6"
@@ -2487,10 +2487,10 @@
       "v": {
         "q": "<p>Một bản tóm tắt do Claude tạo khẳng định có một 'tiêu chuẩn ngành ai cũng biết' nhưng không cung cấp nguồn. Bạn nên xử lý khẳng định này thế nào?</p>",
         "o": [
-          "<p>Cộng cố khẳng định bằng cách thêm cách diễn đạt từ tin hơn.</p>",
-          "<p>Chấp nhận khẳng định vì cầm tự \"nội tiếng\" tạo cảm giác yên tâm.</p>",
-          "<p>Động lại bản brief mà không thay đổi vì khẳng định nghe có vẻ có thẩm quyền.</p>",
-          "<p>Coi khẳng định là chưa được xác minh, và hoặc dẫn nguồn từ một tài liệu tham chiếu có thẩm quyền hoặc loại bỏ nó.</p>"
+          "<p>Dùng câu chữ tự tin hơn để củng cố khẳng định.</p>",
+          "<p>Chấp nhận khẳng định vì cụm 'phổ biến' nghe có vẻ đáng tin.</p>",
+          "<p>Đăng lại bản tóm tắt không thay đổi vì khẳng định nghe có thẩm quyền.</p>",
+          "<p>Coi khẳng định là chưa được kiểm chứng; tìm nguồn có thẩm quyền hoặc loại bỏ.</p>"
         ]
       },
       "topic": "d2"
@@ -2529,11 +2529,11 @@
       "v": {
         "q": "<p>Bạn đang khuyến nghị nhóm cách sử dụng định dạng đầu ra và cửa sổ ngữ cảnh trong Claude. Hai cách làm nào giúp sử dụng cửa sổ ngữ cảnh hiệu quả? (Chọn hai.)</p>",
         "o": [
-          "<p>Lược bỏ tài liệu không liên quan trước khi gửi yêu cầu để giữ cho context tập trung.</p>",
-          "<p>Dán toàn bộ chuỗi email liên quan đến dự án vào context để mô hình có đầy đủ lịch sử trao đổi.</p>",
-          "<p>Nội tất cả tài liệu nguồn với nhau từ đầu đến cuối mà không có dấu phân tách giữa chúng.</p>",
-          "<p>Tái sử dụng cùng một khối context cho nhiều yêu cầu để tránh phải dừng lại mối lần.</p>",
-          "<p>Dùng các tiêu đề phần rõ ràng để phân tách các phần khác nhau của tài liệu đầu vào.</p>"
+          "<p>Loại bỏ nội dung không liên quan trước khi gửi để giữ ngữ cảnh tập trung.</p>",
+          "<p>Dán toàn bộ chuỗi email liên quan đến dự án để mô hình có đủ lịch sử hội thoại.</p>",
+          "<p>Nối tất cả tài liệu nguồn liền nhau mà không có dấu phân cách.</p>",
+          "<p>Dùng lại cùng một khối ngữ cảnh trong nhiều yêu cầu để khỏi phải chuẩn bị lại.</p>",
+          "<p>Sử dụng tiêu đề rõ ràng để phân tách các phần tài liệu đầu vào.</p>"
         ]
       },
       "topic": "d3"
@@ -2567,10 +2567,10 @@
       "v": {
         "q": "<p>Claude thường hiển thị nội dung dưới dạng Artifact riêng thay vì trả lời trực tiếp trong chat khi nội dung có đặc điểm gì?</p>",
         "o": [
-          "<p>Để sử, độc lập (self-contained) và có thể tái sử dụng</p>",
-          "<p>Là một phản hồi chỉ đơn giản dài hạn vài đoạn văn xuôi</p>",
-          "<p>Được viết với giọng điệu trang trống, chuyên nghiệp</p>",
-          "<p>Được tạo ra trong một phiên Research đang hoạt động</p>"
+          "<p>Nội dung lớn, độc lập và có thể tái sử dụng.</p>",
+          "<p>Câu trả lời chỉ dài hơn vài đoạn văn xuôi.</p>",
+          "<p>Nội dung được viết bằng giọng trang trọng, chuyên nghiệp.</p>",
+          "<p>Nội dung được tạo trong một phiên Research.</p>"
         ]
       },
       "topic": "d3"
@@ -2604,10 +2604,10 @@
       "v": {
         "q": "<p>Một người dùng gói Pro cho rằng Haiku 4.5 chỉ là mô hình yếu hơn dành cho người không dùng được mô hình cao cấp. Nhận định nào sửa lại quan niệm này?</p>",
         "o": [
-          "<p>Haiku 4.5 chủ yếu được cung cấp cho người dùng gói Free như một lựa chọn cấp nhập môn</p>",
-          "<p>Haiku 4.5 tốt nhất nên dành cho các tác vụ cần suy luận sâu nhất</p>",
-          "<p>Haiku 4.5 là lựa chọn có chỉ đích cho các tác vụ nhanh, số lượng lớn</p>",
-          "<p>Haiku 4.5 cho chất lượng suy luận cao nhất trong bản mô hình</p>"
+          "<p>Haiku 4.5 chủ yếu dành cho người dùng Free như lựa chọn nhập môn.</p>",
+          "<p>Haiku 4.5 phù hợp nhất với những nhiệm vụ đòi hỏi suy luận sâu nhất.</p>",
+          "<p>Haiku 4.5 là lựa chọn có chủ đích cho tác vụ nhanh và khối lượng lớn.</p>",
+          "<p>Haiku 4.5 cho chất lượng suy luận cao nhất trong bốn lựa chọn.</p>"
         ]
       },
       "topic": "d3"
@@ -2641,10 +2641,10 @@
       "v": {
         "q": "<p>Một người dùng doanh nghiệp không biết chọn mô hình Claude nào cho công việc viết và phân tích thông thường hằng ngày. Theo hướng dẫn Anthropic, đâu là lựa chọn mặc định được khuyến nghị?</p>",
         "o": [
-          "<p>Sonnet 5, mặc định cân bằng cho hầu hết công việc</p>",
-          "<p>Opus 4.8, dành riêng cho suy luận phức tạp, có mức độ rủi ro cao</p>",
-          "<p>Fable 5, mô hình mới nhất và mạnh nhất</p>",
-          "<p>Haiku 4.5, mô hình nhanh nhất và nhỏ nhất</p>"
+          "<p>Sonnet 5, mặc định cân bằng cho phần lớn công việc.</p>",
+          "<p>Opus 4.8, phù hợp với suy luận phức tạp và nhiều rủi ro.</p>",
+          "<p>Fable 5, mô hình mới nhất và mạnh nhất.</p>",
+          "<p>Haiku 4.5, mô hình nhanh và nhẹ nhất.</p>"
         ]
       },
       "topic": "d3"
@@ -2678,10 +2678,10 @@
       "v": {
         "q": "<p>Với nội dung nhạy cảm hoặc gửi ra bên ngoài, ngoài việc công khai có sử dụng AI, Anthropic còn khuyến nghị biện pháp bảo vệ nào?</p>",
         "o": [
-          "<p>Rà soát của chuyên gia có chuyên môn trước khi nội dung đến tay người tiêu dùng</p>",
-          "<p>Tắt tùy chọn huấn luyện cải thiện mô hình</p>",
-          "<p>Chuyển sang mô hình mạnh nhất hiện có của tài khoản</p>",
-          "<p>Đính kèm các trích dẫn vào bản nháp được tạo ra để có thể truy xuất nguồn gốc</p>"
+          "<p>Được chuyên gia đủ năng lực rà soát trước khi đến tay người dùng.</p>",
+          "<p>Tắt lựa chọn dùng dữ liệu để cải thiện mô hình.</p>",
+          "<p>Chuyển sang mô hình mạnh nhất mà tài khoản có quyền sử dụng.</p>",
+          "<p>Đính kèm trích dẫn vào bản nháp để truy xuất nguồn.</p>"
         ]
       },
       "topic": "d6"
@@ -2715,10 +2715,10 @@
       "v": {
         "q": "<p>Bạn chạy lại cùng prompt ba lần và nhận được ba giá trị rất khác nhau cho một chỉ số tài chính quan trọng. Bạn cần số liệu đáng tin cậy để gửi lãnh đạo hôm nay. Hành động nào phù hợp nhất?</p>",
         "o": [
-          "<p>Lấy trung bình ba giá trị và báo cáo con số trung bình thu được</p>",
-          "<p>Chọn giá trị xuất hiện ở hai trong ba lần thử</p>",
-          "<p>Coi sự không nhất quán là một cảnh báo; xác minh dữ liệu nguồn</p>",
-          "<p>Dùng giá trị nào gần nhất với điều bạn đã kỳ vọng từ trước</p>"
+          "<p>Lấy trung bình ba giá trị rồi báo cáo số trung bình.</p>",
+          "<p>Chọn giá trị xuất hiện ở hai trong ba lần thử.</p>",
+          "<p>Coi sự không nhất quán là dấu hiệu cảnh báo và kiểm chứng dữ liệu nguồn.</p>",
+          "<p>Chọn giá trị gần với dự đoán sẵn có của bạn nhất.</p>"
         ]
       },
       "topic": "d2"
@@ -2752,10 +2752,10 @@
       "v": {
         "q": "<p>Nhóm của bạn định chạy Research cho mọi câu hỏi cập nhật trạng thái trong quy trình hằng ngày. Nhóm cần lưu ý điều gì về chi phí sử dụng?</p>",
         "o": [
-          "<p>Research không khả dụng trên các gói trợ phí cho việc sử dụng hằng ngày</p>",
-          "<p>Research hạ thấp mục trộn hơn mức sử dụng của tài khoản trong phần còn lại của ngày</p>",
-          "<p>Research chạy trên một ngân sách riêng và không ảnh hưởng đến giới hạn tin nhắn</p>",
-          "<p>Research tiêu tốn hơn mức sử dụng nhanh hơn một tin nhắn thông thường</p>"
+          "<p>Research không được dùng hằng ngày trên các gói trả phí.</p>",
+          "<p>Research làm giảm trần hạn mức tài khoản cho phần còn lại của ngày.</p>",
+          "<p>Research dùng ngân sách riêng nên không ảnh hưởng hạn mức tin nhắn.</p>",
+          "<p>Research tiêu tốn hạn mức sử dụng nhanh hơn tin nhắn thông thường.</p>"
         ]
       },
       "topic": "d3"
@@ -2789,10 +2789,10 @@
       "v": {
         "q": "<p>Một chuyên viên chiến lược phải nghiên cứu thị trường mới, cần vừa lập luận kỹ vừa thu thập nhiều nguồn thông tin. Nên kết hợp những khả năng nào của Claude?</p>",
         "o": [
-          "<p>Concise Style, giúp cân bằng giữa độ sâu và sự ngắn gọn cho bản</p>",
-          "<p>Research kết hợp với Extended Thinking độ vừa suy luận vừa thu thập nguồn</p>",
-          "<p>Không cần cái nào, vì một lần Web Search đã bao quát mọi thứ</p>",
-          "<p>Chỉ cần brainstorming, vì việc lên ý tương tự nhiên bao gồm suy luận và nguồn</p>"
+          "<p>Chế độ Concise Style để cân bằng độ sâu và ngắn gọn.</p>",
+          "<p>Kết hợp Research và Extended Thinking để vừa thu thập nguồn vừa suy luận.</p>",
+          "<p>Không cần cả hai vì một lần Web Search đã đủ.</p>",
+          "<p>Chỉ động não ý tưởng vì hoạt động này đương nhiên bao gồm cả suy luận và tìm nguồn.</p>"
         ]
       },
       "topic": "d3"
@@ -2826,10 +2826,10 @@
       "v": {
         "q": "<p>Một phần trong tài liệu Markdown dài thuộc Artifact cần đổi giọng điệu cho nhóm độc giả khác, còn các phần khác đều đúng. Nên chỉnh sửa thế nào?</p>",
         "o": [
-          "<p>Tô sáng phần đó và yêu cầu chỉnh sửa có mục tiêu cho phần đó</p>",
-          "<p>Thử lại prompt gốc để tạo ra một phiên bản đầy đủ thay thế</p>",
-          "<p>Bắt đầu một cuộc hội thoại mới và dừng lại toàn bộ tài liệu</p>",
-          "<p>Tạo lại toàn bộ tài liệu từ đầu bằng một prompt mới</p>"
+          "<p>Chọn phần cần đổi và yêu cầu chỉ chỉnh đúng phần đó.</p>",
+          "<p>Dùng Retry với prompt ban đầu để tạo lại toàn bộ tài liệu.</p>",
+          "<p>Bắt đầu cuộc hội thoại mới và dựng lại cả tài liệu.</p>",
+          "<p>Tạo lại toàn bộ tài liệu từ đầu với prompt mới.</p>"
         ]
       },
       "topic": "d3"
@@ -2863,10 +2863,10 @@
       "v": {
         "q": "<p>Một prompt cho kết quả rất tốt suốt tuần qua nhưng lần này trả về câu trả lời lộn xộn khác thường. Người dùng tin rằng prompt vẫn đúng. Nên thử điều gì đầu tiên?</p>",
         "o": [
-          "<p>Bắt đầu một cuộc hội thoại hoàn toàn mới và giải thích lại toàn bộ tác vụ</p>",
-          "<p>Dùng Retry để tạo lại một câu trả lời mới cho prompt</p>",
-          "<p>Chuyển sang một mô hình có năng lực cao hơn cho yêu cầu này</p>",
-          "<p>Viết lại prompt từ đầu để ngăn ngừa lỗi trong tương lai</p>"
+          "<p>Mở cuộc hội thoại hoàn toàn mới và giải thích lại toàn bộ nhiệm vụ.</p>",
+          "<p>Dùng Retry để tạo câu trả lời mới cho prompt hiện tại.</p>",
+          "<p>Chuyển sang mô hình mạnh hơn cho yêu cầu này.</p>",
+          "<p>Viết lại prompt từ đầu để tránh lỗi về sau.</p>"
         ]
       },
       "topic": "d7"
@@ -2900,10 +2900,10 @@
       "v": {
         "q": "<p>Bạn đang giải thích cho các bên liên quan loại đầu ra nào của Claude cần được kiểm tra kỹ. Loại thông tin nào luôn phải đối chiếu với nguồn gốc có thẩm quyền trước khi sử dụng?</p>",
         "o": [
-          "<p>Các điều chỉnh như về giọng điệu áp dụng cho một tin nhắn nhóm nội bộ thân một</p>",
-          "<p>Các danh sách ý tưởng dự án thô, giai đoạn đều được brainstorm</p>",
-          "<p>Số liệu thống kê, các tuyên bố pháp lý, trích dẫn và các câu trích nguyên văn</p>",
-          "<p>Các lựa chọn về định dạng và bố cục trong một bản nháp memo nội bộ thông thường</p>"
+          "<p>Những điều chỉnh nhỏ về giọng điệu trong tin nhắn nội bộ thân mật.</p>",
+          "<p>Danh sách ý tưởng thô ở giai đoạn đầu dự án.</p>",
+          "<p>Số liệu thống kê, nhận định pháp lý, trích dẫn nguồn và câu trích dẫn nguyên văn.</p>",
+          "<p>Lựa chọn định dạng và bố cục của bản ghi nhớ nội bộ thường lệ.</p>"
         ]
       },
       "topic": "d2"
@@ -2937,10 +2937,10 @@
       "v": {
         "q": "<p>Tính năng nào cho phép tạo bản mẫu tương tác, hoạt động được và chỉnh sửa nhiều lần trong khung bên riêng biệt?</p>",
         "o": [
-          "<p>Memory, tự động tổng hợp các hiểu biết nền</p>",
-          "<p>Web search, trả về các tra cứu thực tế nhanh</p>",
-          "<p>Artifacts, lưu giữ nội dung có thể tái sử dụng và tiếp tục chỉnh sửa một cách tách biệt</p>",
-          "<p>Styles, thiết lập giọng điệu và định dạng cho mỗi cuộc hội thoại</p>"
+          "<p>Memory, giúp tổng hợp ngữ cảnh nền.</p>",
+          "<p>Web Search, giúp tìm nhanh thông tin thực tế.</p>",
+          "<p>Artifacts, lưu nội dung có thể dùng lại và chỉnh sửa nhiều lần trong khung riêng.</p>",
+          "<p>Styles, giúp đặt giọng điệu và định dạng cho cuộc hội thoại.</p>"
         ]
       },
       "topic": "d3"
@@ -2974,10 +2974,10 @@
       "v": {
         "q": "<p>Bạn bật một Skill tùy chỉnh. Đồng nghiệp lo rằng Skill sẽ khiến mọi prompt trở nên dài như hướng dẫn Project. Thực tế nào giúp giải tỏa lo ngại này?</p>",
         "o": [
-          "<p>Một Skill chỉ có thể được tạo bởi quản trị viên tổ chức</p>",
-          "<p>Một Skill ghi đè profile instructions trên toàn bộ tài khoản</p>",
-          "<p>Một Skill được chèn vào mỗi prompt giống như instructions</p>",
-          "<p>Một Skill chỉ được tại khi Claude đánh giá tác vụ là có liên quan</p>"
+          "<p>Chỉ quản trị viên tổ chức mới tạo được Skill.</p>",
+          "<p>Skill ghi đè hướng dẫn hồ sơ cho toàn tài khoản.</p>",
+          "<p>Skill được đưa vào mọi prompt tương tự hướng dẫn cố định.</p>",
+          "<p>Skill chỉ được nạp khi Claude đánh giá tác vụ có liên quan.</p>"
         ]
       },
       "topic": "d5"
@@ -3011,10 +3011,10 @@
       "v": {
         "q": "<p>Khi Gmail Connector đã được kết nối, người dùng yêu cầu Claude chuẩn bị email trả lời nhà cung cấp. Trước khi thực sự tạo bản nháp, Connector yêu cầu điều gì?</p>",
         "o": [
-          "<p>S? phê duyệt của quản trị viên trước khi có thể tạo bản nháp thể trả lời</p>",
-          "<p>Một lần ủy quyền duy nhất bao trùm các hành động email về sau</p>",
-          "<p>Không cần gì thêm, vì bản thân connector đã được bật</p>",
-          "<p>Sự chấp thuận rõ ràng của người dùng cho hành động tạo bản nháp cụ thể đó</p>"
+          "<p>Quản trị viên phải phê duyệt trước khi tạo được bản nháp.</p>",
+          "<p>Chỉ cần cấp quyền một lần cho mọi hành động email về sau.</p>",
+          "<p>Không cần bước nào khác vì Connector đã được bật.</p>",
+          "<p>Người dùng phê duyệt rõ ràng hành động tạo bản nháp cụ thể đó.</p>"
         ]
       },
       "topic": "d6"
@@ -3048,10 +3048,10 @@
       "v": {
         "q": "<p>Người dùng doanh nghiệp nhận bản nháp đầu tiên mơ hồ, ít hữu ích từ Claude. Theo hướng dẫn Anthropic, một prompt hiệu quả cần có những thành phần nào?</p>",
         "o": [
-          "<p>Mô hình mạnh nhất đi kèm thiết lập effort cao</p>",
-          "<p>Cách diễn đạt mạnh mở, viết hoa đòi hỏi phải tuân thủ</p>",
-          "<p>Context rõ ràng, một tác vụ cụ thể và định dạng đầu ra</p>",
-          "<p>Một chỉ thị bao quát duy nhất cho toàn bộ tác vụ</p>"
+          "<p>Dùng mô hình mạnh nhất với mức suy luận cao.</p>",
+          "<p>Dùng từ ngữ in hoa, ra lệnh thật mạnh để buộc tuân thủ.</p>",
+          "<p>Nêu rõ ngữ cảnh, nhiệm vụ cụ thể và định dạng đầu ra.</p>",
+          "<p>Dùng một chỉ dẫn bao quát toàn bộ nhiệm vụ nhưng thiếu chi tiết.</p>"
         ]
       },
       "topic": "d1"
@@ -3085,10 +3085,10 @@
       "v": {
         "q": "<p>Trong cùng một Project, cơ chế nào giúp tài liệu tải lên được sử dụng trong mọi cuộc hội thoại thuộc Project đó?</p>",
         "o": [
-          "<p>Project knowledge base, được chia sẻ cho tất cả các chat</p>",
-          "<p>Nội dung hội thoại của bất kỳ một chat nào trong Project</p>",
-          "<p>Trường mô tả Project được nhập khi tạo Project</p>",
-          "<p>Một Custom Style chỉ áp dụng cho cuộc hội thoại hiện tại</p>"
+          "<p>Project knowledge base được chia sẻ giữa các chat trong Project.</p>",
+          "<p>Nội dung riêng của một cuộc hội thoại bất kỳ thuộc Project.</p>",
+          "<p>Trường mô tả Project được nhập khi tạo Project.</p>",
+          "<p>Một Custom Style chỉ áp dụng cho cuộc hội thoại hiện tại.</p>"
         ]
       },
       "topic": "d5"
@@ -3122,10 +3122,10 @@
       "v": {
         "q": "<p>Cuộc hội thoại của bạn ngày càng dài và mô hình bắt đầu tạo ra kết quả không nhất quán. Bước quản lý ngữ cảnh nào nên thực hiện đầu tiên?</p>",
         "o": [
-          "<p>Tóm tắt cuộc hội thoại trước đó thành một mô tả ngắn gọn về trạng thái hiện tại.</p>",
-          "<p>Bắt đầu một cuộc hội thoại mới và chỉ dán lời phản context trước đó thiết yếu.</p>",
-          "<p>Tiếp tục cuộc hội thoại hiện có và hy vọng mô hình từ khôi phục tính nhất quán.</p>",
-          "<p>Chuyển sang một mô hình khác với hy vọng mô hình mới xử lý context dài tốt hơn.</p>"
+          "<p>Tóm tắt cuộc hội thoại trước thành mô tả ngắn gọn về trạng thái hiện tại.</p>",
+          "<p>Mở cuộc hội thoại mới và chỉ dán lại ngữ cảnh cũ thật cần thiết.</p>",
+          "<p>Tiếp tục cuộc hội thoại hiện có và hy vọng mô hình tự ổn định.</p>",
+          "<p>Đổi mô hình với hy vọng mô hình mới xử lý ngữ cảnh dài tốt hơn.</p>"
         ]
       },
       "topic": "d3"
@@ -3159,10 +3159,10 @@
       "v": {
         "q": "<p>Bạn thiết lập Connector cho nguồn dữ liệu dùng chung của nhiều đồng nghiệp. Bước nào cần thực hiện đầu tiên?</p>",
         "o": [
-          "<p>Kết nối nguồn dữ liệu và xác nhận việc xác thực (authentication) hoạt động như mong đợi.</p>",
-          "<p>Xác nhận Connector đã được phê duyệt và phân loại dữ liệu là phù hợp.ab</p>",
-          "<p>Dùng Connector trong một tác vụ tiêu biểu để đánh giá tính hữu dụng thực tế của nó. ab</p>",
-          "<p>Ghi lại mục đích của Connector và các trường hợp sử dụng phù hợp cho nhóm. ab</p>"
+          "<p>Kết nối nguồn dữ liệu rồi kiểm tra xác thực hoạt động bình thường.</p>",
+          "<p>Xác nhận Connector đã được phê duyệt và mức phân loại dữ liệu phù hợp.</p>",
+          "<p>Thử dùng Connector trong tác vụ tiêu biểu để đánh giá tính hữu ích.</p>",
+          "<p>Ghi lại mục đích và các trường hợp sử dụng phù hợp của Connector cho nhóm.</p>"
         ]
       },
       "topic": "d5"
