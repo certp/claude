@@ -3202,7 +3202,7 @@
           "<p>Quản lý sự kiện (Event Management).</p>"
         ]
       },
-      "topic": "review"
+      "topic": "d7"
     },
     {
       "id": "1047",
@@ -3350,7 +3350,7 @@
           "<p>Gọi thêm một mô hình để tóm tắt cả 60 định nghĩa công cụ thành chỉ mục ngắn gọn, rồi chèn chỉ mục vào mỗi lượt người dùng.</p>"
         ]
       },
-      "topic": "review"
+      "topic": "d4"
     },
     {
       "id": "1051",
@@ -3387,7 +3387,7 @@
           "<p>Thực thi tại tầng truy xuất nhưng dùng chung một access token cho toàn tổ chức thay vì giới hạn quyền theo vai trò.</p>"
         ]
       },
-      "topic": "review"
+      "topic": "d6"
     },
     {
       "id": "1052",
@@ -3424,7 +3424,7 @@
           "<p>Ghi chú phát hành cho người dùng, tài liệu quảng bá tóm tắt triển khai và FAQ cho khách hàng.</p>"
         ]
       },
-      "topic": "review"
+      "topic": "d4"
     },
     {
       "id": "1053",
@@ -5310,7 +5310,7 @@
           "<p>Tạo subagent với ít ngữ cảnh hơn và để nó hỏi bộ điều phối những phát hiện cần thiết khi cần.</p>"
         ]
       },
-      "topic": "review"
+      "topic": "d7"
     },
     {
       "id": "1105",
@@ -6425,7 +6425,7 @@
           "<p>Viết lại prompt ban đầu bằng mệnh lệnh mạnh hơn để ít lặp lại lỗi.</p>"
         ]
       },
-      "topic": "review"
+      "topic": "d7"
     },
     {
       "id": "1265",
