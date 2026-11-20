@@ -1465,10 +1465,10 @@
       "v": {
         "q": "<p>Bạn là quản lý marketing và muốn dùng Claude nghiên cứu phân khúc thị trường mới. Bước nghiên cứu nào cần làm đầu tiên?</p>",
         "o": [
-          "<p>Tạo một báo cáo nghiên cứu cuối cùng kết hợp mọi output của Claude đã tạo ra.</p>",
-          "<p>Xác thực thông tin đã thu thập với các nguồn bên ngoài có thẩm quyền.</p>",
-          "<p>Gọi một loạt prompt Claude để thu thập thông tin trên toàn phân khúc.</p>",
-          "<p>Xác định các câu hỏi nghiên cứu cụ thể cần được trở lại cho phân khúc.</p>"
+          "<p>Tạo báo cáo nghiên cứu cuối cùng kết hợp toàn bộ kết quả Claude đã tạo.</p>",
+          "<p>Đối chiếu thông tin thu thập được với các nguồn bên ngoài có thẩm quyền.</p>",
+          "<p>Gửi chuỗi prompt cho Claude để thu thập thông tin về phân khúc thị trường.</p>",
+          "<p>Xác định cụ thể những câu hỏi nghiên cứu cần trả lời về phân khúc này.</p>"
         ]
       },
       "topic": "d4"
@@ -1502,10 +1502,10 @@
       "v": {
         "q": "<p>Bạn đang xác định điểm nghẽn khiến quy trình xuất bản nội dung mất quá nhiều thời gian.</p><p>Quy trình gồm năm bước:</p><ul><li>Nghiên cứu</li><li>Soạn thảo</li><li>Rà soát nội bộ</li><li>Rà soát pháp lý</li><li>Xuất bản</li></ul><p>Bạn có dữ liệu thời gian xử lý của từng bước trong tháng vừa qua.</p><p>Tín hiệu nào giúp nhận diện điểm nghẽn trực tiếp nhất?</p>",
         "o": [
-          "<p>Bước có cycle time trung bình trên mỗi mục cao nhất trong các lần chạy của tháng vừa qua.</p>",
-          "<p>Bước có hàng đợi dài nhất hoặc tần động lớn nhất các mục đang chỉ vào bước đó.</p>",
-          "<p>Bước được thêm vào quy trình gần đây nhất, dựa trên giả định rằng các thay đổi quy trình tạo ra nhiều ma sát nhất.</p>",
-          "<p>Bước mà các cá nhân đóng góp báo cáo khối lượng công việc cao nhất trong các cập nhật trạng thái hằng tuần của hệ.</p>"
+          "<p>Bước có thời gian xử lý trung bình trên mỗi mục cao nhất trong tháng vừa qua.</p>",
+          "<p>Bước có hàng đợi dài nhất hoặc nhiều công việc chờ bắt đầu nhất.</p>",
+          "<p>Bước mới được thêm vào quy trình gần đây nhất, vì giả định rằng thay đổi quy trình thường gây cản trở nhiều nhất.</p>",
+          "<p>Bước được nhân viên báo cáo là có khối lượng công việc lớn nhất trong các bản cập nhật hằng tuần.</p>"
         ]
       },
       "topic": "d4"
@@ -1539,10 +1539,10 @@
       "v": {
         "q": "<p>Bạn đang tổng hợp các kiểu lỗi prompt phổ biến cho nhóm. Kiểu prompt nào thường dẫn đến đầu ra mơ hồ hoặc không đúng trọng tâm nhất?</p>",
         "o": [
-          "<p>Một prompt nêu rõ vai trò, tác vụ, đối tượng và định dạng output bắt buộc.</p>",
-          "<p>Một prompt nêu một chủ đề nhưng không nêu tác vụ, đối tượng hoặc cấu trúc output bắt buộc.</p>",
-          "<p>Một prompt bao gồm một ví dụ tiêu biểu về output mong muốn.</p>",
-          "<p>Một prompt bổ sung các ràng buộc rõ ràng về độ dài và giọng điệu.</p>"
+          "<p>Prompt nêu rõ vai trò, nhiệm vụ, đối tượng và định dạng đầu ra bắt buộc.</p>",
+          "<p>Prompt chỉ nêu chủ đề mà không xác định nhiệm vụ, đối tượng hoặc cấu trúc đầu ra.</p>",
+          "<p>Prompt cung cấp ví dụ tiêu biểu về đầu ra mong muốn.</p>",
+          "<p>Prompt đưa ra ràng buộc rõ ràng về độ dài và giọng điệu.</p>"
         ]
       },
       "topic": "d1"
@@ -1576,10 +1576,10 @@
       "v": {
         "q": "<p>Bạn là trưởng dự án, đang đối chiếu báo cáo trạng thái do Claude tạo ra với điều lệ dự án. Báo cáo sẽ gửi ban chỉ đạo, nơi yêu cầu thông tin chính xác về các mốc đã cam kết. Bộ tiêu chí đánh giá nào phù hợp nhất?</p>",
         "o": [
-          "<p>Độ dài, tính nhất quán về định dạng và mức độ phù hợp của giọng điệu đối với đối tượng steering committee.</p>",
-          "<p>Tốc để tạo, chất lượng trình bày trực quan và tính nhất quán với định dạng đã dùng trong các báo cáo trạng thái trước đó.</p>",
-          "<p>Tính dữ đọc, mạch tượng thuật và việc báo cáo có kỳ một câu chuyển mạch lực về tiến độ dự án hay không.</p>",
-          "<p>Độ chính xác của các dữ kiện so với charter, mức độ đầy đủ so với các trường báo cáo bắt buộc và mức độ liên quan đối với đối tượng nhận báo cáo.</p>"
+          "<p>Độ dài, tính nhất quán về định dạng và giọng văn phù hợp với ban chỉ đạo.</p>",
+          "<p>Tốc độ tạo nội dung, chất lượng trình bày trực quan và định dạng giống các báo cáo trước.</p>",
+          "<p>Khả năng dễ đọc, mạch kể chuyện và cách diễn đạt tiến độ dự án thống nhất.</p>",
+          "<p>Độ chính xác so với điều lệ dự án, tính đầy đủ của các trường bắt buộc và mức độ phù hợp với người nhận báo cáo.</p>"
         ]
       },
       "topic": "d2"
@@ -1613,10 +1613,10 @@
       "v": {
         "q": "<p>Bạn quản lý dự án và đang xem bước nào của quy trình được hưởng lợi nhiều nhất khi tích hợp Claude. Trong nhóm làm công việc tri thức, bước nào thường mang lại giá trị lớn nhất?</p>",
         "o": [
-          "<p>Đàm phán các điều khoản hợp động với các bên ngoài thay một công ty</p>",
-          "<p>Đưa ra các quyết định nhân sự cuối cùng vị tuyến dụng, thống chức hoặc chấm dứt hợp đồng</p>",
-          "<p>Soạn thảo và tổng hợp từ nhiều nguồn cho một người review ở khâu sau</p>",
-          "<p>Phê duyệt các sản phẩm bàn giao cuối cùng để xuất bản ra bên ngoài mà không cần review thêm</p>"
+          "<p>Thay mặt công ty đàm phán điều khoản hợp đồng với bên ngoài.</p>",
+          "<p>Tự đưa ra quyết định cuối cùng về tuyển dụng, thăng chức hoặc chấm dứt hợp đồng lao động.</p>",
+          "<p>Soạn thảo và tổng hợp nhiều nguồn thông tin để người phụ trách ở bước sau rà soát.</p>",
+          "<p>Phê duyệt bản bàn giao cuối cùng để công bố ra bên ngoài mà không cần rà soát thêm.</p>"
         ]
       },
       "topic": "d4"
@@ -1650,10 +1650,10 @@
       "v": {
         "q": "<p>Bạn phụ trách vận hành và nhận thấy đầu ra của một Project dần không còn đáp ứng kỳ vọng hiện tại của nhóm. Nên thử biện pháp bảo trì nào trước tiên?</p>",
         "o": [
-          "<p>Ngừng sử dụng Project và xây dựng lại một Project mới từ đầu với nội dung mới.</p>",
-          "<p>Tiếp tục dùng Project và chấp nhận sự sai lệch này như đường cơ sở hành vi mới.</p>",
-          "<p>Review các hướng dẫn và tài liệu tham khảo của Project so với các tiêu chuẩn hiện hành.</p>",
-          "<p>Chuyển Project sang một mô hình Claude khác với hy vọng nó hoạt động tốt hơn.</p>"
+          "<p>Ngừng dùng Project hiện tại và xây Project mới hoàn toàn từ đầu.</p>",
+          "<p>Tiếp tục dùng Project và coi kết quả lệch chuẩn hiện tại là trạng thái bình thường mới.</p>",
+          "<p>Rà soát hướng dẫn và tài liệu tham chiếu của Project so với các tiêu chuẩn hiện hành.</p>",
+          "<p>Chuyển Project sang mô hình Claude khác với hy vọng hoạt động tốt hơn.</p>"
         ]
       },
       "topic": "d5"
@@ -1687,10 +1687,10 @@
       "v": {
         "q": "<p>Bạn phụ trách chăm sóc khách hàng với quy trình tương tác đòi hỏi phản hồi nhanh ở mỗi lượt, trong khi nhu cầu suy luận khá đơn giản. Lựa chọn nào phù hợp nhất?</p>",
         "o": [
-          "<p>Chọn Opus để tối đa hóa chiều sâu lập luận bất chấp độ trễ cao hơn.</p>",
-          "<p>Chọn bất kỳ mô hình nào vì độ trễ không khác nhau giữa các mô hình.</p>",
-          "<p>Chọn mô hình dựa trên thứ tự bằng chữ cái của tên nó.</p>",
-          "<p>Chọn Haiku để giữ độ trễ thấp và xử lý hiệu quả khối lượng lập luận nhỏ ở quy mô lớn.</p>"
+          "<p>Chọn Opus để tối đa hóa khả năng suy luận sâu dù độ trễ cao hơn.</p>",
+          "<p>Chọn bất kỳ mô hình nào vì độ trễ giữa các mô hình không khác nhau.</p>",
+          "<p>Chọn mô hình theo thứ tự bảng chữ cái trong tên.</p>",
+          "<p>Chọn Haiku để có độ trễ thấp và xử lý hiệu quả các lượt suy luận đơn giản ở quy mô lớn.</p>"
         ]
       },
       "topic": "d3"
@@ -1724,10 +1724,10 @@
       "v": {
         "q": "<p>Bạn đang đánh giá các lỗi cấu trúc trong đầu ra của Claude theo mức độ ảnh hưởng đến sự rõ ràng. Lỗi nào nghiêm trọng nhất?</p>",
         "o": [
-          "<p>Các lỗi nhất quán về kiểu chỉ xuất hiện trong nhiều phần của tài liệu.</p>",
-          "<p>Kết luận chính mâu thuẫn với bằng chứng được trình bày trong phần thân.</p>",
-          "<p>Hai đoạn liền kỳ trình bày cùng một thông tin bằng thuật ngữ không nhất quán.</p>",
-          "<p>Một tiêu độ bao phủ duy nhất ngắn hạn các tiêu độ bao phủ khác trong tài liệu.</p>"
+          "<p>Trong nhiều phần tài liệu có các kiểu trình bày chữ không nhất quán.</p>",
+          "<p>Kết luận chính mâu thuẫn với các bằng chứng trình bày trong nội dung.</p>",
+          "<p>Hai đoạn liên tiếp nói cùng một thông tin nhưng dùng thuật ngữ không thống nhất.</p>",
+          "<p>Một tiêu đề phụ ngắn hơn các tiêu đề phụ khác.</p>"
         ]
       },
       "topic": "d2"
@@ -1766,11 +1766,11 @@
       "v": {
         "q": "<p>Bạn đang rà soát tài liệu đề xuất đưa vào một Project chuyên tóm tắt chính sách. Hai mục nào phù hợp để thêm vào? (Chọn hai.) Mỗi lựa chọn đúng là một phần của giải pháp.</p>",
         "o": [
-          "<p>Các hồ sơ vụ việc khách hàng đang hoạt động do một nhóm pháp lý riêng quản lý cho một luồng công việc khác</p>",
-          "<p>Các hệ số onboarding nhân viên được dùng trong một quy trình HR riêng do cùng nhóm quản lý</p>",
-          "<p>Định dạng bản tóm tắt và các kỳ vọng của đối tượng mà các bản tóm tắt phải đáp ứng</p>",
-          "<p>Thư viện chính sách hiện hành mà các bản tóm tắt được rút ra từ đó</p>",
-          "<p>Các slide trình bày từ một buổi đào tạo gần đây của nhóm về các tiêu chuẩn truyền thông nội bộ</p>"
+          "<p>Hồ sơ vụ việc khách hàng đang xử lý do nhóm pháp lý khác quản lý cho công việc không liên quan.</p>",
+          "<p>Hồ sơ hội nhập nhân viên thuộc quy trình nhân sự riêng do cùng nhóm quản lý.</p>",
+          "<p>Quy định về định dạng bản tóm tắt và kỳ vọng của người đọc.</p>",
+          "<p>Thư viện chính sách hiện hành làm nguồn cho các bản tóm tắt.</p>",
+          "<p>Slide đào tạo gần đây về tiêu chuẩn truyền thông nội bộ.</p>"
         ]
       },
       "topic": "d5"
@@ -1809,11 +1809,11 @@
       "v": {
         "q": "<p>Một quản lý đang rà soát và bảo trì Memory cho quy trình dài hạn. Hai hành động nào giúp duy trì chất lượng Memory theo thời gian? (Chọn hai.)</p>",
         "o": [
-          "<p>Tắt hoàn toàn Memory để loại bỏ rủi ro các mắc lỗi thời xuất hiện trong các lần chạy quy trình sau này.</p>",
-          "<p>Giữ nguyên mối memory với lý do quy trình đã chạy ấn định và không có vấn đề chất lượng output nào được báo cáo.</p>",
-          "<p>Export các memory hiện tại làm bản sao lưu trước khi thực hiện thay đổi, để có thể khôi phục ngữ cảnh trước đó nếu một chỉnh sửa bảo trì vô tình xóa một thông tin mà quy trình vẫn phụ thuộc.</p>",
-          "<p>Xóa tất cả memory như hành động bảo trì để có một khởi đầu sạch, sau đó để Claude xây dựng lại ngữ cảnh một cách tự nhiên qua các lần chạy quy trình tiếp theo.</p>",
-          "<p>Xác định và chỉnh sửa hoặc xóa các mục đã lỗi thời, không chính xác hoặc không còn liên quan, và bổ sung ngữ cảnh mà Claude chưa tự động ghi nhận những quy trình vẫn tiếp tục cần.</p>"
+          "<p>Tắt Memory hoàn toàn để loại trừ nguy cơ thông tin cũ xuất hiện trong các lần xử lý sau.</p>",
+          "<p>Giữ nguyên mọi mục Memory vì quy trình vẫn hoạt động ổn định và chưa ghi nhận vấn đề chất lượng.</p>",
+          "<p>Xuất bản sao Memory hiện tại trước khi chỉnh sửa để có thể khôi phục thông tin cần thiết nếu lỡ xóa nhầm.</p>",
+          "<p>Xóa toàn bộ Memory để bắt đầu sạch rồi để Claude tự xây dựng ngữ cảnh qua các lần chạy tiếp theo.</p>",
+          "<p>Xác định và sửa hoặc xóa những mục lỗi thời, sai hay không còn liên quan; bổ sung ngữ cảnh cần thiết mà Claude chưa tự ghi nhận.</p>"
         ]
       },
       "topic": "d5"
@@ -1847,10 +1847,10 @@
       "v": {
         "q": "<p>Bạn là người sáng tạo nội dung. Câu trả lời đầu tiên của Claude chính xác nhưng dùng thuật ngữ không nhất quán với bảng thuật ngữ chuẩn của tổ chức. Cách chỉnh sửa nào khắc phục trực tiếp nhất?</p>",
         "o": [
-          "<p>Loại bỏ chế độ khởi prompt để tránh hoàn toàn vấn đề thuật ngữ.</p>",
-          "<p>Tăng độ dài yêu cầu để thuật ngữ không nhất quán xuất hiện nhiều hơn.</p>",
-          "<p>Yêu cầu Claude bủa thêm các thuật ngữ không liên quan đến glossary.</p>",
-          "<p>Cung cấp glossary của tổ chức và hướng dẫn Claude chỉ dùng các thuật ngữ đó xuyên suất phản hồi.</p>"
+          "<p>Loại bỏ toàn bộ chủ đề khỏi prompt để tránh vấn đề thuật ngữ.</p>",
+          "<p>Yêu cầu đầu ra dài hơn để thuật ngữ không thống nhất xuất hiện nhiều hơn.</p>",
+          "<p>Yêu cầu Claude tự tạo thêm thuật ngữ không thuộc bảng thuật ngữ chuẩn.</p>",
+          "<p>Cung cấp bảng thuật ngữ của tổ chức và yêu cầu Claude chỉ dùng những thuật ngữ này trong câu trả lời.</p>"
         ]
       },
       "topic": "d1"
@@ -1884,10 +1884,10 @@
       "v": {
         "q": "<p>Trước khi chia sẻ bản tóm tắt do Claude tạo ra, một nhà phân tích áp dụng năng lực Discernment trong AI Fluency Framework. Cách rà soát nào phản ánh đúng nhất các nguyên tắc này?</p>",
         "o": [
-          "<p>Chấp nhận bản brief vì vấn phong trôi chạy và nội dung phù hợp với kiến thức chuyên môn của nhà phân tích về chế độ đó.</p>",
-          "<p>Thực hiện kiểm tra có hệ thống bản brief so với yêu cầu của tác vụ, tài liệu nguồn và các tiêu chuẩn chuyên môn trước khi chia sẻ.</p>",
-          "<p>Xem lại đoạn mở đầu và phần kết luận của bản brief, vì các phần này thường phản ánh chất lượng của toàn bộ tài liệu.</p>",
-          "<p>Bỏ qua bước kiểm tra tài liệu nguồn khi rà soát và dựa vào giống vận cùng mạch logic tổng thể để suy ra độ chính xác của dữ kiện.</p>"
+          "<p>Chấp nhận bản tóm tắt vì đọc trôi chảy và nội dung có vẻ phù hợp với kiến thức chuyên môn của nhà phân tích.</p>",
+          "<p>Kiểm tra bản tóm tắt có hệ thống theo yêu cầu nhiệm vụ, tài liệu nguồn và tiêu chuẩn nghề nghiệp trước khi chia sẻ.</p>",
+          "<p>Chỉ đọc đoạn mở đầu và kết luận vì hai phần này thường đại diện chất lượng toàn tài liệu.</p>",
+          "<p>Bỏ qua việc đối chiếu nguồn và chỉ dựa vào giọng văn, logic trình bày để suy ra độ chính xác.</p>"
         ]
       },
       "topic": "d2"
@@ -1921,10 +1921,10 @@
       "v": {
         "q": "<p>Một lãnh đạo phụ trách ngân sách công cụ AI cho rằng Claude sẽ giúp loại bỏ hoàn toàn việc con người rà soát nội dung gửi khách hàng. Khi phản hồi lãnh đạo này, nhân viên nên làm gì?</p>",
         "o": [
-          "<p>Triển khai thử nghiệm (pilot) để xuất của lãnh đạo trên một tập con nội dung hướng đến khách hàng có rủi ro thấp trước, và dùng kết quả pilot độ lập luận giữ lại việc rà soát của con người đối với nội dung có rủi ro cao hơn.</p>",
-          "<p>Báo cáo (escalate) tuyên bố của lãnh đạo lên một lãnh đạo cấp cao bên ngoài nhóm trước khi phản hồi trực tiếp, vì vấn đề ảnh hưởng đến nhiều hạn chế nhóm của associate.</p>",
-          "<p>Ghi nhận những lợi ích về năng suất, sau đó giải thích rằng việc rà soát của con người vẫn rất cần thiết đối với nội dung hướng đến khách hàng vì rủi ro về độ chính xác và thường hiệu, kèm các ví dụ cụ thể.</p>",
-          "<p>Tuân theo thẩm quyền của lãnh đạo và loại bỏ bước rà soát của con người khởi nội dung hướng đến khách hàng, đồng thời theo dõi sát kết quả trong vài tuần đầu.</p>"
+          "<p>Thử bỏ bước rà soát ở một nhóm nội dung ít rủi ro trước, rồi dùng kết quả để thuyết phục giữ bước rà soát ở nội dung rủi ro cao hơn.</p>",
+          "<p>Chuyển nhận định của lãnh đạo lên một lãnh đạo cấp cao khác trước khi trực tiếp phản hồi.</p>",
+          "<p>Ghi nhận lợi ích năng suất, đồng thời giải thích bằng ví dụ cụ thể vì sao nội dung gửi khách hàng vẫn cần con người rà soát để giảm rủi ro sai sự thật và ảnh hưởng thương hiệu.</p>",
+          "<p>Làm theo ý lãnh đạo, bỏ khâu rà soát của con người đối với nội dung gửi khách hàng và chỉ theo dõi sát trong vài tuần đầu.</p>"
         ]
       },
       "topic": "d6"
@@ -1958,10 +1958,10 @@
       "v": {
         "q": "<p>Bạn nghi ngờ câu trả lời của Claude chứa thông tin bịa đặt (hallucination). Bước kiểm tra nào cần làm đầu tiên?</p>",
         "o": [
-          "<p>Thông báo cho cộng đồng người dùng rộng đầu ra có chứa một tuyên bố bộ hallucination.</p>",
-          "<p>Ghi lại mẫu hallucination vào risk register của nhóm để tham khảo sau này.</p>",
-          "<p>Loại bỏ toàn bộ đầu ra và tạo lại đầu ra bằng một prompt mới.</p>",
-          "<p>Xác định chính xác tuyên bố cụ thể có vị không được chứng cố sẵn có hỗ trợ.</p>"
+          "<p>Thông báo rộng rãi cho cộng đồng người dùng rằng đầu ra có nội dung bịa đặt.</p>",
+          "<p>Ghi nhận kiểu lỗi này vào sổ rủi ro của nhóm để tham khảo về sau.</p>",
+          "<p>Bỏ toàn bộ đầu ra và tạo lại bằng một prompt mới.</p>",
+          "<p>Xác định cụ thể khẳng định nào có vẻ không được bằng chứng hiện có hỗ trợ.</p>"
         ]
       },
       "topic": "d2"
@@ -2000,11 +2000,11 @@
       "v": {
         "q": "<p>Bạn đang xem xét các cách đồng nghiệp đề xuất dùng Claude trong quy trình dự án. Hai bước nào phù hợp để Claude hỗ trợ? (Chọn hai.) Mỗi lựa chọn đúng là một giải pháp hoàn chỉnh.</p>",
         "o": [
-          "<p>Soạn thảo bản cập nhật trạng thái dự án có cấu trúc từ một tập ghi chú cuộc họp</p>",
-          "<p>Phê duyệt thông cáo báo chí bên ngoài cuối cùng mà không có bất kỳ sự rà soát nào của con người</p>",
-          "<p>Quyết định kết quả thống chức của nhân viên chỉ dựa trên phán đoán của mô hình</p>",
-          "<p>Tổng hợp một bài tổng quan tài liệu (literature review) từ nhiều tài liệu nghiên cứu đã tải lên</p>",
-          "<p>Đưa ra các cam kết hợp động có tính ràng buộc pháp lý thay một công ty</p>"
+          "<p>Soạn bản cập nhật tình trạng dự án có cấu trúc từ các ghi chú cuộc họp.</p>",
+          "<p>Phê duyệt thông cáo báo chí để công bố bên ngoài mà không có người rà soát.</p>",
+          "<p>Tự quyết định việc thăng chức nhân viên chỉ dựa trên nhận định của mô hình.</p>",
+          "<p>Tổng hợp tài liệu nghiên cứu từ nhiều văn bản đã tải lên.</p>",
+          "<p>Thay công ty đưa ra các cam kết hợp đồng có hiệu lực pháp lý.</p>"
         ]
       },
       "topic": "d4"
@@ -2043,11 +2043,11 @@
       "v": {
         "q": "<p>Bạn dùng Claude để thiết kế lại quy trình hội nhập cho nhân viên mới. Cần hoàn thành hai bước phân rã tổng quan nào TRƯỚC KHI viết nội dung email và lập lịch chi tiết? (Chọn hai.) Mỗi lựa chọn đúng là một phần của giải pháp.</p>",
         "o": [
-          "<p>Chạy thử nghiệm (pilot) quy trình onboarding với một nhóm nhỏ nhân viên mới.</p>",
-          "<p>Xác định mục tiêu tổng thể của trải nghiệm onboarding.</p>",
-          "<p>Thường lượng ngân sách onboarding với phòng tài chính.</p>",
-          "<p>Xác định các giai đoạn chính của trải nghiệm onboarding.</p>",
-          "<p>Triển khai quy trình onboarding cho mỗi nhân viên mới trên toàn công ty.</p>"
+          "<p>Thử nghiệm quy trình tiếp nhận nhân viên mới với một nhóm nhỏ.</p>",
+          "<p>Xác định mục tiêu tổng thể của trải nghiệm hội nhập nhân viên.</p>",
+          "<p>Thương lượng ngân sách cho quy trình hội nhập với bộ phận tài chính.</p>",
+          "<p>Xác định các giai đoạn chính của quá trình hội nhập nhân viên.</p>",
+          "<p>Triển khai quy trình cho toàn bộ nhân viên mới của công ty.</p>"
         ]
       },
       "topic": "d4"
@@ -2086,11 +2086,11 @@
       "v": {
         "q": "<p>Bạn đang tối ưu quy trình Claude lặp lại. Hai hoạt động chẩn đoán nào phải hoàn tất TRƯỚC KHI thay đổi quy trình? (Chọn hai.) Mỗi lựa chọn đúng là một phần của giải pháp.</p>",
         "o": [
-          "<p>Triển khai quy trình đã cập nhật cho toàn nhóm và theo dõi các vấn đề về mức độ chấp nhận.</p>",
-          "<p>Thông báo cho ban lãnh đạo vơ khoản tiết kiệm dự kiến tự việc tối ưu hóa.</p>",
-          "<p>Xác định các bước đóng góp nhiều nhất vào các vấn đề về thời gian, chi phí hoặc chất lượng.</p>",
-          "<p>Đo lường chất lượng, thời gian và chi phí của quy trình hiện tại qua các lần chạy gần đây.</p>",
-          "<p>Ghi lại các bước của quy trình đã sửa đổi và cập nhật quy trình vận hành chuẩn (SOP) của nhóm.</p>"
+          "<p>Triển khai quy trình đã sửa cho toàn nhóm và theo dõi các vấn đề khi áp dụng.</p>",
+          "<p>Thông báo ban lãnh đạo về mức tiết kiệm dự kiến sau tối ưu.</p>",
+          "<p>Xác định bước gây ảnh hưởng nhiều nhất đến thời gian, chi phí hoặc chất lượng.</p>",
+          "<p>Đo chất lượng, thời gian và chi phí của quy trình hiện tại qua các lần thực hiện gần đây.</p>",
+          "<p>Ghi lại quy trình đã sửa và cập nhật hướng dẫn vận hành chuẩn của nhóm.</p>"
         ]
       },
       "topic": "d7"
@@ -2129,11 +2129,11 @@
       "v": {
         "q": "<p>Bạn đang rà soát những thông điệp nhóm soạn để giải thích vai trò của Claude trong quy trình cho các bên liên quan. Hai thông điệp nào phù hợp? (Chọn hai.) Mỗi lựa chọn đúng là một phần của giải pháp.</p>",
         "o": [
-          "<p>Một lỗi trộn an mơ hồ rằng \"AI đang lo liệu việc đó\" mà không có thêm chi tiết</p>",
-          "<p>Một mô tả trung thực về nhưng chỉ Claude hỗ trợ và những chỗ con người giả quyền quyết định</p>",
-          "<p>Một tuyên bố rằng Claude sự xử lý mỗi tác vụ mà không cần sự tham gia nào của con người</p>",
-          "<p>Một tuyên bố rằng mô hình không bao giờ mắc lỗi và không cần rà soát chất lượng</p>",
-          "<p>Một tuyên bố rõ ràng về các giới hạn và các failure mode đã biệt của việc tích hợp</p>"
+          "<p>Chỉ trấn an mơ hồ rằng 'AI đang lo hết' mà không giải thích thêm.</p>",
+          "<p>Mô tả trung thực những chỗ Claude hỗ trợ và nơi con người vẫn giữ quyền quyết định.</p>",
+          "<p>Tuyên bố Claude sẽ xử lý mọi công việc không cần con người tham gia.</p>",
+          "<p>Tuyên bố mô hình không bao giờ sai và không cần kiểm tra chất lượng.</p>",
+          "<p>Nêu rõ các giới hạn và dạng lỗi đã biết của việc tích hợp.</p>"
         ]
       },
       "topic": "d4"
@@ -2167,10 +2167,10 @@
       "v": {
         "q": "<p>Một chuyên viên đào tạo đang cấu hình Claude Project cho công việc thiết kế khóa học định kỳ. Cách kết hợp Skill với các thành phần Project khác nào tận dụng tốt nhất tính năng này?</p>",
         "o": [
-          "<p>Thêm Skill vào Project nhưng bỏ qua các nguồn kiến thức hỗ trợ và mọi custom instructions, khiến Project thiếu nội dung tham chiếu và hướng dẫn thường trục mà quy trình yêu cầu.</p>",
-          "<p>Tải lên các nguồn kiến thức hỗ trợ những vô hiệu hóa Skill liên quan, loại bỏ khả năng đóng gói mà quy trình cận và buộc mỗi chat phải từ dừng lại quy trình theo cách thủ công.</p>",
-          "<p>Cấu hình Project với custom instructions mâu thuẫn với mục đích được tài liệu hóa của Skill, tạo ra sự mơ hồ vỏ việc Claude nên làm theo hướng dẫn nào trong quy trình thiết kế khóa học lặp lại.</p>",
-          "<p>Thêm Skill liên quan vào Project, tải lên các nguồn kiến thức hỗ trợ và viết custom instructions tham chiếu đến cả Skill lần kiến thức đó.</p>"
+          "<p>Chỉ thêm Skill mà không có tài liệu hỗ trợ hay custom instructions, khiến Project thiếu nguồn tham khảo và hướng dẫn lâu dài cần thiết.</p>",
+          "<p>Tải lên tài liệu tham khảo nhưng tắt Skill cần thiết, buộc mỗi chat phải tái tạo quy trình bằng tay.</p>",
+          "<p>Viết custom instructions trái với mục đích được mô tả của Skill, khiến Claude khó xác định hướng dẫn nào cần theo.</p>",
+          "<p>Thêm Skill phù hợp, tải lên các tài liệu tham khảo và viết custom instructions liên kết cả Skill lẫn tài liệu.</p>"
         ]
       },
       "topic": "d5"
@@ -2204,10 +2204,10 @@
       "v": {
         "q": "<p>Một nhân viên chăm sóc khách hàng rà soát báo cáo tình trạng khách hàng do Claude tạo theo danh sách nội dung bàn giao đã thống nhất. Báo cáo có đủ năm chủ đề, nhưng phần rủi ro gia hạn chỉ xét một yếu tố trong khi yêu cầu phải đánh giá giá cả, mức phù hợp của sản phẩm và thay đổi bên liên quan. Kết luận nào hợp lý nhất?</p>",
         "o": [
-          "<p>Báo cáo không đáp ứng đặc tả deliverable vì một phần chế đề cập đến một trong ba khía cảnh rủi ro bắt buộc được tính là phần bị thiếu.</p>",
-          "<p>Báo cáo đáp ứng các yêu cầu ở mức chế độ nhưng phần renewal-risk bị thiếu phạm vi so với đặc tả và cần được mở rộng trước khi giao.</p>",
-          "<p>Không thể đánh giá tính đầy đủ của báo cáo chế tự đặc tả deliverable; khách hàng nên xem xét đầu ra và xác nhận độ sâu của phần renewal-risk có độ hay không.</p>",
-          "<p>Báo cáo đáp ứng đặc tả deliverable vì cụ năm chủ đề bắt buộc đầu xuất hiện và phần renewal-risk có một trong đầu ra.</p>"
+          "<p>Báo cáo không đạt đặc tả vì một phần chỉ đề cập một trong ba khía cạnh rủi ro thì được xem là hoàn toàn thiếu phần đó.</p>",
+          "<p>Báo cáo có đủ chủ đề nhưng phần rủi ro gia hạn chưa phân tích đủ ba khía cạnh theo yêu cầu và phải được bổ sung trước khi bàn giao.</p>",
+          "<p>Không thể xác định tính đầy đủ chỉ từ đặc tả; cần khách hàng tự xác nhận độ sâu của phần rủi ro gia hạn.</p>",
+          "<p>Báo cáo đạt đặc tả vì đã có đủ năm chủ đề và phần rủi ro gia hạn có xuất hiện.</p>"
         ]
       },
       "topic": "d2"
