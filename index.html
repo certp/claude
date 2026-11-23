@@ -182,8 +182,29 @@ svg.i{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke
 .review{display:flex;flex-direction:column;gap:16px}
 .review h3{font-size:18px}
 .rv .qcard{padding:clamp(16px,2.5vw,26px)}
-.rv .qhead .qnum{background:var(--bad)}
+.rv[data-status="correct"] .qhead .qnum{background:var(--ok)}
+.rv[data-status="incorrect"] .qhead .qnum{background:var(--bad)}
+.rv[data-status="unanswered"] .qhead .qnum{background:var(--gray);color:var(--gray-ink)}
 .rv .qhead .tag.un{background:var(--surface-2);color:var(--muted)}
+.review{scroll-margin-top:90px}
+.review-filters{display:flex;flex-wrap:wrap;gap:8px}
+.review-filter{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:9px 13px;font-size:13px;font-weight:700;color:var(--muted)}
+.review-filter[aria-pressed="true"]{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,var(--surface));color:var(--accent)}
+.review-result{font-weight:700}
+.review-result.correct{background:var(--ok-soft);color:var(--ok)}
+.review-result.incorrect{background:var(--bad-soft);color:var(--bad)}
+.review-result.unanswered{background:var(--surface-2);color:var(--muted)}
+.choice-flags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.choice-flag{display:inline-flex;border-radius:6px;padding:2px 7px;font-size:11px;line-height:1.5;font-weight:700}
+.choice-flag.chosen{background:var(--primary-soft);color:var(--primary)}
+.choice-flag.correct{background:var(--ok-soft);color:var(--ok)}
+.review-answer{line-height:1.8}
+.review-answer .answer-right{color:var(--ok)}
+.review-explain{background:var(--surface-2);border-color:var(--line)}
+.review-pager{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.review-pager span{font-size:13px;color:var(--muted);font-weight:700;text-align:center}
+.review-empty{padding:18px;color:var(--muted)}
+@media(max-width:760px){.review-filter{min-height:44px}.review-pager .btn{flex:1}}
 .lbl{font-size:12px;font-weight:700;margin:2px 0 0 44px;color:var(--muted)}
 
 /* ---------- Modal ---------- */
@@ -497,7 +518,7 @@ const stopTimer = () => { if (timerHandle){ clearInterval(timerHandle); timerHan
 let route = {cert:null, mode:null};
 let LRN = null;   // learn state of current cert
 let EXM = null;   // exam state of current cert
-let showWrong = false, pendingScroll = null;
+let reviewFilter = null, reviewId = null, pendingScroll = null;
 let REVEAL = false;  // chế độ hiện đáp án (ch? Học)
 let peekId = null;   // câu đang bật EN+VI tạm thời (chỉ trong chế độ Học)
 let LANG = LS.get('ccprac.v1.lang') || 'en';
@@ -676,15 +697,22 @@ function questionHTML(q, num, o){
   const txt = (en, vi) => lang==='vi' ? vi : lang==='both' ? `${vi}<div class="en">${en}</div>` : en;
   const opts = q.o.map((op,i) => {
     let cls = 'opt';
+    const isC = q.a.includes(op.k), isS = sel.includes(op.k);
     if (o.showResult){
-      const isC = q.a.includes(op.k), isS = sel.includes(op.k);
       if (isC) cls += ' right'; else if (isS) cls += ' wrong';
-    } else if (sel.includes(op.k)) cls += ' sel';
-    const mark = o.showResult ? (q.a.includes(op.k) ? ic('check') : (sel.includes(op.k) ? '✗' : L(i))) : L(i);
-    return `<button class="${cls}" data-opt="${esc(op.k)}" ${lock?'disabled':''} aria-pressed="${sel.includes(op.k)}">
-      <span class="mark">${mark}</span><span class="t rich">${txt(op.h, q.v ? q.v.o[i] : op.h)}</span></button>`;
+    } else if (isS) cls += ' sel';
+    const mark = o.showResult ? (isC ? ic('check') : (isS ? '✗' : L(i))) : L(i);
+    // Correct options must still show whether the student actually selected them.
+    const flags = o.mode==='review' && o.showResult && (isS || isC)
+      ? `<span class="choice-flags">${isS?'<span class="choice-flag chosen">Bạn đã chọn</span>':''}${isC?'<span class="choice-flag correct">Đáp án đúng</span>':''}</span>`
+      : '';
+    return `<button class="${cls}" data-opt="${esc(op.k)}" ${lock?'disabled':''} aria-pressed="${isS}">
+      <span class="mark">${mark}</span><span class="t rich">${txt(op.h, q.v ? q.v.o[i] : op.h)}${flags}</span></button>`;
   }).join('');
-  return `<div class="qhead"><span class="qnum">Câu ${num}</span>${multi?`<span class="tag">Chọn ${q.m} đáp án</span>`:'<span>Chọn 1 đáp án</span>'}${peekBtn}</div>
+  const resultTag = o.mode==='review' && o.status
+    ? `<span class="tag review-result ${o.status}">${{correct:'✓ Chính xác',incorrect:'✗ Chưa đúng',unanswered:'Chưa trả lời'}[o.status]}</span>`
+    : '';
+  return `<div class="qhead"><span class="qnum">Câu ${num}</span>${resultTag}${multi?`<span class="tag">Chọn ${q.m} đáp án</span>`:'<span>Chọn 1 đáp án</span>'}${peekBtn}</div>
     <div class="qtext rich">${txt(q.q, q.v ? q.v.q : q.q)}</div>
     <div class="opts ${multi?'multi':''}">${opts}</div>`;
 }
@@ -839,6 +867,63 @@ async function resetLearn(){
   saveLearn(); renderLearn();
 }
 
+/* BEGIN EXAM REVIEW */
+function examReviewStatus(q, selected){
+  return !selected.length ? 'unanswered' : same(selected, q.a) ? 'correct' : 'incorrect';
+}
+function examReviewIds(cert, ids, answers, filter){
+  return ids.filter(id => {
+    const selected = Array.isArray(answers?.[id]) ? answers[id] : [];
+    const status = examReviewStatus(BY_ID[cert][id], selected);
+    return filter==='all' || (filter==='missed' ? status!=='correct' : status===filter);
+  });
+}
+function answerLetters(q, selected){
+  return q.o.map((option,i) => selected.includes(option.k) ? L(i) : null).filter(Boolean).join(', ') || 'Không chọn';
+}
+function examReviewHTML(c, n, correct, un, reviewedIds, activeReviewId){
+  if (!reviewFilter) return '';
+  const reviewPosition = reviewedIds.indexOf(activeReviewId);
+  let reviewCard = '';
+  if (activeReviewId) {
+    const question = displayedQuestion(BY_ID[c.id][activeReviewId], EXM);
+    const selected = exSel(activeReviewId);
+    const status = examReviewStatus(question, selected);
+    const questionNumber = EXM.ids.indexOf(activeReviewId) + 1;
+    reviewCard = `
+      <div class="rv" data-status="${status}">
+        <section class="panel qcard">
+          ${questionHTML(question, questionNumber, {selected, mode:'review', showResult:true, status})}
+          <div class="hint review-answer"><b>Bạn chọn:</b> ${answerLetters(question, selected)}
+            · <b class="answer-right">Đáp án đúng:</b> ${answerLetters(question, question.a)}</div>
+          ${question.e?`<div class="feedback review-explain"><div class="why rich"><b>Giải thích:</b> ${question.e}</div></div>`:''}
+        </section>
+        <div class="review-pager">
+          <button class="btn" id="btn-review-prev" ${reviewPosition===0?'disabled':''}>${ic('arrowL')}Câu trước</button>
+          <span>${reviewPosition+1}/${reviewedIds.length} trong bộ lọc</span>
+          <button class="btn" id="btn-review-next" ${reviewPosition===reviewedIds.length-1?'disabled':''}>Câu tiếp ${ic('arrowR')}</button>
+        </div>
+      </div>`;
+  }
+  const filters = [
+    ['all', `Tất cả (${n})`],
+    ['correct', `Đúng (${correct})`],
+    ['incorrect', `Sai (${n-correct-un})`],
+    ['unanswered', `Bỏ trống (${un})`],
+    ['missed', `Chưa đúng (${n-correct})`]
+  ];
+  return `
+    <section class="review" id="exam-review" aria-labelledby="review-heading">
+      <h3 id="review-heading">Xem lại câu trả lời</h3>
+      <div class="review-filters" role="group" aria-label="Lọc câu hỏi theo kết quả">
+        ${filters.map(([filter,label]) => `<button type="button" class="review-filter" data-review-filter="${filter}"
+          aria-pressed="${reviewFilter===filter}">${label}</button>`).join('')}
+      </div>
+      ${reviewCard || '<p class="panel review-empty">Không có câu hỏi trong bộ lọc này.</p>'}
+    </section>`;
+}
+/* END EXAM REVIEW */
+
 /* ---------- EXAM ---------- */
 const exSel = id => (EXM.ans[id] || []);
 const exAnswered = () => EXM.ids.filter(id => exSel(id).length > 0).length;
@@ -892,7 +977,7 @@ function startRetryExam(){
   if (!EXM.wrong || !EXM.wrong.length) return;
   EXM = {topic:EXM.topic, size:EXM.size || '10', phase:'run', ids: shuffle(EXM.wrong), ans:{}, idx:0, start:Date.now(), practice:true};
   EXM.optionOrders = optionOrders(EXM.ids, route.cert);
-  showWrong = false; saveExam(); renderExam(); window.scrollTo(0,0);
+  reviewFilter = reviewId = null; saveExam(); renderExam(); window.scrollTo(0,0);
 }
 function startExam(){
   const ids = examTopicIds(route.cert,EXM.topic);
@@ -905,7 +990,7 @@ function startExam(){
     : weightedExamIds(route.cert,count);
   EXM = {topic:EXM.topic, size, phase:'run', ids:picked, ans:{}, idx:0, start:Date.now()};
   EXM.optionOrders = optionOrders(EXM.ids, route.cert);
-  showWrong = false; saveExam(); renderExam(); window.scrollTo(0,0);
+  reviewFilter = reviewId = null; saveExam(); renderExam(); window.scrollTo(0,0);
 }
 async function submitExam(){
   const n = EXM.ids.length, ans = exAnswered(), left = n-ans;
@@ -915,7 +1000,7 @@ async function submitExam(){
   if (!ok) return;
   const wrong = EXM.ids.filter(id => !same(exSel(id), BY_ID[route.cert][id].a));
   EXM.phase = 'result'; EXM.end = Date.now(); EXM.correct = n - wrong.length; EXM.wrong = wrong;
-  showWrong = false; saveExam(); renderExam(); window.scrollTo(0,0);
+  reviewFilter = reviewId = null; saveExam(); renderExam(); window.scrollTo(0,0);
 }
 function renderExamIntro(c){
   const choice = EXM.size || 'OFFICIAL';
@@ -965,8 +1050,14 @@ function renderExamResult(c){
   const passed = practice ? correct === n : report.targetReached;
   const wrongIds = EXM.ids.filter(id => !same(exSel(id), BY_ID[c.id][id].a));
   const un = report.unanswered;
+  const reviewedIds = reviewFilter ? examReviewIds(c.id, EXM.ids, EXM.ans, reviewFilter) : [];
+  const activeReviewId = reviewedIds.includes(reviewId) ? reviewId : reviewedIds[0];
+  const reviewHTML = examReviewHTML(c, n, correct, un, reviewedIds, activeReviewId);
   const pct = report.accuracy / 100, R = 76, C = 2*Math.PI*R;
-  const items = EXM.ids.map(id => ({m: BY_ID[c.id][id].m, cls: wrongIds.includes(id)?'bad':'done'}));
+  const items = EXM.ids.map(id => {
+    const status = examReviewStatus(BY_ID[c.id][id], exSel(id));
+    return {m: BY_ID[c.id][id].m, cls: status==='unanswered' ? '' : status==='correct' ? 'done' : 'bad'};
+  });
   const col = passed ? 'var(--ok)' : 'var(--bad)';
   const weak = weakestDomains(report);
   const domainCards = report.domains.filter(d => d.total > 0).map(d => `
@@ -999,7 +1090,7 @@ function renderExamResult(c){
   $('#app').innerHTML = topbar(c, '') + `<div class="layout" style="--accent:${c.accent}">
     <aside class="panel side"><h3>Kết quả từng câu <span>${correct}/${n}</span></h3>
       <div id="map-slot">${mapHTML(items, -1)}</div>
-      <div class="legend"><span><i style="background:var(--ok)"></i>Đúng</span><span><i style="background:var(--bad)"></i>Sai / bỏ trống</span><span><i style="background:var(--warn);width:12px;height:12px;border-radius:99px"></i>Nhiều đáp án</span></div></aside>
+      <div class="legend"><span><i style="background:var(--ok)"></i>Đúng</span><span><i style="background:var(--bad)"></i>Sai</span><span><i style="background:var(--gray)"></i>Bỏ trống</span><span><i style="background:var(--warn);width:12px;height:12px;border-radius:99px"></i>Nhiều đáp án</span></div></aside>
     <main class="main">
       <section class="panel result">
         <div class="ring"><svg width="176" height="176" viewBox="0 0 176 176">
@@ -1023,32 +1114,47 @@ function renderExamResult(c){
             <div class="kpi"><b style="color:var(--bad)">${n-correct}</b><span>Câu sai${un?` (${un} bỏ trống)`:''}</span></div>
             <div class="kpi"><b>${fmtTime((EXM.end-EXM.start)/1000)}</b><span>Thời gian</span></div></div>
           <div class="actions">
-            <button class="btn" id="btn-wrong" ${wrongIds.length?'':'disabled'}>${ic('list')}<span>${showWrong?'Ẩn các câu sai':`Xem các câu sai (${wrongIds.length})`}</span></button>
+            <button class="btn" id="btn-review-all">${ic('list')}<span>${reviewFilter?'Ẩn xem lại':`Xem lại bài thi (${n})`}</span></button>
+            <button class="btn" id="btn-wrong" ${wrongIds.length?'':'disabled'}>${ic('list')}<span>Xem câu chưa đúng (${wrongIds.length})</span></button>
             <button class="btn" id="btn-retrywrong" ${wrongIds.length?'':'disabled'}>${ic('reset')}<span>Làm lại câu sai</span></button>
             <button class="btn primary" id="btn-retake" style="background:${c.accent};border-color:${c.accent}">${ic('reset')}Thi lại</button></div>
         </div>
       </section>
       ${domainBreakdown}
-      ${showWrong ? `<section class="review"><h3>Các câu làm sai (${wrongIds.length})</h3>${wrongIds.map(id => {
-        const q = displayedQuestion(BY_ID[c.id][id], EXM), sel = exSel(id), num = EXM.ids.indexOf(id)+1;
-        return `<div class="rv" id="rv-${num}"><div class="panel qcard">
-          ${questionHTML(q, num, {selected:sel, mode:'review', showResult:true}).replace('qhead">', `qhead">${sel.length?'':'<span class="tag un">Chưa trả lời</span>'}`)}
-          <div class="hint">${sel.length ? 'Bạn chọn: <b style="color:var(--bad)">'+sel.map(k=>L(q.o.findIndex(o=>o.k===k))).sort().join(', ')+'</b> • ' : ''}Đáp án đúng: <b style="color:var(--ok)">${q.a.map(k=>L(q.o.findIndex(o=>o.k===k))).sort().join(', ')}</b></div>
-          ${q.e?`<div class="feedback ko" style="background:var(--surface-2);border-color:var(--line)"><div class="why rich"><b>Giải thích:</b> ${q.e}</div></div>`:''}
-        </div></div>`; }).join('')}</section>` : ''}
+      ${reviewHTML}
     </main></div>`;
   bindTop();
-  $('#btn-wrong').onclick = () => { showWrong = !showWrong; renderExamResult(c); if (showWrong) $('.review')?.scrollIntoView({behavior:'smooth',block:'start'}); };
+  const openReview = (filter, id) => {
+    reviewFilter = filter;
+    const ids = examReviewIds(c.id, EXM.ids, EXM.ans, filter);
+    reviewId = id && ids.includes(id) ? id : (ids[0] || null);
+    renderExamResult(c);
+    $('#exam-review')?.scrollIntoView({behavior:'smooth', block:'start'});
+  };
+  $('#btn-review-all').onclick = () => {
+    if (reviewFilter) {
+      reviewFilter = reviewId = null;
+      renderExamResult(c);
+    } else openReview('all');
+  };
+  $('#btn-wrong').onclick = () => openReview('missed');
   $('#btn-retake').onclick = () => {
     EXM = {phase:'intro', topic:EXM.topic, size:EXM.size || 'OFFICIAL'};
+    reviewFilter = reviewId = null;
     saveExam(); renderExam();
   };
   $('#btn-retrywrong').onclick = startRetryExam;
-  document.querySelectorAll('#map-slot [data-go]').forEach(b => b.onclick = () => {
-    const num = +b.dataset.go + 1, id = EXM.ids[num-1];
-    if (!wrongIds.includes(id)) return;
-    if (!showWrong){ showWrong = true; renderExamResult(c); }
-    document.getElementById('rv-'+num)?.scrollIntoView({behavior:'smooth',block:'center'});
+  document.querySelectorAll('[data-review-filter]').forEach(button => {
+    button.onclick = () => openReview(button.dataset.reviewFilter);
+  });
+  const changeReview = offset => {
+    const next = reviewedIds[reviewedIds.indexOf(activeReviewId) + offset];
+    if (next) openReview(reviewFilter, next);
+  };
+  if ($('#btn-review-prev')) $('#btn-review-prev').onclick = () => changeReview(-1);
+  if ($('#btn-review-next')) $('#btn-review-next').onclick = () => changeReview(1);
+  document.querySelectorAll('#map-slot [data-go]').forEach(button => {
+    button.onclick = () => openReview('all', EXM.ids[Number(button.dataset.go)]);
   });
 }
 
@@ -1091,7 +1197,7 @@ async function render(){
   // A newer hash route takes precedence over an older pending fetch.
   if (generation !== renderGeneration) return;
   if (r.mode === 'learn'){ LRN = loadLearn(r.cert); renderLearn(); }
-  else { EXM = loadExam(r.cert); showWrong = false; renderExam(); }
+  else { EXM = loadExam(r.cert); reviewFilter = reviewId = null; renderExam(); }
 }
 render();
 </script>
