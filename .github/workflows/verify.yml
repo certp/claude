@@ -22,3 +22,5 @@ jobs:
         run: node scripts/verify-weighted-exam.mjs
       - name: Verify practice scoring and domain reports
         run: node scripts/verify-scoring.mjs
+      - name: Verify submitted answer review
+        run: node scripts/verify-exam-review.mjs
