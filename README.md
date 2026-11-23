@@ -11,6 +11,7 @@ Static, client-side practice app with three certification question banks.
 - `scripts/verify-data.mjs`: data validation, official domain IDs and English-content regression checks.
 - `scripts/verify-weighted-exam.mjs`: domain-weighted mock-exam regression tests.
 - `scripts/verify-scoring.mjs`: exact-answer scoring, per-domain accuracy and practice-target regression tests.
+- `scripts/verify-exam-review.mjs`: read-only post-submit answer review and shuffled-option regression tests.
 - `docs/exam-blueprints.md`: official pre-December-7-2026 exam domains, weights and scope-review notes.
 
 ## Run locally
@@ -35,6 +36,7 @@ Run:
 node scripts/verify-data.mjs
 node scripts/verify-weighted-exam.mjs
 node scripts/verify-scoring.mjs
+node scripts/verify-exam-review.mjs
 ```
 
 Practice exams offer 10, 20, 30 and official-length (60/60/53) question sets. When all domains are selected, these modes sample questions according to the **November 2026 Anthropic exam weights** (valid before December 7, 2026). `ALL` uses every in-scope item and therefore cannot enforce weights. For official sources, exact quotas, and scope-review flags, see [Exam blueprints](docs/exam-blueprints.md).
@@ -46,5 +48,6 @@ Browser storage still uses the same keys and question IDs, so saved learning/exa
 - Every correct question counts as one point. Multi-answer questions require **the exact answer set** for credit; no partial credit is awarded. Omitted questions count as incorrect.
 - The overall score is `correct / questions in this attempt`. The app's **80% accuracy goal** is a practice-only target (rounded up to a whole number of correct questions); it is **not** the official Anthropic passing threshold.
 - The result screen reports each tested domain's `correct / tested`, accuracy, and published blueprint weight. Domains not included in the attempt are omitted from the per-domain report rather than treated as failed. The three tested domains with the lowest accuracy **below 80%** are highlighted for review; small-sample results should be interpreted cautiously.
+- After submission, **Xem lại bài thi** opens a read-only answer review: navigate via previous/next or the question map, filter correct, incorrect, skipped, or all missed questions, and compare selected answers with the correct choices and explanations. This preserves shuffled option positions and also works with saved results.
 - Saved exams, domain-specific practice and retrying incorrect questions reuse the same raw scoring model. Retry rounds are explicitly marked as practice rather than a pass/fail prediction; legacy attempts containing questions flagged for scope review are still scored overall but identified separately from official-domain statistics.
 - The official Anthropic exam uses a **scaled score** and a pass mark of **720**. The conversion from raw percent correct is not public; the app **does not** manufacture a scaled score or claim to predict official pass/fail.
