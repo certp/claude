@@ -6,7 +6,7 @@ Reviewed against the [CCAR-F Exam Guide v1.1, November 2026](https://cc.sj-cdn.n
 
 - Screened the primary competency and keyed choice of all 309 questions. The domain changes are editorial judgments, not an attempt to match the overall bank to exam percentages.
 - 79 primary-domain corrections; 97 questions with localized text/explanation edits, including obvious OCR-like typos and targeted rewrites. This is not a full bilingual line-by-line certification of every distractor.
-- English questions, choices, choice order, IDs, answer keys, and answer counts are unchanged. Source answer defects are recorded separately, with warnings in Vietnamese explanations. The existing app will still grade against the source keys until an explicit key correction is approved.
+- English questions, choices, choice order, IDs and answer counts remain unchanged. The initial audit preserved source keys; the follow-up answer correction updates five grading keys as recorded below. Unresolved source defects retain warnings in Vietnamese explanations.
 - No question removed or excluded. The existing weighted sampler is not modified.
 
 | Domain | Before | After | Official exam weight |
@@ -54,6 +54,20 @@ The closest primary objective takes precedence over scenario keywords. For examp
 | 168 | B | Retain, clarify | Preview token must attest explicit user confirmation, not merely a preview call. |
 
 Additional source corruption spotted during screening: 257 (malformed glob in a choice; 285 has the intact example), 273 (stray 97 at end of question). These are preserved under the English-content invariant. There are near-duplicate scenarios; no deduplication was requested.
+
+## Follow-up answer-key correction (2026-11-27)
+
+The app now grades against the following editorially reviewed keys. These are not an official answer key from Anthropic.
+
+| ID | Previous | Graded key | Confidence / rationale |
+| --- | --- | --- | --- |
+| 159 | C | B | Confirmed against guide 1.3; explicit context passing. |
+| 1407 | A | B | Confirmed against guide 2.2; actionable structured errors. |
+| 1408 | A | B | Confirmed; ambiguous delivery outcome must not be blindly retried. |
+| 239 | C | A | Best available cost-oriented option, 4h collection + 24h processing window; no guarantee of 99.9% SLA. Retain caution. |
+| 1402 | B, C | C, D | Best available intact choices per guide 1.4; source is truncated, retain caution. |
+
+All other keys remain unchanged in this targeted follow-up. Placeholder or ambiguous items are not treated as verified; original English text is preserved, and the app still grades them against the retained key. The verifier pins the corrected keys and the English-text fingerprint separately, and validates tip consistency.
 
 ## References
 

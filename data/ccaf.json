@@ -541,9 +541,9 @@
         }
       ],
       "a": [
-        "C"
+        "B"
       ],
-      "e": "[Cảnh báo đáp án nguồn] Khóa nguồn: C; đề xuất: B. Theo mục 1.3 của Exam Guide, subagent có ngữ cảnh riêng và agent điều phối truyền trực tiếp các kết quả cần thiết qua prompt. Kho bộ nhớ dùng chung là một thiết kế bổ sung, không phải cơ chế mặc định.",
+      "e": "Theo mục 1.3 của Exam Guide, mỗi subagent có ngữ cảnh riêng. Agent điều phối phải truyền đầy đủ các findings cần thiết từ hai subagent vào prompt của agent tổng hợp. Shared memory là một thiết kế bổ sung, không phải cơ chế mặc định.",
       "m": 1,
       "v": {
         "q": "<p>Sau khi các subagent tìm kiếm trên web và phân tích tài liệu hoàn tất nhiệm vụ, agent điều phối cần gọi subagent tổng hợp các kết quả. Cách nào đúng để cung cấp cho subagent tổng hợp những thông tin cần thiết?</p>",
@@ -556,9 +556,14 @@
       },
       "topic": "d1",
       "tip": {
-        "kind": "caution",
-        "text": "Khóa nguồn C đáng ngờ: handoff mặc định truyền findings vào prompt subagent, không mặc định shared memory. Đừng học thuộc khóa nguồn.",
-        "cues": []
+        "kind": "cue",
+        "text": "Agent tổng hợp cần findings từ các agent trước → truyền trực tiếp findings vào prompt; không dựa vào kế thừa context hoặc shared memory mặc định.",
+        "cues": [
+          {
+            "key": "B",
+            "phrase": "complete findings from both subagents directly"
+          }
+        ]
       }
     },
     {
@@ -4045,9 +4050,9 @@
         }
       ],
       "a": [
-        "C"
+        "A"
       ],
-      "e": "[Cảnh báo đáp án nguồn] Khóa nguồn: C. B có tổng thời gian chờ lý thuyết tối đa 30 giờ, A là 28 giờ và có khoảng đệm. C có thể vượt 30 giờ; Batch API không bảo đảm SLA độ trễ 99,9%. Không đủ dữ kiện để khẳng định duy nhất A, B hay D đáp ứng độ tin cậy yêu cầu.",
+      "e": "[Cảnh báo giới hạn SLA] A là chiến lược batch hợp lý nhất trong các lựa chọn nếu ưu tiên giảm chi phí: tối đa 4 giờ gom batch + cửa sổ xử lý 24 giờ = 28 giờ, còn 2 giờ đệm. B không có đệm; C có thể vượt 30 giờ. Batch API có thể hết hạn mà chưa xử lý xong; không thể khẳng định độ tin cậy 99,9% nếu thiếu đo lường và fallback trước deadline.",
       "m": 1,
       "v": {
         "q": "<p>Tài liệu đến liên tục trong giờ làm việc và cần trích xuất dữ liệu có cấu trúc. Để giảm chi phí, bạn muốn dùng Message Batches API (giảm 50%, thời gian xử lý tối đa 24 giờ). SLA yêu cầu có kết quả trong vòng 30 giờ kể từ khi tài liệu đến với độ tin cậy 99,9%. Chiến lược gửi batch nào phù hợp nhất?</p>",
@@ -4061,7 +4066,7 @@
       "topic": "d4",
       "tip": {
         "kind": "caution",
-        "text": "Batch API không bảo đảm SLA 99,9%; cộng thời gian gom batch + xử lý. Cuối ngày có thể vượt 30 giờ.",
+        "text": "Ưu tiên tiết kiệm chi phí → batch mỗi 4 giờ cho 2 giờ đệm; không đồng nghĩa bảo đảm SLA 99,9%. Cần theo dõi deadline và fallback.",
         "cues": []
       }
     },
@@ -9587,10 +9592,10 @@
         }
       ],
       "a": [
-        "B",
-        "C"
+        "C",
+        "D"
       ],
-      "e": "[Cảnh báo đáp án nguồn bị hỏng] Khóa nguồn B, C. B chỉ còn đoạn “process _ refund.”, còn A bị cắt. Trong các phương án còn đủ nội dung, D (chặn bằng điều kiện tiên quyết lập trình) và C (handoff có cấu trúc) phù hợp mục 1.4. Đề xuất C, D; cần phục hồi nguồn trước khi sửa khóa.",
+      "e": "[Cảnh báo nguồn bị cắt] C và D là hai phương án đầy đủ, phù hợp mục 1.4: handoff có cấu trúc khi chuyển cho người xử lý và điều kiện tiên quyết được thực thi bằng code để chặn tool khi chưa xác minh. A và B có dấu hiệu bị cắt; khóa C, D là lựa chọn tốt nhất theo phần nội dung còn đọc được, chưa thể xác nhận nguyên văn nguồn.",
       "m": 2,
       "v": {
         "q": "<p>Những mẫu nào sau đây là best practice để triển khai handoff và enforcement trong các quy trình nhiều bước? Chọn 2 đáp án đúng.</p>",
@@ -9605,7 +9610,7 @@
       "topic": "d1",
       "tip": {
         "kind": "caution",
-        "text": "Lựa chọn bị cắt, khóa nguồn không đủ tin cậy. Handoff có cấu trúc và prerequisite enforce bằng code là nguyên tắc đúng; không học đoạn process_refund hỏng.",
+        "text": "Câu nguồn bị cắt. Hai nguyên tắc đúng là structured handoff và prerequisite enforce bằng code. Không học thuộc fragment process_refund hay coi prompt là bảo đảm.",
         "cues": []
       }
     },
@@ -9820,9 +9825,9 @@
         }
       ],
       "a": [
-        "A"
+        "B"
       ],
-      "e": "[Cảnh báo đáp án nguồn] Khóa nguồn: A; đề xuất: B. Phân biệt lỗi tạm thời, dữ liệu đầu vào không hợp lệ và không tìm thấy lô hàng giúp agent chọn cách khôi phục phù hợp. Lỗi chung chung làm mất thông tin cần thiết.",
+      "e": "Trả về lỗi có cấu trúc, phân biệt lỗi tạm thời, mã tracking không hợp lệ và không tìm thấy lô hàng; nêu khả năng khôi phục và bước tiếp theo phù hợp. Lỗi chung chung làm mất thông tin cần thiết để agent hỗ trợ người dùng.",
       "m": 1,
       "v": {
         "q": "<p>Tool track_shipment(tracking_id) truy vấn API logistics bên ngoài đôi khi gặp lỗi: dịch vụ tạm thời không khả dụng, mã theo dõi sai định dạng hoặc lô hàng không tồn tại. Hiện tool ném exception Python khi gặp lỗi. Người dùng nhận được phản hồi chung chung như “Tôi đang gặp sự cố với yêu cầu này”, thay vì gợi ý kiểm tra định dạng mã theo dõi hoặc tra cứu theo mã đơn hàng. Bạn nên xử lý lỗi trong kết quả tool như thế nào?</p>",
@@ -9835,9 +9840,14 @@
       },
       "topic": "d2",
       "tip": {
-        "kind": "caution",
-        "text": "Khóa nguồn generic error không phù hợp. Phân biệt transient/validation/not-found và cung cấp recovery; không học thuộc lookup_failed cho mọi lỗi.",
-        "cues": []
+        "kind": "cue",
+        "text": "Nhiều loại lỗi nhưng agent chỉ báo thất bại chung chung → structured error có loại lỗi, khả năng recovery và hướng xử lý.",
+        "cues": [
+          {
+            "key": "B",
+            "phrase": "error type, recoverability status, and actionable context"
+          }
+        ]
       }
     },
     {
@@ -9862,9 +9872,9 @@
         }
       ],
       "a": [
-        "A"
+        "B"
       ],
-      "e": "[Cảnh báo đáp án nguồn] Khóa nguồn: A; đề xuất: B. Timeout không chứng minh thao tác chưa xảy ra. Không đánh dấu retry_safe khi chưa xác minh trạng thái gửi hoặc chưa có cơ chế idempotency.",
+      "e": "Timeout khi gửi thông báo có thể xảy ra sau khi bên thứ ba đã gửi thành công. Báo rõ trạng thái chưa xác định và tránh retry mù quáng. Chỉ retry khi đã xác minh trạng thái hoặc có cơ chế idempotency bảo đảm không gửi trùng.",
       "m": 1,
       "v": {
         "q": "<p>Tool send_notification gọi các API nhắn tin của bên thứ ba. Khi dịch vụ hết thời gian chờ trong lúc gửi, bạn không thể xác định tin nhắn đã thực sự được gửi hay chưa. Hiện tool trả về is_error: true cùng thông báo chung “Notification failed” cho mọi timeout. Giám sát production cho thấy agent tự động thử lại và thường khiến người dùng nhận thông báo trùng lặp. Bạn nên sửa phản hồi lỗi như thế nào?</p>",
@@ -9877,9 +9887,14 @@
       },
       "topic": "d2",
       "tip": {
-        "kind": "caution",
-        "text": "Timeout gửi notification không chứng minh chưa gửi. Không đặt retry_safe:true nếu chưa có idempotency hoặc kiểm tra trạng thái.",
-        "cues": []
+        "kind": "cue",
+        "text": "Timeout của thao tác có side effect, không biết đã gửi hay chưa → báo trạng thái chưa xác định, tránh retry; khác lỗi đọc dữ liệu tạm thời.",
+        "cues": [
+          {
+            "key": "B",
+            "phrase": "status unknown. Message may have been sent. Avoid retry."
+          }
+        ]
       }
     },
     {

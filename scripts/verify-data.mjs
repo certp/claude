@@ -9,7 +9,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 // Answer keys are also fingerprinted, but their baseline may be updated after a reviewed fix.
 // Domain metadata is intentionally excluded so relabeling never changes these hashes.
 const banks = {
-  ccaf: { count: 309, english: '0bfd5bec', englishText: '86a599d8', domains: 5 },
+  ccaf: { count: 309, english: 'c1475475', englishText: '86a599d8', domains: 5 },
   ccao: { count: 193, english: '86bde794', englishText: '0207dba6', domains: 7 },
   ccdf: { count: 155, english: '629ed52c', englishText: 'a889909d', domains: 8 },
 };
@@ -107,7 +107,7 @@ const architectTopics = {
   "1503": "d5",
   "1505": "d5"
 };
-const architectSourceWarnings = ["159","196","239","246","1232","1236","1239","1401","1402","1406","1407","1408","1412","1417","1428","1430","1432","1448"];
+const architectSourceWarnings = ["196","239","246","1232","1236","1239","1401","1402","1406","1412","1417","1428","1430","1432","1448"];
 
 const architectTipCautions = [...architectSourceWarnings, '1397', '207', '164', '272', '168'];
 const normalizedOption = s => s.replace(/<[^>]*>/g, ' ').replace(/&gt;/g, '>').replace(/&lt;/g, '<').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim().toLowerCase();
@@ -239,6 +239,10 @@ for (const [cert, expected] of Object.entries(banks)) {
       assert.equal(byId.get(id)?.tip?.kind, 'caution', `ccaf:${id}: uncertain source must not teach an answer shortcut`);
     }
     console.log('PASS ccaf: tip coverage, local uniqueness and cross-question distinctions');
+    // Reviewed answer-key corrections: keep the original English text pinned independently.
+    for (const [id, correct] of Object.entries({"159":["B"],"239":["A"],"1402":["C","D"],"1407":["B"],"1408":["B"]})) {
+      assert.deepEqual(byId.get(id)?.a, correct, `ccaf:${id} corrected answer key drifted`);
+    }
     for (const id of architectSourceWarnings) {
       assert.match(byId.get(id)?.e ?? '', /^\[(Cảnh báo|Không thể xác minh)/u,
         `ccaf:${id} source warning missing`);
