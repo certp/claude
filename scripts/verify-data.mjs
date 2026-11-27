@@ -109,6 +109,31 @@ const architectTopics = {
 };
 const architectSourceWarnings = ["159","196","239","246","1232","1236","1239","1401","1402","1406","1407","1408","1412","1417","1428","1430","1432","1448"];
 
+const architectTipCautions = [...architectSourceWarnings, '1397', '207', '164', '272'];
+const normalizedOption = s => s.replace(/<[^>]*>/g, ' ').replace(/&gt;/g, '>').replace(/&lt;/g, '<').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim().toLowerCase();
+function verifyArchitectTip(q) {
+  const label = `ccaf:${q.id} tip`;
+  assert.ok(q.tip && ['cue', 'caution'].includes(q.tip.kind), `${label}: missing/invalid kind`);
+  assert.equal(typeof q.tip.text, 'string', `${label}: missing text`);
+  assert.ok(q.tip.text.trim().length >= 25 && !/tác nhân|�/iu.test(q.tip.text), `${label}: invalid text`);
+  assert.ok(Array.isArray(q.tip.cues), `${label}: missing cues`);
+  if (q.tip.kind === 'caution') {
+    assert.equal(q.tip.cues.length, 0, `${label}: uncertain source cannot recommend a keyword`);
+    return;
+  }
+  assert.equal(q.tip.cues.length, q.a.length, `${label}: must cover every correct choice`);
+  assert.deepEqual(q.tip.cues.map(c => c.key).sort(), [...q.a].sort(), `${label}: incorrect or duplicate choice key`);
+  for (const cue of q.tip.cues) {
+    assert.equal(typeof cue.phrase, 'string', `${label}: invalid phrase`);
+    const phrase = normalizedOption(cue.phrase);
+    assert.ok(phrase.length >= 3, `${label}: empty/too-short phrase`);
+    assert.ok(normalizedOption(q.o.find(o => o.k === cue.key).h).includes(phrase), `${label}: phrase absent from keyed option`);
+    assert.ok(!q.o.some(o => !q.a.includes(o.k) && normalizedOption(o.h).includes(phrase)),
+      `${label}: keyword also appears in a distractor`);
+  }
+}
+
+
 const associateTopics = {
   '972':'d6', '975':'d3', '976':'d1', '977':'d1', '1002':'d7',
   '1046':'d7', '1047':'d5', '1050':'d4', '1051':'d6',
@@ -123,6 +148,7 @@ const associateTopics = {
 const html = readFileSync(join(root, 'index.html'), 'utf8');
 assert.ok(!html.includes('const DATA = {"ccaf"'), 'Question banks must not be embedded in HTML');
 assert.ok(html.includes('loadQuestionBank'), 'Lazy loader is missing');
+assert.ok(html.includes('answerTipHTML(q)') && html.includes('answerTipHTML(question)'), 'Answer tips missing from learning or review');
 
 let total = 0;
 for (const [cert, expected] of Object.entries(banks)) {
@@ -172,6 +198,11 @@ for (const [cert, expected] of Object.entries(banks)) {
     for (const [id, topic] of Object.entries(architectTopics)) {
       assert.equal(byId.get(id)?.topic, topic, `ccaf:${id} reviewed domain drifted`);
     }
+    for (const q of bank.qs) verifyArchitectTip(q);
+    for (const id of architectTipCautions) {
+      assert.equal(byId.get(id)?.tip?.kind, 'caution', `ccaf:${id}: uncertain source must not teach an answer shortcut`);
+    }
+    console.log('PASS ccaf: all question tips cover correct options without distractor phrase collisions');
     for (const id of architectSourceWarnings) {
       assert.match(byId.get(id)?.e ?? '', /^\[(Cảnh báo|Không thể xác minh)/u,
         `ccaf:${id} source warning missing`);
