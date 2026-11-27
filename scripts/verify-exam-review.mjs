@@ -25,7 +25,7 @@ const { questionHTML, answerTipHTML, feedbackHTML } = new Function('LANG', 'peek
 const questions = [
   { id:'multi', m:2, q:'Multiple answer', a:['a','c'],
     o:[{k:'a',h:'Alpha'},{k:'b',h:'Beta'},{k:'c',h:'Gamma'}],
-    e:'Multi-answer explanation', tip:{kind:'cue',text:'Compare the context <before> choosing.',cues:[{key:'a',phrase:'Alpha'},{key:'c',phrase:'Gamma'}]} },
+    e:'Multi-answer explanation', tip:{kind:'cue',text:'Compare the context <before> choosing.',contrast:'Do not use this for <other> cases.',cues:[{key:'a',phrase:'Alpha'},{key:'c',phrase:'Gamma'}]} },
   { id:'single', m:1, q:'Single answer', a:['d'],
     o:[{k:'d',h:'Delta'},{k:'e',h:'Epsilon'}] },
   { id:'blank', m:1, q:'Unanswered', a:['f'],
@@ -85,6 +85,13 @@ assert.match(markup, /class="choice-flag correct">Đáp án đúng/);
 assert.match(markup, /Multi-answer explanation/);
 assert.match(markup, /Mẹo nhận diện đáp án/);
 assert.match(markup, /Compare the context &lt;before&gt; choosing\./);
+assert.match(markup, /Phân biệt với câu dễ nhầm:/);
+assert.match(markup, /Do not use this for &lt;other&gt; cases\./);
+assert.match(markup, /chỉ trong ngữ cảnh câu này/);
+assert.match(feedbackHTML(shuffled, ['a']), /Phân biệt với câu dễ nhầm:/);
+const ocrTip = answerTipHTML({tip:{kind:'cue',text:'Command example',cues:[{key:'a',phrase:'/ compact',label:'/compact'}]}});
+assert.match(ocrTip, /<code>\/compact<\/code>/);
+assert.doesNotMatch(ocrTip, /\/ compact/);
 assert.match(markup, /<code>Alpha<\/code>.*<code>Gamma<\/code>/);
 assert.match(feedbackHTML(shuffled, ['a']), /Mẹo nhận diện đáp án/);
 assert.match(feedbackHTML(shuffled, ['a','c']), /<code>Alpha<\/code>.*<code>Gamma<\/code>/);
@@ -106,13 +113,13 @@ assert.match(blank, /Bạn chọn:<\/b> Không chọn/);
 assert.match(blank, /disabled aria-pressed="false"/);
 assert.match(blank, /Lưu ý khi làm câu này/);
 assert.match(blank, /Uncertain source answer/);
-assert.doesNotMatch(blank, /tip-keywords|Mẹo nhận diện đáp án/, 'Caution must not recommend a keyword');
+assert.doesNotMatch(blank, /tip-keywords|Mẹo nhận diện đáp án|tip-contrast/, 'Caution must not recommend a keyword');
 const empty = review.examReviewHTML({id:'mock'}, 3, 1, 1, [], undefined);
 assert.match(empty, /Không có câu hỏi trong bộ lọc này/);
 assert.equal(makeReview(null).examReviewHTML({id:'mock'}, 3, 1, 1, [], undefined), '');
 
 const preSubmit = questionHTML(questions[0], 1, {selected:['a'], mode:'exam'});
-assert.doesNotMatch(preSubmit, /Bạn đã chọn|Đáp án đúng|answer-tip|Mẹo nhận diện đáp án|Compare the context/,
+assert.doesNotMatch(preSubmit, /Bạn đã chọn|Đáp án đúng|answer-tip|Mẹo nhận diện đáp án|Compare the context|Phân biệt với câu dễ nhầm|Do not use this/,
   'The exam must never reveal selected/correct review labels before submission');
 assert.equal(JSON.stringify(EXM), snapshot, 'Review must not modify answers or option order');
 
