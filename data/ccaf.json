@@ -227,7 +227,12 @@
       "tip": {
         "kind": "cue",
         "text": "Context rendering suy giảm, chuyển sang physics → tóm tắt findings rồi tạo subagent mới.",
-        "cues": []
+        "cues": [
+          {
+            "key": "D",
+            "phrase": "with that summary in its initial context"
+          }
+        ]
       }
     },
     {
@@ -779,14 +784,9 @@
       },
       "topic": "d2",
       "tip": {
-        "kind": "cue",
-        "text": "Theo cách phân loại của đề: request sai cấu trúc → JSON-RPC protocol error; API ngoài lỗi khi thực thi → tool result isError.",
-        "cues": [
-          {
-            "key": "C",
-            "phrase": "JSON-RPC protocol error, report errors 2 and 3 as tool results with isError: true"
-          }
-        ]
+        "kind": "caution",
+        "text": "Đề phân loại thiếu tham số bắt buộc thành JSON-RPC error, nhưng nhiều MCP SDK trả lỗi validation inputSchema bằng isError:true. Phân biệt lỗi cấu trúc giao thức với lỗi argument/tool; không học thuộc thiếu tham số luôn là protocol error.",
+        "cues": []
       }
     },
     {
@@ -2795,14 +2795,9 @@
       },
       "topic": "d1",
       "tip": {
-        "kind": "cue",
-        "text": "Khách quay lại, tool result cũ lỗi thời → phiên mới + summary + gọi tool mới. Hai lựa chọn gần trùng nên không học chữ cái.",
-        "cues": [
-          {
-            "key": "C",
-            "phrase": "new session, inject a structured summary"
-          }
-        ]
+        "kind": "caution",
+        "text": "Hai phương án mô tả cùng một giải pháp: phiên mới + structured summary + fresh tool calls. Không có keyword phân biệt về mặt kỹ thuật; không học thuộc khóa nguồn.",
+        "cues": []
       }
     },
     {
@@ -5137,7 +5132,12 @@
       "tip": {
         "kind": "cue",
         "text": "Workflow dùng chung team, gọi lại nhiều lần, version control → skill trong .claude/skills của repo.",
-        "cues": []
+        "cues": [
+          {
+            "key": "C",
+            "phrase": "at the project root, committed to version control"
+          }
+        ]
       }
     },
     {
@@ -6681,14 +6681,9 @@
       },
       "topic": "d2",
       "tip": {
-        "kind": "cue",
-        "text": "Theo cách phân loại của đề: request sai cấu trúc → JSON-RPC protocol error; API ngoài lỗi khi thực thi → tool result isError.",
-        "cues": [
-          {
-            "key": "C",
-            "phrase": "JSON-RPC protocol error, report errors 2 and 3 as tool results with isError: true"
-          }
-        ]
+        "kind": "caution",
+        "text": "Đề phân loại thiếu tham số bắt buộc thành JSON-RPC error, nhưng nhiều MCP SDK trả lỗi validation inputSchema bằng isError:true. Phân biệt lỗi cấu trúc giao thức với lỗi argument/tool; không học thuộc thiếu tham số luôn là protocol error.",
+        "cues": []
       }
     },
     {
@@ -13534,8 +13529,13 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Agent 2 có partial results + lỗi một file, agent 3 crash không output → giữ phần đã có, retry phần chưa xác nhận.",
-        "cues": []
+        "text": "Agent 2 có partial results + lỗi một file → giữ phần đã xác nhận, xử lý riêng file lỗi. Agent 3 crash không output → chạy lại toàn bộ folder, không giả định lỗi giống agent 2.",
+        "cues": [
+          {
+            "key": "A",
+            "phrase": "keep its partial results in the index and follow up on the one file"
+          }
+        ]
       }
     },
     {
@@ -13859,7 +13859,12 @@
       "tip": {
         "kind": "cue",
         "text": "Rate limiter đã rõ throttling/burst/reset → TDD test trước, implement rồi lặp với test fail.",
-        "cues": []
+        "cues": [
+          {
+            "key": "A",
+            "phrase": "window resets before the implementation"
+          }
+        ]
       }
     },
     {
