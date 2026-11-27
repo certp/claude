@@ -143,6 +143,7 @@ svg.i{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke
 .feedback .why{font-size:14px;color:var(--ink);opacity:.92}
 .answer-tip{margin-top:14px;padding:12px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;background:var(--surface);color:var(--ink);font-size:14px;line-height:1.65;overflow-wrap:anywhere}
 .answer-tip.caution{border-left-color:var(--bad)}
+.answer-tip .tip-contrast{margin-top:8px;padding-top:8px;border-top:1px dashed var(--line)}
 .answer-tip h5{font-size:14px;margin:0 0 6px}.answer-tip p{margin:0}.answer-tip .tip-keywords{margin-top:8px;font-size:13px;color:var(--muted)}.answer-tip code{white-space:normal;overflow-wrap:anywhere;color:var(--ink)}
 .qfoot{display:flex;justify-content:space-between;gap:10px;margin-top:26px;padding-top:20px;border-top:1px solid var(--line);flex-wrap:wrap}
 .kbd{font-size:11px;border:1px solid currentColor;border-radius:5px;padding:0 5px;opacity:.7}
@@ -723,11 +724,12 @@ function answerTipHTML(q){
   const tip = q.tip;
   if (!tip || typeof tip.text !== 'string') return '';
   const caution = tip.kind === 'caution';
-  const phrases = !caution && Array.isArray(tip.cues) ? tip.cues.map(c => `<code>${esc(c.phrase)}</code>`).join(' · ') : '';
+  const phrases = !caution && Array.isArray(tip.cues) ? tip.cues.map(c => `<code>${esc(c.label || c.phrase)}</code>`).join(' · ') : '';
   return `<aside class="answer-tip${caution?' caution':''}">
     <h5>${caution?'Lưu ý khi làm câu này':'Mẹo nhận diện đáp án'}</h5>
     <p>${esc(tip.text)}</p>
-    ${phrases?`<div class="tip-keywords"><b>Cụm từ trong đáp án:</b> ${phrases}</div>`:''}
+    ${!caution && tip.contrast?`<p class="tip-contrast"><b>Phân biệt với câu dễ nhầm:</b> ${esc(tip.contrast)}</p>`:''}
+    ${phrases?`<div class="tip-keywords"><b>Cụm từ cần nhận diện (chỉ trong ngữ cảnh câu này):</b> ${phrases}</div>`:''}
   </aside>`;
 }
 function feedbackHTML(q, sel){
