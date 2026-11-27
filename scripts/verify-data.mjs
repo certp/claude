@@ -125,6 +125,7 @@ function verifyArchitectTip(q, questions) {
   assert.ok(q.tip && ['cue', 'caution'].includes(q.tip.kind), `${label}: missing/invalid kind`);
   assert.equal(typeof q.tip.text, 'string', `${label}: missing text`);
   assert.ok(q.tip.text.trim().length >= 25 && !/tác nhân|�/iu.test(q.tip.text), `${label}: invalid text`);
+  assert.ok(q.tip.text.length <= 120 && !/[\r\n]/u.test(q.tip.text), `${label}: keep the tip to one short line (max 120 characters)`);
   assert.ok(Array.isArray(q.tip.cues), `${label}: missing cues`);
   if (q.tip.kind === 'caution') {
     assert.equal(q.tip.cues.length, 0, `${label}: uncertain source cannot recommend a keyword`);
@@ -223,6 +224,7 @@ for (const [cert, expected] of Object.entries(banks)) {
       verifyArchitectTip(q, bank.qs);
       if (q.tip.contrast !== undefined) {
         assert.equal(typeof q.tip.contrast, 'string', `ccaf:${q.id}: invalid contrast`);
+        assert.ok(q.tip.contrast.length <= 120 && !/[\r\n]/u.test(q.tip.contrast), `ccaf:${q.id}: keep the contrast to one short line`);
         const refs = [...q.tip.contrast.matchAll(/#(\d+)/g)].map(m => m[1]);
         assert.ok(refs.length > 0 && refs.every(id => id !== q.id && byId.has(id)),
           `ccaf:${q.id}: contrast must reference existing other question IDs`);
@@ -235,6 +237,8 @@ for (const [cert, expected] of Object.entries(banks)) {
     assert.throws(() => verifyArchitectTip(sample, [sample,distractor]), /explain the distinction/);
     sample.tip.contrast = 'Use system prompt for persona, not backend enforcement.';
     assert.doesNotThrow(() => verifyArchitectTip(sample, [sample,distractor]));
+    const verboseSample = {...sample, tip:{...sample.tip, text:'Long tip. '.repeat(20)}};
+    assert.throws(() => verifyArchitectTip(verboseSample, [verboseSample,distractor]), /one short line/);
     for (const id of architectTipCautions) {
       assert.equal(byId.get(id)?.tip?.kind, 'caution', `ccaf:${id}: uncertain source must not teach an answer shortcut`);
     }
