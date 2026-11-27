@@ -24,15 +24,15 @@
       "a": [
         "D"
       ],
-      "e": "Mỗi tác nhân phụ có ngữ cảnh riêng. Tác nhân điều phối phải chuyển kết quả của hai bước trước cho tác nhân tổng hợp qua lời nhắc.",
+      "e": "Mỗi subagent có ngữ cảnh riêng. Agent điều phối phải chuyển kết quả của hai bước trước cho agent tổng hợp qua lời nhắc.",
       "m": 1,
       "v": {
-        "q": "<p>Sau khi tác nhân tìm kiếm trên web và tác nhân phân tích tài liệu hoàn tất công việc, tác nhân điều phối gọi tác nhân tổng hợp. Tác nhân tổng hợp báo rằng nó chưa nhận được kết quả nghiên cứu nên không thể hoàn thành nhiệm vụ. Nguyên nhân nào có khả năng cao nhất?</p>",
+        "q": "<p>Sau khi agent tìm kiếm trên web và agent phân tích tài liệu hoàn tất công việc, agent điều phối gọi agent tổng hợp. Agent tổng hợp báo rằng nó chưa nhận được kết quả nghiên cứu nên không thể hoàn thành nhiệm vụ. Nguyên nhân nào có khả năng cao nhất?</p>",
         "o": [
-          "<p>Các tác nhân phụ cần dùng chung một kết nối API để tự động chia sẻ ngữ cảnh giữa các lần gọi.</p>",
-          "<p>Cửa sổ ngữ cảnh của tác nhân tổng hợp quá nhỏ để chứa toàn bộ kết quả từ hai tác nhân trước.</p>",
-          "<p>Tác nhân điều phối chưa đưa kết quả của hai tác nhân trước vào lời nhắc gửi cho tác nhân tổng hợp.</p>",
-          "<p>Tác nhân tổng hợp cần công cụ để lấy kết quả trực tiếp từ lịch sử hội thoại của các tác nhân khác.</p>"
+          "<p>Các subagent cần dùng chung một kết nối API để tự động chia sẻ ngữ cảnh giữa các lần gọi.</p>",
+          "<p>Cửa sổ ngữ cảnh của agent tổng hợp quá nhỏ để chứa toàn bộ kết quả từ hai agent trước.</p>",
+          "<p>Agent điều phối chưa đưa kết quả của hai agent trước vào lời nhắc gửi cho agent tổng hợp.</p>",
+          "<p>Agent tổng hợp cần công cụ để lấy kết quả trực tiếp từ lịch sử hội thoại của các agent khác.</p>"
         ]
       },
       "topic": "d1"
@@ -212,7 +212,7 @@
       "e": "Coordinator spawn nhiều subagent song song, mỗi subagent một nhóm precedent, rồi gom kết quả. Nhanh hơn mà coordinator vẫn quan sát và debug được. để subagent tự sinh subagent con hay đệ quy sẽ khó kiểm soát.",
       "m": 1,
       "v": {
-        "q": "<p>Khi phân tích các vị án pháp lý phức tạp trích dẫn nhiễu tiến lệ, document analysis subagent xử lý tăng tiến lệ tuần tự. Một vị án mang tính bước ngoắt trích dẫn 12 tiến lệ mặt hơn 3 phút để phân tích hoàn chỉnh. Cách hiệu quả nhất để giảm độ trễ này mà vẫn giữ được khả năng của tác nhân điều phối trong việc giám sát và debug hệ thống là gì?</p>",
+        "q": "<p>Khi phân tích các vị án pháp lý phức tạp trích dẫn nhiễu tiến lệ, document analysis subagent xử lý tăng tiến lệ tuần tự. Một vị án mang tính bước ngoắt trích dẫn 12 tiến lệ mặt hơn 3 phút để phân tích hoàn chỉnh. Cách hiệu quả nhất để giảm độ trễ này mà vẫn giữ được khả năng của agent điều phối trong việc giám sát và debug hệ thống là gì?</p>",
         "o": [
           "<p>Để coordinator tạo các document analysis subagent chạy song song, mỗi subagent xử lý một tập con các tiến lệ, rồi tổng hợp kết quả trước khi synthesis</p>",
           "<p>Cho phép document analysis subagent tự động tạo các subagent chuyên biệt của riêng nó khi gộp các vị án có nhiều trích dẫn</p>",
@@ -397,9 +397,9 @@
       "e": "Bắt mỗi subagent xuất mapping claim ở source có cấu trúc, và synthesis phải giữ nguyên, merge các mapping đó. đây là cách giả attribution xuyên suốt pipeline.",
       "m": 1,
       "v": {
-        "q": "<p>Trong môi trường production, các báo cáo cuối cùng thường chứa các nhận định không có nguồn trích dẫn phù hợp. điều tra cho thấy rằng trong khi tác nhân tìm kiếm trên web và tác nhân phân tích tài liệu gần citation đúng vào output của chúng, tác nhân tổng hợp lại mất dấu nguồn nào hỗ trợ kết luận nào khi kết hợp các phát hiện. Thay đổi kiến trúc hiệu quả nhất là gì?</p>",
+        "q": "<p>Trong môi trường production, các báo cáo cuối cùng thường chứa các nhận định không có nguồn trích dẫn phù hợp. điều tra cho thấy rằng trong khi agent tìm kiếm trên web và agent phân tích tài liệu gần citation đúng vào output của chúng, agent tổng hợp lại mất dấu nguồn nào hỗ trợ kết luận nào khi kết hợp các phát hiện. Thay đổi kiến trúc hiệu quả nhất là gì?</p>",
         "o": [
-          "<p>Yêu cầu tất cả subagent xuất ra các ánh xạ claim-source có cấu trúc mà tác nhân tổng hợp phải giữ nguyên và gặp lỗi khi kết hợp các phát hiện từ nhiều nguồn.</p>",
+          "<p>Yêu cầu tất cả subagent xuất ra các ánh xạ claim-source có cấu trúc mà agent tổng hợp phải giữ nguyên và gặp lỗi khi kết hợp các phát hiện từ nhiều nguồn.</p>",
           "<p>Để coordinator chèn các tiến từ định danh nguồn vào văn bản trước mỗi lần bàn giao, rồi phân tích các tiền tố này khi tạo báo cáo để tái dụng các citation.</p>",
           "<p>Lưu trợ đầy đủ transcript của mỗi tương tác subagent và thêm một citation-resolution agent để phân tích log và xác định phần quy gán nguồn trước khi tạo báo cáo.</p>",
           "<p>Thêm một bước xác minh trong đó report generator dùng so khớp độ tương đồng ngữ nghĩa với các nguồn gốc để tái dụng claim nào đến từ tài liệu nào.</p>"
@@ -468,15 +468,15 @@
       "a": [
         "A"
       ],
-      "e": "Mô hình hub-and-spoke: coordinator nhận output tự tác nhân tìm kiếm trên web, rồi đưa phận liên quan vào prompt khi gửi document analysis agent. Các agent không gửi nhau trực tiếp.",
+      "e": "Mô hình hub-and-spoke: coordinator nhận output tự agent tìm kiếm trên web, rồi đưa phận liên quan vào prompt khi gửi document analysis agent. Các agent không gửi nhau trực tiếp.",
       "m": 1,
       "v": {
-        "q": "<p>Web search agent đã thu thập được một số nguồn liên quan cho một chỉ để nghiên cứu. Giữ tác nhân phân tích tài liệu cần xem xét các nguồn này. Thông tin chạy giữa hai subagent chuyên biệt này như thế nào?</p>",
+        "q": "<p>Web search agent đã thu thập được một số nguồn liên quan cho một chỉ để nghiên cứu. Giữ agent phân tích tài liệu cần xem xét các nguồn này. Thông tin chạy giữa hai subagent chuyên biệt này như thế nào?</p>",
         "o": [
-          "<p>Các agent giao tiếp thông qua một event-driven message queue, trong đó tác nhân phân tích tài liệu đăng ký (subscribe) các sự kiện hoàn thành cửa web search.</p>",
-          "<p>Web search agent trực tiếp gửi tác nhân phân tích tài liệu, dùng các nguồn đã tìm được làm tham số.</p>",
-          "<p>\"Coordinator agent nhận output của tác nhân tìm kiếm trên web và đưa các phát hiện liên quan vào prompt khi gửi document analysis agent.</p>",
-          "<p>Cả hai agent truy cập một shared memory store, nội tác nhân tìm kiếm trên web ghi các phát hiện và tác nhân phân tích tài liệu đọc chúng.</p>"
+          "<p>Các agent giao tiếp thông qua một event-driven message queue, trong đó agent phân tích tài liệu đăng ký (subscribe) các sự kiện hoàn thành cửa web search.</p>",
+          "<p>Web search agent trực tiếp gửi agent phân tích tài liệu, dùng các nguồn đã tìm được làm tham số.</p>",
+          "<p>\"Coordinator agent nhận output của agent tìm kiếm trên web và đưa các phát hiện liên quan vào prompt khi gửi document analysis agent.</p>",
+          "<p>Cả hai agent truy cập một shared memory store, nội agent tìm kiếm trên web ghi các phát hiện và agent phân tích tài liệu đọc chúng.</p>"
         ]
       },
       "topic": "d1"
@@ -508,7 +508,7 @@
       "e": "Truyền bạn draft của synthesis cùng một source index có cấu trúc (claim ở URL, đoạn trích). Vừa gần vừa đủ để gắn citation chính xác, không cần mang theo 120K token thô.",
       "m": 1,
       "v": {
-        "q": "<p>Sau khi tác nhân tìm kiếm trên web tìm được 25 nguồn (120K token nội dung thô), tác nhân phân tích tài liệu trích xuất các insight chính (15K token), và tác nhân tổng hợp tạo ra một bản nháp trình bày mạch lạc (3K token), coordinator phải truyền context cho report generation agent để tạo output cuối cùng kèm trích dẫn nguồn đúng chuẩn. Chiến lược truyền context nào cung cấp số cân bằng tốt nhất giữa tính đầy đủ và hiệu quả?</p>",
+        "q": "<p>Sau khi agent tìm kiếm trên web tìm được 25 nguồn (120K token nội dung thô), agent phân tích tài liệu trích xuất các insight chính (15K token), và agent tổng hợp tạo ra một bản nháp trình bày mạch lạc (3K token), coordinator phải truyền context cho report generation agent để tạo output cuối cùng kèm trích dẫn nguồn đúng chuẩn. Chiến lược truyền context nào cung cấp số cân bằng tốt nhất giữa tính đầy đủ và hiệu quả?</p>",
         "o": [
           "<p>Truyền toàn bộ context tích lấy từ tất cả các agent trước đó.</p>",
           "<p>Chỉ truyền bản nháp synthesis và độ một bước hậu xử lý pipeline riêng đối chiếu các claim với nguồn và chèn citation sau khi báo cáo được tạo.</p>",
@@ -2398,7 +2398,7 @@
         "q": "<p>Synthesis agent nhận các phát hiện đã được tóm tắt từ các agent tìm kiếm web và phân tích tài liệu, sau đó chuyển một bản tóm tắt hợp nhất cho report generator. Trong quá trình kiểm thử, bạn phát hiện các báo cáo được tạo ra đưa ra các khẳng định thực tế mà không có trích dẫn phù hợp—report generator không thể gán các phát biểu cho nguồn gốc ban đầu vì metadata đó đã bị mất trong các bước tóm tắt. Cách tiếp cận hiệu quả nhất để đảm bảo ghi nguồn đúng trong các báo cáo cuối cùng là gì?</p>",
         "o": [
           "<p>Bỏ qua bước tóm tắt và chuyển toàn bộ đầu ra thô từ tìm kiếm web và phân tích tài liệu trực tiếp cho report generator.</p>",
-          "<p>Chỉ dẫn tác nhân tổng hợp nhúng các tham chiếu nguồn ngay trong văn bản tóm tắt của nó bằng một định dạng trích dẫn nhất quán.</p>",
+          "<p>Chỉ dẫn agent tổng hợp nhúng các tham chiếu nguồn ngay trong văn bản tóm tắt của nó bằng một định dạng trích dẫn nhất quán.</p>",
           "<p>Yêu cầu mỗi agent xuất dữ liệu có cấu trúc tách riêng phần tóm tắt nội dung và metadata nguồn (URL, tên tài liệu, số trang).</p>",
           "<p>Độ report generator truy vấn agent tìm kiếm web nhằm tìm lại nguồn cho các khẳng định trong báo cáo cuối cùng.</p>"
         ]
@@ -3246,7 +3246,7 @@
       "e": "Coordinator chỉ \"nói\" sẽ ủy quyền mà không spawn được subagent vì `allowedTools` thiếu tool \"Task\", tool dùng để gửi subagent.",
       "m": 1,
       "v": {
-        "q": "<p>Coordinator agent đã có AgentDefinitions được cấu hình cho cơ bản subagent chuyên biệt, mỗi cái có mô tả, prompt và giới hạn tool phù hợp. Trong quá trình kiểm thử, bạn nhận thấy coordinator suy luận đúng vị thời điểm cần ủy quyền—nó tạo ra các tin nhắn như \"I'll ask the tác nhân tìm kiếm trên web to find sources on this topic\"—nhưng không có subagent nào thực sự được thực thi. Sau đó coordinator tiếp tục như thế việc ủy quyền đã xảy ra và tiếp tục với thông tin không đầy đủ. Log không hiển thị lỗi. Nguyên nhân có khả năng cao nhất là gì?</p>",
+        "q": "<p>Coordinator agent đã có AgentDefinitions được cấu hình cho cơ bản subagent chuyên biệt, mỗi cái có mô tả, prompt và giới hạn tool phù hợp. Trong quá trình kiểm thử, bạn nhận thấy coordinator suy luận đúng vị thời điểm cần ủy quyền—nó tạo ra các tin nhắn như \"I'll ask the web search agent to find sources on this topic\"—nhưng không có subagent nào thực sự được thực thi. Sau đó coordinator tiếp tục như thế việc ủy quyền đã xảy ra và tiếp tục với thông tin không đầy đủ. Log không hiển thị lỗi. Nguyên nhân có khả năng cao nhất là gì?</p>",
         "o": [
           "<p>AgentDefinitions được cấu hình đúng, những system prompt của coordinator không liệt kê tượng minh các loại subagent có sẵn, khiến model không biết chúng có thể được gọi.</p>",
           "<p>Cấu hình allowedTools của coordinator không bao gồm \"Task\", nên dù có thể suy luận về việc ủy quyền, nó không thể gọi tool cần thiết để tạo subagent.</p>",
@@ -3394,7 +3394,7 @@
       "e": "Phải chọn trong 18 tool thay vì 4–5 tool liên quan làm độ phức tạp khi ra quyết định tăng lên. Mới agent chỉ nên được cập đúng các tool thuộc vai trò của nó.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đã cấu hình hệ thống sao cho cơ bản subagent đều có quyền truy cập toàn bộ 18 tool. Trong quá trình kiểm thử, các agent thường xuyên gửi các tool nằm ngoài chuyên môn của chúng—tác nhân tổng hợp cố gắng tìm kiếm web, và report generator cố gắng phân tích tài liệu. Nguyên nhân chính của hành vi chọn tool kém này là gì?</p>",
+        "q": "<p>Bạn đã cấu hình hệ thống sao cho cơ bản subagent đều có quyền truy cập toàn bộ 18 tool. Trong quá trình kiểm thử, các agent thường xuyên gửi các tool nằm ngoài chuyên môn của chúng—agent tổng hợp cố gắng tìm kiếm web, và report generator cố gắng phân tích tài liệu. Nguyên nhân chính của hành vi chọn tool kém này là gì?</p>",
         "o": [
           "<p>Các mô tả vai trò của agent trong system prompt xung đột với việc có quyền truy cập các tool nằm ngoài vai trò đó.</p>",
           "<p>Các định nghĩa tool chiếm quá nhiều không gian cửa sổ ngữ cảnh, khiến không để chỉ cho nội dung tác vụ.</p>",
@@ -5619,7 +5619,7 @@
           "<p>Tăng độ rộng ban đầu của các truy vấn gọi tại các web-search và document-analysis agent để giảm xác suất bỏ sót thông tin liên quan.</p>",
           "<p>Để coordinator đánh giá đầu ra synthesis để tìm các khoảng trống, sau đó giao lại các truy vấn có mục tiêu cho các web-search và document-analysis agent trước khi gửi synthesis lần nữa.</p>",
           "<p>Độ report-generation agent xác định các câu hỏi nghiên cứu chưa được trả lời đủ người dùng hiệu các hạn chế của đầu ra cuối cùng.</p>",
-          "<p>Cho tác nhân tổng hợp quyền truy cập trực tiếp vào các web-search tool để nó tự động lớp đẩy các khoảng trống kiến thức mà không trả quyền điều khiển về coordinator.</p>"
+          "<p>Cho agent tổng hợp quyền truy cập trực tiếp vào các web-search tool để nó tự động lớp đẩy các khoảng trống kiến thức mà không trả quyền điều khiển về coordinator.</p>"
         ]
       },
       "topic": "d1"
@@ -5801,7 +5801,7 @@
       "v": {
         "q": "<p>Một người dùng mở rộng hệ thống nghiên cứu vượt ra ngoài web-search agent ban đầu bằng cách bổ sung các nguồn dữ liệu chuyên biệt. Một financial API agent trả về JSON có cấu trúc chưa doanh thu, biên lợi nhuận và tốc để tổng trường. Một news-monitoring agent trả về các bản tóm tắt dạng văn xuôi về những diện biến gần đây. Một patent-analysis agent trả về các danh sách có cấu trúc về các lệnh vực công nghị. Synthesis agent kết hợp các kết quả này thành các bản briefing dành cho lãnh đảo. Hiện tại, nó chuyển mỗi thể thành các gạch đầu dòng, khiến các so sánh tài chính mất đi số rõ ràng dụng bảng và các bản tóm tắt tin tức mất đi mạch kỳ. Thay đổi nào sẽ cải thiện chất lượng briefing nhiều nhất?</p>",
         "o": [
-          "<p>Cập nhất tác nhân tổng hợp để hiển thị tổng loại nội dung một cách phù hợp—dữ liệu tài chính dưới dạng bằng, tin tức dưới dạng văn xuôi, và các lệnh vực công nghị dưới dạng danh sách có cấu trúc.</p>",
+          "<p>Cập nhất agent tổng hợp để hiển thị tổng loại nội dung một cách phù hợp—dữ liệu tài chính dưới dạng bằng, tin tức dưới dạng văn xuôi, và các lệnh vực công nghị dưới dạng danh sách có cấu trúc.</p>",
           "<p>Chuẩn hóa toàn bộ đầu ra của subagent thành JSON chứa các trường claim, evidence, source và confidence.</p>",
           "<p>Chuẩn hóa toàn bộ đầu ra của subagent thành các bản tóm tắt dạng văn xuôi kèm trích dẫn nội tuyến.</p>",
           "<p>Thêm một lớp chuyển đổi định dạng để biến mới kết quả của subagent thành một biểu diễn trung gian chung trước khi tổng hợp.</p>"
@@ -5876,7 +5876,7 @@
         "q": "<p>Người dùng báo cáo rằng các báo cáo cuối cùng đôi khi thiếu chiều sâu ở các chế độ con cụ thể. điều tra cho thấy document-analysis agent thường xuyên phát hiện các khoảng trắng bằng chứng—ví dụ, ghi nhận rằng “các nguồn đã truy xuất bàn về xác thực API những thiếu chi tiết về các mẫu token-refresh.” Với pipeline nghiêm ngắt hiện tại, phát hiện này không thể hành động được vì việc tìm kiếm đã kết thúc. Thay đổi kiến trúc nào hiệu quả nhất?</p>",
         "o": [
           "<p>Để coordinator tìm các chỉ báo khoảng trống chung trong đầu ra phân tích và chạy thêm các lần tìm kiếm mà không lặp lại giai đoạn phân tích.</p>",
-          "<p>Độ tác nhân tổng hợp gán điểm confidence cho từng phần của báo cáo và gắn cả các phần được hỗ trợ không đủ để xem xét thủ công.</p>",
+          "<p>Độ agent tổng hợp gán điểm confidence cho từng phần của báo cáo và gắn cả các phần được hỗ trợ không đủ để xem xét thủ công.</p>",
           "<p>Yêu cầu analysis agent trả về các khoảng trắng bằng chứng cụ thể cho coordinator, coordinator sẽ khởi chạy các lần tìm kiếm có mục tiêu và gửi lại phân tích cho đến khi các tiêu chí về mặc để bao phủ đã định nghĩa được thừa mãn</p>",
           "<p>Thêm một research-planning agent trước giai đoạn tìm kiếm ban đầu để phân rã mọi chế độ thành các câu hỏi con chi tiết.</p>"
         ]
@@ -8740,7 +8740,7 @@
         "q": "<p>Trong một quy trình nghiên cứu đa nguồn, rủi ro chính đối với nguồn gốc thông tin (provenance) là gì khi các phát hiện trung gian được nén bằng summarization thông thường?</p>",
         "o": [
           "<p>Việc ghi nhận nguồn bị mất một cách âm thầm trừ khi các ánh xạ claim-source có cấu trúc được yêu cầu và bảo toàn rõ ràng.</p>",
-          "<p>Nó kích hoạt một hook PreToolUse chọn tác nhân tổng hợp đọc dữ liệu.</p>",
+          "<p>Nó kích hoạt một hook PreToolUse chọn agent tổng hợp đọc dữ liệu.</p>",
           "<p>Ngân sách extended thinking của model bị cạn kiệt trước khi có thể thực hiện tổng hợp.</p>",
           "<p>Cửa sổ ngữ cảnh tự động cắt bớt các phần giữa của bạn tóm tắt.</p>"
         ]
