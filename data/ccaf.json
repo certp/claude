@@ -11076,10 +11076,10 @@
       "v": {
         "q": "<p>Các lượt xử lý theo từng file trên hai file phụ thuộc lẫn nhau mỗi lượt đề xuất một cách sửa khác nhau cho cái hóa ra là cùng một vấn đề data-flow cơ bản, và hai đề xuất mâu thuẫn nhau. Bước kiến trúc nào nên giải quyết việc này thay vì chọn ngẫu nhiên một đề xuất theo từng file?</p>",
         "o": [
-          "<p>Chạy lại tầng lượt theo file lần thứ hai và giờ đề xuất nào được diễn đặt bằng ngôn ngữ thể hiện độ tin cậy cao hơn</p>",
+          "<p>Chạy lại mỗi lượt review theo file lần thứ hai và giữ đề xuất được diễn đạt với mức độ tự tin cao hơn.</p>",
           "<p>Một lượt tích hợp cross-file riêng biệt kiểm tra cả hai file cùng nhau và đưa ra một đề xuất duy nhất dựa trên data flow thực tế</p>",
           "<p>Nhờ generator ban đầu phân xử giữa hai đề xuất, vì nó có đầy đủ context về lý do nó viết code theo cách đó</p>",
-          "<p>Gặp hai file thành một trước khi review để một lượt theo file duy nhất bao phủ cả hai mà không cần bước tích hợp</p>"
+          "<p>Gộp hai file thành một trước khi review để một lượt review duy nhất bao phủ cả hai mà không cần bước tích hợp.</p>"
         ]
       },
       "topic": "d4"
