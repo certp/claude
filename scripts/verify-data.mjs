@@ -109,9 +109,18 @@ const architectTopics = {
 };
 const architectSourceWarnings = ["159","196","239","246","1232","1236","1239","1401","1402","1406","1407","1408","1412","1417","1428","1430","1432","1448"];
 
-const architectTipCautions = [...architectSourceWarnings, '1397', '207', '164', '272'];
+const architectTipCautions = [...architectSourceWarnings, '1397', '207', '164', '272', '168'];
 const normalizedOption = s => s.replace(/<[^>]*>/g, ' ').replace(/&gt;/g, '>').replace(/&lt;/g, '<').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim().toLowerCase();
-function verifyArchitectTip(q) {
+// A source phrase is not a universal shortcut: the same words can appear in a
+// distractor elsewhere. Require an explicit contextual distinction in such cases.
+function tipCollisions(q, cue, questions) {
+  const phrase = normalizedOption(cue.phrase);
+  return questions.filter(other => other.id !== q.id && other.o.some(
+    o => !other.a.includes(o.k) && normalizedOption(o.h).includes(phrase)
+  )).map(other => other.id);
+}
+
+function verifyArchitectTip(q, questions) {
   const label = `ccaf:${q.id} tip`;
   assert.ok(q.tip && ['cue', 'caution'].includes(q.tip.kind), `${label}: missing/invalid kind`);
   assert.equal(typeof q.tip.text, 'string', `${label}: missing text`);
@@ -119,17 +128,29 @@ function verifyArchitectTip(q) {
   assert.ok(Array.isArray(q.tip.cues), `${label}: missing cues`);
   if (q.tip.kind === 'caution') {
     assert.equal(q.tip.cues.length, 0, `${label}: uncertain source cannot recommend a keyword`);
+    assert.equal(q.tip.contrast, undefined, `${label}: caution must not contain a selection contrast`);
     return;
   }
   assert.equal(q.tip.cues.length, q.a.length, `${label}: must cover every correct choice`);
   assert.deepEqual(q.tip.cues.map(c => c.key).sort(), [...q.a].sort(), `${label}: incorrect or duplicate choice key`);
   for (const cue of q.tip.cues) {
     assert.equal(typeof cue.phrase, 'string', `${label}: invalid phrase`);
+    assert.equal(cue.phrase, cue.phrase.trim(), `${label}: phrase has stray whitespace`);
+    if (cue.label !== undefined) {
+      // Only the reviewed OCR correction may differ from the verified source phrase.
+      assert.ok(q.id === '1237' && cue.phrase === '/ compact' && cue.label === '/compact',
+        `${label}: unverified display alias`);
+    }
     const phrase = normalizedOption(cue.phrase);
     assert.ok(phrase.length >= 3, `${label}: empty/too-short phrase`);
     assert.ok(normalizedOption(q.o.find(o => o.k === cue.key).h).includes(phrase), `${label}: phrase absent from keyed option`);
     assert.ok(!q.o.some(o => !q.a.includes(o.k) && normalizedOption(o.h).includes(phrase)),
       `${label}: keyword also appears in a distractor`);
+    const collisions = tipCollisions(q, cue, questions);
+    if (collisions.length) {
+      assert.ok(typeof q.tip.contrast === 'string' && q.tip.contrast.trim().length >= 25,
+        `${label}: keyword also occurs in distractors of ${collisions.join(', ')}; explain the distinction`);
+    }
   }
 }
 
@@ -198,11 +219,26 @@ for (const [cert, expected] of Object.entries(banks)) {
     for (const [id, topic] of Object.entries(architectTopics)) {
       assert.equal(byId.get(id)?.topic, topic, `ccaf:${id} reviewed domain drifted`);
     }
-    for (const q of bank.qs) verifyArchitectTip(q);
+    for (const q of bank.qs) {
+      verifyArchitectTip(q, bank.qs);
+      if (q.tip.contrast !== undefined) {
+        assert.equal(typeof q.tip.contrast, 'string', `ccaf:${q.id}: invalid contrast`);
+        const refs = [...q.tip.contrast.matchAll(/#(\d+)/g)].map(m => m[1]);
+        assert.ok(refs.length > 0 && refs.every(id => id !== q.id && byId.has(id)),
+          `ccaf:${q.id}: contrast must reference existing other question IDs`);
+      }
+    }
+    // Regression: a phrase can be locally unique but unsafe as a bank-wide shortcut.
+    const sample = {id:'sample', a:['A'], o:[{k:'A',h:'system prompt'},{k:'B',h:'other'}],
+      tip:{kind:'cue', text:'Contextual example for a regression test.', cues:[{key:'A',phrase:'system prompt'}]}};
+    const distractor = {id:'other', a:['A'], o:[{k:'A',h:'backend enforcement'},{k:'B',h:'system prompt'}]};
+    assert.throws(() => verifyArchitectTip(sample, [sample,distractor]), /explain the distinction/);
+    sample.tip.contrast = 'Use system prompt for persona, not backend enforcement.';
+    assert.doesNotThrow(() => verifyArchitectTip(sample, [sample,distractor]));
     for (const id of architectTipCautions) {
       assert.equal(byId.get(id)?.tip?.kind, 'caution', `ccaf:${id}: uncertain source must not teach an answer shortcut`);
     }
-    console.log('PASS ccaf: all question tips cover correct options without distractor phrase collisions');
+    console.log('PASS ccaf: tip coverage, local uniqueness and cross-question distinctions');
     for (const id of architectSourceWarnings) {
       assert.match(byId.get(id)?.e ?? '', /^\[(Cảnh báo|Không thể xác minh)/u,
         `ccaf:${id} source warning missing`);
