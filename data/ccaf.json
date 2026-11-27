@@ -415,7 +415,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Còn file chưa khám phá → subagent mới nhận tóm tắt phát hiện.",
+        "text": "Còn file chưa khám phá → subagent mới nhận bản tóm tắt kết quả.",
         "cues": [
           {
             "key": "D",
@@ -792,7 +792,7 @@
       "topic": "d2",
       "tip": {
         "kind": "caution",
-        "text": "Đề dễ nhầm: lỗi tham số tool không luôn là lỗi JSON-RPC.",
+        "text": "Thiếu tham số tool không luôn là lỗi JSON-RPC; có thể là isError: true.",
         "cues": []
       }
     },
@@ -975,7 +975,7 @@
       "topic": "d2",
       "tip": {
         "kind": "caution",
-        "text": "Có token xem trước chưa đồng nghĩa người dùng đã xác nhận.",
+        "text": "Token xem trước chưa phải xác nhận; chỉ execute sau khi người dùng đồng ý.",
         "cues": []
       }
     },
@@ -6695,7 +6695,7 @@
       "topic": "d2",
       "tip": {
         "kind": "caution",
-        "text": "Đề dễ nhầm: lỗi tham số tool không luôn là lỗi JSON-RPC.",
+        "text": "Thiếu tham số tool không luôn là lỗi JSON-RPC; có thể là isError: true.",
         "cues": []
       }
     },
@@ -8097,7 +8097,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Hỏi anti-pattern: chỉ dựa vào cảm xúc hoặc confidence tự báo; đề còn mơ hồ về hook.",
+        "text": "Hỏi cách làm sai: chỉ dựa vào cảm xúc hoặc confidence tự báo; đề còn mơ hồ về hook.",
         "cues": [
           {
             "key": "A",
@@ -9799,7 +9799,7 @@
       "topic": "d3",
       "tip": {
         "kind": "caution",
-        "text": "context: fork chỉ tách ngữ cảnh; không tự giới hạn quyền ghi.",
+        "text": "context: fork tách ngữ cảnh; allowed-tools không biến skill thành read-only.",
         "cues": []
       }
     },
@@ -11527,7 +11527,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Cấm sửa file → permissions.deny; quy ước → CLAUDE.md; format → PostToolUse.",
+        "text": "Cấm sửa migration → permissions.deny; quy ước → CLAUDE.md; format → PostToolUse.",
         "cues": [
           {
             "key": "A",
@@ -12186,7 +12186,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Model tự lọc làm mất finding → báo hết kèm điểm, lọc sau.",
+        "text": "Model tự lọc làm mất finding → báo hết kèm confidence/severity, lọc sau.",
         "cues": [
           {
             "key": "D",
@@ -12573,7 +12573,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Không dùng suy luận nội bộ làm giao diện → yêu cầu output kiểm chứng được.",
+        "text": "Không dùng suy luận nội bộ làm dữ liệu ứng dụng; dùng output kiểm chứng được.",
         "cues": [
           {
             "key": "B",
