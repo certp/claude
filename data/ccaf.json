@@ -209,15 +209,15 @@
       "a": [
         "D"
       ],
-      "e": "Coordinator chạy nhiều subagent song song, mỗi subagent phân tích một nhóm tiền lệ, rồi tổng hợp kết quả. Cách này nhanh hơn mà coordinator vẫn quan sát và debug được. Để subagent tự tạo các subagent con đệ quy sẽ khó kiểm soát.",
+      "e": "Agent điều phối nên tạo nhiều subagent chạy song song, mỗi subagent phụ trách một nhóm án lệ. Sau đó, agent điều phối tập hợp các kết quả trước khi chuyển sang bước tổng hợp cuối cùng. Cách này vừa giảm thời gian xử lý, vừa duy trì khả năng giám sát và debug tập trung.",
       "m": 1,
       "v": {
-        "q": "<p>Khi phân tích các vụ án pháp lý phức tạp trích dẫn nhiều tiền lệ, subagent phân tích tài liệu xử lý từng tiền lệ tuần tự. Một vụ án mang tính bước ngoặt trích dẫn 12 tiền lệ mất hơn ba phút để phân tích hoàn chỉnh. Cách nào giảm độ trễ hiệu quả nhất mà vẫn giữ được khả năng giám sát và debug của agent điều phối?</p>",
+        "q": "<p>Khi phân tích các vụ án phức tạp có trích dẫn nhiều án lệ, subagent phân tích tài liệu hiện đang xử lý từng án lệ một.</p><p>Một vụ án mang tính bước ngoặt trích dẫn 12 án lệ, khiến quá trình phân tích mất hơn 3 phút.</p><p>Cách nào hiệu quả nhất để giảm thời gian xử lý mà vẫn đảm bảo agent điều phối có thể giám sát và debug hệ thống?</p>",
         "o": [
-          "<p>Để coordinator tạo các document analysis subagent chạy song song, mỗi subagent xử lý một tập con các tiền lệ, rồi tổng hợp kết quả trước khi synthesis</p>",
-          "<p>Cho phép document analysis subagent tự động tạo các subagent chuyên biệt của riêng nó khi gặp các vụ án có nhiều trích dẫn</p>",
-          "<p>Tạo một hệ thống phân cấp agent đệ quy, trong đó các analysis agent chia nhỏ công việc cho các child agent cho đến mức độ chi tiết từng tiền lệ đơn lẻ</p>",
-          "<p>Triển khai một message queue trong đó các tác vụ phân tích tiền lệ được xử lý bất đồng bộ bởi một pool các worker agent</p>"
+          "<p>Để agent điều phối tạo nhiều subagent phân tích tài liệu chạy song song, mỗi subagent phụ trách một nhóm án lệ. Sau đó, tập hợp kết quả trước khi chuyển sang bước tổng hợp cuối cùng.</p>",
+          "<p>Cho phép subagent phân tích tài liệu tự tạo thêm các subagent chuyên biệt khi gặp vụ án có nhiều trích dẫn.</p>",
+          "<p>Xây dựng hệ thống agent phân cấp đệ quy, trong đó các agent phân tích tiếp tục chia nhỏ công việc cho các agent con cho đến khi mỗi agent chỉ cần xử lý một án lệ.</p>",
+          "<p>Triển khai message queue để một nhóm worker agent xử lý bất đồng bộ các tác vụ phân tích án lệ.</p>"
         ]
       },
       "topic": "d1"
