@@ -10449,7 +10449,7 @@
         "o": [
           "<p>Thay trường notes bằng các trường có cấu trúc bắt buộc cho thông tin khách hàng, nguyên nhân gốc nghi ngờ và hành động đề xuất, mà agent hoàn thành trước khi escalate</p>",
           "<p>Giữ trường notes là văn bản tự do những thêm một hướng dẫn trong system prompt yêu cầu agent nêu khách hàng, nguyên nhân có thể và bước tiếp theo trong mỗi ghi chú</p>",
-          "<p>B? trường notes và độ supervisor gửi điện cho khách hàng khi bắt đầu mỗi lần escalate để xác nhận trực tiếp thông tin tài khoản và vấn đề</p>",
+          "<p>Bỏ trường notes và để supervisor gọi điện cho khách hàng khi bắt đầu mỗi lần escalate để xác nhận trực tiếp thông tin tài khoản và vấn đề</p>",
           "<p>Giữ trường notes là văn bản tự do những tầng giới hạn ký tự của nó, cho agent để chỉ ghi lại toàn bộ context nó thu thập được trong cuộc hội thoại</p>"
         ]
       },
