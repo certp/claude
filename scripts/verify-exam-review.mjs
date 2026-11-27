@@ -15,18 +15,21 @@ assert.ok(questionStart > 0 && questionEnd > questionStart);
 
 const L = i => String.fromCharCode(65 + i);
 const same = (a, b) => a.length === b.length && a.every(x => b.includes(x));
-const questionHTML = new Function('LANG', 'peekId', 'L', 'ic', 'esc',
-  html.slice(questionStart, questionEnd) + '\nreturn questionHTML;'
-)('en', null, L, () => '[check]', s => s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const feedbackEnd = html.indexOf('function mapHTML(', questionEnd);
+assert.ok(feedbackEnd > questionEnd, 'Missing learning feedback helper');
+const { questionHTML, answerTipHTML, feedbackHTML } = new Function('LANG', 'peekId', 'L', 'ic', 'esc', 'same', 'REVEAL',
+  html.slice(questionStart, feedbackEnd) + '\nreturn {questionHTML, answerTipHTML, feedbackHTML};'
+)('en', null, L, () => '[check]', esc, same, false);
 
 const questions = [
   { id:'multi', m:2, q:'Multiple answer', a:['a','c'],
     o:[{k:'a',h:'Alpha'},{k:'b',h:'Beta'},{k:'c',h:'Gamma'}],
-    e:'Multi-answer explanation' },
+    e:'Multi-answer explanation', tip:{kind:'cue',text:'Compare the context <before> choosing.',cues:[{key:'a',phrase:'Alpha'},{key:'c',phrase:'Gamma'}]} },
   { id:'single', m:1, q:'Single answer', a:['d'],
     o:[{k:'d',h:'Delta'},{k:'e',h:'Epsilon'}] },
   { id:'blank', m:1, q:'Unanswered', a:['f'],
-    o:[{k:'f',h:'Foxtrot'}] }
+    o:[{k:'f',h:'Foxtrot'}], tip:{kind:'caution',text:'Uncertain source answer',cues:[]} }
 ];
 const BY_ID = { mock: Object.fromEntries(questions.map(q => [q.id, q])) };
 const EXM = {
@@ -41,11 +44,11 @@ const displayedQuestion = (q, state) => {
 };
 const exSel = id => EXM.ans[id] || [];
 const factory = new Function('BY_ID', 'same', 'L', 'EXM', 'reviewFilter',
-  'displayedQuestion', 'exSel', 'questionHTML', 'ic',
+  'displayedQuestion', 'exSel', 'questionHTML', 'ic', 'answerTipHTML',
   html.slice(start, end) +
   '\nreturn {examReviewStatus, examReviewIds, answerLetters, examReviewHTML};');
 const makeReview = filter => factory(
-  BY_ID, same, L, EXM, filter, displayedQuestion, exSel, questionHTML, () => '[check]'
+  BY_ID, same, L, EXM, filter, displayedQuestion, exSel, questionHTML, () => '[check]', answerTipHTML
 );
 const review = makeReview('all');
 
@@ -80,6 +83,14 @@ assert.match(markup, /class="opt right" data-opt="c" disabled aria-pressed="fals
 assert.match(markup, /class="choice-flag chosen">Bạn đã chọn/);
 assert.match(markup, /class="choice-flag correct">Đáp án đúng/);
 assert.match(markup, /Multi-answer explanation/);
+assert.match(markup, /Mẹo nhận diện đáp án/);
+assert.match(markup, /Compare the context &lt;before&gt; choosing\./);
+assert.match(markup, /<code>Alpha<\/code>.*<code>Gamma<\/code>/);
+assert.match(feedbackHTML(shuffled, ['a']), /Mẹo nhận diện đáp án/);
+assert.match(feedbackHTML(shuffled, ['a','c']), /<code>Alpha<\/code>.*<code>Gamma<\/code>/);
+assert.equal(answerTipHTML(questions[1]), '', 'Legacy banks without tips must still work');
+assert.doesNotMatch(questionHTML(questions[0], 1, {mode:'learn'}), /answer-tip|Mẹo nhận diện đáp án/,
+  'Learning questions must hide tips until checking or revealing answers');
 assert.match(markup, /Câu trước/);
 assert.match(markup, /Câu tiếp/);
 assert.match(markup, /data-review-filter="unanswered"/);
@@ -88,16 +99,20 @@ assert.match(markup, /aria-pressed="true"/);
 const correct = makeReview('correct').examReviewHTML({id:'mock'}, 3, 1, 1, ['single'], 'single');
 assert.match(correct, /data-status="correct"/);
 assert.match(correct, /Bạn chọn:<\/b> A/);
+assert.doesNotMatch(correct, /answer-tip/, 'Questions without tips must not show an empty tip');
 const blank = makeReview('unanswered').examReviewHTML({id:'mock'}, 3, 1, 1, ['blank'], 'blank');
 assert.match(blank, /data-status="unanswered"/);
 assert.match(blank, /Bạn chọn:<\/b> Không chọn/);
 assert.match(blank, /disabled aria-pressed="false"/);
+assert.match(blank, /Lưu ý khi làm câu này/);
+assert.match(blank, /Uncertain source answer/);
+assert.doesNotMatch(blank, /tip-keywords|Mẹo nhận diện đáp án/, 'Caution must not recommend a keyword');
 const empty = review.examReviewHTML({id:'mock'}, 3, 1, 1, [], undefined);
 assert.match(empty, /Không có câu hỏi trong bộ lọc này/);
 assert.equal(makeReview(null).examReviewHTML({id:'mock'}, 3, 1, 1, [], undefined), '');
 
 const preSubmit = questionHTML(questions[0], 1, {selected:['a'], mode:'exam'});
-assert.doesNotMatch(preSubmit, /Bạn đã chọn|Đáp án đúng/,
+assert.doesNotMatch(preSubmit, /Bạn đã chọn|Đáp án đúng|answer-tip|Mẹo nhận diện đáp án|Compare the context/,
   'The exam must never reveal selected/correct review labels before submission');
 assert.equal(JSON.stringify(EXM), snapshot, 'Review must not modify answers or option order');
 
