@@ -22,6 +22,8 @@ All **193 Associate questions** are now assigned to their nearest primary bluepr
 
 The former **Học → Cần kiểm tra phạm vi** filter disappears because there are no longer any review-only questions. Saved learning sessions using this old filter automatically migrate to **Tất cả**, avoiding an empty question screen.
 
+The Architect bank has 309 questions; 79 primary-domain assignments were updated against the November guide, with localized corrections and source answer warnings. See [Architect domain and answer audit](architect-domain-answer-audit.md). Original source keys are retained pending explicit correction approval.
+
 ## Exam sampling rules
 
 When a user selects **all domains** with 10, 20, 30 or **official exam length**, the sampler:
