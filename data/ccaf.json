@@ -8522,13 +8522,14 @@
         "cues": [
           {
             "key": "A",
-            "phrase": "isError: true"
+            "phrase": "access failure (e.g., database timeout)"
           },
           {
             "key": "C",
-            "phrase": "isError: false"
+            "phrase": "valid empty result"
           }
-        ]
+        ],
+        "contrast": "Phân biệt #1391: HTTP 200 không có match là thành công, không retry. #1505: timeout khi đọc có thể thử lại; #1408: timeout khi gửi thông báo chưa chắc an toàn để retry."
       }
     },
     {
