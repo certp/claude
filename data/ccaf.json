@@ -177,7 +177,7 @@
       "v": {
         "q": "<p>Agent của bạn đã dành 25 phút khám phá hệ thống con rendering của một game engine–đọc code shader, quản lý buffer và logic đồng bộ frame. Giữ một kỹ sư yêu cầu nó tìm hiểu cách physics engine tích hợp với rendering cho các collision debug overlay. Bạn nhận thấy các phản hồi gần đây tham chiếu đến \"typical rendering patterns\" thay vì các class VulkanPipeline và FrameGraph cụ thể mà nó đã phát hiện trước đó.</p>\n<p>Cách tiếp cận hiệu quả nhất là gì?</p>",
         "o": [
-          "<p>Tạo một sub-agent để khám phá physics một cách độc lập, sau đó tự tay tổng hợp các phát hiện của nó với kiến thức v? rendering đã tích lũy trong cuộc hội thoại chính.</p>",
+          "<p>Tạo một sub-agent để khám phá physics một cách độc lập, sau đó tự tay tổng hợp các phát hiện của nó với kiến thức về rendering đã tích lũy trong cuộc hội thoại chính.</p>",
           "<p>Tiếp tục trong context hiện tại với các prompt nhằm mục tiêu hạn, tham chiếu các class cụ thể theo tên.</p>",
           "<p>Dùng /clear độ reset hoàn toàn context, sau đó bắt đầu lại việc khám phá physics bằng các đường dẫn file từ CLAUDE.md của dự án.</p>",
           "<p>Tóm tắt các phát hiện chính về rendering, rồi tạo một sub-agent để khám phá physics với bản tóm tắt đó trong context ban đầu của nó.</p>"
@@ -1137,7 +1137,7 @@
       "e": "Retry kèm thông báo lỗi chỉ giúp được khi thông tin có trong input. Danh sách động tác giả đầy đủ nằm ở tài liệu ngoài input, nên retry bao nhiêu lần cũng không có.",
       "m": 1,
       "v": {
-        "q": "<p>Hệ thống trích xuất của bạn triển khai tự động thử lại khi kiểm tra hợp lệ thất bại. ở mỗi lần thử lại, lỗi kiểm tra cụ thể được nối thêm vào prompt. Cách tiếp cận retry-with-error-feedback này giải quyết hầu hết các thất bại trong 2-3 lần thử. Với mẫu thất bại nào thì việc thử lại thêm s? ÍT hiệu quả nhất?</p>",
+        "q": "<p>Hệ thống trích xuất của bạn triển khai tự động thử lại khi kiểm tra hợp lệ thất bại. ở mỗi lần thử lại, lỗi kiểm tra cụ thể được nối thêm vào prompt. Cách tiếp cận retry-with-error-feedback này giải quyết hầu hết các thất bại trong 2-3 lần thử. Với mẫu thất bại nào thì việc thử lại thêm sẽ ÍT hiệu quả nhất?</p>",
         "o": [
           "<p>Model trích xuất số lượng citation dưới dạng chuỗi theo định dạng địa phương (\"1234\") trong khi schema yêu cầu số nguyên</p>",
           "<p>Model trích xuất \"et al.\" cho các động tác giả trong khi danh sách đầy đủ chỉ tồn tại trong một tài liệu bên ngoài không có trong input</p>",
@@ -1840,7 +1840,7 @@
       "e": "Thay sliding window bằng cách lai: tóm tắt phần cũ, giữ nguyên văn phản gần. Thông tin c? không mất hơn mà context vẫn gần.",
       "m": 1,
       "v": {
-        "q": "<p>Người dùng báo cáo rộng trong các cuộc hội thoại kéo dài, AI mất dấu các chế độ, ví dụ và sở thích cụ thể mà họ đã đề cập trước đó trong phiên. Cách triển khai hiện tại của bạn dùng một sliding window chỉ giữ 25 cấp tin nhắn gần nhất để nằm trong giới hạn context. Cách tiếp cận hiệu quả nhất để duy trì nhận thức v? nội dung hội thoại trước đó trong khi quản lý kích thước context là gì?</p>",
+        "q": "<p>Người dùng báo cáo rộng trong các cuộc hội thoại kéo dài, AI mất dấu các chế độ, ví dụ và sở thích cụ thể mà họ đã đề cập trước đó trong phiên. Cách triển khai hiện tại của bạn dùng một sliding window chỉ giữ 25 cấp tin nhắn gần nhất để nằm trong giới hạn context. Cách tiếp cận hiệu quả nhất để duy trì nhận thức về nội dung hội thoại trước đó trong khi quản lý kích thước context là gì?</p>",
         "o": [
           "<p>Tổng kích thước window lên 50 cấp tin nhấn để giữ lại nhiều lịch sử hội thoại hạn trước khi cắt bớt.</p>",
           "<p>Triển khai vector similarity search trên toàn bộ lịch sử hội thoại, truy xuất các tin nhắn quá khả liên quan cho mỗi truy vấn của người dùng.</p>",
@@ -3324,8 +3324,8 @@
         "o": [
           "<p>Yêu cầu agent tổng hợp chia báo cáo thành các phần phân biệt kết quả đã được xác lập và kết quả còn tranh cãi, giữ cách diễn đạt của nguồn và bối cảnh phương pháp luận.</p>",
           "<p>Triển khai lớp hiệu chỉnh độ tin cậy chuyển các biểu đạt không chắc chắn thành xác suất từ 0 đến 1, rồi tính trung bình có trọng số.</p>",
-          "<p>Thêm subagent kiểm chứng chéo, chỉ chuyển kết luận được ít nhất hai nguồn độc lập xác nhận.</p>",
-          "<p>Cấu hình các subagent chỉ báo cáo kết quả vượt ngưỡng độ tin cậy cao, loại bỏ thông tin không chắc chắn trước khi chuyển cho agent điều phối.</p>"
+          "<p>Cấu hình các subagent chỉ báo cáo kết quả vượt ngưỡng độ tin cậy cao, loại bỏ thông tin không chắc chắn trước khi chuyển cho agent điều phối.</p>",
+          "<p>Thêm subagent kiểm chứng chéo, chỉ chuyển kết luận được ít nhất hai nguồn độc lập xác nhận.</p>"
         ]
       },
       "topic": "d5"
@@ -3468,7 +3468,7 @@
       "e": "Lai giữa tóm tắt phần cụ và giữ nguyên văn phần mới. Không mất hơn thông tin cũ như sliding window.",
       "m": 1,
       "v": {
-        "q": "<p>Người dùng báo cáo rộng trong các cuộc hội thoại kéo dài, AI mất dấu các chế độ, ví dụ và sở thích cụ thể mà họ đã đề cập trước đó trong session. </p><p>Cách triển khai hiện tại của bạn dùng sliding window chỉ giữ 25 cấp tin nhắn gần nhất để nằm trong giới hạn context. </p><p>Cách tiếp cận hiệu quả nhất để duy trì nhận thức v? nội dung hội thoại trước đó đồng thời quản lý kích thước context là gì?</p>",
+        "q": "<p>Người dùng báo cáo rộng trong các cuộc hội thoại kéo dài, AI mất dấu các chế độ, ví dụ và sở thích cụ thể mà họ đã đề cập trước đó trong session. </p><p>Cách triển khai hiện tại của bạn dùng sliding window chỉ giữ 25 cấp tin nhắn gần nhất để nằm trong giới hạn context. </p><p>Cách tiếp cận hiệu quả nhất để duy trì nhận thức về nội dung hội thoại trước đó đồng thời quản lý kích thước context là gì?</p>",
         "o": [
           "<p>Thay sliding window bằng cách tiếp cận kết hợp: tóm tắt các tin nhắn cũ hơn trong khi giữ nguyên văn các tin nhắn gần đây.</p>",
           "<p>Triển khai vector similarity search trên toàn bộ lịch sử hội thoại, truy xuất các tin nhắn quá khả liên quan cho mỗi truy vấn của người dùng.</p>",
@@ -4948,7 +4948,7 @@
       "e": "`--system-prompt` thay toàn bộ prompt mặc định, làm một hướng dẫn dùng tool của Claude Code. Dùng `--append-system-prompt` để thêm hướng dẫn review mà vẫn giữ hành vi gốc.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang thiết lập một pipeline code review tự động không tương tác bằng Claude Code. Bạn muốn Claude phân tích mặt Git diff đã lấy về (git diff) so với nhánh main và áp dụng một bộ hướng dẫn code review tùy chỉnh. Tuy nhiên, bạn nhận thấy rằng khi chạy pipeline, Claude chỉ nhìn vào chính văn bản diff thô và hoàn toàn ngừng sử dụng các tool đọc tập hoặc điều hướng mã. Kết quả là nó không kiểm tra được bởi cảnh rộng hơn của repository codebase, điều này rất quan trọng vì diff sửa đổi một hàm cốt lõi được nhiều module bên ngoài gửi. Thay đổi nào đối với lệnh gọi CLI s? khiến Claude đọc các tập liên quan trong repository mà vẫn áp dụng thành công các hướng dẫn review tùy chỉnh của bạn?</p>",
+        "q": "<p>Bạn đang thiết lập một pipeline code review tự động không tương tác bằng Claude Code. Bạn muốn Claude phân tích mặt Git diff đã lấy về (git diff) so với nhánh main và áp dụng một bộ hướng dẫn code review tùy chỉnh. Tuy nhiên, bạn nhận thấy rằng khi chạy pipeline, Claude chỉ nhìn vào chính văn bản diff thô và hoàn toàn ngừng sử dụng các tool đọc tập hoặc điều hướng mã. Kết quả là nó không kiểm tra được bởi cảnh rộng hơn của repository codebase, điều này rất quan trọng vì diff sửa đổi một hàm cốt lõi được nhiều module bên ngoài gửi. Thay đổi nào đối với lệnh gọi CLI sẽ khiến Claude đọc các tập liên quan trong repository mà vẫn áp dụng thành công các hướng dẫn review tùy chỉnh của bạn?</p>",
         "o": [
           "<p>Giữ --system-prompt và thêm --allowedTools \"Read, Glob, Grep\" để chỉ để không tương tác cho phép các tool hệ thống tập mà nó vấn vô hiệu hóa.</p>",
           "<p>Thay --system-prompt bằng --append-system-prompt để các hướng dẫn review của bạn được thêm vào prompt mặc định của Claude Code thay vì ghi đè hướng dẫn tích hợp sẵn về việc dùng các tool đọc tập và điều hướng mã.</p>",
@@ -10410,10 +10410,10 @@
       "v": {
         "q": "<p>Quy trình hoàn tiền yêu cầu process_refund luôn nhận đúng customer_id đã xác minh từ lời gọi get_customer trước đó, không phải ID do model tự gõ từ hội thoại. Hook PreToolUse đã chặn lời gọi khi session state chưa có ID xác minh. Khi đã có ID, hook cần làm gì để model không thể thay bằng ID khác?</p>",
         "o": [
-          "<p>Trả permissionDecision \"deny\" kèm lý do nêu ID đã xác minh, để model thử lại process_refund với ID từ thông báo.</p>",
+          "<p>Trả permissionDecision \"ask\" kèm ID đã xác minh để người duyệt so sánh với customer_id do model cung cấp và phê duyệt từng lời gọi.</p>",
           "<p>Trả permissionDecision \"allow\" cùng updatedInput thay customer_id bằng ID đã xác minh trong session state.</p>",
-          "<p>Trả permissionDecision \"allow\" mà không cập nhật input, để tool dùng customer_id do model cung cấp khi session state đã có ID xác minh.</p>",
-          "<p>Trả permissionDecision \"ask\" kèm ID đã xác minh để người duyệt so sánh với customer_id do model cung cấp và phê duyệt từng lời gọi.</p>"
+          "<p>Trả permissionDecision \"deny\" kèm lý do nêu ID đã xác minh, để model thử lại process_refund với ID từ thông báo.</p>",
+          "<p>Trả permissionDecision \"allow\" mà không cập nhật input, để tool dùng customer_id do model cung cấp khi session state đã có ID xác minh.</p>"
         ]
       },
       "topic": "d1"
@@ -10482,7 +10482,7 @@
       "e": "Resume chỉ phát lại transcript, không phục hồi trạng thái file. Muốn quay lại phiên bản cũ của file thì dùng tính năng file checkpointing.",
       "m": 1,
       "v": {
-        "q": "<p>Một kiến trúc s? đã resume một session và yêu cầu agent hoàn nguyên một file về trạng thái trước đó trong cùng cuộc hội thoại, kỳ vọng rằng bản thân session đã lưu giữ nội dung cỡ của file. Thay vào đó agent báo rằng nó chỉ thấy nội dung hiện tại, đã được chỉnh sửa của file trên đĩa. điều gì giải thích hành vi này?</p>",
+        "q": "<p>Một kiến trúc sư đã resume một session và yêu cầu agent hoàn nguyên một file về trạng thái trước đó trong cùng cuộc hội thoại, kỳ vọng rằng bản thân session đã lưu giữ nội dung cỡ của file. Thay vào đó agent báo rằng nó chỉ thấy nội dung hiện tại, đã được chỉnh sửa của file trên đĩa. điều gì giải thích hành vi này?</p>",
         "o": [
           "<p>Lại gửi resume phát lại transcript nhưng không phát lại trạng thái file, nên việc hoàn nguyên một file cần đến tính năng file checkpointing riêng biệt</p>",
           "<p>Lại gửi resume đã bỏ qua fork_session, nên agent làm việc trên các file thực thay vì một bản sao rẽ nhánh giả trạng thái trước đó</p>",
@@ -10967,7 +10967,7 @@
         "o": [
           "<p>Yêu cầu Claude xây dựng limiter trước, rồi tư thế nghiệm thủ công trong terminal với các đặt burst, retry và rate limit header, và chia sẻ từng kết quả bất ngờ lời đủ tinh chỉnh code.</p>",
           "<p>Yêu cầu Claude soạn một tài liệu thiết kế cho các quy tắc throttle, giới hạn burst và của quá trình đặt lại trước, rồi xây dựng limiter và review code theo tài liệu đó, tinh chỉnh cho đến khi khớp.</p>",
-          "<p>Yêu cầu Claude viết test cho hành vi throttling, giới hạn burst và reset của s? trước khi triển khai, rồi xây dựng limiter và chia sẻ từng kết quả test thất bại để tinh chỉnh nó.</p>",
+          "<p>Yêu cầu Claude viết test cho hành vi throttling, giới hạn burst và reset cửa sổ trước khi triển khai, rồi xây dựng limiter và chia sẻ từng kết quả test thất bại để tinh chỉnh nó.</p>",
           "<p>Yêu cầu Claude xây dựng limiter trước, rồi viết test cho hành vi throttling, giới hạn burst và reset cửa sổ, và chia sẻ từng kết quả test thất bại lời đủ tinh chỉnh code trước khi phát hành.</p>"
         ]
       },
