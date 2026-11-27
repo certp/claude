@@ -26,6 +26,89 @@ function fnv1a(source) {
 const englishFingerprint = qs => fnv1a(JSON.stringify(qs.map(q => [q.id, q.q, q.o, q.a, q.m])));
 const englishTextFingerprint = qs => fnv1a(JSON.stringify(qs.map(q => [q.id, q.q, q.o])));
 
+const architectTopics = {
+  "149": "d5",
+  "150": "d1",
+  "157": "d1",
+  "185": "d5",
+  "186": "d5",
+  "189": "d4",
+  "194": "d1",
+  "198": "d1",
+  "203": "d5",
+  "207": "d1",
+  "209": "d1",
+  "210": "d2",
+  "213": "d2",
+  "214": "d5",
+  "215": "d5",
+  "219": "d5",
+  "224": "d5",
+  "235": "d2",
+  "236": "d5",
+  "244": "d2",
+  "245": "d5",
+  "246": "d1",
+  "247": "d5",
+  "250": "d2",
+  "259": "d3",
+  "260": "d3",
+  "261": "d3",
+  "266": "d4",
+  "270": "d4",
+  "274": "d1",
+  "278": "d1",
+  "280": "d1",
+  "281": "d1",
+  "287": "d1",
+  "288": "d2",
+  "290": "d1",
+  "292": "d1",
+  "297": "d1",
+  "307": "d2",
+  "1221": "d1",
+  "1224": "d1",
+  "1227": "d4",
+  "1231": "d1",
+  "1238": "d5",
+  "1240": "d1",
+  "1242": "d3",
+  "1386": "d1",
+  "1390": "d2",
+  "1392": "d4",
+  "1400": "d1",
+  "1403": "d5",
+  "1404": "d5",
+  "1417": "d1",
+  "1422": "d5",
+  "1430": "d1",
+  "1431": "d5",
+  "1437": "d5",
+  "1445": "d5",
+  "1447": "d1",
+  "1451": "d5",
+  "1452": "d4",
+  "1454": "d4",
+  "1456": "d3",
+  "1457": "d4",
+  "1458": "d5",
+  "1461": "d5",
+  "1474": "d1",
+  "1478": "d1",
+  "1479": "d1",
+  "1480": "d1",
+  "1481": "d4",
+  "1482": "d1",
+  "1485": "d2",
+  "1486": "d5",
+  "1488": "d2",
+  "1496": "d4",
+  "1502": "d5",
+  "1503": "d5",
+  "1505": "d5"
+};
+const architectSourceWarnings = ["159","196","239","246","1232","1236","1239","1401","1402","1406","1407","1408","1412","1417","1428","1430","1432","1448"];
+
 const associateTopics = {
   '972':'d6', '975':'d3', '976':'d1', '977':'d1', '1002':'d7',
   '1046':'d7', '1047':'d5', '1050':'d4', '1051':'d6',
@@ -62,8 +145,8 @@ for (const [cert, expected] of Object.entries(banks)) {
     assert.ok(q.a.every(k => q.o.some(o => o.k === k)), `${cert}:${q.id} answer key missing from choices`);
     assert.ok(q.v && typeof q.v.q === 'string' && Array.isArray(q.v.o) && q.v.o.length === q.o.length, `${cert}:${q.id} translated choices mismatch`);
     assert.equal(typeof q.e, 'string', `${cert}:${q.id} missing explanation`);
-    if (cert === 'ccdf' || cert === 'ccao') {
-      // Associate and Developer Vietnamese banks: guard against corrupted text and markup.
+    if (cert === 'ccaf' || cert === 'ccdf' || cert === 'ccao') {
+      // Vietnamese banks: guard against corrupted text and markup.
       const vietnamese = [q.v.q, ...q.v.o, q.e];
       for (const translation of vietnamese) {
         assert.ok(typeof translation === 'string' && translation.trim().length > 0,
@@ -83,6 +166,16 @@ for (const [cert, expected] of Object.entries(banks)) {
   for (let domain = 1; domain <= expected.domains; domain++) {
     assert.ok(bank.qs.some(q => q.topic === `d${domain}`),
       `${cert}: no questions available in domain ${domain}`);
+  }
+  if (cert === 'ccaf') {
+    const byId = new Map(bank.qs.map(q => [q.id, q]));
+    for (const [id, topic] of Object.entries(architectTopics)) {
+      assert.equal(byId.get(id)?.topic, topic, `ccaf:${id} reviewed domain drifted`);
+    }
+    for (const id of architectSourceWarnings) {
+      assert.match(byId.get(id)?.e ?? '', /^\[(Cảnh báo|Không thể xác minh)/u,
+        `ccaf:${id} source warning missing`);
+    }
   }
   if (cert === 'ccao') {
     const byId = new Map(bank.qs.map(q => [q.id, q]));

@@ -61,18 +61,18 @@
       "a": [
         "A"
       ],
-      "e": "Số liệu 2022 và 2024 khác nhau là do thời gian, không phải mâu thuẫn. Bắt subagent trả kèm ngày công bố hoặc ngày thu thập dữ liệu trong đầu ra có cấu trúc, độ synthesis hiệu đó là xu hướng tăng trưởng.",
+      "e": "Số liệu thuộc các thời điểm khác nhau có thể thể hiện xu hướng tăng trưởng chứ không phải mâu thuẫn. Cần giữ metadata về thời điểm thu thập hoặc công bố dữ liệu để agent tổng hợp diễn giải đúng.",
       "m": 1,
       "v": {
-        "q": "<p>Khi nghiên cứu về \"renewable energy adoption\", tác nhân tìm kiếm trên web trả về các thống kê gần đây (2024: 35% adoption) trong khi tác nhân phân tích tài liệu trích xuất dữ liệu từ các báo cáo nội bộ (2022: 18% adoption). Synthesis agent đánh dấu sai rằng các nguồn này mâu thuẫn nhau thay vì nhận ra dữ liệu cho thấy số từng trường theo thời gian. Thay đổi nào sẽ giúp tác nhân tổng hợp diễn giải đúng những khác biệt về thời gian như vậy tốt nhất?</p>",
+        "q": "<p>Khi nghiên cứu về mức độ ứng dụng năng lượng tái tạo, agent tìm kiếm trên web trả về số liệu gần đây (2024: 35%), còn agent phân tích tài liệu trích xuất số liệu từ báo cáo nội bộ (2022: 18%). Agent tổng hợp nhầm lẫn rằng hai nguồn mâu thuẫn, thay vì nhận ra mức độ ứng dụng đã tăng theo thời gian. Thay đổi nào giúp agent tổng hợp diễn giải đúng sự khác biệt về thời điểm?</p>",
         "o": [
-          "<p>Thêm một conflict resolution agent tự động loại bộ dữ liệu cũ hơn khi có dữ liệu mới hơn cho cùng một metric.</p>",
-          "<p>Hướng dẫn tác nhân tổng hợp luôn coi dữ liệu mới nhất là nguồn có thẩm quyền và đặt các phát hiện cũ hơn vào một phụ lục lịch sử riêng.</p>",
-          "<p>Cấu hình tác nhân tìm kiếm trên web chỉ trả về kết quả trong 6 tháng gần nhất</p>",
-          "<p>Yêu cầu các subagent đưa ngày xuất bản hoặc ngày thu thập dữ liệu vào đầu ra có cấu trúc của chúng.</p>"
+          "<p>Thêm agent giải quyết mâu thuẫn tự động loại bỏ dữ liệu cũ khi có dữ liệu mới hơn cho cùng một chỉ số.</p>",
+          "<p>Yêu cầu agent tổng hợp luôn xem dữ liệu mới nhất là có thẩm quyền và đưa các kết quả cũ vào phụ lục lịch sử riêng.</p>",
+          "<p>Cấu hình agent tìm kiếm trên web chỉ trả về kết quả trong sáu tháng gần nhất.</p>",
+          "<p>Yêu cầu các subagent đưa ngày công bố hoặc ngày thu thập dữ liệu vào đầu ra có cấu trúc.</p>"
         ]
       },
-      "topic": "d1"
+      "topic": "d5"
     },
     {
       "id": "150",
@@ -98,18 +98,18 @@
       "a": [
         "C"
       ],
-      "e": "Session đã được đặt tên thì dùng `--resume auth-deep-dive` để mở đúng phiên đó. `--continue` chỉ lấy phiên gần nhất, mà cô ấy đã làm 3 codebase khác sau đó.",
+      "e": "Dùng --resume auth-deep-dive để tiếp tục phiên đã đặt tên. --continue tiếp tục phiên gần nhất, không nhất thiết là phiên cần tìm.",
       "m": 1,
       "v": {
         "q": "<p>Hôm qua, một kỹ sư đã dùng Claude Code để điều tra các luồng xác thực (authentication flows) trong một hệ thống nguyên khối cũ, tích lũy lượng context đáng kể qua một phiên làm việc kéo dài 2 giờ. </p><p>Hôm nay cô ấy muốn tiếp tục chính cuộc điều tra đó. </p><p>Kể từ đó cô ấy đã làm việc trên ba codebase khác và biết rằng phiên làm việc được đặt tên là \"auth-deep-dive\". </p><p>Cô ấy nên tiếp tục (resume) như thế nào?</p>",
         "o": [
-          "<p>Dùng --resume auth-deep-dive để tối đúng phiên đó theo tên</p>",
-          "<p>Dùng --session-id với UUID lấy từ file transcript của phiên hôm qua</p>",
-          "<p>Dùng --continue để tiếp tục từ nội cuộc hội thoại gần nhất dừng lại</p>",
-          "<p>Bắt đầu lại từ đầu và đọc lại các file tương tự</p>"
+          "<p>Dùng --resume auth-deep-dive để mở đúng phiên theo tên.</p>",
+          "<p>Dùng --session-id với UUID từ tệp transcript của phiên hôm qua.</p>",
+          "<p>Dùng --continue để tiếp tục cuộc hội thoại gần nhất từ nơi đã dừng.</p>",
+          "<p>Bắt đầu phiên mới và đọc lại cùng các tệp.</p>"
         ]
       },
-      "topic": "d3"
+      "topic": "d1"
     },
     {
       "id": "151",
@@ -177,7 +177,7 @@
       "v": {
         "q": "<p>Agent của bạn đã dành 25 phút khám phá hệ thống con rendering của một game engine–đọc code shader, quản lý buffer và logic đồng bộ frame. Giữ một kỹ sư yêu cầu nó tìm hiểu cách physics engine tích hợp với rendering cho các collision debug overlay. Bạn nhận thấy các phản hồi gần đây tham chiếu đến \"typical rendering patterns\" thay vì các class VulkanPipeline và FrameGraph cụ thể mà nó đã phát hiện trước đó.</p>\n<p>Cách tiếp cận hiệu quả nhất là gì?</p>",
         "o": [
-          "<p>Tạo một sub-agent để khám phá physics một cách độc lập, sau đó tự tay tổng hợp các phát hiện của nó với kiến thức v? rendering đã tích lũy trong cuộc hội thoại chính.</p>",
+          "<p>Tạo một sub-agent để khám phá physics một cách độc lập, sau đó tự tay tổng hợp các phát hiện của nó với kiến thức về rendering đã tích lũy trong cuộc hội thoại chính.</p>",
           "<p>Tiếp tục trong context hiện tại với các prompt nhằm mục tiêu hạn, tham chiếu các class cụ thể theo tên.</p>",
           "<p>Dùng /clear độ reset hoàn toàn context, sau đó bắt đầu lại việc khám phá physics bằng các đường dẫn file từ CLAUDE.md của dự án.</p>",
           "<p>Tóm tắt các phát hiện chính về rendering, rồi tạo một sub-agent để khám phá physics với bản tóm tắt đó trong context ban đầu của nó.</p>"
@@ -368,7 +368,7 @@
           "<p>Resume phiên hôm qua để khám phá hướng đầu tiên, rồi bắt đầu một phiên mới cho hướng thứ hai, từ tái tạo context ban đầu.</p>"
         ]
       },
-      "topic": "d5"
+      "topic": "d1"
     },
     {
       "id": "158",
@@ -431,15 +431,15 @@
       "a": [
         "C"
       ],
-      "e": "Truyền mã tham chiếu (reference ID) và cập cho subagent quyền đọc kho bộ nhớ dùng chung nối các subagent khác đã lưu kết quả. Agent tổng hợp có đường truy xuất rõ ràng thay vì giả định lịch sử hội thoại tử được chia sẻ. (Ghi chú của web: chuyển kết quả trực tiếp trong prompt cũng hợp lệ; đây là đáp án theo khóa nguồn.)",
+      "e": "[Cảnh báo đáp án nguồn] Khóa nguồn: C; đề xuất: B. Theo mục 1.3 của Exam Guide, subagent có ngữ cảnh riêng và agent điều phối truyền trực tiếp các kết quả cần thiết qua prompt. Kho bộ nhớ dùng chung là một thiết kế bổ sung, không phải cơ chế mặc định.",
       "m": 1,
       "v": {
-        "q": "<p>Sau khi các subagent web search và document analysis hoàn thành nhiệm vụ, coordinator cần tạo synthesis subagent để tổng hợp các phát hiện. Cách tiếp cận đúng để cung cấp cho synthesis subagent thông tin nó cần là gì?</p>",
+        "q": "<p>Sau khi các subagent tìm kiếm trên web và phân tích tài liệu hoàn tất nhiệm vụ, agent điều phối cần gọi subagent tổng hợp các kết quả. Cách nào đúng để cung cấp cho subagent tổng hợp những thông tin cần thiết?</p>",
         "o": [
-          "<p>Truyền các mã định danh tham chiếu và cấu hình cho subagent quyền đọc vào một shared memory store nối các subagent khác lưu kết quả của chúng</p>",
-          "<p>Đưa toàn bộ các phát hiện đầy đủ từ cả hai subagent trực tiếp vào prompt của synthesis subagent</p>",
-          "<p>Tạo subagent chỉ với một mô tả nhiệm vụ ngắn gọn, dựa vào việc tự động kế thừa context từ coordinator</p>",
-          "<p>Cung cấp cho subagent các định nghĩa tool cho phép nó yêu cầu output từ các subagent khác thông qua callback</p>"
+          "<p>Truyền mã định danh tham chiếu và cấp cho subagent quyền đọc kho bộ nhớ dùng chung, nơi các subagent khác đã lưu kết quả.</p>",
+          "<p>Đưa trực tiếp toàn bộ kết quả của cả hai subagent vào prompt của subagent tổng hợp.</p>",
+          "<p>Chỉ cung cấp mô tả nhiệm vụ ngắn gọn, dựa vào việc tự động kế thừa ngữ cảnh từ agent điều phối.</p>",
+          "<p>Cung cấp các định nghĩa tool để subagent yêu cầu kết quả của các subagent khác thông qua callback.</p>"
         ]
       },
       "topic": "d1"
@@ -733,7 +733,7 @@
         "q": "<p>Tool publish article của bạn gửi một API CMS bên ngoài, thănh thoảng trả về các lỗi tạm thời (transient: network timeout, 503) và các lỗi không tạm thời (non-transient: 403 permission denied, 422 validation failure). Hiện tại, mỗi lỗi đều được trả trực tiếp cho agent, dẫn đến việc agent thử lại các lỗi không tạm thời và lãng phí các lượt (turn) vào những thất bại sẽ không bao giờ thành công. Bạn nên phân chia trách nhiệm xử lý lỗi giữa phần triển khai tool và agent như thế nào?</p>",
         "o": [
           "<p>Xử lý các lỗi tạm thời (timeout, 503) bằng cách tự động thử lại bên trong phần triển khai tool, và đưa các lỗi không tạm thời (permission denied, validation failure) lên cho agent kèm thông báo mô tả để nó có thể thực hiện hành động khắc phục.</p>",
-          "<p>Xử lý tất cả lại bên trong tool: Triển khai retry với exponential backoff cho mỗi loại lại, và chỉ đưa thất bại lên cho agent sau khi đã dùng hạt một số lần thử cố định.</p>",
+          "<p>Xử lý tất cả lại bên trong tool: Triển khai retry với exponential backoff cho mỗi loại lỗi, và chỉ đưa thất bại lên cho agent sau khi đã dùng hạt một số lần thử cố định.</p>",
           "<p>Đưa tất cả lại lên cho agent ngay lập tức kèm context chi tiết, và để agent quyết định lại nào cần thử lại và thể bao nhiêu lần-giữ cho phần triển khai tool không có trạng thái (stateless) và đơn giản.</p>",
           "<p>Triển khai một error handler chung bật tất cả exception và trả về thông báo chung chung \"tool unavailable-try again later\", che chắn agent khỏi sự phức tạp của lỗi.</p>"
         ]
@@ -764,7 +764,7 @@
       "a": [
         "B"
       ],
-      "e": "Đảm bảo bảng cấu trúc thay vì dẫn dò: tách thành tool preview trả token dùng một lần, còn tool execute bắt buộc có token đó. Không có preview thì không thể execute.",
+      "e": "Tách preview và execute, liên kết hành động với token dùng một lần, giúp bảo đảm bước xem trước. Token thực thi chỉ nên được cấp/kích hoạt sau khi người dùng xác nhận rõ ràng; chỉ nhận token từ preview chưa đủ để chứng minh người dùng đã xác nhận.",
       "m": 1,
       "v": {
         "q": "<p>Tool remove_team_member của bạn dùng một tham số boolean dry_run để xem trước tác động trước khi thực thi. Giám sát production cho thấy agent bỏ qua bước xem trước trong 15% số lần gọi bằng cách gửi trực tiếp với dry_run=false. Bạn cần đảm bảo mỗi lần xóa đều được đi trước bởi một bản xem trước mà người dùng xác nhận rõ ràng. Cách tiếp cận đáng tin cậy nhất là gì?</p>",
@@ -801,15 +801,15 @@
       "a": [
         "C"
       ],
-      "e": "Ngưỡng $500 phải enforce bên trong tool (deterministic, ở backend): dưới ngưỡng thì chi luôn, trên ngưỡng thì tạo yêu cầu chỉ duyệt. Dù prompt bỏ thao túng thế nào cũng không vượt qua được.",
+      "e": "Backend thực thi ngưỡng một cách tất định: từ $500 trở xuống có thể tự động giải ngân; trên $500 phải tạo yêu cầu phê duyệt. Không dựa vào prompt hoặc cờ do model tự khai báo.",
       "m": 1,
       "v": {
         "q": "<p>Agent hoàn trả chi phí của bạn xử lý các yêu cầu của nhân viên bằng một tool process reimbursement. Chính sách công ty yêu cầu các khoản hoàn trợ trên $500 phải được phê duyệt trước khi giải ngân. Agent xử lý hàng trăm yêu cầu mỗi ngày, và bạn cần việc thực thi ngưỡng này không thể bị can thiệp, bất kỳ agent được prompt như thế nào. Cách nào đảm bảo ngưỡng phê duyệt $500 không thể bị vượt qua?</p>",
         "o": [
-          "<p>Tool process reimbursement nhận một tham số approved by manager. System prompt hướng dẫn agent chỉ đặt tham số này thành true sau khi xác nhận rằng một manager đã phê duyệt yêu cầu. Một script kiểm toán hạng đêm rà soát tất cả các khoản hoàn trị có approved by manager được đặt là true.</p>",
+          "<p>Tool process reimbursement nhận một tham số approved by manager. System prompt hướng dẫn agent chỉ đặt tham số này thành true sau khi xác nhận rằng một manager đã phê duyệt yêu cầu. Một script kiểm toán hằng đêm rà soát tất cả các khoản hoàn trị có approved by manager được đặt là true.</p>",
           "<p>Cung cấp hai tool: auto reimburse (giới hạn cố định $500) và manager approval. đưa vào system prompt các hướng dẫn chi tiết yêu cầu agent kiểm tra số tiền và dùng tool phù hợp. Thêm một hook Post ToolUse ghi log tool nào đã được gọi để phục vụ kiểm toán.</p>",
           "<p>Triển khai việc kiểm tra ngưỡng trong một hook PreToolUse kiểm tra tham số amount trước khi process reimbursement thực thi. Nếu amount vượt quá $500, hook sửa đổi context để thêm cố requires approval: true, mà tool sẽ kiểm tra trước khi giải ngân.</p>",
-          "<p>Tool process reimbursement nhận amount và details, và tế thực thi ngưỡng bên trong; các khoản $500 trỏ xuống được tự động giải ngân và tool trả về xác nhận thành công. Các khoản &gt;$500 khiển tool tạo một yêu cầu phê duyệt đang chỉ và trả về trạng thái cho biết đang chỉ manager xem xét.</p>"
+          "<p>Tool process reimbursement nhận amount và details, tự thực thi ngưỡng: khoản từ $500 trở xuống được giải ngân tự động và trả xác nhận thành công; khoản trên $500 tạo yêu cầu phê duyệt đang chờ người quản lý xem xét.</p>"
         ]
       },
       "topic": "d2"
@@ -841,7 +841,7 @@
       "e": "Tách thành 3 tool riêng, mỗi tool chủ chưa đúng tham số của thao tác đó. Schema rõ ràng thì model ít bỏ sót hay truyền thừa tham số.",
       "m": 1,
       "v": {
-        "q": "<p>Hệ thống quản lý đơn hàng của bạn yêu cầu các tool cho ba thao tác riêng biệt: hoàn tiến (yêu cầu amount và reason), hủy đơn hàng (yêu cầu reason), và res (yêu cầu shipping address). Mọi thao tác dùng chung một tham số order id nhưng có các yêu cầu bổ sung khác nhau. Trong quá trình kiểm thử, bạn nhận thấy với thiết kế hiện tại, agent thường bỏ sót các tham số bắt buộc hoặc đưa vào các tham số không liên quan. Thay đổi thiết kế nào sẽ cải thiện hiệu quả nhất độ chính xác của tham số?</p>",
+        "q": "<p>Hệ thống quản lý đơn hàng của bạn yêu cầu các tool cho ba thao tác riêng biệt: hoàn tiền (yêu cầu amount và reason), hủy đơn hàng (yêu cầu reason), và res (yêu cầu shipping address). Mọi thao tác dùng chung một tham số order id nhưng có các yêu cầu bổ sung khác nhau. Trong quá trình kiểm thử, bạn nhận thấy với thiết kế hiện tại, agent thường bỏ sót các tham số bắt buộc hoặc đưa vào các tham số không liên quan. Thay đổi thiết kế nào sẽ cải thiện hiệu quả nhất độ chính xác của tham số?</p>",
         "o": [
           "<p>Giữ một tool thống nhất những thêm các điều kiện if-then-else của JSON Schema để bắt buộc các tham số nhỏ amount chỉ là bắt buộc khi loại thao tác là \"refund\".</p>",
           "<p>Tách thành ba tool riêng biệt (mỗi tool chỉ định nghĩa các tham số cần thiết cho thao tác cụ thể đó).</p>",
@@ -882,7 +882,7 @@
         "o": [
           "<p>Agent có thể trích xuất đáng tin cậy các giá trị cụ thể mà không cần phân tích văn bản tự do, giảm lỗi trong các thao tác tiếp theo.</p>",
           "<p>JSON schema tự động xác thực rằng API bên dưới đã trả về dữ liệu đúng trước khi agent xử lý nó.</p>",
-          "<p>JSON có cấu trúc được model xử lý một cách xác định (deterministic), cải thiện đáng kể độ chính xác khi trích xuất giá trị.</p>",
+          "<p>JSON có cấu trúc được model xử lý một cách tất định (deterministic), cải thiện đáng kể độ chính xác khi trích xuất giá trị.</p>",
           "<p>JSON có cấu trúc tiêu thể ít token hơn đáng kể so với ngôn ngữ tự nhiên, giảm đáng kể chi phí API.</p>"
         ]
       },
@@ -1102,9 +1102,9 @@
       "v": {
         "q": "<p>Hệ thống trích xuất của bạn xử lý hai loại tài liệu: báo cáo hỏng tháng tiêu chuẩn (được lưu trữ sau khi xử lý) và báo cáo ngoại lệ khẩn cấp (phải kích hoạt cảnh báo kinh doanh trong vòng 30 phút kể từ khi nhấn). </p><p>Cả hai dùng cùng một JSON schema. </p><p>Bạn muốn giảm thiểu chi phí API trong khi vẫn đáp ứng các yêu cầu về độ trễ. </p><p>Bạn nên thiết kế kiến trúc pipeline xử lý như thế nào?</p>",
         "o": [
-          "<p>Gọi tất cả tài liệu đơn Messages API thời gian thực để đảm bảo độ trợ xử lý nhất quán giữa các loại tài liệu.</p>",
+          "<p>Gọi tất cả tài liệu đến Messages API thời gian thực để đảm bảo độ trợ xử lý nhất quán giữa các loại tài liệu.</p>",
           "<p>Xếp hàng tất cả tài liệu và gửi theo các batch mọi giả, đánh dấu các tài liệu khẩn cấp để xử lý nhanh khi kết quả batch trả về.</p>",
-          "<p>Gọi tất cả tài liệu đơn Batch API với custom_id để theo dõi. Khi kết quả đến, xử lý ngay các tài liệu khẩn cấp và kích hoạt các cảnh báo trị cho các ngoại lệ.</p>",
+          "<p>Gọi tất cả tài liệu đến Batch API với custom_id để theo dõi. Khi kết quả đến, xử lý ngay các tài liệu khẩn cấp và kích hoạt các cảnh báo trị cho các ngoại lệ.</p>",
           "<p>Định tuyến các báo cáo tiêu chuẩn đến Batch API để tiết kiệm 50% chi phí, và định tuyến các báo cáo ngoại lệ khẩn cập đến Messages API thời gian thực.</p>"
         ]
       },
@@ -1137,7 +1137,7 @@
       "e": "Retry kèm thông báo lỗi chỉ giúp được khi thông tin có trong input. Danh sách động tác giả đầy đủ nằm ở tài liệu ngoài input, nên retry bao nhiêu lần cũng không có.",
       "m": 1,
       "v": {
-        "q": "<p>Hệ thống trích xuất của bạn triển khai tự động thử lại khi kiểm tra hợp lệ thất bại. ở mỗi lần thử lại, lỗi kiểm tra cụ thể được nối thêm vào prompt. Cách tiếp cận retry-with-error-feedback này giải quyết hầu hết các thất bại trong 2-3 lần thử. Với mẫu thất bại nào thì việc thử lại thêm s? ÍT hiệu quả nhất?</p>",
+        "q": "<p>Hệ thống trích xuất của bạn triển khai tự động thử lại khi kiểm tra hợp lệ thất bại. ở mỗi lần thử lại, lỗi kiểm tra cụ thể được nối thêm vào prompt. Cách tiếp cận retry-with-error-feedback này giải quyết hầu hết các thất bại trong 2-3 lần thử. Với mẫu thất bại nào thì việc thử lại thêm sẽ ÍT hiệu quả nhất?</p>",
         "o": [
           "<p>Model trích xuất số lượng citation dưới dạng chuỗi theo định dạng địa phương (\"1234\") trong khi schema yêu cầu số nguyên</p>",
           "<p>Model trích xuất \"et al.\" cho các động tác giả trong khi danh sách đầy đủ chỉ tồn tại trong một tài liệu bên ngoài không có trong input</p>",
@@ -1404,7 +1404,7 @@
           "<p>So sánh độ chính xác ở các ngưỡng độ tin cậy khác nhau (85%, 90%, 95%) để tìm ngưỡng cắt tối ưu nhằm tối đa hóa mục tự động hóa trong khi giảm thiểu lại.</p>"
         ]
       },
-      "topic": "d4"
+      "topic": "d5"
     },
     {
       "id": "186",
@@ -1435,13 +1435,13 @@
       "v": {
         "q": "<p>Hệ thống trích xuất của bạn dùng tool_use với một JSON schema chưa 12 trường và các mô tả chi tiết, tổng cộng khoảng 2,500 token cho toàn bộ định nghĩa tool. Xử lý các tài liệu dưới 150K token cho độ chính xác 98%. Với các tài liệu từ 175-190K token, độ chính xác giảm xuống 71%, với thông tin ở một phần ba cuối liên tục bị bỏ sót. Cửa sổ ngữ cảnh của model là 200K token. Nguyên nhân có khả năng cao nhất là gì?</p>",
         "o": [
-          "<p>Model phân bổ attention tỷ lệ thuận theo độ dài input, khiển các trường chỉ được nhắc đến một lần gần cuối tài liệu nhận được mục tập trung xử lý không đủ.</p>",
+          "<p>Model phân bổ attention tỷ lệ thuận theo độ dài input, khiến các trường chỉ được nhắc đến một lần gần cuối tài liệu nhận được mục tập trung xử lý không đủ.</p>",
           "<p>Các schema vượt quá 8-10 trường làm tăng độ phức tạp quyết định trong quá trình tạo tham số, làm giảm độ chính xác trích xuất độc lập với độ dài tài liệu.</p>",
           "<p>Các định nghĩa tool tiêu thể input context token. Kết hợp với system prompt và nội dung tài liệu, tổng số tiền gần đến giới hạn context, làm suy giảm việc xử lý phần cuối tài liệu.</p>",
           "<p>Các tài liệu rất dài vượt quá khoảng attention hiệu quả của model bất kỳ giới hạn context, gây suy giảm độ chính xác đối với nội dung ở xa hơn so với các hướng dẫn trong prompt.</p>"
         ]
       },
-      "topic": "d2"
+      "topic": "d5"
     },
     {
       "id": "187",
@@ -1552,7 +1552,7 @@
           "<p>Gặp tất cả các loại tài liệu vào một tool trích xuất duy nhất với schema thống nhất và ép buộc dùng tool đó.</p>"
         ]
       },
-      "topic": "d2"
+      "topic": "d4"
     },
     {
       "id": "190",
@@ -1729,7 +1729,7 @@
       "e": "Người nhận escalate không có transcript, nên cần bản tóm tắt có cấu trúc: customer ID, nguyên nhân gốc, số tiền hoàn và hành động để xuất. độ độ hành động ngay mà không quá dài.",
       "m": 1,
       "v": {
-        "q": "<p>Sau khi điều tra một tranh chấp thanh toán qua 25+ lượt, bạn đã xác định rằng các khoản tính phí trùng lặp xảy ra do mất timeout của payment gateway kích hoạt logic thử lại. Khoản hoàn tiến cần thiết ($847) vượt quá hạn mục ủy quyền $500 của bạn. Bạn cần gọi escalate_to_human, và nhân viên con người sẽ không có quyền truy cập vào transcript hội thoại của bạn.</p>\n<p>Bạn nên truyền context nào để cho phép giải quyết hiệu quả?</p>",
+        "q": "<p>Sau khi điều tra một tranh chấp thanh toán qua 25+ lượt, bạn đã xác định rằng các khoản tính phí trùng lặp xảy ra do mất timeout của payment gateway kích hoạt logic thử lại. Khoản hoàn tiền cần thiết ($847) vượt quá hạn mục ủy quyền $500 của bạn. Bạn cần gọi escalate_to_human, và nhân viên con người sẽ không có quyền truy cập vào transcript hội thoại của bạn.</p>\n<p>Bạn nên truyền context nào để cho phép giải quyết hiệu quả?</p>",
         "o": [
           "<p>Khiểu nối ban đầu của khách hàng nguyên văn cùng các đoạn trích tool result cho thấy các giao dịch trùng lặp.</p>",
           "<p>Một bản tóm tắt có cấu trúc: customer ID, nguyên nhân gốc rễ, số tiền hoàn trả và hành động được đề xuất.</p>",
@@ -1737,7 +1737,7 @@
           "<p>Toàn bộ transcript hội thoại cùng tất cả tool result.</p>"
         ]
       },
-      "topic": "d5"
+      "topic": "d1"
     },
     {
       "id": "195",
@@ -1769,7 +1769,7 @@
         "q": "<p>Trong quá trình kiểm thử ban đầu, bạn nhận thấy Claude dường như không như các từ vọng từ trước đó trong cuộc hội thoại. Khi một học sinh hỏi \"Can you quiz me on those words?\", nó phản hồi như thế chưa có tự nào được thảo luận. Giải thích nhiều khả năng nhất là gì?</p>",
         "o": [
           "<p>Bạn không đưa các tin nhắn trước đó vào mỗi API request—API là stateless và không lưu giữ lịch sử hội thoại.</p>",
-          "<p>Cửa sổ ngữ cảnh của model đã đầy, khiển nội dung hội thoại trước đó bị loại bỏ.</p>",
+          "<p>Cửa sổ ngữ cảnh của model đã đầy, khiến nội dung hội thoại trước đó bị loại bỏ.</p>",
           "<p>System prompt của bạn cần các hướng dẫn rõ ràng bảo Claude ghi nhớ thông tin từ các lượt trước.</p>",
           "<p>Bạn cần bật tính năng lưu trữ hội thoại (conversation persistence) bằng cách truyền một tham số session ID với mỗi lệnh gọi API.</p>"
         ]
@@ -1800,7 +1800,7 @@
       "a": [
         "C"
       ],
-      "e": "Theo khóa nguồn: các phản hồi tích lũy của assistant đang làm loãng ảnh hưởng của system prompt, cảnh tranh với persona được yêu cầu. (Ghi chú của web: triều chứng này cũng có thể do bỏ sót system prompt ở các request không trạng thái sau.)",
+      "e": "[Cảnh báo thiếu dữ kiện] Khóa nguồn C: các phản hồi tích lũy có thể làm loãng ảnh hưởng của system prompt. Tuy nhiên nếu ứng dụng không gửi lại system prompt trong mỗi request stateless, B cũng giải thích được hiện tượng. Cần kiểm tra nội dung request thực tế trước khi kết luận.",
       "m": 1,
       "v": {
         "q": "<p>Trợ lý lập kế hoạch cải tạo nhà của bạn dùng một system prompt định nghĩa persona nhà thấu chuyên nghiệp với các hướng dẫn cụ thể: luôn hỏi về ngân sách, để xuất các phương án thay thế ở nhiều mục giá, và xác nhận các yêu cầu về thời gian biểu. Trong quá trình kiểm thử, các phản hồi tuân theo những hướng dẫn này ở các lượt 1-4, những đơn lượt 7, trợ lý đưa ra lỗi khuyên chung chung mà không hỏi về ngân sách hay thời gian biểu. Cuộc hội thoại chỉ có tổng cộng 2,500 token. Nguyên nhân có khả năng cao nhất là gì?</p>",
@@ -1840,7 +1840,7 @@
       "e": "Thay sliding window bằng cách lai: tóm tắt phần cũ, giữ nguyên văn phản gần. Thông tin c? không mất hơn mà context vẫn gần.",
       "m": 1,
       "v": {
-        "q": "<p>Người dùng báo cáo rộng trong các cuộc hội thoại kéo dài, AI mất dấu các chế độ, ví dụ và sở thích cụ thể mà họ đã đề cập trước đó trong phiên. Cách triển khai hiện tại của bạn dùng một sliding window chỉ giữ 25 cấp tin nhắn gần nhất để nằm trong giới hạn context. Cách tiếp cận hiệu quả nhất để duy trì nhận thức v? nội dung hội thoại trước đó trong khi quản lý kích thước context là gì?</p>",
+        "q": "<p>Người dùng báo cáo rộng trong các cuộc hội thoại kéo dài, AI mất dấu các chế độ, ví dụ và sở thích cụ thể mà họ đã đề cập trước đó trong phiên. Cách triển khai hiện tại của bạn dùng một sliding window chỉ giữ 25 cấp tin nhắn gần nhất để nằm trong giới hạn context. Cách tiếp cận hiệu quả nhất để duy trì nhận thức về nội dung hội thoại trước đó trong khi quản lý kích thước context là gì?</p>",
         "o": [
           "<p>Tổng kích thước window lên 50 cấp tin nhấn để giữ lại nhiều lịch sử hội thoại hạn trước khi cắt bớt.</p>",
           "<p>Triển khai vector similarity search trên toàn bộ lịch sử hội thoại, truy xuất các tin nhắn quá khả liên quan cho mỗi truy vấn của người dùng.</p>",
@@ -1879,13 +1879,13 @@
       "v": {
         "q": "<p>Agent của bạn đang xử lý một tranh chấp thanh toán. Sau khi gửi get_customer và lookup_order, nó xác định rằng tranh chụp liên quan đến một lỗi giá khuyến mãi cần manager phê duyệt–vượt quá mức ủy quyền của agent. </p><p>Workflow nên xử lý việc escalation giữa chứng này như thế nào?</p>",
         "o": [
-          "<p>Văn thể hoàn tiến bằng process_refund, chỉ escalate nếu hệ thống từ chối giao dịch.</p>",
+          "<p>Văn thể hoàn tiền bằng process_refund, chỉ escalate nếu hệ thống từ chối giao dịch.</p>",
           "<p>Gọi escalate_to_human chỉ truyền tin nhắn ban đầu của khách hàng.</p>",
           "<p>Soạn một bản bàn giao có cấu trúc với thông tin khách hàng, thông tin đơn hàng và vấn đề đã xác định trước khi gửi escalate_to_human.</p>",
           "<p>Lưu toàn bộ lịch sử hội thoại và tool response vào cơ sở dữ liệu, rồi gửi escalate_to_human với một reference ID.</p>"
         ]
       },
-      "topic": "d5"
+      "topic": "d1"
     },
     {
       "id": "199",
@@ -2028,7 +2028,7 @@
         "q": "<p>Trong một cuộc hội thoại về theo dõi đơn hàng, hệ thống bên ngoài của bạn nhận được một webhook cho biết gói hàng của người dùng đã được gửi đi. Người dùng đang trò chuyển và nhiều khả năng sử sớm gửi tin nhắn tiếp theo. Bạn muốn trợ lý lồng ghép một cách tự nhiên thay đổi trạng thái này vào phản hồi kế tiếp. Cách tiếp cận hiệu quả nhất là gì?</p>",
         "o": [
           "<p>Ngay lập tức gửi một API request với bản cập nhật dưới dạng tin nhắn user giả lập, tạo ra một phản hồi assistant không được yêu cầu.</p>",
-          "<p>Cấu hình trụ lý gửi tool get_order_status ở đầu mỗi phản hồi.</p>",
+          "<p>Cấu hình trụ lý gọi tool get_order_status ở đầu mỗi phản hồi.</p>",
           "<p>Thêm bản cập nhật trạng thái làm tiền tư cho tin nhắn user kế tiếp trước khi gửi API.</p>",
           "<p>Thêm trạng thái vận chuyển hiện tại vào system prompt trước lần gọi API kế tiếp.</p>"
         ]
@@ -2070,7 +2070,7 @@
           "<p>Tạo một playlist \"Focus\" mới với các bản nhạc được tuyến chọn và thông báo cho người dùng rằng nó đã sẵn sàng.</p>"
         ]
       },
-      "topic": "d4"
+      "topic": "d5"
     },
     {
       "id": "204",
@@ -2170,12 +2170,12 @@
       "a": [
         "C"
       ],
-      "e": "Trở lại có cấu trúc: lại nghiệp về gần `retryable: false` kèm lỗi giải thích thân thiện để Claude nói lại với khách. Agent hết retry vô ích mà trả lời cộng tốt hơn.",
+      "e": "Trở lại có cấu trúc: lại nghiệp vụ gần `retryable: false` kèm lỗi giải thích thân thiện để Claude nói lại với khách. Agent hết retry vô ích mà trả lời cộng tốt hơn.",
       "m": 1,
       "v": {
-        "q": "<p>Tool process_refund của bạn trả về hai loại lại: lại kỹ thuật (\"503 Service Unavailable\", \"Connection timeout\") mang tính tạm thời (5% số lần gọi), và lỗi nghiệp về (\"Order exceeds 30-day return window\", \"Item already refunded\") mang tính vĩnh viễn (12% số lần gọi). </p><p>Giám sát cho thấy agent lãng phí 3-4 lượt để thử lại các lỗi nghiệp về văn không bao giờ có thể thành công. </p><p>Hiện tại, cả hai loại lại chỉ trả về một thông báo văn bản thuận cho Claude. </p><p>Cách hiệu quả nhất để giảm các lần thử lại lãng phí đồng thời cải thiện chất lượng phản hồi hướng tới khách hàng là gì?</p>",
+        "q": "<p>Tool process_refund của bạn trả về hai loại lại: lại kỹ thuật (\"503 Service Unavailable\", \"Connection timeout\") mang tính tạm thời (5% số lần gọi), và lỗi nghiệp vụ (\"Order exceeds 30-day return window\", \"Item already refunded\") mang tính vĩnh viễn (12% số lần gọi). </p><p>Giám sát cho thấy agent lãng phí 3-4 lượt để thử lại các lỗi nghiệp vụ văn không bao giờ có thể thành công. </p><p>Hiện tại, cả hai loại lại chỉ trả về một thông báo văn bản thuận cho Claude. </p><p>Cách hiệu quả nhất để giảm các lần thử lại lãng phí đồng thời cải thiện chất lượng phản hồi hướng tới khách hàng là gì?</p>",
         "o": [
-          "<p>Thêm một tool check_refund_eligibility phải được gọi trước process_refund để ngăn các vi phạm quy tắc nghiệp về.</p>",
+          "<p>Thêm một tool check_refund_eligibility phải được gọi trước process_refund để ngăn các vi phạm quy tắc nghiệp vụ.</p>",
           "<p>Trả về các phản hồi lỗi có cấu trúc với retryable: false cho lỗi nghiệp vụ và một lỗi giải thích thân thiện với khách hàng để Claude sử dụng.</p>",
           "<p>Thêm few-shot examples cho thấy cách phân biệt lỗi có thể thử lại và không thể thử lại bằng cách phân tích văn bản thông báo lỗi.</p>",
           "<p>Triển khai logic tự động thử lại ở cấp tool chỉ cho lỗi kỹ thuật, và chuyển lại nghiệp vị cho Claude mà không thể lại.</p>"
@@ -2207,7 +2207,7 @@
       "a": [
         "C"
       ],
-      "e": "Tool result cố (trạng thái \"pending\") có thể đã lỗi thời. Tạo phiên mới với bản tóm tắt có cấu trúc của lần trước (loại vấn đề, các bước đã làm, trạng thái), rồi gửi tool mới để lấy dữ liệu hiện tại. (Hai phương án gần giống hệt nhau; điểm cốt lõi là phiên mới + tóm tắt + gọi tool mới.)",
+      "e": "Tool result cố (trạng thái \"pending\") có thể đã lỗi thời. Tạo phiên mới với bản tóm tắt có cấu trúc của lần trước (loại vấn đề, các bước đã làm, trạng thái), rồi gọi tool mới để lấy dữ liệu hiện tại. (Hai phương án gần giống hệt nhau; điểm cốt lõi là phiên mới + tóm tắt + gọi tool mới.)",
       "m": 1,
       "v": {
         "q": "<p>Một khách hàng quay lại sau 4 giờ kể từ phiên đầu tiên về cùng một tranh chấp thanh toán. Phiên trước đó gồm 32 lượt chưa ngữ cảnh: các tin nhắn lookup_status_result có chứa \"Status: Pending Refund\" và một lượng token đáng kể từ các kết quả tra cứu trước đó. Agent cần được chuẩn bị để trả lời khách hàng một cách đầy đủ. Cách tiếp cận nào xử lý khách hàng quay lại một cách đáng tin cậy nhất?</p>",
@@ -2215,10 +2215,10 @@
           "<p>Tạo một session mới với bản tóm tắt có cấu trúc của tương tác trước (loại vấn đề, các bước giải quyết, trạng thái hiện tại), sau đó thực hiện các lệnh gọi tool mới khi cần.</p>",
           "<p>Resume cùng với state và cấu hình agent tự động gửi lại tất cả các tin nhắn tool_results trước đó để đảm bảo dữ liệu mới.</p>",
           "<p>Bắt đầu một session mới, chèn một bản tóm tắt có cấu trúc của tương tác trước (loại vấn đề, các bước giải quyết, trạng thái hiện tại), sau đó thực hiện các lệnh gọi tool mới khi cần.</p>",
-          "<p>Resume cùng với toàn bộ cuộc hội thoại và thêm chỉ dẫn vào system prompt yêu cầu agent ưu tiên giải quyết khoản hoàn tiến đang chỉ xử lý.</p>"
+          "<p>Resume cùng với toàn bộ cuộc hội thoại và thêm chỉ dẫn vào system prompt yêu cầu agent ưu tiên giải quyết khoản hoàn tiền đang chờ xử lý.</p>"
         ]
       },
-      "topic": "d2"
+      "topic": "d1"
     },
     {
       "id": "208",
@@ -2244,15 +2244,15 @@
       "a": [
         "B"
       ],
-      "e": "Văn giải quyết được phản lớn: giải thích khoản phí, xác nhận để điều kiện hoàn tiến, nói rõ sự cố hệ thống, rồi đề nghị escalate hoặc thử lại sau. Không họa sai và cũng không bộ dữ.",
+      "e": "Văn giải quyết được phản lớn: giải thích khoản phí, xác nhận để điều kiện hoàn tiền, nói rõ sự cố hệ thống, rồi đề nghị escalate hoặc thử lại sau. Không họa sai và cũng không bộ dữ.",
       "m": 1,
       "v": {
-        "q": "<p>Trong quá trình giải quyết một tranh chấp thanh toán, agent của bạn truy xuất thành công thông tin khách hàng qua get_customer và chi tiết đơn hàng qua lookup_order, nhưng khi cố gắng gửi process_refund, tool trả về lỗi timeout. Agent có để thông tin để giải thích các khoản phí và xác minh điều kiện hoàn tiến, nhưng không thể thực sự xử lý hoàn tiến do lỗi backend. Cách tiếp cận nào cân bằng tốt nhất giữa giải quyết ngay trong lần liên họ đầu tiên và xử lý lỗi phù hợp?</p>",
+        "q": "<p>Trong quá trình giải quyết một tranh chấp thanh toán, agent của bạn truy xuất thành công thông tin khách hàng qua get_customer và chi tiết đơn hàng qua lookup_order, nhưng khi cố gắng gửi process_refund, tool trả về lỗi timeout. Agent có để thông tin để giải thích các khoản phí và xác minh điều kiện hoàn tiền, nhưng không thể thực sự xử lý hoàn tiền do lỗi backend. Cách tiếp cận nào cân bằng tốt nhất giữa giải quyết ngay trong lần liên họ đầu tiên và xử lý lỗi phù hợp?</p>",
         "o": [
-          "<p>Xác nhận rằng khoản hoàn tiến sẽ được xử lý và đóng cuộc hội thoại, vì hệ thống có để thông tin cần thiết để tự động hoàn tất</p>",
+          "<p>Xác nhận rằng khoản hoàn tiền sẽ được xử lý và đóng cuộc hội thoại, vì hệ thống có để thông tin cần thiết để tự động hoàn tất</p>",
           "<p>Escalate ngay lập tức cho nhân viên con người vì hành động hoàn tiện không thể hoàn thành</p>",
-          "<p>Giải thích khoản thanh toán, xác nhận điều kiện hoàn tiến, thừa nhận sự cố hệ thống đang ngăn việc xử lý ngay, và đề nghị escalate hoặc thử lại sau</p>",
-          "<p>Triển khai tự động thử lại với exponential backoff cho process_refund, giữ cuộc hội thoại mở cho đến khi khoản hoàn tiến được xử lý thành công</p>"
+          "<p>Giải thích khoản thanh toán, xác nhận điều kiện hoàn tiền, thừa nhận sự cố hệ thống đang ngăn việc xử lý ngay, và đề nghị escalate hoặc thử lại sau</p>",
+          "<p>Triển khai tự động thử lại với exponential backoff cho process_refund, giữ cuộc hội thoại mở cho đến khi khoản hoàn tiền được xử lý thành công</p>"
         ]
       },
       "topic": "d5"
@@ -2289,10 +2289,10 @@
           "<p>Lưu trữ toàn bộ lịch sử hội thoại và phản hồi của tool vào cơ sở dữ liệu, sau đó gửi escalate_to_human kèm một reference ID.</p>",
           "<p>Gọi escalate_to_human chỉ truyền tin nhắn gốc của khách hàng.</p>",
           "<p>Biên soạn một bản bàn giao có cấu trúc gồm thông tin khách hàng, thông tin đơn hàng và vấn đề đã xác định trước khi gửi escalate_to_human.</p>",
-          "<p>Văn thể hoàn tiến bằng process_refund, chỉ escalate nếu hệ thống từ chối giao dịch.</p>"
+          "<p>Văn thể hoàn tiền bằng process_refund, chỉ escalate nếu hệ thống từ chối giao dịch.</p>"
         ]
       },
-      "topic": "d5"
+      "topic": "d1"
     },
     {
       "id": "210",
@@ -2329,7 +2329,7 @@
           "<p>Triển khai logic thử lại với exponential backoff trong MCP server của bạn cho tất cả các lỗi, chỉ trả về cho agent sau khi đã hết các lần thử lại.</p>"
         ]
       },
-      "topic": "d5"
+      "topic": "d2"
     },
     {
       "id": "211",
@@ -2358,7 +2358,7 @@
       "e": "Trích và lưu dữ liệu có cấu trúc của từng vấn đề (order ID, số tiền, trạng thái) vào một tầng context riêng. Dù hội thoại bộ nén, các dữ kiện này vẫn còn.",
       "m": 1,
       "v": {
-        "q": "<p>Một khách hàng nêu ba vấn đề riêng biệt trong một session: yêu cầu hoàn tiến (lượt 1-15), câu hỏi về gói đăng ký (lượt 16-30), và cập nhật phương thức thanh toán (lượt 31-45). ở lượt 48, khách hàng hỏi \"What happened with my refund?\" Cuộc hội thoại đang gần đặt giới hạn context. Chiến lược nào duy trì tốt nhất khả năng của agent trong việc giải quyết tất cả các vấn đề xuyên suốt session?</p>",
+        "q": "<p>Một khách hàng nêu ba vấn đề riêng biệt trong một session: yêu cầu hoàn tiền (lượt 1-15), câu hỏi về gói đăng ký (lượt 16-30), và cập nhật phương thức thanh toán (lượt 31-45). ở lượt 48, khách hàng hỏi \"What happened with my refund?\" Cuộc hội thoại đang gần đặt giới hạn context. Chiến lược nào duy trì tốt nhất khả năng của agent trong việc giải quyết tất cả các vấn đề xuyên suốt session?</p>",
         "o": [
           "<p>Triển khai sliding window context giữ lại 30 lượt gần nhất.</p>",
           "<p>Dựa vào các MCP tool để truy xuất lại thông tin liên quan theo yêu cầu khi khách hàng nhắc đến các vấn đề trước đó.</p>",
@@ -2514,7 +2514,7 @@
           "<p>Triển khai tự động thử lại với backoff cho network timeout bên trong tool; trả về lỗi cú pháp ngay lập tức kèm chi tiết xác thực tham số.</p>"
         ]
       },
-      "topic": "d5"
+      "topic": "d2"
     },
     {
       "id": "230",
@@ -2588,7 +2588,7 @@
           "<p>Triển khai một biểu mẫu tiếp nhận có cấu trúc thu thập tất cả các tham số bắt buộc (ngày, số lượng khách, ngân sách, loại địa điểm) ngay từ đầu trước khi trợ lý bắt đầu đưa ra bất kỳ đề xuất nào.</p>"
         ]
       },
-      "topic": "d4"
+      "topic": "d5"
     },
     {
       "id": "231",
@@ -2662,7 +2662,7 @@
           "<p>Trả về các trường cùng điểm confidence, cộng với một boolean requires_review được tính bằng các ngưỡng confidence đã kiểm thử của bạn, cùng một mảng review_reasons giải thích những trường nào đã kích hoạt việc xem xét.</p>"
         ]
       },
-      "topic": "d4"
+      "topic": "d5"
     },
     {
       "id": "232",
@@ -2691,7 +2691,7 @@
       "e": "Chia transcript dài thành các đoạn, trích xuất riêng từng đoạn, rồi hợp nhất và khả trùng lặp kết quả. Phạm vi như giúp giảm nhiễu và tăng độ phụ các chi tiết nắm rải rác; cần giữ tham chiếu liên đoạn khi ghép.",
       "m": 1,
       "v": {
-        "q": "<p>Đánh giá cho thấy độ chính xác trích xuất đặt 94% trên các bản ghi cuộc họp ngăn (30 phút) nhưng chỉ 68% trên các bản ghi dài hạn (&gt;60 phút), nối các cuộc thảo luận lan man và thông tin quan trọng nắm rải rác. Các bản ghi ở cả hai độ dài đầu nằm gần trong cửa sổ ngữ cảnh của model. Pattern nào cải thiện độ chính xác hiệu quả nhất trên các tài liệu dài và phục tập?</p>",
+        "q": "<p>Đánh giá cho thấy độ chính xác trích xuất đặt 94% trên các bản ghi cuộc họp ngăn (30 phút) nhưng chỉ 68% trên các bản ghi dài hạn (&gt;60 phút), nơi các cuộc thảo luận lan man và thông tin quan trọng nắm rải rác. Các bản ghi ở cả hai độ dài đầu nằm gần trong cửa sổ ngữ cảnh của model. Pattern nào cải thiện độ chính xác hiệu quả nhất trên các tài liệu dài và phục tập?</p>",
         "o": [
           "<p>Chia các bản ghi dài thành các chunk, trích xuất riêng tư tầng chunk, sau đó gặp và loại bỏ trùng lặp các kết quả.</p>",
           "<p>Thêm một bước tiến trích xuất trong đó model tóm tắt các thảo luận và kết luận chính trước khi thực hiện trích xuất có cấu trúc.</p>",
@@ -2807,7 +2807,7 @@
           "<p>Thêm tham số detail_level với các tùy chọn \"minimal\" hoặc \"comprehensive\" để kiểm soát lượng ngữ cảnh mà agent trình bày trong các xác nhận</p>",
           "<p>Trả về dữ liệu có cấu trúc bao gồm ước tính chi phí, project đích, thông số tài nguyên và tóm tắt tác động trong phản hồi của tool</p>",
           "<p>Thêm tham số boolean user_acknowledged phải được đặt thành true, kèm chỉ dẫn để agent chỉ đặt sau khi người dùng xác nhận rõ ràng rộng họ đã xem xét các chi tiết</p>",
-          "<p>Triển khai khoảng chờ 60 giây trước khi việc thực thi hoàn tất, cho phép người dùng có thời gian xem xét các phân bổ đang chỉ và hủy nếu cần</p>"
+          "<p>Triển khai khoảng chờ 60 giây trước khi việc thực thi hoàn tất, cho phép người dùng có thời gian xem xét các phân bổ đang chờ và hủy nếu cần</p>"
         ]
       },
       "topic": "d2"
@@ -2921,7 +2921,7 @@
           "<p>Tách tool chung thành các tool chuyên biệt theo mục đích - extract_data_points, summarize_content, verify_claim_against_source - mỗi tool có hợp động đầu vào/đầu ra được xác định rõ</p>"
         ]
       },
-      "topic": "d5"
+      "topic": "d2"
     },
     {
       "id": "219",
@@ -2958,7 +2958,7 @@
           "<p>Thêm một bước tiền xử lý dùng model nhỏ hơn để phân loại mục để mơ hồ của yêu cầu trên thang 1-5, định tuyến các yêu cầu có để mơ hồ cao tối hộp thoại làm rõ và các yêu cầu có độ mờ hạ thấp trực tiếp tới trợ lý.</p>"
         ]
       },
-      "topic": "d4"
+      "topic": "d5"
     },
     {
       "id": "236",
@@ -2995,7 +2995,7 @@
           "<p>Triển khai lấy mẫu ngẫu nhiên phân tầng, review một tỷ lệ phần trăm cố định các kết quả trích xuất có confidence cao mới tuần, cho phép đo tỷ lệ lại và phát hiện các mẫu lại mối.</p>"
         ]
       },
-      "topic": "d4"
+      "topic": "d5"
     },
     {
       "id": "220",
@@ -3206,15 +3206,15 @@
       "a": [
         "C"
       ],
-      "e": "Theo khóa nguồn: gọi một batch duy nhất vào cuối ngày chứa toàn bộ tài liệu của ngày đó. (Ghi chú của web: chỉ đến cuối ngày cộng thời gian xử lý tối đa 24 giờ có thể vượt mục 30 giờ, nên đáp án này còn gây tranh cãi.)",
+      "e": "[Cảnh báo đáp án nguồn] Khóa nguồn: C. B có tổng thời gian chờ lý thuyết tối đa 30 giờ, A là 28 giờ và có khoảng đệm. C có thể vượt 30 giờ; Batch API không bảo đảm SLA độ trễ 99,9%. Không đủ dữ kiện để khẳng định duy nhất A, B hay D đáp ứng độ tin cậy yêu cầu.",
       "m": 1,
       "v": {
-        "q": "<p>Tài liệu đến liên tục trong suốt giả làm việc và cần trích xuất dữ liệu có cấu trúc. để giảm chi phí, bạn muốn dùng Message Batches API (giảm giá 50%, của sẽ xử lý tối đa 24 giờ). SLA của bạn quy định kết quả trích xuất phải sẵn sàng trong vòng 30 giờ kể từ khi tài liệu đơn với độ tin cậy 99,9%. Chiến lược batching nào phù hợp nhất?</p>",
+        "q": "<p>Tài liệu đến liên tục trong giờ làm việc và cần trích xuất dữ liệu có cấu trúc. Để giảm chi phí, bạn muốn dùng Message Batches API (giảm 50%, thời gian xử lý tối đa 24 giờ). SLA yêu cầu có kết quả trong vòng 30 giờ kể từ khi tài liệu đến với độ tin cậy 99,9%. Chiến lược gửi batch nào phù hợp nhất?</p>",
         "o": [
-          "<p>Gọi các batch mọi 6 giờ chứa các tài liệu từ khoảng thời gian đó</p>",
-          "<p>Gọi các batch mọi 4 giờ chứa các tài liệu từ khoảng thời gian đó</p>",
-          "<p>Dùng real-time API cho tất cả tài liệu thay vì xử lý batch</p>",
-          "<p>Gọi một batch duy nhất vào cuối ngày chứa tất cả tài liệu của ngày hôm đó</p>"
+          "<p>Gửi batch mỗi sáu giờ, gồm các tài liệu đến trong khoảng thời gian đó.</p>",
+          "<p>Gửi batch mỗi bốn giờ, gồm các tài liệu đến trong khoảng thời gian đó.</p>",
+          "<p>Dùng API thời gian thực cho mọi tài liệu thay vì xử lý theo batch.</p>",
+          "<p>Gửi một batch duy nhất vào cuối ngày, gồm tất cả tài liệu của ngày đó.</p>"
         ]
       },
       "topic": "d4"
@@ -3249,7 +3249,7 @@
         "q": "<p>Coordinator agent đã có AgentDefinitions được cấu hình cho cơ bản subagent chuyên biệt, mỗi cái có mô tả, prompt và giới hạn tool phù hợp. Trong quá trình kiểm thử, bạn nhận thấy coordinator suy luận đúng vị thời điểm cần ủy quyền—nó tạo ra các tin nhắn như \"I'll ask the tác nhân tìm kiếm trên web to find sources on this topic\"—nhưng không có subagent nào thực sự được thực thi. Sau đó coordinator tiếp tục như thế việc ủy quyền đã xảy ra và tiếp tục với thông tin không đầy đủ. Log không hiển thị lỗi. Nguyên nhân có khả năng cao nhất là gì?</p>",
         "o": [
           "<p>AgentDefinitions được cấu hình đúng, những system prompt của coordinator không liệt kê tượng minh các loại subagent có sẵn, khiến model không biết chúng có thể được gọi.</p>",
-          "<p>Cấu hình allowedTools của coordinator không bao gồm \"Task\", nên dù có thể suy luận về việc ủy quyền, nó không thể gửi tool cần thiết để tạo subagent.</p>",
+          "<p>Cấu hình allowedTools của coordinator không bao gồm \"Task\", nên dù có thể suy luận về việc ủy quyền, nó không thể gọi tool cần thiết để tạo subagent.</p>",
           "<p>S? cô lập context của subagent có nghĩa là các mô tả tác vụ từ coordinator không tự động đến được subagent; bạn cần cấu hình chuyển tiếp context tượng minh trong ClaudeAgentOptions.</p>",
           "<p>Cài đặt max_tokens của coordinator quá thấp, khiến lệnh gọi tool Task bị cắt cụt trước khi tham số loại subagent có thể được chỉ định.</p>"
         ]
@@ -3317,18 +3317,18 @@
       "a": [
         "B"
       ],
-      "e": "Báo cáo tách rõ phần đã chắc chắn và phần còn tranh cãi, giữ nguyên cách các nguồn gốc mô tả và bối cảnh phương pháp. Không gộp thành một con số từ tin, cộng không rào đón mở hệ.",
+      "e": "Phân biệt rõ các phát hiện đã được xác lập và những điểm còn tranh cãi. Giữ nguồn, phương pháp và mức độ không chắc chắn thay vì tùy tiện gộp hoặc loại bỏ các kết quả.",
       "m": 1,
       "v": {
-        "q": "<p>Các lần review production cho thấy việc xử lý sự không chắc chắn trong báo cáo cuối cùng không nhất quán. đôi khi các phát hiện mâu thuẫn của subagent bộ tổng hợp thành một phát biểu từ tin duy nhất (làm một sắc thái), trong khi lúc khác các báo cáo lỗi rào đón quá mức với quá nhiều điều kiện (trở nên vô ích). Khi agent tìm kiếm web trả về \"industry analysts estimate $50B market size (methodology varies)\" và agent phân tích tài liệu trả về \"peer-reviewed study estimates $35B (±$7B, 95% CI),\" coordinator hoặc chọn một cách tùy ý hoặc tạo ra các phát biểu mơ hồ nhị \"the market may be $35B-$50B depending on factors.\" Cách tiếp cận có hệ thống nào giải quyết tốt nhất vấn đề này?</p>",
+        "q": "<p>Khi rà soát báo cáo production, bạn thấy cách xử lý sự không chắc chắn thiếu nhất quán: đôi khi các kết quả mâu thuẫn bị gộp thành một kết luận chắc chắn, đôi khi báo cáo lại quá dè dặt với nhiều điều kiện đến mức không hữu ích. Agent tìm kiếm web cho biết các nhà phân tích ước tính thị trường 50 tỷ USD (phương pháp khác nhau), còn agent phân tích tài liệu tìm thấy nghiên cứu bình duyệt ước tính 35 tỷ USD (±7 tỷ, khoảng tin cậy 95%). Agent điều phối hoặc tùy ý chọn một con số, hoặc kết luận mơ hồ rằng thị trường có thể từ 35 đến 50 tỷ USD tùy các yếu tố. Cách tiếp cận có hệ thống nào giải quyết tốt nhất vấn đề này?</p>",
         "o": [
-          "<p>Chỉ dẫn tác nhân tổng hợp cấu trúc các báo cáo với các phần rõ ràng phân biệt các phát hiện đã được xác lập vọng chức với các phát hiện còn tranh cãi, giữ nguyên cách mô tả của nguồn gốc và ngữ cảnh phương pháp luận.</p>",
-          "<p>Triển khai một lớp hiệu chỉnh confidence chuẩn hóa các biểu đặt không chắc chắn của subagent thành các điểm xác suất chuẩn (0.0-1.0), sau đó tính trung bình có trọng số các phát hiện theo confidence đã hiệu chỉnh.</p>",
-          "<p>Cấu hình các subagent chỉ báo cáo các phát hiện đặt ngưỡng confidence cao, lọc thông tin không chắc chắn trước khi nó đến coordinator.</p>",
-          "<p>Thêm một verification subagent đối chiếu chéo các phát hiện giữa các nguồn, chỉ chuyển cho bước tổng hợp những khẳng định được ít nhất hai nguồn độc lập xác nhận.</p>"
+          "<p>Yêu cầu agent tổng hợp chia báo cáo thành các phần phân biệt kết quả đã được xác lập và kết quả còn tranh cãi, giữ cách diễn đạt của nguồn và bối cảnh phương pháp luận.</p>",
+          "<p>Triển khai lớp hiệu chỉnh độ tin cậy chuyển các biểu đạt không chắc chắn thành xác suất từ 0 đến 1, rồi tính trung bình có trọng số.</p>",
+          "<p>Cấu hình các subagent chỉ báo cáo kết quả vượt ngưỡng độ tin cậy cao, loại bỏ thông tin không chắc chắn trước khi chuyển cho agent điều phối.</p>",
+          "<p>Thêm subagent kiểm chứng chéo, chỉ chuyển kết luận được ít nhất hai nguồn độc lập xác nhận.</p>"
         ]
       },
-      "topic": "d1"
+      "topic": "d5"
     },
     {
       "id": "241",
@@ -3397,7 +3397,7 @@
         "q": "<p>Bạn đã cấu hình hệ thống sao cho cơ bản subagent đều có quyền truy cập toàn bộ 18 tool. Trong quá trình kiểm thử, các agent thường xuyên gửi các tool nằm ngoài chuyên môn của chúng—tác nhân tổng hợp cố gắng tìm kiếm web, và report generator cố gắng phân tích tài liệu. Nguyên nhân chính của hành vi chọn tool kém này là gì?</p>",
         "o": [
           "<p>Các mô tả vai trò của agent trong system prompt xung đột với việc có quyền truy cập các tool nằm ngoài vai trò đó.</p>",
-          "<p>Các định nghĩa tool chiếm quá nhiều không gian cửa sổ ngữ cảnh, khiển không để chỉ cho nội dung tác vụ.</p>",
+          "<p>Các định nghĩa tool chiếm quá nhiều không gian cửa sổ ngữ cảnh, khiến không để chỉ cho nội dung tác vụ.</p>",
           "<p>Coordinator không thể theo dõi khả năng của từng subagent, dẫn đến định tuyến sai tác vụ.</p>",
           "<p>Việc chọn từ 18 tool thay vì 4-5 tool liên quan làm tăng độ phức tập của quyết định vượt quá các ngưỡng chọn lựa đáng tin cậy.</p>"
         ]
@@ -3468,7 +3468,7 @@
       "e": "Lai giữa tóm tắt phần cụ và giữ nguyên văn phần mới. Không mất hơn thông tin cũ như sliding window.",
       "m": 1,
       "v": {
-        "q": "<p>Người dùng báo cáo rộng trong các cuộc hội thoại kéo dài, AI mất dấu các chế độ, ví dụ và sở thích cụ thể mà họ đã đề cập trước đó trong session. </p><p>Cách triển khai hiện tại của bạn dùng sliding window chỉ giữ 25 cấp tin nhắn gần nhất để nằm trong giới hạn context. </p><p>Cách tiếp cận hiệu quả nhất để duy trì nhận thức v? nội dung hội thoại trước đó đồng thời quản lý kích thước context là gì?</p>",
+        "q": "<p>Người dùng báo cáo rộng trong các cuộc hội thoại kéo dài, AI mất dấu các chế độ, ví dụ và sở thích cụ thể mà họ đã đề cập trước đó trong session. </p><p>Cách triển khai hiện tại của bạn dùng sliding window chỉ giữ 25 cấp tin nhắn gần nhất để nằm trong giới hạn context. </p><p>Cách tiếp cận hiệu quả nhất để duy trì nhận thức về nội dung hội thoại trước đó đồng thời quản lý kích thước context là gì?</p>",
         "o": [
           "<p>Thay sliding window bằng cách tiếp cận kết hợp: tóm tắt các tin nhắn cũ hơn trong khi giữ nguyên văn các tin nhắn gần đây.</p>",
           "<p>Triển khai vector similarity search trên toàn bộ lịch sử hội thoại, truy xuất các tin nhắn quá khả liên quan cho mỗi truy vấn của người dùng.</p>",
@@ -3550,7 +3550,7 @@
           "<p>Read file entry chính của dự án và lần theo các câu lệnh import để truy xuất nguồn gốc nối eval có thể được dùng.</p>"
         ]
       },
-      "topic": "d3"
+      "topic": "d2"
     },
     {
       "id": "228",
@@ -3583,7 +3583,7 @@
         "o": [
           "<p>Thêm bản cập nhật trạng thái làm tiền tư cho tin nhắn user kế tiếp trước khi gửi API.</p>",
           "<p>Thêm trạng thái vận chuyển hiện tại vào system prompt trước lần gọi API kế tiếp.</p>",
-          "<p>Cấu hình trụ lý gửi tool get_order_status ở đầu mỗi phản hồi.</p>",
+          "<p>Cấu hình trụ lý gọi tool get_order_status ở đầu mỗi phản hồi.</p>",
           "<p>Ngay lập tức gửi một API request với bản cập nhật dưới dạng tin nhắn user giả lập, tạo ra một phản hồi assistant không được yêu cầu.</p>"
         ]
       },
@@ -3624,7 +3624,7 @@
           "<p>Dùng tool Read để lần lượt tại cả 15 file, xây dựng số hiểu biết đầy đủ về toàn bộ triển khai caching.</p>"
         ]
       },
-      "topic": "d3"
+      "topic": "d5"
     },
     {
       "id": "246",
@@ -3650,18 +3650,18 @@
       "a": [
         "B"
       ],
-      "e": "Session có tên thì dùng `--resume &lt;tên&gt;`.",
+      "e": "[Cảnh báo nguồn bị cắt] Khóa B là --resume auth-deep-dive. Câu 150 là phiên bản đầy đủ hơn của cùng tình huống.",
       "m": 1,
       "v": {
-        "q": "<p>Hôm nay cô ấy muốn tiếp tục cuộc điều tra cụ thể đó. Cô ấy đã làm việc trên ba codebase khác kể từ đó và biệt session có tên là dive\". Cô ấy nên resume như thế nào?</p>",
+        "q": "<p>Hôm nay cô ấy muốn tiếp tục cuộc điều tra đó. Kể từ đó, cô đã làm việc trên ba codebase khác và biết tên phiên (nguồn tiếng Anh bị cắt thành “dive”). Cô nên tiếp tục phiên như thế nào?</p>",
         "o": [
-          "<p>Dùng --resume auth-deep-dive để tối session cụ thể đó theo tên</p>",
+          "<p>Dùng --resume auth-deep-dive để mở session cụ thể đó theo tên</p>",
           "<p>Dùng --session-id với UUID từ file transcript của session hôm qua</p>",
-          "<p>Dùng --continue để tiếp tục từ nội cuộc hội thoại gần nhất dừng lại</p>",
+          "<p>Dùng --continue để tiếp tục từ nơi cuộc hội thoại gần nhất dừng lại</p>",
           "<p>Bắt đầu mới và đọc lại cùng các file đó</p>"
         ]
       },
-      "topic": "d3"
+      "topic": "d1"
     },
     {
       "id": "248",
@@ -3772,7 +3772,7 @@
           "<p>Dùng Bash để nội định nghĩa hàm vào cuối file bằng cú pháp heredoc</p>"
         ]
       },
-      "topic": "d3"
+      "topic": "d2"
     },
     {
       "id": "251",
@@ -3875,7 +3875,7 @@
       "e": "Các vấn đề phụ thuộc lẫn nhau thì sửa tuần tự: column width trước, kiểm tra; rồi đến format ngày; rồi page break; test sau mỗi bước.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đã yêu cầu Claude Code xây dựng một tính năng tạo báo cáo PDF. Bạn triển khai ban đầu truy vấn cơ sở dữ liệu đúng, những đầu ra có các vấn đề về định dạng: cắt của bảng quá hợp khiển nội dung bị cắt, ngày tháng hiện thể không đúng định dạng và việc xử lý ngắt trang không chính xác. Bạn nhận thấy các vấn đề này tác động lẫn nhau — thay đổi độ rộng cột ảnh hưởng đến cách hiển thị ngày tháng, và việc ngắt trang phụ thuộc vào chiều cao nội dung. Cách tiếp cận hiệu quả nhất để lập dẫn tới một giải pháp hoạt động tốt là gì?</p>",
+        "q": "<p>Bạn đã yêu cầu Claude Code xây dựng một tính năng tạo báo cáo PDF. Bạn triển khai ban đầu truy vấn cơ sở dữ liệu đúng, những đầu ra có các vấn đề về định dạng: cắt của bảng quá hợp khiến nội dung bị cắt, ngày tháng hiện thể không đúng định dạng và việc xử lý ngắt trang không chính xác. Bạn nhận thấy các vấn đề này tác động lẫn nhau — thay đổi độ rộng cột ảnh hưởng đến cách hiển thị ngày tháng, và việc ngắt trang phụ thuộc vào chiều cao nội dung. Cách tiếp cận hiệu quả nhất để lập dẫn tới một giải pháp hoạt động tốt là gì?</p>",
         "o": [
           "<p>Bắt đầu lại từ đầu với một prompt chi tiết nêu rõ ngay từ đầu tất cả các yêu cầu về định dạng.</p>",
           "<p>Đưa cả ba vấn đề vào một tin nhắn chi tiết duy nhất kèm thông số chính xác cho từng vấn đề, để Claude xử lý chúng cùng nhau trong một lần cập nhật.</p>",
@@ -4105,7 +4105,7 @@
           "<p>Vào plan mode để khám phá kiến trúc và các dependency của module trước khi thử bất kỳ bản sửa nào.</p>"
         ]
       },
-      "topic": "d4"
+      "topic": "d3"
     },
     {
       "id": "260",
@@ -4142,7 +4142,7 @@
           "<p>Mô tả các pattern tự ba module bằng ngôn ngữ tự nhiên trong prompt của bạn, giải thích cách xử lý giao dịch, định dạng lại và các quy ước logging mà Claude cần tuân theo.</p>"
         ]
       },
-      "topic": "d4"
+      "topic": "d3"
     },
     {
       "id": "261",
@@ -4179,7 +4179,7 @@
           "<p>Từ chỉnh sửa thủ công mã được tạo để sửa phản xử lý null, sau đó tiếp tục làm việc với Claude ở các phần khác.</p>"
         ]
       },
-      "topic": "d4"
+      "topic": "d3"
     },
     {
       "id": "262",
@@ -4319,7 +4319,7 @@
       "e": "Chỉ xử lý lỗi đúng 300 tài liệu lại (theo custom_id), chia nhỏ cho vừa context rồi gặp kết quả. Tầng max_tokens không giải quyết được lỗi input quá dài.",
       "m": 1,
       "v": {
-        "q": "<p>Sau khi batch hằng ngày gồm 10.000 tài liệu hoàn tất, 300 tài liệu (3%) thất bại với lỗi \"context_length_exceeded\". Tập kết quả xác định tầng lại theo custom_id. Cách tiếp cận tiết kiệm chi phí nhất để xử lý các tài liệu thất bại này là gì?</p>",
+        "q": "<p>Sau khi batch hằng ngày gồm 10.000 tài liệu hoàn tất, 300 tài liệu (3%) thất bại với lỗi \"context_length_exceeded\". Tập kết quả xác định từng lỗi theo custom_id. Cách tiếp cận tiết kiệm chi phí nhất để xử lý các tài liệu thất bại này là gì?</p>",
         "o": [
           "<p>Chỉ gửi lại 300 tài liệu thất bại sau khi chia chúng thành các phần nhỏ hơn, rồi kết hợp các kết quả trích xuất từng phần</p>",
           "<p>Xử lý lỗi toàn bộ batch với prompt caching được bật để giảm chi phí của các yêu cầu thử lại có system prompt giống hệt nhau</p>",
@@ -4364,7 +4364,7 @@
           "<p>Phát ngay các bài hát tập trung phổ biến và để người dùng chuyển hướng nếu cần</p>"
         ]
       },
-      "topic": "d4"
+      "topic": "d5"
     },
     {
       "id": "266",
@@ -4401,7 +4401,7 @@
           "<p>Phân tích phản hồi văn bản của Claude bằng các regex pattern để trích xuất các đối tượng JSON, dùng logic retry cho các phản hồi bị lỗi định dạng.</p>"
         ]
       },
-      "topic": "d2"
+      "topic": "d4"
     },
     {
       "id": "267",
@@ -4549,7 +4549,7 @@
           "<p>Loại bỏ các chỉ dẫn lực thận trống và yêu cầu Claude báo cáo mới vấn đề tiềm năng, sau đó áp dụng một bộ lọc theo chương trình độ loại trùng lặp và loại bỏ các danh mục vốn thường tạo ra false positive.</p>"
         ]
       },
-      "topic": "d5"
+      "topic": "d4"
     },
     {
       "id": "271",
@@ -4578,12 +4578,12 @@
       "e": "Tách review thành các prompt tập trung (security và API; business logic), mới prompt có ví dụ riêng, rồi gặp kết quả. Hạt đánh đổi giữa các loại lỗi trong một prompt.",
       "m": 1,
       "v": {
-        "q": "<p>Trình review tự động của bạn dùng một prompt duy nhất bao quát các vấn đề bảo mật, thiết kế API và tính đúng đơn của logic nghiệp về. Bộ đánh giá của bạn cho thấy recall mảnh ở các phát hiện (82%) những recall kém với các trường hợp biên của logic nghiệp vụ trong chấm điểm quiz (34%). Khi bạn thêm các ví dụ few-shot vị lại logic vào prompt, recall logic là 41% những recall thiết kế API giảm xuống 68%. Bạn nên xử lý sự đánh đổi này như thế nào để cải thiện khả năng phát hiện ở cả hai danh mục?</p>",
+        "q": "<p>Trình review tự động của bạn dùng một prompt duy nhất bao quát các vấn đề bảo mật, thiết kế API và tính đúng đơn của logic nghiệp vụ. Bộ đánh giá của bạn cho thấy recall mảnh ở các phát hiện (82%) những recall kém với các trường hợp biên của logic nghiệp vụ trong chấm điểm quiz (34%). Khi bạn thêm các ví dụ few-shot vị lại logic vào prompt, recall logic là 41% những recall thiết kế API giảm xuống 68%. Bạn nên xử lý sự đánh đổi này như thế nào để cải thiện khả năng phát hiện ở cả hai danh mục?</p>",
         "o": [
           "<p>Thay các ví dụ few-shot bằng một checklist chi tiết về các trường hợp biên của logic cần kiểm tra, chẳng hạn chia cho 0 trong tính điểm hoặc các ngưỡng chấm điểm.</p>",
-          "<p>Cung cấp toàn bộ repository làm context thay vì chỉ các tập đã thay đổi và mã xung quanh, giúp model nhìn sâu hơn vào logic nghiệp về.</p>",
+          "<p>Cung cấp toàn bộ repository làm context thay vì chỉ các tập đã thay đổi và mã xung quanh, giúp model nhìn sâu hơn vào logic nghiệp vụ.</p>",
           "<p>Nâng cấp lên một model tier mạnh hơn, vì khả năng suy luận mạnh hơn của nó sẽ xử lý cả hai loại mối quan tâm trong một prompt duy nhất và loại bỏ sẽ đánh đổi recall.</p>",
-          "<p>Tách review thành các prompt riêng tập trung - một cho bảo mật và thiết kế API, một cho logic nghiệp về - mới prompt có các ví dụ riêng, sau đó kết hợp các phát hiện trước khi đồng.</p>"
+          "<p>Tách review thành các prompt riêng tập trung - một cho bảo mật và thiết kế API, một cho logic nghiệp vụ - mới prompt có các ví dụ riêng, sau đó kết hợp các phát hiện trước khi đồng.</p>"
         ]
       },
       "topic": "d4"
@@ -4612,7 +4612,7 @@
       "a": [
         "A"
       ],
-      "e": "Trước khi tra thêm, rút gọn các kết quả cơ, chỉ giữ field liên quan đến việc trở hàng. Context gần mà dữ liệu cần thiết vẫn còn nguyên.",
+      "e": "Trước khi tra thêm, rút gọn các kết quả cũ, chỉ giữ field liên quan đến việc trả hàng. Ngữ cảnh gọn mà dữ liệu cần thiết vẫn còn nguyên.",
       "m": 1,
       "v": {
         "q": "<p>Agent của bạn đã gửi lookup_order nhiều lần trong khi điều tra các yêu cầu trả hàng của một khách hàng. Mỗi phản hồi gồm hạn 40 trường (một hàng, chi tiết vận chuyển, thông tin thanh toán, lịch sử trạng thái). đầu ra của tool hiện chiếm phần lớn context của cuộc hội thoại. Khách hàng đề cập thêm hai đến hàng nửa mà họ muốn thảo luận. Cách tiếp cận hiệu quả trước khi thực hiện thêm các lượt tra cầu là gì?97</p>",
@@ -4660,7 +4660,7 @@
           "<p>Thêm mã ở tầng orchestration kiểm tra kết quả của agent sau mỗi lần loop kết thúc - nếu loop kết thúc mà không có giải quyết hoàn tất hoặc escalation, thì gửi escalate_to_human bằng chương trình với context hội thoại và các tool result đã tích lũy.</p>"
         ]
       },
-      "topic": "d5"
+      "topic": "d1"
     },
     {
       "id": "276",
@@ -4771,7 +4771,7 @@
           "<p>Tiếp tục trong phiên gốc, phát triển các test end-to-end trước, sau đó đến snapshot test một cách tuần tự.</p>"
         ]
       },
-      "topic": "d5"
+      "topic": "d1"
     },
     {
       "id": "279",
@@ -4845,7 +4845,7 @@
           "<p>Dùng fork_session để tạo hai nhánh từ phân tích của hôm qua, khám phá một cách tiếp cận trong mỗi fork.</p>"
         ]
       },
-      "topic": "d5"
+      "topic": "d1"
     },
     {
       "id": "281",
@@ -4882,7 +4882,7 @@
           "<p>Tạo một lịch kiểm thử cố định từ trước dựa trên cấu trúc thư mục, phân bổ nỗ lực bằng nhau cho mỗi thư mục cấp cao nhất bất kỳ để phục tệp hay tạm quan trọng của mã.</p>"
         ]
       },
-      "topic": "d3"
+      "topic": "d1"
     },
     {
       "id": "282",
@@ -4948,7 +4948,7 @@
       "e": "`--system-prompt` thay toàn bộ prompt mặc định, làm một hướng dẫn dùng tool của Claude Code. Dùng `--append-system-prompt` để thêm hướng dẫn review mà vẫn giữ hành vi gốc.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang thiết lập một pipeline code review tự động không tương tác bằng Claude Code. Bạn muốn Claude phân tích mặt Git diff đã lấy về (git diff) so với nhánh main và áp dụng một bộ hướng dẫn code review tùy chỉnh. Tuy nhiên, bạn nhận thấy rằng khi chạy pipeline, Claude chỉ nhìn vào chính văn bản diff thô và hoàn toàn ngừng sử dụng các tool đọc tập hoặc điều hướng mã. Kết quả là nó không kiểm tra được bởi cảnh rộng hơn của repository codebase, điều này rất quan trọng vì diff sửa đổi một hàm cốt lõi được nhiều module bên ngoài gửi. Thay đổi nào đối với lệnh gọi CLI s? khiển Claude đọc các tập liên quan trong repository mà vẫn áp dụng thành công các hướng dẫn review tùy chỉnh của bạn?</p>",
+        "q": "<p>Bạn đang thiết lập một pipeline code review tự động không tương tác bằng Claude Code. Bạn muốn Claude phân tích mặt Git diff đã lấy về (git diff) so với nhánh main và áp dụng một bộ hướng dẫn code review tùy chỉnh. Tuy nhiên, bạn nhận thấy rằng khi chạy pipeline, Claude chỉ nhìn vào chính văn bản diff thô và hoàn toàn ngừng sử dụng các tool đọc tập hoặc điều hướng mã. Kết quả là nó không kiểm tra được bởi cảnh rộng hơn của repository codebase, điều này rất quan trọng vì diff sửa đổi một hàm cốt lõi được nhiều module bên ngoài gửi. Thay đổi nào đối với lệnh gọi CLI sẽ khiến Claude đọc các tập liên quan trong repository mà vẫn áp dụng thành công các hướng dẫn review tùy chỉnh của bạn?</p>",
         "o": [
           "<p>Giữ --system-prompt và thêm --allowedTools \"Read, Glob, Grep\" để chỉ để không tương tác cho phép các tool hệ thống tập mà nó vấn vô hiệu hóa.</p>",
           "<p>Thay --system-prompt bằng --append-system-prompt để các hướng dẫn review của bạn được thêm vào prompt mặc định của Claude Code thay vì ghi đè hướng dẫn tích hợp sẵn về việc dùng các tool đọc tập và điều hướng mã.</p>",
@@ -5030,7 +5030,7 @@
           "<p>Tiếp tục phiên và yêu cầu agent ngay lập tức đọc lại tất cả 12 tập đã phân tích trước đó để đảm bảo khớp hoàn toàn.</p>"
         ]
       },
-      "topic": "d5"
+      "topic": "d1"
     },
     {
       "id": "288",
@@ -5067,7 +5067,7 @@
           "<p>Dùng Grep để tìm tất cả các tập import module xử lý lỗi của dự án, sau đó Read các tập đó để xác định các định nghĩa lại tùy chỉnh.</p>"
         ]
       },
-      "topic": "d3"
+      "topic": "d2"
     },
     {
       "id": "289",
@@ -5133,15 +5133,15 @@
       "e": "Quy tắc tuân thủ bắt buộc thì dùng hook chọn tool call vượt $500 và chuyển sang escalation. Deterministic, không phụ thuộc vào model.",
       "m": 1,
       "v": {
-        "q": "<p>Quy định tuân thủ yêu cầu các khoản hoàn tiến vượt quá $500 phải tự động được chuyển lên một nhân viên con người - quy tắc này không thể để cho model tự quyết định. Mặc dù có các chỉ dẫn system prompt rõ ràng, log production cho thấy agent đôi khi xử lý trực tiếp các khoản hoàn tiến giá trị cao (tỷ lệ thất bại 3%). Bạn nên làm thế nào để đạt được sẽ tuân thủ được đảm bảo?</p>",
+        "q": "<p>Quy định tuân thủ yêu cầu các khoản hoàn tiền vượt quá $500 phải tự động được chuyển lên một nhân viên con người - quy tắc này không thể để cho model tự quyết định. Mặc dù có các chỉ dẫn system prompt rõ ràng, log production cho thấy agent đôi khi xử lý trực tiếp các khoản hoàn tiền giá trị cao (tỷ lệ thất bại 3%). Bạn nên làm thế nào để đạt được sẽ tuân thủ được đảm bảo?</p>",
         "o": [
-          "<p>Sửa tool hoàn tiến để trả về một lỗi với thông báo \"Amount exceeds policy limit please escalate\" khi vượt ngưỡng.</p>",
-          "<p>Triển khai một hook để chọn các lệnh gọi tool khi số tiền hoàn tiến cần xử lý vượt quá $500, chọn nó và gửi human escalation.</p>",
+          "<p>Sửa tool hoàn tiền để trả về một lỗi với thông báo \"Amount exceeds policy limit please escalate\" khi vượt ngưỡng.</p>",
+          "<p>Triển khai một hook để chọn các lệnh gọi tool khi số tiền hoàn tiền cần xử lý vượt quá $500, chọn nó và gửi human escalation.</p>",
           "<p>Tăng cường system prompt bằng ngôn ngữ nhấn mạnh: \"CRITICAL POLICY! Refunds over $500 MUST trigger human escalation. NEVER process these directly!\"</p>",
-          "<p>Thêm các ví dụ few-shot vào prompt thể hiện hành vi escalation đúng ở nhiều mục hoàn tiến khác nhau ($40, $500, $600).</p>"
+          "<p>Thêm các ví dụ few-shot vào prompt thể hiện hành vi escalation đúng ở nhiều mục hoàn tiền khác nhau ($40, $500, $600).</p>"
         ]
       },
-      "topic": "d5"
+      "topic": "d1"
     },
     {
       "id": "294",
@@ -5167,14 +5167,14 @@
       "a": [
         "A"
       ],
-      "e": "Escalate khi khách yêu cầu gặp người thất, khi cần ngoại lệ chính sách, hoặc khi agent không thể tiến triển thêm. Sentiment hay số lần tool lại không phải tín hiệu đáng tin.",
+      "e": "Escalate khi khách yêu cầu gặp nhân viên thực, khi cần ngoại lệ chính sách, hoặc khi agent không thể tiến triển thêm. Sentiment hay số lần tool lại không phải tín hiệu đáng tin.",
       "m": 1,
       "v": {
         "q": "<p>Bạn đang triển khai logic escalation cho thời điểm agent nên gửi một người xử lý. Nhóm của bạn đang cân nhắc các cách tiếp cận khác nhau để kích hoạt escalation. Cách tiếp cận nào sẽ xác định đáng tin cậy nhất các trường hợp thực sự cần sự can thiệp của con người?</p>",
         "o": [
           "<p>Cấu hình agent escalate sau ba lần tool thất bại liên tiếp trong việc giải quyết vấn đề đã nêu của khách hàng, đảm bảo mật nỗ lực hợp lý trước khi đưa con người vào.</p>",
           "<p>Xây dựng một rules engine ánh xạ các loại vấn đề, phân khúc khách hàng và danh mục sản phẩm cụ thể tải các quyết định escalation, loại bỏ nhu cầu phán đoán của model.</p>",
-          "<p>Hướng dẫn agent escalate khi khách hàng yêu cầu một người thất, khi vấn đề đòi hỏi các ngoại lệ chính sách, hoặc khi agent không thể đạt được tiến triển có ý nghĩa.</p>",
+          "<p>Hướng dẫn agent escalate khi khách hàng yêu cầu một nhân viên thực, khi vấn đề đòi hỏi các ngoại lệ chính sách, hoặc khi agent không thể đạt được tiến triển có ý nghĩa.</p>",
           "<p>Triển khai phân tích sentiment theo dõi các chỉ báo bực bội (ví dụ: viết hoa toàn bộ, câu hỏi lặp lại, dấu chấm than) và kích hoạt escalation khi điểm bực bội vượt quá một ngưỡng đã cấu hình.</p>"
         ]
       },
@@ -5241,7 +5241,7 @@
       "a": [
         "B"
       ],
-      "e": "`--bare` bỏ qua bước auto-discovery (hook, MCP, plugin, skill, CLAUDE.md lồng nhau) nên khởi động nhanh, và `--append-system-prompt-file ./CLAUDE.md` nộp đúng chuẩn cần thiết.",
+      "e": "--bare bỏ qua các bước tự động khám phá cấu hình; --append-system-prompt-file ./CLAUDE.md nạp rõ ràng tiêu chuẩn cần thiết mà không thay thế toàn bộ system prompt.",
       "m": 1,
       "v": {
         "q": "<p>Bạn đang tích hợp Claude Code vào pipeline Continuous Integration/Continuous Deployment (CI/CD) của mình. Hệ thống chạy các code review tự động, tạo test case và cung cấp phản hồi cho các pull request. Bạn cần thiết kế các prompt cung cấp phản hồi khả thi và giảm thiểu false positive. Các job review tự động của bạn một 18 giây để khởi tạo trước khi Claude bắt đầu phân tích mã. Việc profiling cho thấy để trả do tự động khám phá các hook, MCP server, plugin, skill và nhiều tập CLAUDE.md lồng nhau trong monorepo. Bạn cần giảm thời gian khởi động trong khi vẫn đảm bảo các review thực thi các tiêu chuẩn lập trình được ghi trong tập CLAUDE.md cấp gốc. Cách tiếp cận hiệu quả nhất là gì?</p>",
@@ -5326,7 +5326,7 @@
           "<p>Yêu cầu A, tác vụ đổi tên hàm</p>"
         ]
       },
-      "topic": "d2"
+      "topic": "d1"
     },
     {
       "id": "298",
@@ -5359,7 +5359,7 @@
         "o": [
           "<p>CI review chức hạn đã dùng một prompt cụ thể hơn, trong khi yêu cầu review của lập trình viên quá chung chung.</p>",
           "<p>Claude giữ lại context triển khai và các quyết định trước đó trong phiên, khiến nó ít có khả năng thách thức các giả định làm nền tảng cho các thay đổi của chính nó.</p>",
-          "<p>Cửa sổ ngữ cảnh của phiên chắc chắn đã đầy, khiển không đủ dung lượng cho một review có ý nghĩa.</p>",
+          "<p>Cửa sổ ngữ cảnh của phiên chắc chắn đã đầy, khiến không đủ dung lượng cho một review có ý nghĩa.</p>",
           "<p>Môi trường CI có thể truy cập toàn bộ repository, trong khi một phiên Claude Code cục bộ chỉ có thể truy cập tập hiện tại.</p>"
         ]
       },
@@ -5429,12 +5429,12 @@
       "e": "Tách các prompt tập trung theo từng nhóm vấn đề, mới prompt có ví dụ riêng, rồi gặp findings.",
       "m": 1,
       "v": {
-        "q": "<p>Trình review tự động của bạn dùng một prompt duy nhất bao quát các vấn đề bảo mật, thiết kế API và tính đúng đơn của logic nghiệp về. </p><p>Bộ đánh giá của bạn cho thấy recall mảnh ở các phát hiện (82%) những recall kém với các trường hợp biên của logic nghiệp vụ trong chấm điểm quiz (34%). </p><p>Khi bạn thêm các ví dụ few-shot vị lại logic vào prompt, recall logic là 41% những recall thiết kế API giảm xuống 68%. </p><p>Bạn nên xử lý sự đánh đổi này như thế nào để cải thiện khả năng phát hiện ở cả hai danh mục?</p>",
+        "q": "<p>Trình review tự động của bạn dùng một prompt duy nhất bao quát các vấn đề bảo mật, thiết kế API và tính đúng đơn của logic nghiệp vụ. </p><p>Bộ đánh giá của bạn cho thấy recall mảnh ở các phát hiện (82%) những recall kém với các trường hợp biên của logic nghiệp vụ trong chấm điểm quiz (34%). </p><p>Khi bạn thêm các ví dụ few-shot vị lại logic vào prompt, recall logic là 41% những recall thiết kế API giảm xuống 68%. </p><p>Bạn nên xử lý sự đánh đổi này như thế nào để cải thiện khả năng phát hiện ở cả hai danh mục?</p>",
         "o": [
           "<p>Nâng cấp lên một model tier mạnh hơn, vì khả năng suy luận mạnh hơn của nó sẽ xử lý cả hai loại mối quan tâm trong một prompt duy nhất và loại bỏ sẽ đánh đổi recall.</p>",
           "<p>Thay các ví dụ few-shot bằng một checklist chi tiết về các trường hợp biên của logic cần kiểm tra, chẳng hạn chia cho 0 trong tính điểm hoặc các ngưỡng chấm điểm.</p>",
-          "<p>Tách review thành các prompt riêng tập trung - một cho bảo mật và thiết kế API, một cho logic nghiệp về - mới prompt có các ví dụ riêng, sau đó kết hợp các phát hiện trước khi đồng.</p>",
-          "<p>Cung cấp toàn bộ repository làm context thay vì chỉ các tập đã thay đổi và mã xung quanh, giúp model nhìn sâu hơn vào logic nghiệp về.</p>"
+          "<p>Tách review thành các prompt riêng tập trung - một cho bảo mật và thiết kế API, một cho logic nghiệp vụ - mới prompt có các ví dụ riêng, sau đó kết hợp các phát hiện trước khi đồng.</p>",
+          "<p>Cung cấp toàn bộ repository làm context thay vì chỉ các tập đã thay đổi và mã xung quanh, giúp model nhìn sâu hơn vào logic nghiệp vụ.</p>"
         ]
       },
       "topic": "d4"
@@ -5537,7 +5537,7 @@
       "a": [
         "C"
       ],
-      "e": "Expose catalog nội dung của tầng server (tóm tắt issue, cấu trúc tài liệu, schema database) dưới dạng MCP resources. Agent nắm được tổng quan mà không phải gửi tool dò dặm nhiều lần.",
+      "e": "Expose catalog nội dung của tầng server (tóm tắt issue, cấu trúc tài liệu, schema database) dưới dạng MCP resources. Agent nắm được tổng quan mà không phải gọi tool dò dặm nhiều lần.",
       "m": 1,
       "v": {
         "q": "<p>Bạn đang xây dựng các công cụ tăng năng suất cho lập trình viên bằng Claude Agent SDK. Agent giúp các kỹ sư khám phá các codebase xa lệ, hiệu các hệ thống legacy, tạo mã boilerplate và tự động hóa các tác vụ lặp lại. Nó dùng các tool tích hợp sẵn—Read, Write, Bash, Grep và Glob—và tích hợp với các Model Context Protocol (MCP) server. Agent năng suất của bạn kết nối với ba MCP server: một issue tracker với search_issues , get_issue và create_comment ; một wiki tài liệu với search_docs , get_page và list_spaces ; và một database explorer với run_query , get_schema và list_databases . Với các câu hỏi liên hệ thống như “Which database tables are affected by the authentication refactor in PROJ-1234?”, agent thực hiện tám đến mười lệnh gọi khám phá tuần tự, thiếu khả năng quan sát nội dung có sẵn của tầng server, và cần context trước khi hoàn thành các cuộc điều tra phức tạp. Thay đổi kiến trúc nào tồn dạng tốt nhất các khả năng của MCP để giải quyết các vấn đề này?</p>",
@@ -5696,7 +5696,7 @@
           "<p>Chúng được hiển thị dưới dạng các resource có thể @-mention cùng với các tập, được lấy và đính kèm vào tin nhắn của bạn khi được tham chiếu.</p>"
         ]
       },
-      "topic": "d3"
+      "topic": "d2"
     },
     {
       "id": "308",
@@ -5799,7 +5799,7 @@
       "e": "Mới loại nội dung hiện thể theo dạng phù hợp: tài chính thành bảng, tin tức thành văn xuôi, công nghị thành list. Ép hạt về một format sẽ làm một giá trị.",
       "m": 1,
       "v": {
-        "q": "<p>Một người dùng mở rộng hệ thống nghiên cứu vượt ra ngoài web-search agent ban đầu bằng cách bổ sung các nguồn dữ liệu chuyên biệt. Một financial API agent trả về JSON có cấu trúc chưa doanh thu, biên lợi nhuận và tốc để tổng trường. Một news-monitoring agent trả về các bản tóm tắt dạng văn xuôi về những diện biến gần đây. Một patent-analysis agent trả về các danh sách có cấu trúc về các lệnh vực công nghị. Synthesis agent kết hợp các kết quả này thành các bản briefing dành cho lãnh đảo. Hiện tại, nó chuyển mỗi thể thành các gạch đầu dòng, khiển các so sánh tài chính mất đi số rõ ràng dụng bảng và các bản tóm tắt tin tức mất đi mạch kỳ. Thay đổi nào sẽ cải thiện chất lượng briefing nhiều nhất?</p>",
+        "q": "<p>Một người dùng mở rộng hệ thống nghiên cứu vượt ra ngoài web-search agent ban đầu bằng cách bổ sung các nguồn dữ liệu chuyên biệt. Một financial API agent trả về JSON có cấu trúc chưa doanh thu, biên lợi nhuận và tốc để tổng trường. Một news-monitoring agent trả về các bản tóm tắt dạng văn xuôi về những diện biến gần đây. Một patent-analysis agent trả về các danh sách có cấu trúc về các lệnh vực công nghị. Synthesis agent kết hợp các kết quả này thành các bản briefing dành cho lãnh đảo. Hiện tại, nó chuyển mỗi thể thành các gạch đầu dòng, khiến các so sánh tài chính mất đi số rõ ràng dụng bảng và các bản tóm tắt tin tức mất đi mạch kỳ. Thay đổi nào sẽ cải thiện chất lượng briefing nhiều nhất?</p>",
         "o": [
           "<p>Cập nhất tác nhân tổng hợp để hiển thị tổng loại nội dung một cách phù hợp—dữ liệu tài chính dưới dạng bằng, tin tức dưới dạng văn xuôi, và các lệnh vực công nghị dưới dạng danh sách có cấu trúc.</p>",
           "<p>Chuẩn hóa toàn bộ đầu ra của subagent thành JSON chứa các trường claim, evidence, source và confidence.</p>",
@@ -5881,7 +5881,7 @@
           "<p>Thêm một research-planning agent trước giai đoạn tìm kiếm ban đầu để phân rã mọi chế độ thành các câu hỏi con chi tiết.</p>"
         ]
       },
-      "topic": "d5"
+      "topic": "d1"
     },
     {
       "id": "286",
@@ -5944,13 +5944,13 @@
       "a": [
         "D"
       ],
-      "e": "Trở lại có cấu trúc: lại nghiệp về gần `retriable: false` kèm lỗi giải thích thân thiện cho khách. Agent không retry vô ích mà vấn trở lại tất.",
+      "e": "Trở lại có cấu trúc: lại nghiệp vụ gần `retriable: false` kèm lỗi giải thích thân thiện cho khách. Agent không retry vô ích mà vấn trở lại tất.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang xây dựng một customer support resolution agent bằng Claude Agent SDK. Agent xử lý các yêu cầu có để mơ hồ cao nhỏ đối trả, tranh chấp thanh toán và các vấn đề tài khoản. Nó truy cập các hệ thống backend của bạn thông qua các Model Context Protocol (MCP) tool tùy chỉnh ( get_customer , lookup_order , process_refund , escalate_to_human ). Mục tiêu của bạn là giải quyết ngay lần liên họ đầu tiên đặt trên 80% đồng thời biết khi nào cần escalate. Tool process_refund của bạn trả về hai loại lại: lại kỹ thuật (“503 Service Unavailable”, “Connection timeout”) mang tính tạm thời (~5% số lần gọi), và lỗi nghiệp về (“Order exceeds 30-day return window”, “Item already refunded”) mang tính vĩnh viễn (~12% số lần gọi). Giám sát cho thấy agent lãng phí 3–4 lượt để thử lại các lỗi nghiệp về văn không bao giờ có thể thành công. Hiện tại, cả hai loại lại chỉ trả về một thông điệp văn bản thuận cho Claude. Cách hiệu quả nhất để giảm các lần thử lại lãng phí đồng thời cải thiện chất lượng phản hồi hướng tới khách hàng là gì?</p>",
+        "q": "<p>Bạn đang xây dựng một customer support resolution agent bằng Claude Agent SDK. Agent xử lý các yêu cầu có để mơ hồ cao nhỏ đối trả, tranh chấp thanh toán và các vấn đề tài khoản. Nó truy cập các hệ thống backend của bạn thông qua các Model Context Protocol (MCP) tool tùy chỉnh ( get_customer , lookup_order , process_refund , escalate_to_human ). Mục tiêu của bạn là giải quyết ngay lần liên họ đầu tiên đặt trên 80% đồng thời biết khi nào cần escalate. Tool process_refund của bạn trả về hai loại lại: lại kỹ thuật (“503 Service Unavailable”, “Connection timeout”) mang tính tạm thời (~5% số lần gọi), và lỗi nghiệp vụ (“Order exceeds 30-day return window”, “Item already refunded”) mang tính vĩnh viễn (~12% số lần gọi). Giám sát cho thấy agent lãng phí 3–4 lượt để thử lại các lỗi nghiệp vụ văn không bao giờ có thể thành công. Hiện tại, cả hai loại lại chỉ trả về một thông điệp văn bản thuận cho Claude. Cách hiệu quả nhất để giảm các lần thử lại lãng phí đồng thời cải thiện chất lượng phản hồi hướng tới khách hàng là gì?</p>",
         "o": [
           "<p>Trả về các phản hồi lỗi có cấu trúc với \" retriable \" : false cho lỗi nghiệp vụ và một lỗi giải thích thân thiện với khách hàng để Claude sử dụng.</p>",
-          "<p>Thêm một tool check_refund_eligibility bắt buộc phải được gọi trước process_refund để ngăn các vi phạm quy tắc nghiệp về.</p>",
+          "<p>Thêm một tool check_refund_eligibility bắt buộc phải được gọi trước process_refund để ngăn các vi phạm quy tắc nghiệp vụ.</p>",
           "<p>Triển khai logic tự động thử lại ở tầng tool chỉ cho lỗi kỹ thuật, chuyển các lỗi nghiệp vị cho Claude mà không thể lại.</p>",
           "<p>Thêm các ví dụ few-shot cho thấy cách phân biệt lỗi có thể thử lại và không thể thử lại bằng cách phân tích văn bản thông báo lỗi.</p>"
         ]
@@ -6029,7 +6029,7 @@
           "<p>Orchestrator-workers—độ mặt LLM trung tâm phân tích tầng PR nhằm xác định động những kiểm tra nào cần thiết, rồi giao cho các worker LLM chuyên biệt cho từng tác vụ con được xác định.</p>"
         ]
       },
-      "topic": "d2"
+      "topic": "d1"
     },
     {
       "id": "1225",
@@ -6203,18 +6203,18 @@
       "a": [
         "C"
       ],
-      "e": "Ngưỡng $500 enforce bên trong tool ở backend: dưới ngưỡng thì chi, trên ngưỡng thì tạo yêu cầu chỉ duyệt. Không prompt nào vượt qua được.",
+      "e": "Backend thực thi ngưỡng một cách tất định: từ $500 trở xuống có thể tự động giải ngân; trên $500 phải tạo yêu cầu phê duyệt. Không dựa vào prompt hoặc cờ do model tự khai báo.",
       "m": 1,
       "v": {
         "q": "<p>Expense reimbursement agent của bạn xử lý các yêu cầu của nhân viên bằng một tool process reimbursement. </p><p>Chính sách công ty yêu cầu <strong>các khoản hoàn ứng trên $500</strong> phải được phê duyệt trước khi giải ngân. </p><p>Agent xử lý hàng trăm yêu cầu mỗi ngày, và bạn cần việc thực thi ngưỡng này không thể bị can thiệp bất kỳ agent được prompt như thế nào. Phương án nào đảm bảo <strong>ngưỡng phê duyệt $500</strong> không thể bị vượt qua?</p>",
         "o": [
-          "<p>Tool process reimbursement nhận một tham số approved by manager. System prompt chỉ dẫn agent chỉ đặt giá trị này thành true sau khi xác nhận rằng một manager đã phê duyệt yêu cầu. Một script audit hỏng đêm xem xét tất cả các khoản hoàn ứng có approved by manager được đặt thành true.</p>",
-          "<p>Tool process reimbursement nhận amount và details, và tế thực thi ngưỡng bên trong; các khoản $500 trỏ xuống được tự động giải ngân và tool trả về xác nhận thành công. Các khoản &gt;$500 khiển tool tạo một yêu cầu phê duyệt đang chỉ và trả về trạng thái cho biết đang chỉ manager xem xét.</p>",
+          "<p>Tool process reimbursement nhận một tham số approved by manager. System prompt chỉ dẫn agent chỉ đặt giá trị này thành true sau khi xác nhận rằng một manager đã phê duyệt yêu cầu. Một script audit hằng đêm xem xét tất cả các khoản hoàn ứng có approved by manager được đặt thành true.</p>",
+          "<p>Tool process reimbursement nhận amount và details, tự thực thi ngưỡng: khoản từ $500 trở xuống được giải ngân tự động và trả xác nhận thành công; khoản trên $500 tạo yêu cầu phê duyệt đang chờ người quản lý xem xét.</p>",
           "<p>Cung cấp hai tool: auto reimburse (giới hạn cứng $500) và manager approval. đưa vào chỉ dẫn system prompt chi tiết yêu cầu agent kiểm tra số tiền và dùng tool phù hợp. Thêm một Post ToolUse hook ghi log tool nào đã được gọi để phục vụ audit.</p>",
           "<p>Triển khai việc kiểm tra ngưỡng trong một PreToolUse hook kiểm tra tham số amount trước khi process reimbursement chạy. Nếu số tiền vượt quá $500, hook sửa đổi context để thêm cố requires approval: true mà tool sẽ kiểm tra trước khi giải ngân.</p>"
         ]
       },
-      "topic": "d5"
+      "topic": "d1"
     },
     {
       "id": "1229",
@@ -6285,7 +6285,7 @@
           "<p>JSON có cấu trúc tiêu tốn ít token hơn đáng kể so với ngôn ngữ tự nhiên, giảm đáng kể chi phí API.</p>",
           "<p>Các JSON schema tự động xác thực rằng API bên dưới đã trả về dữ liệu đúng trước khi agent xử lý.</p>",
           "<p>Agent có thể trích xuất đáng tin cậy các giá trị cụ thể mà không cần phân tích văn bản tự do, giảm lỗi trong các thao tác tiếp theo.</p>",
-          "<p>JSON có cấu trúc được model xử lý một cách xác định (deterministic), cải thiện đáng kể độ chính xác khi trích xuất giá trị.</p>"
+          "<p>JSON có cấu trúc được model xử lý một cách tất định (deterministic), cải thiện đáng kể độ chính xác khi trích xuất giá trị.</p>"
         ]
       },
       "topic": "d2"
@@ -6317,9 +6317,9 @@
       "e": "Nguyên nhân gốc: description không nói order_id phải lấy từ lookup_order. Ghi rõ trong description của process_refund rằng order_id phải đến từ lookup_order và không được đoán.",
       "m": 1,
       "v": {
-        "q": "<p>Trong quá trình kiểm thử, bạn phát hiện rộng khi khách hàng nói \"I need a refund for my recent purchase,\" agent gửi process_refund ngay lập tức – những điền vào tham số bắt buộc 'order_id' một giá trị trông có vị hợp lý những bủa ra thay vì trước tiên gửi lookup_order để lấy order ID thực. Lệnh gọi hoàn tiến thất bại vì ID bủa đặt không tồn tại. Thay đổi nào trực tiếp giải quyết nguyên nhân gốc rễ khiển agent bủa ra giá trị 'order_id'ở</p>",
+        "q": "<p>Trong quá trình kiểm thử, bạn phát hiện rộng khi khách hàng nói \"I need a refund for my recent purchase,\" agent gửi process_refund ngay lập tức – những điền vào tham số bắt buộc 'order_id' một giá trị trông có vị hợp lý những bủa ra thay vì trước tiên gửi lookup_order để lấy order ID thực. Lệnh gọi hoàn tiền thất bại vì ID bủa đặt không tồn tại. Thay đổi nào trực tiếp giải quyết nguyên nhân gốc rễ khiến agent bủa ra giá trị 'order_id'ở</p>",
         "o": [
-          "<p>Thêm xác thực phía server để kiểm tra xem 'order_id' có tồn tại trong cơ sở dữ liệu của bạn hay không trước khi thực hiện hoàn tiến và trả về lỗi cho agent nếu không.</p>",
+          "<p>Thêm xác thực phía server để kiểm tra xem 'order_id' có tồn tại trong cơ sở dữ liệu của bạn hay không trước khi thực hiện hoàn tiền và trả về lỗi cho agent nếu không.</p>",
           "<p>Phân tích trước các thông điệp khách hàng đến để trích xuất bất kỳ order ID nào được nhắc đến, và chèn chúng vào context của cuộc hội thoại trước khi chuyển cho Claude.</p>",
           "<p>Cập nhất mô tả tool 'process_refund' độ nêu rõ rằng 'order_id' phải được lấy từ một lệnh gọi 'lookup_order' trước đó và không bao giờ được giả định hay bủa ra.</p>",
           "<p>Chuyển 'tool_choice' từ \"auto\" sang \"any\" để buộc agent thực hiện một lệnh gọi tool ở mỗi lượt.</p>"
@@ -6351,7 +6351,7 @@
       "a": [
         "B"
       ],
-      "e": "Đáp án theo khóa nguồn là phương án sự 2. (Ghi chú của web: các lựa chọn của câu này chỉ còn placeholder nên không xác nhận được tổ hợp flag; về nguyên tắc cần print mode (-p) và định dạng đầu ra máy đọc được.)",
+      "e": "[Không thể xác minh đáp án] Nguồn chỉ có các nhãn Option A–D. Về nguyên tắc, dùng print mode (-p) và --output-format json hoặc stream-json phù hợp với cách xử lý kết quả. Không thể xác minh B khi chưa có nội dung lựa chọn.",
       "m": 1,
       "v": {
         "q": "<p>Bạn đang tích hợp Claude Code vào một pipeline Continuous Integration (Cl) để chạy phân tích bảo mật tự động. Tự hợp cả nào phải được dùng để đảm bảo job tự động chạy mà không bị treo và tạo ra đầu ra có thể được máy phân tích?</p>",
@@ -6389,7 +6389,7 @@
         "A",
         "C"
       ],
-      "e": "Anti-pattern: escalate dựa trên confidence model tử báo (không đáng tin), và escalate chủ vì khách dùng lại lệ tiêu cục (cảm xúc không phản ánh độ phức tạp). Khách đòi gặp người thất, hoặc vượt ngưỡng nghiệp vụ được enforce bằng hook, đều là trigger hợp lệ.",
+      "e": "Anti-pattern: escalate dựa trên confidence model tử báo (không đáng tin), và escalate chủ vì khách dùng lại lệ tiêu cục (cảm xúc không phản ánh độ phức tạp). Khách đòi gặp nhân viên thực, hoặc vượt ngưỡng nghiệp vụ được enforce bằng hook, đều là trigger hợp lệ.",
       "m": 2,
       "v": {
         "q": "<p>Những điều nào sau đây là anti-pattern khi thiết kế logic escalation và giải quyết sự mơ hồ cho Claude? Chọn 2 đáp án đúng.</p>",
@@ -6538,7 +6538,7 @@
       "a": [
         "B"
       ],
-      "e": "Dùng `Bash(\"cat config.json\")` độ đục file là anti-pattern vì đã có tool Read chuyên dụng.",
+      "e": "[Cảnh báo nguồn bị cắt] Phương án B bị mất phần đầu. Ý định có thể là gọi Bash để đọc config.json, trong khi Read là tool chuyên dụng. Không khẳng định nguyên văn phương án bị mất.",
       "m": 1,
       "v": {
         "q": "<p>Một agent đang thực thi một quy trình tại quicktechie.com cần kiểm tra nội dung của file config. json để hiệu các thiết lập dự án hiện tại. Cách tiếp cận nào là một anti-pattern về kiến trúc?</p>",
@@ -6619,11 +6619,11 @@
         "o": [
           "<p>Tùy ý chọn giá trị từ nguồn được cập nhật gần đây nhất để giải quyết mâu thuẫn một cách êm thẩm.</p>",
           "<p>Loại bỏ hoàn toàn điểm dữ liệu gây tranh cãi để đảm bảo báo cáo cuối cùng chỉ chứa các sự kiện thống nhất.</p>",
-          "<p>Âm thẩm lấy trung bình các giá trị số mâu thuẫn để cung cấp một ước tính cân bằng cho người dùng.</p>",
-          "<p>Giữ lại cả hai giá trị và chú thích rõ ràng mâu thuẫn kèm ghi nguồn, để coordinator hoặc người dùng từ đối chiếu.</p>"
+          "<p>Âm thầm lấy trung bình các giá trị số mâu thuẫn để cung cấp một ước tính cân bằng cho người dùng.</p>",
+          "<p>Giữ lại cả hai giá trị và chú thích rõ ràng mâu thuẫn kèm ghi nguồn, để coordinator hoặc người dùng tự đối chiếu.</p>"
         ]
       },
-      "topic": "d1"
+      "topic": "d5"
     },
     {
       "id": "1239",
@@ -6649,15 +6649,15 @@
       "a": [
         "B"
       ],
-      "e": "Prompt caching: đưa system prompt dưới dạng content block và gắn `cache_control: {\"type\": \"ephemeral\"}`.",
+      "e": "[Cảnh báo cách diễn đạt] B gần nhất với explicit caching: system là một mảng text block có cache_control. Không bắt buộc định dạng này nếu sử dụng automatic caching bằng cache_control ở cấp request.",
       "m": 1,
       "v": {
-        "q": "<p>Khi dùng Claude API, system prompt phải được định dạng như thế nào để sử dụng thành công prompt caching?</p>",
+        "q": "<p>Khi dùng Claude API, system prompt phải được định dạng như thế nào để sử dụng prompt caching?</p>",
         "o": [
-          "<p>Cung cấp system prompt dưới dạng một chuỗi tiêu chuẩn và đặt prompt_caching: true ở cấp cao nhất của API request.</p>",
-          "<p>Dùng Message Batches API để đảm bảo system prompt được tự động cache trên tất cả các request trong batch.</p>",
-          "<p>Đưa system prompt vào bên trong một khối XML có nhãn .</p>",
-          "<p>Cấu trúc system prompt dưới dạng một dictionary với một text block và bao gồm một trường cache_control được đặt là {\"type\": \" ephemeral \" }</p>"
+          "<p>Cung cấp system prompt dưới dạng chuỗi thông thường và đặt prompt_caching: true ở cấp cao nhất của API request.</p>",
+          "<p>Dùng Message Batches API để tự động cache system prompt trên mọi request trong batch.</p>",
+          "<p>Đưa system prompt vào một khối XML có nhãn [nguồn thiếu tên nhãn].</p>",
+          "<p>Cấu trúc system prompt dưới dạng dictionary có text block và trường cache_control được đặt thành {\"type\": \"ephemeral\"}.</p>"
         ]
       },
       "topic": "d4"
@@ -6697,7 +6697,7 @@
           "<p>/ clear</p>"
         ]
       },
-      "topic": "d5"
+      "topic": "d1"
     },
     {
       "id": "1241",
@@ -6731,7 +6731,7 @@
         "o": [
           "<p>Cố lỗi truy cập lần kết quả rộng đều nên ném các exception nghiêm trọng đến coordinator để dạng thực thi.</p>",
           "<p>Một kết quả rộng hợp lệ (tìm kiếm thành công nhưng không có kết quả khớp) nên trả về isError: false.</p>",
-          "<p>Một lỗi truy cập nên âm thẩm trả về một mảng rộng C] để chuyển sang các tool thay thế một cách êm thẩm.</p>",
+          "<p>Một lỗi truy cập nên âm thầm trả về một mảng rộng C] để chuyển sang các tool thay thế một cách êm thẩm.</p>",
           "<p>Một lỗi truy cập (ví dụ: database timeout) nên trả về isError: true để agent biết rằng việc kiểm tra thực sự chưa được thực hiện.</p>"
         ]
       },
@@ -6772,7 +6772,7 @@
           "<p>Concrete Transformation</p>"
         ]
       },
-      "topic": "d4"
+      "topic": "d3"
     },
     {
       "id": "1243",
@@ -6840,7 +6840,7 @@
       "v": {
         "q": "<p>Khi viết mô tả tool để đảm bảo LLM chọn tool một cách đáng tin cậy, những yếu tố nào là thực sự thiết yếu cần đưa vào ngoài phần phát biểu mục đích cơ bản?</p>",
         "o": [
-          "<p>Ít nhất 15 ví dụ few-shot minh họa cú pháp JSON cần thiết để gửi tool.</p>",
+          "<p>Ít nhất 15 ví dụ few-shot minh họa cú pháp JSON cần thiết để gọi tool.</p>",
           "<p>Logic định tuyến hạ tầng backend nội bộ và các định nghĩa schema cơ sở dữ liệu.</p>",
           "<p>Chi phí token cụ thể của việc thực thi tool để tối ưu ngân sách context window.</p>",
           "<p>Đọc từ định dạng đầu vào, các truy vấn ví dụ, edge case và các điều kiện biên tượng minh so với các tool tương tự.</p>"
@@ -6878,7 +6878,7 @@
         "q": "<p>Bạn có các quy ước kiểm thử phải được áp dụng đồng nhất, nhưng các file test được phân bổ cùng với các file source code (ví dụ: Button. test. tsx nắm cảnh Button. tsx). Tại sao việc tạo một rule file trong . claude/rules/ tốt hơn việc sửa CLAUDE. md gốc?</p>",
         "o": [
           "<p>CLAUDE .md gốc được dành riêng nghiêm ngắt cho việc mở rộng biến môi trường.</p>",
-          "<p>Việc gom tất cả quy đọc vào CLAUDE .md gốc buộc Claude phải suy luận phần nào áp dụng cho file nào, khiển việc áp dụng quy tắc mang tính xác suất thay vì xác định.</p>",
+          "<p>Việc gom tất cả quy đọc vào CLAUDE .md gốc buộc Claude phải suy luận phần nào áp dụng cho file nào, khiến việc áp dụng quy tắc mang tính xác suất thay vì xác định.</p>",
           "<p>Các quy tắc trong . claude/rules/ có thể thực thi các lệnh shell một cách native trước khi nạp, không như cấu hình gốc.</p>",
           "<p>CLAUDE .md gốc không thể xử lý các framework kiểm thử nhỏ Jest hoặc Vitest.</p>"
         ]
@@ -6912,7 +6912,7 @@
       "e": "Handoff dụng tóm tắt có cấu trúc: customer ID, nguyên nhân gốc, số tiền hoàn, hành động để xuất.",
       "m": 1,
       "v": {
-        "q": "<p>Sau khi điều tra một tranh chấp thanh toán qua hạn 25 lượt, bạn đã xác định rằng các khoản tính phí trùng lặp xảy ra do mất payment gateway timeout kích hoạt logic thử lại. Khoản hoàn tiến cần thiết ($847) vượt quá hạn mục ủy quyền $500 của bạn. Bạn cần gọi escalate_to_human, và nhân viên con người sẽ không có quyền truy cập transcript cuộc hội thoại của bạn. Bạn nên truyền context nào để giải quyết hiệu quả?</p>",
+        "q": "<p>Sau khi điều tra một tranh chấp thanh toán qua hạn 25 lượt, bạn đã xác định rằng các khoản tính phí trùng lặp xảy ra do mất payment gateway timeout kích hoạt logic thử lại. Khoản hoàn tiền cần thiết ($847) vượt quá hạn mục ủy quyền $500 của bạn. Bạn cần gọi escalate_to_human, và nhân viên con người sẽ không có quyền truy cập transcript cuộc hội thoại của bạn. Bạn nên truyền context nào để giải quyết hiệu quả?</p>",
         "o": [
           "<p>Toàn bộ transcript cuộc hội thoại cùng tất cả kết quả tool.</p>",
           "<p>Một bản tóm tắt có cấu trúc: customer ID, nguyên nhân gốc, số tiền hoàn và hành động để xuất.</p>",
@@ -6920,7 +6920,7 @@
           "<p>Chỉ chẩn đoán của bạn và số tiền hoàn.</p>"
         ]
       },
-      "topic": "d5"
+      "topic": "d1"
     },
     {
       "id": "1387",
@@ -6988,7 +6988,7 @@
       "v": {
         "q": "<p>Khi triển khai trích xuất dữ liệu có cấu trúc cho một ứng dụng, việc sử dụng tool_use với một JSON schema nghiêm ngắt đảm bảo tượng minh điều gì?</p>",
         "o": [
-          "<p>Các vòng lặp thử lại tự động nếu các giá trị được trích xuất không vượt qua xác thực logic nghiệp về.</p>",
+          "<p>Các vòng lặp thử lại tự động nếu các giá trị được trích xuất không vượt qua xác thực logic nghiệp vụ.</p>",
           "<p>Tuân thủ về cấu trúc, đảm bảo cú pháp JSON hợp lệ và các trường bắt buộc, nhưng không đảm bảo độ chính xác về ngữ nghĩa.</p>",
           "<p>Loại bỏ mọi hallucination và việc trích xuất dữ liệu không chính xác.</p>",
           "<p>Cố tuân thủ về cấu trúc lần tính đúng đơn vị ngữ nghĩa của dữ liệu được trích xuất.</p>"
@@ -7020,14 +7020,14 @@
       "a": [
         "C"
       ],
-      "e": "Batch API chỉ dùng cho việc không gặp (audit hỏng đêm). Review chọn merge cần kết quả ngay thì giả API đồng bộ.",
+      "e": "Batch API chỉ dùng cho việc không gặp (audit hằng đêm). Review chọn merge cần kết quả ngay thì giả API đồng bộ.",
       "m": 1,
       "v": {
-        "q": "<p>Để tối ưu một pipeline CI/CD, quản lý của bạn muốn dùng Message Batches API để giảm chi phí 50%. Pipeline bao gồm một code review pre-merge thời gian thực, có tính chọn, và một cuộc audit technical debt hỏng đêm riêng biệt. Bạn nên áp dụng Batch API như thế nào?</p>",
+        "q": "<p>Để tối ưu một pipeline CI/CD, quản lý của bạn muốn dùng Message Batches API để giảm chi phí 50%. Pipeline bao gồm một code review pre-merge thời gian thực, có tính chọn, và một cuộc audit technical debt hằng đêm riêng biệt. Bạn nên áp dụng Batch API như thế nào?</p>",
         "o": [
           "<p>Dùng Batch API cho cả hai quy trình độ tối đa hóa tiết kiệm chi phí, dùng status polling cho bước kiểm tra pre-merge.</p>",
           "<p>Chuyển cả hai sang Batch API, những triển khai một timeout fallback chuyển sang các lệnh gọi đồng bộ nếu batch vượt quá 5 phút.</p>",
-          "<p>Chỉ dùng Batch API cho cuộc audit technical debt hỏng đêm, và giữ các lệnh gọi đồng bộ thời gian thực cho review pre-merge có tính chọn.</p>",
+          "<p>Chỉ dùng Batch API cho cuộc audit technical debt hằng đêm, và giữ các lệnh gọi đồng bộ thời gian thực cho review pre-merge có tính chọn.</p>",
           "<p>Dùng các lệnh gọi API đồng bộ cho cả hai quy trình, vì Batch API không hỗ trả đầu ra JSON schema có cấu trúc.</p>"
         ]
       },
@@ -7068,7 +7068,7 @@
           "<p>Tự động phê duyệt các bài động thông thường và chỉ yêu cầu xác nhận tượng minh cho các mẫu bất thường như động lên tài khoản mới hoặc tập đối tượng lớn</p>"
         ]
       },
-      "topic": "d5"
+      "topic": "d2"
     },
     {
       "id": "1391",
@@ -7143,7 +7143,7 @@
           "<p>Độ chính session đó review code mới tạo của nó nhằm giả tối đa context kiến trúc.</p>"
         ]
       },
-      "topic": "d5"
+      "topic": "d4"
     },
     {
       "id": "1393",
@@ -7169,7 +7169,7 @@
       "a": [
         "C"
       ],
-      "e": "`isRetryable` cho agent biết có nên gửi lại đúng lại gửi đó không. `isError` chỉ báo là có lỗi.",
+      "e": "`isRetryable` cho agent biết có nên gửi lại đúng lời gọi đó không. `isError` chỉ báo là có lỗi.",
       "m": 1,
       "v": {
         "q": "<p>Khi triển khai một phần hồi lỗi có cấu trúc cho một MCP tool, thuộc tính nào chỉ rõ tượng minh cho agent liệu nó có nên thử lại chính xác cùng lệnh gọi tool đó hay không?</p>",
@@ -7254,7 +7254,7 @@
           "<p>Thay model hỏng Sonnet bằng một model hỏng Haiku để có giá trên mỗi token thấp hơn.</p>"
         ]
       },
-      "topic": "d3"
+      "topic": "d4"
     },
     {
       "id": "1395",
@@ -7288,7 +7288,7 @@
           "<p>Đặt is_error: true với một thông điệp ngăn \"Device offline\" và cung cấp một tool riêng mà agent có thể gửi để lấy các gợi ý khắc phục sự cố theo ngữ cảnh cụ thể.</p>",
           "<p>Đặt is_error: true với một lỗi kỹ thuật có cấu trúc chưa device ID, thời lượng timeout và mã phản hồi API thô để phục vụ gỡ lỗi.</p>",
           "<p>Đặt is_error: true với một thông điệp giải thích nguyên nhân có khả năng và gợi ý các bước khắc phục sự cố mà agent có thể đề xuất với người dùng.</p>",
-          "<p>Đặt is_error: false với một thông điệp lực quan cho biết lệnh đã được gửi đi thành công nhưng việc xác nhận từ thiết bị vẫn đang chỉ.</p>"
+          "<p>Đặt is_error: false với một thông điệp lực quan cho biết lệnh đã được gửi đi thành công nhưng việc xác nhận từ thiết bị vẫn đang chờ.</p>"
         ]
       },
       "topic": "d2"
@@ -7428,7 +7428,7 @@
       "a": [
         "C"
       ],
-      "e": "Tool result cỡ dữ khiển agent nhắc lại dữ liệu lỗi thời. Tạo phiên mới với bản tóm tắt có cấu trúc rồi gửi tool mới trước khi trả lời.",
+      "e": "Tool result cỡ dữ khiến agent nhắc lại dữ liệu lỗi thời. Tạo phiên mới với bản tóm tắt có cấu trúc rồi gọi tool mới trước khi trả lời.",
       "m": 1,
       "v": {
         "q": "<p>Một khách hàng quay lại sau 4 giờ kể từ session đầu tiên về cùng một tranh chấp thanh toán. Session 32 lượt trước đó chứa các kết quả lookup_order cho thấy \"Status: PENDING, Expected resolution: 24-48 hours.\" Khi thử nghiệm, bạn quan sát thấy rằng khi resume các session với các kết quả tool đã cố, agent thường tham chiếu dữ liệu lỗi thời trong các phản hồi (ví dụ: \"I see your refund is still being processed\") ngay cả sau khi các lệnh gọi tool mới sau đó trả về thông tin khác. Cách tiếp cận nào xử lý đáng tin cậy nhất đối với khách hàng quay lại?</p>",
@@ -7439,7 +7439,7 @@
           "<p>Resume với toàn bộ lịch sử và thêm một chỉ dẫn system prompt yêu cầu agent luôn ưu tiên các kết quả tool gần đây nhất khi có nhiều lệnh gọi cùng một tool trong context.</p>"
         ]
       },
-      "topic": "d2"
+      "topic": "d1"
     },
     {
       "id": "1399",
@@ -7465,7 +7465,7 @@
       "a": [
         "C"
       ],
-      "e": "Gặp discover và analyze thành một tool trừ mọi ứng viên kèm điểm phân tích, giữ add_to_collection riêng. Ít lại gửi hơn mà agent vấn nhìn được toàn cảnh để tự chọn.",
+      "e": "Gặp discover và analyze thành một tool trừ mọi ứng viên kèm điểm phân tích, giữ add_to_collection riêng. Ít lời gọi hơn mà agent vấn nhìn được toàn cảnh để tự chọn.",
       "m": 1,
       "v": {
         "q": "<p>Content curation agent của bạn khám phá các bài viết, phân tích từng bài về mức để liên quan, sau đó thêm các bài được chọn vào các bộ sưu tập theo chỉ để. Với các tool riêng biệt discover_articles(topic), analyze_article(id) và add_to_collection(article_id, collection_id), bạn quan sát thấy hạn 18 lệnh gọi tool tuần tự mỗi request, gây ra vấn đề về độ trễ. Agent phải đưa ra các đánh giá biên tập về những bài nào phù hợp với chế độ của một bộ sưu tập - điều này đòi hỏi phải thấy đồng thời tất cả các ứng viên cùng điểm phân tích của chúng để chọn ra một tập hợp nhất quán. Cách kết hợp tool nào giải quyết tốt nhất hiệu quả trong khi vẫn giữ được phán đoán biên tập?</p>",
@@ -7513,7 +7513,7 @@
           "<p>Vòng lặp chỉ dựa vào một chuỗi các PreTool1Jse hook để xác định luồng điều khiển.</p>"
         ]
       },
-      "topic": "d2"
+      "topic": "d1"
     },
     {
       "id": "1401",
@@ -7539,7 +7539,7 @@
       "a": [
         "D"
       ],
-      "e": "Đọc file cấu hình thì dùng tool Read, không dùng `cat` qua Bash.",
+      "e": "[Cảnh báo nguồn bị hỏng] Nhiều lựa chọn có cú pháp bị cắt hoặc ký tự OCR sai. D có ý định sử dụng Read để đọc tệp cấu hình thay vì Bash cat; cần khôi phục nội dung gốc trước khi coi câu hỏi là hoàn chỉnh.",
       "m": 1,
       "v": {
         "q": "<p>Một developer yêu cầu agent 'read the project configuration file to determine the database connection string'. Tool tích hợp sản nào là lựa chọn kiến trúc đúng cho tác vụ này?</p>",
@@ -7581,7 +7581,7 @@
         "B",
         "C"
       ],
-      "e": "Theo khóa nguồn: \"process_refund\" và tạo bản tóm tắt handoff có cấu trúc (gồm nguyên nhân gốc và hành động để xuất) khi chuyển cho nhân viên. (Ghi chú của web: một phần khóa nguồn bị hỏng, chỉ còn mạnh \"process_refund\".)",
+      "e": "[Cảnh báo đáp án nguồn bị hỏng] Khóa nguồn B, C. B chỉ còn đoạn “process _ refund.”, còn A bị cắt. Trong các phương án còn đủ nội dung, D (chặn bằng điều kiện tiên quyết lập trình) và C (handoff có cấu trúc) phù hợp mục 1.4. Đề xuất C, D; cần phục hồi nguồn trước khi sửa khóa.",
       "m": 2,
       "v": {
         "q": "<p>Những mẫu nào sau đây là best practice độ triển khai handoff và enforcement trong các quy trình nhiều bước? Chọn 2 đáp án đúng.</p>",
@@ -7630,7 +7630,7 @@
           "<p>Xây dựng một hệ thống retrieval lưu trữ tất cả các lượt hội thoại và dùng semantic search độ kéo vào context lịch sử liên quan chỉ khi truy vấn hiện tại có vị tham chiếu thông tin trong quá khả.</p>"
         ]
       },
-      "topic": "d4"
+      "topic": "d5"
     },
     {
       "id": "1404",
@@ -7668,7 +7668,7 @@
           "<p>Các kết quả trích xuất được chọn ngẫu nhiên từ các tài liệu được phân loại là có độ chính xác lịch sử 99%.</p>"
         ]
       },
-      "topic": "d4"
+      "topic": "d5"
     },
     {
       "id": "1405",
@@ -7701,7 +7701,7 @@
         "o": [
           "<p>Ghi nhận sự bực bội, thông báo cho hệ rằng việc này có thể giải quyết ngay bây giờ, và đề nghị hoàn tất nó hoặc escalate</p>",
           "<p>Hỏi cụ thể điều gì chứa hiệu quả trong các lần thử trước trước khi quyết định escalate hay tự động giải quyết</p>",
-          "<p>Xử lý hoàn tiến qua process_refund để giải quyết vấn đề gốc, sau đó thông báo cho hệ rộng đã hoàn tất</p>",
+          "<p>Xử lý hoàn tiền qua process_refund để giải quyết vấn đề gốc, sau đó thông báo cho hệ rộng đã hoàn tất</p>",
           "<p>Gọi escalate_to_human ngay lập tốc độ đáp ứng yêu cầu của khách hàng</p>"
         ]
       },
@@ -7732,15 +7732,15 @@
         "B",
         "C"
       ],
-      "e": "`context: fork` chạy skill trong context tách biệt, và `allowed-tools: Read, Grep, Glob` giới hạn chế đọc.",
+      "e": "[Cảnh báo đáp án nguồn] B tạo ngữ cảnh riêng; C chỉ cấp phép trước các tool được liệt kê, không loại bỏ tool khác. Để bảo đảm chỉ đọc cần cơ chế hạn chế tool thích hợp, ví dụ subagent chuyên đọc và quy tắc deny/disallowed-tools phù hợp. Không có cặp đáp án hoàn toàn đúng trong các lựa chọn hiện tại.",
       "m": 2,
       "v": {
-        "q": "<p>Một kỹ sư đang tạo một Skill tùy chỉnh có thể tái sử dụng trong . claude/skills/refactor/SKILL.md. Skill này cần một cửa sổ ngữ cảnh tách biệt để tránh làm nhiều phiên chính bởi các thông tin khám phá không cần thiết, và phải bị giới hạn chế được đọc file (không được sửa đổi). Những cấu hình frontmatter nào là bắt buộc? Chọn 2 đáp án đúng.</p>",
+        "q": "<p>Một kỹ sư tạo skill tùy chỉnh có thể tái sử dụng tại .claude/skills/refactor/SKILL.md. Skill cần ngữ cảnh riêng để tránh làm nhiễu phiên chính bằng kết quả khám phá và phải bị giới hạn chỉ đọc tệp, không sửa đổi. Những cấu hình frontmatter nào là bắt buộc? Chọn 2 đáp án đúng.</p>",
         "o": [
-          "<p>Isolation: true</p>",
-          "<p>Context: fork</p>",
-          "<p>Permissions: read-only</p>",
-          "<p>Allowed-tools: Read, Grep, Glob</p>"
+          "<p>isolation: true</p>",
+          "<p>context: fork</p>",
+          "<p>permissions: read-only</p>",
+          "<p>allowed-tools: Read, Grep, Glob</p>"
         ]
       },
       "topic": "d3"
@@ -7769,15 +7769,15 @@
       "a": [
         "A"
       ],
-      "e": "Theo khóa nguồn: trả về lỗi generic (ví dụ {\"success\": false, \"error\": \"lookup_failed\"}) cho mỗi trường hợp lại để giữ schema nhất quán và không lệ chi tiết nội bộ. (Ghi chú của web: cách này che một thông tin cần thiết để phục hồi như sai tracking ID / không có shipment / dịch vụ tạm lại, nên khóa này còn gây tranh cãi.)",
+      "e": "[Cảnh báo đáp án nguồn] Khóa nguồn: A; đề xuất: B. Phân biệt lỗi tạm thời, dữ liệu đầu vào không hợp lệ và không tìm thấy lô hàng giúp agent chọn cách khôi phục phù hợp. Lỗi chung chung làm mất thông tin cần thiết.",
       "m": 1,
       "v": {
-        "q": "<p>Tool track_shipment(tracking_id) của bạn truy vấn một API logistics bên ngoài đôi khi bị lỗi - API có thể tạm thời không khả dụng, tracking ID có thể sai định dạng, hoặc lô hàng có thể không tồn tại. Hiện tại, tool của bạn raise một exception Python khi có lỗi. Người dùng phản ánh agent đưa ra các phản hồi vô ích như \"I'm having trouble with that request\" thay vì gợi ý các phương án thay thế như kiểm tra định dạng mã theo dõi hoặc tra cứu bằng số đơn hàng. Bạn nên xử lý lỗi trong kết quả của tool như thế nào?</p>",
+        "q": "<p>Tool track_shipment(tracking_id) truy vấn API logistics bên ngoài đôi khi gặp lỗi: dịch vụ tạm thời không khả dụng, mã theo dõi sai định dạng hoặc lô hàng không tồn tại. Hiện tool ném exception Python khi gặp lỗi. Người dùng nhận được phản hồi chung chung như “Tôi đang gặp sự cố với yêu cầu này”, thay vì gợi ý kiểm tra định dạng mã theo dõi hoặc tra cứu theo mã đơn hàng. Bạn nên xử lý lỗi trong kết quả tool như thế nào?</p>",
         "o": [
-          "<p>Triển khai logic retry với exponential backoff bên trong tool để các lỗi tạm thời được tự động xử lý và chỉ trả về kết quả sau khi đã hết toàn bộ các lần thử lại.</p>",
-          "<p>Trả về một phản hồi lại chung chung (ví dụ: {\"success\": false, \"error\": \"lookup_failed\"}) cho mỗi trường hợp thất bại để duy trì schema nhất quán và tránh độ lệ chi tiết lỗi nội bộ.</p>",
-          "<p>Trả về thông tin lỗi có cấu trúc như một đầu ra bình thường của tool, bao gồm loại lại, trạng thái có thể khôi phục hay không, và ngữ cảnh hữu ích cho người dùng.</p>",
-          "<p>Tạo các tool khôi phục lại chuyên dụng (retry_tracking_lookup, search_by_order_number) để model có thể gửi sau khi tool theo dõi chính trả về chữ báo thất bại.</p>"
+          "<p>Triển khai cơ chế tự động thử lại với exponential backoff trong tool cho lỗi tạm thời, chỉ trả kết quả sau khi đã hết số lần thử lại.</p>",
+          "<p>Trả về lỗi chung cho mọi trường hợp (ví dụ: {\"success\": false, \"error\": \"lookup_failed\"}) để duy trì schema nhất quán và tránh lộ chi tiết nội bộ.</p>",
+          "<p>Trả về thông tin lỗi có cấu trúc dưới dạng kết quả tool thông thường, gồm loại lỗi, khả năng khôi phục và ngữ cảnh hữu ích cho người dùng.</p>",
+          "<p>Tạo các tool khôi phục chuyên dụng (retry_tracking_lookup, search_by_order_number) để model gọi sau khi tool theo dõi chính báo thất bại.</p>"
         ]
       },
       "topic": "d2"
@@ -7806,15 +7806,15 @@
       "a": [
         "A"
       ],
-      "e": "Theo khóa nguồn: trả về is_error: true kèm trường có cấu trúc retry_safe: true cho timeout, phân biệt với lỗi vĩnh viễn không nên retry. (Ghi chú của web: timeout nghĩa là chưa biết tin đã gửi chưa, retry có thể gửi trùng; nên kiểm tra delivery hoặc dùng idempotency trước khi thử lại.)",
+      "e": "[Cảnh báo đáp án nguồn] Khóa nguồn: A; đề xuất: B. Timeout không chứng minh thao tác chưa xảy ra. Không đánh dấu retry_safe khi chưa xác minh trạng thái gửi hoặc chưa có cơ chế idempotency.",
       "m": 1,
       "v": {
-        "q": "<p>Tool send_notification của bạn gửi các API nhận tin của bên thứ ba. Khi các dịch vụ này bị timeout trong lúc gửi, bạn không thể xác định tin nhắn đã thực sẽ được gọi hay chưa. Hiện tại, tool trả về is_error: true cùng thông báo chung chung \"Notification failed\" cho mỗi trường hợp timeout. Giám sát production cho thấy các agent tự động retry nhưng lại này, thường xuyên khiển người dùng nhận được thông báo trùng lặp. Bạn nên sửa phản hồi lại như thế nào?</p>",
+        "q": "<p>Tool send_notification gọi các API nhắn tin của bên thứ ba. Khi dịch vụ hết thời gian chờ trong lúc gửi, bạn không thể xác định tin nhắn đã thực sự được gửi hay chưa. Hiện tool trả về is_error: true cùng thông báo chung “Notification failed” cho mọi timeout. Giám sát production cho thấy agent tự động thử lại và thường khiến người dùng nhận thông báo trùng lặp. Bạn nên sửa phản hồi lỗi như thế nào?</p>",
         "o": [
-          "<p>Trả về is_error: true kèm nội dung tin nhắn gốc được lặp lại.</p>",
-          "<p>Trả về is_error: true với trường có cấu trúc retry_safe: true cho các trường hợp timeout, khả năng phân biệt chúng với các lỗi vĩnh viễn không nên retry.</p>",
-          "<p>Trả về is_error: true kèm thông báo khuyến khích retry: \"Delivery service temporarily unavailable. Please retry the notification.\"</p>",
-          "<p>Trả về is_error: true kèm thông báo truyền đạt sự không chắc chắn: \"Timeout - status unknown. Message may have been sent. Avoid retry.\"</p>"
+          "<p>Trả về is_error: true kèm nội dung tin nhắn gốc.</p>",
+          "<p>Trả về is_error: true với trường retry_safe: true cho timeout, phân biệt với các lỗi vĩnh viễn không nên thử lại.</p>",
+          "<p>Trả về is_error: true kèm thông báo khuyến khích thử lại: “Dịch vụ gửi tạm thời không khả dụng. Hãy thử gửi thông báo lại.”</p>",
+          "<p>Trả về is_error: true kèm thông báo về trạng thái chưa xác định: “Hết thời gian chờ. Tin nhắn có thể đã được gửi. Không nên thử lại.”</p>"
         ]
       },
       "topic": "d2"
@@ -7843,7 +7843,7 @@
       "a": [
         "A"
       ],
-      "e": "Khách yêu cầu rõ ràng gặp người thất thì escalate ngay, không điều tra thêm.",
+      "e": "Khách hàng yêu cầu rõ ràng được nói chuyện với nhân viên. Chuyển ngay, không yêu cầu họ giải thích lại hay điều tra trước.",
       "m": 1,
       "v": {
         "q": "<p>Một khách hàng gửi: \"This is frustrating. I've explained my issue twice and nothing is being resolved. I want to talk to a real person NOW.\" Agent chưa gửi bất kỳ tool nào để điều tra tài khoản của hệ. Agent nên làm gì?</p>",
@@ -7920,7 +7920,7 @@
       "e": "Tín hiệu kết thúc vòng lặp tin cậy duy nhất là `stop_reason == \"end_turn\"`. Không dựa vào nội dung text.",
       "m": 1,
       "v": {
-        "q": "<p>Khi xây dựng vòng lặp hội thoại để xử lý việc gửi tool nhiều lượt, tín hiệu đáng tin cậy duy nhất để xác định Claude đã hoàn tất việc yêu cầu tool và vòng lặp nên kết thúc là gì?</p>",
+        "q": "<p>Khi xây dựng vòng lặp hội thoại để xử lý việc gọi tool nhiều lượt, tín hiệu đáng tin cậy duy nhất để xác định Claude đã hoàn tất việc yêu cầu tool và vòng lặp nên kết thúc là gì?</p>",
         "o": [
           "<p>Nội dung văn bản của assistant chưa cầm tự 'task complete'.</p>",
           "<p>Trường stop_reason của phản hồi API bằng end_turn.</p>",
@@ -7954,7 +7954,7 @@
       "a": [
         "A"
       ],
-      "e": "(để lại: các phương án không có nội dung.) MCP Python SDK dùng URI template có placeholder trong ngoặc nhọn, ví dụ `docs://pages/{page_id}`. Phương án tôi đánh dấu chỉ là tạm.",
+      "e": "[Không thể xác minh đáp án] Nguồn chỉ có các nhãn Option A–D. MCP resource template dùng biến trong ngoặc nhọn, ví dụ docs://pages/{page_id}. Không thể xác minh khóa A.",
       "m": 1,
       "v": {
         "q": "<p>Một MCP server cung cấp một templated resource để lấy các trang tài liệu cụ thể theo ID. Mẫu cú pháp URI đúng mà MCP Python SDK sử dụng để biểu diễn resource có tham số này là gì?</p>",
@@ -8033,7 +8033,7 @@
       "v": {
         "q": "<p>Rủi ro chính khi áp dụng kỹ thuật progressive summarization cho một phiên hỗ trợ khách hàng kéo dài là gì?</p>",
         "o": [
-          "<p>Nó thường xuyên khiển Token Context Window vượt quá giới hạn tối đa.</p>",
+          "<p>Nó thường xuyên khiến Token Context Window vượt quá giới hạn tối đa.</p>",
           "<p>Nó bỏ qua logic stop_reason của agentic loop.</p>",
           "<p>Nó cô động một cách âm thẫm và làm một các chi tiết cụ thể quan trọng như ngày tháng, số tiền chính xác và các ID duy nhất.</p>",
           "<p>Nó buộc agent phải dùng tool_choice: \"auto\".</p>"
@@ -8139,18 +8139,18 @@
       "a": [
         "C"
       ],
-      "e": "Quy tắc nghiệp về bắt buộc thì enforce bằng hook chọn tool call. Deterministic, không phụ thuộc prompt.",
+      "e": "[Cảnh báo cách diễn đạt] C là phương án gần đúng nhất, nhưng chỉ PreToolUse có thể chặn trước khi giao dịch được thực hiện. PostToolUse chạy sau khi tool đã thực thi; không thể dùng để ngăn một giao dịch đã xảy ra.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn cần chọn một cách xác định (deterministic) mọi giao dịch hoàn tiến vượt quá $500 và chuyển lên cho con người xử lý. Phương pháp đúng về một kiến trúc để thực thi quy tắc nghiệp về quan trọng này bằng Agent SDK là gì?</p>",
+        "q": "<p>Bạn cần chặn một cách tất định mọi giao dịch hoàn tiền vượt quá $500 và chuyển cho nhân viên xử lý. Phương pháp đúng về kiến trúc để thực thi quy tắc nghiệp vụ quan trọng này bằng Agent SDK là gì?</p>",
         "o": [
-          "<p>Triển khai một hook (ví dụ: PostToolUse hoặc PreToolUse) để chọn bất bằng lập trình và ngăn việc thực thi lệnh gọi tool.</p>",
-          "<p>Thêm một cảnh báo mạnh, viết hoa trong system prompt của agent cảm hoàn tiến trên $500.</p>",
-          "<p>Đặt tham số tool_choice của agent thành auto để nó có thể đánh giá rủi ro tài chính một cách linh hoạt.</p>",
-          "<p>Cung cấp 5 ví dụ few-shot tiêu cục cho thấy agent từ chối thành công các khoản hoàn tiến giá trị cao.</p>"
+          "<p>Triển khai hook (ví dụ PostToolUse hoặc PreToolUse) để chặn lời gọi tool bằng logic lập trình.</p>",
+          "<p>Thêm cảnh báo mạnh, viết hoa trong system prompt, cấm hoàn tiền trên $500.</p>",
+          "<p>Đặt tool_choice thành auto để agent tự đánh giá rủi ro tài chính.</p>",
+          "<p>Cung cấp năm ví dụ few-shot minh họa agent từ chối các khoản hoàn tiền lớn.</p>"
         ]
       },
-      "topic": "d2"
+      "topic": "d1"
     },
     {
       "id": "1418",
@@ -8253,7 +8253,7 @@
       "e": "Hành vi tái sử dụng cần khám phá mà không làm bản context chính thì dùng skill với `context: fork`.",
       "m": 1,
       "v": {
-        "q": "<p>Một lập trình viên muốn tạo một hành vi có thể tái sử dụng để thực hiện refactor codebase nhiều bước, quy mô lớn. Hành vi này cần khám phá codebase mà không làm nhiều cửa sổ ngữ cảnh của cuộc hội thoại chính. Nên dùng cơ chế mở rộng nào?</p>",
+        "q": "<p>Một lập trình viên muốn tạo một hành vi có thể tái sử dụng để thực hiện refactor codebase nhiều bước, quy mô lớn. Hành vi này cần khám phá codebase mà không làm nhiễu cửa sổ ngữ cảnh của cuộc hội thoại chính. Nên dùng cơ chế mở rộng nào?</p>",
         "o": [
           "<p>Một skill được định nghĩa trong file SKILL.md với context: fork trong frontmatter.</p>",
           "<p>Một hook PostToolUse chạy một script Bash nền.</p>",
@@ -8324,18 +8324,18 @@
       "a": [
         "B"
       ],
-      "e": "Trở lại có cấu trúc: loại lại, đã thể làm gì và kết quả một phần, để coordinator quyết định bước tiếp.",
+      "e": "Trở lại có cấu trúc: loại lỗi, đã thể làm gì và kết quả một phần, để coordinator quyết định bước tiếp.",
       "m": 1,
       "v": {
         "q": "<p>Trong một hệ thống multi-agent, một subagent bộ timeout khi truy vấn cơ sở dữ liệu. Lỗi này nên được truyền ngược lại cho coordinator agent như thế nào?</p>",
         "o": [
           "<p>Truyền exception trực tiếp đến một handler cấp cao nhất để chấm dứt toàn bộ workflow.</p>",
           "<p>Bắt timeout và trả về một tập kết quả rộng được đánh dấu là thành công để quy trình tiếp tục chạy.</p>",
-          "<p>Trả về ngữ cảnh lỗi có cấu trúc gồm loại lại, điều đã được thể thực hiện, và các kết quả một phần.</p>",
+          "<p>Trả về ngữ cảnh lỗi có cấu trúc gồm loại lỗi, điều đã được thể thực hiện, và các kết quả một phần.</p>",
           "<p>Trả về một chuỗi chung chung {\"error\": \"Operation failed\"}.</p>"
         ]
       },
-      "topic": "d1"
+      "topic": "d5"
     },
     {
       "id": "1423",
@@ -8399,7 +8399,7 @@
       "a": [
         "C"
       ],
-      "e": "Cho get_neighborhood_info nhận property_id và tỷ tra address bên trong. Hạt phụ thuộc vào lại gửi trước và giảm latency.",
+      "e": "Cho get_neighborhood_info nhận property_id và tỷ tra address bên trong. Hạt phụ thuộc vào lời gọi trước và giảm latency.",
       "m": 1,
       "v": {
         "q": "<p>Agent của bạn dùng ba tool: get_property_details(property_id) trả về dữ liệu bao gồm địa chỉ đường phụ, get_price_history(property_id) trả về lịch sử giá, và get_neighborhood_info(address) trả về thống kê khu vực. Bạn nhận thấy get_neighborhood_info luôn yêu cầu gửi get_property_details trước chỉ để lấy địa chỉ, ngay cả khi người dùng chỉ định bất đồng sơn bằng ID. điều này gây độ trễ không cần thiết và ràng buộc lại - nếu lệnh gọi đầu tiên thất bại, yêu cầu về khu vực lân cận cũng thất bại. Thay đổi thiết kế tool nào giải quyết tốt nhất vấn đề này?</p>",
@@ -8441,7 +8441,7 @@
       "v": {
         "q": "<p>Để tối ưu một quy trình human-in-the-loop với năng lực của người review có hạn, bạn nên xác định tài liệu nào cần review thủ công như thế nào?</p>",
         "o": [
-          "<p>Dựa vào điểm từ tin mang tính hội thoại do model tử báo cáo trong đầu ra.</p>",
+          "<p>Dựa vào điểm tự tin mang tính hội thoại do model tử báo cáo trong đầu ra.</p>",
           "<p>Định tuyến tài liệu ngẫu nhiên theo tỷ lệ lấy mẫu cố định 10%.</p>",
           "<p>Để model xuất điểm tin cậy ở cấp trường (field-level confidence scores) và hiệu chỉnh các ngưỡng review bằng các tập validation đã gán nhãn.</p>",
           "<p>Escalate mỗi tài liệu có độ dài vượt quá 5 trang.</p>"
@@ -8547,7 +8547,7 @@
       "a": [
         "C"
       ],
-      "e": "Đáp án theo khóa nguồn là phương án sự 2. Yêu cầu dùng Vim keybindings cho cá nhân, không áp cho cả nhóm ổ thuộc về cấu hình người dùng (user settings), không phải cấu hình project. (Ghi chú của web: lựa chọn trong nguồn chỉ là nhãn placeholder.)",
+      "e": "[Không thể xác minh đáp án] Nguồn chỉ có các nhãn Option A–D. Cấu hình cá nhân nên nằm trong user settings (ví dụ ~/.claude/settings.json), không đưa vào cấu hình chung của dự án. Không thể xác minh khóa C.",
       "m": 1,
       "v": {
         "q": "<p>Một lập trình viên tại quicktechie.com muốn cấu hình Claude Code để luôn dùng phím tắt Vim ưa thích của hệ, mà không áp đặt tiêu chuẩn này lên phần còn lại của nhóm. Cấu hình này phải được đặt ở đâu?</p>",
@@ -8622,7 +8622,7 @@
         "A",
         "B"
       ],
-      "e": "Tool_result phải nằm trong message có role `user`, và có `tool_use_id` khớp với ID của tool_use Claude đã sinh.",
+      "e": "[Cảnh báo nguồn thiếu nội dung] B bị thiếu tên trường tool_use_id. Kết quả tool phải nằm trong user message với block tool_result và tool_use_id khớp ID của tool_use tương ứng. A và B là ý định của khóa nguồn, nhưng cần phục hồi câu B.",
       "m": 2,
       "v": {
         "q": "<p>Khi xây dựng vòng lặp xử lý tool thô (raw) với API/SDK, Claude có thể trả về một khối ToollJse. để tiếp tục đúng vòng lặp agentic nhiều lượt, các yêu cầu về định dạng và trả kết quả của hàm đã thực thi cho Claude là gì? Chọn 2 đáp án đúng.</p>",
@@ -8633,7 +8633,7 @@
           "<p>Kết quả phải được truyền lại bên trong một message với role assistant kèm cố is_error'. false.</p>"
         ]
       },
-      "topic": "d2"
+      "topic": "d1"
     },
     {
       "id": "1431",
@@ -8670,7 +8670,7 @@
           "<p>Thực hiện các lượt đánh giá bên trong một hook PreToolUse.</p>"
         ]
       },
-      "topic": "d4"
+      "topic": "d5"
     },
     {
       "id": "1432",
@@ -8697,15 +8697,15 @@
         "A",
         "B"
       ],
-      "e": "Phản hồi lỗi có cấu trúc nên có `isError` và `errorCategory` (thường thêm `isRetryable`).",
+      "e": "[Cảnh báo cách diễn đạt] A và B phù hợp với mẫu thiết kế của Exam Guide mục 2.2. isError là trường của MCP; errorCategory là metadata do ứng dụng định nghĩa, không phải trường chuẩn bắt buộc trong giao thức MCP.",
       "m": 2,
       "v": {
-        "q": "<p>Một phản hồi lỗi có cấu trúc được thiết kế tắt cho một MCP tool nên bao gồm những trường tiêu chuẩn nào sau đây? Chọn 2 đáp án đúng.</p>",
+        "q": "<p>Phản hồi lỗi có cấu trúc được thiết kế tốt cho một MCP tool nên bao gồm những trường nào sau đây? Chọn 2 đáp án đúng.</p>",
         "o": [
-          "<p>ErrorCategory</p>",
-          "<p>Temperature_adjustment</p>",
-          "<p>IsError</p>",
-          "<p>System_prompt_override</p>"
+          "<p>errorCategory</p>",
+          "<p>temperature_adjustment</p>",
+          "<p>isError</p>",
+          "<p>system_prompt_override</p>"
         ]
       },
       "topic": "d2"
@@ -8739,7 +8739,7 @@
       "v": {
         "q": "<p>Trong một quy trình nghiên cứu đa nguồn, rủi ro chính đối với nguồn gốc thông tin (provenance) là gì khi các phát hiện trung gian được nén bằng summarization thông thường?</p>",
         "o": [
-          "<p>Việc ghi nhận nguồn bị mất một cách âm thẩm trừ khi các ánh xạ claim-source có cấu trúc được yêu cầu và bảo toàn rõ ràng.</p>",
+          "<p>Việc ghi nhận nguồn bị mất một cách âm thầm trừ khi các ánh xạ claim-source có cấu trúc được yêu cầu và bảo toàn rõ ràng.</p>",
           "<p>Nó kích hoạt một hook PreToolUse chọn tác nhân tổng hợp đọc dữ liệu.</p>",
           "<p>Ngân sách extended thinking của model bị cạn kiệt trước khi có thể thực hiện tổng hợp.</p>",
           "<p>Cửa sổ ngữ cảnh tự động cắt bớt các phần giữa của bạn tóm tắt.</p>"
@@ -8894,7 +8894,7 @@
           "<p>Trả về một lỗi có cấu trúc và chấm dứt workflow.</p>"
         ]
       },
-      "topic": "d2"
+      "topic": "d5"
     },
     {
       "id": "1438",
@@ -9191,7 +9191,7 @@
           "<p>Chuyển các kết quả trích xuất chứa các loại thực thể ưu tiên cao cụ thể (ví dụ: số liệu tài chính, ngày tháng) đơn human review, bất kỳ độ tin cậy của việc trích xuất.</p>"
         ]
       },
-      "topic": "d4"
+      "topic": "d5"
     },
     {
       "id": "1446",
@@ -9266,7 +9266,7 @@
           "<p>Đảm bảo mật đối tượng JSON do model trích xuất không chứa lỗi suy luận ngữ nghĩa.</p>"
         ]
       },
-      "topic": "d2"
+      "topic": "d1"
     },
     {
       "id": "1448",
@@ -9293,15 +9293,15 @@
         "A",
         "B"
       ],
-      "e": "Frontmatter của SKILL.md bắt buộc có `name` và `description`. `description` là thư Claude dùng để quyết định khi nào nộp skill.",
+      "e": "[Cảnh báo phạm vi] Khóa nguồn: A và B, đúng với chuẩn Agent Skills dùng để đóng gói skill. Trong Claude Code, name có thể mặc định theo tên thư mục và description có thể suy ra từ nội dung. Câu hỏi cần nêu rõ đang hỏi chuẩn Agent Skills hay hành vi Claude Code.",
       "m": 2,
       "v": {
-        "q": "<p>Một file SKILL.md có cấu trúc đúng dựa vào metadata YAML frontmatter để thông báo cho Claude về các khả năng của nó. Những trường nào sau đây là Bắt Buộc trong frontmatter của skill? Chọn 2 đáp án đúng.</p>",
+        "q": "<p>Tệp SKILL.md sử dụng metadata YAML frontmatter để mô tả khả năng của skill cho Claude. Những trường nào sau đây là bắt buộc trong frontmatter? Chọn 2 đáp án đúng.</p>",
         "o": [
-          "<p>Allowed-tools</p>",
-          "<p>Name</p>",
-          "<p>Model</p>",
-          "<p>Description</p>"
+          "<p>allowed-tools</p>",
+          "<p>name</p>",
+          "<p>model</p>",
+          "<p>description</p>"
         ]
       },
       "topic": "d3"
@@ -9415,7 +9415,7 @@
           "<p>Lấy mẫu ngẫu nhiên 20% kết quả trích xuất để review, dùng các chỉnh sửa để theo dõi độ chính xác và xác định các mẫu lại.</p>"
         ]
       },
-      "topic": "d4"
+      "topic": "d5"
     },
     {
       "id": "1452",
@@ -9452,7 +9452,7 @@
           "<p>Liệu phản hồi review đến muốn tới 24 giờ sau khi tạo PR có còn hữu ích để xử lý hay không.</p>"
         ]
       },
-      "topic": "d3"
+      "topic": "d4"
     },
     {
       "id": "1453",
@@ -9526,7 +9526,7 @@
           "<p>Thêm chỉ dẫn yêu cầu Claude đánh giá độ tin cậy của mỗi phát hiện (1-10) và chỉ đưa vào các phát hiện được đánh giá t? 8 trở lên</p>"
         ]
       },
-      "topic": "d3"
+      "topic": "d4"
     },
     {
       "id": "1455",
@@ -9600,7 +9600,7 @@
           "<p>Cung cấp 2-3 ví dụ input/output cụ thể minh họa chính xác phép biến đổi mong đợi.</p>"
         ]
       },
-      "topic": "d4"
+      "topic": "d3"
     },
     {
       "id": "1457",
@@ -9629,7 +9629,7 @@
       "e": "Bộ chỉ dẫn từ lực, yêu cầu báo mới finding kèm confidence và severity, rồi lọc ở bước sau. Không mất bug thất mà vẫn có đầu ra có cấu trúc.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn đang tích hợp Claude Code vào pipeline Continuous Integration/Continuous Deployment (CI/CD) của mình. Hệ thống chạy các code review tự động, sinh test case và đưa ra phản hồi về các pull request. Bạn cần thiết kế các prompt cung cấp phản hồi hữu ích và giảm thiểu false positive. Code review tự động của bạn đang bỏ sót các bug thực sự trong pull request. điều tra cho thấy prompt review của bạn có chỉ dẫn: \"Only flag critical issues that would definitely cause production failures. Ignore minor concerns and anything you're uncertain about.\" Lập trình viên xác nhận một số bug bị bỏ sót là các lỗi logic thực sự mà model đã điều tra những chọn không báo cáo. Nhóm yêu cầu đầu ra review văn phải có cấu trúc (mới phát hiện được gắn thẻ metadata) và hữu ích. Thay đổi prompt nào vừa loại bỏ nguyên nhân khiển các phát hiện bộ chọn, vừa bảo toàn đầu ra có cấu trúc, được gắn thể cho việc lọc ở downstream?</p>",
+        "q": "<p>Bạn đang tích hợp Claude Code vào pipeline Continuous Integration/Continuous Deployment (CI/CD) của mình. Hệ thống chạy các code review tự động, sinh test case và đưa ra phản hồi về các pull request. Bạn cần thiết kế các prompt cung cấp phản hồi hữu ích và giảm thiểu false positive. Code review tự động của bạn đang bỏ sót các bug thực sự trong pull request. điều tra cho thấy prompt review của bạn có chỉ dẫn: \"Only flag critical issues that would definitely cause production failures. Ignore minor concerns and anything you're uncertain about.\" Lập trình viên xác nhận một số bug bị bỏ sót là các lỗi logic thực sự mà model đã điều tra những chọn không báo cáo. Nhóm yêu cầu đầu ra review văn phải có cấu trúc (mới phát hiện được gắn thẻ metadata) và hữu ích. Thay đổi prompt nào vừa loại bỏ nguyên nhân khiến các phát hiện bộ chọn, vừa bảo toàn đầu ra có cấu trúc, được gắn thể cho việc lọc ở downstream?</p>",
         "o": [
           "<p>Loại bỏ mọi chỉ dẫn liên quan đến mức độ nghiêm trọng khởi prompt và để model dùng phán đoán mặc định của nó về những gì cần báo cáo.</p>",
           "<p>Bắt extended thinking và chỉ dẫn model suy luận từng bước về mỗi thay đổi code trước khi đưa ra review.</p>",
@@ -9637,7 +9637,7 @@
           "<p>Chỉ dẫn model báo cáo tất cả phát hiện kèm mức độ tin cậy và thư mục để nghiêm trọng, độ việc lọc cho bước downstream.</p>"
         ]
       },
-      "topic": "d3"
+      "topic": "d4"
     },
     {
       "id": "1458",
@@ -9674,7 +9674,7 @@
           "<p>Đọc tất cả các file có chứa \"auth\", \"login\", \"permission\" hoặc \"token\" trong nội dung hoặc tên file.</p>"
         ]
       },
-      "topic": "d2"
+      "topic": "d5"
     },
     {
       "id": "1459",
@@ -9784,10 +9784,10 @@
           "<p>Bộ ngày xuất bản khỏi metadata để tiết kiệm token quý giá trong cửa sổ ngữ cảnh của coordinator.</p>",
           "<p>Cấu trúc báo cáo với các phần riêng biệt phân biệt rõ các kết quả đã được xác lập chắc chắn với các kết quả còn tranh cãi, đồng thời giữ nguyên bối cảnh phương pháp luận ban đầu.</p>",
           "<p>Yêu cầu các subagent xuất ra các ánh xạ claim-source có cấu trúc (gồm URL nguồn, tên tài liệu và trích đoạn) mà các agent downstream phải giữ nguyên.</p>",
-          "<p>Âm thẩm loại bỏ các kết quả còn tranh cãi để báo cáo tổng hợp cuối cùng trông có độ tin cậy cao.</p>"
+          "<p>Âm thầm loại bỏ các kết quả còn tranh cãi để báo cáo tổng hợp cuối cùng trông có độ tin cậy cao.</p>"
         ]
       },
-      "topic": "d1"
+      "topic": "d5"
     },
     {
       "id": "1462",
@@ -10220,13 +10220,13 @@
       "a": [
         "D"
       ],
-      "e": "Hub-and-spoke: coordinator nằm chính sách retry, logging và backoff tập trung, subagent chỉ báo lại và kết quả về. Hành vi nhất quán trong cơ hệ thống.",
+      "e": "Tập trung chính sách retry, logging và backoff để đảm bảo tính nhất quán. Subagent vẫn có thể khôi phục lỗi cục bộ theo chính sách chung; lỗi chưa khôi phục được cần báo cáo agent điều phối.",
       "m": 1,
       "v": {
         "q": "<p>Một kiến trúc sư review một trợ lý nghiên cứu multi-agent và nhận thấy mỗi subagent tự triển khai độc lập logic retry, định dạng logging và rate-limit backoff của riêng mình, dẫn đến hành vi không nhất quán trên toàn hệ thống. Thay đổi nào phù hợp nhất để đưa thiết kế này đúng với các lợi ích mà mẫu coordinator hub-and-spoke hướng tới?</p>",
         "o": [
-          "<p>Chuyển việc xử lý retry vào coordinator và giờ logging cùng backoff trong từng subagent, để chúng được tinh chỉnh theo các tool của riêng mình</p>",
-          "<p>Chuyển chính sách retry, logging và backoff vào coordinator, để các subagent báo cáo lại và kết quả vị cho nó</p>",
+          "<p>Chuyển việc xử lý retry vào agent điều phối nhưng giữ logging và backoff riêng trong từng subagent.</p>",
+          "<p>Chuyển chính sách retry, logging và backoff vào agent điều phối; các subagent báo cáo lỗi và kết quả về đó.</p>",
           "<p>Dán một routine retry và backoff dùng chung vào system prompt của từng subagent, để mỗi subagent tự áp dụng</p>",
           "<p>Thêm một subagent chuyên dụng áp dụng chính sách retry, logging và backoff cho các subagent khác, để coordinator chỉ định tuyến công việc</p>"
         ]
@@ -10268,7 +10268,7 @@
           "<p>Chạy tool, thêm đầu ra của nó dưới dạng một tool_result block với tool_use_id khớp trong một assistant message, và gửi lại lịch sử không có lượt tool_use</p>"
         ]
       },
-      "topic": "d2"
+      "topic": "d1"
     },
     {
       "id": "1475",
@@ -10301,7 +10301,7 @@
         "o": [
           "<p>Vòng lặp gửi lại cùng request với giá trị max_tokens lớn hơn, nên báo cáo được tạo lại từ đầu và quá trình chạy tiếp tục bình thường</p>",
           "<p>Vòng lặp ném lại với stop_reason không nhận ra, nên quá trình chạy bị hủy với một exception không được xử lý và báo cáo dữ dang bị mất</p>",
-          "<p>Vòng lặp hiệu phản hồi là một lời gọi tool đang chỉ, nên nó chạy tool handler với input rộng và cuộc hội thoại tiếp tục với một kết quả sai</p>",
+          "<p>Vòng lặp hiệu phản hồi là một lời gọi tool đang chờ, nên nó chạy tool handler với input rộng và cuộc hội thoại tiếp tục với một kết quả sai</p>",
           "<p>Vòng lặp xử lý phản hồi bị cắt cụt như một lần hoàn thành bình thường, nên một báo cáo dữ dang được trả về làm kết quả cuối cùng và quá trình chạy kết thúc mà không có lỗi gọi nào nữa</p>"
         ]
       },
@@ -10405,18 +10405,18 @@
       "a": [
         "B"
       ],
-      "e": "Hook trả allow kèm `updatedInput` thay customer_id bằng ID đã xác minh trong session state. Model không thể đổi sang ID khác.",
+      "e": "Hook trả allow với updatedInput chứa customer_id đã xác minh từ session state. Tool nhận đúng giá trị đã lưu, không dựa vào việc model tự điền ID.",
       "m": 1,
       "v": {
-        "q": "<p>Một quy trình hoàn tiến yêu cầu process_refund luôn được gọi với đúng customer_id được lấy từ một lời gọi get_customer đã xác minh trước đó, không bao giờ là một giá trị mà model gõ lại từ cuộc hội thoại. Một PreToolUse hook đã chọn lại gửi khi không có ID đã xác minh trong session state. Hook nên làm gì khi đã có ID đã xác minh, để ngăn model thay thế bằng một chuỗi ID khác?</p>",
+        "q": "<p>Quy trình hoàn tiền yêu cầu process_refund luôn nhận đúng customer_id đã xác minh từ lời gọi get_customer trước đó, không phải ID do model tự gõ từ hội thoại. Hook PreToolUse đã chặn lời gọi khi session state chưa có ID xác minh. Khi đã có ID, hook cần làm gì để model không thể thay bằng ID khác?</p>",
         "o": [
-          "<p>Trả về permissionDecision \"ask\" với một prompt hiển thị ID đã xác minh, để người review so sánh nó với customer_id của model và phê duyệt tầng lại gửi hoàn tiến</p>",
-          "<p>Trả về permissionDecision \"allow\" cùng updatedInput thay thế customer_id bằng ID đã xác minh từ session state, độ việc hoàn tiến chạy với giá trị đã lưu</p>",
-          "<p>Trả về permissionDecision \"deny\" với một lý do nêu ID đã xác minh, để model thử lại process_refund và truyền customer_id tự thông báo đó</p>",
-          "<p>Trả về permissionDecision \"allow\" không có updatedInput, độ việc hoàn tiến chạy với customer_id do model cung cấp khi session state đã có ID đã xác minh</p>"
+          "<p>Trả permissionDecision \"ask\" kèm ID đã xác minh để người duyệt so sánh với customer_id do model cung cấp và phê duyệt từng lời gọi.</p>",
+          "<p>Trả permissionDecision \"allow\" cùng updatedInput thay customer_id bằng ID đã xác minh trong session state.</p>",
+          "<p>Trả permissionDecision \"deny\" kèm lý do nêu ID đã xác minh, để model thử lại process_refund với ID từ thông báo.</p>",
+          "<p>Trả permissionDecision \"allow\" mà không cập nhật input, để tool dùng customer_id do model cung cấp khi session state đã có ID xác minh.</p>"
         ]
       },
-      "topic": "d5"
+      "topic": "d1"
     },
     {
       "id": "1479",
@@ -10453,7 +10453,7 @@
           "<p>Giữ trường notes là văn bản tự do những tầng giới hạn ký tự của nó, cho agent để chỉ ghi lại toàn bộ context nó thu thập được trong cuộc hội thoại</p>"
         ]
       },
-      "topic": "d5"
+      "topic": "d1"
     },
     {
       "id": "1480",
@@ -10482,7 +10482,7 @@
       "e": "Resume chỉ phát lại transcript, không phục hồi trạng thái file. Muốn quay lại phiên bản cũ của file thì dùng tính năng file checkpointing.",
       "m": 1,
       "v": {
-        "q": "<p>Một kiến trúc s? đã resume một session và yêu cầu agent hoàn nguyên một file về trạng thái trước đó trong cùng cuộc hội thoại, kỳ vọng rằng bản thân session đã lưu giữ nội dung cỡ của file. Thay vào đó agent báo rằng nó chỉ thấy nội dung hiện tại, đã được chỉnh sửa của file trên đĩa. điều gì giải thích hành vi này?</p>",
+        "q": "<p>Một kiến trúc sư đã resume một session và yêu cầu agent hoàn nguyên một file về trạng thái trước đó trong cùng cuộc hội thoại, kỳ vọng rằng bản thân session đã lưu giữ nội dung cỡ của file. Thay vào đó agent báo rằng nó chỉ thấy nội dung hiện tại, đã được chỉnh sửa của file trên đĩa. điều gì giải thích hành vi này?</p>",
         "o": [
           "<p>Lại gửi resume phát lại transcript nhưng không phát lại trạng thái file, nên việc hoàn nguyên một file cần đến tính năng file checkpointing riêng biệt</p>",
           "<p>Lại gửi resume đã bỏ qua fork_session, nên agent làm việc trên các file thực thay vì một bản sao rẽ nhánh giả trạng thái trước đó</p>",
@@ -10490,7 +10490,7 @@
           "<p>Lại gửi resume nạp một session ID khác với session gốc, nên các snapshot file được chấp trong session đó không khả dụng</p>"
         ]
       },
-      "topic": "d5"
+      "topic": "d1"
     },
     {
       "id": "1481",
@@ -10527,7 +10527,7 @@
           "<p>Review từng file trong một lượt riêng để tìm các vấn đề cục bộ, rồi chạy lượt thứ hai trên các phát hiện đó để kiểm tra cách các file tương tác với nhau</p>"
         ]
       },
-      "topic": "d3"
+      "topic": "d4"
     },
     {
       "id": "1482",
@@ -10564,7 +10564,7 @@
           "<p>GetSessionMessages() cho danh sách session, getSessionInfo() cho transcript của một session</p>"
         ]
       },
-      "topic": "d5"
+      "topic": "d1"
     },
     {
       "id": "1483",
@@ -10675,7 +10675,7 @@
           "<p>Bash, chạy find từ thư mục gốc dự án với -name '*.test.tsx' độ liệt kê các đường dẫn file test trong các thư mục feature lồng nhau</p>"
         ]
       },
-      "topic": "d3"
+      "topic": "d2"
     },
     {
       "id": "1486",
@@ -10712,7 +10712,7 @@
           "<p>Với subagent 2, giữ các kết quả một phần trong index và theo dõi một file mà nó báo cáo là bộ chọn do lỗi permission; với subagent 3, xếp hàng toàn bộ thư mục cho một lần lặp chỉ mục mới và coi không file nào của nó được xác nhận là đã lớp chỉ mục.</p>"
         ]
       },
-      "topic": "d1"
+      "topic": "d5"
     },
     {
       "id": "1487",
@@ -10744,7 +10744,7 @@
         "q": "<p>Mô tả của một tool ghi \"Updates a customer record with given fields.\" Trong thực tế, model thường xuyên truyền các trường không tồn tại trong schema, và không rõ liệu có hỗ trợ cập nhật một phần hay không. Khoảng trống tài liệu nào giải thích kiểu lỗi này?</p>",
         "o": [
           "<p>Tên trường camelCase của schema xung đột với thói quen snake_case của model, nên nó gửi các tên trường không được định nghĩa trong schema.</p>",
-          "<p>Schema đánh dấu các trường là optional, điều mà model xử lý kém, nên phần mô tả cần yêu cầu đầy đủ các trường trong mỗi lại gửi.</p>",
+          "<p>Schema đánh dấu các trường là optional, điều mà model xử lý kém, nên phần mô tả cần yêu cầu đầy đủ các trường trong mỗi lời gọi.</p>",
           "<p>Phần mô tả không liệt kê trường hợp lệ nào và không nói liệu một tập con các trường có được chấp nhận hay không, nên model tự ứng biến các input mà schema từ chối.</p>",
           "<p>Tool được khai báo sau các tool chỉ đọc trong danh sách, nên model dành cho nó mức ưu tiên thấp hơn và điền các trường mà schema không định nghĩa.</p>"
         ]
@@ -10786,7 +10786,7 @@
           "<p>Một kết quả <code>isError: true</code> liệt kê hai lần connection reset và việc load cuối cùng thành công, để coordinator quyết định có chạy lại migration từ đầu hay không</p>"
         ]
       },
-      "topic": "d1"
+      "topic": "d2"
     },
     {
       "id": "1489",
@@ -10894,7 +10894,7 @@
           "<p>Trang usage của Claude Console, phân tích chi phí theo model và có thể kiểm tra sau khi lần chạy kết thúc</p>",
           "<p>Result event cuối cùng của --output-format stream-json, chưa tăng chi phí và yêu cầu phải đạt --verbose</p>",
           "<p>Đối tượng JSON trên stdout, chưa total_cost_usd và một map modelUsage với con số chi phí cho từng model</p>",
-          "<p>Session transcript .jsonl dưới ~/.claude/projects, ghi lại mức sử dụng token cho mỗi lại gửi model trong lần chạy</p>"
+          "<p>Session transcript .jsonl dưới ~/.claude/projects, ghi lại mức sử dụng token cho mỗi lời gọi model trong lần chạy</p>"
         ]
       },
       "topic": "d3"
@@ -10923,13 +10923,13 @@
       "a": [
         "D"
       ],
-      "e": "`allowed-tools` chỉ cho các tool được liệt kê chạy mà không cần hỏi, các tool khác vốn gửi được (có hỏi). Muốn loại hạn Bash thì thêm `disallowed-tools: Bash`.",
+      "e": "allowed-tools chỉ cấp phép trước cho các tool được liệt kê, không loại bỏ tool còn lại. Dùng disallowed-tools: Bash để loại Bash trong thời gian skill có hiệu lực, hoặc permissions.deny để áp dụng rộng hơn.",
       "m": 1,
       "v": {
-        "q": "<p>Một lập trình viên cấu hình `allowed-tools: Write Edit` trên một skill, kỳ vọng điều này sẽ ngăn Claude gửi Bash trong khi skill chạy. Trong một phiên, Claude vấn gửi Bash sau khi xin phê duyệt của người dùng. Tại sao điều này xảy ra, và lập trình viên nên cấu hình gì thay thế để loại bỏ hoàn toàn Bash khỏi tập tool khả dụng khi skill đang hoạt động?</p>",
+        "q": "<p>Một lập trình viên cấu hình `allowed-tools: Write Edit` trên một skill, kỳ vọng điều này sẽ ngăn Claude gửi Bash trong khi skill chạy. Trong một phiên, Claude vẫn gọi Bash sau khi xin phê duyệt của người dùng. Tại sao điều này xảy ra, và lập trình viên nên cấu hình gì thay thế để loại bỏ hoàn toàn Bash khỏi tập tool khả dụng khi skill đang hoạt động?</p>",
         "o": [
           "<p><code>allowed-tools</code> chỉ chi phối các tool do người dùng gửi trực tiếp, không chi phối các tool Claude tự chọn trong lần chạy. đặt <code>model: inherit</code> độ skill dùng model của session, điều này giới hạn các lựa chọn tool của chính Claude ở những tool được liệt kê.</p>",
-          "<p><code>allowed-tools</code> chỉ cập cho các tool được liệt kê quyền chạy mà không cần prompt và vấn đề các tool khác có thể gửi được. Thêm <code>disallowed-tools: Bash</code> vào skill để Bash bị loại khỏi các tool Claude có thể gửi trong lần chạy.</p>",
+          "<p><code>allowed-tools</code> chỉ cấp cho các tool được liệt kê quyền chạy mà không cần prompt và vẫn cho phép các tool khác có thể gửi được. Thêm <code>disallowed-tools: Bash</code> vào skill để Bash bị loại khỏi các tool Claude có thể gửi trong lần chạy.</p>",
           "<p><code>allowed-tools</code> chỉ được áp dụng sau khi skill chạy xong, nên nó không có tác dụng với các lời gọi Bash thực hiện trong lần chạy. đặt <code>context: fork</code> độ skill chạy trong một subagent cô lập chỉ nhận các tool được liệt kê trong skill.</p>",
           "<p><code>allowed-tools</code> cần các wildcard pattern như <code>Write*</code> và <code>Edit*</code> độ hoạt động như một hạn chế, nên các tên tool trộn không được coi là giới hạn. Viết lại các mục trên skill với dấu <code>*</code> ở cuối để chỉ hai tool đó có thể được gọi.</p>"
         ]
@@ -10967,7 +10967,7 @@
         "o": [
           "<p>Yêu cầu Claude xây dựng limiter trước, rồi tư thế nghiệm thủ công trong terminal với các đặt burst, retry và rate limit header, và chia sẻ từng kết quả bất ngờ lời đủ tinh chỉnh code.</p>",
           "<p>Yêu cầu Claude soạn một tài liệu thiết kế cho các quy tắc throttle, giới hạn burst và của quá trình đặt lại trước, rồi xây dựng limiter và review code theo tài liệu đó, tinh chỉnh cho đến khi khớp.</p>",
-          "<p>Yêu cầu Claude viết test cho hành vi throttling, giới hạn burst và reset của s? trước khi triển khai, rồi xây dựng limiter và chia sẻ từng kết quả test thất bại để tinh chỉnh nó.</p>",
+          "<p>Yêu cầu Claude viết test cho hành vi throttling, giới hạn burst và reset cửa sổ trước khi triển khai, rồi xây dựng limiter và chia sẻ từng kết quả test thất bại để tinh chỉnh nó.</p>",
           "<p>Yêu cầu Claude xây dựng limiter trước, rồi viết test cho hành vi throttling, giới hạn burst và reset cửa sổ, và chia sẻ từng kết quả test thất bại lời đủ tinh chỉnh code trước khi phát hành.</p>"
         ]
       },
@@ -11037,7 +11037,7 @@
       "e": "CLAUDE.md của repo trạng, nên quy ước nằm trong `~/.claude/CLAUDE.md` cá nhân của từng người cơ. Clone repo không mang file đó theo.",
       "m": 1,
       "v": {
-        "q": "<p>Một nhóm đã dùng Claude Code được sáu tháng. Mỗi đồng nghiệp lâu nắm đầu báo rằng Claude luôn tuân theo định dạng commit message và quy ước chạy test của nhóm. Một kỹ sư mới clone repository mới tinh, và với hệ Claude hoàn toàn bỏ qua các quy ước đó. File CLAUDE.md được commit trong repository có một những trọng, và repository không chứa file hướng dẫn nào khác. Lý do nhiều khả năng nhất khiển các quy đọc đến được với các đồng nghiệp lâu nắm nhưng không đơn được kỹ sư mới là gì?</p>",
+        "q": "<p>Một nhóm đã dùng Claude Code được sáu tháng. Mỗi đồng nghiệp lâu nắm đầu báo rằng Claude luôn tuân theo định dạng commit message và quy ước chạy test của nhóm. Một kỹ sư mới clone repository mới tinh, và với hệ Claude hoàn toàn bỏ qua các quy ước đó. File CLAUDE.md được commit trong repository có một những trọng, và repository không chứa file hướng dẫn nào khác. Lý do nhiều khả năng nhất khiến các quy đọc đến được với các đồng nghiệp lâu nắm nhưng không đơn được kỹ sư mới là gì?</p>",
         "o": [
           "<p>Claude Code chỉ nạp CLAUDE.md của dự án sau khi /init đã được chạy trong bản clone, nên bạn file được commit của kỹ sư mới vẫn không được đọc.</p>",
           "<p>Một mục .gitignore bao phủ các file CLAUDE.md, nên bạn clone của kỹ sư mới không bao giờ nhận được file của dự án và Claude Code khởi động mà không có rule nào của repository.</p>",
@@ -11082,7 +11082,7 @@
           "<p>Gặp hai file thành một trước khi review để một lượt theo file duy nhất bao phủ cả hai mà không cần bước tích hợp</p>"
         ]
       },
-      "topic": "d3"
+      "topic": "d4"
     },
     {
       "id": "1497",
@@ -11111,10 +11111,10 @@
       "e": "Ép tool cụ thể bằng `tool_choice: {\"type\":\"tool\",\"name\":\"parse_resume\"}`. Lưu ý từ tài liệu: khi ép tool (any/tool), Claude không xuất text giải thích trước tool call.",
       "m": 1,
       "v": {
-        "q": "<p>Một nhóm xây dựng công cụ phân tích resume muốn đảm bảo dữ liệu ứng viên có cấu trúc được trích xuất qua một tool `parse_resume` ở lượt hiện tại. Hệ cộng muốn biết liệu Claude có thể đưa vào phần suy luận bằng ngôn ngữ tự nhiên về các phần resume mơ hồ trước lại gửi tool đó hay không. Cấu hình `tool_choice` nào nên dùng để đảm bảo lại gửi `parse_resume`, và tài liệu của Anthropic nói gì vị lại bình luận bằng ngôn ngữ tự nhiên trước mỗi lần gửi tool bị ép buộc?</p>",
+        "q": "<p>Một nhóm xây dựng công cụ phân tích resume muốn đảm bảo dữ liệu ứng viên có cấu trúc được trích xuất qua một tool `parse_resume` ở lượt hiện tại. Hệ cộng muốn biết liệu Claude có thể đưa vào phần suy luận bằng ngôn ngữ tự nhiên về các phần resume mơ hồ trước lời gọi tool đó hay không. Cấu hình `tool_choice` nào nên dùng để đảm bảo lại gửi `parse_resume`, và tài liệu của Anthropic nói gì vị lại bình luận bằng ngôn ngữ tự nhiên trước mỗi lần gọi tool bị ép buộc?</p>",
         "o": [
           "<p><code>tool_choice: {\"type\": \"none\"}</code>, để Claude có thể tự do quyết định bằng văn bản xem sau đó có tạo thêm một lời gọi tool <code>parse_resume</code> hay không</p>",
-          "<p><code>tool_choice: {\"type\": \"tool\", \"name\": \"parse_resume\"}</code>, vì đây là cách được ghi trong tài liệu để ép một tool cụ thể; đánh đổi là việc ép dùng tool sẽ loại bỏ văn bản ngôn ngữ tự nhiên trước lại gửi tool</p>",
+          "<p><code>tool_choice: {\"type\": \"tool\", \"name\": \"parse_resume\"}</code>, vì đây là cách được ghi trong tài liệu để ép một tool cụ thể; đánh đổi là việc ép dùng tool sẽ loại bỏ văn bản ngôn ngữ tự nhiên trước lời gọi tool</p>",
           "<p><code>tool_choice: {\"type\": \"any\"}</code>, vì <code>any</code> cho phép Claude tự do trộn lại bình luận bằng ngôn ngữ tự nhiên với lời gọi tool bị ép buộc trong cùng một phản hồi</p>",
           "<p><code>tool_choice: {\"type\": \"auto\"}</code>, kết hợp với một chỉ dẫn tường minh trong user message yêu cầu dùng tool <code>parse_resume</code> và chia sẻ mới suy luận liên quan dưới dạng văn bản</p>"
         ]
@@ -11151,7 +11151,7 @@
         "q": "<p>Một prompt PR-review tự động của nhóm hiện hướng dẫn Claude \"check that comments are accurate.\" Hạng mục này tạo ra rất nhiều kết quả dương tính giả về những chi tiết nhỏ nhất trong cách diễn đạt, và các lập trình viên bắt đầu bỏ qua đầu ra của nó. Một kiến trúc sư đang viết lại chỉ dẫn để tăng độ chính xác (precision). Chỉ dẫn thay thế nào áp dụng tốt nhất nguyên tắc tiêu chí tượng minh thay vì chỉ dẫn mơ hồ?</p>",
         "o": [
           "<p>Chỉ gần cứ một comment khi văn độ độ nghiêm trọng để đáng được lập trình viên chú ý, chẳng hạn cách diễn đạt có thể khiến người bảo trì đưa vào một bug, và bỏ qua các khác biệt nhớ về cách diễn đạt.</p>",
-          "<p>Chỉ gần cứ một comment khi bạn rất từ tin rằng nó sai, chẳng hạn comment mô tả một method dường như không có trong codebase, và bộ các trường hợp ranh giới thay vì báo cáo chúng với mức độ tin cậy thấp hơn.</p>",
+          "<p>Chỉ gần cứ một comment khi bạn rất tự tin rằng nó sai, chẳng hạn comment mô tả một method dường như không có trong codebase, và bộ các trường hợp ranh giới thay vì báo cáo chúng với mức độ tin cậy thấp hơn.</p>",
           "<p>Chỉ gần cứ một comment khi nó đi chệch khỏi style guide của nhóm hoặc thiếu chi tiết mà người đọc cần, chứng hơn một docstring không mô tả các tham số của nó, và đề xuất một phiên bản viết lời đủ lập khoảng trống đó.</p>",
           "<p>Chỉ gần cứ một comment khi nó nêu một hành vi cụ thể mà code mâu thuẫn, chứng hơn một docstring nói hàm trả về None trong khi hàm trả về một giá trị trên mỗi đường đi, và trích dẫn dòng code xung đột với nó.</p>"
         ]
@@ -11304,7 +11304,7 @@
           "<p>Thêm một quy tắc vào prompt gán đơn vị phổ biến nhất từ các tài liệu trước đây cho một con số weight trộn, và phát hành các giá trị đó ra đầu ra mà không có reviewer.</p>"
         ]
       },
-      "topic": "d4"
+      "topic": "d5"
     },
     {
       "id": "1503",
@@ -11341,7 +11341,7 @@
           "<p>Độ pipeline giữ giá trị từ trang đều làm điều khoản chi phối, và gửi trường tại human review nếu điều khoản đó bị thiếu hoặc không đọc được.</p>"
         ]
       },
-      "topic": "d4"
+      "topic": "d5"
     },
     {
       "id": "1504",
@@ -11415,7 +11415,7 @@
           "<p>Báo cáo timeout là kết quả rộng hợp lệ, và phản hồi 200 không có hàng nào là lỗi truy cập có thể retry cần một truy vấn mới</p>"
         ]
       },
-      "topic": "d1"
+      "topic": "d5"
     },
     {
       "id": "1506",
@@ -11441,7 +11441,7 @@
       "a": [
         "A"
       ],
-      "e": "Quy tắc đã cấu hình: khách yêu cầu gặp người thất thì chuyển ngay, kỹ cả khi việc rất đơn giản như đặt lại mật khẩu.",
+      "e": "Tuân thủ quy tắc đã cấu hình: chuyển ngay cho nhân viên khi khách hàng yêu cầu rõ ràng, kể cả khi tác vụ đặt lại mật khẩu đơn giản.",
       "m": 1,
       "v": {
         "q": "<p>Quy trình hỗ trợ của một công ty môi giải có một escalation rule đã cấu hình: đáp ứng ngay yêu cầu tường minh của khách hàng về một nhân viên con người, mà không cố giải quyết vấn đề gốc trước. Một khách hàng nhận tin cho bộ phận hỗ trợ: 'I want a real person, not a bot,' liên quan đến một yêu cầu thông thường là đặt lại mật khẩu tài khoản của hệ. Agent chưa thị bất kỳ bước khắc phục sự cố nào. Theo escalation rule đã cấu hình, phản hồi phù hợp là gì?</p>",
