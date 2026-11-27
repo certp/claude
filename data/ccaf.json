@@ -4578,7 +4578,7 @@
       "e": "Chia review thành các prompt tập trung: security và API, business logic. Mỗi prompt có ví dụ riêng, sau đó hợp nhất kết quả để giảm sự đánh đổi giữa các loại lỗi.",
       "m": 1,
       "v": {
-        "q": "<p>Trình review tự động của bạn dùng một prompt duy nhất bao quát các vấn đề bảo mật, thiết kế API và tính đúng đơn của logic nghiệp vụ. Bộ đánh giá của bạn cho thấy recall mảnh ở các phát hiện (82%) những recall kém với các trường hợp biên của logic nghiệp vụ trong chấm điểm yếu (34%). Khi bạn thêm các ví dụ few-shot về lỗi logic vào prompt, recall logic là 41% nhưng recall thiết kế API giảm xuống 68%. Bạn nên xử lý sự đánh đổi này như thế nào để cải thiện khả năng phát hiện ở cả hai danh mục?</p>",
+        "q": "<p>Trình review tự động của bạn dùng một prompt duy nhất bao quát các vấn đề bảo mật, thiết kế API và tính đúng đắn của logic nghiệp vụ. Bộ đánh giá của bạn cho thấy recall mảnh ở các phát hiện (82%) những recall kém với các trường hợp biên của logic nghiệp vụ trong chấm điểm yếu (34%). Khi bạn thêm các ví dụ few-shot về lỗi logic vào prompt, recall logic là 41% nhưng recall thiết kế API giảm xuống 68%. Bạn nên xử lý sự đánh đổi này như thế nào để cải thiện khả năng phát hiện ở cả hai danh mục?</p>",
         "o": [
           "<p>Thay các ví dụ few-shot bằng một checklist chi tiết về các trường hợp biên của logic cần kiểm tra, chẳng hạn chia cho 0 trong tính điểm hoặc các ngưỡng chấm điểm.</p>",
           "<p>Cung cấp toàn bộ repository làm context thay vì chỉ các tập đã thay đổi và mã xung quanh, giúp model nhìn sâu hơn vào logic nghiệp vụ.</p>",
@@ -5429,7 +5429,7 @@
       "e": "Tách prompt theo nhóm vấn đề, mỗi prompt có ví dụ riêng rồi hợp nhất findings.",
       "m": 1,
       "v": {
-        "q": "<p>Trình review tự động của bạn dùng một prompt duy nhất bao quát các vấn đề bảo mật, thiết kế API và tính đúng đơn của logic nghiệp vụ. </p><p>Bộ đánh giá của bạn cho thấy recall mảnh ở các phát hiện (82%) những recall kém với các trường hợp biên của logic nghiệp vụ trong chấm điểm yếu (34%). </p><p>Khi bạn thêm các ví dụ few-shot về lỗi logic vào prompt, recall logic là 41% nhưng recall thiết kế API giảm xuống 68%. </p><p>Bạn nên xử lý sự đánh đổi này như thế nào để cải thiện khả năng phát hiện ở cả hai danh mục?</p>",
+        "q": "<p>Trình review tự động của bạn dùng một prompt duy nhất bao quát các vấn đề bảo mật, thiết kế API và tính đúng đắn của logic nghiệp vụ. </p><p>Bộ đánh giá của bạn cho thấy recall mảnh ở các phát hiện (82%) những recall kém với các trường hợp biên của logic nghiệp vụ trong chấm điểm yếu (34%). </p><p>Khi bạn thêm các ví dụ few-shot về lỗi logic vào prompt, recall logic là 41% nhưng recall thiết kế API giảm xuống 68%. </p><p>Bạn nên xử lý sự đánh đổi này như thế nào để cải thiện khả năng phát hiện ở cả hai danh mục?</p>",
         "o": [
           "<p>Nâng cấp lên một model tier mạnh hơn, vì khả năng suy luận mạnh hơn của nó sẽ xử lý cả hai loại mối quan tâm trong một prompt duy nhất và loại bỏ sẽ đánh đổi recall.</p>",
           "<p>Thay các ví dụ few-shot bằng một checklist chi tiết về các trường hợp biên của logic cần kiểm tra, chẳng hạn chia cho 0 trong tính điểm hoặc các ngưỡng chấm điểm.</p>",
@@ -6432,7 +6432,7 @@
       "v": {
         "q": "<p>Những chiến lược nào sau đây được khuyến nghị cao khi tích hợp Claude vào một quy trình tạo test vững chắc? Chọn 2 đáp án đúng.</p>",
         "o": [
-          "<p>Ghi lại các tiêu chuẩn kiểm thử, tiêu chí của test có giá trị và các fixture khả dụng trong CLAUDE .md cấp dự án.</p>",
+          "<p>Ghi lại các tiêu chuẩn kiểm thử, tiêu chí của test có giá trị và các fixture khả dụng trong CLAUDE.md cấp dự án.</p>",
           "<p>Dựa vào các sự liệu test coverage tổng hợp để xác định các test được tạo có đúng về một ngữ nghĩa hay không.</p>",
           "<p>Thực thi test tự động trong một PreToolUse hook để ngăn Claude lưu code bị lỗi.</p>",
           "<p>Chia sẻ đầu ra lỗi test cụ thể với Claude để hướng dẫn cải thiện dần phần triển khai.</p>"
@@ -6541,7 +6541,7 @@
       "e": "[Cảnh báo nguồn bị cắt] Phương án B bị mất phần đầu. Ý định có thể là gọi Bash để đọc config.json, trong khi Read là tool chuyên dụng. Không khẳng định nguyên văn phương án bị mất.",
       "m": 1,
       "v": {
-        "q": "<p>Một agent đang thực thi một quy trình tại quicktechie.com cần kiểm tra nội dung của file config. json để hiểu các thiết lập dự án hiện tại. Cách tiếp cận nào là một anti-pattern về kiến trúc?</p>",
+        "q": "<p>Một agent đang thực thi một quy trình tại quicktechie.com cần kiểm tra nội dung của file config.json để hiểu các thiết lập dự án hiện tại. Cách tiếp cận nào là một anti-pattern về kiến trúc?</p>",
         "o": [
           "<p>Truyền trực tiếp đường dẫn file đến một MCP resource đã được phê duyệt để xác thực.</p>",
           "<p>Gọi config.json\") để xuất tệp ra terminal.</p>",
@@ -6875,12 +6875,12 @@
       "e": "Dồn toàn bộ vào CLAUDE.md gốc khiến Claude phải tự đoán phần nào áp dụng cho tệp nào. Rule có path-scope trong `.claude/rules/` được nạp khi làm việc với tệp khớp, ví dụ `**/*.test.tsx`.",
       "m": 1,
       "v": {
-        "q": "<p>Bạn có các quy ước kiểm thử phải được áp dụng đồng nhất, nhưng các file test được phân bổ cùng với các file source code (ví dụ: Button. test. tsx nằm cạnh Button. tsx). Tại sao việc tạo một rule file trong . claude/rules/ tốt hơn việc sửa CLAUDE. md gốc?</p>",
+        "q": "<p>Bạn có các quy ước kiểm thử phải được áp dụng đồng nhất, nhưng các file test được phân bổ cùng với các file source code (ví dụ: Button.test.tsx nằm cạnh Button.tsx). Tại sao việc tạo một rule file trong .claude/rules/ tốt hơn việc sửa CLAUDE. md gốc?</p>",
         "o": [
-          "<p>CLAUDE .md gốc được dành riêng nghiêm ngặt cho việc mở rộng biến môi trường.</p>",
-          "<p>Việc gom tất cả quy tắc vào CLAUDE .md gốc buộc Claude phải suy luận phần nào áp dụng cho file nào, khiến việc áp dụng quy tắc mang tính xác suất thay vì xác định.</p>",
-          "<p>Các quy tắc trong . claude/rules/ có thể thực thi các lệnh shell một cách native trước khi nạp, không như cấu hình gốc.</p>",
-          "<p>CLAUDE .md gốc không thể xử lý các framework kiểm thử nhỏ Jest hoặc Vitest.</p>"
+          "<p>CLAUDE.md gốc được dành riêng nghiêm ngặt cho việc mở rộng biến môi trường.</p>",
+          "<p>Việc gom tất cả quy tắc vào CLAUDE.md gốc buộc Claude phải suy luận phần nào áp dụng cho file nào, khiến việc áp dụng quy tắc mang tính xác suất thay vì xác định.</p>",
+          "<p>Các quy tắc trong .claude/rules/ có thể thực thi các lệnh shell một cách native trước khi nạp, không như cấu hình gốc.</p>",
+          "<p>CLAUDE.md gốc không thể xử lý các framework kiểm thử nhỏ Jest hoặc Vitest.</p>"
         ]
       },
       "topic": "d3"
@@ -6991,7 +6991,7 @@
           "<p>Các vòng lặp thử lại tự động nếu các giá trị được trích xuất không vượt qua xác thực logic nghiệp vụ.</p>",
           "<p>Tuân thủ về cấu trúc, đảm bảo cú pháp JSON hợp lệ và các trường bắt buộc, nhưng không đảm bảo độ chính xác về ngữ nghĩa.</p>",
           "<p>Loại bỏ mọi hallucination và việc trích xuất dữ liệu không chính xác.</p>",
-          "<p>Cố tuân thủ về cấu trúc lần tính đúng đơn vị ngữ nghĩa của dữ liệu được trích xuất.</p>"
+          "<p>Cố tuân thủ về cấu trúc lần tính đúng đắn vị ngữ nghĩa của dữ liệu được trích xuất.</p>"
         ]
       },
       "topic": "d4"
@@ -7176,7 +7176,7 @@
         "o": [
           "<p>IsError</p>",
           "<p>ErrorCategory</p>",
-          "<p>IsRetryable</p>",
+          "<p>isRetryable</p>",
           "<p>Tool_choice</p>"
         ]
       },
@@ -8258,7 +8258,7 @@
           "<p>Một skill được định nghĩa trong file SKILL.md với context: fork trong frontmatter.</p>",
           "<p>Một hook PostToolUse chạy một script Bash nền.</p>",
           "<p>Một custom command trong . claude/commands/.</p>",
-          "<p>Một file cấu hình CLAUDE .md phạm vi dự án.</p>"
+          "<p>Một file cấu hình CLAUDE.md phạm vi dự án.</p>"
         ]
       },
       "topic": "d3"
@@ -9741,10 +9741,10 @@
       "e": "`.claude/rules/` giúp tổ chức rule theo chủ đề thay cho CLAUDE.md khổng lồ và hỗ trợ frontmatter `paths` (glob) để áp dụng cho các tệp phù hợp.",
       "m": 2,
       "v": {
-        "q": "<p>Phát biểu nào sau đây mô tả đúng chức năng và lợi ích của việc dùng thư mục . claude/rules/ để cấu hình? Chọn 2 đáp án đúng.</p>",
+        "q": "<p>Phát biểu nào sau đây mô tả đúng chức năng và lợi ích của việc dùng thư mục .claude/rules/ để cấu hình? Chọn 2 đáp án đúng.</p>",
         "o": [
-          "<p>Nó cho phép tổ chức các file rule theo từng chủ đề như một giải pháp thay thế mô-đun cho một file CLAUDE .md nguyên khối.</p>",
-          "<p>Các rule đặt ở đây tự động ghi đè cấu hình N/. claude/CLAUDE .md cấp người dùng cá nhân trên toàn bộ các dự án.</p>",
+          "<p>Nó cho phép tổ chức các file rule theo từng chủ đề như một giải pháp thay thế mô-đun cho một file CLAUDE.md nguyên khối.</p>",
+          "<p>Các rule đặt ở đây tự động ghi đè cấu hình N/. claude/CLAUDE.md cấp người dùng cá nhân trên toàn bộ các dự án.</p>",
           "<p>Nó thay thế nhu cầu dùng các máy chủ Model Context Protocol (MCP) khi lấy các API schema động từ các backend service.</p>",
           "<p>Nó hỗ trợ các trường paths trong YAML frontmatter chưa glob pattern để kích hoạt rule có điều kiện, nhắm đúng mục tiêu.</p>"
         ]
@@ -10854,10 +10854,10 @@
       "v": {
         "q": "<p>Một CI pipeline cần phân tích phản hồi của Claude theo chương trình độ quyết định liệu một bước build có nên fail hay không. Nhóm muốn câu trả lời luôn khớp một dạng JSON cụ thể, ví dụ một object có trường boolean `passed` và một mảng chuỗi `issues`, bất kỳ Claude diễn đạt phần suy luận của nó thế nào. Lệnh gọi nào đạt được điều này?</p>",
         "o": [
-          "<p>Claude -p \"review this diff\" --output-format json --json-schema '{\"type\":\"object\",\"properties\":{\"passed\":{\"type\":\"boolean\"},\"issues\":{\"type\":\"array\",\"items\":{\"ty pe\":\"string\"}}},\"required\":[\"passed\",\"issues\"]}'</p>",
-          "<p>Claude -p \"review this diff and reply with a boolean passed and a list of issues\" --output-format json --max-turns 1</p>",
-          "<p>Claude -p \"review this diff\" --output-format stream-json --verbose --include-partial-messages --max-turns 1</p>",
-          "<p>Claude -p \"review this diff\" --append-system-prompt \"Reply only with a JSON object: {passed: boolean, issues: string[]}\"</p>"
+          "<p>claude -p \"review this diff\" --output-format json --json-schema '{\"type\":\"object\",\"properties\":{\"passed\":{\"type\":\"boolean\"},\"issues\":{\"type\":\"array\",\"items\":{\"ty pe\":\"string\"}}},\"required\":[\"passed\",\"issues\"]}'</p>",
+          "<p>claude -p \"review this diff and reply with a boolean passed and a list of issues\" --output-format json --max-turns 1</p>",
+          "<p>claude -p \"review this diff\" --output-format stream-json --verbose --include-partial-messages --max-turns 1</p>",
+          "<p>claude -p \"review this diff\" --append-system-prompt \"Reply only with a JSON object: {passed: boolean, issues: string[]}\"</p>"
         ]
       },
       "topic": "d3"
@@ -11078,7 +11078,7 @@
         "o": [
           "<p>Chạy lại tầng lượt theo file lần thứ hai và giờ đề xuất nào được diễn đặt bằng ngôn ngữ thể hiện độ tin cậy cao hơn</p>",
           "<p>Một lượt tích hợp cross-file riêng biệt kiểm tra cả hai file cùng nhau và đưa ra một đề xuất duy nhất dựa trên data flow thực tế</p>",
-          "<p>Như generator ban đầu phân x? giữa hai đề xuất, vì nó có đầy đủ context về lý do nó viết code theo cách đó</p>",
+          "<p>Nhờ generator ban đầu phân xử giữa hai đề xuất, vì nó có đầy đủ context về lý do nó viết code theo cách đó</p>",
           "<p>Gặp hai file thành một trước khi review để một lượt theo file duy nhất bao phủ cả hai mà không cần bước tích hợp</p>"
         ]
       },
