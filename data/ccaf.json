@@ -38,7 +38,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Synthesis thiếu findings dù upstream đã xong → coordinator truyền output vào prompt; không tự chia sẻ context qua API.",
+        "text": "Agent tổng hợp thiếu kết quả → chuyển kết quả qua prompt.",
         "cues": [
           {
             "key": "D",
@@ -85,7 +85,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Hai số liệu từ hai năm khác nhau → giữ ngày công bố/thu thập; không tự coi là mâu thuẫn.",
+        "text": "Số liệu khác năm → giữ ngày công bố hoặc thu thập.",
         "cues": [
           {
             "key": "A",
@@ -132,7 +132,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Có tên session cụ thể, đã làm các phiên khác → --resume tên phiên; --continue là phiên gần nhất.",
+        "text": "Muốn mở đúng phiên có tên → dùng --resume.",
         "cues": [
           {
             "key": "C",
@@ -179,7 +179,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Resume sau gián đoạn, chỉ vài hàm đổi tên → báo hàm đổi tên để tránh dùng thông tin cũ.",
+        "text": "Tiếp tục phiên sau khi đổi tên hàm → báo tên hàm đã đổi.",
         "cues": [
           {
             "key": "C",
@@ -226,7 +226,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Context rendering suy giảm, chuyển sang physics → tóm tắt findings rồi tạo subagent mới.",
+        "text": "Context quá dài, chuyển chủ đề → agent mới nhận bản tóm tắt.",
         "cues": [
           {
             "key": "D",
@@ -273,7 +273,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Nhiều án lệ xử lý độc lập, cần giảm độ trễ mà vẫn giám sát tập trung → coordinator tạo nhiều subagent song song, mỗi agent một nhóm án lệ, rồi tập hợp kết quả trước synthesis. Không chọn đệ quy hoặc worker queue chỉ vì có chữ parallel/asynchronous.",
+        "text": "Nhiều tài liệu độc lập → chia nhóm cho subagent chạy song song.",
         "cues": [
           {
             "key": "D",
@@ -320,14 +320,14 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Phiên khám phá dài, quên findings khi hỏi tiếp → scratchpad file lưu và tham chiếu; không xóa context định kỳ.",
+        "text": "Cần nhớ phát hiện để hỏi tiếp → lưu vào scratchpad.",
         "cues": [
           {
             "key": "D",
             "phrase": "scratchpad file"
           }
         ],
-        "contrast": "Giữ findings để hỏi tiếp trong cùng công việc; #1225 còn nhiều nhánh khám phá chưa làm → giao subagent câu hỏi cụ thể, không chỉ scratchpad."
+        "contrast": "#1225: còn nhiều nhánh chưa khám phá → subagent."
       }
     },
     {
@@ -368,7 +368,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "MCP tool kết nối nhưng agent vẫn dùng Write/sed → description nêu khi nào ưu tiên MCP và input/output.",
+        "text": "Agent bỏ qua MCP tool → làm rõ khi nào nên dùng tool.",
         "cues": [
           {
             "key": "C",
@@ -415,7 +415,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Đã đọc một phần, context xuống cấp, còn file chưa khám phá → subagent mới nhận summary pattern đã tìm.",
+        "text": "Còn file chưa khám phá → subagent mới nhận tóm tắt phát hiện.",
         "cues": [
           {
             "key": "D",
@@ -462,14 +462,14 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Hai phương án refactor độc lập từ cùng một phân tích → fork_session; không làm tuần tự trong cùng context.",
+        "text": "Thử hai hướng từ cùng một phiên → fork_session.",
         "cues": [
           {
             "key": "B",
             "phrase": "fork_session"
           }
         ],
-        "contrast": "Hai hướng độc lập từ một phiên → fork. #1237 chỉ cần nén context thì /compact; #1480 muốn rollback file cần checkpoint, không fork/resume đơn thuần."
+        "contrast": "#1237: nén context → /compact; #1480: rollback file → checkpoint."
       }
     },
     {
@@ -510,7 +510,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Citation mất ở synthesis → bảo toàn structured claim-source mappings xuyên pipeline, không đoán nguồn ở cuối.",
+        "text": "Mất trích dẫn khi tổng hợp → giữ liên kết nhận định–nguồn.",
         "cues": [
           {
             "key": "D",
@@ -557,7 +557,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Agent tổng hợp cần findings từ các agent trước → truyền trực tiếp findings vào prompt; không dựa vào kế thừa context hoặc shared memory mặc định.",
+        "text": "Agent tổng hợp thiếu dữ liệu → đưa đầy đủ kết quả vào prompt.",
         "cues": [
           {
             "key": "B",
@@ -604,7 +604,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Output A cần cho B → coordinator đưa findings vào prompt B, không cho A gọi B trực tiếp.",
+        "text": "B cần kết quả của A → agent điều phối chuyển qua prompt.",
         "cues": [
           {
             "key": "A",
@@ -651,7 +651,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Draft ngắn, raw findings rất lớn, cần citation → draft + source index claim/URL/đoạn trích.",
+        "text": "Bản nháp ngắn nhưng cần trích dẫn → kèm bảng tra cứu nguồn.",
         "cues": [
           {
             "key": "C",
@@ -698,7 +698,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Tự fetch mọi trang gây latency → trang đầu + total + cursor; agent quyết định có fetch tiếp không.",
+        "text": "Tự tải hết các trang gây chậm → trả tổng số và cursor.",
         "cues": [
           {
             "key": "D",
@@ -745,7 +745,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "503 tạm thời khi tìm chuyến bay → retry có giới hạn + exponential backoff trong tool. Không giả vờ không có kết quả; không áp dụng mù cho thao tác ghi.",
+        "text": "Lỗi 503 tạm thời khi tra cứu → retry giới hạn, exponential backoff.",
         "cues": [
           {
             "key": "D",
@@ -792,7 +792,7 @@
       "topic": "d2",
       "tip": {
         "kind": "caution",
-        "text": "Đề phân loại thiếu tham số bắt buộc thành JSON-RPC error, nhưng nhiều MCP SDK trả lỗi validation inputSchema bằng isError:true. Phân biệt lỗi cấu trúc giao thức với lỗi argument/tool; không học thuộc thiếu tham số luôn là protocol error.",
+        "text": "Đề dễ nhầm: lỗi tham số tool không luôn là lỗi JSON-RPC.",
         "cues": []
       }
     },
@@ -834,7 +834,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Tìm tài liệu để dùng tiếp → document ID + metadata có cấu trúc, không chỉ tên. Đề bị cắt mô tả thao tác.",
+        "text": "Tra cứu tài liệu để dùng tiếp → trả ID và metadata.",
         "cues": [
           {
             "key": "B",
@@ -881,7 +881,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "50+ connector, agent bỏ qua search → dynamic tool loading; connector chỉ khả dụng sau discover.",
+        "text": "Quá nhiều connector → chỉ nạp tool phù hợp khi cần.",
         "cues": [
           {
             "key": "D",
@@ -928,7 +928,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Timeout/503 và 403/422 → retry lỗi tạm thời trong tool, trả lỗi vĩnh viễn cho agent. Không retry mọi lỗi.",
+        "text": "Lỗi tạm thời → retry trong tool; lỗi vĩnh viễn → trả về agent.",
         "cues": [
           {
             "key": "B",
@@ -975,7 +975,7 @@
       "topic": "d2",
       "tip": {
         "kind": "caution",
-        "text": "Preview + token chỉ là cơ chế liên kết với thao tác, chưa chứng minh người dùng đã xác nhận. Phương án nguồn gần đúng nhất, nhưng backend phải chỉ cho execute sau xác nhận thật, kiểm tra đúng đối tượng/thao tác và token chưa dùng. Không học token = đã xác nhận.",
+        "text": "Có token xem trước chưa đồng nghĩa người dùng đã xác nhận.",
         "cues": []
       }
     },
@@ -1017,7 +1017,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Ngưỡng hoàn tiền > $500 phải được phê duyệt trước giải ngân, kể cả prompt bị thay đổi → enforce trong backend/tool, tạo pending approval khi vượt ngưỡng. Không dựa vào model hoặc PostToolUse để ngăn giao dịch.",
+        "text": "Hoàn tiền vượt ngưỡng → backend bắt buộc phê duyệt.",
         "cues": [
           {
             "key": "C",
@@ -1064,7 +1064,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Nhiều thao tác, schema khác nhau, hay thiếu/thừa tham số → tách tool theo thao tác. Tên thao tác thứ ba bị cắt.",
+        "text": "Mỗi thao tác cần tham số khác nhau → tách thành các tool riêng.",
         "cues": [
           {
             "key": "A",
@@ -1111,7 +1111,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Structured output thay free text → dễ lấy field, giảm lỗi parsing; không bảo đảm nội dung đúng.",
+        "text": "Muốn đọc từng trường dễ dàng → dùng structured output.",
         "cues": [
           {
             "key": "B",
@@ -1158,7 +1158,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Race condition: giữa check availability và book, người khác đặt trước → atomic check-and-book (transaction/constraint ở backend). Một tool gộp nhưng không atomic vẫn có lỗi.",
+        "text": "Kiểm tra chỗ rồi đặt bị tranh chấp → thao tác atomic.",
         "cues": [
           {
             "key": "D",
@@ -1205,7 +1205,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Cardio/strength dùng đơn vị khác nhau → hai tool schema riêng; enum chung vẫn cho phép tổ hợp sai.",
+        "text": "Cardio và strength khác đơn vị → tách tool theo loại.",
         "cues": [
           {
             "key": "D",
@@ -1252,7 +1252,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Archive/delete bị nhầm vì description chung chung → mô tả boundary, backup không dùng delete_file.",
+        "text": "Nhầm archive với delete → mô tả rõ ranh giới sử dụng.",
         "cues": [
           {
             "key": "C",
@@ -1299,7 +1299,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Contact tên gần trùng + confirmation rườm rà → hiển thị field phân biệt và xác nhận một lần.",
+        "text": "Tên liên hệ gần giống nhau → hiện thông tin phân biệt, xác nhận một lần.",
         "cues": [
           {
             "key": "A",
@@ -1346,7 +1346,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "JSON hợp lệ nhưng thiếu thông tin có trong nhiều layout → few-shot theo format; siết schema không dạy tìm thông tin.",
+        "text": "JSON đúng nhưng sót dữ liệu ở nhiều bố cục → few-shot.",
         "cues": [
           {
             "key": "C",
@@ -1393,7 +1393,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Báo cáo thường vs ngoại lệ cần trong 30 phút → Batch cho thường, Messages real-time cho khẩn.",
+        "text": "Báo cáo thường → Batch; báo cáo gấp → Messages API.",
         "cues": [
           {
             "key": "D",
@@ -1440,7 +1440,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Hỏi retry ÍT hiệu quả nhất → thông tin cần nằm ngoài input; retry không tạo dữ kiện thiếu.",
+        "text": "Hỏi retry ít hiệu quả nhất → dữ liệu cần thiết không có trong input.",
         "cues": [
           {
             "key": "A",
@@ -1487,7 +1487,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "JSON đúng nhưng validation ngữ nghĩa fail → gửi nguồn + output lỗi + lỗi validation; không tự chỉnh số liệu.",
+        "text": "Sai dữ liệu sau validation → gửi lại nguồn, kết quả và lỗi.",
         "cues": [
           {
             "key": "C",
@@ -1534,7 +1534,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "50.000 tài liệu, phần lớn pass, deadline dài → batch rồi chỉ retry nhóm fail và chỉnh prompt.",
+        "text": "Nhiều tài liệu, ít lỗi, không gấp → Batch, chỉ retry nhóm lỗi.",
         "cues": [
           {
             "key": "B",
@@ -1581,7 +1581,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Amendment có nhiều giá trị → lưu giá trị kèm vị trí nguồn/ngày hiệu lực; không chỉ giữ giá trị mới nhất.",
+        "text": "Nhiều bản sửa đổi → giữ vị trí nguồn và ngày hiệu lực.",
         "cues": [
           {
             "key": "C",
@@ -1628,7 +1628,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Trong các phương án của đề, chọn tool input schema thay vì yêu cầu JSON bằng text. Thực tế muốn bảo đảm schema hợp lệ cần strict:true (schema được hỗ trợ), đồng thời bảo đảm có tool call hoặc dùng structured outputs. Không bảo đảm đúng dữ kiện.",
+        "text": "Muốn đầu ra theo schema → tool input schema; cần strict để bảo đảm cấu trúc.",
         "cues": [
           {
             "key": "A",
@@ -1675,14 +1675,14 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Subagent quá cứng vì hướng dẫn từng bước → mục tiêu + quality criteria, tự chọn cách tìm.",
+        "text": "Subagent bị bó buộc → nêu mục tiêu và tiêu chí chất lượng.",
         "cues": [
           {
             "key": "B",
             "phrase": "quality criteria"
           }
         ],
-        "contrast": "Mục tiêu nghiên cứu linh hoạt + quality criteria; #284/#291 yêu cầu chuẩn test bền vững thì CLAUDE.md, không chỉ brief."
+        "contrast": "#284/#291: chuẩn test lâu dài → CLAUDE.md."
       }
     },
     {
@@ -1723,7 +1723,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Có dependency DOI → trên model hỗ trợ forced tool use, ép extract_metadata chỉ lượt đầu, sau đó cho enrichment gọi tool phù hợp. any không bảo đảm đúng tool, ép mọi lượt sẽ chặn enrichment.",
+        "text": "Phải lấy DOI trước → ép gọi extract_metadata ở lượt đầu.",
         "cues": [
           {
             "key": "A",
@@ -1770,7 +1770,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "97% aggregate trước khi tự động hóa → xác minh accuracy theo loại tài liệu và field.",
+        "text": "Accuracy tổng cao chưa đủ → đo theo loại tài liệu và từng trường.",
         "cues": [
           {
             "key": "B",
@@ -1817,7 +1817,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Tài liệu sát 200K, cuối bị bỏ sót → tính cả tool definitions + system prompt trong context budget.",
+        "text": "Tài liệu gần đầy context → tính cả system prompt và định nghĩa tool.",
         "cues": [
           {
             "key": "A",
@@ -1864,7 +1864,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Tổng line item lệch grand total → calculated_total và stated_total riêng, review khi lệch.",
+        "text": "Tổng từng dòng lệch tổng ghi trên nguồn → giữ hai giá trị riêng.",
         "cues": [
           {
             "key": "A",
@@ -1911,7 +1911,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Coordinator đã có findings, chỉ tóm tắt đơn giản → dùng context có sẵn, không spawn thêm.",
+        "text": "Agent điều phối đã có kết quả → tự tóm tắt, không gọi thêm agent.",
         "cues": [
           {
             "key": "C",
@@ -1958,7 +1958,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Nhiều tool trích xuất khác schema, chưa biết loại tài liệu nhưng cần một tool call → tool_choice any trên model hỗ trợ. any không bảo đảm input đúng schema; cần strict:true riêng. Nếu buộc đúng tool đã biết, dùng type:tool.",
+        "text": "Chưa biết tool nào nhưng phải gọi một tool → tool_choice: any.",
         "cues": [
           {
             "key": "C",
@@ -2005,7 +2005,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Lỗi validation kiểu dữ liệu có thể sửa nếu thông tin có trong nguồn → retry với lỗi cụ thể. Không ép chuyển khoảng 2–3 thành một số tùy tiện; nếu dữ liệu thực sự là khoảng thì sửa schema phù hợp.",
+        "text": "Dữ liệu có trong nguồn nhưng sai validation → retry kèm lỗi cụ thể.",
         "cues": [
           {
             "key": "B",
@@ -2052,14 +2052,14 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Lịch sử dài, cần giữ kết luận trước → progressive summarization giữ kết luận/chủ đề và nguyên văn lượt mới.",
+        "text": "Hội thoại dài, cần giữ kết luận → progressive summarization.",
         "cues": [
           {
             "key": "D",
             "phrase": "progressive summarization"
           }
         ],
-        "contrast": "Tóm tắt để giữ kết luận hội thoại; #1436 khám phá dài cần cô lập tool output bằng subagent thay vì tóm tắt toàn bộ context chính."
+        "contrast": "#1436: cô lập kết quả khám phá → subagent."
       }
     },
     {
@@ -2100,7 +2100,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Dị ứng, khẩu phần, định nghĩa cần chính xác → giữ structured facts riêng, tóm tắt trao đổi chung.",
+        "text": "Dữ kiện phải chính xác → lưu riêng dưới dạng structured data.",
         "cues": [
           {
             "key": "D",
@@ -2147,7 +2147,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Quên thông tin ngay vài lượt → thiếu history trong messages array; API stateless.",
+        "text": "Quên thông tin sau vài lượt → kiểm tra history trong messages.",
         "cues": [
           {
             "key": "D",
@@ -2194,7 +2194,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Đã chẩn đoán, người nhận không có transcript → handoff customer ID/root cause/amount/recommended action.",
+        "text": "Chuyển ca đã chẩn đoán → kèm ID, nguyên nhân, số tiền, hướng xử lý.",
         "cues": [
           {
             "key": "A",
@@ -2241,7 +2241,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Quên từ vựng vừa thảo luận → gửi history mỗi request; không cần session_id ghi nhớ tự động.",
+        "text": "Quên nội dung vừa nói → gửi lại lịch sử hội thoại.",
         "cues": [
           {
             "key": "B",
@@ -2288,7 +2288,7 @@
       "topic": "d4",
       "tip": {
         "kind": "caution",
-        "text": "Thiếu dữ kiện: lệch system prompt có thể do không gửi lại system prompt hoặc context tích lũy. Kiểm tra request; không học thuộc keyword.",
+        "text": "Chưa đủ dữ kiện: kiểm tra system prompt và lịch sử request.",
         "cues": []
       }
     },
@@ -2330,7 +2330,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Sliding window làm mất context cũ → hybrid: tóm tắt cũ, giữ nguyên lượt gần đây.",
+        "text": "Cần giữ cả nội dung cũ lẫn lượt mới → hybrid summarization.",
         "cues": [
           {
             "key": "A",
@@ -2377,7 +2377,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Đã xác định lỗi giá, cần manager phê duyệt → structured handoff trước escalate; không thử refund vượt quyền.",
+        "text": "Đã rõ lỗi giá, cần quản lý duyệt → structured handoff.",
         "cues": [
           {
             "key": "B",
@@ -2424,7 +2424,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Guideline lệch sau nhiều lượt dù context còn đủ → nhắc guideline tại điểm chuyển tự nhiên.",
+        "text": "Lệch hướng dẫn sau nhiều lượt → nhắc lại ở điểm chuyển tự nhiên.",
         "cues": [
           {
             "key": "A",
@@ -2471,7 +2471,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "RAG tích lũy lấn chỗ lịch sử chat → giới hạn RAG 2–3 truy vấn, giữ history.",
+        "text": "Kết quả RAG chiếm chỗ hội thoại → giới hạn lịch sử RAG.",
         "cues": [
           {
             "key": "B",
@@ -2518,14 +2518,14 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Persona/hành vi chung mọi lượt → system prompt; không routing theo loại request.",
+        "text": "Vai trò và giọng điệu chung → system prompt.",
         "cues": [
           {
             "key": "C",
             "phrase": "system prompt"
           }
         ],
-        "contrast": "Chỉ áp dụng với hành vi chung mọi lượt. Nếu yêu cầu quyết định bắt buộc như ngưỡng tiền (#169) thì cần code/tool enforcement, không chỉ system prompt."
+        "contrast": "#169: bắt buộc phê duyệt → backend, không chỉ prompt."
       }
     },
     {
@@ -2566,7 +2566,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Webhook cập nhật trạng thái khi đang chat → trong các lựa chọn, đưa trạng thái hiện tại vào context của request kế tiếp (đề chọn system prompt), không tự tạo phản hồi. Dữ liệu sự kiện phải phân biệt với instruction.",
+        "text": "Webhook đổi trạng thái → đưa trạng thái mới vào request kế tiếp.",
         "cues": [
           {
             "key": "D",
@@ -2613,14 +2613,14 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Yêu cầu focus music có nhiều hành động khác bản chất (phát ngay, tạo playlist, cấu hình) → hỏi một câu phân biệt ý định trước khi thực hiện.",
+        "text": "Chưa rõ muốn phát nhạc hay tạo playlist → hỏi một câu làm rõ.",
         "cues": [
           {
             "key": "B",
             "phrase": "one clarifying question"
           }
         ],
-        "contrast": "Khác #219: report có thể tiến triển với giả định an toàn; focus music có các hành động khác nhau nên hỏi rõ loại hành động."
+        "contrast": "#219: có thể làm tiếp với giả định dễ sửa → nêu giả định."
       }
     },
     {
@@ -2661,7 +2661,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Muốn loại lời chào lặp bằng cách cho model tiếp tục mở đầu trực tiếp → assistant prefill, chỉ model hỗ trợ.",
+        "text": "Muốn bỏ lời chào lặp → assistant prefill nếu model hỗ trợ.",
         "cues": [
           {
             "key": "D",
@@ -2708,7 +2708,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Agent hỏi lại tên đã xác minh → thiếu history ở request tiếp theo, không mặc định do tool xóa state.",
+        "text": "Hỏi lại tên đã xác minh → thiếu lịch sử hội thoại.",
         "cues": [
           {
             "key": "B",
@@ -2755,7 +2755,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Retry lỗi nghiệp vụ vô ích, cần giải thích khách → retryable:false + thông báo dễ hiểu.",
+        "text": "Lỗi nghiệp vụ không thể retry → báo lỗi rõ, đánh dấu không retry.",
         "cues": [
           {
             "key": "C",
@@ -2802,7 +2802,7 @@
       "topic": "d1",
       "tip": {
         "kind": "caution",
-        "text": "Hai phương án mô tả cùng một giải pháp: phiên mới + structured summary + fresh tool calls. Không có keyword phân biệt về mặt kỹ thuật; không học thuộc khóa nguồn.",
+        "text": "Hai lựa chọn tương đương về kỹ thuật; không có keyword phân biệt.",
         "cues": []
       }
     },
@@ -2844,7 +2844,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Đã xác minh eligibility nhưng backend timeout → giải thích phần biết, nói chưa xử lý được, đề nghị escalate hoặc thử sau.",
+        "text": "Đủ điều kiện hoàn tiền nhưng tool timeout → báo phần đã xác minh.",
         "cues": [
           {
             "key": "B",
@@ -2891,7 +2891,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Đã xác định lỗi giá, cần manager phê duyệt → structured handoff trước escalate; không thử refund vượt quyền.",
+        "text": "Đã rõ lỗi giá, cần quản lý duyệt → structured handoff.",
         "cues": [
           {
             "key": "D",
@@ -2938,7 +2938,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Lỗi chung khiến retry/escalate/hỏi sai → errorCategory + isRetryable + nguyên nhân cụ thể.",
+        "text": "Không biết retry hay chuyển người → trả loại lỗi và khả năng retry.",
         "cues": [
           {
             "key": "A",
@@ -2985,7 +2985,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Nhiều issue trong một session, cần order ID/amount/status chính xác → structured data riêng từng issue.",
+        "text": "Nhiều vấn đề trong một phiên → lưu dữ kiện riêng từng vấn đề.",
         "cues": [
           {
             "key": "B",
@@ -3032,7 +3032,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Mất attribution qua các bước summarize → tách summary và source metadata có cấu trúc.",
+        "text": "Mất nguồn qua nhiều lần tóm tắt → lưu metadata nguồn riêng.",
         "cues": [
           {
             "key": "A",
@@ -3079,7 +3079,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Bỏ sót user_id/sai format → parameter description nêu format/bắt buộc; tên dài không đủ.",
+        "text": "Thiếu hoặc sai user_id → mô tả rõ tham số và định dạng.",
         "cues": [
           {
             "key": "A",
@@ -3126,7 +3126,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Tool trả chi tiết đơn hàng → thêm kết quả vào hội thoại, model suy luận bước sau; không chuỗi cố định.",
+        "text": "Có kết quả tool → model tự chọn bước tiếp theo.",
         "cues": [
           {
             "key": "B",
@@ -3173,7 +3173,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Timeout vs syntax error → retry timeout trong tool, trả lỗi cú pháp ngay kèm validation.",
+        "text": "Timeout mạng → retry có backoff; lỗi cú pháp → báo ngay.",
         "cues": [
           {
             "key": "C",
@@ -3220,7 +3220,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Agent hỏi lại tên đã xác minh → thiếu history ở request tiếp theo, không mặc định do tool xóa state.",
+        "text": "Hỏi lại tên đã xác minh → thiếu lịch sử hội thoại.",
         "cues": [
           {
             "key": "D",
@@ -3267,7 +3267,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Thiếu ngày, số khách, ngân sách và đề cho thấy hỏi từng lượt làm khách bỏ đi, mặc định lại sai sở thích → gộp các thông tin cần thiết trong một câu hỏi. Không gộp mọi câu hỏi trong mọi tình huống.",
+        "text": "Thiếu nhiều thông tin đặt chỗ → hỏi gộp một lần.",
         "cues": [
           {
             "key": "D",
@@ -3314,7 +3314,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "MCP tool thực thi fail → tool result content kèm isError:true; không trả success rỗng.",
+        "text": "MCP tool thực thi lỗi → isError: true.",
         "cues": [
           {
             "key": "C",
@@ -3361,7 +3361,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Review phải theo ngưỡng đã test → tool tính requires_review + review_reasons; không để model tự đoán.",
+        "text": "Review theo ngưỡng cố định → tool tính requires_review.",
         "cues": [
           {
             "key": "C",
@@ -3408,7 +3408,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Transcript dài, thông tin rải rác → chunk, extract riêng, merge/dedup; không tóm tắt mất chi tiết trước.",
+        "text": "Transcript dài, dữ liệu rải rác → chia đoạn, trích xuất, gộp và bỏ trùng.",
         "cues": [
           {
             "key": "B",
@@ -3455,7 +3455,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Tên đội/ngày dễ nhầm do tái đấu → lookup search_games rồi dùng game_id duy nhất.",
+        "text": "Đội và ngày dễ trùng → tra cứu game_id duy nhất.",
         "cues": [
           {
             "key": "D",
@@ -3502,7 +3502,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Đơn vị không chuẩn có trong nguồn như a handful → few-shot giữ nguyên văn, không bịa số.",
+        "text": "Đơn vị không chuẩn trong nguồn → few-shot giữ nguyên cách ghi.",
         "cues": [
           {
             "key": "B",
@@ -3549,7 +3549,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Confirmation thiếu chi phí/tác động → trả dữ liệu có cấu trúc để user kiểm tra trước khi xác nhận.",
+        "text": "Trước xác nhận → hiện chi phí và đối tượng bị tác động.",
         "cues": [
           {
             "key": "D",
@@ -3596,7 +3596,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Coordinator đã có findings và tóm tắt đơn giản → dùng context hiện có, không spawn thêm.",
+        "text": "Agent điều phối đã có kết quả → tự tóm tắt, không gọi thêm agent.",
         "cues": [
           {
             "key": "B",
@@ -3643,7 +3643,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Truyện dài cần giữ nhân vật/luật/plot → story bible cố định, chỉ tóm tắt brainstorm.",
+        "text": "Truyện dài cần giữ nhân vật và quy tắc → story bible.",
         "cues": [
           {
             "key": "A",
@@ -3690,7 +3690,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Một tool analysis có mục đích extract/summarize/verify khác nhau → tách tool chuyên biệt.",
+        "text": "Một tool làm nhiều việc khác nhau → tách theo mục đích.",
         "cues": [
           {
             "key": "C",
@@ -3737,7 +3737,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Yêu cầu hỗ trợ report còn mơ hồ, hỏi liên tiếp gây bỏ cuộc → nếu context đủ để tiến triển với giả định dễ sửa, nêu giả định rõ và mời chỉnh. Nếu không có dữ kiện thiết yếu, hỏi đúng điểm thiếu; không tự bịa.",
+        "text": "Có thể làm tiếp với giả định dễ sửa → nói rõ giả định.",
         "cues": [
           {
             "key": "B",
@@ -3784,7 +3784,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Muốn đo lỗi/drift nhóm confidence cao đã auto → lấy mẫu phân tầng định kỳ, không chỉ review low confidence.",
+        "text": "Muốn phát hiện lỗi ở nhóm confidence cao → lấy mẫu phân tầng định kỳ.",
         "cues": [
           {
             "key": "B",
@@ -3831,7 +3831,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Preference thay đổi nhiều lần → state object hiện tại, cập nhật và gửi mỗi request.",
+        "text": "Sở thích thay đổi nhiều lần → giữ trạng thái mới nhất có cấu trúc.",
         "cues": [
           {
             "key": "A",
@@ -3878,7 +3878,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Enum xuất hiện loại mới → other + detail string, không biến mọi giá trị thành free text.",
+        "text": "Enum thiếu loại mới → other kèm trường mô tả.",
         "cues": [
           {
             "key": "A",
@@ -3925,7 +3925,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Guideline trình độ dài nhưng model lệch → few-shot response theo từng trình độ.",
+        "text": "Trả lời theo trình độ không ổn định → few-shot theo từng trình độ.",
         "cues": [
           {
             "key": "B",
@@ -3972,7 +3972,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Mô tả vật liệu không nhất quán → 2–3 cặp input/output chuẩn hóa.",
+        "text": "Mô tả vật liệu thiếu nhất quán → ví dụ input/output chuẩn.",
         "cues": [
           {
             "key": "D",
@@ -4019,7 +4019,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Cập nhật prompt nhưng phiên đang chạy cần hành vi cũ → version prompt theo conversation.",
+        "text": "Phiên cũ cần giữ hành vi cũ → version system prompt theo phiên.",
         "cues": [
           {
             "key": "C",
@@ -4066,7 +4066,7 @@
       "topic": "d4",
       "tip": {
         "kind": "caution",
-        "text": "Ưu tiên tiết kiệm chi phí → batch mỗi 4 giờ cho 2 giờ đệm; không đồng nghĩa bảo đảm SLA 99,9%. Cần theo dõi deadline và fallback.",
+        "text": "Ưu tiên chi phí → Batch mỗi 4 giờ; không bảo đảm SLA.",
         "cues": []
       }
     },
@@ -4108,7 +4108,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Theo cấu hình SDK trong đề, coordinator có AgentDefinitions nhưng không thể thực thi delegation → kiểm tra quyền/khả dụng của Task (tên Agent ở phiên bản mới). allowedTools không phải allowlist cứng trong mọi cơ chế permission; không chỉ dựa vào việc thiếu tên để kết luận.",
+        "text": "Có định nghĩa agent nhưng không gọi được → kiểm tra quyền dùng Task.",
         "cues": [
           {
             "key": "B",
@@ -4155,7 +4155,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Giá/tag cần chuẩn hóa ngay từ extraction → strict schema + quy tắc format trong prompt.",
+        "text": "Cần chuẩn hóa giá và tag → schema kết hợp quy tắc định dạng.",
         "cues": [
           {
             "key": "B",
@@ -4202,7 +4202,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Nguồn khác mức chắc chắn → tách findings đã xác lập và còn tranh cãi, giữ phương pháp.",
+        "text": "Nguồn có độ tin cậy khác nhau → tách kết luận chắc chắn và tranh cãi.",
         "cues": [
           {
             "key": "B",
@@ -4249,7 +4249,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Schema đã nullable nhưng model bịa dữ kiện không có trong nguồn → hướng dẫn trả null khi không được nêu. Nullable và required là hai đặc tính khác nhau: field có thể vừa required vừa nullable.",
+        "text": "Dữ liệu không có trong nguồn → trả null, không suy đoán.",
         "cues": [
           {
             "key": "B",
@@ -4296,7 +4296,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Nhiều tool không liên quan vai trò → decision complexity tăng, cấp tập tool phù hợp.",
+        "text": "Quá nhiều tool không liên quan → chỉ cấp tool phù hợp vai trò.",
         "cues": [
           {
             "key": "A",
@@ -4343,7 +4343,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Cần truy vấn lại số liệu nghiên cứu chính xác → lưu structured facts và retrieve khi cần.",
+        "text": "Cần truy lại số liệu chính xác → lưu dữ kiện có cấu trúc.",
         "cues": [
           {
             "key": "B",
@@ -4390,7 +4390,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Sliding window làm mất context cũ → hybrid: tóm tắt cũ, giữ nguyên lượt gần đây.",
+        "text": "Cần giữ cả nội dung cũ lẫn lượt mới → hybrid summarization.",
         "cues": [
           {
             "key": "A",
@@ -4437,7 +4437,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Quá nhiều conditional về trình độ → nguyên tắc chung điều chỉnh độ sâu/thuật ngữ, giữ rule an toàn.",
+        "text": "Quá nhiều quy tắc theo trình độ → điều chỉnh độ sâu theo người dùng.",
         "cues": [
           {
             "key": "B",
@@ -4484,7 +4484,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Tìm eval( trong nội dung file → Grep; Glob tìm đường dẫn/tên file.",
+        "text": "Tìm chuỗi trong nội dung file → Grep, không phải Glob.",
         "cues": [
           {
             "key": "A",
@@ -4531,7 +4531,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Webhook cập nhật trạng thái khi đang chat → trong các lựa chọn, đưa trạng thái hiện tại vào context của request kế tiếp (đề chọn system prompt), không tự tạo phản hồi. Dữ liệu sự kiện phải phân biệt với instruction.",
+        "text": "Webhook đổi trạng thái → đưa trạng thái mới vào request kế tiếp.",
         "cues": [
           {
             "key": "D",
@@ -4578,7 +4578,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Cache qua nhiều lớp → lần theo import/class hierarchy, base class rồi implementation invalidation.",
+        "text": "Cache qua nhiều lớp → lần theo import và cây kế thừa.",
         "cues": [
           {
             "key": "D",
@@ -4625,7 +4625,7 @@
       "topic": "d1",
       "tip": {
         "kind": "caution",
-        "text": "Nguồn bị cắt tình huống; câu 150 đầy đủ hơn. Có tên session cụ thể → --resume tên phiên, không --continue.",
+        "text": "Đề bị cắt: mở phiên có tên bằng --resume, không phải --continue.",
         "cues": []
       }
     },
@@ -4667,14 +4667,14 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Migration breaking ảnh hưởng 45 file nhiều module → plan mode map dependency trước khi sửa.",
+        "text": "Migration ảnh hưởng nhiều file → Plan Mode trước khi sửa.",
         "cues": [
           {
             "key": "B",
             "phrase": "plan mode"
           }
         ],
-        "contrast": "Plan khi thay đổi rộng và chưa hiểu dependency; #251/#259 sửa nhỏ hoặc stack trace rõ thì direct execution."
+        "contrast": "#251/#259: sửa nhỏ, rõ lỗi → Direct Execution."
       }
     },
     {
@@ -4715,14 +4715,14 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Phiên khám phá dài, quên findings khi hỏi tiếp → scratchpad file lưu và tham chiếu; không xóa context định kỳ.",
+        "text": "Cần nhớ phát hiện để hỏi tiếp → lưu vào scratchpad.",
         "cues": [
           {
             "key": "D",
             "phrase": "scratchpad file"
           }
         ],
-        "contrast": "Giữ findings để hỏi tiếp; #1225 còn nhiều câu hỏi codebase chưa điều tra → subagent chuyên biệt."
+        "contrast": "#1225: còn nhiều nhánh chưa khám phá → subagent."
       }
     },
     {
@@ -4763,7 +4763,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Edit không tìm được old_string duy nhất → trong các lựa chọn, Read toàn bộ rồi Write phiên bản có chèn đúng vị trí. Không replace_all mù; thực tế ưu tiên edit có anchor duy nhất nếu tìm được, tránh ghi đè thay đổi đồng thời.",
+        "text": "Edit không tìm được đoạn duy nhất → Read toàn file rồi Write đúng vị trí.",
         "cues": [
           {
             "key": "B",
@@ -4810,14 +4810,14 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Sửa nhỏ, rõ yêu cầu, một hàm → direct execution; plan khi dependency/trade-off chưa rõ.",
+        "text": "Sửa một hàm, yêu cầu rõ → Direct Execution.",
         "cues": [
           {
             "key": "C",
             "phrase": "direct execution"
           }
         ],
-        "contrast": "Thay đổi một conditional đã rõ; #248/#1416 migration nhiều file cần plan."
+        "contrast": "#248/#1416: thay đổi nhiều file → Plan Mode."
       }
     },
     {
@@ -4858,14 +4858,14 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Chạy Prettier sau Edit/Write → PostToolUse; PreToolUse kiểm tra/chặn trước.",
+        "text": "Tự format sau Edit/Write → PostToolUse.",
         "cues": [
           {
             "key": "C",
             "phrase": "Post ToolUse hook"
           }
         ],
-        "contrast": "Format sau Edit/Write → PostToolUse. #169/#292 ngăn giải ngân vượt ngưỡng → backend; #290 chặn trước call → PreToolUse."
+        "contrast": "#169/#292: bắt buộc phê duyệt → backend; #290: chặn trước → PreToolUse."
       }
     },
     {
@@ -4906,7 +4906,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Lỗi report phụ thuộc nhau → width trước, verify, date format, rồi page break.",
+        "text": "Các lỗi báo cáo phụ thuộc nhau → sửa độ rộng cột trước.",
         "cues": [
           {
             "key": "A",
@@ -4953,7 +4953,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Chưa rõ yêu cầu cache/edge case production → interview trước code, không TDD khi chưa biết hành vi.",
+        "text": "Chưa rõ yêu cầu và trường hợp biên → Interview Pattern.",
         "cues": [
           {
             "key": "A",
@@ -5000,7 +5000,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Đã rõ hành vi/edge case/performance → TDD, test trước rồi code pass và lặp với test fail.",
+        "text": "Hành vi và trường hợp biên đã rõ → TDD, viết test trước.",
         "cues": [
           {
             "key": "A",
@@ -5047,7 +5047,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "MCP server dùng chung project vs cá nhân thử nghiệm → .mcp.json vs ~/.claude.json theo scope.",
+        "text": "MCP dùng chung → .mcp.json; dùng cá nhân → ~/.claude.json.",
         "cues": [
           {
             "key": "A",
@@ -5094,7 +5094,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Rule Terraform chỉ cần cho file Terraform → .claude/rules + paths glob.",
+        "text": "Rule chỉ áp dụng file Terraform → .claude/rules với paths.",
         "cues": [
           {
             "key": "D",
@@ -5141,7 +5141,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Workflow dùng chung team, gọi lại nhiều lần, version control → skill trong .claude/skills của repo.",
+        "text": "Workflow dùng lại trong team → skill trong .claude/skills.",
         "cues": [
           {
             "key": "C",
@@ -5188,7 +5188,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Bug production stack trace rõ tới hàm → direct execution, đọc trace/code rồi fix.",
+        "text": "Bug có stack trace rõ → Direct Execution.",
         "cues": [
           {
             "key": "D",
@@ -5235,7 +5235,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Task một lần có module mẫu → @reference trong prompt, không thêm rule vĩnh viễn.",
+        "text": "Chỉ cần file mẫu cho một task → @reference trong prompt.",
         "cues": [
           {
             "key": "B",
@@ -5282,7 +5282,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Output sai ở null → test case input + expected output cụ thể; không chỉ nói code sai.",
+        "text": "Kết quả sai khi input null → nêu input và expected output.",
         "cues": [
           {
             "key": "A",
@@ -5329,7 +5329,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Tuân thủ CLAUDE.md lúc có lúc không → /memory kiểm tra file nạp trước khi chỉnh rule.",
+        "text": "Không chắc CLAUDE.md đã được nạp → kiểm tra bằng /memory.",
         "cues": [
           {
             "key": "B",
@@ -5376,7 +5376,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Monorepo mỗi maintainer biết standard riêng, không path pattern chung → @imports theo package.",
+        "text": "Chuẩn riêng từng package, không có pattern chung → @imports.",
         "cues": [
           {
             "key": "D",
@@ -5423,7 +5423,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Thiếu pros/cons hoặc sentiment mơ hồ → mảng rỗng hợp lệ + enum unclear.",
+        "text": "Thiếu ưu/nhược điểm hoặc cảm xúc mơ hồ → mảng rỗng và unclear.",
         "cues": [
           {
             "key": "C",
@@ -5470,7 +5470,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Batch 3% context_length_exceeded → chunk và resubmit đúng nhóm fail, không tăng output max_tokens.",
+        "text": "Batch lỗi context_length_exceeded → chia nhỏ, chỉ gửi lại nhóm lỗi.",
         "cues": [
           {
             "key": "B",
@@ -5517,14 +5517,14 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Yêu cầu focus music có nhiều hành động khác bản chất (phát ngay, tạo playlist, cấu hình) → hỏi một câu phân biệt ý định trước khi thực hiện.",
+        "text": "Chưa rõ muốn phát nhạc hay tạo playlist → hỏi một câu làm rõ.",
         "cues": [
           {
             "key": "B",
             "phrase": "one clarifying question"
           }
         ],
-        "contrast": "Khác #219: nếu giả định có thể dễ sửa thì nêu rõ; ở đây chưa biết phát ngay hay cấu hình nên hỏi."
+        "contrast": "#219: có thể làm tiếp với giả định dễ sửa → nêu giả định."
       }
     },
     {
@@ -5565,7 +5565,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Trong các lựa chọn, tool input schema là cách ràng buộc output thay vì parse JSON text. Để bảo đảm conformance thật, bật strict:true và xử lý việc có tool call; structured outputs cũng là lựa chọn khi chỉ cần JSON.",
+        "text": "Muốn JSON theo schema → tool input schema; strict để bảo đảm cấu trúc.",
         "cues": [
           {
             "key": "A",
@@ -5612,7 +5612,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "False positive trên pattern code → few-shot code có nhãn acceptable vs genuine issue.",
+        "text": "Review báo lỗi nhầm pattern → few-shot mẫu đúng và mẫu sai.",
         "cues": [
           {
             "key": "A",
@@ -5659,7 +5659,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Tool trùng ngữ nghĩa → consolidate để bỏ overlap; tool khác mục đích thì tách.",
+        "text": "Tool trùng chức năng → gộp; khác chức năng thì tách.",
         "cues": [
           {
             "key": "C",
@@ -5706,7 +5706,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Agent không biết retry hay tool khác → lỗi theo loại + hướng recovery cụ thể.",
+        "text": "Agent không biết xử lý lỗi thế nào → loại lỗi và hướng khắc phục.",
         "cues": [
           {
             "key": "B",
@@ -5753,7 +5753,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Recall thấp, vẫn cần kiểm soát false positive → tìm mọi finding + confidence/severity rồi lọc riêng.",
+        "text": "Muốn tăng recall → báo mọi finding kèm confidence/severity, lọc sau.",
         "cues": [
           {
             "key": "C",
@@ -5800,7 +5800,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Tăng recall logic làm giảm recall API → prompt riêng theo nhóm vấn đề, ví dụ riêng, merge.",
+        "text": "Tăng recall nhóm này làm giảm nhóm khác → tách prompt theo loại lỗi.",
         "cues": [
           {
             "key": "A",
@@ -5847,7 +5847,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Tool result order dài, chỉ cần trả hàng → giữ field liên quan return, bỏ dữ liệu verbose.",
+        "text": "Tool trả dư thông tin đơn hàng → chỉ giữ trường cần cho trả hàng.",
         "cues": [
           {
             "key": "A",
@@ -5894,7 +5894,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Mọi interaction phải kết thúc resolved hoặc escalated → hậu điều kiện bằng code orchestration.",
+        "text": "Bắt buộc kết thúc ở resolved hoặc escalated → kiểm tra bằng code.",
         "cues": [
           {
             "key": "A",
@@ -5941,7 +5941,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Truy vấn đa dạng thay đổi → coordinator chọn subagent động, không workflow cố định.",
+        "text": "Yêu cầu đa dạng, khó đoán trước → coordinator chọn subagent động.",
         "cues": [
           {
             "key": "A",
@@ -5988,7 +5988,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Khôi phục state nhiều agent → structured export + manifest, nạp phần liên quan khi resume.",
+        "text": "Khôi phục trạng thái nhiều agent → structured export và manifest.",
         "cues": [
           {
             "key": "C",
@@ -6035,7 +6035,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Hai chiến lược test độc lập từ cùng session → fork_session, tránh lẫn context.",
+        "text": "Thử hai chiến lược test từ cùng phiên → fork_session.",
         "cues": [
           {
             "key": "A",
@@ -6082,7 +6082,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Hai subtask độc lập đang chạy tuần tự → nhiều Task call trong cùng response.",
+        "text": "Subtask độc lập đang chạy tuần tự → nhiều Task call cùng lượt.",
         "cues": [
           {
             "key": "C",
@@ -6129,14 +6129,14 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Hai phương án refactor độc lập từ cùng một phân tích → fork_session; không làm tuần tự trong cùng context.",
+        "text": "Thử hai hướng refactor từ cùng phiên → fork_session.",
         "cues": [
           {
             "key": "A",
             "phrase": "fork_session"
           }
         ],
-        "contrast": "Hai hướng độc lập từ một phiên → fork. #1237 chỉ cần nén context thì /compact; #1480 muốn rollback file cần checkpoint."
+        "contrast": "#1237: nén context → /compact; #1480: rollback file → checkpoint."
       }
     },
     {
@@ -6177,7 +6177,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Task mở, chưa biết codebase → Glob/Grep map cấu trúc, ưu tiên module ảnh hưởng lớn.",
+        "text": "Chưa biết cấu trúc codebase → Glob/Grep, ưu tiên module quan trọng.",
         "cues": [
           {
             "key": "A",
@@ -6224,7 +6224,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "PR lớn, JSON bị cắt max_tokens → chia call theo nhóm file rồi merge; cross-file cần pass riêng.",
+        "text": "JSON review PR lớn bị cắt → chia nhóm file rồi gộp kết quả.",
         "cues": [
           {
             "key": "C",
@@ -6271,14 +6271,14 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Custom system prompt làm mất hướng dẫn tool mặc định → append thay replace.",
+        "text": "Muốn thêm system prompt mà giữ hướng dẫn gốc → append.",
         "cues": [
           {
             "key": "A",
             "phrase": "--append-system-prompt"
           }
         ],
-        "contrast": "Bổ sung hướng dẫn vào system prompt mặc định; #1490 cần ràng buộc JSON output thì --json-schema, không phải chỉ append prompt."
+        "contrast": "#1490: cần JSON đúng schema → --json-schema."
       }
     },
     {
@@ -6319,7 +6319,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Test tầm thường/lặp lại → CLAUDE.md ghi tiêu chí, fixture, ví dụ test có giá trị ngay từ đầu.",
+        "text": "Test lặp hoặc quá đơn giản → ghi chuẩn test trong CLAUDE.md.",
         "cues": [
           {
             "key": "C",
@@ -6366,7 +6366,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Resume, vài file đã sửa → báo đúng file để re-analysis, giữ context file không đổi.",
+        "text": "Tiếp tục phiên sau khi sửa vài file → báo file cần phân tích lại.",
         "cues": [
           {
             "key": "C",
@@ -6413,7 +6413,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Có chuỗi lỗi đặc trưng trong log → Grep chuỗi đó rồi Read file khớp.",
+        "text": "Có chuỗi lỗi đặc trưng → Grep chuỗi rồi Read file tìm được.",
         "cues": [
           {
             "key": "A",
@@ -6460,7 +6460,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Mô hình MCP của đề: các server đã cấu hình và kết nối có thể cung cấp tool cho cùng agent, không cần chọn một server độc quyền mỗi lượt. Với tool search/deferred loading, không phải mọi tool đều được nạp sẵn.",
+        "text": "Nhiều MCP server đã kết nối → có thể dùng tool từ nhiều server.",
         "cues": [
           {
             "key": "B",
@@ -6507,7 +6507,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Prompt không ngăn refund vượt ngưỡng → hook chặn trước thực thi và escalate.",
+        "text": "Prompt không ngăn được hoàn tiền vượt ngưỡng → hook chặn trước.",
         "cues": [
           {
             "key": "B",
@@ -6554,7 +6554,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Escalate khi yêu cầu gặp người, policy exception, hoặc không còn tiến triển; sentiment không đủ.",
+        "text": "Chuyển người khi khách yêu cầu, vướng policy hoặc không thể tiến triển.",
         "cues": [
           {
             "key": "A",
@@ -6601,7 +6601,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Đã thấy hàm thiếu test nhưng bỏ sót branch → liệt kê branch/exception path, đối chiếu assertion.",
+        "text": "Test bỏ sót nhánh → liệt kê branch và exception, đối chiếu assertion.",
         "cues": [
           {
             "key": "B",
@@ -6648,7 +6648,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "CI startup chậm vì auto discovery nhưng cần root CLAUDE.md → --bare + append-system-prompt-file.",
+        "text": "CI khởi động chậm nhưng cần CLAUDE.md → --bare và append prompt file.",
         "cues": [
           {
             "key": "B",
@@ -6695,7 +6695,7 @@
       "topic": "d2",
       "tip": {
         "kind": "caution",
-        "text": "Đề phân loại thiếu tham số bắt buộc thành JSON-RPC error, nhưng nhiều MCP SDK trả lỗi validation inputSchema bằng isError:true. Phân biệt lỗi cấu trúc giao thức với lỗi argument/tool; không học thuộc thiếu tham số luôn là protocol error.",
+        "text": "Đề dễ nhầm: lỗi tham số tool không luôn là lỗi JSON-RPC.",
         "cues": []
       }
     },
@@ -6737,7 +6737,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "So sánh đổi tên cơ học với sửa error handling cả module → nhiều pha có ích hơn cho error handling.",
+        "text": "Đổi tên đơn giản hay sửa logic cả module → nhiều pha cho sửa logic.",
         "cues": [
           {
             "key": "D",
@@ -6784,7 +6784,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Generator tự review bỏ sót lỗi do giả định của mình → confirmation bias, dùng reviewer độc lập.",
+        "text": "Agent tự review dễ bỏ sót lỗi → reviewer độc lập.",
         "cues": [
           {
             "key": "A",
@@ -6831,7 +6831,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Báo cáo thường vs ngoại lệ cần trong 30 phút → Batch cho thường, Messages real-time cho khẩn.",
+        "text": "Báo cáo thường → Batch; báo cáo gấp → Messages API.",
         "cues": [
           {
             "key": "B",
@@ -6878,7 +6878,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Tăng recall logic làm giảm recall API → prompt riêng theo nhóm vấn đề, ví dụ riêng, merge.",
+        "text": "Tăng recall nhóm này làm giảm nhóm khác → tách prompt theo loại lỗi.",
         "cues": [
           {
             "key": "A",
@@ -6925,7 +6925,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Field không luôn tồn tại nhưng schema bắt buộc giá trị → trong các lựa chọn, chuyển sang optional. Nếu dùng strict structured output yêu cầu field hiện diện, biểu diễn thiếu bằng null hợp lệ thay vì ép model bịa.",
+        "text": "Trường có thể thiếu → optional hoặc nullable theo schema.",
         "cues": [
           {
             "key": "B",
@@ -6972,7 +6972,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Pipeline parse JSON text bị lỗi → trong các lựa chọn, tool use với input schema. Schema thường không bảo đảm tuyệt đối; dùng strict:true và kiểm tra tool call, hoặc structured outputs nếu chỉ cần JSON.",
+        "text": "Parse JSON tự do hay lỗi → tool input schema; strict để bảo đảm cấu trúc.",
         "cues": [
           {
             "key": "C",
@@ -7019,7 +7019,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Expose catalog/document/schema làm context → MCP resources, không tool thao tác.",
+        "text": "Cung cấp catalog hoặc tài liệu làm ngữ cảnh → MCP Resources.",
         "cues": [
           {
             "key": "C",
@@ -7066,14 +7066,14 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Subagent quá cứng vì hướng dẫn từng bước → mục tiêu + quality criteria, tự chọn cách tìm.",
+        "text": "Subagent bị bó buộc → nêu mục tiêu và tiêu chí chất lượng.",
         "cues": [
           {
             "key": "A",
             "phrase": "quality criteria"
           }
         ],
-        "contrast": "Mục tiêu research + chất lượng nguồn thay quy trình cứng; #284/#291 chuẩn test dự án cần CLAUDE.md."
+        "contrast": "#284/#291: chuẩn test lâu dài → CLAUDE.md."
       }
     },
     {
@@ -7114,7 +7114,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Synthesis thiếu coverage → coordinator xác định gap, giao truy vấn có mục tiêu rồi tổng hợp lại.",
+        "text": "Tổng hợp thiếu nội dung → giao subagent tìm đúng phần còn thiếu.",
         "cues": [
           {
             "key": "A",
@@ -7161,7 +7161,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Managed Code Review cần skip lint CI/generated code và yêu cầu evidence → REVIEW.md tại root.",
+        "text": "Quy tắc Managed Code Review → REVIEW.md ở thư mục gốc.",
         "cues": [
           {
             "key": "A",
@@ -7208,7 +7208,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "MCP prompt có sẵn cho người dùng gọi dưới dạng slash command có tham số, khác MCP tool hoặc resource. Cú pháp Claude Code là /mcp__servername__promptname, không học thuộc khoảng trắng sai trong ví dụ nguồn.",
+        "text": "Prompt MCP do người dùng gọi → slash command có tham số.",
         "cues": [
           {
             "key": "D",
@@ -7255,7 +7255,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "200 request không gấp, giảm giá giữ model/prompt → Message Batches API + custom_id.",
+        "text": "Nhiều request không gấp, muốn giảm phí → Batch và custom_id.",
         "cues": [
           {
             "key": "C",
@@ -7302,7 +7302,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Jira chuẩn có server phù hợp → tích hợp MCP có sẵn thay tự viết lại HTTP.",
+        "text": "Đã có MCP server phù hợp → tích hợp, không tự viết lại.",
         "cues": [
           {
             "key": "D",
@@ -7349,7 +7349,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Báo cáo có nhiều loại nội dung, một format làm mất giá trị → bảng cho số liệu, văn xuôi cho tin, danh sách cho mục phù hợp.",
+        "text": "Nhiều loại nội dung báo cáo → chọn định dạng phù hợp từng loại.",
         "cues": [
           {
             "key": "C",
@@ -7396,7 +7396,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Rule Terraform chỉ cần cho file Terraform → .claude/rules + paths glob.",
+        "text": "Rule chỉ áp dụng file Terraform → .claude/rules với paths.",
         "cues": [
           {
             "key": "D",
@@ -7443,7 +7443,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Analysis phát hiện thiếu bằng chứng → trả gap cụ thể, coordinator tìm bổ sung rồi chạy lại analysis tới quality bar.",
+        "text": "Phân tích thiếu bằng chứng → báo phần thiếu, tìm bổ sung rồi phân tích lại.",
         "cues": [
           {
             "key": "C",
@@ -7490,7 +7490,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Tool trùng ngữ nghĩa → consolidate để bỏ overlap; tool khác mục đích thì tách.",
+        "text": "Tool trùng chức năng → gộp; khác chức năng thì tách.",
         "cues": [
           {
             "key": "C",
@@ -7537,7 +7537,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Retry lỗi nghiệp vụ vĩnh viễn vô ích → retriable:false + giải thích thân thiện; khác lỗi mạng tạm thời.",
+        "text": "Lỗi nghiệp vụ vĩnh viễn → không retry, giải thích rõ.",
         "cues": [
           {
             "key": "D",
@@ -7584,7 +7584,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Giới hạn cả số lượt và chi phí bằng CLI → --max-turns + --max-budget-usd, không dựa vào prompt.",
+        "text": "Giới hạn số lượt và ngân sách → --max-turns và --max-budget-usd.",
         "cues": [
           {
             "key": "C",
@@ -7631,7 +7631,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Review mỗi PR luôn có ba bước cố định rồi tổng hợp → prompt chaining; coordinator động cho yêu cầu biến đổi.",
+        "text": "Mỗi PR đều có ba bước cố định → prompt chaining.",
         "cues": [
           {
             "key": "C",
@@ -7678,7 +7678,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Khám phá dài làm context chính suy giảm → subagent điều tra câu hỏi cụ thể, agent chính giữ bức tranh tổng.",
+        "text": "Khám phá dài làm loãng context chính → giao subagent điều tra riêng.",
         "cues": [
           {
             "key": "C",
@@ -7725,7 +7725,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Chuyển rendering sang physics, context suy giảm → giữ class/pattern cụ thể trong summary rồi reset hoặc subagent.",
+        "text": "Chuyển chủ đề khi context quá dài → tóm tắt rồi mở context mới.",
         "cues": [
           {
             "key": "D",
@@ -7772,7 +7772,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Test tầm thường/lặp lại → CLAUDE.md ghi tiêu chí, fixture, ví dụ test có giá trị ngay từ đầu.",
+        "text": "Test lặp hoặc quá đơn giản → ghi chuẩn test trong CLAUDE.md.",
         "cues": [
           {
             "key": "C",
@@ -7819,7 +7819,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Resume sau gián đoạn và vài hàm đổi tên → báo hàm đã đổi, giữ phần phân tích còn đúng.",
+        "text": "Tiếp tục phiên sau khi đổi tên hàm → báo tên hàm đã đổi.",
         "cues": [
           {
             "key": "D",
@@ -7866,7 +7866,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Ngưỡng hoàn tiền > $500 phải được phê duyệt trước giải ngân, kể cả prompt bị thay đổi → enforce trong backend/tool, tạo pending approval khi vượt ngưỡng. Không dựa vào model hoặc PostToolUse để ngăn giao dịch.",
+        "text": "Hoàn tiền vượt ngưỡng → backend bắt buộc phê duyệt.",
         "cues": [
           {
             "key": "C",
@@ -7913,7 +7913,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Trích skill sai cụm ghép, tiêu chí nêu rõ và granularity → few-shot minh họa cả ba.",
+        "text": "Trích kỹ năng sai cụm ghép → few-shot minh họa tiêu chí và độ chi tiết.",
         "cues": [
           {
             "key": "A",
@@ -7960,7 +7960,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Structured output thay free text → dễ lấy field, giảm lỗi parsing; không bảo đảm nội dung đúng.",
+        "text": "Muốn đọc từng trường dễ dàng → dùng structured output.",
         "cues": [
           {
             "key": "B",
@@ -8007,7 +8007,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Model bịa order_id → description yêu cầu lấy từ lookup_order, không đoán; nếu bắt buộc an toàn, backend phải enforce.",
+        "text": "Model bịa order_id → mô tả yêu cầu lấy ID từ lookup_order.",
         "cues": [
           {
             "key": "C",
@@ -8054,7 +8054,7 @@
       "topic": "d3",
       "tip": {
         "kind": "caution",
-        "text": "Các lựa chọn chỉ là placeholder. Nguyên tắc CI: -p chạy non-interactive; --output-format json/stream-json cho output máy đọc. Không học nhãn thiếu nội dung.",
+        "text": "Đề thiếu lựa chọn: CI dùng -p và output JSON.",
         "cues": []
       }
     },
@@ -8097,7 +8097,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Đề hỏi ANTI-PATTERN và khóa nguồn chọn hai: chỉ vì khách tức giận, hoặc chỉ vì confidence tự báo thấp. Lưu ý phương án PostToolUse cũng không phù hợp nếu mục đích là chặn giao dịch trước khi chạy; không suy ra PostToolUse bảo đảm ngưỡng.",
+        "text": "Hỏi anti-pattern: chỉ dựa vào cảm xúc hoặc confidence tự báo; đề còn mơ hồ về hook.",
         "cues": [
           {
             "key": "A",
@@ -8108,7 +8108,7 @@
             "phrase": "purely because the user uses highly negative"
           }
         ],
-        "contrast": "Confidence tự báo thấp không tự kích hoạt escalation. #1411 tín hiệu loop hoàn thành là stop_reason; #1503 nguồn mâu thuẫn vẫn cần review dù confidence cao."
+        "contrast": "#1503: nguồn mâu thuẫn → review dù confidence cao."
       }
     },
     {
@@ -8150,7 +8150,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Chọn hai: chuẩn test/fixture trong CLAUDE.md + cung cấp lỗi test cụ thể để cải thiện mỗi vòng.",
+        "text": "Cải thiện test qua từng vòng → CLAUDE.md và lỗi test cụ thể.",
         "cues": [
           {
             "key": "A",
@@ -8201,7 +8201,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Sentiment mơ hồ/mỉa mai → vài few-shot đa dạng, ít nhất một edge case; không phải mọi task cần đúng 2–4 ví dụ.",
+        "text": "Cảm xúc mơ hồ hoặc mỉa mai → few-shot có trường hợp biên.",
         "cues": [
           {
             "key": "C",
@@ -8248,7 +8248,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Mô hình MCP của đề: các server đã cấu hình và kết nối có thể cung cấp tool cho cùng agent, không cần chọn một server độc quyền mỗi lượt. Với tool search/deferred loading, không phải mọi tool đều được nạp sẵn.",
+        "text": "Nhiều MCP server đã kết nối → có thể dùng tool từ nhiều server.",
         "cues": [
           {
             "key": "B",
@@ -8295,7 +8295,7 @@
       "topic": "d2",
       "tip": {
         "kind": "caution",
-        "text": "Phương án nguồn bị cắt. Đọc config → Read thay vì Bash cat khi có tool chuyên dụng. Không học đoạn code hỏng.",
+        "text": "Đề bị cắt: đọc nội dung config bằng Read.",
         "cues": []
       }
     },
@@ -8337,7 +8337,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Context đầy, cần nén mà giữ phát hiện chính → /compact; /clear xóa context.",
+        "text": "Context dài nhưng vẫn cần phát hiện cũ → /compact.",
         "cues": [
           {
             "key": "B",
@@ -8345,7 +8345,7 @@
             "label": "/compact"
           }
         ],
-        "contrast": "Nén một session đang dài; #1240 muốn khám phá nhánh độc lập thì fork session. Cú pháp đúng là /compact (nguồn ghi / compact)."
+        "contrast": "#1240: thử hướng độc lập → fork session."
       }
     },
     {
@@ -8386,7 +8386,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Hai nguồn tin cậy mâu thuẫn → giữ cả hai, ghi attribution và đánh dấu conflict; không tự lấy trung bình.",
+        "text": "Hai nguồn đáng tin mâu thuẫn → giữ cả hai và ghi rõ nguồn.",
         "cues": [
           {
             "key": "C",
@@ -8433,7 +8433,7 @@
       "topic": "d4",
       "tip": {
         "kind": "caution",
-        "text": "Explicit caching dùng cache_control trên content block, system là mảng text block; automatic caching ở cấp request là cơ chế khác. Khóa nguồn mô tả dictionary không chính xác.",
+        "text": "Đề chưa chuẩn: explicit caching dùng cache_control trên content block.",
         "cues": []
       }
     },
@@ -8475,7 +8475,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Thử hướng refactor độc lập không làm nhiễu phiên chính → fork session. Fork context không tự cô lập file trên đĩa.",
+        "text": "Thử hướng refactor độc lập từ phiên hiện tại → fork session.",
         "cues": [
           {
             "key": "B",
@@ -8523,7 +8523,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Chọn hai: tìm thành công không match → isError:false; lỗi truy cập timeout → isError:true.",
+        "text": "Không có kết quả → isError: false; truy cập lỗi → isError: true.",
         "cues": [
           {
             "key": "A",
@@ -8534,7 +8534,7 @@
             "phrase": "valid empty result"
           }
         ],
-        "contrast": "Phân biệt #1391: HTTP 200 không có match là thành công, không retry. #1505: timeout khi đọc có thể thử lại; #1408: timeout khi gửi thông báo chưa chắc an toàn để retry."
+        "contrast": "#1391: kết quả rỗng hợp lệ; #1505: timeout đọc có thể retry; #1408: timeout gửi chưa chắc."
       }
     },
     {
@@ -8575,7 +8575,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Ask me 3 questions để tìm design flaw trước code → Interview Pattern; khác TDD khi yêu cầu đã rõ.",
+        "text": "Muốn hỏi trước để phát hiện lỗi thiết kế → Interview Pattern.",
         "cues": [
           {
             "key": "A",
@@ -8622,7 +8622,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Vừa tự xử lý ngoại lệ quá mức vừa escalate việc đơn giản → tiêu chí escalation rõ + ví dụ khi nào tự xử lý/chuyển người.",
+        "text": "Chuyển người quá nhiều hoặc quá ít → tiêu chí rõ kèm ví dụ.",
         "cues": [
           {
             "key": "A",
@@ -8669,7 +8669,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Tool description để chọn đúng → format input, example query, edge case, boundary so với tool tương tự.",
+        "text": "Tool khó chọn đúng → mô tả format, ví dụ, edge case và ranh giới.",
         "cues": [
           {
             "key": "A",
@@ -8716,7 +8716,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Test cạnh source, rule chỉ áp dụng test → root CLAUDE.md buộc model tự suy scope; .claude/rules paths cho scope cụ thể.",
+        "text": "Rule chỉ dành cho file test → .claude/rules với paths.",
         "cues": [
           {
             "key": "B",
@@ -8763,7 +8763,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Escalation sau chẩn đoán, người nhận không có transcript → customer ID/root cause/amount/recommended action.",
+        "text": "Chuyển ca đã chẩn đoán → kèm ID, nguyên nhân, số tiền, hướng xử lý.",
         "cues": [
           {
             "key": "A",
@@ -8810,7 +8810,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "TDD: test fail → implement pass → chạy test → refine giữ xanh.",
+        "text": "TDD → test fail, viết code, test pass, cải tiến.",
         "cues": [
           {
             "key": "D",
@@ -8857,7 +8857,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Strict tool use (strict:true, schema được hỗ trợ) bảo đảm cấu trúc input của tool call, không bảo đảm dữ kiện/logic nghiệp vụ đúng. Chỉ khai báo input_schema thông thường không đủ để bảo đảm tuyệt đối.",
+        "text": "Strict tool use → đúng schema, không bảo đảm dữ kiện đúng.",
         "cues": [
           {
             "key": "B",
@@ -8904,7 +8904,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Pre-merge chặn merge cần ngay → real-time; audit đêm không gấp → Batch.",
+        "text": "Review chặn merge → real-time; audit qua đêm → Batch.",
         "cues": [
           {
             "key": "C",
@@ -8951,7 +8951,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Xác nhận đăng nhầm tài khoản/giờ/nội dung → show đầy đủ post, account, schedule, platform trước confirm.",
+        "text": "Trước khi xác nhận đăng bài → hiện nội dung, tài khoản, giờ và nền tảng.",
         "cues": [
           {
             "key": "D",
@@ -8998,7 +8998,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "HTTP 200 + results [] là kết quả hợp lệ; isError chỉ dành cho execution failure, không retry empty.",
+        "text": "HTTP 200 với danh sách rỗng → thành công, không retry.",
         "cues": [
           {
             "key": "D",
@@ -9046,7 +9046,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Chọn hai: reviewer độc lập tránh thiên kiến + pass theo file rồi pass tích hợp cross-file.",
+        "text": "Review nhiều file → reviewer độc lập, từng file rồi kiểm tra liên kết.",
         "cues": [
           {
             "key": "A",
@@ -9097,7 +9097,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Trong thiết kế metadata của đề, isRetryable nói lỗi có thể thử lại; isError chỉ báo tool lỗi. isRetryable là field ứng dụng quy ước, không phải trường chuẩn bắt buộc của MCP, và retry ghi cần idempotency.",
+        "text": "isRetryable nói khả năng retry; isError chỉ báo tool lỗi.",
         "cues": [
           {
             "key": "C",
@@ -9144,7 +9144,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Nhiều format tài liệu có cùng dữ kiện → few-shot minh họa extract từ format khác nhau.",
+        "text": "Cùng dữ kiện, nhiều bố cục tài liệu → few-shot theo từng bố cục.",
         "cues": [
           {
             "key": "B",
@@ -9191,7 +9191,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "200 request, kết quả tới sáng hôm sau vẫn được, giữ model/prompt → Batch + custom_id.",
+        "text": "Nhiều request, không cần kết quả ngay → Batch và custom_id.",
         "cues": [
           {
             "key": "B",
@@ -9238,7 +9238,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Tool thiết bị không phản hồi, agent chỉ báo lỗi → trả nguyên nhân có thể + bước troubleshooting hữu ích.",
+        "text": "Thiết bị không phản hồi → báo nguyên nhân có thể và cách khắc phục.",
         "cues": [
           {
             "key": "D",
@@ -9285,7 +9285,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Nhiều subagent độc lập chạy đồng thời → nhiều Task call trong một response coordinator.",
+        "text": "Nhiều subagent độc lập → nhiều Task call cùng lượt.",
         "cues": [
           {
             "key": "A",
@@ -9332,7 +9332,7 @@
       "topic": "d3",
       "tip": {
         "kind": "caution",
-        "text": "Enterprise > Personal > Project khi trùng tên skill; plugin có namespace riêng. Không học thuộc plugin luôn đứng cuối trong mọi xung đột.",
+        "text": "Skill trùng tên: Enterprise > Personal > Project; plugin có namespace riêng.",
         "cues": []
       }
     },
@@ -9374,7 +9374,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Tại sao escalation theo sentiment sai → tức giận không phản ánh độ phức tạp; khách vẫn có thể cần việc đơn giản.",
+        "text": "Khách tức giận chưa chắc vấn đề phức tạp → không chuyển người chỉ vì cảm xúc.",
         "cues": [
           {
             "key": "A",
@@ -9421,7 +9421,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Khách quay lại, tool result cũ lỗi thời → session mới + summary + gọi tool mới; không coi replay là dữ liệu mới.",
+        "text": "Khách quay lại, dữ liệu cũ lỗi thời → phiên mới, tóm tắt, gọi tool mới.",
         "cues": [
           {
             "key": "C",
@@ -9468,7 +9468,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Cần thấy toàn bộ ứng viên + điểm trước khi quyết định → composite discover_and_analyze, giữ add_to_collection riêng.",
+        "text": "Cần xem đủ ứng viên và điểm trước khi chọn → gộp discover và analyze.",
         "cues": [
           {
             "key": "C",
@@ -9515,7 +9515,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Agentic loop thật → model dựa context và tool result chọn bước kế tiếp, không decision tree cố định.",
+        "text": "Agentic loop → model tự chọn tool tiếp theo từ kết quả trước.",
         "cues": [
           {
             "key": "B",
@@ -9562,7 +9562,7 @@
       "topic": "d2",
       "tip": {
         "kind": "caution",
-        "text": "Lựa chọn Read bị cắt cú pháp. Đọc nội dung config → Read, không dùng Glob hoặc Bash thay thế khi Read đủ.",
+        "text": "Đề bị cắt: đọc nội dung config bằng Read.",
         "cues": []
       }
     },
@@ -9610,7 +9610,7 @@
       "topic": "d1",
       "tip": {
         "kind": "caution",
-        "text": "Câu nguồn bị cắt. Hai nguyên tắc đúng là structured handoff và prerequisite enforce bằng code. Không học thuộc fragment process_refund hay coi prompt là bảo đảm.",
+        "text": "Đề bị cắt: nhớ structured handoff và bắt buộc điều kiện bằng code.",
         "cues": []
       }
     },
@@ -9652,7 +9652,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "94% câu chỉ dùng vài lượt gần nhất, hiếm cần xa → sliding window nhỏ và nói rõ giới hạn; khác đề phải giữ facts cũ.",
+        "text": "Phần lớn chỉ cần vài lượt gần nhất → sliding window ngắn.",
         "cues": [
           {
             "key": "D",
@@ -9700,7 +9700,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Chọn hai ưu tiên review: nguồn mơ hồ/mâu thuẫn + confidence thấp từng field. Confidence cao không loại được mâu thuẫn.",
+        "text": "Ưu tiên review → confidence từng trường thấp hoặc nguồn mâu thuẫn/mơ hồ.",
         "cues": [
           {
             "key": "A",
@@ -9751,7 +9751,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Khách nói muốn gặp người có thể giúp, nhưng agent đã xác minh việc trả hàng có thể giải quyết ngay → khóa nguồn chọn ghi nhận, đề nghị xử lý hoặc chuyển người. Nếu lời yêu cầu được hiểu là muốn gặp nhân viên thật, tôn trọng và chuyển ngay; không ép họ thử thêm.",
+        "text": "Đã xác minh có thể xử lý → đề chọn đề nghị xử lý hoặc chuyển người; tôn trọng yêu cầu gặp người.",
         "cues": [
           {
             "key": "B",
@@ -9799,7 +9799,7 @@
       "topic": "d3",
       "tip": {
         "kind": "caution",
-        "text": "context: fork cô lập context, không giới hạn ghi. allowed-tools chỉ preapprove, không tạo read-only; cần deny/disallowed-tools hoặc subagent phù hợp.",
+        "text": "context: fork chỉ tách ngữ cảnh; không tự giới hạn quyền ghi.",
         "cues": []
       }
     },
@@ -9841,7 +9841,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Nhiều loại lỗi nhưng agent chỉ báo thất bại chung chung → structured error có loại lỗi, khả năng recovery và hướng xử lý.",
+        "text": "Lỗi chung chung → trả loại lỗi, khả năng khôi phục và hướng xử lý.",
         "cues": [
           {
             "key": "B",
@@ -9888,7 +9888,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Timeout của thao tác có side effect, không biết đã gửi hay chưa → báo trạng thái chưa xác định, tránh retry; khác lỗi đọc dữ liệu tạm thời.",
+        "text": "Gửi tin timeout, chưa biết đã gửi chưa → không retry mù.",
         "cues": [
           {
             "key": "B",
@@ -9935,7 +9935,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Khách nói real person NOW → escalate ngay, không trì hoãn để điều tra trước.",
+        "text": "Khách yêu cầu gặp người thật ngay → escalate ngay.",
         "cues": [
           {
             "key": "A",
@@ -9982,7 +9982,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Context khám phá suy giảm, cần giữ findings → scratchpad + /compact, không /clear.",
+        "text": "Context dài, cần giữ phát hiện → scratchpad và /compact.",
         "cues": [
           {
             "key": "C",
@@ -10029,7 +10029,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Đề hỏi dấu hiệu hoàn thành bình thường → stop_reason=end_turn. tool_use yêu cầu xử lý tool, max_tokens là bị cắt; các stop_reason khác cần nhánh xử lý riêng, không lặp vô hạn chỉ vì chưa end_turn.",
+        "text": "Hoàn thành bình thường → end_turn; không nhầm với max_tokens.",
         "cues": [
           {
             "key": "D",
@@ -10076,7 +10076,7 @@
       "topic": "d2",
       "tip": {
         "kind": "caution",
-        "text": "Các lựa chọn chỉ là placeholder. URI resource template có biến dạng {page_id}; không thể xác nhận nhãn thiếu nội dung.",
+        "text": "Đề thiếu lựa chọn: resource template có biến như {page_id}.",
         "cues": []
       }
     },
@@ -10118,7 +10118,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Timeout khi truy vấn database → trả isError:true cùng loại lỗi và metadata isRetryable:true nếu đọc có thể thử lại an toàn. isRetryable không phải field MCP chuẩn; không áp dụng cho ghi chưa biết đã commit.",
+        "text": "Timeout khi đọc database → lỗi có cấu trúc, đánh dấu có thể retry.",
         "cues": [
           {
             "key": "C",
@@ -10165,7 +10165,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Progressive summarization có thể âm thầm mất ngày, amount, ID chính xác → giữ structured facts nếu cần.",
+        "text": "Tóm tắt dễ mất ID, ngày, số tiền → lưu dữ kiện chính xác riêng.",
         "cues": [
           {
             "key": "C",
@@ -10212,7 +10212,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Bug cụ thể, stack trace rõ, một file → Direct Execution; plan cho thay đổi rộng chưa rõ.",
+        "text": "Bug một file, stack trace rõ → Direct Execution.",
         "cues": [
           {
             "key": "C",
@@ -10259,7 +10259,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Thư viện core được import ở 45 file → Plan Mode hiểu dependencies trước khi sửa.",
+        "text": "Thay thư viện dùng ở 45 file → Plan Mode tìm dependency.",
         "cues": [
           {
             "key": "B",
@@ -10306,7 +10306,7 @@
       "topic": "d1",
       "tip": {
         "kind": "caution",
-        "text": "Chặn trước giao dịch → PreToolUse. PostToolUse chạy sau thao tác, không thể ngăn giao dịch đã xảy ra. Khóa nguồn gộp hai hook nên thiếu chính xác.",
+        "text": "Đề gộp hook chưa chuẩn: muốn chặn trước khi chạy → PreToolUse.",
         "cues": []
       }
     },
@@ -10348,14 +10348,14 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Persona/giọng điệu áp dụng mọi lượt → system prompt, không phải prompt routing.",
+        "text": "Vai trò và giọng điệu chung → system prompt.",
         "cues": [
           {
             "key": "C",
             "phrase": "System prompt"
           }
         ],
-        "contrast": "Persona chuyên gia áp dụng mọi câu hỏi; không nhầm với #1470 định tuyến prompt theo loại request hoặc #290 cần chặn refund bằng hook."
+        "contrast": "#1470: prompt theo loại yêu cầu → routing; #290: chặn trước → hook."
       }
     },
     {
@@ -10396,7 +10396,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Hai bug cùng state → sửa chung; bug độc lập → lặp tuần tự riêng.",
+        "text": "Hai bug dùng chung state → sửa chung; độc lập → sửa riêng.",
         "cues": [
           {
             "key": "B",
@@ -10443,14 +10443,14 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Skill tái sử dụng cần context riêng để khám phá → SKILL.md context: fork; không có nghĩa read-only.",
+        "text": "Skill cần ngữ cảnh riêng → context: fork.",
         "cues": [
           {
             "key": "C",
             "phrase": "context: fork"
           }
         ],
-        "contrast": "Skill chạy context riêng; #1492 muốn loại Bash thì disallowed-tools, context:fork không tự giới hạn tool."
+        "contrast": "#1492: cấm Bash → disallowed-tools."
       }
     },
     {
@@ -10491,7 +10491,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "CI cần JSON đúng cấu trúc inline comment → --output-format json + --json-schema.",
+        "text": "CI cần JSON đúng cấu trúc → --output-format json và --json-schema.",
         "cues": [
           {
             "key": "B",
@@ -10538,7 +10538,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Subagent fail một phần → báo loại lỗi, đã thử gì, partial results; không bỏ phần thành công.",
+        "text": "Subagent lỗi một phần → báo lỗi, việc đã thử và kết quả còn dùng được.",
         "cues": [
           {
             "key": "B",
@@ -10586,7 +10586,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Chọn hai: coordinator trung gian giao tiếp + nhiều Task call một response để chạy song song.",
+        "text": "Agent điều phối chuyển thông tin; nhiều Task call để chạy song song.",
         "cues": [
           {
             "key": "A",
@@ -10637,7 +10637,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Tool B phụ thuộc address từ A gây fail/latency → B nhận property_id rồi tự resolve address.",
+        "text": "Tool B phụ thuộc địa chỉ từ A → B nhận property_id, tự tra địa chỉ.",
         "cues": [
           {
             "key": "C",
@@ -10684,7 +10684,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Reviewer hạn chế → confidence từng field + hiệu chỉnh ngưỡng bằng labeled validation; không tin điểm tổng tùy ý.",
+        "text": "Ít reviewer → hiệu chỉnh ngưỡng confidence từng trường bằng dữ liệu có nhãn.",
         "cues": [
           {
             "key": "B",
@@ -10731,7 +10731,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Giảm hallucination ít đổi logic → bổ sung retrieval đáng tin.",
+        "text": "Muốn giảm hallucination ít đổi logic → retrieval đáng tin cậy.",
         "cues": [
           {
             "key": "B",
@@ -10778,7 +10778,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Subtask cụ thể → prompt chỉ chứa context liên quan; không gửi toàn bộ history hay giả định tự kế thừa.",
+        "text": "Subtask cụ thể → chỉ gửi ngữ cảnh liên quan, không gửi toàn bộ history.",
         "cues": [
           {
             "key": "C",
@@ -10825,7 +10825,7 @@
       "topic": "d3",
       "tip": {
         "kind": "caution",
-        "text": "Các lựa chọn chỉ là placeholder. Vim cá nhân đặt user settings, không áp đặt project settings. Không học nhãn.",
+        "text": "Đề thiếu lựa chọn: cấu hình Vim cá nhân đặt ở user settings.",
         "cues": []
       }
     },
@@ -10867,7 +10867,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Nhiều vấn đề độc lập trong một request → phân rã, điều tra song song nếu phù hợp rồi tổng hợp phản hồi.",
+        "text": "Nhiều vấn đề độc lập → chia việc, xử lý song song rồi tổng hợp.",
         "cues": [
           {
             "key": "B",
@@ -10915,7 +10915,7 @@
       "topic": "d1",
       "tip": {
         "kind": "caution",
-        "text": "Lựa chọn thiếu tên trường. Tool result nằm trong user message, block tool_result có tool_use_id khớp ID tool_use. Không học đoạn thiếu.",
+        "text": "Đề thiếu tên trường: tool_result dùng tool_use_id khớp trong user message.",
         "cues": []
       }
     },
@@ -10957,7 +10957,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Accuracy tổng cao nhưng hợp đồng phức tạp hay lỗi → stratified metrics theo loại và field.",
+        "text": "Accuracy tổng cao nhưng hợp đồng phức tạp hay lỗi → đo theo loại và trường.",
         "cues": [
           {
             "key": "A",
@@ -11005,7 +11005,7 @@
       "topic": "d2",
       "tip": {
         "kind": "caution",
-        "text": "isError là trường chuẩn MCP; errorCategory là metadata ứng dụng tự định nghĩa. Hai trường có thể hữu ích để định tuyến recovery nhưng không phải cả hai đều là field chuẩn bắt buộc.",
+        "text": "isError là trường MCP chuẩn; errorCategory do ứng dụng quy ước.",
         "cues": []
       }
     },
@@ -11047,7 +11047,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Summarization mất nguồn âm thầm → structured claim-source mappings phải được giữ xuyên pipeline.",
+        "text": "Mất trích dẫn khi tổng hợp → giữ liên kết nhận định–nguồn.",
         "cues": [
           {
             "key": "B",
@@ -11094,7 +11094,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "MCP Resource cho catalog/tài liệu cung cấp context; MCP Tool cho thao tác.",
+        "text": "Catalog tĩnh làm ngữ cảnh → MCP Resource, không phải Tool.",
         "cues": [
           {
             "key": "B",
@@ -11142,7 +11142,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Chọn hai cho CI: tách generator/reviewer tránh bias + -p chạy non-interactive.",
+        "text": "CI → tách generator/reviewer, dùng -p để chạy không tương tác.",
         "cues": [
           {
             "key": "A",
@@ -11193,7 +11193,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Khám phá auth dài, muốn context chính sạch → subagent trả summary tập trung.",
+        "text": "Khám phá auth dài, muốn giữ context chính gọn → subagent trả tóm tắt.",
         "cues": [
           {
             "key": "A",
@@ -11240,7 +11240,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Lookup nhiều bản ghi, thiếu định danh → hỏi thêm ID/thông tin phân biệt, không đoán record.",
+        "text": "Tra cứu nhiều bản ghi trùng → hỏi thêm thông tin định danh.",
         "cues": [
           {
             "key": "C",
@@ -11287,7 +11287,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Plan mode bị loãng bởi discovery output → Explore subagent cô lập khám phá, trả summary.",
+        "text": "Plan Mode bị loãng bởi khám phá → dùng Explore subagent.",
         "cues": [
           {
             "key": "C",
@@ -11334,7 +11334,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Chưa chọn giữa SSE/WebSocket/polling → plan mode so sánh trade-off trước implement.",
+        "text": "Chưa chọn SSE, WebSocket hay polling → Plan Mode so sánh.",
         "cues": [
           {
             "key": "C",
@@ -11382,7 +11382,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Chọn hai đặc điểm Batch: tiết kiệm 50% + custom_id ghép request/response. Không bảo đảm deadline một giờ.",
+        "text": "Batch → giảm 50% chi phí và ghép kết quả bằng custom_id.",
         "cues": [
           {
             "key": "B",
@@ -11433,7 +11433,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Hàm wrapper đổi tên → đọc library/wrapper tìm tên export rồi Grep từng tên.",
+        "text": "Hàm wrapper đổi tên → tìm tên export rồi Grep từng tên.",
         "cues": [
           {
             "key": "D",
@@ -11480,7 +11480,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Knowledge base không bao phủ tình huống → escalate do policy gap; không dựa sentiment/số lượt.",
+        "text": "Knowledge base không có policy phù hợp → escalate vì policy gap.",
         "cues": [
           {
             "key": "C",
@@ -11527,7 +11527,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Cấm sửa migration → permissions.deny; sở thích logging → CLAUDE.md; tự format sau sửa → PostToolUse.",
+        "text": "Cấm sửa file → permissions.deny; quy ước → CLAUDE.md; format → PostToolUse.",
         "cues": [
           {
             "key": "A",
@@ -11574,7 +11574,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Loại tài liệu mới ngoài enum → other + detail string, không chuyển hết sang free text.",
+        "text": "Enum thiếu loại tài liệu mới → other kèm trường mô tả.",
         "cues": [
           {
             "key": "C",
@@ -11621,7 +11621,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Human review hạn chế → ưu tiên low confidence hoặc nguồn mơ hồ/mâu thuẫn.",
+        "text": "Ít reviewer → ưu tiên confidence thấp hoặc nguồn mâu thuẫn/mơ hồ.",
         "cues": [
           {
             "key": "B",
@@ -11668,7 +11668,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Hàng nghìn ticket → map-reduce: từng ticket riêng rồi combine summary.",
+        "text": "Hàng nghìn ticket → xử lý từng ticket rồi gộp tóm tắt.",
         "cues": [
           {
             "key": "B",
@@ -11716,7 +11716,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Chọn hai ứng dụng hook: chặn hành vi vi phạm trước khi chạy + chuẩn hóa status code trước vào context.",
+        "text": "Hook → chặn vi phạm trước khi chạy, chuẩn hóa status code.",
         "cues": [
           {
             "key": "A",
@@ -11768,7 +11768,7 @@
       "topic": "d3",
       "tip": {
         "kind": "caution",
-        "text": "name và description bắt buộc theo chuẩn Agent Skills; Claude Code có thể suy ra/default. Phân biệt phạm vi chuẩn đóng gói với hành vi Claude Code.",
+        "text": "name và description bắt buộc theo chuẩn Skills; Claude Code có thể tự suy ra.",
         "cues": []
       }
     },
@@ -11810,7 +11810,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Cùng input, wording khác nhưng đúng nội dung → LLM có tính xác suất.",
+        "text": "Cùng input, khác cách diễn đạt → tính xác suất của LLM.",
         "cues": [
           {
             "key": "B",
@@ -11857,7 +11857,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Tool description tốt → input format, ví dụ, edge case, boundary với tool tương tự.",
+        "text": "Tool khó chọn đúng → mô tả format, ví dụ, edge case và ranh giới.",
         "cues": [
           {
             "key": "B",
@@ -11904,7 +11904,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Reviewer hạn chế → confidence từng field + hiệu chỉnh ngưỡng bằng labeled validation; không tin điểm tổng tùy ý.",
+        "text": "Ít reviewer → hiệu chỉnh ngưỡng confidence bằng dữ liệu có nhãn.",
         "cues": [
           {
             "key": "B",
@@ -11951,7 +11951,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Review không chặn merge, cân nhắc Batch → feedback muộn tới 24h còn hữu ích không?",
+        "text": "Review không chặn merge → cân nhắc kết quả Batch đến muộn 24 giờ.",
         "cues": [
           {
             "key": "A",
@@ -11998,7 +11998,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Cross-file bug ở code không đổi → review agentic giới hạn lượt, đọc/search và theo reference; chỉ diff không đủ.",
+        "text": "Bug ở file không đổi → agentic review giới hạn lượt, lần theo reference.",
         "cues": [
           {
             "key": "A",
@@ -12045,7 +12045,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Review nhiều false positive vì style → tiêu chí report bug/security vs skip style nhỏ; không chỉ yêu cầu confidence cao.",
+        "text": "Review báo lỗi style vụn vặt → nêu tiêu chí lỗi cần báo.",
         "cues": [
           {
             "key": "A",
@@ -12092,7 +12092,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "False positive do không biết quy ước project → ghi accepted pattern vào CLAUDE.md.",
+        "text": "Review không hiểu quy ước dự án → ghi pattern hợp lệ trong CLAUDE.md.",
         "cues": [
           {
             "key": "C",
@@ -12139,7 +12139,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Mock data sai cấu trúc khi mô tả tự nhiên → vài cặp input/output đúng phép biến đổi.",
+        "text": "Mock data sai cấu trúc → ví dụ input/output cụ thể.",
         "cues": [
           {
             "key": "B",
@@ -12186,7 +12186,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Model tự lọc làm mất finding → report mọi finding kèm confidence/severity, lọc downstream.",
+        "text": "Model tự lọc làm mất finding → báo hết kèm điểm, lọc sau.",
         "cues": [
           {
             "key": "D",
@@ -12233,7 +12233,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Auth xuyên service → Grep entry points, Read, lần theo imports/calls.",
+        "text": "Auth qua nhiều service → Grep điểm vào, Read rồi lần theo lời gọi.",
         "cues": [
           {
             "key": "B",
@@ -12280,7 +12280,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Summarization làm mất account ID/amount → giữ case facts có cấu trúc riêng, không để summary tự viết lại. Khi dữ kiện nghiệp vụ thực sự thay đổi, cập nhật có kiểm soát từ nguồn xác minh; không đóng băng giá trị lỗi thời.",
+        "text": "Tóm tắt làm mất ID và số tiền → lưu case facts riêng.",
         "cues": [
           {
             "key": "D",
@@ -12328,7 +12328,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Chọn hai lợi ích .claude/rules: module hóa theo chủ đề + paths glob nạp theo file; không phải permission.",
+        "text": ".claude/rules → chia rule theo chủ đề, nạp theo paths.",
         "cues": [
           {
             "key": "A",
@@ -12339,7 +12339,7 @@
             "phrase": "YAML frontmatter paths"
           }
         ],
-        "contrast": "Rule theo file paths; #263 mỗi package biết chuẩn riêng và không có pattern phù hợp thì @imports theo package."
+        "contrast": "#263: chuẩn riêng mỗi package → @imports."
       }
     },
     {
@@ -12381,7 +12381,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Chọn hai: phân biệt findings chắc chắn/tranh cãi + bảo toàn claim-source mapping. Uncertainty và provenance khác nhau.",
+        "text": "Nguồn khác độ chắc chắn → tách kết luận và giữ liên kết nhận định–nguồn.",
         "cues": [
           {
             "key": "A",
@@ -12432,7 +12432,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Prompt tốt → mục tiêu + context + constraints + format mong đợi, không chỉ thêm từ nhấn mạnh.",
+        "text": "Prompt tốt → mục tiêu, ngữ cảnh, ràng buộc và định dạng.",
         "cues": [
           {
             "key": "C",
@@ -12479,7 +12479,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Checklist chỉ dùng khi review → slash command /review gọi theo nhu cầu, không nạp mọi task.",
+        "text": "Checklist chỉ dùng khi review → /review gọi khi cần.",
         "cues": [
           {
             "key": "A",
@@ -12526,7 +12526,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Markdown table không nhất quán → chỉ định chính xác tên cột.",
+        "text": "Bảng Markdown không nhất quán → nêu chính xác tên cột.",
         "cues": [
           {
             "key": "A",
@@ -12573,7 +12573,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Không dựa vào suy luận nội bộ như interface ứng dụng; yêu cầu output/giải thích kiểm chứng được.",
+        "text": "Không dùng suy luận nội bộ làm giao diện → yêu cầu output kiểm chứng được.",
         "cues": [
           {
             "key": "B",
@@ -12620,7 +12620,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Tìm import @company/auth trong nội dung file → Grep; Glob tìm path.",
+        "text": "Tìm câu import trong nội dung file → Grep, không phải Glob.",
         "cues": [
           {
             "key": "C",
@@ -12667,7 +12667,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "RAG = truy xuất kiến thức ngoài khi inference, không train lại model.",
+        "text": "RAG → truy xuất kiến thức ngoài lúc inference, không train lại.",
         "cues": [
           {
             "key": "B",
@@ -12714,7 +12714,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Agentic loop tiếp tục khi tool_use, hoàn thành bình thường khi end_turn; stop reason khác xử lý riêng.",
+        "text": "Agentic loop → tiếp tục khi tool_use; kết thúc thường khi end_turn.",
         "cues": [
           {
             "key": "B",
@@ -12761,14 +12761,14 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Persona/giọng điệu áp dụng mọi lượt → system prompt, không phải prompt routing.",
+        "text": "Vai trò và giọng điệu chung → system prompt.",
         "cues": [
           {
             "key": "B",
             "phrase": "System prompt"
           }
         ],
-        "contrast": "Giọng điệu chung → system prompt; nếu mỗi loại yêu cầu cần logic riêng, xem #1470 prompt routing."
+        "contrast": "#1470: logic riêng từng loại yêu cầu → prompt routing."
       }
     },
     {
@@ -12809,7 +12809,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Chatbot nhiều loại request, muốn dễ maintain → prompt routing theo loại; system prompt cho hành vi chung.",
+        "text": "Chatbot xử lý nhiều loại yêu cầu → prompt routing theo loại.",
         "cues": [
           {
             "key": "B",
@@ -12856,7 +12856,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Cần trả lời theo tài liệu nội bộ đã duyệt → RAG với nguồn phù hợp.",
+        "text": "Cần trả lời dựa trên tài liệu nội bộ → RAG.",
         "cues": [
           {
             "key": "B",
@@ -12903,14 +12903,14 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Muốn phân loại ổn định hơn → giảm temperature nếu model hỗ trợ; không bảo đảm deterministic tuyệt đối.",
+        "text": "Muốn phân loại ổn định hơn → giảm temperature nếu được hỗ trợ.",
         "cues": [
           {
             "key": "A",
             "phrase": "Temperature"
           }
         ],
-        "contrast": "Giảm độ biến thiên của phân loại, không sửa lỗi schema: #190 cần feedback validation, #1499 cần chỉ rõ field thiếu."
+        "contrast": "#190/#1499: sai hoặc thiếu dữ liệu → retry kèm lỗi cụ thể."
       }
     },
     {
@@ -12951,7 +12951,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Chính sách retry/log/backoff không nhất quán giữa subagent → tập trung policy coordinator, báo lỗi chưa giải quyết.",
+        "text": "Retry, log và backoff khác nhau giữa agent → tập trung policy ở coordinator.",
         "cues": [
           {
             "key": "D",
@@ -12998,7 +12998,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Khi tool_use → chạy tool, user message chứa tool_result có tool_use_id khớp, gửi lại history.",
+        "text": "tool_use → chạy tool, gửi tool_result với ID khớp trong user message.",
         "cues": [
           {
             "key": "A",
@@ -13045,7 +13045,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Fallback max_tokens vào end_turn → output bị cắt được coi thành công; xử lý max_tokens riêng.",
+        "text": "max_tokens nghĩa là output bị cắt → không coi là end_turn.",
         "cues": [
           {
             "key": "A",
@@ -13092,7 +13092,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Synthesis chỉ nhận yêu cầu viết report không nhận findings → đưa notes/source vào prompt, không tự kế thừa context.",
+        "text": "Agent tổng hợp không nhận kết quả → đưa ghi chú và nguồn vào prompt.",
         "cues": [
           {
             "key": "A",
@@ -13139,7 +13139,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Số nguồn cứng gây kém thích ứng → mục tiêu + quality bar, cho subagent tự quyết.",
+        "text": "Số nguồn cố định quá cứng → đặt mục tiêu và tiêu chí chất lượng.",
         "cues": [
           {
             "key": "A",
@@ -13186,7 +13186,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Hook có verified ID trong session state → allow + updatedInput thay customer_id bằng ID xác minh.",
+        "text": "Có ID đã xác minh → hook allow và updatedInput thay ID.",
         "cues": [
           {
             "key": "B",
@@ -13233,7 +13233,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Handoff notes tự do thiếu dữ kiện → bắt buộc structured fields customer/root cause/recommended action.",
+        "text": "Handoff thiếu thông tin → bắt buộc các trường có cấu trúc.",
         "cues": [
           {
             "key": "C",
@@ -13280,7 +13280,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "Resume replay transcript, không rollback file trên đĩa → file checkpointing khi cần khôi phục.",
+        "text": "Resume chỉ khôi phục transcript → muốn rollback file cần checkpoint.",
         "cues": [
           {
             "key": "A",
@@ -13327,7 +13327,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Review nhiều file bị attention dilution → pass từng file + pass thứ hai kiểm tra tương tác.",
+        "text": "Review nhiều file bị loãng → từng file rồi kiểm tra tương tác.",
         "cues": [
           {
             "key": "A",
@@ -13374,7 +13374,7 @@
       "topic": "d1",
       "tip": {
         "kind": "cue",
-        "text": "SDK cần list session + transcript một session → listSessions() và getSessionMessages().",
+        "text": "Liệt kê phiên và đọc transcript → listSessions và getSessionMessages.",
         "cues": [
           {
             "key": "A",
@@ -13421,7 +13421,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Phải tạo profile ở lượt đầu → trên model hỗ trợ forced tool use, type:tool + name chỉ lượt đầu, sau đó auto để được gọi tool khác hoặc trả text. Không ép mọi lượt.",
+        "text": "Phải tạo profile trước → ép tool ở lượt đầu, sau đó auto.",
         "cues": [
           {
             "key": "A",
@@ -13468,7 +13468,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "MCP chung project, mỗi teammate token riêng → .mcp.json với biến môi trường GITHUB_TOKEN, không commit secret.",
+        "text": "MCP dùng chung, token riêng → .mcp.json dùng biến môi trường.",
         "cues": [
           {
             "key": "A",
@@ -13515,14 +13515,14 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Chỉ cần path file test theo tên → Glob; Grep cho nội dung. Mẫu glob nguồn bị OCR, không học thuộc ký tự hỏng.",
+        "text": "Tìm file theo tên hoặc đường dẫn → Glob, không phải Grep.",
         "cues": [
           {
             "key": "C",
             "phrase": "Glob"
           }
         ],
-        "contrast": "Chỉ tìm đường dẫn theo tên. #244/#1466 tìm chuỗi trong nội dung → Grep, không Glob. Ví dụ glob trong lựa chọn nguồn bị lỗi OCR."
+        "contrast": "#244/#1466: tìm chuỗi trong nội dung → Grep."
       }
     },
     {
@@ -13563,7 +13563,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Agent 2 có partial results + lỗi một file → giữ phần đã xác nhận, xử lý riêng file lỗi. Agent 3 crash không output → chạy lại toàn bộ folder, không giả định lỗi giống agent 2.",
+        "text": "Agent lỗi một file → giữ kết quả còn dùng được; crash không output → chạy lại.",
         "cues": [
           {
             "key": "A",
@@ -13610,7 +13610,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Model bịa field update, không rõ partial update → description nêu field hợp lệ và hỗ trợ tập con.",
+        "text": "Model bịa trường update → mô tả trường hợp lệ và partial update.",
         "cues": [
           {
             "key": "C",
@@ -13657,7 +13657,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Retry cục bộ đã thành công toàn bộ → báo success cuối, không cần escalate lỗi đã phục hồi.",
+        "text": "Retry đã thành công → báo success, không cần escalate.",
         "cues": [
           {
             "key": "A",
@@ -13704,7 +13704,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Hai phương án chưa quyết định vì trade-off vận hành/rủi ro → plan mode so sánh trước code.",
+        "text": "Chưa chọn phương án vì chi phí và rủi ro → Plan Mode so sánh.",
         "cues": [
           {
             "key": "B",
@@ -13751,7 +13751,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "CI cần shape passed:boolean + issues:string[] → claude -p + --output-format json + --json-schema.",
+        "text": "CI cần JSON đúng cấu trúc → -p, --output-format json, --json-schema.",
         "cues": [
           {
             "key": "A",
@@ -13798,7 +13798,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Chi phí từng model có sẵn trong JSON stdout: total_cost_usd và modelUsage.",
+        "text": "Chi phí từng model trong JSON → total_cost_usd và modelUsage.",
         "cues": [
           {
             "key": "A",
@@ -13845,7 +13845,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "allowed-tools của skill là cấp phép trước, không loại tool khác. disallowed-tools:Bash loại Bash trong lượt skill hoạt động; permissions.deny dùng khi cần chặn xuyên các lượt. context:fork không tự tạo allowlist.",
+        "text": "Muốn cấm Bash trong skill → disallowed-tools, không phải context: fork.",
         "cues": [
           {
             "key": "D",
@@ -13892,7 +13892,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Rate limiter đã rõ throttling/burst/reset → TDD test trước, implement rồi lặp với test fail.",
+        "text": "Rate limiter đã rõ hành vi → TDD, viết test trước.",
         "cues": [
           {
             "key": "A",
@@ -13939,7 +13939,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "Chưa biết thiết kế/edge case/trade-off → interview bằng AskUserQuestion trước spec/code.",
+        "text": "Chưa rõ thiết kế và trường hợp biên → AskUserQuestion trước khi code.",
         "cues": [
           {
             "key": "A",
@@ -13986,7 +13986,7 @@
       "topic": "d3",
       "tip": {
         "kind": "cue",
-        "text": "CLAUDE.md trong repo rỗng nhưng thành viên cũ vẫn có quy ước → tìm đường dẫn ~/.claude/CLAUDE.md trong thư mục home cá nhân, không chỉ từ personal.",
+        "text": "Repo thiếu quy ước nhưng người cũ vẫn biết → ~/.claude/CLAUDE.md.",
         "cues": [
           {
             "key": "A",
@@ -14033,7 +14033,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Hai review từng file mâu thuẫn cùng data flow → pass tích hợp đọc cả hai, không chọn câu có confidence cao hơn.",
+        "text": "Hai review mâu thuẫn về cùng luồng dữ liệu → kiểm tra tích hợp cả hai file.",
         "cues": [
           {
             "key": "A",
@@ -14080,7 +14080,7 @@
       "topic": "d2",
       "tip": {
         "kind": "cue",
-        "text": "Buộc parse_resume ở lượt hiện tại → type:tool + name trên model hỗ trợ; forced call bắt đầu bằng tool_use, không có text giải thích trước. Nếu cần giải thích hoặc model không hỗ trợ force, dùng auto phù hợp, không hứa bắt buộc.",
+        "text": "Bắt buộc gọi parse_resume lượt này → force đúng tool nếu model hỗ trợ.",
         "cues": [
           {
             "key": "C",
@@ -14127,7 +14127,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Comment/docstring false positive → chỉ flag khi hành vi cụ thể mâu thuẫn code, trích bằng chứng.",
+        "text": "Comment bị báo lỗi nhầm → chỉ báo khi có hành vi mâu thuẫn với code.",
         "cues": [
           {
             "key": "D",
@@ -14174,7 +14174,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Nguồn có dữ liệu nhưng output thiếu invoice_number → gửi lại PDF + JSON lỗi + tên field thiếu.",
+        "text": "Output thiếu invoice_number dù nguồn có → gửi PDF, JSON lỗi và tên trường.",
         "cues": [
           {
             "key": "A",
@@ -14221,7 +14221,7 @@
       "topic": "d4",
       "tip": {
         "kind": "cue",
-        "text": "Pattern có cách dùng đúng và sai → few-shot đối chiếu hai ví dụ có verdict, không blacklist keyword.",
+        "text": "Pattern có cách dùng đúng và sai → few-shot đối chiếu hai trường hợp.",
         "cues": [
           {
             "key": "A",
@@ -14268,7 +14268,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Nhiều bước nhưng policy rõ và đủ tool → tự xử lý; số bước không phải trigger escalate.",
+        "text": "Nhiều bước nhưng đủ tool và policy rõ → tự xử lý, không tự escalate.",
         "cues": [
           {
             "key": "A",
@@ -14315,7 +14315,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Chỉ weight ở tài liệu có đơn vị mơ hồ (bao gồm thiếu nhãn đơn vị) có accuracy thấp → review nhóm không rõ đơn vị, giữ tự động nhóm rõ; không review mọi weight.",
+        "text": "Chỉ lỗi khi đơn vị weight không rõ → review đúng nhóm đó.",
         "cues": [
           {
             "key": "A",
@@ -14362,7 +14362,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Nguồn cho hai giá trị mâu thuẫn cùng field → human review bất kể confidence.",
+        "text": "Hai giá trị mâu thuẫn cùng trường → human review dù confidence cao.",
         "cues": [
           {
             "key": "A",
@@ -14409,7 +14409,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Cần click tới bằng chứng của từng claim → citations gắn claim với khoảng ký tự/trang, không chỉ URL chung.",
+        "text": "Cần mở đúng bằng chứng từng nhận định → citation có vị trí ký tự hoặc trang.",
         "cues": [
           {
             "key": "A",
@@ -14456,7 +14456,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Timeout khi đọc là lỗi truy cập có thể retry; HTTP 200 zero-row là empty hợp lệ, không retry.",
+        "text": "Timeout khi đọc → có thể retry; HTTP 200 rỗng → thành công.",
         "cues": [
           {
             "key": "A",
@@ -14503,7 +14503,7 @@
       "topic": "d5",
       "tip": {
         "kind": "cue",
-        "text": "Khách yêu cầu gặp người rõ ràng dù chỉ reset mật khẩu → chuyển ngay, không từ chối vì việc đơn giản.",
+        "text": "Khách yêu cầu gặp nhân viên rõ ràng → chuyển ngay dù việc đơn giản.",
         "cues": [
           {
             "key": "A",
